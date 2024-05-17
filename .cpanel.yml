@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/cyclingu/drupal7.cyclinguk.net
+    - /bin/cp -r * $DEPLOYPATH
