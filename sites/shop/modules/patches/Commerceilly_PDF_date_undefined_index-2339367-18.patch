@@ -1,0 +1,15 @@
+diff --git a/modules/commerce_billy_pdf/commerce_billy_pdf.module b/modules/commerce_billy_pdf/commerce_billy_pdf.module
+index ec74f20..9ff6cff 100644
+--- a/modules/commerce_billy_pdf/commerce_billy_pdf.module
++++ b/modules/commerce_billy_pdf/commerce_billy_pdf.module
+@@ -209,7 +209,9 @@ function commerce_billy_pdf_commerce_order_view($order, $view_mode) {
+       '#markup' => isset($settings['invoice_text']) ? $settings['invoice_text'] : '',
+     );
+     $date_field_name = $view_mode == 'pdf' ? 'field_commerce_billy_i_date' : 'field_commerce_billy_cancel_date';
+-    $date_formatted = format_date($order->{$date_field_name}[LANGUAGE_NONE][0]['value'], 'custom', $custom_date_format);
++    $wrapper = entity_metadata_wrapper('commerce_order', $order);
++    $date = !empty($wrapper->{$date_field_name}->value()) ? $wrapper->{$date_field_name}->value() : $order->created;
++    $date_formatted = format_date($date, 'custom', $custom_date_format);
+     if (!empty($settings['invoice_location'])) {
+       $invoice_header_date_text = t('@location, @date', array('@location' => $settings['invoice_location'], '@date' => $date_formatted));
+     }

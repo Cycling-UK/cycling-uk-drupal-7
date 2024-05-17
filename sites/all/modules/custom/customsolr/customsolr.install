@@ -1,0 +1,19 @@
+<?php
+
+function customsolr_install() {
+}
+
+function customsolr_uninstall() {
+}
+
+/**
+ * Fix for incorrectly imported location values
+ */
+function customsolr_update_7101() {
+
+    db_delete('field_data_field_location')
+        ->condition('entity_type', 'node')
+        ->condition('field_location_geohash', '' ,'=')
+        ->execute();
+    
+}

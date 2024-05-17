@@ -1,0 +1,201 @@
+<?php
+
+/**
+ * @file
+ * Allow smaller portions of a menu to be load on administrative screens.
+ */
+
+/**
+ * Implements hook_menu_alter().
+ */
+function menuadminsplitter_menu_alter(&$items) {
+
+  // Take over the the menu administration path.
+  if (!empty($items['admin/structure/menu/manage/%menu']['page arguments'][0])) {
+    $items['admin/structure/menu/manage/%menu']['page arguments'][0] = 'menuadminsplitter_overview_form';
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function menuadminsplitter_theme() {
+  return array(
+    'menuadminsplitter_overview_form' => array(
+      'render element' => 'form',
+      'function' => 'theme_menu_overview_form',
+    )
+  );
+}
+
+/**
+ * Form for editing an entire menu tree at once.
+ *
+ * Shows for one menu the menu links accessible to the current user and
+ * relevant operations.
+ */
+function menuadminsplitter_overview_form($form, &$form_state, $menu, $depth = 1, $top_level_link = 'all') {
+
+  // Render the filter form.
+  // @todo Should drupal_render() not be called here? Is there a better way?
+  //$form['#prefix'] = drupal_render(drupal_get_form('menuadminsplitter_filter_form', $menu, $depth, $top_level_link));
+
+  $temp_form = drupal_get_form('menuadminsplitter_filter_form', $menu, $depth, $top_level_link);
+  $form['#prefix'] = drupal_render($temp_form);
+   
+  global $menu_admin;
+  $form['#attached']['css'] = array(drupal_get_path('module', 'menu') . '/menu.css');
+  $sql = "
+    SELECT m.load_functions, m.to_arg_functions, m.access_callback, m.access_arguments, m.page_callback, m.page_arguments, m.delivery_callback, m.title, m.title_callback, m.title_arguments, m.type, m.description, ml.*
+    FROM {menu_links} ml LEFT JOIN {menu_router} m ON m.path = ml.router_path
+    WHERE ml.menu_name = :menu ";
+
+  $sql_replacements = array(':menu' => $menu['menu_name']);
+
+  // Check if there is a depth limit.
+  if (is_numeric($depth)) {
+    $depth_integer = intval($depth);
+    if ($depth_integer >= 0 && $depth_integer <= MENU_MAX_DEPTH) {
+      $sql .= 'and ml.depth <= :depth';
+      $sql_replacements[':depth'] = $depth_integer;
+    }
+  }
+
+  // Only add more to the query if this is a menu link id. The query should be be
+  // changed if this value is the default 'all' (or anything else).
+  if (is_numeric($top_level_link)) {
+    // Ensure the that an integer is getting sent to sql and not a float.
+    $top_level_link_integer = intval($top_level_link);
+    $sql .= ' and ml.p1 = :top_level_link';
+    $sql_replacements[':top_level_link'] = $top_level_link_integer;
+  }
+
+  // Add the ordering.
+  $sql .= " ORDER BY p1 ASC, p2 ASC, p3 ASC, p4 ASC, p5 ASC, p6 ASC, p7 ASC, p8 ASC, p9 ASC";
+
+  $result = db_query($sql, $sql_replacements, array('fetch' => PDO::FETCH_ASSOC));
+  $links = array();
+  foreach ($result as $item) {
+    $links[] = $item;
+  }
+  $tree = menu_tree_data($links);
+  $node_links = array();
+  menu_tree_collect_node_links($tree, $node_links);
+  // We indicate that a menu administrator is running the menu access check.
+  $menu_admin = TRUE;
+  menu_tree_check_access($tree, $node_links);
+  $menu_admin = FALSE;
+
+  $form = array_merge($form, _menu_overview_tree_form($tree));
+  $form['#menu'] =  $menu;
+
+  if (element_children($form)) {
+    $form['actions'] = array('#type' => 'actions');
+    $form['actions']['submit'] = array(
+      '#type' => 'submit',
+      '#value' => t('Save configuration'),
+    );
+  }
+  else {
+    $form['#empty_text'] = t('There are no menu links yet. <a href="@link">Add link</a>.', array('@link' => url('admin/structure/menu/manage/' . $form['#menu']['menu_name'] .'/add')));
+  }
+
+  // Set the submit handler to the core submit function.
+  $form['#submit'] = array('menu_overview_form_submit');
+
+  return $form;
+}
+
+/**
+ * Create our filter form for the menu admin page.
+ */
+function menuadminsplitter_filter_form($form, &$form_state, $menu, $default_depth, $top_level_link = 'all') {
+
+  $menu_name = $menu['menu_name'];
+  $form = array();
+
+  // Get first level menu items for the select list.
+  $sql = "SELECT mlid, link_title FROM {menu_links} WHERE p2 = :p2 AND menu_name = :menu_name ORDER BY weight";
+  $result = db_query($sql, array(
+    ':p2' => 0,
+    ':menu_name' => $menu_name
+  ));
+  $menu_items = array('all' => t('All'));
+  while ($menu_item = $result->fetchAssoc()) {
+    $menu_items[$menu_item['mlid']] = $menu_item['link_title'];
+  }
+
+  // Get maximum possible depth for the menu.
+  $max_menu_depth = db_query("SELECT MAX(depth) FROM {menu_links} WHERE menu_name = :menu_name", array(':menu_name' => $menu_name))->fetchField();
+  $menu_depth = array();
+  // Store depths from 1 to max menu depth.
+  for ($i = 1; $i <= $max_menu_depth; $i++) {
+    $menu_depth[$i] = $i;
+  }
+
+  // Build the filter form.
+  $form['menusplitter_filter'] = array(
+    '#type' => 'fieldset',
+    '#title' => t('Filter menu items'),
+  );
+
+  $form['menusplitter_filter']['menu_name'] = array(
+    '#type' => 'value',
+    '#value' => $menu_name,
+  );
+
+  $form['menusplitter_filter']['menu_item'] = array(
+    '#type' => 'select',
+    '#title' => t('Menu item'),
+    '#description' => t('Menu item which child items you would like to edit. Loading all items with in a large menu may take a long time.'),
+    '#options' => $menu_items,
+    '#default_value' => $top_level_link,
+  );
+
+  $form['menusplitter_filter']['menu_item_depth'] = array(
+    '#type' => 'select',
+    '#title' => t('Depth of items to return'),
+    '#description' => t('Higher number means slower page loading time.'),
+    '#options' => $menu_depth,
+    '#default_value' => $default_depth,
+  );
+  $form['menusplitter_filter']['submit'] = array(
+    '#type' => 'submit',
+    '#value' => t('Filter'),
+  );
+  return $form;
+}
+
+/**
+ * Redirect based on the values submitted in menuadminsplitter_filter_form().
+ */
+function menuadminsplitter_filter_form_submit($form, &$form_state) {
+
+  $redirect = FALSE;
+  $values = $form_state['values'];
+
+  if (!empty($values['menu_name']) && !empty($values['menu_item_depth'])) {
+    $redirect = 'admin/structure/menu/manage/' . $values['menu_name'] . '/' . $values['menu_item_depth'];
+
+    // Concatenate on the menu_item.
+    if ($values['menu_item'] === 'all' || is_numeric($values['menu_item'])) {
+      $redirect .= '/' . $values['menu_item'];
+    }
+    // @todo, the values of menu_item and depth could be stored to variable_set()
+    // for default values.
+  }
+
+  if ($redirect) {
+    $form_state['redirect'] = array($redirect);
+    /**
+     * Contextual links set a destination. So if someone gets to this form from
+     *  The contextual links "list links" link there will be a destination. However
+     *  this form is already doing a redirect that conflicts with the destination.
+     *  As undesireable as it is to mess with a a global variable, it seems to be
+     *  the only option.
+     */
+    if (!empty($_GET['destination'])) {
+      unset($_GET['destination']);
+    }
+  }
+}

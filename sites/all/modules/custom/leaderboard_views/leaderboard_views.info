@@ -1,0 +1,5 @@
+name = Leaderboard View
+description = Commits leaderboard views to code - BCQ, CWF
+package = Development
+core = 7.x
+version = 7.x-0.1

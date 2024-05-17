@@ -1,0 +1,11 @@
+name = No Referrer
+description = Adds <code>rel="noopener"</code> and/or <code>rel="noreferrer"</code> to links.
+core = 7.x
+configure = admin/config/content/noreferrer
+files[] = noreferrer.test
+
+; Information added by Drupal.org packaging script on 2022-11-17
+version = "7.x-1.11"
+core = "7.x"
+project = "noreferrer"
+datestamp = "1668671468"

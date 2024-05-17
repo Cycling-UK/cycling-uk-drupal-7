@@ -1,0 +1,9 @@
+
+/* Any subtheme menu changes go here */
+
+@media only screen and (min-width : 768px) and (max-width : 899px) {
+  .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-navbar li.sf-depth-1 > a,
+  .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-navbar li.sf-depth-1 span.nolink {
+    padding: 15px 9px;
+  }
+}

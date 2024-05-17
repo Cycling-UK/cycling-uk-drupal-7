@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Shop Display Suite and Views feature.
+ */
+
+include_once 'shop_display_suite_and_views.features.inc';

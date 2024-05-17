@@ -1,0 +1,98 @@
+name = Cycling UK XL Bootstrap Sub-Theme (CDN)
+description = Cycling UK Bootstrap sub-theme with enhanced support for wide displays.
+core = 7.x
+base theme = bootstrap
+php = 5.3.0
+
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Regions
+;;;;;;;;;;;;;;;;;;;;;
+
+regions[navigation_left]   = 'Navigation left'
+regions[navigation_middle] = 'Navigation middle'
+regions[navigation_right]  = 'Navigation right'
+regions[navigation_bottom] = 'Navigation bottom'
+regions[header]            = 'Top Bar'
+regions[highlighted]       = 'Highlighted'
+regions[help]              = 'Help'
+regions[content]           = 'Content'
+regions[sidebar_first]     = 'Primary'
+regions[sidebar_second]    = 'Secondary'
+regions[footer]            = 'Footer'
+regions[page_top]          = 'Page top'
+regions[page_bottom]       = 'Page bottom'
+
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Stylesheets
+;;;;;;;;;;;;;;;;;;;;;
+
+;; stylesheets[all][] = fontawesome/css/all.css
+stylesheets[all][] = css/accordions.css
+stylesheets[all][] = css/reset.css
+stylesheets[all][] = css/bootstrap-xlgrid.css
+stylesheets[all][] = webfonts/stylesheet.css
+stylesheets[all][] = css/alerts.css
+stylesheets[all][] = css/style.css
+stylesheets[all][] = css/links.css
+stylesheets[all][] = css/buttons.css
+stylesheets[all][] = css/pager.css
+stylesheets[all][] = css/menu-top.css
+stylesheets[all][] = css/menu-desktop.css
+stylesheets[all][] = css/menu-mobile.css
+stylesheets[all][] = css/menu-side.css
+stylesheets[all][] = css/tabs.css
+stylesheets[all][] = css/header.css
+stylesheets[all][] = css/footer.css
+stylesheets[all][] = css/search.css
+stylesheets[all][] = css/front.css
+stylesheets[all][] = css/carousels.css
+stylesheets[all][] = css/comments.css
+stylesheets[all][] = css/webforms.css
+stylesheets[all][] = css/easydropdown.css
+stylesheets[all][] = css/posts.css
+stylesheets[all][] = css/groups.css
+stylesheets[all][] = css/openlayers.css
+stylesheets[all][] = css/heroes.css
+stylesheets[all][] = css/biographies.css
+stylesheets[all][] = css/landing-xl.css
+stylesheets[all][] = css/paragraphs.css
+<<<<<<< .merge_file_bthydV
+stylesheets[all][] = css/join.css
+stylesheets[all][] = css/paragraphs-bundle-file-downloads.css
+=======
+>>>>>>> .merge_file_nzYzCi
+stylesheets[all][] = css/paragraphs-bundle-four-featured-articles.css
+stylesheets[all][] = css/paragraphs-bundle-four-featured-videos.css
+stylesheets[all][] = css/paragraphs-bundle-simple-text-block.css
+stylesheets[all][] = css/paragraphs-bundle-simple-buttons.css
+stylesheets[all][] = css/paragraphs-bundle-parallax.css
+stylesheets[all][] = css/paragraphs-bundle-blockquote.css
+stylesheets[all][] = css/paragraphs-bundle-text-columns.css
+stylesheets[all][] = css/paragraphs-bundle-background-image-panel.css
+stylesheets[all][] = css/paragraphs-bundle-text-left-image-right.css
+stylesheets[all][] = css/paragraphs-bundle-video-player.css
+stylesheets[all][] = css/paragraphs-bundle-issuu-publication-insert.css
+<<<<<<< .merge_file_bthydV
+stylesheets[all][] = css/paragraphs-bundle-join-icons.css
+=======
+stylesheets[all][] = css/paragraphs-bundle-file-downloads.css
+stylesheets[all][] = css/paragraphs-bundle-faq.css
+>>>>>>> .merge_file_nzYzCi
+stylesheets[all][] = css/paragraphs-bundle-code.css
+stylesheets[all][] = css/paragraphs-bundle-sponsor-logos-links.css
+stylesheets[all][] = css/cookie-compliance.css
+stylesheets[all][] = css/_tmp.css
+
+
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Scripts
+;;;;;;;;;;;;;;;;;;;;;
+
+scripts[] = js/modernizr/modernizr-custom.js
+scripts[] = js/custom-form-elements.js
+scripts[] = js/custom-sw.js
+
+;; scripts[] = js/centre-image.js

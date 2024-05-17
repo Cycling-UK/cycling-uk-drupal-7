@@ -1,0 +1,14 @@
+name = "CARE Taxonomy"
+description = "Integrates CARE classifications with Drupal taxonomy vocabularies."
+package = CARE
+core = 7.x
+
+dependencies[] = care
+dependencies[] = taxonomy
+
+configure = admin/structure/taxonomy/care
+; Information added by Drupal.org packaging script on 2019-11-25
+version = "7.x-1.4+19-dev"
+core = "7.x"
+project = "care"
+datestamp = "1574702895"

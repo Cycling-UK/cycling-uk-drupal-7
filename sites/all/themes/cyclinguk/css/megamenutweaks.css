@@ -1,0 +1,77 @@
+/**
+ * 16 August 2022
+ *
+ * Mega Menu Tweaks
+ * ================
+ *
+ * This overrides CSS file compliments the theming inherited from the new Cycling UK XL Mega Menu with the updated menu.
+ * This new menu is designed for a different Bootstrap layout and container size and therefore needs a bit of help to
+ * work within this old constrained theme.
+ */
+
+
+ /* Reposition header elements */
+
+.top-menu-container {
+	display: flex;
+	align-items: center;
+}
+
+@media only screen and (min-width: 768px) {
+	.top-menu-container .region-top-menu {
+		display: flex;
+		justify-content: flex-end;
+		width: 100%;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.full-width-menu-container {
+		height: 90px;
+	}
+	header#navbar {
+		padding: 0;
+		margin-bottom: 0;
+	}
+	.navbar .logo {
+		top: inherit;
+		left: inherit;
+	}
+	.region-top-menu {
+		width: 100%;
+		display: flex;
+		justify-content: flex-end;
+	}
+}
+
+.top-menu-container .region-top-menu .tb-megamenu-menu-mega-secondary-menu {
+	margin-bottom: 0;
+}
+
+
+/* Reposition the drop down menu */
+
+@media only screen and (min-width: 1600px) { 
+	.tb-megamenu-menu-mega-main-menu .mega > .mega-dropdown-menu {
+		left: -180px;
+	}
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1599px) { 
+	.tb-megamenu-menu-mega-main-menu .mega > .mega-dropdown-menu {
+		left: -5px;
+	}
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) { 
+	.tb-megamenu-menu-mega-main-menu .mega > .mega-dropdown-menu {
+		left: -5px;
+	}
+}
+
+
+/* Missing font declaration */
+.tb-megamenu-menu-mega-main-menu .mega-dropdown-menu .entity-bean h2 {
+	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 400;
+}

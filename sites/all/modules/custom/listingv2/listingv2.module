@@ -1,0 +1,60 @@
+<?php
+
+include_once 'listingv2.features.inc';
+
+function listingv2_menu() {
+    $items['groups-listing-2'] = array(
+    'page callback' => 'listingv2_group_page',
+    'access callback' => TRUE,
+    'file' => 'listingv2.pages.inc',
+    );
+    $items['events-listing-2'] = array(
+    'page callback' => 'listingv2_event_page',
+    'access callback' => TRUE,
+    'file' => 'listingv2.pages.inc',
+    );
+    
+    //do not change below
+    $items['listingv2-groupdata'] = array(
+    'page callback' => 'listingv2_group_data',
+    'access callback' => TRUE,
+    'file' => 'listingv2.pages.inc',      
+    );
+    $items['listingv2-eventdata'] = array(
+    'page callback' => 'listingv2_event_data',
+    'access callback' => TRUE,
+    'file' => 'listingv2.pages.inc',      
+    );
+  return $items;
+}
+
+function listingv2_theme($existing, $type, $theme, $path) {
+  $themes['listingv2_group_page'] = array(
+      'variables' => array('content' => NULL),
+      'template' => 'templates/listingv2-group-page',
+    );
+  $themes['listingv2_event_page'] = array(
+      'variables' => array('content' => NULL),
+      'template' => 'templates/listingv2-event-page',
+    );
+  return $themes;
+}
+
+function listingv2_libraries_info() {
+
+  $libraries['jsts'] = array(
+    'name' => 'JSTS Topology Suite',
+    'vendor url' => 'https://github.com/bjornharrtell/jsts',
+    'download url' => 'https://github.com/bjornharrtell/jsts/archive/master.zip',
+    'version arguments' => array(
+      'file' => 'jsts.min.js',
+      'pattern' => '/[?:\']([\d\.]{1,6})/',
+      'lines' => 20,
+    ),
+    'files' => array(
+      'js' => array('javascript.util.min.js','jsts.min.js'),
+    ),
+  );
+
+  return $libraries;
+}

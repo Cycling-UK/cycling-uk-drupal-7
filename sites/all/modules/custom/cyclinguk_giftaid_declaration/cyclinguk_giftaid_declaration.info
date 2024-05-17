@@ -1,0 +1,8 @@
+name = Cycling UK Gift Aid Declaration
+description = "Custom Gift Aid Declaration code for Cycling UK website."
+package = Cycling UK
+core = "7.x"
+version = 7.x-1.x
+dependencies[] = care
+dependencies[] = care_fields
+dependencies[] = user

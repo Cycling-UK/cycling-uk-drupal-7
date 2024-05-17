@@ -1,0 +1,54 @@
+.paragraphs-item-basic-related-content {
+  text-align: center;
+  margin: 0 auto 60px auto;
+}
+
+.paragraphs-item-basic-related-content .field-name-field-paragraph-title {
+  text-align: center;
+  font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 36px;
+  margin-bottom: 30px;
+}
+
+.paragraphs-item-basic-related-content .more-link a {
+	background-color: $white;
+	border: 1px solid;
+	border-color: $yellow;
+	color: $black;
+	display: inline-block;
+	min-width: 140px;
+	font-size: 15px;
+	line-height: 34px;
+	text-transform: uppercase;
+	text-decoration: none !important;
+	padding: 0 18px;
+	border-radius: $border-radius-general;
+	-webkit-border-radius: $border-radius-general;
+	-moz-border-radius: $border-radius-general;
+}
+
+.paragraphs-item-basic-related-content .more-link a:hover,
+.paragraphs-item-basic-related-content .more-link a:focus {
+	background-color: $yellow;
+	border-color: $yellow;
+	color: $white;
+  box-shadow: inherit;
+}
+
+.paragraphs-item-basic-related-content .more-link a:active {
+	background-color: #fdaf17;
+	border-color: #fdaf17;
+	color: $white;
+  box-shadow: inherit;
+}
+
+.paragraphs-item-basic-related-content .title {
+    display: block;
+    font-size: 20px;
+    line-height: 22px;
+    font-weight: 700;
+    padding: 20px;
+    height: 115px;
+}

@@ -1,0 +1,90 @@
+<?php
+
+//https://www.cyclestreets.net/help/embedding/
+
+module_load_include('inc', 'node', 'node.pages');
+
+function jplanner_menu() {
+    $items['admin/config/system/journeyplanner'] = array(
+    'title' => 'Journey Planner',
+    'description' => 'Configure Journey Planner Settings & API',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('jplanner_settings'),
+    'access arguments' => array('administer site configuration'),
+    'file' => 'jplanner.admin.inc',
+    );
+    $items['journey-planner'] = array(
+    'title' => 'Journey Planner',
+    'description' => 'Journey Planner - lookup for journeys',
+    'page callback' => 'jplanner_journeyplanner_page',
+    'access callback' => TRUE,
+    'file' => 'jplanner.pages.inc',
+    );
+  return $items;
+}
+
+function jplanner_theme($existing, $type, $theme, $path) {
+  $themes['journeyplanner_page'] = array(
+      'variables' => array('content' => NULL),
+      'template' => 'templates/journeyplanner-page',
+    );
+  return $themes;
+}
+
+
+function jplanner_libraries_info() {
+
+  $libraries['openlayers4'] = array(
+    'name' => 'OpenLayers 4',
+    'vendor url' => 'http://openlayers.org/',
+    'download url' => 'https://github.com/openlayers/openlayers/releases/download/v4.0.1/v4.0.1-dist.zip',
+    'version arguments' => array(
+      'file' => 'ol.js',
+      'pattern' => '/[?:v]([\d\.]{1,5})/',
+      'lines' => 3,
+    ),
+    'files' => array(
+      'js' => array('ol.js'),
+      'css' => array('ol.css'),
+    ),
+  );
+  $libraries['mustache'] = array(
+    'name' => 'mustache.js - Logic-less {{mustache}} templates with JavaScript',
+    'vendor url' => 'https://github.com/janl/mustache.js',
+    'download url' => 'https://github.com/janl/mustache.js/archive/master.zip',
+    'version' => '2.3.0',
+    'files' => array(
+      'js' => array('mustache.js'),
+    ),
+  );
+
+  $libraries['chart.js'] = array(
+    'name' => 'Chart.js | Open source HTML5 Charts for your website',
+    'vendor url' => 'http://www.chartjs.org/',
+    'download url' => 'https://cdnjs.com/libraries/Chart.js',
+    'version arguments' => array(
+      'file' => 'chart.js',
+      'pattern' => '/[?: ]([\d\.]{1,5})/',
+      'lines' => 4,
+    ),
+    'files' => array(
+      'js' => array('chart.js'),
+    ),
+  );
+  
+  $libraries['typeahead'] = array(
+    'name' => 'The jQuery Typeahead | plugin provides autocomplete preview on search inputs',
+    'vendor url' => 'http://www.runningcoder.org/jquerytypeahead/',
+    'download url' => 'https://github.com/running-coder/jquery-typeahead/archive/2.10.4.zip',
+    'version arguments' => array(
+      'file' => 'dist/jquery.typeahead.min.js',
+      'pattern' => '/(\d\.\d\d.\d)/',
+      'lines' => 7,
+    ),
+    'files' => array(
+      'js' => array('dist/jquery.typeahead.min.js'),
+    ),
+  );
+
+  return $libraries;
+}

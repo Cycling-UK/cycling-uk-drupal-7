@@ -1,0 +1,9 @@
+name = Commerce line item page
+description = View pages for Drupal Commerce line items (hacked to make an Edit page)
+package = Commerce (contrib)
+core = 7.x
+dependencies[] = commerce_line_item_ui
+dependencies[] = views
+
+; Views handlers
+files[] = includes/views/handlers/commerce_line_item_page_handler_field_line_item_label.inc

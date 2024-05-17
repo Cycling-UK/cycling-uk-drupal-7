@@ -1,0 +1,109 @@
+.node-type-webform .group-header-inner-wrapper {
+  margin-top: 40px;
+  margin-bottom: 60px;
+}
+
+.node-type-webform .group-header-inner-wrapper img {
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+}
+
+.node-type-webform.page-layout-post .field-name-title:before {
+  display: none;
+}
+
+.node-type-webform.page-layout-post h1,
+.node-type-webform.page-layout-post .field-name-field-teaser {
+  font-family: korolev-rounded, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  text-decoration: none;
+  text-align: center;
+}
+
+.node-type-webform.page-layout-post h1 {
+  text-transform: uppercase;
+}
+
+.node-type-webform.page-layout-post h1 {
+  color: #8064a9;
+}
+
+.node-type-webform.page-layout-post .field-name-title {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.node-type-webform.page-layout-post .field-name-field-teaser {
+  max-width: 1000px;
+  margin: 0 auto 30px auto;
+}
+
+.node-type-webform.page-layout-post .field-name-field-terms-and-conditions,
+.node-type-webform.page-layout-post .field-name-field-data-protection-statement {
+  max-width: 600px;
+  margin: 0 auto 30px auto;
+}
+
+.node-type-webform.page-layout-post .field-name-field-terms-and-conditions .field-label,
+.node-type-webform.page-layout-post .field-name-field-data-protection-statement .field-label {
+  color: #000;
+}
+
+
+.node-type-webform.page-layout-post .node .webform-client-form {
+  font-family: korolev-rounded, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 90px auto;
+}
+
+.node-type-webform.page-layout-post .node .webform-client-form label {
+  font-family: korolev-rounded, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  text-transform: uppercase;
+  color: #ec409f;
+  margin-bottom: 5px;
+}
+
+.node-type-webform.page-layout-post .node .form-control::-webkit-input-placeholder	{color: #aaa;} /* Chrome/Opera/Safari */
+.node-type-webform.page-layout-post .node .form-control::-moz-placeholder 			    {color: #aaa;} /* Firefox 19+ */
+.node-type-webform.page-layout-post .node .form-control:-ms-input-placeholder 		  {color: #aaa;} /* IE 10+ */
+.node-type-webform.page-layout-post .node .form-control:-moz-placeholder 				    {color: #aaa;} /* Firefox 18- */
+
+.node-type-webform.page-layout-post .node .form-control:focus {
+    border: 1px solid #ec409f;
+}
+
+
+/* Signup options */
+
+fieldset.panel.pumpedup-signup-option {
+  margin-bottom: 30px;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border: 1px solid #8064a9;
+}
+
+fieldset.panel.pumpedup-signup-option .panel-heading {
+  padding: 10px;
+  border-bottom: 1px solid #8064a9;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  background-color: #8064a9;
+}
+
+fieldset.panel.pumpedup-signup-option .panel-title {
+  color: #fff;
+  font-family: korolev-rounded, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 22px;
+  line-height: 22px;
+  text-transform: uppercase;
+}

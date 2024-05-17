@@ -1,0 +1,193 @@
+/**
+ * Comments
+ */
+
+#comments h2.title {
+	color: #000;
+	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 400;
+    font-size: 26px;
+    line-height: 32px;
+	margin-bottom: 12px;
+	margin: 0;
+}
+
+
+#comments h2.title::after {
+	display: block;
+	content: "";
+	width: 100%;
+	height: 5px;
+	background-color: #f0f0f0;
+	border-radius: 2.5px; 
+	-webkit-border-radius: 2.5px; 
+	-moz-border-radius: 2.5px;
+	position: relative;
+	top: 10px;
+	margin-bottom: 40px;
+}
+
+.comment {
+	margin-bottom: 45px;
+}
+
+.comment h3 {
+	display: none;
+}
+
+.submitted {
+	font-style: inherit;
+	margin-bottom: 25px;
+	position: relative;
+	top: 8px;	
+}
+
+.submitted a.permalink {
+	display: none;
+}
+
+/*
+ * User profile images.
+ * These are not the default OS user profile pictures but a separate image field defined in their user profile.
+ */
+
+#comments img {
+	border-radius: 			18px; 
+	-webkit-border-radius: 	18px; 
+	-moz-border-radius: 	18px;
+	margin-right: 10px;
+	width: 36px;
+	height: 36px;
+}
+
+#comments img[src=""] {
+   display: none;
+}
+
+#comments .user-picture img {
+	float: left;
+}
+
+.submitted span.author {
+	font-weight: 600;
+	color: #000;
+}
+
+.submitted span.date-wrapper {
+	font-weight: 400;
+	color: #999;	
+}
+
+.submitted span.bullet {
+	margin: 0 10px;
+}
+
+
+
+
+/*
+ * Indented comments wrapper
+ */
+
+#comments .indented {
+	padding-left: 30px;
+}
+
+#comments .indented::before {
+	display: block;
+	content: url('../images/system/comment-indent.png');
+	width: 15px;
+	height: 11px;
+	position: relative;
+	top: 18px;
+	left: -25px;
+}
+
+
+/*
+ * Buttons
+ */
+
+#comments ul.links.list-inline {
+	margin-top: 15px;
+	margin-left: inherit;
+}
+
+#comments ul.links.list-inline li {
+	display: block;
+	float: left;
+	text-align: center;
+	padding: 0;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+#comments ul.links a {
+    font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	display: inline-block;
+	min-width: 140px;
+	font-size: 15px;
+	line-height: 34px;
+	font-weight: 400;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0 18px;
+    border: 1px solid #fbb040;
+    background-color: #fff;
+    color: #000;
+	border-radius: 10px; 
+	-webkit-border-radius: 10px; 
+	-moz-border-radius: 10px;
+}
+
+@media only screen and (max-width : 479px) {
+	#comments ul.links a {
+		min-width: 85px;
+	}
+}
+
+
+#comments ul.links a,
+#comments ul.links a:hover,
+#comments ul.links a:focus,
+#comments ul.links a:active {
+    text-decoration: none;
+}
+
+#comments ul.links a:hover,
+#comments ul.links a:focus {
+	background-color: #fbb040;
+    color: #fff;
+}
+
+#comments ul.links a:active {
+	border-color: #fdaf17;
+	background-color: #fdaf17;
+    color: #fff;
+}
+
+#comments li.comment_forbidden span a:first-child {
+	margin-right: 10px;
+}
+
+#comments li.comment_forbidden span a:last-child {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+
+
+/*
+ * AJAX commment reply form
+ */
+
+form.comment-form {
+    background-color: #f0f0f0;
+	border-radius: 18px; 
+	-webkit-border-radius: 18px; 
+	-moz-border-radius: 18px;
+    margin-bottom: 45px;
+    padding: 30px;
+}
+
+

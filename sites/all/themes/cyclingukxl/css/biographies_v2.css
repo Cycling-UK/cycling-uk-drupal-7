@@ -1,0 +1,505 @@
+/* Theming for Biography pages */
+
+.node-type-biography .nav-tabs,
+.node-type-partner .nav-tabs {
+  text-align: center;
+}
+
+.node-type-biography .nav-tabs li,
+.node-type-partner .nav-tabs li {
+  display: inline-block;
+  float: none;
+}
+
+.node-type-biography .field-name-field-biography-category,
+.node-type-partner .field-name-field-partner-type {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.node-type-biography h1.page-header,
+.node-type-partner h1.page-header {
+  display: none;
+}
+
+.node-type-biography h1,
+.node-type-partner h1 {
+  font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 48px;
+  margin-bottom: 10px;
+  border-bottom: inherit;
+  text-align: center;
+}
+
+.node-type-biography .node-biography h2,
+.node-type-partner .node-biography h2 {
+  color: #000;
+}
+
+.node-type-biography .page-content > img {
+  width: 100%;
+  height: auto;
+  max-width: 500px;
+  max-height: 500px;
+  border-radius: 250px;
+  -webkit-border-radius: 250px;
+  -moz-border-radius: 250px;
+  margin: 30px auto 30px;
+}
+
+.node-type-partner .page-content > img {
+  width: 100%;
+  height: auto;
+  margin: 30px auto 30px;
+}
+
+.node-type-biography .community_champion img {
+  border: 5px solid #fbb040;
+}
+.node-type-biography .industry_mogul img {
+  border: 5px solid #009fda;
+}
+.node-type-biography .cycle_influencer img {
+  border: 5px solid #e6007e;
+}
+.node-type-biography .sporting_hero img {
+  border: 5px solid #cdce00;
+}
+
+.node-type-biography .field-name-field-headline,
+.node-type-partner .field-name-field-headline {
+  font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.node-type-biography .group-social-links {
+  text-align: center;
+  font-size: 38px;
+  line-height: 38px;
+  margin-bottom: 30px;
+}
+
+.node-type-biography .group-social-links .field {
+  display: inline-block;
+  margin: 0 7px;
+}
+
+.node-type-biography .group-social-links a,
+.node-type-biography .group-social-links a:visited {
+  color: #aaa;
+  outline: none;
+}
+
+.node-type-biography .group-social-links a:hover,
+.node-type-biography .group-social-links a:active {
+  color: #fbb040;
+  outline: none;
+}
+
+.node-type-biography .field-name-body:before,
+.node-type-partner .field-name-body:before {
+  display: block;
+  content: "";
+  width: 140px;
+  height: 5px;
+  background-color: #f6b331;
+  border-radius: 2.5px;
+  -webkit-border-radius: 2.5px;
+  -moz-border-radius: 2.5px;
+  position: relative;
+  margin: 0 auto 35px auto;
+}
+
+.node-type-biography .field-name-share-buttons,
+.node-type-partner .field-name-share-buttons {
+  margin-bottom: 120px;
+}
+
+.node-type-biography .field-name-share-buttons ul,
+.node-type-partner .field-name-share-buttons ul {
+  justify-content: center;
+}
+
+.node-type-biography .field-name-share-buttons li,
+.node-type-partner .field-name-share-buttons li {
+  margin: 0 7px;
+}
+
+/* Grid view */
+
+.page-biographies-100women h1.page-header,
+.page-100women-2022 h1.page-header {
+  text-align: center;
+}
+
+.view-biography-grid .view-content,
+.view-partner-grid .view-content {
+  margin-bottom: 120px;
+}
+
+.view-biography-grid .views-exposed-form,
+.view-partner-grid .views-exposed-form {
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.view-biography-grid .views-exposed-widget,
+.view-partner-grid .views-exposed-widget {
+  width: 100%;
+}
+
+.view-biography-grid .views-exposed-widget > label,
+.view-partner-grid .views-exposed-widget > label {
+  font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 18px;
+  margin-bottom: 10px;
+}
+
+.view-biography-grid .form-item-field-biography-category-value,
+.view-partner-grid .form-item-field-partner-type-value {
+  display: inline-flex;
+  margin: 0 10px 10px 10px;
+}
+
+.view-biography-grid #edit-field-biography-category-value label,
+.view-partner-grid #edit-field-partner-type-value label {
+  font-weight: 400;
+  text-transform: uppercase;
+  padding-bottom: 5px;
+  border-bottom: 5px solid;
+}
+
+#edit-field-biography-category-value > div:nth-child(1) label {
+  border-color: #333333;
+}
+#edit-field-biography-category-value > div:nth-child(2) label {
+  border-color: #fbb040;
+}
+#edit-field-biography-category-value > div:nth-child(3) label {
+  border-color: #009fda;
+}
+#edit-field-biography-category-value > div:nth-child(4) label {
+  border-color: #e6007e;
+}
+#edit-field-biography-category-value > div:nth-child(5) label {
+  border-color: #cdce00;
+}
+
+.view-biography-grid .row > div,
+.view-partner-grid .row > div {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.view-biography-grid .views-field,
+.view-partner-grid .views-field {
+  border: 1px solid #eee;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.view-biography-grid .biography_image img {
+  border: 5px solid;
+  border-radius: 180px;
+  -webkit-border-radius: 180px;
+  -moz-border-radius: 180px;
+  margin-bottom: 10px;
+}
+
+.view-biography-grid .biography_image.community_champion img {
+  border-color: #fbb040;
+}
+.view-biography-grid .biography_image.industry_mogul img {
+  border-color: #009fda;
+}
+.view-biography-grid .biography_image.cycle_influencer img {
+  border-color: #e6007e;
+}
+.view-biography-grid .biography_image.sporting_hero img {
+  border-color: #cdce00;
+}
+
+.view-biography-grid .biography_category,
+.view-partner-grid .partner_category {
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 14px;
+  line-height: 14px;
+  margin-bottom: 10px;
+}
+
+.view-biography-grid .biography_title,
+.view-partner-grid .partner_title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 18px;
+  margin-bottom: 10px;
+}
+
+.view-biography-grid .biography_headline,
+.view-partner-grid .partner_headline {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  height: 50px;
+  overflow: hidden;
+  font-size: 14px;
+  line-height: 16px;
+  margin-bottom: 10px;
+}
+
+.view-biography-grid .biography_short_biography,
+.view-partner-grid .partner_headline {
+  font-size: 16px;
+  line-height: 18px;
+  margin-bottom: 10px;
+}
+
+.view-biography-grid .biography_link a,
+.view-partner-grid .partner_link a {
+  display: inline-block !important;
+}
+
+.view-biography-grid .biography_link span,
+.view-partner-grid .partner_link span {
+  margin-right: 5px;
+}
+
+.view-biography-grid .biography_link i,
+.view-partner-grid .partner_link i {
+  font-size: 16px;
+  line-height: 16px;
+}
+
+/* Colorbox node */
+
+#cboxContent .node-biography,
+#cboxContent .node-partner {
+  text-align: center;
+}
+
+#cboxContent .node-biography img {
+  max-width: 140px;
+  max-height: 140px;
+  width: 100%;
+  height: auto;
+  border: 5px solid;
+  border-radius: 180px;
+  -webkit-border-radius: 180px;
+  -moz-border-radius: 180px;
+  margin: 0 auto 5px auto;
+}
+
+#cboxContent .community_champion img {
+  border-color: #fbb040;
+}
+#cboxContent .industry_mogul img {
+  border-color: #009fda;
+}
+#cboxContent .cycle_influencer img {
+  border-color: #e6007e;
+}
+#cboxContent .sporting_hero img {
+  border-color: #cdce00;
+}
+
+#cboxContent .node-biography .field-name-field-biography-category,
+#cboxContent .node-partner .field-name-field-partner-type {
+  font-size: 15px;
+  line-height: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+#cboxContent .node-biography h2,
+#cboxContent .node-partner h2 {
+  font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 28px;
+  margin-top: 0;
+  margin-bottom: 5px;
+  border-bottom: inherit;
+  text-align: center;
+}
+
+#cboxContent .node-biography .field-name-field-headline,
+#cboxContent .node-partner .field-name-field-headline {
+  font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 20px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#cboxContent .node-biography .group-social-links {
+  text-align: center;
+  font-size: 24px;
+  line-height: 24px;
+  margin-bottom: 10px;
+}
+
+#cboxContent .node-biography .group-social-links .field {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+#cboxContent .node-biography .group-social-links a,
+#cboxContent .node-biography .group-social-links a:visited {
+  color: #aaa;
+  outline: none;
+}
+
+#cboxContent .node-biography .group-social-links a:hover,
+#cboxContent .node-biography .group-social-links a:active {
+  color: #fbb040;
+  outline: none;
+}
+
+#cboxContent .node-biography .field-name-field-short-biography,
+#cboxContent .node-partner .field-name-field-headline {
+  font-size: 14px;
+  line-height: 18px;
+  margin-bottom: 10px;
+}
+
+#cboxContent .node-biography .field-name-view-full-node a,
+#cboxContent .node-biography .field-name-view-full-node a:visited {
+  font-family: "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  display: inline-block;
+  min-width: 140px;
+  font-size: 14px;
+  line-height: 28px;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  padding: 0 18px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #fbb040;
+}
+
+#cboxContent .node-biography .field-name-view-full-node a:hover {
+  background-color: #fbb040;
+  color: #fff;
+  border: 1px solid #fbb040;
+}
+
+/*
+ * Biography popup amendments
+ *
+ * Updated: 29 November 2022 (AAM)
+ *
+ * Content authors are exceeding the word counts for popup biographies so not all the elements
+ * are appearing on the popup. Unfortunately Colorbox insists on its own inline styling so
+ * we are going to run media queries against various screen heights and enforce overrides on
+ * the Colorbox wrappers. The "short biography" field is then a fixed height (depending on the
+ * size of the screen) with a scrollable overflow.
+ */
+
+/* Theme the exposed filter buttons properly */
+body.page-100women ul.embednav a.active {
+  background-color: #fbb040;
+  border: 1px solid #fbb040;
+  box-shadow: inherit;
+}
+
+
+/* Appears the content authors are no longer writing full biographies... */
+.page-biographies-100women-2022 .view-mode-colorbox .field-name-view-full-node,
+.page-100women-2022 .view-mode-colorbox .field-name-view-full-node {
+  display: none;
+}
+
+
+/* Device: iPhone SE :: 320x568 */
+@media only screen and (max-height: 666px) {
+  body.page-100women #colorbox {
+    height: 538px !important;
+    margin-top: 15px !important;
+    top: 0 !important;
+  }
+  body.page-100women #colorbox .field-name-field-short-biography {
+    height: 195px;
+    overflow: scroll;
+  }
+  body.page-100women #cboxWrapper {
+    height: 538px !important;
+  }
+  body.page-100women #cboxContent {
+    height: 512px !important;
+  }
+}
+
+/* Device: iPhone 8 :: 375x667 */
+@media only screen and (min-height: 667px) and (max-height: 925px) {
+  body.page-100women #colorbox {
+    height: 635px !important;
+    margin-top: 15px !important;
+    top: 0 !important;
+  }
+  body.page-100women #colorbox .field-name-field-short-biography {
+    height: 298px;
+    overflow: scroll;
+  }
+  body.page-100women #cboxWrapper {
+    height: 635px !important;
+  }
+  body.page-100women #cboxContent {
+    height: 609px !important;
+  }
+}
+
+/* Device: iPhone 13 Pro Max :: 428x926 */
+@media only screen and (min-height: 926px) and (max-height: 1023px) {
+  body.page-100women #colorbox {
+    height: 707px !important;
+    margin-top: 15px !important;
+    top: 0 !important;
+  }
+  body.page-100women #colorbox .field-name-field-short-biography {
+    height: 360px;
+    overflow: scroll;
+  }
+  body.page-100women #cboxWrapper {
+    height: 707px !important;
+  }
+  body.page-100women #cboxContent {
+    height: 680px !important;
+  }
+  body.page-100women #cboxLoadedContent {
+    height: 645px !important;
+    margin-bottom: 0 !important;
+  }
+}
+

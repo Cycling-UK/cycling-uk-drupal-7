@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the cycling_uk_email_settings feature.
+ */
+
+include_once 'cycling_uk_email_settings.features.inc';

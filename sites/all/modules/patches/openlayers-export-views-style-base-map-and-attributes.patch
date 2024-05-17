@@ -1,0 +1,32 @@
+diff --git a/modules/openlayers_views/views/openlayers_views_plugin_map_views.inc b/modules/openlayers_views/views/openlayers_views_plugin_map_views.inc
+index 905e57c..2228cb2 100644
+--- a/modules/openlayers_views/views/openlayers_views_plugin_map_views.inc
++++ b/modules/openlayers_views/views/openlayers_views_plugin_map_views.inc
+@@ -12,6 +12,15 @@ class openlayers_views_plugin_map_views extends openlayers_views_plugin_style_so
+   /**
+    * {@inheritdoc}
+    */
++  public function option_definition() {
++    $options = parent::option_definition();
++    $options['base_map_layer'] = array('default' => '');
++    return $options;
++  }
++
++  /**
++   * {@inheritdoc}
++   */
+   public function options_form(&$form, &$form_state) {
+ 
+     $options = array();
+diff --git a/modules/openlayers_views/views/openlayers_views_plugin_style_source_vector.inc b/modules/openlayers_views/views/openlayers_views_plugin_style_source_vector.inc
+index 574a19a..23e3ebe 100644
+--- a/modules/openlayers_views/views/openlayers_views_plugin_style_source_vector.inc
++++ b/modules/openlayers_views/views/openlayers_views_plugin_style_source_vector.inc
+@@ -46,6 +46,7 @@ class openlayers_views_plugin_style_source_vector extends views_plugin_style {
+   public function option_definition() {
+     $options = parent::option_definition();
+     $options['data_source'] = array('default' => 'openlayers_wkt');
++    $options['attributes'] = array('default' => array());
+     return $options;
+   }
+ 

@@ -1,0 +1,39 @@
+ .../contrib/imagecache_external/imagecache_external.module        | 8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
+
+diff --git a/docroot/sites/all/modules/contrib/imagecache_external/imagecache_external.module b/docroot/sites/all/modules/contrib/imagecache_external/imagecache_external.module
+index 426f83d0..8f9a9acf 100644
+--- a/docroot/sites/all/modules/contrib/imagecache_external/imagecache_external.module
++++ b/docroot/sites/all/modules/contrib/imagecache_external/imagecache_external.module
+@@ -211,6 +211,7 @@ function imagecache_external_theme() {
+       'variables' => array(
+         'style_name' => NULL,
+         'path' => NULL,
++        'custom_name' => NULL,
+         'alt' => '',
+         'title' => NULL,
+         'attributes' => array(),
+@@ -236,7 +237,7 @@ function imagecache_external_theme() {
+  * @ingroup themeable
+  */
+ function theme_imagecache_external($variables) {
+-  if ($variables['path'] = imagecache_external_generate_path($variables['path'])) {
++  if ($variables['path'] = imagecache_external_generate_path($variables['path'],$variables['custom_name'])) {
+     return theme('image_style', $variables);
+   }
+   return FALSE;
+@@ -251,10 +252,13 @@ function theme_imagecache_external($variables) {
+  * @return string
+  *   The url to the image.
+  */
+-function imagecache_external_generate_path($url) {
++function imagecache_external_generate_path($url, $custom_name = null) {
+   // Create the extenal images directory and ensure it's writable.
+   $hash = md5($url);
+   $filename = $hash;
++  if (isset($custom_name)) {
++      $filename = $custom_name;
++  }
+ 
+   // Check if this is a non-standard file stream and adjust accordingly.
+   $scheme = file_uri_scheme($url);

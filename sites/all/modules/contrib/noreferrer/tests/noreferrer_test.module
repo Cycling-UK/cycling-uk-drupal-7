@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * @file
+ * No Referrer test module.
+ */
+
+/**
+ * Implements hook_page_build().
+ */
+function noreferrer_test_page_build(array &$page) {
+  $page['content']['test1'] = array(
+    '#markup' => l(t('test'), 'https://example.com/', array('attributes' => array('target' => '_new_tab'))),
+  );
+  $page['content']['test2'] = array(
+    '#markup' => l(t('test'), 'https://drupal.org/', array('attributes' => array('target' => '_blank'))),
+  );
+  $page['content']['test3'] = array(
+    '#markup' => l(t('test'), 'https://example.org/', array(
+      'attributes' => array('target' => '0', 'rel' => 'nofollow'),
+    )),
+  );
+}

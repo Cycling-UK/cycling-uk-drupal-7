@@ -1,0 +1,410 @@
+/**
+ * Webforms
+ */
+
+
+
+/* New page layout */
+
+.node-type-webform .top-row,
+.node-type-webform .middle-row,
+.node-type-webform .main-container form {
+	margin-bottom: 30px;
+}
+
+.node-type-webform .main-container form .form-actions {
+	text-align: center;
+}
+
+.node-type-webform .main-container form .form-actions button {
+	margin: 10px;
+}
+
+.node-type-webform .group-header-inner-wrapper {
+	position: relative;
+}
+
+.node-type-webform .group-header-inner-wrapper .field-name-field-caption {
+	margin: 0;
+}
+
+.node-type-webform.page-layout-post .field-name-title::before {
+	display: none;
+}
+
+.node-type-webform.page-layout-post .field-name-title,
+.node-type-webform.page-layout-post .field-name-field-teaser,
+.node-type-webform.page-layout-post .field-name-body,
+.node-type-webform.page-layout-post .field-name-field-body-bottom {
+	text-align: center;
+}
+
+.node-type-webform.page-layout-post .field-name-title h1 {
+	margin-top: 30px;
+}
+
+.node-type-webform.page-layout-post .field-name-field-teaser {
+    text-align: center;
+    font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 30px;
+    color: #009fda;
+}
+
+.node-type-webform.page-layout-post .field-name-field-teaser::after {
+    content: "";
+    display: block;
+    height: 5px;
+    width: 140px;
+    border-radius: 2.5px;
+    -webkit-border-radius: 2.5px;
+    -moz-border-radius: 2.5px;
+    background-color: #fbb040;
+    margin: 30px auto 30px;
+}
+
+.node-type-webform .main-container ul {
+    text-align: left;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 700px;
+}
+
+
+
+/* Progress bar */
+
+footer .webform-progressbar {
+	display: none;
+}
+
+.webform-progressbar {
+	margin: 0 auto 60px;
+	width: 100%;
+}
+
+@media only screen and (max-width : 549px) {
+	.webform-progressbar {
+		display: none;
+	}
+}
+
+.webform-progressbar-page .webform-progressbar-page-label {
+    position: relative;
+    top: 12px;
+    margin: 0 -1em;
+    font-size: 10px;
+    line-height: 9px;
+    text-transform: uppercase;
+    text-align: left;
+    display: flex;
+}
+
+.webform-progressbar-outer {
+	border: 2px solid #8064a9;
+	height: 6px;
+}
+
+.webform-progressbar-inner {
+    background-color: #8064a9;
+}
+
+.webform-progressbar-page {
+    width: 10px;
+    height: 10px;
+    margin: -7px -4px;
+    border: 2px solid #8064a9;
+    border-radius: 5px;
+}
+
+.webform-progressbar-page.completed {
+    background-color: #8064a9;
+}
+
+.webform-progressbar-page.current {
+    background-color: #bfb1d4;
+}
+
+
+
+/* Fieldset panels */
+.node-type-webform.page-layout-post .webform-component-fieldset {
+	padding: 10px;
+	border: 1px solid #fbb040;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+	-webkit-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+	box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+	margin-bottom: 30px;
+}
+
+.node-type-webform.page-layout-post .webform-component-fieldset legend.panel-heading {
+	padding: 15px;
+}
+
+
+
+
+/* Terms and Conditions */
+.node-type-webform .field-name-field-terms-and-conditions,
+.node-type-webform .field-name-field-data-protection-statement {
+	margin: 0 0 30px 0;
+}
+
+.node-type-webform .field-name-field-terms-and-conditions .field-label,
+.node-type-webform .field-name-field-data-protection-statement .field-label {
+	text-align: left;
+	margin: 0 0 20px 0;
+}
+
+.node-type-webform .field-name-field-terms-and-conditions .field-items,
+.node-type-webform .field-name-field-data-protection-statement .field-items {
+	font-size: 13px;
+	line-height: 17px;
+	text-transform: uppercase;
+}
+
+.node-type-webform .main-container form div.radio,
+.node-type-webform .main-container form div.checkbox {
+	margin-bottom: 10px;
+}
+
+
+
+/* Required fields */
+
+.node-type-webform .required-wrapper {
+	position: relative;
+}
+
+.node-type-webform .required-wrapper:after {
+	display: block;
+	font-family: 'Font Awesome 5 Pro';
+	font-weight: 200;
+	color: #da4500;
+    font-size: 16px;
+    line-height: 16px;
+	content: "\F069";
+	position: absolute;
+	float: right;
+	top: 13px;
+	right: 15px;
+}
+
+.form-required {
+	color: #da4500;
+}
+
+
+
+
+.form-group {
+	margin-bottom: 30px;
+}
+
+label {
+	margin-bottom: 12px
+}
+
+.form-control,
+.form-item-field-ride-type-tid-1 .form-select /* BBR event type select list */ {
+    border: 1px solid #000;
+	border-radius: 22px; 
+	-webkit-border-radius: 22px; 
+	-moz-border-radius: 22px;
+    box-shadow: inherit;
+    color: #000;
+    font-size: 16px;
+    line-height: 16px;
+    height: 44px;
+    padding: 10px 20px;
+    width: 100%;
+}
+
+input[type=text],
+input[type=email],
+input[type=password],
+textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    box-shadow: none !important;
+}
+
+.form-control:focus {
+    border-color: #fbb040;
+    box-shadow: inherit;
+    outline: 0 none;
+}
+
+textarea {
+	resize: none;
+}
+
+.ui-widget,
+.ui-widget input,
+.ui-widget select,
+.ui-widget textarea {
+    font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+input.btn,
+.ui-widget button,
+.ui-widget input.btn {
+    font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 15px;
+    line-height: 34px;
+    margin-right: 10px;
+}
+
+
+
+/* Placeholder text */
+.form-control::-webkit-input-placeholder	{color: #999;} /* Chrome/Opera/Safari */
+.form-control::-moz-placeholder 			{color: #999;} /* Firefox 19+ */
+.form-control:-ms-input-placeholder 		{color: #999;} /* IE 10+ */
+.form-control:-moz-placeholder 				{color: #999;} /* Firefox 18- */
+
+@media only screen and (max-width : 469px) {
+	.form-control::-webkit-input-placeholder 	{font-size: 14px;}
+	.form-control::-moz-placeholder 			{font-size: 14px;}
+	.form-control:-ms-input-placeholder 		{font-size: 14px;}
+	.form-control:-moz-placeholder 				{font-size: 14px;}
+}
+
+
+
+/* Help text */
+.node-type-webform.page-layout-post .control-group .help-inline,
+.node-type-webform.page-layout-post .help-block {
+	color: #000;
+    font-size: 13px;
+    line-height: 17px;
+	text-transform: uppercase;
+	margin: 12px 0 12px 0;
+}
+
+
+
+/* Date picker */
+.form-group.webform-component-date {
+	margin-bottom: 0;
+}
+
+.webform-container-inline.webform-datepicker > div {
+	float: left;
+	width: 120px;
+	margin-right: 10px;
+}
+
+.webform-container-inline.webform-datepicker input {
+	height: 42px;
+	width: 0px;
+	background: url('../images/system/date-picker.png');
+	padding-left: 40px;
+	margin-bottom: 32px;
+}
+
+.webform-container-inline.webform-datepicker input:focus {
+	outline: none;
+}
+
+@media only screen and (max-width : 469px) {
+	.webform-container-inline.webform-datepicker > div {
+		display: block !important;
+		float: inherit;
+		width: 100%;
+		margin-right: 0;
+		margin-bottom: 10px;
+	}
+}
+
+
+
+/* BBR events date picker label */
+#edit-secondary-wrapper #edit-date-filter-value .form-item-date-filter-value-date:before {
+	display: block;
+	content: 'Event date';
+	margin-bottom: 5px;
+	font-weight: 600;
+}
+
+
+
+
+/* Limit field widths */
+/* .webform-component-email,
+.webform-component-select {
+	max-width: 430px;
+} /*
+
+
+
+/* Select boxes */
+.form-select {
+    -webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background: url('../images/system/form-select-arrow.png') no-repeat right 20px center #ffffff;
+	overflow: hidden;
+}
+
+.form-select:focus {
+	color: #000;
+	color: rgba(0,0,0,0);
+	text-shadow: 0 0 0 #000;
+	outline: none;
+}
+
+select option {
+	color: #000 !important;
+	background-color: #fff !important;
+}
+
+
+
+
+
+/*
+ * User registration form
+ */
+
+.cyclinguk-user-login-form-wrapper .field-wrapper {
+	margin-bottom: 30px;
+}
+ 
+.cyclinguk-user-login-form-wrapper .form-group {
+	margin-bottom: 0;
+}
+
+.cyclinguk-user-login-form-wrapper .field-wrapper-name legend {
+	display: none;
+}
+
+.cyclinguk-user-login-form-wrapper .field-wrapper-name .form-item {
+	margin-bottom: 30px;
+}
+
+.cyclinguk-user-login-form-wrapper .field-wrapper-name .form-item:last-child {
+	margin-bottom: 0px;
+}
+
+
+
+/* Hide label from webform
+  
+   This method is used instead of using the webform UI to hide the label so that
+   the webform to PDF module can correctly see the field label and render the 
+   PDF correctly. The wrapper CSS class for the field needs to be set as 
+   "no-label". */
+
+.webform-component.no-label label {
+  display: none;
+}

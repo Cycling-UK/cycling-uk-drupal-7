@@ -1,0 +1,22 @@
+/**
+ * Webforms
+ */
+.node-type-webform.page-layout-post .field-name-field-teaser {
+   font-family: "itc-american-typewriter", Georgia, serif;
+   font-weight: 500;
+   color: #bc1512;
+}
+
+.webform-client-form .control-label,
+.node-type-webform .panel-title {
+   font-family: "itc-american-typewriter", Georgia, serif;
+   font-weight: 500;
+}
+
+.form-control:focus {
+   border-color: #bc1512;
+}
+
+.form-select {
+   background: url("../images/system/bw-form-select-arrow.png") no-repeat right 20px center #ffffff;
+}

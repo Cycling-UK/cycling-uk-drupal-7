@@ -1,0 +1,27 @@
+<?php
+
+/**
+ * @file
+ * Main module file.
+ * Defines the database connection for use by migrations.
+ */
+
+/**
+ * Implements hook_init().
+ */
+function migrate_ctc_init() {
+  // Assumes SSH tunnel from localhost port 3307 to
+  // database server srv-1673.devcloud.hosting.acquia.com
+  // port 3306
+  // ssh -L 3307:127.0.0.1:3306 -N jonathanpont.dev@srv-1673.devcloud.hosting.acquia.com &
+  $d6_site_database = array(
+
+    'driver' => 'mysql',
+    'host' => '127.0.0.1',
+    'port' => 3307,
+    'database' => 'jonathanpontdev',
+    'username' => 'jonathanpontdev',
+    'password' => 'HLUVP8trHCw5Amt',
+    'prefix' => '');
+  Database::addConnectionInfo('drupal6', 'default', $d6_site_database);
+}

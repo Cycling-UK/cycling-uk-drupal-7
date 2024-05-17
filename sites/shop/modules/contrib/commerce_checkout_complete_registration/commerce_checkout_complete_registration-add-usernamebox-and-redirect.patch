@@ -1,0 +1,196 @@
+diff --git commerce_checkout_complete_registration.info commerce_checkout_complete_registration.info
+index b131ada..a6fe145 100644
+--- commerce_checkout_complete_registration.info
++++ commerce_checkout_complete_registration.info
+@@ -5,4 +5,4 @@ package = Commerce (contrib)
+ project = commerce_checkout_complete_registration
+ 
+ ; Dependencies
+-dependencies[] = commerce_checkout
++dependencies[] = commerce_checkout
+\ No newline at end of file
+diff --git commerce_checkout_complete_registration.module commerce_checkout_complete_registration.module
+index 3427dd7..f13414c 100644
+--- commerce_checkout_complete_registration.module
++++ commerce_checkout_complete_registration.module
+@@ -36,6 +36,14 @@ function commerce_checkout_complete_registration_commerce_checkout_pane_info() {
+ function commerce_checkout_complete_registration_confirmation_pane_settings_form($checkout_pane) {
+   $form = array();
+ 
++  // Username Requirement Settings
++  $form['commerce_checkout_registration_username_required'] = array(
++    '#type' => 'checkbox',
++    '#title' => t('Set the username?'),
++    '#description' => t('It will add the username form elements to this pane.'),
++    '#default_value' => variable_get('commerce_checkout_registration_username_required', FALSE),
++  );
++
+   // Password required setting.
+   $form['commerce_checkout_registration_password_required'] = array(
+     '#type' => 'checkbox',
+@@ -52,7 +60,16 @@ function commerce_checkout_complete_registration_confirmation_pane_settings_form
+     '#default_value' => variable_get('commerce_checkout_registration_account_notification', FALSE),
+   );
+ 
++  // Notify user for account creation.
++  $form['commerce_checkout_registration_redirect_dashboard'] = array(
++    '#type' => 'checkbox',
++    '#title' => t('Redirect to account page after login?'),
++    '#description' => t('It will redirect the form to /user/[uid] after login.'),
++    '#default_value' => variable_get('commerce_checkout_registration_redirect_dashboard', FALSE),
++  );
++
+   $confirmation_text = variable_get('commerce_checkout_registration_confirmation_text', commerce_checkout_complete_registration_confirmation_text_default());
++  $after_login_text = variable_get('commerce_checkout_registration_after_login_text', commerce_checkout_complete_registration_after_login_text_default());
+ 
+   $form['container'] = array(
+     '#type' => 'container',
+@@ -65,6 +82,13 @@ function commerce_checkout_complete_registration_confirmation_pane_settings_form
+     '#format' => $confirmation_text['format'],
+   );
+ 
++  $form['container']['commerce_checkout_registration_after_login_text'] = array(
++    '#type' => 'text_format',
++    '#title' => t('After login text.'),
++    '#default_value' => $after_login_text['value'],
++    '#format' => $after_login_text['format'],
++  );
++
+   $var_info = array(
+     'site' => array(
+       'type' => 'site',
+@@ -111,6 +135,22 @@ function commerce_checkout_complete_registration_confirmation_pane_checkout_form
+     );
+   }
+ 
++  // Display username form elements.
++  if (variable_get('commerce_checkout_registration_username_required', FALSE)) {
++    $pane_form['name'] = array(
++      '#type' => 'textfield',
++      '#title' => t('Username'),
++      '#maxlength' => USERNAME_MAX_LENGTH,
++      '#description' => t('Spaces are allowed; punctuation is not allowed except for periods, hyphens, apostrophes, and underscores.'),
++      '#required' => TRUE,
++      '#attributes' => array('class' => array('username')),
++      '#default_value' => $order->mail ? $order->mail : '',
++      '#access' => user_access('change own username'),
++      '#size' => 25,
++      '#element_validate' => array('commerce_checkout_complete_registration_pane_checkout_form_username_validate'),
++    );
++  }
++
+   // Display password form elements.
+   if (variable_get('commerce_checkout_registration_password_required', FALSE)) {
+     $pane_form['pass'] = array(
+@@ -150,6 +190,26 @@ function commerce_checkout_complete_registration_pane_checkout_form_pass_validat
+ }
+ 
+ /**
++ * Validate callback for the checkout pane form.
++ */
++function commerce_checkout_complete_registration_pane_checkout_form_username_validate($element, &$form_state, &$form) {
++
++  // Validate new or changing username.
++  $array_parents = array_slice($element['#parents'], 0, -1);
++  $username = drupal_array_get_nested_value($form_state['values'], array_merge($array_parents, array('name')));
++
++  if (!empty($username)) {
++    if ($error = user_validate_name($username)) {
++      form_set_error(implode('][', array_merge($array_parents, array('name'))), $error);
++    }
++    elseif (user_load_by_name($username)) {
++      form_set_error(implode('][', array_merge($array_parents, array('name'))), t('The name %name is already taken.', array('%name' => $username)));
++    }
++  }
++}
++
++
++/**
+  * Checkout pane callback: create new account, assign the order to the new user,
+  * invoke rules for this event for extra user & order alterations.
+  */
+@@ -161,7 +221,7 @@ function commerce_checkout_complete_registration_confirmation_pane_checkout_form
+   // Nothing to do for the authenticated users, or existing.
+   if (!user_is_logged_in()) {
+     // Set the new account data.
+-    $name = $order->mail;
++    $name = !empty($form_state['values']['commerce_checkout_complete_registration']['name']) ? $form_state['values']['commerce_checkout_complete_registration']['name'] : $order->mail;
+     $mail = $order->mail;
+     $pass = !empty($form_state['values']['commerce_checkout_complete_registration']['pass']) ? $form_state['values']['commerce_checkout_complete_registration']['pass'] : '';
+     $notify = variable_get('commerce_checkout_registration_account_notification', FALSE);
+@@ -193,20 +253,40 @@ function commerce_checkout_complete_registration_confirmation_pane_checkout_form
+     commerce_order_save($order);
+ 
+     // Assign the order customer profiles to the new user.
+-    $order_wrapper = entity_metadata_wrapper('commerce_order', $order);
+-    foreach (commerce_info_fields('commerce_customer_profile_reference', 'commerce_order') as $field_name => $field) {
+-      if ($order_wrapper->__isset($field_name)) {
+-        $customer_profile_wrapper = $order_wrapper->{$field_name};
+-        $customer_profile_wrapper->uid = $user->uid;
+-        $customer_profile_wrapper->save();
++    try {
++      $order_wrapper = entity_metadata_wrapper('commerce_order', $order);
++      foreach (commerce_info_fields('commerce_customer_profile_reference', 'commerce_order') as $field_name => $field) {
++        if ($order_wrapper->__isset($field_name)) {
++          $customer_profile_wrapper = $order_wrapper->{$field_name};
++          $customer_profile_wrapper->uid = $user->uid;
++          $customer_profile_wrapper->save();
++        }
+       }
+     }
++    catch (Exception $e) {
++
++    }
+ 
+     // Use this event to do extra operations with Rules to the new account and/or order.
+     rules_invoke_all('commerce_checkout_complete_registration', $user, $order);
+ 
+     // Redirect to user order history page.
+-    $form_state['redirect'] = 'checkout/' . $order->order_id;
++    $form_state['redirect'] = variable_get('commerce_checkout_registration_redirect_dashboard', FALSE) ? 'user/' . $order->uid : 'checkout/' . $order->order_id;
++
++    $text = variable_get('commerce_checkout_registration_after_login_text');
++    if (isset($text['value']) && !empty($text['value'])) {
++
++      // Translate string
++      $text['value'] = commerce_i18n_string('commerce:checkout:commerce_checkout_complete_registration:after_login_text', $text['value'], array('sanitize' => FALSE));
++
++      // Perform token replacement.
++      $text['value'] = token_replace($text['value'], array('commerce-order' => $order), array('clear' => TRUE));
++
++      // Apply the proper text format.
++      $text['value'] = check_markup($text['value'], $text['format']);
++
++      drupal_set_message($text['value']);
++    }
+   }
+ }
+ 
+@@ -229,6 +309,27 @@ function commerce_checkout_complete_registration_confirmation_text_default() {
+   return array('value' => $value, 'format' => $format);
+ }
+ 
++
++/**
++ * Returns the default value for the checkout after login message settings form.
++ */
++function commerce_checkout_complete_registration_after_login_text_default() {
++  // If the Filtered HTML text format is available, use a default value with
++  // links in it.
++  if (filter_format_load('filtered_html')) {
++    $value = '';
++    $format = 'filtered_html';
++  }
++  else {
++    // Otherwise select a fallback format and use a plaint text default value.
++    $value = '';
++    $format = filter_fallback_format();
++  }
++
++  return array('value' => $value, 'format' => $format);
++}
++
++
+ /**
+  * Implements hook_i18n_string_list().
+  */

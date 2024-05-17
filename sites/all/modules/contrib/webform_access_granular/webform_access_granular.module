@@ -1,0 +1,467 @@
+<?php
+
+/**
+ * @file
+ * Configuration and processing for webform access granular.
+ */
+
+/**
+ * Implements hook_webform_submission_access().
+ *
+ * Sets the access for all of webform submissions.
+ */
+function webform_access_granular_webform_submission_access($node, $submission, $op = 'view', $account = NULL) {
+  return _webform_access_granular_user_has_access($node->nid);
+}
+
+/**
+ * Implements hook_menu_alter().
+ *
+ * Set various access callbacks to use custom function.
+ */
+function webform_access_granular_menu_alter(&$items) {
+  $paths = array(
+    '',
+    '/submissions',
+    '/download',
+    '/download-file',
+    '/table',
+    '/submissions/%',
+  );
+  foreach ($paths as $path) {
+    $items['node/%webform_menu/webform-results' . $path]['access callback'] = '_webform_access_granular_user_has_access_to_view_webform_results';
+  }
+}
+
+/**
+ * Implements hook_perm().
+ *
+ * Set permissions for the webform access granular.
+ */
+function webform_access_granular_permission() {
+
+  // Return permissions that allows site users to view webform results.
+  return array(
+    'add users to webform results access' => array(
+      'title' => t('Add users to webform results'),
+      'description' => t('Grants access to the "Results" tab for specific users.'),
+    ),
+    'bypass granular form results access' => array(
+      'title' => t('Bypass webform results access granular'),
+      'description' => t('Grants access to bypass the access for webform results access.'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Add the form elements for webform access granular.
+ */
+function webform_access_granular_form_webform_configure_form_alter(&$form, &$form_state, $form_id) {
+  // Attach the admin javascript for webform_access_granular.
+  drupal_add_js(drupal_get_path('module', 'webform_access_granular') . '/js/webform_access_granular.js');
+
+  // If the user has access to add users to the webform results, display it.
+  if (user_access('add users to webform results access')) {
+
+    // Get the webform access granular from the database.
+    $webform_access_granular = db_select('webform_access_granular', 'wag')
+      ->fields('wag')
+      ->condition('wag.nid', $form['#node']->nid)
+      ->execute()
+      ->fetch();
+
+    // If we have a record, set the default values for the checkboxes.
+    if ($webform_access_granular) {
+
+      // If we have role and no specific user access:
+      if ($webform_access_granular->role && !$webform_access_granular->users && !$webform_access_granular->users_unpublished) {
+
+        // Set the default value to 'normal_access'.
+        $default_value = 'normal_access';
+
+        // Set the users to NULL.
+        $users = '';
+        $users_unpublished = '';
+      }
+
+      // If we have a role and some specific user access:
+      elseif ($webform_access_granular->role && ($webform_access_granular->users || $webform_access_granular->users_unpublished)) {
+
+        // Set the default value to 'normal_access_with_users'.
+        $default_value = 'normal_access_with_users';
+
+        // Get the usernames based on the uid.
+        $users = _webform_access_granular_get_usernames($webform_access_granular->users);
+        $users_unpublished = _webform_access_granular_get_usernames($webform_access_granular->users_unpublished);
+      }
+      else {
+
+        // Set the default value to 'users_only'.
+        $default_value = 'users_only';
+
+        // Get the usernames based on the uid.
+        $users = _webform_access_granular_get_usernames($webform_access_granular->users);
+        $users_unpublished = _webform_access_granular_get_usernames($webform_access_granular->users_unpublished);
+      }
+    }
+    // If there is no database record, we are going to use normal access.
+    else {
+
+      // Set the default value.
+      $default_value = 'normal_access';
+
+      // Set the users to null.
+      $users = '';
+      $users_unpublished = '';
+    }
+
+    // The options for the type of webform results access.
+    $options = array(
+      'normal_access' => t('Normal access'),
+      'normal_access_with_users' => t('Normal access with additional specific user access'),
+      'users_only' => t('Specific user access only'),
+    );
+
+    // Fieldset for the webform access granular.
+    $form['results-access']['#type'] = 'fieldset';
+    $form['results-access']['#title'] = 'Results access';
+    $form['results-access']['#collapsible'] = TRUE;
+    $form['results-access']['#collapsed'] = FALSE;
+    $form['results-access']['#weight'] = -3;
+
+    // Form element for which type of access to view webform results.
+    $form['results-access']['webform_results_access'] = array(
+      '#type' => 'radios',
+      '#title' => t('Type of access that can view webform results'),
+      '#options' => $options,
+      '#default_value' => $default_value,
+    );
+
+    // Form element to enter which users are allowed to view published webform
+    // results.
+    $form['results-access']['webform_results_access_users_list'] = array(
+      '#type' => 'autocomplete_deluxe',
+      '#title' => t('List of users that will have access to view only published webform results'),
+      '#autocomplete_deluxe_path' => url('user/autocomplete', array('absolute' => TRUE)),
+      '#multiple' => TRUE,
+      '#autocomplete_min_length' => 1,
+      '#default_value' => $users,
+    );
+
+    // Form element to enter which users are allowed to view both published and
+    // unpublished webform results.
+    $form['results-access']['webform_results_access_unpublished_results_users_list'] = array(
+      '#type' => 'autocomplete_deluxe',
+      '#title' => t('List of users that will have access to view both published and unpublished webform results'),
+      '#autocomplete_deluxe_path' => url('user/autocomplete', array('absolute' => TRUE)),
+      '#multiple' => TRUE,
+      '#autocomplete_min_length' => 1,
+      '#default_value' => $users_unpublished,
+    );
+
+    // Add form validation for the webform access granular.
+    $form['#validate'][] = '_webform_access_granular_validate';
+
+    // Add submit handler to form to track webform access granular.
+    $form['#submit'][] = '_webform_access_granular_submit';
+  }
+}
+
+/**
+ * Helper function.
+ *
+ * Return the list of usernames based on uids.
+ */
+function _webform_access_granular_get_usernames($uids) {
+  if ($uids === NULL) {
+    $users = '';
+  }
+  else {
+    $uids = explode(',', $uids);
+    // Set users to blank initially.
+    $users = '';
+
+    // Step through each uid, get the username of the user and store it.
+    for ($i = 0; $i < count($uids); $i++) {
+
+      // Load the user.
+      $user = user_load($uids[$i]);
+
+      // Store the username with the correct comma.
+      if ($i == 0) {
+        $users .= $user->name;
+      }
+      else {
+        $users .= ',' . $user->name;
+      }
+    }
+  }
+  return $users;
+}
+
+/**
+ * Helper function.
+ *
+ * Validation function for webform access granular to ensure that users
+ * are entered if access with users is selected.
+ */
+function _webform_access_granular_validate($form, &$form_state) {
+
+  // Check if there is specific user access.
+  if ($form_state['values']['webform_results_access'] == "normal_access_with_users" || $form_state['values']['webform_results_access'] == "users_only") {
+
+    // Check if both user fields are empty.
+    if (!($form_state['values']['webform_results_access_users_list'] || $form_state['values']['webform_results_access_unpublished_results_users_list'])) {
+
+      // If so, throw an error.
+      form_set_error('results-access][webform_results_access_users_list', t('You must enter at least one user when using a type of access that includes “specific user access”.'));
+    }
+
+    // Check if either user field is just a comma.
+    if ($form_state['values']['webform_results_access_users_list'] == "," || $form_state['values']['webform_results_access_unpublished_results_users_list'] == ",") {
+
+      // If so, throw an error.
+      form_set_error('results-access][webform_results_access_users_list', t('You must enter at least one user when using a type of access that includes “specific user access”.'));
+    }
+
+    // Get the list of users with access to published results.
+    $user_list = array_filter(explode(',', $form_state['values']['webform_results_access_users_list']));
+
+    // Get the list of users with access to both published and unpublished
+    // results.
+    $user_list_unpublished = array_filter(explode(',', $form_state['values']['webform_results_access_unpublished_results_users_list']));
+
+    // Step through each user with access to published results.
+    foreach ($user_list as $user) {
+
+      // Check that the provided user is valid.
+      if (!(user_load_by_name($user))) {
+
+        // If not, set an error.
+        form_set_error('results-access][webform_results_access_users_list', t('@user is not a valid user.', array('@user' => $user)));
+
+        // Break the for loop to limit the number of errors.
+        break;
+      }
+
+      // Check if the user is also in the list of users with access to both
+      // published and unpublished results.
+      elseif (in_array($user, $user_list_unpublished)) {
+
+        // If so, set an error.
+        form_set_error('results-access][webform_results_access_users_list', t('Users should not be added to both webform granular access fields.'));
+
+        // Break the for loop to limit the number of errors.
+        break;
+      }
+    }
+
+    // Step through each user with access to unpublished results.
+    foreach ($user_list_unpublished as $user) {
+
+      // Check that the provided user is valid.
+      if (!(user_load_by_name($user))) {
+
+        // If not, set an error.
+        form_set_error('results-access][webform_results_access_users_list', t('@user is not a valid user.', array('@user' => $user)));
+
+        // Break the for loop to limit the number of errors.
+        break;
+      }
+    }
+  }
+}
+
+/**
+ * Helper function.
+ *
+ * Submit function for inserting/updating the webform access granular database.
+ */
+function _webform_access_granular_submit($form, &$form_state) {
+
+  // Check if we have results access to process and if so process it.
+  if (isset($form_state['values']['webform_results_access'])) {
+
+    // Set the roles for webform access granular.
+    if ($form_state['values']['webform_results_access'] == "normal_access" || $form_state['values']['webform_results_access'] == "normal_access_with_users") {
+      $role = 1;
+    }
+    else {
+      $role = NULL;
+    }
+
+    // Set the users for webform access granular.
+    // If it is checked, set the user list.
+    if (in_array($form_state['values']['webform_results_access'], array("normal_access_with_users", "users_only"))) {
+
+      // Check if there are users with access to published form results.
+      if ($form_state['values']['webform_results_access_users_list']) {
+        // Get the list of users from the form state and explode on the comma.
+        $user_list = explode(',', $form_state['values']['webform_results_access_users_list']);
+        // Step through each user, get the uid and store it.
+        for ($i = 0; $i < count($user_list); $i++) {
+          $user = user_load_by_name($user_list[$i]);
+          $users_uid[] = $user->uid;
+        }
+        // Step through each uid and store with comma.
+        $users = implode(',', $users_uid);
+      }
+      else {
+        $users = NULL;
+      }
+      // Check if there are users with access to unpublished form results.
+      if ($form_state['values']['webform_results_access_unpublished_results_users_list']) {
+        // Get the list of users from the form state and explode on the comma.
+        $user_list_unpublished = explode(',', $form_state['values']['webform_results_access_unpublished_results_users_list']);
+
+        // Step through each user, get the uid and store it.
+        for ($i = 0; $i < count($user_list_unpublished); $i++) {
+          $user_unpublished = user_load_by_name($user_list_unpublished[$i]);
+          $users_uid_unpublished[] = $user_unpublished->uid;
+        }
+
+        // Step through each uid and store with comma.
+        $users_unpublished = implode(',', $users_uid_unpublished);
+      }
+      else {
+        $users_unpublished = NULL;
+      }
+    }
+    // If there are no users, set to NULL.
+    else {
+      $users = NULL;
+      $users_unpublished = NULL;
+    }
+
+    // Get the row count of the current node for webform access granular.
+    $result = db_select('webform_access_granular', 'wga')
+      ->fields('wga', array('nid'))
+      ->condition('wga.nid', $form_state['values']['nid'])
+      ->execute();
+
+    $num_of_results = $result->rowCount();
+
+    // Perform either insert/update the webform_access_granular database.
+    db_merge('webform_access_granular')
+      ->key(array('nid' => $form_state['values']['nid']))
+      ->fields(array(
+        'role' => $role,
+        'users' => $users,
+        'users_unpublished' => $users_unpublished,
+      ))
+      ->execute();
+  }
+}
+
+/**
+ * Helper function.
+ *
+ * Returns TRUE if the user has access to view the webform results.
+ */
+function _webform_access_granular_user_has_access_to_view_webform_results() {
+  global $user;
+
+  // If we are on a node, check for access to form results.
+  if (arg(0) == 'node' && is_numeric(arg(1))) {
+
+    // Check if the user has the access to bypass granular webform results
+    // access.
+    if (user_access('bypass granular form results access')) {
+      return TRUE;
+    }
+
+    // Return the user access.
+    return _webform_access_granular_user_has_access();
+  }
+}
+
+/**
+ * Check if a user has access.
+ *
+ * @param int $nid
+ *   The node ID.
+ *
+ * @return bool
+ *   TRUE if the user has access, FALSE otherwise.
+ */
+function _webform_access_granular_user_has_access($nid = NULL) {
+  // Get the nid, if one is not sent.
+  if ($nid == NULL) {
+    $nid = arg(1);
+  }
+
+  // Load the node if you need to.
+  $node = node_load($nid);
+
+  $webform_access_granular = db_select('webform_access_granular', 'wag')
+    ->fields('wag')
+    ->condition('wag.nid', $node->nid)
+    ->execute()
+    ->fetchAll();
+
+  // If granular access is not set, use default.
+  if (!count($webform_access_granular)) {
+    return webform_results_access($node);
+  }
+
+  // Check if there are users with access to unpublished results and the
+  // current user is in the list.
+  $users_unpublished = $webform_access_granular[0]->users_unpublished ? explode(',', $webform_access_granular[0]->users_unpublished) : NULL;
+  if ($users_unpublished && _webform_access_granular_get_user_access($users_unpublished)) {
+    return TRUE;
+  }
+
+  // Check if there are users with access to published results, that the
+  // current user is in the list, and the form is published.
+  $users = $webform_access_granular[0]->users ? explode(',', $webform_access_granular[0]->users) : NULL;
+  if ($users && _webform_access_granular_get_user_access($users) && ($node->status == 1)) {
+    return TRUE;
+  }
+
+  // Check if default access is enabled.
+  $role = $webform_access_granular[0]->role;
+  if ($role) {
+    return webform_results_access($node);
+  }
+
+  // If not, the user does not have access.
+  return FALSE;
+}
+
+/**
+ * Helper function.
+ *
+ * Return whether the set of users has access to the webform.
+ */
+function _webform_access_granular_get_user_access($users) {
+  global $user;
+  if ($users) {
+
+    // Remove and user 0's.
+    foreach ($users as $key => $u) {
+      if ($u == NULL || $u == 0) {
+        unset($users[$key]);
+      }
+    }
+
+    // Return the access based on the users provided.
+    return in_array($user->uid, $users);
+  }
+  else {
+    return FALSE;
+  }
+}
+
+/**
+ * Add 'users_unpublished' field to webform_access_granular table.
+ */
+function webform_access_granular_update_7100() {
+  $spec = array(
+    'description' => 'A comma delimited string of user ids to identify which users have access to the unpublished webform results.',
+    'type' => 'text',
+    'size' => 'big',
+  );
+  db_add_field('webform_access_granular', 'users_unpublished', $spec);
+}

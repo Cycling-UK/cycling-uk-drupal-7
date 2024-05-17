@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * Code for the Links paragraph bundle feature.
+ */
+
+include_once 'links_paragraph_bundle.features.inc';

@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * Code for the Features File Downloads Simple paragraph bundle feature.
+ */
+
+include_once 'features_file_downloads_simple.features.inc';

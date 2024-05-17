@@ -1,0 +1,38 @@
+diff --git a/viewfield.module b/viewfield.module
+index 67e2176..e88d5a4 100644
+--- a/viewfield.module
++++ b/viewfield.module
+@@ -129,12 +129,14 @@ function viewfield_field_formatter_view($entity_type, $entity, $field, $instance
+         // @todo Store name and display separately.
+         list($view_name, $view_display) = explode('|', $item['vname'], 2);
+         $view = views_get_view($view_name);
++        $view->set_display($view_display);
+ 
+         $elements[$delta] = array(
+           '#type' => 'viewfield',
+           '#access' => $view && $view->access($view_display),
+           '#view' => $view,
+           '#view_name' => $view_name,
++          '#view_title' => $view->get_title(),
+           '#view_display' => $view_display,
+           '#view_arguments' => $item['vargs'],
+           '#entity_type' => $entity_type,
+@@ -213,7 +215,17 @@ function viewfield_post_render($content, $element) {
+ function theme_viewfield_formatter_default($variables) {
+   $element = $variables['element'];
+ 
+-  return $element['#view']->preview($element['#view_display'], $element['#view_arguments']);
++  $output = '';
++
++  // Include title if available.
++  if (!empty($element['#view_title'])) {
++    $output .= '<h2 class="view-title">' . check_plain($element['#view_title']) . '</h2>';
++  }
++
++  // Output view.
++  $output .= $element['#view']->preview($element['#view_display'], $element['#view_arguments']);
++
++  return $output;
+ }
+ 
+ /**

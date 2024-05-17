@@ -1,0 +1,19 @@
+ docroot/sites/all/modules/contrib/migrate_extras/geofield.inc | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/docroot/sites/all/modules/contrib/migrate_extras/geofield.inc b/docroot/sites/all/modules/contrib/migrate_extras/geofield.inc
+index f30ed54..c3d3f0e 100644
+--- a/docroot/sites/all/modules/contrib/migrate_extras/geofield.inc
++++ b/docroot/sites/all/modules/contrib/migrate_extras/geofield.inc
+@@ -42,9 +42,10 @@ class MigrateGeoFieldHandler extends MigrateFieldHandler {
+     $language = $this->getFieldLanguage($entity, $field_info, $arguments);
+ 
+     // Setup the standard Field API array for saving.
++	// patch: Added support geofield WKT GEOM
+     $delta = 0;
+     foreach ($values as $value) {
+-      $return[$language][$delta] = array('geo_type' => $value) + array_intersect_key($arguments, $field_info['columns']);
++      $return[$language][$delta] = array('geom' => $value) + array_intersect_key($arguments, $field_info['columns']);
+       $delta++;
+     }
+ 

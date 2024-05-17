@@ -1,0 +1,15 @@
+name = fe_block UI
+description = Enhance Block UI to show fe_block settings package
+core = 7.x
+
+configure = admin/structure/features/settings
+
+dependencies[] = ctools
+dependencies[] = features
+dependencies[] = fe_block
+
+; Information added by Drupal.org packaging script on 2018-04-21
+version = "7.x-1.2"
+core = "7.x"
+project = "fe_block_ui"
+datestamp = "1524315787"

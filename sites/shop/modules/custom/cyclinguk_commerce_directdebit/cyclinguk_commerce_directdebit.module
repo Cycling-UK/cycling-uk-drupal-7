@@ -1,0 +1,112 @@
+<?php
+
+function cyclinguk_commerce_directdebit_theme() {
+  return array(
+    'cyclinguk_commerce_directdebit_form' => array(
+      'render element' => 'form',
+      'template' => 'templates/cyclinguk_commerce_directdebit_form',
+    ),
+    'cyclinguk_commerce_directdebit_review' => array(
+      'template' => 'templates/cyclinguk_commerce_directdebit_review',
+      'arguments' => array(
+        'payment_data' => array(),
+      ),
+    ),
+  );
+}
+
+/**
+ * Template pre-process function.
+ */
+function cyclinguk_commerce_preprocess_cyclinguk_commerce_directdebit_review(&$vars) {
+  $vars['sole_signatory'] = ucfirst(check_plain($vars['payment_data']['preamble']['sole_signatory']));
+  $vars['account_name'] = check_plain($vars['payment_data']['fieldset']['account_name']);
+  $sort_code = $vars['payment_data']['fieldset']['sort_code'];
+  $sort_code_formatted = substr($sort_code, 0, 2) . '-' . substr($sort_code, 2, 2) . '-' . substr($sort_code, 4, 2);
+  $vars['sort_code'] = check_plain($sort_code_formatted);
+  $vars['account_number'] = check_plain($vars['payment_data']['fieldset']['account_number']);
+  unset($vars['payment_data']);
+}
+
+/**
+ * Implements hook_commerce_payment_method_info().
+ */
+function cyclinguk_commerce_directdebit_commerce_payment_method_info() {
+  $payment_methods = array();
+  $payment_methods['cyclinguk_commerce_directdebit'] = array(
+    'title' => t('Direct Debit'),
+    'short_title' => t('DD'),
+    'display_title' => t('Direct Debit'),
+    'description' => t('Direct Debit payment.'),
+    'offsite' => FALSE,
+  );
+  return $payment_methods;
+}
+
+function cyclinguk_commerce_directdebit_review($form, $form_state, $checkout_pane, $order) {
+  $html = theme('cyclinguk_commerce_directdebit_review', array(
+    'payment_data' => $order->data['cyclinguk_commerce_directdebit'],
+  ));
+  return $html;
+}
+
+function cyclinguk_commerce_directdebit_form_signatory_validate($form, &$form_state) {
+  if ($form_state['values']['preamble']['sole_signatory'] == 'no') {
+    form_set_error('commerce_payment][payment_details][preamble][signatory_yes', 'Because you answered no to the question on the previous screen You need to
+complete a paper Direct Debit Instruction (DDI).');
+  }
+}
+
+function cyclinguk_commerce_directdebit_form_account_validate($form, &$form_state, $show_valid_message = TRUE) {
+  $payment_details = $form_state['values']['cyclinguk_commerce_directdebit'];
+  $sanitised_sort_code = preg_replace('/[^0-9]+/', '', $payment_details['fieldset']['sort_code']);
+  form_set_value($form['cyclinguk_commerce_directdebit']['fieldset']['sort_code'], $sanitised_sort_code, $form_state);
+  if (strlen($sanitised_sort_code) < 6) {
+    form_set_error('cyclinguk_commerce_directdebit][sort_code', t('Your sort code must contain 6 numbers.'));
+  }
+  if (strlen(preg_replace('/[^0-9]+/', '', $payment_details['fieldset']['account_number'])) < 8) {
+    form_set_error('cyclinguk_commerce_directdebit][account_number', t('Your account number must contain 8 numbers.'));
+  }
+  if (!form_get_errors()) {
+    $url = "http://services.postcodeanywhere.co.uk/BankAccountValidation/Interactive/Validate/v2.00/xmla.ws?";
+    $url .= "&Key=" . urlencode(variable_get('pca_licence', 'RT71-DE42-AM29-GB19'));
+    $url .= "&AccountNumber=" . urlencode($payment_details['fieldset']['account_number']);
+    $url .= "&SortCode=" . urlencode($payment_details['fieldset']['sort_code']);
+    $data = array();
+    // Make the request to Postcode Anywhere and parse the XML returned.
+    $file = simplexml_load_file($url);
+    if ($file->Rows->Row[0]->attributes()->IsCorrect == 'False' || $file->Rows->Row[0]->attributes()->IsDirectDebitCapable == 'False') {
+      switch ($file->Rows->Row[0]['StatusInformation']) {
+        case 'UnknownSortCode':
+          form_set_error('cyclinguk_commerce_directdebit][sort_code', t('Unknown Sort Code'));
+          break;
+        case 'InvalidAccountNumber':
+          form_set_error('cyclinguk_commerce_directdebit][account_number', t('Invalid Account Number'));
+          break;
+        default:
+          form_set_error('form', 'Direct Debit validation failed (' . $file->Rows->Row[0]['StatusInformation'] . ')');
+          break;
+      }
+    }
+    else {
+      if ($show_valid_message) {
+        drupal_set_message(t('Sort code and account number are valid.'));
+      }
+      return TRUE;
+    }
+  }
+  return FALSE;
+}
+
+/**
+ * Implements hook_commerce_checkout_pane_info()
+ */
+function cyclinguk_commerce_directdebit_commerce_checkout_pane_info() {
+  $panes['cyclinguk_commerce_directdebit'] = array(
+    'title' => t('Direct Debit Mandate'),
+    'page' => 'checkout',
+    'weight' => 10,
+    'file' => 'includes/cyclinguk_commerce_directdebit.checkout_pane.inc',
+  );
+  return $panes;
+}

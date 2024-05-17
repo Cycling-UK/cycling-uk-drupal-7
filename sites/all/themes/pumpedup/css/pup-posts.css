@@ -1,0 +1,40 @@
+.page-layout-post .main-container {
+  margin-top: 50px;
+}
+
+.page-layout-post.node-type-webform .main-container {
+  margin-top: 0;
+}
+
+@media only screen and (max-width : 767px) {
+  .page-layout-post .main-container {
+    margin-top: -30px;
+  }
+}
+
+.page-layout-post .field-name-title h1 {
+  font-family: korolev-rounded, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #8064a9;
+}
+
+.page-layout-post .field-name-field-teaser {
+  font-family: korolev-rounded, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.page-layout-post .field-name-title:before {
+  background-color: #ec409f;
+}
+
+h2,
+.field .field-label {
+  color: #ec409f;
+  font-family: korolev-rounded, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}

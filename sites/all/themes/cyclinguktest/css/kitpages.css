@@ -1,0 +1,139 @@
+/*
+ * Child lists
+ */
+
+
+
+.view.kit-list .top-wrapper .inner-wrapper h1 {
+	margin: 0;
+}
+
+
+.view.kit-list .view-content a {
+	display: block;
+	color: #000;
+	text-decoration: none;
+	background-color: #f0f0f0;
+/*	border: 1px solid #f0f0f0; - Do not use, places awkward border around images and breaks style guide */
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+}
+
+.view.kit-list .view-content a:hover,
+.view.kit-list .view-content a:focus,
+.view.kit-list .view-content a:active {
+	background-color: #e0e0e0;
+/* 	border: 1px solid #e0e0e0; - Do not use, places awkward border around images and breaks style guide */
+}
+
+
+
+/*
+ * Fields
+ */
+
+.view.kit-list .view-content a {
+	margin-bottom: 20px;
+	outline: none;
+}
+
+.view.kit-list .inner-wrapper {
+	display: block;
+	padding: 20px;
+}
+
+.view.kit-list .date {
+	display: block;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 12px;
+	line-height: 12px;
+	font-weight: 400;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.view.kit-list .image {
+	display: block;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	line-height: 0;
+}
+
+.view.kit-list .image img {
+	width: 100%;
+	height: auto;
+	border-radius: 10px 10px 0 0;
+	-webkit-border-radius: 10px 10px 0 0;
+	-moz-border-radius: 10px 10px 0 0;
+}
+
+.view.kit-list .image-field-caption {
+	display: none;
+}
+
+.view.kit-list .terms {
+	display: block;
+	text-transform: lowercase;
+	font-size: 12px;
+	font-weight: 400;
+	text-align: center;
+	margin-bottom: 10px;
+	height: 22px;
+	overflow: hidden;
+}
+
+.view.kit-list .title {
+	display: block;
+	text-align: center;
+	height: 40px;
+	margin-bottom: 20px;
+	font-size: 22px;
+	line-height: 24px;
+	font-weight: 700;
+}
+
+.view.kit-list .price {
+	display: block;
+	text-align: center;
+	height: 20px;
+	margin-bottom: 20px;
+	font-size: 22px;
+	line-height: 24px;
+	font-weight: 700;
+}
+
+@media only screen and (min-width : 480px) and (max-width : 767px) {
+	.view.kit-list .title {
+		height: 70px;
+	}
+}
+
+@media only screen and (max-width : 479px) {
+	.view.kit-list .title {
+		height: 120px;
+	}
+}
+
+.view.kit-list .btn {
+	display: block;
+	width: 120px;
+	min-width: 120px;
+	margin: 0 auto;
+}
+
+.view.kit-list .btn-transparent {
+	border-color: #8064a9;
+}
+
+.view.kit-list a:hover .btn {
+	background-color: #8064a9;
+	color: #fff;
+}
+
+.view.kit-list a:active .btn {
+	background-color: #8b6db9;
+	color: #fff;
+}

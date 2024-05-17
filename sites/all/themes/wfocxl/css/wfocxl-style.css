@@ -1,0 +1,294 @@
+p.lead {
+	display: none;
+}
+
+.field-name-field-paragraph h2 {
+	color: #000;
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+/* WFoC sponsor logos */
+
+.wfoc-company-logos {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.wfoc-company-logos a {
+	outline: none;
+}
+
+.wfoc-company-logos .raleigh {
+	display: inline-flex;
+	align-items: center;
+}
+
+.wfoc-company-logos .cyclinguk {
+	display: inline-flex;
+	align-items: center;
+	margin-left: 30px;
+}
+
+/* Header overrides */
+
+header .logo img {
+	width: 154px;
+	height: auto;
+}
+
+@media only screen and (max-width: 370px) {
+	header .inner-wrapper .container-right {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	header.header {
+		height: 239px;
+	}
+	header .inner-wrapper .container-left,
+	header .inner-wrapper .container-right {
+		position: inherit;
+	}
+	header .inner-wrapper .container-left {
+		text-align: left;
+	}
+	header .inner-wrapper .container-right {
+		text-align: right;
+	}
+	header .inner-wrapper .container-middle {
+		padding-top: 23px;
+	}
+	header .inner-wrapper .container-right {
+		padding-top: 16px;
+	}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+	header .inner-wrapper .container-right {
+		padding-left: 0;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	header .logo img {
+		width: inherit;
+	}
+	header .inner-wrapper .container-right {
+		padding-top: 19px;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	header.header {
+		height: 168px;
+	}
+	header > .inner-wrapper {
+		margin: 10px auto 30px auto;
+	}
+	header .inner-wrapper .container-left {
+		top: 78px;
+	}
+	header .logo img {
+		width: 110px;
+	}
+	header .inner-wrapper .container-right {
+		/* background-color: #f0f0f0; */
+		padding: 10px 0 5px 0;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+	}
+	header .inner-wrapper .container-right span.raleigh {
+		width: 50%;
+		justify-content: left;
+		text-align: left;
+		margin: 0;
+		padding: 0 0 0 10px;
+	}
+	header .inner-wrapper .container-right span.cyclinguk {
+		width: 50%;
+		justify-content: right;
+		text-align: right;
+		margin: 0;
+		padding: 0 10px 0 20px;
+	}
+	.wfoc-company-logos {
+		height: inherit;
+	}
+	header .inner-wrapper .container-right img {
+		width: 100%;
+	}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	header .inner-wrapper .container-right img {
+		width: 100%;
+	}
+	.wfoc-company-logos .cyclinguk {
+		margin-left: 20px;
+	}
+}
+
+/*
+ * WFoC newsletter signup panel
+ */
+
+.wfoc-newsletter-signup {
+	margin: 0 -15px 60px -15px;
+	padding: 70px 20px 0 20px;
+	background-position: top center;
+	background-size: cover;
+	min-height: 500px;
+}
+
+@media only screen and (max-width: 767px) {
+	.wfoc-newsletter-signup:before {
+		display: block;
+		content: "";
+		width: 100%;
+		height: 400px;
+		background-position: top center;
+		background-size: cover;
+		border-radius: 10px 10px 0 0;
+		-webkit-border-radius: 10px 10px 0 0;
+		-moz-border-radius: 10px 10px 0 0;
+	}
+	.webp .wfoc-newsletter-signup:before {
+		background-image: url("/sites/all/themes/wfocxl/images/hero/Joolze_Dymond_Cycling_UK-Festival_of_Women_2020_Bradford_Ladies_0210_edit_sm.webp");
+	}
+	.no-webp .wfoc-newsletter-signup:before {
+		background-image: url("/sites/all/themes/wfocxl/images/hero/Joolze_Dymond_Cycling_UK-Festival_of_Women_2020_Bradford_Ladies_0210_edit_sm.jpg");
+	}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+	.webp .wfoc-newsletter-signup {
+		background-image: url("/sites/all/themes/wfocxl/images/hero/Joolze_Dymond_Cycling_UK-Festival_of_Women_2020_Bradford_Ladies_0210_edit_md.webp");
+	}
+	.no-webp .wfoc-newsletter-signup {
+		background-image: url("/sites/all/themes/wfocxl/images/hero/Joolze_Dymond_Cycling_UK-Festival_of_Women_2020_Bradford_Ladies_0210_edit_md.jpg");
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.webp .wfoc-newsletter-signup {
+		background-image: url("/sites/all/themes/wfocxl/images/hero/Joolze_Dymond_Cycling_UK-Festival_of_Women_2020_Bradford_Ladies_0210_edit_lg.webp");
+	}
+	.no-webp .wfoc-newsletter-signup {
+		background-image: url("/sites/all/themes/wfocxl/images/hero/Joolze_Dymond_Cycling_UK-Festival_of_Women_2020_Bradford_Ladies_0210_edit_lg.jpg");
+	}
+}
+
+.wfoc-newsletter-signup h2.block-title {
+	display: none;
+}
+
+.wfoc-newsletter-signup .panel {
+	background-color: #e6007e;
+	color: #fff;
+	padding: 20px;
+	border-radius: 0 0 10px 10px;
+	-webkit-border-radius: 0 0 10px 10px;
+	-moz-border-radius: 0 0 10px 10px;
+	margin-bottom: 0;
+	text-align: center;
+}
+
+.node-type-landing-page-xl .field-name-field-paragraph .wfoc-newsletter-signup h2 {
+	font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 400;
+	font-size: 30px;
+	line-height: 36px;
+	margin: 0 auto 14px auto;
+	color: #fff;
+	text-align: center;
+}
+
+hr {
+	border: none;
+	width: 120px;
+	height: 5px;
+	border-radius: 2.5px;
+	-webkit-border-radius: 2.5px;
+	-moz-border-radius: 2.5px;
+	background-color: #fbb040;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.support-cycling-reasons {
+	font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 20px;
+	margin-top: 20px;
+	margin-bottom: 15px;
+}
+
+.support-cycling-reasons p {
+	margin-bottom: 20px;
+}
+
+.support-cycling-reasons ul {
+	padding-left: 25px;
+	text-align: left;
+}
+
+.support-cycling-reasons li {
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #fff;
+}
+
+.support-cycling-reasons li:last-child {
+	border-bottom: none;
+}
+
+.support-cycling-reasons ul li:before {
+	display: inline-block;
+	font-family: "Font Awesome 5 Pro";
+	font-weight: 200;
+	content: "\f00c";
+	width: 20px;
+	margin: 0 5px 0 -25px;
+	color: #fbb040;
+}
+
+.wfoc-newsletter-signup .btn {
+	min-width: 130px;
+	margin: 5px;
+}
+
+@media only screen and (min-width: 768px) {
+	.wfoc-newsletter-signup:before {
+		content: inherit;
+		background-image: inherit;
+	}
+	.node-type-landing-page-xl .field-name-field-paragraph .wfoc-newsletter-signup h2 {
+		text-align: left;
+	}
+	.wfoc-newsletter-signup .panel {
+		border-radius: 10px;
+		-webkit-border-radius: 10px;
+		-moz-border-radius: 10px;
+		text-align: inherit;
+		-webkit-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+		-moz-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+		box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+	}
+	hr {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.wfoc-newsletter-signup .btn {
+		margin: 5px 10px 5px 0;
+	}
+}
+
+.page-node-471601 #block-system-main {
+	max-width: 800px;
+	margin: auto;
+}

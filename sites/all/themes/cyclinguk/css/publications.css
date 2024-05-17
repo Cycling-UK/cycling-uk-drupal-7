@@ -1,0 +1,127 @@
+/**
+ * Publications
+ * Includes overrides for groups.css which is the default general theme for publications
+ * as defined by context rule.
+ */
+
+
+
+/* Page */
+
+.node-type-publication .field-name-field-teaser {
+	text-align: center;
+	font-size: 20px;
+	line-height: 24px;
+	margin-bottom: 60px;
+	color: #009fda;
+}
+
+.node-type-publication .field-name-field-teaser:after,
+.node-type-publication .field-name-link-to-this-node:after,
+.node-type-publication .field-name-field-soundcloud:after {
+	display: block;
+	content: "";
+	width: 240px;
+	height: 5px;
+	background-color: #f6b331;
+	border-radius: 2.5px; 
+	-webkit-border-radius: 2.5px; 
+	-moz-border-radius: 2.5px;
+	position: relative;
+	top: 30px;
+	margin: 10px auto 0 auto;
+}
+
+.node-type-publication .field-name-link-to-this-node:after {
+	margin: -50px auto 0 auto;
+}
+
+
+.node-type-publication .field-name-body {
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+.node-type-publication .field > .field-label {
+	text-align: center;
+    font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 36px;
+	margin: 60px 0 30px 0;
+	border-bottom: inherit;
+}
+
+
+
+/* PDF downloads */
+
+.field-name-field-pdf-copies,
+.field-name-field-soundcloud {
+	padding-left: 200px;
+	padding-right: 200px;
+	margin-bottom: 60px;
+}
+
+@media only screen and (min-width : 992px) and (max-width : 1199px) {
+	.field-name-field-pdf-copies,
+	.field-name-field-soundcloud {
+		padding-left: 200px;
+		padding-right: 200px;
+	}
+}
+
+@media only screen and (max-width : 991px) {
+	.field-name-field-pdf-copies,
+	.field-name-field-soundcloud {
+		padding-left: 0px;
+		padding-right: 0px;
+	}
+}
+
+
+.field-name-field-pdf-copies img {
+	margin-right: 20px;
+	float: left;
+}
+
+.field-name-field-pdf-copies .field-item {
+	margin-bottom: 30px;
+}
+
+.field-name-field-pdf-copies a {
+	color: #000;
+	text-decoration: none;
+}
+
+.field-name-field-pdf-copies a:hover {
+	color: #8064a9;
+	text-decoration: underline;
+}
+
+
+
+
+/* Issuu embed */
+
+.field-name-field-issuu,
+.field-name-field-issuu-embed-code {
+	margin-bottom: 60px;
+}
+
+.issuuembed.issuu-isrendered {
+	width: 100% !important;
+}
+
+@media only screen and (max-width :  991px)								{.issuuembed.issuu-isrendered {height: 400px !important;}}
+@media only screen and (min-width :  992px) and (max-width : 1199px)	{.issuuembed.issuu-isrendered {height: 550px !important;}}
+@media only screen and (min-width : 1200px) 							{.issuuembed.issuu-isrendered {height: 700px !important;}}
+
+
+
+
+/* SoundCloud player */
+
+.media-soundcloud-player {
+    width: 100%;
+}

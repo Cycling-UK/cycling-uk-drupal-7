@@ -1,0 +1,883 @@
+**
+ * Webforms
+ */
+
+/* This is all specific to webform on node 628411.  If new webforms created, will need updating */
+
+/* New page layout */
+
+.page-node-628411.node-type-webform .top-row,
+.page-node-628411.node-type-webform .middle-row,
+.page-node-628411.node-type-webform .main-container form {
+	margin-bottom: 30px;
+}
+
+.page-node-628411.node-type-webform .main-container form .form-actions {
+	text-align: center;
+}
+
+.page-node-628411.node-type-webform .main-container form .form-actions button {
+	margin: 10px;
+}
+
+.page-node-628411.node-type-webform .group-header-inner-wrapper {
+	position: relative;
+}
+
+.page-node-628411.node-type-webform .group-header-inner-wrapper .field-name-field-caption {
+	margin: 0;
+}
+
+.page-node-628411.node-type-webform.page-layout-post .field-name-title::before {
+	display: none;
+}
+
+.page-node-628411.node-type-webform.page-layout-post .field-name-title,
+.page-node-628411.node-type-webform.page-layout-post .field-name-field-teaser,
+.page-node-628411.node-type-webform.page-layout-post .field-name-body,
+.page-node-628411.node-type-webform.page-layout-post .field-name-field-body-bottom {
+	text-align: center;
+}
+
+.page-node-628411.node-type-webform.page-layout-post .field-name-title h1 {
+	margin-top: 30px;
+}
+
+.page-node-628411.node-type-webform.page-layout-post .field-name-field-teaser {
+	text-align: center;
+	font-family: "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 24px;
+	margin-bottom: 30px;
+	color: #009fda;
+}
+
+.page-node-628411.node-type-webform.page-layout-post .field-name-field-teaser::after {
+	content: "";
+	display: block;
+	height: 5px;
+	width: 140px;
+	border-radius: 2.5px;
+	-webkit-border-radius: 2.5px;
+	-moz-border-radius: 2.5px;
+	background-color: #fbb040;
+	margin: 30px auto 30px;
+}
+
+.page-node-628411.node-type-webform .main-container ul {
+	text-align: left;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 700px;
+}
+
+.webform-client-form-628411,
+.webform-client-form.webform-client-form-628411 form.webform-client-form.webform-client-form-628411 {
+	max-width: 550px;
+	margin: 0 auto;
+}
+
+/* Progress bar */
+
+.page-node-628411.node-type-webform footer .webform-progressbar {
+	display: none;
+}
+
+.page-node-628411.node-type-webform .webform-progressbar {
+	margin: 0 auto 60px;
+	width: 100%;
+}
+
+@media only screen and (max-width: 549px) {
+	.page-node-628411.node-type-webform .webform-progressbar {
+		display: none;
+	}
+}
+
+.page-node-628411.node-type-webform .webform-progressbar-page .webform-progressbar-page-label {
+	position: relative;
+	top: 12px;
+	margin: 0 -1em;
+	font-size: 10px;
+	line-height: 9px;
+	text-transform: uppercase;
+	text-align: left;
+	display: flex;
+}
+
+.page-node-628411.node-type-webform .webform-progressbar-outer {
+	border: 2px solid #8064a9;
+	height: 6px;
+}
+
+.page-node-628411.node-type-webform .webform-progressbar-inner {
+	background-color: #8064a9;
+}
+
+.page-node-628411.node-type-webform .webform-progressbar-page {
+	width: 10px;
+	height: 10px;
+	margin: -7px -4px;
+	border: 2px solid #8064a9;
+	border-radius: 5px;
+}
+
+.page-node-628411.node-type-webform .webform-progressbar-page.completed {
+	background-color: #8064a9;
+}
+
+.page-node-628411.node-type-webform .webform-progressbar-page.current {
+	background-color: #bfb1d4;
+}
+
+/* Fieldset panels */
+.page-node-628411.node-type-webform.page-layout-post .webform-component-fieldset {
+	padding: 10px;
+	border: 1px solid #fbb040;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+	box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+	margin-bottom: 30px;
+}
+
+.page-node-628411.node-type-webform.page-layout-post .webform-component-fieldset legend.panel-heading {
+	padding: 15px;
+}
+
+/* Terms and Conditions */
+.page-node-628411.node-type-webform .field-name-field-terms-and-conditions,
+.page-node-628411.node-type-webform .field-name-field-data-protection-statement {
+	margin: 0 0 30px 0;
+}
+
+.page-node-628411.node-type-webform .field-name-field-terms-and-conditions .field-label,
+.page-node-628411.node-type-webform .field-name-field-data-protection-statement .field-label {
+	text-align: left;
+	margin: 0 0 20px 0;
+}
+
+.page-node-628411.node-type-webform .field-name-field-terms-and-conditions .field-items,
+.page-node-628411.node-type-webform .field-name-field-data-protection-statement .field-items {
+	font-size: 13px;
+	line-height: 17px;
+	text-transform: uppercase;
+}
+
+.page-node-628411.node-type-webform .main-container form div.radio,
+.page-node-628411.node-type-webform .main-container form div.checkbox {
+	margin-bottom: 10px;
+}
+
+/* Required fields */
+
+.page-node-628411.node-type-webform .required-wrapper {
+	position: relative;
+}
+
+.page-node-628411.node-type-webform .required-wrapper:after {
+	display: block;
+	font-family: "Font Awesome 5 Pro";
+	font-weight: 200;
+	color: #da4500;
+	font-size: 16px;
+	line-height: 16px;
+	content: "\F069";
+	position: absolute;
+	float: right;
+	top: 13px;
+	right: 15px;
+}
+
+.form-required {
+	color: #da4500;
+}
+
+.page-node-628411.node-type-webform .form-group {
+	margin-bottom: 30px;
+}
+
+.page-node-628411.node-type-webform label {
+	margin-bottom: 12px;
+}
+
+.page-node-628411.node-type-webform .form-control,
+.page-node-628411.node-type-webform .form-item-field-ride-type-tid-1 .form-select /* BBR event type select list */ {
+	border: 1px solid #000;
+	border-radius: 22px;
+	-webkit-border-radius: 22px;
+	-moz-border-radius: 22px;
+	box-shadow: inherit;
+	color: #000;
+	font-size: 16px;
+	line-height: 16px;
+	height: 44px;
+	padding: 10px 20px;
+	width: 100%;
+}
+
+.page-node-628411.node-type-webform input[type="text"],
+.page-node-628411.node-type-webform input[type="email"],
+.page-node-628411.node-type-webform input[type="password"],
+.page-node-628411.node-type-webform textarea {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	box-shadow: none !important;
+}
+
+.page-node-628411.node-type-webform .form-control:focus {
+	border-color: #fbb040;
+	box-shadow: inherit;
+	outline: 0 none;
+}
+
+.page-node-628411.node-type-webform textarea {
+	resize: none;
+}
+
+.page-node-628411.node-type-webform .ui-widget,
+.page-node-628411.node-type-webform .ui-widget input,
+.page-node-628411.node-type-webform .ui-widget select,
+.page-node-628411.node-type-webform .ui-widget textarea {
+	font-family: "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	line-height: 22px;
+}
+
+.page-node-628411.node-type-webform input.btn,
+.page-node-628411.node-type-webform .ui-widget button,
+.page-node-628411.node-type-webform .ui-widget input.btn {
+	font-family: "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 15px;
+	line-height: 34px;
+	margin-right: 10px;
+}
+
+/* Placeholder text */
+.page-node-628411.node-type-webform .form-control::-webkit-input-placeholder {
+	color: #999;
+} /* Chrome/Opera/Safari */
+.page-node-628411.node-type-webform .form-control::-moz-placeholder {
+	color: #999;
+} /* Firefox 19+ */
+.page-node-628411.node-type-webform .form-control:-ms-input-placeholder {
+	color: #999;
+} /* IE 10+ */
+.page-node-628411.node-type-webform .form-control:-moz-placeholder {
+	color: #999;
+} /* Firefox 18- */
+
+@media only screen and (max-width: 469px) {
+	.page-node-628411.node-type-webform .form-control::-webkit-input-placeholder {
+		font-size: 14px;
+	}
+	.page-node-628411.node-type-webform .form-control::-moz-placeholder {
+		font-size: 14px;
+	}
+	.page-node-628411.node-type-webform .form-control:-ms-input-placeholder {
+		font-size: 14px;
+	}
+	.page-node-628411.node-type-webform .form-control:-moz-placeholder {
+		font-size: 14px;
+	}
+}
+
+/* Help text */
+.page-node-628411.node-type-webform .page-node-628411.node-type-webform.page-layout-post .control-group .help-inline,
+.page-node-628411.node-type-webform .page-node-628411.node-type-webform.page-layout-post .help-block {
+	color: #000;
+	font-size: 13px;
+	line-height: 17px;
+	text-transform: uppercase;
+	margin: 12px 0 12px 0;
+}
+
+/* Date picker */
+.page-node-628411.node-type-webform .form-group.webform-component-date {
+	margin-bottom: 0;
+}
+
+.page-node-628411.node-type-webform .webform-container-inline.webform-datepicker > div {
+	float: left;
+	width: 120px;
+	margin-right: 10px;
+}
+
+.page-node-628411.node-type-webform .webform-container-inline.webform-datepicker input {
+	height: 42px;
+	width: 0px;
+	background: url("/sites/all/themes/cyclinguk/images/system/date-picker.png");
+	padding-left: 40px;
+	margin-bottom: 32px;
+}
+
+.page-node-628411.node-type-webform .webform-container-inline.webform-datepicker input:focus {
+	outline: none;
+}
+
+@media only screen and (max-width: 469px) {
+	.page-node-628411.node-type-webform .webform-container-inline.webform-datepicker > div {
+		display: block !important;
+		float: inherit;
+		width: 100%;
+		margin-right: 0;
+		margin-bottom: 10px;
+	}
+}
+
+/* BBR events date picker label */
+.page-node-628411.node-type-webform
+	#edit-secondary-wrapper
+	#edit-date-filter-value
+	.form-item-date-filter-value-date:before {
+	display: block;
+	content: "Event date";
+	margin-bottom: 5px;
+	font-weight: 600;
+}
+
+/* Limit field widths */
+/* .webform-component-email,
+.webform-component-select {
+	max-width: 430px;
+} /*
+
+
+
+/* Select boxes */
+.page-node-628411.node-type-webform .form-select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background: url("../images/system/form-select-arrow.png") no-repeat right 20px center #ffffff;
+	overflow: hidden;
+}
+
+.page-node-628411.node-type-webform .form-select:focus {
+	color: #000;
+	color: rgba(0, 0, 0, 0);
+	text-shadow: 0 0 0 #000;
+	outline: none;
+}
+
+.page-node-628411.node-type-webform select option {
+	color: #000 !important;
+	background-color: #fff !important;
+}
+
+/*
+ * User registration form
+ */
+
+.page-node-628411.node-type-webform .cyclinguk-user-login-form-wrapper .field-wrapper {
+	margin-bottom: 30px;
+}
+
+.page-node-628411.node-type-webform .cyclinguk-user-login-form-wrapper .form-group {
+	margin-bottom: 0;
+}
+
+.page-node-628411.node-type-webform .cyclinguk-user-login-form-wrapper .field-wrapper-name legend {
+	display: none;
+}
+
+.page-node-628411.node-type-webform .cyclinguk-user-login-form-wrapper .field-wrapper-name .form-item {
+	margin-bottom: 30px;
+}
+
+.page-node-628411.node-type-webform .cyclinguk-user-login-form-wrapper .field-wrapper-name .form-item:last-child {
+	margin-bottom: 0px;
+}
+
+/* Hide label from webform
+  
+   This method is used instead of using the webform UI to hide the label so that
+   the webform to PDF module can correctly see the field label and render the 
+   PDF correctly. The wrapper CSS class for the field needs to be set as 
+   "no-label". */
+
+.page-node-628411.node-type-webform .webform-component.no-label label {
+	display: none;
+}
+.input-group .form-control:last-child {
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+.page-node-628411 .group-header-inner-wrapper span.image picture img {
+	margin: auto;
+}
+
+
+/*  again */
+
+/**
+ * Webforms
+ */
+
+/* This is all specific to webform on node 483001.  If new webforms created, will need updating */
+
+/* New page layout */
+
+.page-node-483001.node-type-webform .top-row,
+.page-node-483001.node-type-webform .middle-row,
+.page-node-483001.node-type-webform .main-container form {
+	margin-bottom: 30px;
+}
+
+.page-node-483001.node-type-webform .main-container form .form-actions {
+	text-align: center;
+}
+
+.page-node-483001.node-type-webform .main-container form .form-actions button {
+	margin: 10px;
+}
+
+.page-node-483001.node-type-webform .group-header-inner-wrapper {
+	position: relative;
+}
+
+.page-node-483001.node-type-webform .group-header-inner-wrapper .field-name-field-caption {
+	margin: 0;
+}
+
+.page-node-483001.node-type-webform.page-layout-post .field-name-title::before {
+	display: none;
+}
+
+.page-node-483001.node-type-webform.page-layout-post .field-name-title,
+.page-node-483001.node-type-webform.page-layout-post .field-name-field-teaser,
+.page-node-483001.node-type-webform.page-layout-post .field-name-body,
+.page-node-483001.node-type-webform.page-layout-post .field-name-field-body-bottom {
+	text-align: center;
+}
+
+.page-node-483001.node-type-webform.page-layout-post .field-name-title h1 {
+	margin-top: 30px;
+}
+
+.page-node-483001.node-type-webform.page-layout-post .field-name-field-teaser {
+	text-align: center;
+	font-family: "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 24px;
+	margin-bottom: 30px;
+	color: #009fda;
+}
+
+.page-node-483001.node-type-webform.page-layout-post .field-name-field-teaser::after {
+	content: "";
+	display: block;
+	height: 5px;
+	width: 140px;
+	border-radius: 2.5px;
+	-webkit-border-radius: 2.5px;
+	-moz-border-radius: 2.5px;
+	background-color: #fbb040;
+	margin: 30px auto 30px;
+}
+
+.page-node-483001.node-type-webform .main-container ul {
+	text-align: left;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 700px;
+}
+
+.webform-client-form-483001,
+.webform-client-form.webform-client-form-483001 form.webform-client-form.webform-client-form-483001 {
+	max-width: 550px;
+	margin: 0 auto;
+}
+
+/* Progress bar */
+
+.page-node-483001.node-type-webform footer .webform-progressbar {
+	display: none;
+}
+
+.page-node-483001.node-type-webform .webform-progressbar {
+	margin: 0 auto 60px;
+	width: 100%;
+}
+
+@media only screen and (max-width: 549px) {
+	.page-node-483001.node-type-webform .webform-progressbar {
+		display: none;
+	}
+}
+
+.page-node-483001.node-type-webform .webform-progressbar-page .webform-progressbar-page-label {
+	position: relative;
+	top: 12px;
+	margin: 0 -1em;
+	font-size: 10px;
+	line-height: 9px;
+	text-transform: uppercase;
+	text-align: left;
+	display: flex;
+}
+
+.page-node-483001.node-type-webform .webform-progressbar-outer {
+	border: 2px solid #8064a9;
+	height: 6px;
+}
+
+.page-node-483001.node-type-webform .webform-progressbar-inner {
+	background-color: #8064a9;
+}
+
+.page-node-483001.node-type-webform .webform-progressbar-page {
+	width: 10px;
+	height: 10px;
+	margin: -7px -4px;
+	border: 2px solid #8064a9;
+	border-radius: 5px;
+}
+
+.page-node-483001.node-type-webform .webform-progressbar-page.completed {
+	background-color: #8064a9;
+}
+
+.page-node-483001.node-type-webform .webform-progressbar-page.current {
+	background-color: #bfb1d4;
+}
+
+/* Fieldset panels */
+.page-node-483001.node-type-webform.page-layout-post .webform-component-fieldset {
+	padding: 10px;
+	border: 1px solid #fbb040;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+	box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+	margin-bottom: 30px;
+}
+
+.page-node-483001.node-type-webform.page-layout-post .webform-component-fieldset legend.panel-heading {
+	padding: 15px;
+}
+
+/* Terms and Conditions */
+.page-node-483001.node-type-webform .field-name-field-terms-and-conditions,
+.page-node-483001.node-type-webform .field-name-field-data-protection-statement {
+	margin: 0 0 30px 0;
+}
+
+.page-node-483001.node-type-webform .field-name-field-terms-and-conditions .field-label,
+.page-node-483001.node-type-webform .field-name-field-data-protection-statement .field-label {
+	text-align: left;
+	margin: 0 0 20px 0;
+}
+
+.page-node-483001.node-type-webform .field-name-field-terms-and-conditions .field-items,
+.page-node-483001.node-type-webform .field-name-field-data-protection-statement .field-items {
+	font-size: 13px;
+	line-height: 17px;
+	text-transform: uppercase;
+}
+
+.page-node-483001.node-type-webform .main-container form div.radio,
+.page-node-483001.node-type-webform .main-container form div.checkbox {
+	margin-bottom: 10px;
+}
+
+/* Required fields */
+
+.page-node-483001.node-type-webform .required-wrapper {
+	position: relative;
+}
+
+.page-node-483001.node-type-webform .required-wrapper:after {
+	display: block;
+	font-family: "Font Awesome 5 Pro";
+	font-weight: 200;
+	color: #da4500;
+	font-size: 16px;
+	line-height: 16px;
+	content: "\F069";
+	position: absolute;
+	float: right;
+	top: 13px;
+	right: 15px;
+}
+
+.form-required {
+	color: #da4500;
+}
+
+.page-node-483001.node-type-webform .form-group {
+	margin-bottom: 30px;
+}
+
+.page-node-483001.node-type-webform label {
+	margin-bottom: 12px;
+}
+
+.page-node-483001.node-type-webform .form-control,
+.page-node-483001.node-type-webform .form-item-field-ride-type-tid-1 .form-select /* BBR event type select list */ {
+	border: 1px solid #000;
+	border-radius: 22px;
+	-webkit-border-radius: 22px;
+	-moz-border-radius: 22px;
+	box-shadow: inherit;
+	color: #000;
+	font-size: 16px;
+	line-height: 16px;
+	height: 44px;
+	padding: 10px 20px;
+	width: 100%;
+}
+
+.page-node-483001.node-type-webform input[type="text"],
+.page-node-483001.node-type-webform input[type="email"],
+.page-node-483001.node-type-webform input[type="password"],
+.page-node-483001.node-type-webform textarea {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	box-shadow: none !important;
+}
+
+.page-node-483001.node-type-webform .form-control:focus {
+	border-color: #fbb040;
+	box-shadow: inherit;
+	outline: 0 none;
+}
+
+.page-node-483001.node-type-webform textarea {
+	resize: none;
+}
+
+.page-node-483001.node-type-webform .ui-widget,
+.page-node-483001.node-type-webform .ui-widget input,
+.page-node-483001.node-type-webform .ui-widget select,
+.page-node-483001.node-type-webform .ui-widget textarea {
+	font-family: "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	line-height: 22px;
+}
+
+.page-node-483001.node-type-webform input.btn,
+.page-node-483001.node-type-webform .ui-widget button,
+.page-node-483001.node-type-webform .ui-widget input.btn {
+	font-family: "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 15px;
+	line-height: 34px;
+	margin-right: 10px;
+}
+
+/* Placeholder text */
+.page-node-483001.node-type-webform .form-control::-webkit-input-placeholder {
+	color: #999;
+} /* Chrome/Opera/Safari */
+.page-node-483001.node-type-webform .form-control::-moz-placeholder {
+	color: #999;
+} /* Firefox 19+ */
+.page-node-483001.node-type-webform .form-control:-ms-input-placeholder {
+	color: #999;
+} /* IE 10+ */
+.page-node-483001.node-type-webform .form-control:-moz-placeholder {
+	color: #999;
+} /* Firefox 18- */
+
+@media only screen and (max-width: 469px) {
+	.page-node-483001.node-type-webform .form-control::-webkit-input-placeholder {
+		font-size: 14px;
+	}
+	.page-node-483001.node-type-webform .form-control::-moz-placeholder {
+		font-size: 14px;
+	}
+	.page-node-483001.node-type-webform .form-control:-ms-input-placeholder {
+		font-size: 14px;
+	}
+	.page-node-483001.node-type-webform .form-control:-moz-placeholder {
+		font-size: 14px;
+	}
+}
+
+/* Help text */
+.page-node-483001.node-type-webform .page-node-483001.node-type-webform.page-layout-post .control-group .help-inline,
+.page-node-483001.node-type-webform .page-node-483001.node-type-webform.page-layout-post .help-block {
+	color: #000;
+	font-size: 13px;
+	line-height: 17px;
+	text-transform: uppercase;
+	margin: 12px 0 12px 0;
+}
+
+/* Date picker */
+.page-node-483001.node-type-webform .form-group.webform-component-date {
+	margin-bottom: 0;
+}
+
+.page-node-483001.node-type-webform .webform-container-inline.webform-datepicker > div {
+	float: left;
+	width: 120px;
+	margin-right: 10px;
+}
+
+.page-node-483001.node-type-webform .webform-container-inline.webform-datepicker input {
+	height: 42px;
+	width: 0px;
+	background: url("/sites/all/themes/cyclinguk/images/system/date-picker.png");
+	padding-left: 40px;
+	margin-bottom: 32px;
+}
+
+.page-node-483001.node-type-webform .webform-container-inline.webform-datepicker input:focus {
+	outline: none;
+}
+
+@media only screen and (max-width: 469px) {
+	.page-node-483001.node-type-webform .webform-container-inline.webform-datepicker > div {
+		display: block !important;
+		float: inherit;
+		width: 100%;
+		margin-right: 0;
+		margin-bottom: 10px;
+	}
+}
+
+/* BBR events date picker label */
+.page-node-483001.node-type-webform
+	#edit-secondary-wrapper
+	#edit-date-filter-value
+	.form-item-date-filter-value-date:before {
+	display: block;
+	content: "Event date";
+	margin-bottom: 5px;
+	font-weight: 600;
+}
+
+/* Limit field widths */
+/* .webform-component-email,
+.webform-component-select {
+	max-width: 430px;
+} /*
+
+
+
+/* Select boxes */
+.page-node-483001.node-type-webform .form-select {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background: url("../images/system/form-select-arrow.png") no-repeat right 20px center #ffffff;
+	overflow: hidden;
+}
+
+.page-node-483001.node-type-webform .form-select:focus {
+	color: #000;
+	color: rgba(0, 0, 0, 0);
+	text-shadow: 0 0 0 #000;
+	outline: none;
+}
+
+.page-node-483001.node-type-webform select option {
+	color: #000 !important;
+	background-color: #fff !important;
+}
+
+/*
+ * User registration form
+ */
+
+.page-node-483001.node-type-webform .cyclinguk-user-login-form-wrapper .field-wrapper {
+	margin-bottom: 30px;
+}
+
+.page-node-483001.node-type-webform .cyclinguk-user-login-form-wrapper .form-group {
+	margin-bottom: 0;
+}
+
+.page-node-483001.node-type-webform .cyclinguk-user-login-form-wrapper .field-wrapper-name legend {
+	display: none;
+}
+
+.page-node-483001.node-type-webform .cyclinguk-user-login-form-wrapper .field-wrapper-name .form-item {
+	margin-bottom: 30px;
+}
+
+.page-node-483001.node-type-webform .cyclinguk-user-login-form-wrapper .field-wrapper-name .form-item:last-child {
+	margin-bottom: 0px;
+}
+
+/* Hide label from webform
+  
+   This method is used instead of using the webform UI to hide the label so that
+   the webform to PDF module can correctly see the field label and render the 
+   PDF correctly. The wrapper CSS class for the field needs to be set as 
+   "no-label". */
+
+.page-node-483001.node-type-webform .webform-component.no-label label {
+	display: none;
+}
+.input-group .form-control:last-child {
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+.page-node-483001 .group-header-inner-wrapper span.image picture img {
+	margin: auto;
+}
+
+
+/* ------- */
+.ui-datepicker {z-index: 9999 !important;}
+
+#webform-addmore-.add-more.button.white {
+    background-color: #fff;
+    border-color: #fbb040;
+    color: #000;
+    display: inline-block;
+    min-width: 140px;
+    font-size: 15px;
+    line-height: 34px;
+    text-transform: uppercase;
+    text-decoration: none !important;
+    padding: 0 18px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-width: 1px;
+    border-style: solid;
+}
+
+#webform-addmore-.add-more.button.white:hover {
+    background-color: #fbb040;
+    border-color: #fbb040;
+    color: #fff;
+    box-shadow: inherit;
+    border-width: 1px;
+    border-style: solid;
+}
+
+input.del-btn.button.white,
+input.del-btn.button.white:hover {
+   background-color: transparent;
+   border-width: 0;
+   cursor: pointer;
+   color: #009fda;
+}
+
+input.del-btn.button.white:hover {
+   text-decoration: underline;
+}
+
+
+.panel-title {
+    font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 24px;
+}

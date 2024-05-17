@@ -1,0 +1,42 @@
+.paragraph-bundle-file-downloads-simple {
+    margin-bottom: 60px;
+    padding: 30px 30px 0;
+    box-sizing: border-box;
+}
+
+.paragraph-bundle-file-downloads-simple.remove_bottom_margin_yes {
+    margin-bottom: 0;
+}
+
+.paragraph-bundle-file-downloads-simple h2 {
+    text-align: center;
+    font-size: 36px;
+    line-height: 36px;
+    margin-top: 0;
+    margin-bottom: 30px;
+    color: #000;
+}
+
+.paragraph-bundle-file-downloads-simple p {
+    text-align: center;
+    max-width: 800px;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.paragraph-bundle-file-downloads-simple .field-name-field-attachments {
+    margin-top: 12px;
+}
+
+.paragraph-bundle-file-downloads-simple .field-name-field-attachments:after {
+    height: 0;
+    background-color: transparent;
+}
+
+.paragraph-bundle-file-downloads-simple .entity-paragraphs-item {
+    border-color: transparent;
+}
+
+.paragraphs-item-file-downloads-simple .field-name-field-text {
+    margin-bottom: 40px;
+}

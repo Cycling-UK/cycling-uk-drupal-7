@@ -1,0 +1,60 @@
+.tb-megamenu-menu-mega-secondary-menu ul.tb-megamenu-nav {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+}
+
+.tb-megamenu-menu-mega-secondary-menu ul.tb-megamenu-nav a {
+  display: flex;
+  width: inherit;
+}
+
+.tb-megamenu-menu-mega-secondary-menu .nav > li > a {
+  border-right: inherit;
+  color: inherit;
+  font-weight: inherit;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  font-size: 18px;
+  line-height: 18px;
+  width: 170px;
+  height: 36px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+}
+
+.tb-megamenu-menu-mega-secondary-menu .nav > li > a:hover,
+.tb-megamenu-menu-mega-secondary-menu .nav > li > a:focus {
+  border-bottom: inherit;
+  color: inherit;
+  text-decoration: none;
+  text-shadow: none;
+  outline: none;
+}
+
+.tb-megamenu-menu-mega-secondary-menu .nav > li.navbtn > a       {background-color: #ced4da;}
+.tb-megamenu-menu-mega-secondary-menu .nav > li.navbtn > a:hover {background-color: #adb5bd;}
+.tb-megamenu-menu-mega-secondary-menu .nav > li.navbtn > a:focus {background-color: #686b6e;}
+
+.tb-megamenu-menu-mega-secondary-menu .nav > li.navbtn.navbtn-primary > a       {background-color: #fbb040;}
+.tb-megamenu-menu-mega-secondary-menu .nav > li.navbtn.navbtn-primary > a:hover {background-color: #fa9b0e;}
+.tb-megamenu-menu-mega-secondary-menu .nav > li.navbtn.navbtn-primary > a:focus {background-color: #d17f04;}
+
+
+.not-logged-in .tb-megamenu-menu-mega-secondary-menu .menu-item-account,
+.not-logged-in .tb-megamenu-menu-mega-secondary-menu .menu-item-benefits,
+.not-logged-in .tb-megamenu-menu-mega-secondary-menu .menu-item-search {
+  display: none;
+}
+
+.logged-in .tb-megamenu-menu-mega-secondary-menu .menu-item-account,
+.logged-in .tb-megamenu-menu-mega-secondary-menu .menu-item-join,
+.logged-in .tb-megamenu-menu-mega-secondary-menu .menu-item-search {
+  display: none;
+}

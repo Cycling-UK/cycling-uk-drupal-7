@@ -1,0 +1,46 @@
+name = Pumped Up XL Bootstrap Sub-Theme (CDN)
+description = Pumped Up Bootstrap sub-sub-theme with enhanced support for wide displays.
+core = 7.x
+base theme = cyclingukxl
+php = 5.3.0
+
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Regions
+;;;;;;;;;;;;;;;;;;;;;
+
+regions[navigation_left]   = 'Navigation left'
+regions[navigation_middle] = 'Navigation middle'
+regions[navigation_right]  = 'Navigation right'
+regions[navigation_bottom] = 'Navigation bottom'
+regions[header]            = 'Top Bar'
+regions[highlighted]       = 'Highlighted'
+regions[help]              = 'Help'
+regions[content]           = 'Content'
+regions[sidebar_first]     = 'Primary'
+regions[sidebar_second]    = 'Secondary'
+regions[footer]            = 'Footer'
+regions[page_top]          = 'Page top'
+regions[page_bottom]       = 'Page bottom'
+
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Stylesheets
+;;;;;;;;;;;;;;;;;;;;;
+
+stylesheets[all][] = css/pup-style.css
+stylesheets[all][] = css/pup-header.css
+stylesheets[all][] = css/pup-footer.css
+stylesheets[all][] = css/pup-menu-desktop.css
+stylesheets[all][] = css/pup-menu-mobile.css
+stylesheets[all][] = css/pup-search.css
+stylesheets[all][] = css/pup-posts.css
+stylesheets[all][] = css/pup-webform.css
+stylesheets[all][] = css/pup-paragraphs.css
+
+
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Scripts
+;;;;;;;;;;;;;;;;;;;;;
+

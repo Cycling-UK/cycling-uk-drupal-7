@@ -1,0 +1,994 @@
+.paragraph_background_colour_yellow > .paragraphs-item-background-colour-and-text-panel .field-name-field-text,
+.paragraph_background_colour_white > .paragraphs-item-background-colour-and-text-panel .field-name-field-subtitle,
+.paragraph_background_colour_white > .paragraphs-item-background-colour-and-text-panel .field-name-field-text {
+  color: #3b3b3a;
+}
+
+.paragraphs-item-background-image-with-text-panel .paragraph_background_colour_blue .field-name-field-subtitle,
+.paragraph_background_colour_blue > .paragraphs-item-background-colour-and-text-panel .field-name-field-subtitle {
+  text-shadow: 1px 1px 0 #8e1019;
+}
+
+.paragraph_background_colour_green > .paragraphs-item-background-colour-and-text-panel .field-name-field-text,
+.paragraph_background_colour_yellow > .paragraphs-item-background-colour-and-text-panel .field-name-field-subtitle,
+.paragraphs-item-background-image-with-text-panel .paragraph_background_colour_yellow .field-name-field-subtitle {
+  color: #fff;
+}
+
+.paragraph_background_colour_green > .paragraphs-item-background-colour-and-text-panel .field-name-field-subtitle {
+  color: #fbb040;
+}
+
+/* Override all background tints to bike week red */
+/* for bike week theme, blue become rich darker red */
+.bikeweekxl .paragraphs-items .paragraph_background_colour_blue,
+.bikeweekxl .paragraph_background_colour_blue .group-title-wrapper {
+  background-color: #bc1521;
+}
+
+/* warmer pink */
+
+.paragraphs-items .paragraph_background_colour_pink,
+.paragraph_background_colour_pink .group-title-wrapper {
+  background-color: #c6006c;
+}
+/*
+.paragraphs-items .paragraph_background_colour_purple,
+.paragraph_background_colour_purple .group-title-wrapper {
+  background-color: #bc1521;
+}
+
+.paragraphs-items .paragraph_background_colour_yellow,
+.paragraph_background_colour_yellow .group-title-wrapper {
+  background-color: #bc1521;
+}
+*/
+
+/* Bike week green is darker, forest like green */
+.paragraphs-items .paragraph_background_colour_green,
+.paragraph_background_colour_green .group-title-wrapper {
+  background-color: #006633;
+}
+.paragraphs-item-background-image-with-text-panel .field-name-field-subtitle {
+  color: #fbb040;
+  font-family: "itc-american-typewriter", Georgia, serif;
+  font-weight: 500;
+}
+
+.paragraphs-item-background-image-with-text-panel .field-name-field-text {
+  color: #fff;
+}
+
+/*
+.paragraphs-items .paragraph_background_colour_grey,
+.paragraph_background_colour_grey .group-title-wrapper {
+  background-color: #bc1521;
+}
+*/
+
+.bikeweekxl .paragraphs-item-background-colour-and-text-panel .field-name-field-links .field-item a,
+.bikeweekxl .paragraphs-item-background-colour-and-text-panel .field-name-field-links .field-item a:hover,
+.bikeweekxl .paragraphs-item-background-colour-and-text-panel .field-name-field-links .field-item a:focus,
+.bikeweekxl .btn,
+.bikeweekxl .btn-default,
+.bikeweekxl .btn-primary,
+.bikeweekxl .node-paragraphs .field-name-field-link a,
+.bikeweekxl .paragraphs-item-text-left-and-image-right .field-name-field-links .field-item a,
+.bikeweekxl .paragraphs-item-text-right-and-image-left .field-name-field-links .field-item a,
+.bikeweekxl .paragraphs-item-background-image-with-text-panel .field-name-field-links .field-item a,
+.bikeweekxl .paragraphs-item-background-image-with-text-panel .field-name-field-links .field-item a:hover,
+.bikeweekxl .paragraphs-item-background-image-with-text-panel .field-name-field-links .field-item a:focus {
+  border-color: #bc1521;
+}
+.paragraph_background_colour_yellow
+  > .paragraphs-item-background-colour-and-text-panel
+  .field-name-field-links
+  .field-item
+  a:hover,
+.paragraphs-item-background-image-with-text-panel
+  .paragraph_background_colour_yellow
+  .field-name-field-links
+  .field-item
+  a:hover {
+  background-color: #bc1521;
+}
+
+/***************************************************/
+
+.bikeweekxl .node-paragraphs .main-content-wrapper > span.image {
+  display: block;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.bikeweekxl .node-paragraphs .main-content-wrapper > span.image img {
+  width: 100%;
+  height: auto;
+}
+
+.bikeweekxl .node-paragraphs .field-name-field-teaser {
+  text-align: center;
+  font-size: 22px;
+  line-height: 26px;
+  color: #bc1521;
+  max-width: 800px;
+  margin: 0 auto 60px auto;
+  font-family: "itc-american-typewriter", Georgia, serif;
+  font-weight: 500;
+}
+
+.bikeweekxl .node-paragraphs .main-content-wrapper.remove_bottom_margin_yes .group-title-wrapper {
+  margin-bottom: 0;
+}
+
+.bikeweekxl .node-paragraphs .remove-gutter {
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.paragraphs-item-blockquote {
+  font-family: "itc-american-typewriter", Georgia, serif;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 26px;
+}
+
+.paragraphs-item-blockquote .field-name-field-text:before {
+  content: "\f100";
+  display: inline-flex;
+  margin-right: 10px;
+}
+
+.paragraphs-item-blockquote .field-name-field-text:after {
+  content: "\f101";
+  display: inline-flex;
+  flex-direction: column-reverse;
+  margin-left: 10px;
+}
+
+/* Background colours */
+
+.bikeweekxl .node-paragraphs .paragraphs-items .paragraph_background_colour_blue,
+.bikeweekxl .node-paragraphs .paragraph_background_colour_blue .group-title-wrapper {
+  background-color: #bc1521;
+}
+/*
+.bikeweekxl .node-paragraphs .paragraphs-items .paragraph_background_colour_pink,
+.bikeweekxl .node-paragraphs .paragraph_background_colour_pink .group-title-wrapper {
+  background-color: #bc1521;
+}
+
+.bikeweekxl .node-paragraphs .paragraphs-items .paragraph_background_colour_purple,
+.bikeweekxl .node-paragraphs .paragraph_background_colour_purple .group-title-wrapper {
+  background-color: #bc1521;
+}
+
+.bikeweekxl .node-paragraphs .paragraphs-items .paragraph_background_colour_yellow,
+.bikeweekxl .node-paragraphs .paragraph_background_colour_yellow .group-title-wrapper {
+  background-color: #bc1521;
+}
+
+
+.bikeweekxl .node-paragraphs .paragraphs-items .paragraph_background_colour_green,
+.bikeweekxl .node-paragraphs .paragraph_background_colour_green .group-title-wrapper {
+  background-color: #bc1521;
+}
+
+.bikeweekxl .node-paragraphs .paragraphs-items .paragraph_background_colour_grey,
+.bikeweekxl .node-paragraphs .paragraph_background_colour_grey .group-title-wrapper {
+  background-color: #bc1521;
+}
+*/
+/* Background watermarks */
+
+.bikeweekxl .node-paragraphs .group-title-wrapper {
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* Unset background watermark for video player if none is set */
+.webp .bikeweekxl .node-paragraphs .paragraphs-items .paragraphs-item-video-player .main-video-block .background-tint,
+.no-webp
+  .bikeweekxl
+  .node-paragraphs
+  .paragraphs-items
+  .paragraphs-item-video-player
+  .main-video-block
+  .background-tint {
+  background-image: inherit;
+}
+
+.webp .bikeweekxl .node-paragraphs .background_watermark_winged_wheel .group-title-wrapper,
+.webp
+  .node-paragraphs
+  .background_watermark_winged_wheel
+  > .paragraphs-item-video-player
+  .main-video-block
+  .background-tint {
+  background-image: url("/sites/all/themes/cyclingukxl/images/hero/winged-wheel-tint-sm.webp");
+}
+
+.no-webp .bikeweekxl .node-paragraphs .background_watermark_winged_wheel .group-title-wrapper,
+.no-webp
+  .node-paragraphs
+  .background_watermark_winged_wheel
+  > .paragraphs-item-video-player
+  .main-video-block
+  .background-tint {
+  background-image: url("/sites/all/themes/cyclingukxl/images/hero/winged-wheel-tint-sm.png");
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+  .webp .bikeweekxl .node-paragraphs .background_watermark_winged_wheel .group-title-wrapper,
+  .webp
+    .node-paragraphs
+    .background_watermark_winged_wheel
+    > .paragraphs-item-video-player
+    .main-video-block
+    .background-tint {
+    background-image: url("/sites/all/themes/cyclingukxl/images/hero/winged-wheel-tint-md.webp");
+  }
+
+  .no-webp .bikeweekxl .node-paragraphs .background_watermark_winged_wheel .group-title-wrapper,
+  .no-webp
+    .node-paragraphs
+    .background_watermark_winged_wheel
+    > .paragraphs-item-video-player
+    .main-video-block
+    .background-tint {
+    background-image: url("/sites/all/themes/cyclingukxl/images/hero/winged-wheel-tint-md.png");
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .webp .bikeweekxl .node-paragraphs .background_watermark_winged_wheel .group-title-wrapper,
+  .webp
+    .node-paragraphs
+    .background_watermark_winged_wheel
+    > .paragraphs-item-video-player
+    .main-video-block
+    .background-tint {
+    background-image: url("/sites/all/themes/cyclingukxl/images/hero/winged-wheel-tint-lg.webp");
+  }
+
+  .no-webp .bikeweekxl .node-paragraphs .background_watermark_winged_wheel .group-title-wrapper,
+  .no-webp
+    .node-paragraphs
+    .background_watermark_winged_wheel
+    > .paragraphs-item-video-player
+    .main-video-block
+    .background-tint {
+    background-image: url("/sites/all/themes/cyclingukxl/images/hero/winged-wheel-tint-lg.png");
+  }
+}
+
+.webp .bikeweekxl .node-paragraphs .background_watermark_womens_festival .group-title-wrapper,
+.webp
+  .node-paragraphs
+  .background_watermark_womens_festival
+  > .paragraphs-item-video-player
+  .main-video-block
+  .background-tint {
+  background-image: url("/sites/all/themes/cyclingukxl/images/hero/womens-festival-tint-sm.webp");
+}
+
+.no-webp .bikeweekxl .node-paragraphs .background_watermark_womens_festival .group-title-wrapper,
+.no-webp
+  .node-paragraphs
+  .background_watermark_womens_festival
+  > .paragraphs-item-video-player
+  .main-video-block
+  .background-tint {
+  background-image: url("/sites/all/themes/cyclingukxl/images/hero/womens-festival-tint-sm.png");
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+  .webp .bikeweekxl .node-paragraphs .background_watermark_womens_festival .group-title-wrapper,
+  .webp
+    .node-paragraphs
+    .background_watermark_womens_festival
+    > .paragraphs-item-video-player
+    .main-video-block
+    .background-tint {
+    background-image: url("/sites/all/themes/cyclingukxl/images/hero/womens-festival-tint-md.webp");
+  }
+
+  .no-webp .bikeweekxl .node-paragraphs .background_watermark_womens_festival .group-title-wrapper,
+  .no-webp
+    .node-paragraphs
+    .background_watermark_womens_festival
+    > .paragraphs-item-video-player
+    .main-video-block
+    .background-tint {
+    background-image: url("/sites/all/themes/cyclingukxl/images/hero/womens-festival-tint-md.png");
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .webp .bikeweekxl .node-paragraphs .background_watermark_womens_festival .group-title-wrapper,
+  .webp
+    .node-paragraphs
+    .background_watermark_womens_festival
+    > .paragraphs-item-video-player
+    .main-video-block
+    .background-tint {
+    background-image: url("/sites/all/themes/cyclingukxl/images/hero/womens-festival-tint-lg.webp");
+  }
+
+  .no-webp .bikeweekxl .node-paragraphs .background_watermark_womens_festival .group-title-wrapper,
+  .nO-webp
+    .node-paragraphs
+    .background_watermark_womens_festival
+    > .paragraphs-item-video-player
+    .main-video-block
+    .background-tint {
+    background-image: url("/sites/all/themes/cyclingukxl/images/hero/womens-festival-tint-lg.png");
+  }
+}
+
+.bikeweekxl .node-paragraphs .field-name-field-link {
+  text-align: center;
+}
+
+.bikeweekxl .node-paragraphs .field-name-field-link a {
+  border: 1px solid #bc1521;
+  margin: 0 auto;
+}
+
+.bikeweekxl .node-paragraphs .paragraph_background_colour_yellow .field-name-field-link a:hover,
+.bikeweekxl .node-paragraphs .paragraph_background_colour_yellow .field-name-field-link a:focus {
+  border: 1px solid #bc1521;
+  background-color: #bc1521;
+}
+
+.bikeweekxl .node-paragraphs .field-name-field-paragraph h2 {
+  color: #000;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.bikeweekxl .node-paragraphs .field-name-field-paragraph .wfoc-newsletter-signup h2 {
+  color: #fff;
+  text-align: left;
+  margin-top: 0;
+}
+
+.field-name-field-paragraph h3 {
+  text-align: center;
+  font-size: 20px;
+  line-height: 24px;
+  margin: 20px 0 30px;
+  color: #009fda;
+  font-weight: 400;
+}
+
+.field-name-field-paragraph h3:after {
+  content: "";
+  display: block;
+  height: 5px;
+  width: 140px;
+  border-radius: 2.5px;
+  -webkit-border-radius: 2.5px;
+  -moz-border-radius: 2.5px;
+  background-color: #bc1521;
+  margin: 30px auto 60px;
+}
+
+/**
+ * Bike Week subtheme
+ */
+
+/*
+ * Layout
+ */
+
+.full-width-menu-container {
+  height: 215px;
+}
+
+/*
+@media only screen and (max-width : 767px) {
+	.full-width-menu-container {
+		height: 166px;
+	}
+}
+*/
+
+/*
+ * Typography
+ */
+
+body {
+  color: #3b3b3a;
+}
+.bikeweekxl h1,
+.bikeweekxl h2,
+.bikeweekxl h3,
+.bikeweekxl h4,
+.bikeweekxl h5,
+.bikeweekxl h6,
+.bikeweekxl .field-name-title h1,
+.bikeweekxl .field-name-field-teaser,
+.bikeweekxl h2,
+.bikeweekxl .field-label {
+  font-family: "itc-american-typewriter", Georgia, serif;
+  font-weight: 500;
+}
+
+.bikeweekxl .entity-paragraphs-item h2,
+.bikeweekxl .entity-paragraphs-item h3,
+.bikeweekxl .entity-paragraphs-item h4,
+.bikeweekxl .entity-paragraphs-item h5,
+.bikeweekxl .entity-paragraphs-item h6 {
+  color: #bc1512;
+}
+
+.bikeweekxl h2,
+.bikeweekxl .field-label {
+  color: #bc1521;
+}
+
+.bikeweekxl .field-name-title::before {
+  background-color: #bc1521;
+}
+
+.node-type-paragraphs.bikeweekxl .field-name-title h1 {
+  display: initial;
+  font-family: "itc-american-typewriter", Georgia, serif;
+  font-weight: 500;
+  font-size: 60px;
+  line-height: 70px;
+  text-shadow: inherit;
+  /* background-color: #bc1521; */
+  background-color: inherit;
+  padding: 0px 20px 5px 20px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .node-type-paragraphs.bikeweekxl .field-name-title h1 {
+    font-size: 50px;
+    line-height: 60px;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .node-type-paragraphs.bikeweekxl .field-name-title h1 {
+    font-size: 40px;
+    line-height: 50px;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .node-type-paragraphs.bikeweekxl .field-name-title h1 {
+    font-size: 30px;
+    line-height: 40px;
+  }
+}
+
+@-moz-document url-prefix() {
+  .node-type-paragraphs.bikeweekxl .field-name-title h1 {
+    padding: 10px 20px 5px 20px;
+  }
+}
+
+.node-type-paragraphs.bikeweekxl .field-name-field-teaser::after {
+  background-color: #bc1521;
+}
+
+.node-type-paragraphs.bikeweekxl h2,
+.node-type-paragraphs.bikeweekxl .view.listing-page h2.title,
+.node-type-paragraphs.bikeweekxl .field-type-viewreference h2,
+.node-type-paragraphs.bikeweekxl .field-name-field-links .field-label,
+.node-type-paragraphs.bikeweekxl .field-name-field-attachments .field-label,
+.bikeweekxl .paragraphs-item-simple-text-block .field-name-field-subtitle,
+.bikeweekxl .paragraphs-item-text-field-with-one-or-more-colu .field-name-field-subtitle,
+.bikeweekxl .paragraphs-item-text-field-with-one-or-more-colu .field-name-field-subtitle,
+.bikeweekxl .node-paragraphs .field-name-title,
+.bikeweekxl .paragraphs-item-simple-buttons .field-name-field-subtitle,
+.bikeweekxl .paragraphs-item-background-colour-and-text-panel .field-name-field-subtitle,
+.bikeweekxl .node-type-paragraphs.bikeweekxl .field-name-share-buttons:before,
+.bikeweekxl .paragraphs-item-background-colour-and-text-panel .field-name-field-text ol li:before,
+.bikeweekxl .paragraphs-item-background-image-with-text-panel .field-name-field-text ol li:before,
+.bikeweekxl
+  .paragraphs-item-background-image-with-text-panel
+  .paragraph_background_colour_blue
+  .field-name-field-subtitle,
+.bikeweekxl
+  .paragraphs-item-background-image-with-text-panel
+  .paragraph_background_colour_pink
+  .field-name-field-subtitle,
+.bikeweekxl
+  .paragraphs-item-background-image-with-text-panel
+  .paragraph_background_colour_purple
+  .field-name-field-subtitle,
+.bikeweekxl
+  .paragraphs-item-background-image-with-text-panel
+  .paragraph_background_colour_grey
+  .field-name-field-subtitle,
+.bikeweekxl .paragraphs-item-parallax-image .field-name-field-title,
+.bikeweekxl .paragraphs-item-parallax-image .field-name-field-subtitle,
+.bikeweekxl .paragraphs-item-featured-articles-x4 .field-name-field-title,
+.bikeweekxl .paragraphs-item-videos .field-name-field-title,
+.bikeweekxl .paragraphs-item-video-player .field-name-field-subtitle,
+.bikeweekxl .paragraphs-terms-conditions h4.tc-title,
+.bikeweekxl .paragraphs-item-basic-related-content .field-name-field-paragraph-title {
+  font-family: "itc-american-typewriter", Georgia, serif;
+  font-weight: 500;
+}
+
+.bikeweekxl .paragraphs-item-background-colour-and-text-panel .field-name-field-links .field-item a,
+.bikeweekxl .paragraphs-item-background-colour-and-text-panel .field-name-field-links .field-item a:hover,
+.bikeweekxl .paragraphs-item-background-colour-and-text-panel .field-name-field-links .field-item a:focus,
+.bikeweekxl .btn,
+.bikeweekxl .btn-default,
+.bikeweekxl .btn-primary,
+.bikeweekxl .node-paragraphs .field-name-field-link a,
+.bikeweekxl .paragraphs-item-text-left-and-image-right .field-name-field-links .field-item a,
+.bikeweekxl .paragraphs-item-text-right-and-image-left .field-name-field-links .field-item a,
+.bikeweekxl .paragraphs-item-background-image-with-text-panel .field-name-field-links .field-item a,
+.bikeweekxl .paragraphs-item-background-image-with-text-panel .field-name-field-links .field-item a:hover,
+.bikeweekxl .paragraphs-item-background-image-with-text-panel .field-name-field-links .field-item a:focus {
+  border-color: #bc1521;
+}
+
+.bikeweekxl .paragraphs-item-links .field-name-field-links a:hover,
+.bikeweekxl .paragraphs-item-links .field-name-field-links a:focus,
+.bikeweekxl .paragraphs-item-links .field-name-field-links a:active,
+.bikeweekxl .paragraphs-item-links .field-name-field-links a:before {
+  background-color: #bc1521;
+}
+
+.bikeweekxl .paragraphs-item-links .field-name-field-links a {
+  border: 1px solid #bc1521;
+}
+
+/* bike week paragraph bundle headers */
+.node-type-paragraphs.bikeweekxl .field .field-label,
+.paragraphs-item-logged-in-content .field-name-field-title,
+.node-type-paragraphs.bikeweekxl .paragraphs-item-blocks .field-name-field-paragraph-title h2,
+.node-type-paragraphs.bikeweekxl .paragraph-bundle-teaser-tiles .field-name-field-paragraph-title h2,
+.node-type-paragraphs.bikeweekxl .field-name-field-title.field-type-text .field-item h2,
+.node-type-paragraphs.bikeweekxl .field-item h2,
+.paragraphs-item-basic-related-content .field-name-field-paragraph-title,
+.paragraphs-item-simple-text-block .field-name-field-subtitle,
+.paragraphs-item-simple-buttons .field-name-field-subtitle {
+  color: #bc1521;
+  font-family: "itc-american-typewriter", Georgia, serif;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 36px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/*
+ * Main menu
+ */
+
+/* Hide parent items - why are these showing?! */
+
+.bikeweekxl header#page-header p.lead,
+.bikeweekxl header#navbar .navbar-header a.navbar-brand,
+.bikeweekxl header#navbar nav > ul.navbar-nav {
+  display: none;
+}
+
+/* Hide adverts */
+.field-name-advert-1,
+.field-name-advert-2,
+.field-name-advert-3,
+.field-name-advert-4,
+.field-name-advert-5 {
+  display: none;
+}
+
+/*
+ * Search
+ */
+
+.bikeweekxl .search-block .form-control {
+  border: 1px solid #bc1521;
+}
+
+/*
+ * Coloured text and lines
+ * These are OVERRIDES to the parent Cycling UK theme so what was originally declared as one colour is now a different colour for Bike Week
+ */
+
+.bikeweekxl span.yellow-text {
+  color: #009ee1;
+} /* Yellow is now BLUE   for Bike Week */
+.bikeweekxl span.blue-text {
+  color: #bc1512;
+} /* Blue   is now RED   for Bike Week */
+s.bikeweekxl pan.purple-text {
+  color: #009ee1;
+} /* Purple is now BLUE  for Bike Week */
+
+.bikeweekxl span.yellow-line {
+  background-color: #bc1512;
+} /* Yellow is now RED  for Bike Week */
+.bikeweekxl span.purple-line {
+  background-color: #009ee1;
+} /* Yellow is now BLUE for Bike Week */
+
+/*
+ * Carousels
+ */
+
+.bikeweekxl .carousel-triplet .view-header {
+  font-family: "itc-american-typewriter", Georgia, serif;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 36px;
+}
+
+/*
+ * Child pages
+ */
+
+.bikeweekxl .view.child-list .title {
+  font-family: "itc-american-typewriter", Georgia, serif;
+  font-weight: 500;
+}
+
+.bikeweekxl .view.child-list .btn-transparent {
+  border-color: #006633;
+}
+
+.bikeweekxl .view.child-list a:hover .btn,
+.bikeweekxl .view.child-list a:active .btn {
+  background-color: #006633;
+}
+
+/*
+ * Share
+ */
+
+.bikeweekxl .shariff li a {
+  background-color: #bc1512 !important;
+}
+
+.bikeweekxl .shariff li a:hover {
+  background-color: #fbb040 !important;
+  color: #fff;
+}
+
+/*
+ * Footer
+ 
+*/
+
+.bikeweekxl footer.footer {
+  font-size: 14px;
+  line-height: 22px;
+  background-color: #3b3b3a;
+  color: #fff;
+  padding-top: 30px;
+  padding-bottom: 200px;
+  margin-top: -1px;
+  border-top: none;
+}
+
+.bikeweekxl footer.footer span.yellow-text {
+  color: #fff;
+  font-weight: 600;
+}
+
+.bikeweekxl footer.footer #scroll_top {
+  font-family: "itc-american-typewriter", Georgia, serif;
+  font-weight: 500;
+  color: #bc1512;
+}
+
+.bikeweekxl footer.footer .scroll-button {
+  /* background-image: url("../images/footer/bw-back-to-top.png");*/
+  width: 105px;
+}
+
+.bikeweekxl footer.footer ul.footer-links a:hover {
+  color: #bc1512;
+  text-decoration: underline;
+}
+
+/*
+ * Promo boxes
+ *
+ * BASIC:	.promobox
+ * COLOUR:	.promobox-purple
+ * FONT:	.promobox-font-cocon .promobox-font-karla <-- DECLARE ITC-AMERICAN-TYPEWRITER FOR BIKE WEEK!!
+ * LIST:	.promobox-list
+ *
+ */
+
+.bikeweekxl .promobox {
+  color: #fff;
+}
+
+.bikeweekxl .promobox-purple .bottom-container {
+  background-color: #3b3b3a;
+}
+
+.bikeweekxl .promobox-font-cocon,
+.bikeweekxl .promobox-title {
+  font-family: "itc-american-typewriter", Georgia, serif;
+}
+
+.bikeweekxl .promobox-list ul li {
+  background: url("../images/system/bw-red-tick.png") no-repeat scroll 0 4px;
+}
+
+/*
+ * Landing pages
+ */
+
+.bikeweekxl .join-quote {
+  background-color: #bc1512;
+}
+
+/*
+ * Social media join buttons on Promote page
+ */
+
+.bikeweekxl .promote-social-text,
+.bikeweekxl .promote-social-icons {
+  font-family: "itc-american-typewriter", Georgia, serif;
+  font-size: 22px;
+  line-height: 28px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.bikeweekxl .promote-social-text strong {
+  color: #bc1512;
+}
+
+.bikeweekxl .promote-social-icons > div {
+  display: inline-block;
+  width: 200px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  color: #fff;
+  margin: 10px;
+  padding: 20px 10px;
+}
+
+.bikeweekxl .promote-block-twitter {
+  background-color: #55acee;
+}
+.bikeweekxl .promote-block-facebook {
+  background-color: #3b5999;
+}
+.bikeweekxl .promote-block-instagram {
+  background-color: #e4405f;
+}
+.bikeweekxl .promote-block-strava {
+  background-color: #fc4c02;
+}
+
+.bikeweekxl .promote-block-icon {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+/* Tables
+ *
+ * These rules apply to properly structured tables WITH thead and tbody structures, i.e. are probably created by the CMS or by the web development team.
+ */
+
+.bikeweekxl .main-container table thead tr th,
+.bikeweekxl .main-container table thead tr td {
+  border-top: 1px solid #bc1512;
+  border-left: 1px solid #bc1512;
+}
+
+.bikeweekxl .main-container table thead th.active a {
+  color: #bc1512;
+}
+
+.bikeweekxl .main-container table thead {
+  border: 1px solid #bc1512;
+  background-color: #bc1512;
+  font-family: "itc-american-typewriter", Georgia, serif;
+  font-weight: 500;
+}
+
+.bikeweekxl .table-striped > tbody > tr:nth-of-type(2n + 1):hover {
+  background-color: rgba(188, 21, 18, 0.1);
+}
+
+.bikeweekxl .main-container table tbody a {
+  color: #000;
+}
+
+/*
+ * Join today banner
+ */
+
+.bikeweekxl .join-today-banner {
+  background-color: #bc1512;
+}
+
+.bikeweekxl .join-today-banner .text {
+  font-family: "itc-american-typewriter", Georgia, serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  text-shadow: inherit;
+}
+
+.bikeweekxl .join-today-banner .btn.renew {
+  background-color: #fff;
+  border-color: #fff;
+  color: #000;
+  -webkit-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+}
+
+.bikeweekxl .join-today-banner .btn.join:hover,
+.bikeweekxl .join-today-banner .btn.renew:hover {
+  background-color: #006633;
+  border-color: #006633;
+  color: #fff;
+}
+
+.bikeweekxl .join-today-banner .narrow a {
+  font-family: "itc-american-typewriter", Georgia, serif;
+  font-weight: 500;
+  text-shadow: inherit;
+}
+
+/*
+ * Views
+ */
+
+/* Hide the mysterious repeating views filter from above the search results */
+.bikeweekxl .view-display-id-bw_events_block > .view-filters {
+  display: none;
+}
+
+/*
+ * Bike Week registration infographic
+ */
+
+.bikeweekxl .bikeweekxl #bikeweek-register-events-steps {
+  padding: 30px;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  background-color: #f0f0f0;
+}
+
+.bikeweekxl #bikeweek-register-events-steps .inner-wrapper {
+  width: 500px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+.bikeweekxl #bikeweek-register-events-steps .step {
+  margin-bottom: 10px;
+}
+
+.bikeweekxl #bikeweek-register-events-steps .step-1 .icon-wrapper,
+.bikeweekxl #bikeweek-register-events-steps .step-2 .icon-wrapper,
+.bikeweekxl #bikeweek-register-events-steps .step-3 .icon-wrapper {
+  font-family: "itc-american-typewriter", Georgia, serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 24px;
+  text-align: center;
+  padding: 17px 14px;
+  width: 60px;
+}
+
+.bikeweekxl #bikeweek-register-events-steps a.btn {
+  width: 360px;
+}
+
+.bikeweekxl #bikeweek-register-events-steps .step-4 i,
+.bikeweekxl #bikeweek-register-events-steps .step-5 i,
+.bikeweekxl #bikeweek-register-events-steps .step-6 i {
+  text-align: center;
+  font-size: 28px;
+  line-height: 28px;
+  padding: 14px;
+  width: 60px;
+}
+
+.bikeweekxl #bikeweek-register-events-steps .icon-wrapper,
+.bikeweekxl #bikeweek-register-events-steps i {
+  border: 1px solid #000;
+  border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+}
+
+.bikeweekxl #bikeweek-register-events-steps .icon {
+  display: inline-flex;
+  vertical-align: middle;
+  width: 60px;
+  height: 60px;
+  margin-right: 20px;
+}
+
+.bikeweekxl #bikeweek-register-events-steps .text {
+  display: inline-flex;
+  vertical-align: middle;
+  width: 360px;
+}
+
+.bikeweekxl #bikeweek-register-events-steps .divider {
+  content: "";
+  display: block;
+  height: 5px;
+  width: 140px;
+  border-radius: 2.5px;
+  -webkit-border-radius: 2.5px;
+  -moz-border-radius: 2.5px;
+  background-color: #006633;
+  margin: 30px auto;
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+  .bikeweekxl #bikeweek-register-events-steps .inner-wrapper {
+    width: 480px;
+  }
+  .bikeweekxl #bikeweek-register-events-steps .text {
+    width: 350px;
+  }
+}
+
+@media screen and (min-width: 680px) and (max-width: 767px) {
+  .bikeweekxl #bikeweek-register-events-steps .text {
+    width: 370px;
+  }
+}
+
+@media screen and (max-width: 679px) {
+  .bikeweekxl #bikeweek-register-events-steps .inner-wrapper {
+    width: inherit;
+  }
+  .bikeweekxl #bikeweek-register-events-steps .step {
+    margin-bottom: 30px;
+  }
+  .bikeweekxl #bikeweek-register-events-steps .icon {
+    display: block;
+    margin: 0 auto 10px;
+  }
+  .bikeweekxl #bikeweek-register-events-steps .text {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  .bikeweekxl #bikeweek-register-events-steps a.btn {
+    width: inherit;
+    white-space: inherit;
+    line-height: 18px;
+    padding: 10px 20px;
+  }
+}
+
+/*
+ * Car vs Bike Omnicalculator
+ */
+
+@media screen and (max-width: 767px) {
+  #omni-mobile {
+    display: inherit;
+  }
+  #omni-desktop {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #omni-mobile {
+    display: none;
+  }
+  #omni-desktop {
+    display: inherit;
+  }
+}

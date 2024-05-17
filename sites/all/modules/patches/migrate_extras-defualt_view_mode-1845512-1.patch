@@ -1,0 +1,13 @@
+diff --git a/media.inc b/media.inc
+index 53c10ec..915d5de 100644
+--- a/media.inc
++++ b/media.inc
+@@ -56,7 +56,7 @@ class MigrateDestinationMedia extends MigrateDestinationFile {
+       if ($fid) {
+         $image_info = array(
+           'type' => 'media',
+-          'view_mode' => 'media_large',
++          'view_mode' => 'wysiwyg',
+           'fid' => $fid,
+           'attributes' => array(
+             'alt' => '',

@@ -1,0 +1,91 @@
+name = Cycling UK (Core) Bootstrap Sub-Theme (CDN)
+description = This is the default theme that is used for search and user etc. Core Cycling UK bootstrap sub-theme. Uses the jsDelivr CDN for all CSS and JavaScript. No source files or compiling is necessary and is recommended for simple sites or beginners.
+core = 7.x
+base theme = bootstrap
+
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Regions
+;;;;;;;;;;;;;;;;;;;;;
+
+regions[navigation_left]   = 'Navigation left'
+regions[navigation_middle] = 'Navigation middle'
+regions[navigation_right]  = 'Navigation right'
+regions[navigation_bottom] = 'Navigation bottom'
+
+;; regions[top_menu]       = 'Top menu'
+;; regions[navigation]     = 'Navigation'
+;; regions[header]         = 'Top Bar'
+regions[highlighted]    = 'Highlighted'
+regions[help]           = 'Help'
+regions[content]        = 'Content'
+regions[sidebar_first]  = 'Primary'
+regions[sidebar_second] = 'Secondary'
+regions[footer]         = 'Footer'
+regions[page_top]       = 'Page top'
+regions[page_bottom]    = 'Page bottom'
+
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Stylesheets
+;;;;;;;;;;;;;;;;;;;;;
+
+stylesheets[all][] = css/bootstrap-xlgrid.css
+stylesheets[all][] = css/easydropdown.css
+stylesheets[all][] = css/style.css
+stylesheets[all][] = css/tabs.css
+stylesheets[all][] = css/childpages.css
+stylesheets[all][] = css/accordions.css
+stylesheets[all][] = css/comments.css
+stylesheets[all][] = css/search-original.css
+stylesheets[all][] = css/links.css
+stylesheets[all][] = css/footer.css
+stylesheets[all][] = css/webforms.css
+stylesheets[all][] = css/pages.css
+stylesheets[all][] = css/groups.css
+stylesheets[all][] = css/publications.css
+stylesheets[all][] = css/briefings.css
+stylesheets[all][] = css/listings.css
+stylesheets[all][] = css/carousels.css
+stylesheets[all][] = css/events.css
+stylesheets[all][] = css/heroes.css
+stylesheets[all][] = css/landing.css
+stylesheets[all][] = css/jplanner.css
+stylesheets[all][] = css/openlayers.css
+stylesheets[all][] = css/shop.css
+stylesheets[all][] = css/shop-membership.css
+stylesheets[all][] = css/shop-renewals.css
+stylesheets[all][] = css/donations.css
+stylesheets[all][] = css/kitpages.css
+stylesheets[all][] = css/menus.css
+stylesheets[all][] = css/user.css
+stylesheets[all][] = css/alerts.css
+stylesheets[all][] = css/route.css
+stylesheets[all][] = css/mapping.css
+stylesheets[all][] = css/billboards.css
+stylesheets[all][] = css/front.css
+stylesheets[all][] = css/header.css
+stylesheets[all][] = ../cyclingukxl/css/cookie-compliance.css
+stylesheets[all][] = ../cyclingukxl/css/member-benefits.css
+stylesheets[all][] = ../cyclingukxl/css/cta.css
+stylesheets[all][] = ../cyclingukxl/css/heroes.css
+stylesheets[all][] = ../cyclingukxl/css/cycling-made-easy.css
+stylesheets[all][] = css/maintenance.css
+stylesheets[all][] = ../cyclingukxlmega/css/header.css
+stylesheets[all][] = ../cyclingukxlmega/css/megamenu.css
+stylesheets[all][] = ../cyclingukxlmega/css/megamenusecond.css
+stylesheets[all][] = ../cyclingukxlmega/css/megamenumobile.css
+stylesheets[all][] = ../cyclingukxlmega/css/search.css
+;; stylesheets[all][] = css/megamenutweaks.css
+
+
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Scripts
+;;;;;;;;;;;;;;;;;;;;;
+
+scripts[] = js/modernizr/modernizr-custom.js
+scripts[] = js/custom-form-elements.js
+scripts[] = ../cyclingukxl/js/custom-sw.js
+
+;; scripts[] = js/centre-image.js

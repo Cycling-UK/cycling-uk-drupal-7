@@ -1,0 +1,431 @@
+<?php
+
+/**
+ * @file
+ * Main module file.
+ *
+ * Hosted Checkout integration guide:
+ * https://eu-gateway.mastercard.com/api/documentation/integrationGuidelines/hostedCheckout/integrationModelHostedCheckout.html
+ *
+ * Webhook notifications:
+ * https://eu-gateway.mastercard.com/api/documentation/integrationGuidelines/supportedFeatures/pickAdditionalFunctionality/webhookNotifications.html?locale=en_US
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function commerce_mastercard_menu() {
+  $items = [];
+  // Define an always accessible path to receive Webhook Notifications.
+  $items['commerce_mastercard/webhook'] = [
+    'page callback' => 'commerce_mastercard_process_webhook',
+    'page arguments' => [],
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  ];
+  return $items;
+}
+
+/**
+ * Implements hook_commerce_payment_method_info().
+ */
+function commerce_mastercard_commerce_payment_method_info() {
+  $payment_methods['commerce_mastercard'] = [
+    'title' => t('Mastercard Hosted Checkout'),
+    'short_title' => t('Mastercard'),
+    'display_title' => t('Mastercard'),
+    'description' => t('Integration with Mastercard Hosted Checkout payment API.'),
+    'offsite' => TRUE,
+    'offsite_autoredirect' => TRUE,
+  ];
+  return $payment_methods;
+}
+
+/**
+ * Returns the default settings for this payment method.
+ */
+function commerce_mastercard_default_settings() {
+  return [
+    'test' => [
+      'merchant_id' => 'TESTID123456',
+      'password' => 'testpaymentpasswordhere',
+    ],
+    'live' => [
+      'merchant_id' => 'ID123456',
+      'password' => 'livepaymentpasswordhere',
+    ],
+    'business' => [
+      'name' => 'My Business',
+      'email' => 'sales@example.com',
+      'phone' => '01234 567890',
+      'logo' => 'https://example.com/logo.png',
+    ],
+    'webhook' => [
+      'secret' => 'ABCDEF123456GHIJKL789',
+    ],
+    'post_url' => 'https://eu-gateway.mastercard.com/api/page/version/50/pay',
+    'debug_mode' => TRUE,
+  ];
+}
+
+
+function commerce_mastercard_settings_form($settings = NULL) {
+  $form = [];
+
+  // Merge default settings into the stored settings array.
+  $settings = (array) $settings + commerce_mastercard_default_settings();
+
+  $form['payment_mode'] = [
+    '#type' => 'radios',
+    '#title' => t('Payment mode'),
+    '#options' => [
+      'test' => ('Test - use for testing'),
+      'live' => ('Live - use for processing real transactions'),
+    ],
+    '#default_value' => $settings['payment_mode'],
+  ];
+  $form['test'] = [
+    '#title' => t('Test API Credentials'),
+    '#type' => 'fieldset',
+    '#collapsible' => TRUE,
+    '#collapsed' => TRUE,
+  ];
+  $form['test']['merchant_id'] = [
+    '#type' => 'textfield',
+    '#title' => t('Test Merchant ID'),
+    '#description' => t('The Merchant ID of the account you want to use to test payments. This will start with "TEST".'),
+    '#default_value' => $settings['test']['merchant_id'],
+    '#required' => TRUE,
+  ];
+  $form['test']['password'] = [
+    '#type' => 'textfield',
+    '#title' => t('Test API password'),
+    '#description' => t('The API password for the account you want to use to test payments.'),
+    '#default_value' => $settings['test']['password'],
+    '#required' => TRUE,
+  ];
+  $form['live'] = [
+    '#title' => t('Live API Credentials'),
+    '#type' => 'fieldset',
+    '#collapsible' => TRUE,
+    '#collapsed' => TRUE,
+  ];
+  $form['live']['merchant_id'] = [
+    '#type' => 'textfield',
+    '#title' => t('Live Merchant ID'),
+    '#description' => t('The Merchant ID of the account you want to use to receive real payments.'),
+    '#default_value' => $settings['live']['merchant_id'],
+    '#required' => TRUE,
+  ];
+  $form['live']['password'] = [
+    '#type' => 'textfield',
+    '#title' => t('Test API password'),
+    '#description' => t('The API password for the account you want to use to receive real payments.'),
+    '#default_value' => $settings['live']['password'],
+    '#required' => TRUE,
+  ];
+  $form['business'] = [
+    '#title' => t('Business details for payment page'),
+    '#type' => 'fieldset',
+    '#collapsible' => TRUE,
+    '#collapsed' => TRUE,
+  ];
+  $form['business']['name'] = [
+    '#type' => 'textfield',
+    '#title' => t('Name'),
+    '#description' => t('The business name to display on the Mastercard payment page.'),
+    '#default_value' => $settings['business']['name'],
+    '#required' => TRUE,
+  ];
+  $form['business']['email'] = [
+    '#type' => 'textfield',
+    '#title' => t('Email'),
+    '#description' => t('The business email to display on the Mastercard payment page.'),
+    '#default_value' => $settings['business']['email'],
+    '#required' => FALSE,
+  ];
+  $form['business']['phone'] = [
+    '#type' => 'textfield',
+    '#title' => t('Phone'),
+    '#description' => t('The business phone number to display on the Mastercard payment page.'),
+    '#default_value' => $settings['business']['phone'],
+    '#required' => FALSE,
+  ];
+  $form['business']['logo'] = [
+    '#type' => 'textfield',
+    '#title' => t('Logo URL'),
+    '#description' => t('The URL of the business logo to display on the Mastercard payment page.'),
+    '#default_value' => $settings['business']['logo'],
+    '#required' => FALSE,
+  ];
+  $form['webhook'] = [
+    '#type' => 'fieldset',
+    '#title' => t('Webhook Notifications'),
+    '#collapsible' => TRUE,
+    '#collapsed' => TRUE,
+  ];
+  $form['webhook']['url'] = [
+    '#title' => t('Notification URL'),
+    '#type' => 'item',
+    '#markup' => '<pre style="font-size: 90%">' . url('/commerce_mastercard/webhook', ['absolute' => TRUE]) . '</pre>',
+  ];
+  $form['webhook']['secret'] = [
+    '#type' => 'textfield',
+    '#title' => t('Notification Secret'),
+    '#description' => t('The random string used as a secret for webhook notifications.'),
+    '#default_value' => $settings['webhook']['secret'],
+    '#required' => TRUE,
+  ];
+  $form['post_url'] = [
+    '#type' => 'textfield',
+    '#title' => t('URL to POST data to'),
+    '#description' => t('The URL for the Mastercard payment page.'),
+    '#default_value' => $settings['post_url'],
+    '#required' => TRUE,
+  ];
+  $form['debug_mode'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Debug mode'),
+    '#description' => t("Turn on 'debug mode' to log data to the Drupal watchdog."),
+    '#default_value' => $settings['debug_mode'],
+  ];
+  return $form;
+}
+
+/**
+ * Payment method callback: adds a message and CSS to the submission form.
+ */
+function commerce_mastercard_submit_form($payment_method, $pane_values, $checkout_pane, $order) {
+  $form['mastercard_information'] = [
+    '#markup' => '<span class="commerce-mastercard-info">' . t('(Continue with checkout to complete payment via Mastercard.)') . '</span>',
+  ];
+  return $form;
+}
+
+/**
+ * Implements CALLBACK_commerce_payment_method_redirect_form().
+ *
+ * Payment method order form, that redirects to Mastercard's payment page.
+ */
+function commerce_mastercard_redirect_form($form, &$form_state, $order, $payment_method) {
+  $settings = $payment_method['settings'];
+  $debug = $settings['debug_mode'];
+
+  // Fetch order information.
+  $order_ref = $order->order_id;
+  $order_wrapper = entity_metadata_wrapper('commerce_order', $order);
+  $payment_data = $order_wrapper->commerce_order_total->data->value();
+  $payment_components = $payment_data['components'];
+  $transaction_amount = 0;
+  foreach ($payment_components as $component) {
+    // Strip out amounts to be paid by DD.
+    if (strpos($component['name'], 'direct_debit') !== 0) {
+      $transaction_amount += $component['price']['amount'];
+    }
+  }
+
+  // Make call to Mastercard to request a checkout session.
+  $credentials = $settings['payment_mode'] == 'live' ? $settings['live'] : $settings['test'];
+  $merchant_id = $credentials['merchant_id'];
+  $password = $credentials['password'];
+  $ch = curl_init("https://eu-gateway.mastercard.com/api/nvp/version/50");
+  curl_setopt($ch, CURLOPT_POST, TRUE);
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+  $params = [
+    'apiOperation' => 'CREATE_CHECKOUT_SESSION',
+    'apiPassword' => $password,
+    'apiUsername' => "merchant.$merchant_id",
+    'merchant' => $merchant_id,
+    'order.id' => $order->order_number,
+    'order.amount' => commerce_currency_amount_to_decimal($transaction_amount, 'GBP'),
+    'order.currency' => $order_wrapper->commerce_order_total->currency_code->value(),
+    'interaction.returnUrl' => url('checkout/' . $order->order_id . '/payment/return/' . $order->data['payment_redirect_key'], ['absolute' => TRUE]),
+  ];
+  if ($debug) {
+    watchdog('commerce_mastercard', 'CREATE_CHECKOUT_SESSION request: <pre>@data</pre>',
+      ['@data' => print_r($params, TRUE)],
+      WATCHDOG_DEBUG);
+  }
+  curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($params));
+  $result = curl_exec($ch);
+  $api_session_data = [];
+  parse_str($result, $api_session_data);
+  if ($debug) {
+    watchdog('commerce_mastercard', 'CREATE_CHECKOUT_SESSION response: <pre>@data</pre>',
+      ['@data' => print_r($api_session_data, TRUE)],
+      WATCHDOG_DEBUG);
+  }
+
+  if ($api_session_data['result'] == 'SUCCESS') {
+    // ToDo, perhaps store this in the order?
+    $_SESSION['success_indicator'] = $api_session_data['successIndicator'];
+    // Assemble data to be POSTed to Mastercard.
+    $data = [
+      'session.id' => $api_session_data['session_id'],
+      'merchant' => $merchant_id,
+      'order.amount' => commerce_currency_amount_to_decimal($transaction_amount, 'GBP'),
+      'order.currency' => $order_wrapper->commerce_order_total->currency_code->value(),
+      'order.id' => $order->order_number,
+      'order.description' => t('Payment for order') . " $order->order_number",
+      'order.custom.orderId' => $order->order_id,
+      'interaction.merchant.name' => $settings['business']['name'],
+      'interaction.merchant.phone' => $settings['business']['phone'],
+      'interaction.merchant.email' => $settings['business']['email'],
+      'interaction.merchant.logo' => $settings['business']['logo'],
+      'interaction.cancelUrl' => url('checkout/' . $order->order_id . '/payment/back/' . $order->data['payment_redirect_key'], ['absolute' => TRUE]),
+    ];
+    // Allow other modules to alter the data sent to Mastercard (e.g. to add customer address).
+    drupal_alter('commerce_mastercard_post_data', $data, $order);
+    // Construct form with hidden data fields.
+    foreach ($data as $name => $value) {
+      if (!empty($value)) {
+        $form[$name] = [
+          '#type' => 'hidden',
+          '#value' => $value,
+        ];
+      }
+    }
+    $form['#action'] = $settings['post_url'];
+    $form['submit'] = [
+      '#type' => 'submit',
+      '#value' => t('Proceed to Mastercard'),
+    ];
+    $form['#pre_render'][] = 'commerce_mastercard_payment_form_modify';
+    if ($debug) {
+      watchdog('commerce_mastercard', 'Data to be POSTed to Mastercard at @url: <pre>@result</pre>', [
+        '@result' => print_r($data, TRUE),
+        '@url' => $form['#action'],
+      ], WATCHDOG_DEBUG);
+    }
+  }
+  else {
+    // Todo: handle unsuccessful session request.
+  }
+  return $form;
+}
+
+/**
+ * Alter Drupal form to remove fields that Mastercard doesn't want.
+ */
+function commerce_mastercard_payment_form_modify($form) {
+  unset($form['form_token']);
+  unset($form['form_build_id']);
+  unset($form['form_id']);
+  unset($form['submit']['#name']);
+  return $form;
+}
+
+
+/**
+ * Implements CALLBACK_commerce_payment_method_redirect_form_validate().
+ *
+ * Validate return from Mastercard. Return TRUE if payment was successful.
+ */
+function commerce_mastercard_redirect_form_validate($order, $payment_method) {
+  $payment_settings = $payment_method['settings'];
+  $debug_mode = $payment_settings['debug_mode'];
+  $result_indicator = $_GET['resultIndicator'];
+  $success_indicator = $_SESSION['success_indicator'];
+  $result = ($result_indicator == $success_indicator);
+  if ($debug_mode) {
+    watchdog('commerce_mastercard', 'Validating redirect back from Mastercard: @result', [
+      '@result' => ($result ? 'OK' : 'Invalid'),
+    ]);
+  }
+  return $result;
+}
+
+/**
+ * Implements CALLBACK_commerce_payment_method_redirect_form_submit().
+ *
+ * Handle successful return from Mastercard.
+ */
+function commerce_mastercard_redirect_form_submit($order, $payment_method) {
+  $payment_settings = $payment_method['settings'];
+  $debug_mode = $payment_settings['debug_mode'];
+  if ($debug_mode) {
+    watchdog('commerce_mastercard', 'Successful redirect back from Mastercard.');
+  }
+}
+
+/**
+ * Return page if payment completed.
+ */
+function commerce_mastercard_complete() {
+  $result_indicator = $_GET['resultIndicator'];
+  $success_indicator = $_SESSION['success_indicator'];
+  if ($result_indicator == $success_indicator) {
+    return t('Thank you for your order and for supporting Cycling UK.');
+  }
+  else {
+    return t('Thank you for your order. Something went wrong, we will investigate.');
+  }
+}
+
+/**
+ * Return page if payment cancelled.
+ */
+function commerce_mastercard_cancelled() {
+  return 'Payment cancelled';
+}
+
+
+/**
+ * Callback to process incoming webhook notifications from Mastercard.
+ */
+function commerce_mastercard_process_webhook() {
+  $payment_method = commerce_payment_method_instance_load('commerce_mastercard|commerce_payment_commerce_mastercard');
+  $payment_settings = $payment_method['settings'];
+  $debug_mode = $payment_settings['debug_mode'];
+
+  // Handle incoming raw POST data as JSON.
+  $postdata = json_decode(file_get_contents("php://input"));
+  $order_number = $postdata->order->id;
+  $order_id = $postdata->order->custom->orderId;
+
+  $headers = apache_request_headers();
+  $notification_id = $headers['X-Notification-Id'];
+  $notification_attempts = $headers['X-Notification-Attempt'];
+  $notification_secret = $headers['X-Notification-Secret'];
+
+  if ($debug_mode) {
+    watchdog('commerce_mastercard', "Mastercard incoming webhook data for @order_num (@order_id)<br>Headers: <pre>@headers</pre>\n\nData:<pre>@data</pre>", [
+      '@order_num' => $order_number,
+      '@order_id' => $order_id,
+      '@headers' => print_r($headers, TRUE),
+      '@data' => print_r($postdata, TRUE),
+    ]);
+  }
+
+  // Validate shared secret.
+  if ($payment_settings['webhook']['secret'] != $notification_secret) {
+    watchdog('commerce_mastercard', 'Error: incoming webhook notification secret does not match.', [], WATCHDOG_ERROR);
+    return MENU_ACCESS_DENIED;
+  }
+
+  // Load order.
+  $order = commerce_order_load_by_number($order_number);
+  if ($order->order_id == $order_id) {
+
+    // Create new payment transaction.
+    $transaction = commerce_payment_transaction_new('commerce_mastercard', $order_id);
+    $transaction->instance_id = $payment_method['instance_id'];
+    $transaction->amount = $postdata->transaction->amount * 100;
+    $transaction->currency_code = $postdata->transaction->currency;
+    $transaction->status = COMMERCE_PAYMENT_STATUS_SUCCESS;
+    $transaction->message = 'Mastercard webhook notification of payment for order: @order';
+    $transaction->message_variables = [
+      '@order' => $order_number,
+    ];
+    $transaction->remote_id = $postdata->transaction->receipt;
+    commerce_payment_transaction_save($transaction);
+    $transaction_id = $transaction->transaction_id;
+    watchdog('commerce_mastercard', 'Payment transaction created for @order', [
+      '@order' => $order_number,
+    ], WATCHDOG_DEBUG, l('Transaction', 'admin/commerce/orders/' . $order_id . '/payment/' . $transaction_id . '/view') . ' ' .l('Order', 'admin/commerce/orders/' . $order_id));
+  }
+  else {
+    watchdog('commerce_mastercard', 'Order number/ID mismatch when processing webhook.', [], WATCHDOG_ERROR);
+  }
+}
+

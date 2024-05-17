@@ -1,0 +1,44 @@
+diff --git a/imagefield_tokens.module b/imagefield_tokens.module
+index 3c8ba35..2032c67 100644
+--- a/imagefield_tokens.module
++++ b/imagefield_tokens.module
+@@ -200,26 +200,33 @@ function imagefield_tokens_field_attach_presave($entity_type, $entity) {
+             if (($settings['title_field_update_on_edit'] || empty($field_data['title'])) && !empty($settings['title_field_default'])) {
+               $field_data['title'] = $settings['title_field_default'];
+             }
+-            $field_data['title'] = token_replace($field_data['title'], array($entity_type => $entity), array('sanitize' => TRUE, 'clear' => TRUE));
++            if (isset($field_data['title'])) {
++              $field_data['title'] = token_replace($field_data['title'], array($entity_type => $entity), array('sanitize' => TRUE, 'clear' => TRUE));
++            }
+ 
+             // If Alt should equal title field, else same as above.
+-            if ($settings['alt_field_sync_title']) {
++            if ($settings['alt_field_sync_title'] && isset($field_data['title'])) {
+               $field_data['alt'] = $field_data['title'];
+             }
+             else {
+               if (($settings['alt_field_update_on_edit'] || empty($field_data['alt'])) && !empty($settings['alt_field_default'])) {
+                 $field_data['alt'] = $settings['alt_field_default'];
+               }
+-              $field_data['alt'] = token_replace($field_data['alt'], array($entity_type => $entity), array('sanitize' => TRUE, 'clear' => TRUE));
++               if (isset($field_data['alt'])) {
++                $field_data['alt'] = token_replace($field_data['alt'], array($entity_type => $entity), array('sanitize' => TRUE, 'clear' => TRUE));
++               }
+             }
+ 
+             // Truncate fields to max allowed length. alt=512, title=1024 per image.install
+-            $field_data['title'] = truncate_utf8($field_data['title'], 1024, TRUE, TRUE);
+-            $field_data['alt'] = truncate_utf8($field_data['alt'], 512, TRUE, TRUE);
++            if (isset($field_data['title'])) {
++              $field_data['title'] = truncate_utf8($field_data['title'], 1024, TRUE, TRUE);
++            }
++            if (isset($field_data['alt'])) {
++              $field_data['alt'] = truncate_utf8($field_data['alt'], 512, TRUE, TRUE);
++            }
+           }
+         }
+       }
+     }
+   }
+ }
+-

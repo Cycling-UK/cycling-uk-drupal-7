@@ -1,0 +1,1041 @@
+diff --git a/modules/openlayers_contextual_links/openlayers_contextual_links.module b/modules/openlayers_contextual_links/openlayers_contextual_links.module
+index 08c7274d..76bbd309 100644
+--- a/modules/openlayers_contextual_links/openlayers_contextual_links.module
++++ b/modules/openlayers_contextual_links/openlayers_contextual_links.module
+@@ -7,7 +7,7 @@
+ /**
+  * Implements hook_openlayers_object_postprocess_alter().
+  */
+-function openlayers_contextual_links_openlayers_object_postprocess_alter(array &$build, \Drupal\openlayers\Types\BaseInterface $context) {
++function openlayers_contextual_links_openlayers_object_postprocess_alter(array &$build, \Drupal\openlayers\Types\BaseInterface $context) {
+   if (!user_access('administer openlayers')) {
+     return FALSE;
+   }
+diff --git a/modules/openlayers_geofield/src/Plugin/Component/GeofieldWidget/GeofieldWidget.php b/modules/openlayers_geofield/src/Plugin/Component/GeofieldWidget/GeofieldWidget.php
+index 610e9cc8..acb3ad2e 100644
+--- a/modules/openlayers_geofield/src/Plugin/Component/GeofieldWidget/GeofieldWidget.php
++++ b/modules/openlayers_geofield/src/Plugin/Component/GeofieldWidget/GeofieldWidget.php
+@@ -9,7 +9,7 @@ namespace Drupal\openlayers_geofield\Plugin\Component\GeofieldWidget;
+ use Drupal\openlayers\Openlayers;
+ use Drupal\openlayers\Plugin\Source\Vector\Vector;
+ use Drupal\openlayers\Types\Component;
+-use Drupal\openlayers\Types\BaseInterface;
++use Drupal\openlayers\Types\BaseInterface;
+ use geoPHP;
+
+ /**
+@@ -179,7 +179,7 @@ class GeofieldWidget extends Component {
+   /**
+    * {@inheritdoc}
+    */
+-  public function preBuild(array &$build, BaseInterface $context = NULL) {
++  public function preBuild(array &$build, BaseInterface $context = NULL) {
+     foreach ($context->getCollection()->getObjects('layer') as $layer) {
+       if ($layer->getMachineName() == $this->getOption('editLayer', FALSE)) {
+         if ($source = $layer->getSource()) {
+@@ -195,7 +195,7 @@ class GeofieldWidget extends Component {
+   /**
+    * {@inheritdoc}
+    */
+-  public function postBuild(array &$build, BaseInterface $context = NULL) {
++  public function postBuild(array &$build, BaseInterface $context = NULL) {
+     $component = array(
+       '#type' => 'container',
+       '#attributes' => array(
+diff --git a/modules/openlayers_library/src/Plugin/Component/BlockLayerSwitcher/BlockLayerSwitcher.php b/modules/openlayers_library/src/Plugin/Component/BlockLayerSwitcher/BlockLayerSwitcher.php
+index ad11fb35..10aff857 100644
+--- a/modules/openlayers_library/src/Plugin/Component/BlockLayerSwitcher/BlockLayerSwitcher.php
++++ b/modules/openlayers_library/src/Plugin/Component/BlockLayerSwitcher/BlockLayerSwitcher.php
+@@ -8,7 +8,7 @@ namespace Drupal\openlayers_library\Plugin\Component\BlockLayerSwitcher;
+
+ use Drupal\openlayers\Types\Component;
+ use Drupal\openlayers\Types\MapInterface;
+-use Drupal\openlayers\Types\BaseInterface;
++use Drupal\openlayers\Types\BaseInterface;
+
+ /**
+  * Class BlockLayerSwitcher.
+@@ -22,7 +22,7 @@ class BlockLayerSwitcher extends Component {
+   /**
+    * {@inheritdoc}
+    */
+-  public function postBuild(array &$build, BaseInterface $context = NULL) {
++  public function postBuild(array &$build, BaseInterface $context = NULL) {
+     if ($context instanceof MapInterface) {
+       $olebs_blockswitcher_form = drupal_get_form('olebs_blockswitcher_form', $context);
+       // This can rely in the id of the map instead of the css class.
+diff --git a/modules/openlayers_library/src/Plugin/Component/Fractal/Fractal.php b/modules/openlayers_library/src/Plugin/Component/Fractal/Fractal.php
+index 1d77afb1..4345419b 100644
+--- a/modules/openlayers_library/src/Plugin/Component/Fractal/Fractal.php
++++ b/modules/openlayers_library/src/Plugin/Component/Fractal/Fractal.php
+@@ -8,7 +8,7 @@ namespace Drupal\openlayers_library\Plugin\Component\Fractal;
+
+ use Drupal\openlayers\Openlayers;
+ use Drupal\openlayers\Types\Component;
+-use Drupal\openlayers\Types\BaseInterface;
++use Drupal\openlayers\Types\BaseInterface;
+
+ /**
+  * Class Fractal.
+@@ -22,7 +22,7 @@ class Fractal extends Component {
+   /**
+    * {@inheritdoc}
+    */
+-  public function postBuild(array &$build, BaseInterface $context = NULL) {
++  public function postBuild(array &$build, BaseInterface $context = NULL) {
+     $build['parameters'][$this->getPluginId()] = array(
+       '#type' => 'fieldset',
+       '#title' => 'Example Fractal component',
+diff --git a/modules/openlayers_library/src/Plugin/Component/Geolocation/Geolocation.php b/modules/openlayers_library/src/Plugin/Component/Geolocation/Geolocation.php
+index 0cf07729..20952001 100644
+--- a/modules/openlayers_library/src/Plugin/Component/Geolocation/Geolocation.php
++++ b/modules/openlayers_library/src/Plugin/Component/Geolocation/Geolocation.php
+@@ -7,7 +7,7 @@
+ namespace Drupal\openlayers_library\Plugin\Component\Geolocation;
+
+ use Drupal\openlayers\Types\Component;
+-use Drupal\openlayers\Types\BaseInterface;
++use Drupal\openlayers\Types\BaseInterface;
+
+ /**
+  * Class Geolocation.
+@@ -57,7 +57,7 @@ class Geolocation extends Component {
+   /**
+    * {@inheritdoc}
+    */
+-  public function postBuild(array &$build, BaseInterface $context = NULL) {
++  public function postBuild(array &$build, BaseInterface $context = NULL) {
+     $build['parameters'][$this->getPluginId()] = array(
+       '#type' => 'fieldset',
+       '#title' => 'Example Geolocation component',
+diff --git a/modules/openlayers_library/src/Plugin/Component/Hilbert/Hilbert.php b/modules/openlayers_library/src/Plugin/Component/Hilbert/Hilbert.php
+index 8dbb83a7..37fb6c2d 100644
+--- a/modules/openlayers_library/src/Plugin/Component/Hilbert/Hilbert.php
++++ b/modules/openlayers_library/src/Plugin/Component/Hilbert/Hilbert.php
+@@ -8,7 +8,7 @@ namespace Drupal\openlayers_library\Plugin\Component\Hilbert;
+
+ use Drupal\openlayers\Openlayers;
+ use Drupal\openlayers\Types\Component;
+-use Drupal\openlayers\Types\BaseInterface;
++use Drupal\openlayers\Types\BaseInterface;
+
+ /**
+  * Class Hilbert.
+@@ -22,7 +22,7 @@ class Hilbert extends Component {
+   /**
+    * {@inheritdoc}
+    */
+-  public function postBuild(array &$build, BaseInterface $context = NULL) {
++  public function postBuild(array &$build, BaseInterface $context = NULL) {
+     $build['parameters'][$this->getPluginId()] = array(
+       '#type' => 'fieldset',
+       '#title' => 'Example Hilbert Fractal component',
+diff --git a/modules/openlayers_library/src/Plugin/Component/IconSprites/IconSprites.php b/modules/openlayers_library/src/Plugin/Component/IconSprites/IconSprites.php
+index 5d83d386..d64eceac 100644
+--- a/modules/openlayers_library/src/Plugin/Component/IconSprites/IconSprites.php
++++ b/modules/openlayers_library/src/Plugin/Component/IconSprites/IconSprites.php
+@@ -8,7 +8,7 @@ namespace Drupal\openlayers_library\Plugin\Component\IconSprites;
+
+ use Drupal\openlayers\Openlayers;
+ use Drupal\openlayers\Types\Component;
+-use Drupal\openlayers\Types\BaseInterface;
++use Drupal\openlayers\Types\BaseInterface;
+
+ /**
+  * Class IconSprites.
+diff --git a/modules/openlayers_library/src/Plugin/Component/Julia/Julia.php b/modules/openlayers_library/src/Plugin/Component/Julia/Julia.php
+index 216f7b97..38d36c82 100644
+--- a/modules/openlayers_library/src/Plugin/Component/Julia/Julia.php
++++ b/modules/openlayers_library/src/Plugin/Component/Julia/Julia.php
+@@ -8,7 +8,7 @@ namespace Drupal\openlayers_library\Plugin\Component\Julia;
+
+ use Drupal\openlayers\Openlayers;
+ use Drupal\openlayers\Types\Component;
+-use Drupal\openlayers\Types\BaseInterface;
++use Drupal\openlayers\Types\BaseInterface;
+
+ /**
+  * Class Julia.
+@@ -21,7 +21,7 @@ class Julia extends Component {
+   /**
+    * {@inheritdoc}
+    */
+-  public function postBuild(array &$build, BaseInterface $context = NULL) {
++  public function postBuild(array &$build, BaseInterface $context = NULL) {
+     $build = array(
+       'map' => $build,
+       'Julia' => array(
+diff --git a/modules/openlayers_library/src/Plugin/Component/Logistic/Logistic.php b/modules/openlayers_library/src/Plugin/Component/Logistic/Logistic.php
+index ad474754..d9892783 100644
+--- a/modules/openlayers_library/src/Plugin/Component/Logistic/Logistic.php
++++ b/modules/openlayers_library/src/Plugin/Component/Logistic/Logistic.php
+@@ -8,7 +8,7 @@ namespace Drupal\openlayers_library\Plugin\Component\Logistic;
+
+ use Drupal\openlayers\Openlayers;
+ use Drupal\openlayers\Types\Component;
+-use Drupal\openlayers\Types\BaseInterface;
++use Drupal\openlayers\Types\BaseInterface;
+
+ /**
+  * Class Logistic.
+@@ -21,7 +21,7 @@ class Logistic extends Component {
+   /**
+    * {@inheritdoc}
+    */
+-  public function postBuild(array &$build, BaseInterface $context = NULL) {
++  public function postBuild(array &$build, BaseInterface $context = NULL) {
+     $build['parameters'][$this->getPluginId()] = array(
+       '#type' => 'fieldset',
+       '#title' => 'Logistic map parameters',
+diff --git a/modules/openlayers_library/src/Plugin/Component/MapSwitcher/MapSwitcher.php b/modules/openlayers_library/src/Plugin/Component/MapSwitcher/MapSwitcher.php
+index 079ad365..d2cb32d2 100644
+--- a/modules/openlayers_library/src/Plugin/Component/MapSwitcher/MapSwitcher.php
++++ b/modules/openlayers_library/src/Plugin/Component/MapSwitcher/MapSwitcher.php
+@@ -8,7 +8,7 @@ namespace Drupal\openlayers_library\Plugin\Component\MapSwitcher;
+
+ use Drupal\openlayers\Openlayers;
+ use Drupal\openlayers\Types\Component;
+-use Drupal\openlayers\Types\BaseInterface;
++use Drupal\openlayers\Types\BaseInterface;
+
+ /**
+  * Class MapSwitcher.
+@@ -21,7 +21,7 @@ class MapSwitcher extends Component {
+   /**
+    * {@inheritdoc}
+    */
+-  public function postBuild(array &$build, BaseInterface $context = NULL) {
++  public function postBuild(array &$build, BaseInterface $context = NULL) {
+     parent::postBuild($build, $context);
+
+     $options = array();
+diff --git a/modules/openlayers_library/src/Plugin/Component/Permalink/Permalink.php b/modules/openlayers_library/src/Plugin/Component/Permalink/Permalink.php
+index 45e9f159..b75284c4 100644
+--- a/modules/openlayers_library/src/Plugin/Component/Permalink/Permalink.php
++++ b/modules/openlayers_library/src/Plugin/Component/Permalink/Permalink.php
+@@ -8,7 +8,7 @@ namespace Drupal\openlayers_library\Plugin\Component\Permalink;
+
+ use Drupal\openlayers\Openlayers;
+ use Drupal\openlayers\Types\Component;
+-use Drupal\openlayers\Types\BaseInterface;
++use Drupal\openlayers\Types\BaseInterface;
+
+ /**
+  * Class Permalink.
+diff --git a/modules/openlayers_library/src/Plugin/Component/ProgressBar/ProgressBar.php b/modules/openlayers_library/src/Plugin/Component/ProgressBar/ProgressBar.php
+index 681b70c4..34c81abc 100644
+--- a/modules/openlayers_library/src/Plugin/Component/ProgressBar/ProgressBar.php
++++ b/modules/openlayers_library/src/Plugin/Component/ProgressBar/ProgressBar.php
+@@ -8,7 +8,7 @@ namespace Drupal\openlayers_library\Plugin\Component\ProgressBar;
+
+ use Drupal\openlayers\Openlayers;
+ use Drupal\openlayers\Types\Component;
+-use Drupal\openlayers\Types\BaseInterface;
++use Drupal\openlayers\Types\BaseInterface;
+
+ /**
+  * Class ProgressBar.
+@@ -22,7 +22,7 @@ class ProgressBar extends Component {
+   /**
+    * {@inheritdoc}
+    */
+-  public function postBuild(array &$build, BaseInterface $context = NULL) {
++  public function postBuild(array &$build, BaseInterface $context = NULL) {
+     $build['map_suffix'][$this->getPluginId()] = array(
+       '#type' => 'container',
+       '#attributes' => array(
+diff --git a/modules/openlayers_library/src/Plugin/Component/Refresh/Refresh.php b/modules/openlayers_library/src/Plugin/Component/Refresh/Refresh.php
+index 0c40d871..2af944cc 100644
+--- a/modules/openlayers_library/src/Plugin/Component/Refresh/Refresh.php
++++ b/modules/openlayers_library/src/Plugin/Component/Refresh/Refresh.php
+@@ -8,7 +8,7 @@ namespace Drupal\openlayers_library\Plugin\Component\Refresh;
+
+ use Drupal\openlayers\Openlayers;
+ use Drupal\openlayers\Types\Component;
+-use Drupal\openlayers\Types\BaseInterface;
++use Drupal\openlayers\Types\BaseInterface;
+
+ /**
+  * Class Refresh.
+diff --git a/modules/openlayers_library/src/Plugin/Component/SpinJS/SpinJS.php b/modules/openlayers_library/src/Plugin/Component/SpinJS/SpinJS.php
+index 65f8fd18..5a37c9d8 100644
+--- a/modules/openlayers_library/src/Plugin/Component/SpinJS/SpinJS.php
++++ b/modules/openlayers_library/src/Plugin/Component/SpinJS/SpinJS.php
+@@ -9,7 +9,7 @@ namespace Drupal\openlayers_library\Plugin\Component\SpinJS;
+
+ use Drupal\openlayers\Openlayers;
+ use Drupal\openlayers\Types\Component;
+-use Drupal\openlayers\Types\BaseInterface;
++use Drupal\openlayers\Types\BaseInterface;
+
+ /**
+  * Class SpinJS.
+@@ -23,7 +23,7 @@ class SpinJS extends Component {
+   /**
+    * {@inheritdoc}
+    */
+-  public function postBuild(array &$build, BaseInterface $context = NULL) {
++  public function postBuild(array &$build, BaseInterface $context = NULL) {
+     $build['#attached']['js'][] = array(
+       'data' => array(
+         'spinjs' => array(
+diff --git a/modules/openlayers_library/src/Plugin/Component/Swipe/Swipe.php b/modules/openlayers_library/src/Plugin/Component/Swipe/Swipe.php
+index cacbc659..3ed16c05 100644
+--- a/modules/openlayers_library/src/Plugin/Component/Swipe/Swipe.php
++++ b/modules/openlayers_library/src/Plugin/Component/Swipe/Swipe.php
+@@ -8,7 +8,7 @@ namespace Drupal\openlayers_library\Plugin\Component\Swipe;
+
+ use Drupal\openlayers\Openlayers;
+ use Drupal\openlayers\Types\Component;
+-use Drupal\openlayers\Types\BaseInterface;
++use Drupal\openlayers\Types\BaseInterface;
+
+ /**
+  * Class Swipe.
+@@ -21,7 +21,7 @@ class Swipe extends Component {
+   /**
+    * {@inheritdoc}
+    */
+-  public function postBuild(array &$build, BaseInterface $context = NULL) {
++  public function postBuild(array &$build, BaseInterface $context = NULL) {
+     $build['parameters'][$this->getPluginId()] = array(
+       '#type' => 'fieldset',
+       '#title' => 'Example Swipe component',
+diff --git a/modules/openlayers_library/src/Plugin/Component/ViewSync/ViewSync.php b/modules/openlayers_library/src/Plugin/Component/ViewSync/ViewSync.php
+index 35253285..7a93c04b 100644
+--- a/modules/openlayers_library/src/Plugin/Component/ViewSync/ViewSync.php
++++ b/modules/openlayers_library/src/Plugin/Component/ViewSync/ViewSync.php
+@@ -8,7 +8,7 @@ namespace Drupal\openlayers_library\Plugin\Component\ViewSync;
+
+ use Drupal\openlayers\Openlayers;
+ use Drupal\openlayers\Types\Component;
+-use Drupal\openlayers\Types\BaseInterface;
++use Drupal\openlayers\Types\BaseInterface;
+
+ /**
+  * Class ViewSync.
+diff --git a/modules/openlayers_library/src/Plugin/Control/OL3LayerSwitcher/OL3LayerSwitcher.php b/modules/openlayers_library/src/Plugin/Control/OL3LayerSwitcher/OL3LayerSwitcher.php
+index 5cd4b656..81387982 100644
+--- a/modules/openlayers_library/src/Plugin/Control/OL3LayerSwitcher/OL3LayerSwitcher.php
++++ b/modules/openlayers_library/src/Plugin/Control/OL3LayerSwitcher/OL3LayerSwitcher.php
+@@ -8,7 +8,7 @@ namespace Drupal\openlayers_library\Plugin\Control\OL3LayerSwitcher;
+
+ use Drupal\openlayers\Types\Control;
+ use Drupal\openlayers\Types\LayerInterface;
+-use Drupal\openlayers\Types\BaseInterface;
++use Drupal\openlayers\Types\BaseInterface;
+
+ /**
+  * Class OL3LayerSwitcher.
+@@ -33,7 +33,7 @@ class OL3LayerSwitcher extends Control {
+   /**
+    * {@inheritdoc}
+    */
+-  public function preBuild(array &$build, BaseInterface $context = NULL) {
++  public function preBuild(array &$build, BaseInterface $context = NULL) {
+     array_map(function($layer) {
+       /** @var LayerInterface $layer */
+       if (!in_array($layer->getFactoryService(), array('openlayers.Layer:Vector', 'openlayers.Layer:Heatmap'))) {
+diff --git a/openlayers.api.php b/openlayers.api.php
+index e09fc67d..33d06efd 100644
+--- a/openlayers.api.php
++++ b/openlayers.api.php
+@@ -10,10 +10,10 @@
+  *
+  * @param array $build
+  *   The render array that will be rendered later.
+- * @param \Drupal\openlayers\Types\BaseInterface $context
++ * @param \Drupal\openlayers\Types\BaseInterface $context
+  *   The context, this will be an openlayers object.
+  */
+-function hook_openlayers_object_preprocess_alter(array &$build, \Drupal\openlayers\Types\BaseInterface $context) {
++function hook_openlayers_object_preprocess_alter(array &$build, \Drupal\openlayers\Types\BaseInterface $context) {
+
+ }
+
+@@ -22,10 +22,10 @@ function hook_openlayers_object_preprocess_alter(array &$build, \Drupal\openlaye
+  *
+  * @param array $build
+  *   The render array that will be rendered after this hook.
+- * @param \Drupal\openlayers\Types\BaseInterface $context
++ * @param \Drupal\openlayers\Types\BaseInterface $context
+  *   The context, this will be an openlayers object.
+  */
+-function hook_openlayers_object_postprocess_alter(array &$build, \Drupal\openlayers\Types\BaseInterface $context) {
++function hook_openlayers_object_postprocess_alter(array &$build, \Drupal\openlayers\Types\BaseInterface $context) {
+
+ }
+
+diff --git a/src/Openlayers.php b/src/Openlayers.php
+index 9c756b09..bff81964 100644
+--- a/src/Openlayers.php
++++ b/src/Openlayers.php
+@@ -5,7 +5,7 @@
+  */
+
+ namespace Drupal\openlayers;
+-use Drupal\openlayers\Types\BaseInterface;
++use Drupal\openlayers\Types\BaseInterface;
+
+ /**
+  * Class Openlayers.
+@@ -77,7 +77,7 @@ class Openlayers {
+    *   Type of object to load:
+    *   map|layer|source|control|interaction|style|component.
+    *
+-   * @return \Drupal\openlayers\Types\BaseInterface[]
++   * @return \Drupal\openlayers\Types\BaseInterface[]
+    *   The array of objects.
+    */
+   public static function loadAll($object_type = NULL) {
+@@ -99,12 +99,12 @@ class Openlayers {
+    * @param array|string|object $export
+    *   The exported object.
+    *
+-   * @return BaseInterface|Error
++   * @return BaseInterface|Error
+    *   Returns the instance of the requested object or an instance of
+    *   Error on error.
+    */
+   public static function load($object_type = NULL, $export) {
+-    /** @var \Drupal\openlayers\Types\BaseInterface $object */
++    /** @var \Drupal\openlayers\Types\BaseInterface $object */
+     $object = NULL;
+     $configuration = array();
+     $object_type = drupal_ucfirst(drupal_strtolower(check_plain($object_type)));
+@@ -116,7 +116,7 @@ class Openlayers {
+       $array_object = new \ArrayObject($export);
+       $configuration = $array_object->getArrayCopy();
+     }
+-    if (is_object($export) && ($export instanceof BaseInterface)) {
++    if (is_object($export) && ($export instanceof BaseInterface)) {
+       return $export;
+     }
+     if (is_string($export)) {
+@@ -190,10 +190,10 @@ class Openlayers {
+   /**
+    * Save an object in the database.
+    *
+-   * @param BaseInterface $object
++   * @param BaseInterface $object
+    *   The object to save.
+    */
+-  public static function save(BaseInterface $object) {
++  public static function save(BaseInterface $object) {
+     ctools_include('export');
+     $configuration = $object->getConfiguration();
+     $export = $object->getExport();
+diff --git a/src/Plugin/Component/Debug/Debug.php b/src/Plugin/Component/Debug/Debug.php
+index 2f38594e..b5c8671e 100644
+--- a/src/Plugin/Component/Debug/Debug.php
++++ b/src/Plugin/Component/Debug/Debug.php
+@@ -7,7 +7,7 @@
+ namespace Drupal\openlayers\Plugin\Component\Debug;
+
+ use Drupal\openlayers\Types\Component;
+-use Drupal\openlayers\Types\BaseInterface;
++use Drupal\openlayers\Types\BaseInterface;
+
+ /**
+  * Class Debug.
+@@ -20,7 +20,7 @@ class Debug extends Component {
+   /**
+    * {@inheritdoc}
+    */
+-  public function postBuild(array &$build, BaseInterface $context = NULL) {
++  public function postBuild(array &$build, BaseInterface $context = NULL) {
+     $alternative_template = 'openlayers--' . str_replace('_', '-', $context->getMachineName()) . '.tpl.php';
+     $template_value = file_get_contents(drupal_get_path('module', 'openlayers') . '/theme/openlayers.tpl.php');
+
+@@ -114,10 +114,10 @@ class Debug extends Component {
+   /**
+    * Array containing basic information about an OL Object.
+    *
+-   * @param \Drupal\openlayers\Types\BaseInterface $object
++   * @param \Drupal\openlayers\Types\BaseInterface $object
+    * @return array
+    */
+-  protected function getInfo(BaseInterface $object) {
++  protected function getInfo(BaseInterface $object) {
+     $js = $object->getJS();
+
+     $info = array(
+diff --git a/src/Plugin/Control/LayerSwitcher/LayerSwitcher.php b/src/Plugin/Control/LayerSwitcher/LayerSwitcher.php
+index 6ce73960..00c14789 100644
+--- a/src/Plugin/Control/LayerSwitcher/LayerSwitcher.php
++++ b/src/Plugin/Control/LayerSwitcher/LayerSwitcher.php
+@@ -10,7 +10,7 @@ namespace Drupal\openlayers\Plugin\Control\LayerSwitcher;
+
+ use Drupal\openlayers\Openlayers;
+ use Drupal\openlayers\Types\Control;
+-use Drupal\openlayers\Types\BaseInterface;
++use Drupal\openlayers\Types\BaseInterface;
+
+ /**
+  * Class LayerSwitcher.
+@@ -70,7 +70,7 @@ class LayerSwitcher extends Control {
+   /**
+    * {@inheritdoc}
+    */
+-  public function preBuild(array &$build, BaseInterface $context = NULL) {
++  public function preBuild(array &$build, BaseInterface $context = NULL) {
+     $map_id = $context->getId();
+     $layers = $this->getOption('layers', array());
+     $items = array();
+diff --git a/src/Plugin/Layer/Group/Group.php b/src/Plugin/Layer/Group/Group.php
+index f6203018..f51ab62c 100644
+--- a/src/Plugin/Layer/Group/Group.php
++++ b/src/Plugin/Layer/Group/Group.php
+@@ -8,7 +8,7 @@ namespace Drupal\openlayers\Plugin\Layer\Group;
+
+ use Drupal\openlayers\Openlayers;
+ use Drupal\openlayers\Types\Layer;
+-use Drupal\openlayers\Types\BaseInterface;
++use Drupal\openlayers\Types\BaseInterface;
+
+ /**
+  * Class Group.
+@@ -197,7 +197,7 @@ class Group extends Layer {
+   /**
+    * {@inheritdoc}
+    */
+-  public function preBuild(array &$build, BaseInterface $context = NULL) {
++  public function preBuild(array &$build, BaseInterface $context = NULL) {
+     /** @var LayerInterface $layer */
+     foreach ($context->getObjects('layer') as $layer) {
+       $layer->setOption('title', $layer->getName());
+diff --git a/src/Plugin/Layer/Vector/Vector.php b/src/Plugin/Layer/Vector/Vector.php
+index d61bb2ec..b3730de6 100644
+--- a/src/Plugin/Layer/Vector/Vector.php
++++ b/src/Plugin/Layer/Vector/Vector.php
+@@ -7,7 +7,7 @@
+ namespace Drupal\openlayers\Plugin\Layer\Vector;
+
+ use Drupal\openlayers\Types\Layer;
+-use Drupal\openlayers\Types\BaseInterface;
++use Drupal\openlayers\Types\BaseInterface;
+
+ /**
+  * Class Vector.
+diff --git a/src/Plugin/Source/GoogleMaps/GoogleMaps.php b/src/Plugin/Source/GoogleMaps/GoogleMaps.php
+index 683b08ae..fda336bf 100644
+--- a/src/Plugin/Source/GoogleMaps/GoogleMaps.php
++++ b/src/Plugin/Source/GoogleMaps/GoogleMaps.php
+@@ -9,7 +9,7 @@
+  */
+
+ namespace Drupal\openlayers\Plugin\Source\GoogleMaps;
+-use Drupal\openlayers\Types\BaseInterface;
++use Drupal\openlayers\Types\BaseInterface;
+ use Drupal\openlayers\Types\Source;
+
+ /**
+@@ -63,7 +63,7 @@ class GoogleMaps extends Source {
+   /**
+    * {@inheritdoc}
+    */
+-  public function postBuild(array &$build, BaseInterface $map = NULL) {
++  public function postBuild(array &$build, BaseInterface $map = NULL) {
+     $styles = implode(array_map(function ($key) use ($map) {
+       return $key . ':' . $map->getOption($key) . ';';
+     }, array('width', 'height')));
+diff --git a/src/Types/Object.php b/src/Types/Base.php
+similarity index 97%
+rename from src/Types/Object.php
+rename to src/Types/Base.php
+index 76f7d494..66052f27 100644
+--- a/src/Types/Object.php
++++ b/src/Types/Base.php
+@@ -10,12 +10,12 @@ use Drupal\Component\Plugin\PluginBase;
+ use Drupal\openlayers\Config;
+ use Drupal\openlayers\Openlayers;
+ use Drupal\openlayers\Types\Collection;
+-use Drupal\openlayers\Types\BaseInterface;
++use Drupal\openlayers\Types\BaseInterface;
+
+ /**
+  * Class Object.
+  */
+-abstract class Base extends PluginBase implements BaseInterface {
++abstract class Base extends PluginBase implements BaseInterface {
+   /**
+    * A unique ID for the object.
+    *
+@@ -193,7 +193,7 @@ abstract class Base extends PluginBase implements BaseInterface {
+   /**
+    * {@inheritdoc}
+    */
+-  public function addObject(BaseInterface $object) {
++  public function addObject(BaseInterface $object) {
+     $this->setOption($object->getType() . 's', $this->getOption($object->getType() . 's', array()) + array($object->getMachineName()));
+     $object->setWeight(count($this->getOption($object->getType() . 's', array())) + 2);
+     $this->getCollection()->import(array($object));
+@@ -337,7 +337,7 @@ abstract class Base extends PluginBase implements BaseInterface {
+   /**
+    * {@inheritdoc}
+    */
+-  public function preBuild(array &$build, BaseInterface $context = NULL) {
++  public function preBuild(array &$build, BaseInterface $context = NULL) {
+     foreach ($this->getCollection()->getFlatList() as $object) {
+       if ($object !== $this) {
+         $object->preBuild($build, $context);
+@@ -349,7 +349,7 @@ abstract class Base extends PluginBase implements BaseInterface {
+   /**
+    * {@inheritdoc}
+    */
+-  public function postBuild(array &$build, BaseInterface $context = NULL) {
++  public function postBuild(array &$build, BaseInterface $context = NULL) {
+     foreach ($this->getCollection()->getFlatList() as $object) {
+       if ($object !== $this) {
+         $object->postBuild($build, $context);
+diff --git a/src/Types/BaseInterface.php b/src/Types/BaseInterface.php
+similarity index 91%
+rename from src/Types/BaseInterface.php
+rename to src/Types/BaseInterface.php
+index 01b0beff..d9e61944 100644
+--- a/src/Types/BaseInterface.php
++++ b/src/Types/BaseInterface.php
+@@ -1,7 +1,7 @@
+ <?php
+ /**
+  * @file
+- * Interface BaseInterface.
++ * Interface BaseInterface.
+  */
+
+ namespace Drupal\openlayers\Types;
+@@ -11,7 +11,7 @@ use Drupal\Component\Plugin\PluginInspectionInterface;
+ /**
+  * Interface openlayers_object_interface.
+  */
+-interface BaseInterface extends PluginInspectionInterface {
++interface BaseInterface extends PluginInspectionInterface {
+   /**
+    * Initializes the object.
+    */
+@@ -56,7 +56,7 @@ interface BaseInterface extends PluginInspectionInterface {
+    * @param array $options
+    *   The options array.
+    *
+-   * @return BaseInterface
++   * @return BaseInterface
+    *   The current object.
+    */
+   public function setOptions(array $options = array());
+@@ -83,7 +83,7 @@ interface BaseInterface extends PluginInspectionInterface {
+    * @param mixed $value
+    *   The value to set.
+    *
+-   * @return BaseInterface
++   * @return BaseInterface
+    *   The current object.
+    */
+   public function setOption($parents, $value = NULL);
+@@ -159,10 +159,10 @@ interface BaseInterface extends PluginInspectionInterface {
+    *
+    * @param array $build
+    *   The array with the build information.
+-   * @param \Drupal\openlayers\Types\BaseInterface $context
++   * @param \Drupal\openlayers\Types\BaseInterface $context
+    *   The context of the build. Mostly the map object.
+    */
+-  public function preBuild(array &$build, BaseInterface $context = NULL);
++  public function preBuild(array &$build, BaseInterface $context = NULL);
+
+   /**
+    * Invoked after an objects render array is built.
+@@ -171,10 +171,10 @@ interface BaseInterface extends PluginInspectionInterface {
+    *
+    * @param array $build
+    *   The array with the build information.
+-   * @param \Drupal\openlayers\Types\BaseInterface $context
++   * @param \Drupal\openlayers\Types\BaseInterface $context
+    *   The context of the build. Mostly the map object.
+    */
+-  public function postBuild(array &$build, BaseInterface $context = NULL);
++  public function postBuild(array &$build, BaseInterface $context = NULL);
+
+   /**
+    * Return an object, CTools Exportable.
+@@ -265,7 +265,7 @@ interface BaseInterface extends PluginInspectionInterface {
+   /**
+    * Return a flat array containing Openlayers Objects from the options array.
+    *
+-   * @return BaseInterface[]
++   * @return BaseInterface[]
+    *   Return a list of objects.
+    */
+   public function optionsToObjects();
+@@ -310,7 +310,7 @@ interface BaseInterface extends PluginInspectionInterface {
+    * @param string $factory_service
+    *   The object's factory service.
+    *
+-   * @return BaseInterface
++   * @return BaseInterface
+    *   The parent object.
+    */
+   public function setFactoryService($factory_service);
+@@ -326,13 +326,13 @@ interface BaseInterface extends PluginInspectionInterface {
+   /**
+    * Add an object into the collection of the parent object.
+    *
+-   * @param \Drupal\openlayers\Types\BaseInterface $object
++   * @param \Drupal\openlayers\Types\BaseInterface $object
+    *   The object to add.
+    *
+-   * @return BaseInterface
++   * @return BaseInterface
+    *   The parent object.
+    */
+-  public function addObject(BaseInterface $object);
++  public function addObject(BaseInterface $object);
+
+   /**
+    * Remove an object from the collection.
+@@ -340,7 +340,7 @@ interface BaseInterface extends PluginInspectionInterface {
+    * @param string $object_machine_name
+    *   The machine name of the object to remove.
+    *
+-   * @return BaseInterface
++   * @return BaseInterface
+    *   The parent object.
+    */
+   public function removeObject($object_machine_name);
+@@ -348,7 +348,7 @@ interface BaseInterface extends PluginInspectionInterface {
+   /**
+    * Return all the dependencies objects of the parent object.
+    *
+-   * @return BaseInterface[]
++   * @return BaseInterface[]
+    *   The dependencies objects.
+    */
+   public function getDependencies();
+@@ -367,7 +367,7 @@ interface BaseInterface extends PluginInspectionInterface {
+    * @param string $id
+    *   The object ID.
+    *
+-   * @return BaseInterface
++   * @return BaseInterface
+    *   The parent object.
+    */
+   public function setId($id);
+diff --git a/src/Types/Collection.php b/src/Types/Collection.php
+index 58f70bde..9d7387ee 100644
+--- a/src/Types/Collection.php
++++ b/src/Types/Collection.php
+@@ -20,22 +20,22 @@ class Collection extends PluginBase {
+   /**
+    * The variable containing the objects.
+    *
+-   * @var BaseInterface[] $objects
++   * @var BaseInterface[] $objects
+    *   List of objects in this collection. The items have to be instances of
+-   *   \Drupal\openlayers\Types\Base.
++   *   \Drupal\openlayers\Types\Base.
+    */
+   protected $objects = array();
+
+   /**
+    * Import a flat list of Openlayers Objects.
+    *
+-   * @param BaseInterface[] $import
++   * @param BaseInterface[] $import
+    *   The array of objects to import.
+    */
+   public function import(array $import = array()) {
+-    array_walk($import, function (BaseInterface $object_to_add) {
++    array_walk($import, function (BaseInterface $object_to_add) {
+       $dependencies = $object_to_add->getCollection()->getFlatList();
+-      array_walk($dependencies, function (BaseInterface $object_dependency) {
++      array_walk($dependencies, function (BaseInterface $object_dependency) {
+         $this->append($object_dependency);
+       });
+       $this->append($object_to_add);
+@@ -49,7 +49,7 @@ class Collection extends PluginBase {
+    *   Array of type to filter for. If set, only a list with objects of this
+    *   type is returned.
+    *
+-   * @return \Drupal\openlayers\Types\BaseInterface[]
++   * @return \Drupal\openlayers\Types\BaseInterface[]
+    *   List of objects of this collection or list of a specific type of objects.
+    */
+   public function getFlatList(array $types = array()) {
+@@ -79,20 +79,20 @@ class Collection extends PluginBase {
+   /**
+    * Add object to this collection.
+    *
+-   * @param BaseInterface $object
++   * @param BaseInterface $object
+    *   Object instance to add to this collection.
+    */
+-  public function append(BaseInterface $object) {
++  public function append(BaseInterface $object) {
+     $this->objects[$object->getType() . '_' . $object->getMachineName()] = $object;
+   }
+
+   /**
+    * Remove object from this collection.
+    *
+-   * @param BaseInterface $object
++   * @param BaseInterface $object
+    *   Object instance to remove from this collection.
+    */
+-  public function delete(BaseInterface $object) {
++  public function delete(BaseInterface $object) {
+     unset($this->objects[$object->getType() . '_' . $object->getMachineName()]);
+   }
+
+@@ -160,7 +160,7 @@ class Collection extends PluginBase {
+    *   Type to filter for. If set only a list with objects of this type is
+    *   returned.
+    *
+-   * @return array|BaseInterface[]
++   * @return array|BaseInterface[]
+    *   List of objects of this collection or list of a specific type of objects.
+    */
+   public function getObjects($type = NULL) {
+@@ -190,10 +190,10 @@ class Collection extends PluginBase {
+   /**
+    * Add object to this collection.
+    *
+-   * @param BaseInterface $object
++   * @param BaseInterface $object
+    *   Object instance to add to this collection.
+    */
+-  public function prepend(BaseInterface $object) {
++  public function prepend(BaseInterface $object) {
+     $this->objects = array_merge(array($object->getType() . '_' . $object->getMachineName() => $object), $this->objects);
+   }
+
+@@ -219,7 +219,7 @@ class Collection extends PluginBase {
+    * @param string $id
+    *   The id of the object to get.
+    *
+-   * @return false|\Drupal\openlayers\Types\BaseInterface
++   * @return false|\Drupal\openlayers\Types\BaseInterface
+    *   If found, returns the object. False otherwise.
+    */
+   public function getObjectById($type = array(), $id) {
+diff --git a/src/Types/Component.php b/src/Types/Component.php
+index c31c165a..a08d34c8 100644
+--- a/src/Types/Component.php
++++ b/src/Types/Component.php
+@@ -9,7 +9,7 @@ namespace Drupal\openlayers\Types;
+ /**
+  * Class Component.
+  */
+-abstract class Component extends Base implements ComponentInterface {
++abstract class Component extends Base implements ComponentInterface {
+   /**
+    * The array containing the options.
+    *
+diff --git a/src/Types/ComponentInterface.php b/src/Types/ComponentInterface.php
+index 994a7dea..1ad3b963 100644
+--- a/src/Types/ComponentInterface.php
++++ b/src/Types/ComponentInterface.php
+@@ -9,6 +9,6 @@ namespace Drupal\openlayers\Types;
+ /**
+  * Interface ComponentInterface.
+  */
+-interface ComponentInterface extends BaseInterface {
++interface ComponentInterface extends BaseInterface {
+
+ }
+diff --git a/src/Types/Control.php b/src/Types/Control.php
+index 31fbd1be..b2d18722 100644
+--- a/src/Types/Control.php
++++ b/src/Types/Control.php
+@@ -9,7 +9,7 @@ namespace Drupal\openlayers\Types;
+ /**
+  * Class Control.
+  */
+-abstract class Control extends Base implements ControlInterface {
++abstract class Control extends Base implements ControlInterface {
+   /**
+    * The array containing the options.
+    *
+diff --git a/src/Types/ControlInterface.php b/src/Types/ControlInterface.php
+index 89dcd945..f4ee9e2e 100644
+--- a/src/Types/ControlInterface.php
++++ b/src/Types/ControlInterface.php
+@@ -9,6 +9,6 @@ namespace Drupal\openlayers\Types;
+ /**
+  * Interface ControlInterface.
+  */
+-interface ControlInterface extends BaseInterface {
++interface ControlInterface extends BaseInterface {
+
+ }
+diff --git a/src/Types/Error.php b/src/Types/Error.php
+index e3075f89..2a8c507a 100644
+--- a/src/Types/Error.php
++++ b/src/Types/Error.php
+@@ -7,7 +7,7 @@
+ namespace Drupal\openlayers\Types;
+
+ use Drupal\Core\Logger\LoggerChannelInterface;
+-use Drupal\openlayers\Types\Base;
++use Drupal\openlayers\Types\Base;
+ use Drupal\service_container\Messenger\MessengerInterface;
+
+ /**
+@@ -24,7 +24,7 @@ use Drupal\service_container\Messenger\MessengerInterface;
+  * Dummy class to avoid breaking the whole processing if a plugin class is
+  * missing.
+  */
+-class Error extends Base implements ControlInterface, ComponentInterface, LayerInterface, SourceInterface, StyleInterface {
++class Error extends Base implements ControlInterface, ComponentInterface, LayerInterface, SourceInterface, StyleInterface {
+
+   /**
+    * Contains the error message string.
+diff --git a/src/Types/Interaction.php b/src/Types/Interaction.php
+index 98fe4a55..8b99c930 100644
+--- a/src/Types/Interaction.php
++++ b/src/Types/Interaction.php
+@@ -9,7 +9,7 @@ namespace Drupal\openlayers\Types;
+ /**
+  * Class Interaction.
+  */
+-abstract class Interaction extends Base implements InteractionInterface {
++abstract class Interaction extends Base implements InteractionInterface {
+   /**
+    * The array containing the options.
+    *
+diff --git a/src/Types/InteractionInterface.php b/src/Types/InteractionInterface.php
+index b0ed6316..16225c50 100644
+--- a/src/Types/InteractionInterface.php
++++ b/src/Types/InteractionInterface.php
+@@ -9,6 +9,6 @@ namespace Drupal\openlayers\Types;
+ /**
+  * Interface InteractionInterface.
+  */
+-interface InteractionInterface extends BaseInterface {
++interface InteractionInterface extends BaseInterface {
+
+ }
+diff --git a/src/Types/Layer.php b/src/Types/Layer.php
+index 65b39c7f..fa66582e 100644
+--- a/src/Types/Layer.php
++++ b/src/Types/Layer.php
+@@ -11,7 +11,7 @@ use Drupal\openlayers\Openlayers;
+ /**
+  * Class Layer.
+  */
+-abstract class Layer extends Base implements LayerInterface {
++abstract class Layer extends Base implements LayerInterface {
+   /**
+    * The array containing the options.
+    *
+diff --git a/src/Types/LayerInterface.php b/src/Types/LayerInterface.php
+index 44529015..fa02aabf 100644
+--- a/src/Types/LayerInterface.php
++++ b/src/Types/LayerInterface.php
+@@ -9,7 +9,7 @@ namespace Drupal\openlayers\Types;
+ /**
+  * Interface LayerInterface.
+  */
+-interface LayerInterface extends BaseInterface {
++interface LayerInterface extends BaseInterface {
+   /**
+    * Returns the source of this layer.
+    *
+diff --git a/src/Types/Map.php b/src/Types/Map.php
+index b9d98586..341500a8 100644
+--- a/src/Types/Map.php
++++ b/src/Types/Map.php
+@@ -11,7 +11,7 @@ use Drupal\openlayers\Openlayers;
+ /**
+  * Class Map.
+  */
+-abstract class Map extends Base implements MapInterface {
++abstract class Map extends Base implements MapInterface {
+   /**
+    * {@inheritdoc}
+    *
+diff --git a/src/Types/MapInterface.php b/src/Types/MapInterface.php
+index 32f161fb..c3dbcc87 100644
+--- a/src/Types/MapInterface.php
++++ b/src/Types/MapInterface.php
+@@ -9,7 +9,7 @@ namespace Drupal\openlayers\Types;
+ /**
+  * Interface MapInterface.
+  */
+-interface MapInterface extends BaseInterface {
++interface MapInterface extends BaseInterface {
+   /**
+    * Returns the id of this map.
+    *
+diff --git a/src/Types/Projection.php b/src/Types/Projection.php
+index dc11714a..471c71b1 100644
+--- a/src/Types/Projection.php
++++ b/src/Types/Projection.php
+@@ -9,6 +9,6 @@ namespace Drupal\openlayers\Types;
+ /**
+  * Class Projection.
+  */
+-abstract class Projection extends Base implements ProjectionInterface {
++abstract class Projection extends Base implements ProjectionInterface {
+
+ }
+diff --git a/src/Types/ProjectionInterface.php b/src/Types/ProjectionInterface.php
+index 3bc1fdb6..bbcfd3e6 100644
+--- a/src/Types/ProjectionInterface.php
++++ b/src/Types/ProjectionInterface.php
+@@ -9,6 +9,6 @@ namespace Drupal\openlayers\Types;
+ /**
+  * Interface ProjectionInterface.
+  */
+-interface ProjectionInterface extends BaseInterface {
++interface ProjectionInterface extends BaseInterface {
+
+ }
+diff --git a/src/Types/Source.php b/src/Types/Source.php
+index d98c51fa..727bfae3 100644
+--- a/src/Types/Source.php
++++ b/src/Types/Source.php
+@@ -9,7 +9,7 @@ namespace Drupal\openlayers\Types;
+ /**
+  * Class Source.
+  */
+-abstract class Source extends Base implements SourceInterface {
++abstract class Source extends Base implements SourceInterface {
+   /**
+    * The array containing the options.
+    *
+diff --git a/src/Types/SourceInterface.php b/src/Types/SourceInterface.php
+index a6cb9884..dd897c2d 100644
+--- a/src/Types/SourceInterface.php
++++ b/src/Types/SourceInterface.php
+@@ -9,6 +9,6 @@ namespace Drupal\openlayers\Types;
+ /**
+  * Interface SourceInterface.
+  */
+-interface SourceInterface extends BaseInterface {
++interface SourceInterface extends BaseInterface {
+
+ }
+diff --git a/src/Types/Style.php b/src/Types/Style.php
+index cf499154..d42c1edf 100644
+--- a/src/Types/Style.php
++++ b/src/Types/Style.php
+@@ -9,7 +9,7 @@ namespace Drupal\openlayers\Types;
+ /**
+  * Class Style.
+  */
+-abstract class Style extends Base implements StyleInterface {
++abstract class Style extends Base implements StyleInterface {
+   /**
+    * The array containing the options.
+    *
+diff --git a/src/Types/StyleInterface.php b/src/Types/StyleInterface.php
+index e1969c39..50f443e3 100644
+--- a/src/Types/StyleInterface.php
++++ b/src/Types/StyleInterface.php
+@@ -9,6 +9,6 @@ namespace Drupal\openlayers\Types;
+ /**
+  * Interface StyleInterface.
+  */
+-interface StyleInterface extends BaseInterface {
++interface StyleInterface extends BaseInterface {
+
+ }

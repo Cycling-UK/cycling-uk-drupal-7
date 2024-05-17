@@ -1,0 +1,626 @@
+<?php
+
+function cyclinguk_commerce_install() {
+  variable_set('commerce_default_currency', 'GBP');
+  variable_set('commerce_enabled_currencies', ['GBP' => 'GBP']);
+}
+
+function cyclinguk_commerce_schema() {
+  $schema['cyclinguk_commerce_order'] = [
+    'description' => 'CARE data for Commerce orders.',
+    'fields' => [
+      'order_id' => [
+        'description' => 'The order ID this data relates to.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'completed' => [
+        'type' => 'int',
+        'size' => 'tiny',
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'billing_ContactNumber' => [
+        'description' => 'The ContactNumber for the billing person, when received from CARE',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'billing_AddressNumber' => [
+        'description' => 'The AddressNumber for the billing person, when recieved from CARE.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'gift_aid_declared' => [
+        'description' => 'Whether Gift Aid declaration has been sent to CARE.',
+        'type' => 'int',
+        'size' => 'tiny',
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'subscription_saved' => [
+        'description' => 'Whether newsletter subscription choices have been sent to CARE.',
+        'type' => 'int',
+        'size' => 'tiny',
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+    ],
+    'primary key' => ['order_id'],
+  ];
+  $schema['cyclinguk_commerce_line_item'] = [
+    'description' => 'CARE data for Commerce order line items.',
+    'fields' => [
+      'line_item_id' => [
+        'description' => 'The line item ID this data relates to.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'completed' => [
+        'type' => 'int',
+        'size' => 'tiny',
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'member_ContactNumber' => [
+        'description' => 'The ContactNumber for the member, if relevant, when recieved from CARE.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'member_AddressNumber' => [
+        'description' => 'The AddressNumber for the member, if relevant, when recieved from CARE.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'branch' => [
+        'description' => 'The Branch for the member, if relevant, when received from CARE.',
+        'type' => 'varchar',
+        'length' => '64',
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'organisation_email_CommunicationNumber' => [
+        'description' => 'The CommunicationNumber for the organisation email, if relevant, when recieved from CARE.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'affiliate_ComplimentaryRelationship' => [
+        'description' => 'The ComplimentaryRelationship for the affiliate member, if relevant, when recieved from CARE.',
+        'type' => 'varchar',
+        'length' => 64,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'organisation_ContactPositionNumber' => [
+        'description' => 'The ContactPositionNumber for the contact in the organisation, if relevant, when recieved from CARE.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'MembershipNumber' => [
+        'description' => 'The MembershipNumber, if relevant, when recieved from CARE.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'PaymentPlanNumber' => [
+        'description' => 'The PaymentPlanNumber, if relevant, when recieved from CARE.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'AutoPaymentNumber' => [
+        'description' => 'The AutoPaymentNumber, if relevant, when recieved from CARE.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'gift_message_DocumentNumber' => [
+        'description' => 'The gift message DocumentNumber, if relevant, when recieved from CARE.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'BatchNumber' => [
+        'description' => 'The payment BatchNumber, if relevant, when recieved from CARE.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'TransactionNumber' => [
+        'description' => 'The payment TransactionNumber, if relevant, when recieved from CARE.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'PaymentFrequency' => [
+        'description' => 'The PaymentFrequency code, if relevant, when recieved from CARE.',
+        'type' => 'char',
+        'length' => 1,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+    ],
+    'primary key' => ['line_item_id'],
+  ];
+  $schema['cyclinguk_commerce_line_item_family'] = [
+    'description' => 'CARE data for Commerce family membership people.',
+    'fields' => [
+      'line_item_id' => [
+        'description' => 'The line item ID this data relates to.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'delta' => [
+        'description' => 'The index of the family member this data relates to.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'completed' => [
+        'type' => 'int',
+        'size' => 'tiny',
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'ContactNumber' => [
+        'description' => 'The ContactNumber for the family member, if relevant, when recieved from CARE.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'AddressNumber' => [
+        'description' => 'The AddressNumber for the family member, if relevant, when recieved from CARE.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'ComplimentaryRelationship' => [
+        'description' => 'The ComplimentaryRelationship for the family member, if relevant, when recieved from CARE.',
+        'type' => 'varchar',
+        'length' => 64,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'MembershipNumber' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+    ],
+    'primary key' => ['line_item_id', 'delta'],
+  ];
+  $schema['cyclinguk_commerce_line_item_errors'] = [
+    'description' => 'CARE error messages for Commerce order line items.',
+    'fields' => [
+      'line_item_id' => [
+        'description' => 'The line item ID this data relates to.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'timestamp' => [
+        'description' => 'The unix timestamp of the error.',
+        'type' => 'int',
+        'not null' => FALSE,
+        'sortable' => TRUE,
+      ],
+      'care_call' => [
+        'description' => 'The CARE call.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'error_message' => [
+        'description' => 'The error message recieved from CARE.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+    ],
+    'primary key' => ['line_item_id'],
+  ];
+  return $schema;
+}
+
+/**
+ * Install new CARE progress tables to database.
+ */
+function cyclinguk_commerce_update_7101() {
+  $schema['cyclinguk_commerce_order'] = [
+    'description' => 'CARE data for Commerce orders.',
+    'fields' => [
+      'order_id' => [
+        'description' => 'The order ID this data relates to.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'completed' => [
+        'type' => 'int',
+        'size' => 'tiny',
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'billing_ContactNumber' => [
+        'description' => 'The ContactNumber for the billing person, when received from CARE',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'billing_AddressNumber' => [
+        'description' => 'The AddressNumber for the billing person, when recieved from CARE.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'gift_aid_declared' => [
+        'description' => 'Whether Gift Aid declaration has been sent to CARE.',
+        'type' => 'int',
+        'size' => 'tiny',
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'subscription_saved' => [
+        'description' => 'Whether newsletter subscription choices have been sent to CARE.',
+        'type' => 'int',
+        'size' => 'tiny',
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+    ],
+  ];
+  $schema['cyclinguk_commerce_line_item'] = [
+    'description' => 'CARE data for Commerce order line items.',
+    'fields' => [
+      'line_item_id' => [
+        'description' => 'The line item ID this data relates to.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'completed' => [
+        'type' => 'int',
+        'size' => 'tiny',
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'member_ContactNumber' => [
+        'description' => 'The ContactNumber for the member, if relevant, when recieved from CARE.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'member_AddressNumber' => [
+        'description' => 'The AddressNumber for the member, if relevant, when recieved from CARE.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'branch' => [
+        'description' => 'The Branch for the member, if relevant, when received from CARE.',
+        'type' => 'varchar',
+        'length' => '64',
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'organisation_email_CommunicationNumber' => [
+        'description' => 'The CommunicationNumber for the organisation email, if relevant, when recieved from CARE.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'affiliate_ComplimentaryRelationship' => [
+        'description' => 'The ComplimentaryRelationship for the affiliate member, if relevant, when recieved from CARE.',
+        'type' => 'varchar',
+        'length' => 64,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'organisation_ContactPositionNumber' => [
+        'description' => 'The ContactPositionNumber for the contact in the organisation, if relevant, when recieved from CARE.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'MembershipNumber' => [
+        'description' => 'The MembershipNumber, if relevant, when recieved from CARE.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'PaymentPlanNumber' => [
+        'description' => 'The PaymentPlanNumber, if relevant, when recieved from CARE.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'AutoPaymentNumber' => [
+        'description' => 'The AutoPaymentNumber, if relevant, when recieved from CARE.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'gift_message_DocumentNumber' => [
+        'description' => 'The gift message DocumentNumber, if relevant, when recieved from CARE.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'BatchNumber' => [
+        'description' => 'The payment BatchNumber, if relevant, when recieved from CARE.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'TransactionNumber' => [
+        'description' => 'The payment TransactionNumber, if relevant, when recieved from CARE.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+    ],
+  ];
+  $schema['cyclinguk_commerce_line_item_family'] = [
+    'description' => 'CARE data for Commerce family membership people.',
+    'fields' => [
+      'line_item_id' => [
+        'description' => 'The line item ID this data relates to.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'delta' => [
+        'description' => 'The index of the family member this data relates to.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'completed' => [
+        'type' => 'int',
+        'size' => 'tiny',
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'ContactNumber' => [
+        'description' => 'The ContactNumber for the family member, if relevant, when recieved from CARE.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'AddressNumber' => [
+        'description' => 'The AddressNumber for the family member, if relevant, when recieved from CARE.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'ComplimentaryRelationship' => [
+        'description' => 'The ComplimentaryRelationship for the family member, if relevant, when recieved from CARE.',
+        'type' => 'varchar',
+        'length' => 64,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'MembershipNumber' => [
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+    ],
+  ];
+  foreach ($schema as $table_name => $definition) {
+    db_create_table($table_name, $definition);
+  }
+}
+
+/**
+ * Copy order progress data into new tables.
+ */
+function cyclinguk_commerce_update_7102() {
+  $query = db_select('commerce_order', 'o')
+    ->condition('o.data', '%s:18:"cyclinguk_commerce";a%', 'LIKE')
+    ->fields('o', ['order_id', 'data']);
+  $order_result = $query->execute();
+  foreach ($order_result as $order) {
+    $data = unserialize($order->data);
+    $our_data = $data['cyclinguk_commerce'];
+    echo "Order ID $order->order_id\n";
+    print_r($our_data);
+    db_merge('cyclinguk_commerce_order')
+      ->key(['order_id' => $order->order_id])
+      ->fields([
+        'order_id' => $order->order_id,
+        'completed' => 1,
+        'billing_ContactNumber' => isset($our_data['billing_contact_number']) ? $our_data['billing_contact_number'] : 0,
+        'billing_AddressNumber' => isset($our_data['billing_address_number']) ? $our_data['billing_address_number'] : 0,
+        'gift_aid_declared' => isset($our_data['gift_aid_declared']) ? $our_data['gift_aid_declared'] : 0,
+        'subscription_saved' => isset($our_data['subscription_saved']) ? $our_data['subscription_saved'] : 0,
+      ])
+      ->execute();
+  }
+}
+
+/**
+ * Copy line item progress data into new tables.
+ */
+function cyclinguk_commerce_update_7103() {
+  $query = db_select('commerce_line_item', 'l')
+    ->condition('l.data', '%s:18:"cyclinguk_commerce";a%', 'LIKE')
+    ->fields('l', ['line_item_id', 'data']);
+  $line_item_result = $query->execute();
+  foreach ($line_item_result as $line_item) {
+    $data = unserialize($line_item->data);
+    $our_data = $data['cyclinguk_commerce'];
+    echo "Line item ID $line_item->line_item_id\n";
+    print_r($our_data);
+    if (strpos($our_data['payment_transaction_number'], '-') > 1) {
+      list($batch_number, $transaction_number) = explode('-', $our_data['payment_transaction_number']);
+      $auto_payment_number = 0;
+    }
+    else {
+      $batch_number = 0;
+      $transaction_number = 0;
+      $auto_payment_number = isset($our_data['payment_transaction_number']) ? $our_data['payment_transaction_number'] : 0;
+    }
+    if (isset($our_data['member_contact_number'])) {
+      $member_contact_number = $our_data['member_contact_number'];
+      $member_address_number = $our_data['member_address_number'];
+    }
+    elseif (isset($our_data['organisation_contact_number'])) {
+      $member_contact_number = $our_data['organisation_contact_number'];
+      $member_address_number = $our_data['organisation_address_number'];
+    }
+    else {
+      $member_contact_number = 0;
+      $member_address_number = 0;
+    }
+    db_merge('cyclinguk_commerce_line_item')
+      ->key(['line_item_id' => $line_item->line_item_id])
+      ->fields([
+        'line_item_id' => $line_item->line_item_id,
+        'completed' => 1,
+        'member_ContactNumber' => $member_contact_number,
+        'member_AddressNumber' => $member_address_number,
+        'MembershipNumber' => isset($our_data['membership_membership_number']) ? $our_data['membership_membership_number'] : 0,
+        'organisation_ContactPositionNumber' => isset($our_data['organisation_contact_position']) ? $our_data['organisation_contact_position'] : 0,
+        'organisation_email_CommunicationNumber' => isset($our_data['organisation_email_communications_number']) ? $our_data['organisation_email_communications_number'] : 0,
+        'affiliate_ComplimentaryRelationship' => isset($our_data['affiliate_complimentary_relationship']) ? $our_data['affiliate_complimentary_relationship'] : '',
+        'PaymentPlanNumber' => isset($our_data['membership_payment_plan_number']) ? $our_data['membership_payment_plan_number'] : 0,
+        'gift_message_DocumentNumber' => isset($our_data['gift_message_document_number']) ? $our_data['gift_message_document_number'] : 0,
+        'AutoPaymentNumber' => $auto_payment_number,
+        'BatchNumber' => $batch_number,
+        'TransactionNumber' => $transaction_number,
+      ])
+      ->execute();
+    if (isset($our_data['family_members'])) {
+      foreach ($our_data['family_members'] as $delta => $family) {
+        db_merge('cyclinguk_commerce_line_item_family')
+          ->key(['line_item_id' => $line_item->line_item_id])
+          ->fields([
+            'line_item_id' => $line_item->line_item_id,
+            'delta' => $delta,
+            'completed' => 1,
+            'ContactNumber' => $family['contact_number'],
+            'AddressNumber' => isset($our_data['member_address_number']) ? $our_data['member_address_number'] : 0,
+            'ComplimentaryRelationShip' => $family['relationship'],
+          ])
+          ->execute();
+      }
+    }
+  }
+}
+
+/**
+ * Add new PaymentFrequency field to line item table.
+ */
+function cyclinguk_commerce_update_7104() {
+  $spec = [
+    'description' => 'The PaymentFrequency code, if relevant, when recieved from CARE.',
+    'type' => 'char',
+    'length' => 1,
+    'not null' => TRUE,
+    'default' => '',
+    'initial' => '',
+  ];
+  db_add_field('cyclinguk_commerce_line_item', 'PaymentFrequency', $spec);
+}
+
+/**
+ * Add new commerce CARE errors table, and keys for other tables.
+ */
+function cyclinguk_commerce_update_7105() {
+  $schema = [
+    'description' => 'CARE error messages for Commerce order line items.',
+    'fields' => [
+      'line_item_id' => [
+        'description' => 'The line item ID this data relates to.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+        'default' => 0,
+      ],
+      'timestamp' => [
+        'description' => 'The date and time of the error.',
+        'type' => 'int',
+        'not null' => FALSE,
+        'sortable' => TRUE,
+        'views' => TRUE,
+      ],
+      'care_call' => [
+        'description' => 'The CARE call.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'error_message' => [
+        'description' => 'The error message recieved from CARE.',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+    ],
+    'primary key' => ['line_item_id', 'timestamp'],
+  ];
+  db_create_table('cyclinguk_commerce_line_item_errors', $schema);
+  $field_spec = [
+    'description' => 'Unique row ID',
+    'type' => 'serial',
+    'unsigned' => TRUE,
+    'not null' => TRUE,
+  ];
+  $key_spec = ['primary key' => ['id']];
+  db_add_field('cyclinguk_commerce_order', 'id', $field_spec, $key_spec);
+  db_add_field('cyclinguk_commerce_line_item', 'id', $field_spec, $key_spec);
+  db_add_field('cyclinguk_commerce_line_item_family', 'id', $field_spec, $key_spec);
+  db_query('DELETE b FROM {cyclinguk_commerce_order} a JOIN {cyclinguk_commerce_order} b ON a.order_id = b.order_id AND a.id < b.id');
+}

@@ -1,0 +1,565 @@
+/*
+ * Listing pages, e.g. news
+ */
+
+
+
+/*
+ * Page banner
+ */
+
+.page-news-listing h1.page-header,
+.page-blogs h1.page-header {
+	display: none;
+}
+
+.page-publications h1 {
+	text-align: center;
+}
+
+.view.listing-page .top-wrapper .inner-wrapper h1 {
+	margin: 0;
+}
+
+
+
+/*
+ * Not Sticky articles
+ */
+
+.view.listing-page .view-content a,
+.view.listing-page a.sticky-No {
+	display: block;
+	color: #000;
+	text-decoration: none;
+	background-color: #f0f0f0;
+	border: 1px solid #f0f0f0;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	padding: 20px;
+}
+
+@media only screen and (max-width : 767px) {
+	.view.listing-page .view-content a,
+	.view.listing-page a.sticky-No {
+		max-width: 360px;
+		margin: 0 auto;
+	}
+}
+
+
+
+.view.listing-page .view-content a:hover,
+.view.listing-page .view-content a:focus,
+.view.listing-page .view-content a:active,
+.view.listing-page a.sticky-No:hover,
+.view.listing-page a.sticky-No:focus,
+.view.listing-page a.sticky-No:active {
+	background-color: #e0e0e0;
+	border: 1px solid #e0e0e0;
+}
+
+
+
+
+/*
+ * Sticky articles
+ */
+
+.view.listing-page a.sticky-Yes {
+	display: block;
+	color: #000;
+	text-decoration: none;
+	border: 1px solid #fbb040;
+	background-color: inherit;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	padding: 20px;
+}
+
+.view.listing-page a.sticky-Yes:hover,
+.view.listing-page a.sticky-Yes:focus {
+	border: 1px solid #f6b331;
+	background-color: #f6b331;
+}
+
+.view.listing-page a.sticky-Yes:active {
+	border: 1px solid #fdaf17;
+	background-color: #fdaf17;
+}
+
+.view.listing-page a.sticky-Yes:hover span.yellow-line,
+.view.listing-page a.sticky-Yes:focus span.yellow-line,
+.view.listing-page a.sticky-Yes:active span.yellow-line {
+	background-color: #000;
+}
+
+.view.listing-page a.sticky-Yes .btn {
+	-webkit-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow:    0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+	box-shadow:         0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+}
+
+
+.view.listing-page a.sticky-Yes:hover .btn,
+.view.listing-page a.sticky-Yes:focus .btn {
+	background-color: #fff;
+	color: #000;
+	border: 1px solid #f6b331;
+}
+
+.view.listing-page a.sticky-Yes:active .btn {
+	background-color: #fff;
+	color: #000;
+	border: 1px solid #fdaf17;
+}
+
+
+
+/*
+ * Fields
+ */
+
+.view.listing-page .view-content a {
+	padding: 10px 20px 20px 20px;
+	margin-bottom: 20px;
+	outline: none;
+}
+
+/* Related content doesn't display the date at the top of the post (why?) so the padding needs to be amended */
+.view.view-related .view-content a {
+	padding: 20px !important;
+}
+
+
+
+.view.listing-page .date {
+	display: block;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 12px;
+	line-height: 12px;
+	font-weight: 400;
+	text-align: center;
+	margin-bottom: 10px;
+	height: 12px;
+}
+
+/* Need to reduce the letter spacing on Cycle magazine listing because the date can be too long, e.g. "Cycle Magazine - December 2017 / January 2018" */
+body.page-publications-cycle .view.listing-page .date {
+	letter-spacing: 0.7px;
+}
+
+@media only screen and (max-width : 1199px) {body.page-publications-cycle .view.listing-page .date {height: 22px;}}
+
+
+
+.view.listing-page .image {
+	display: block;
+	margin-bottom: 20px;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	line-height: 0;
+}
+
+/* Need to control the height of the Cycle magazine cover image now the physical size of the magazine is smaller */
+@media only screen and (min-width : 1200px) 						 {body.page-publications-cycle .view.listing-page .image {height: 430px;}}
+@media only screen and (min-width :  992px) and (max-width : 1199px) {body.page-publications-cycle .view.listing-page .image {height: 337px;}}
+@media only screen and (min-width :  768px) and (max-width :  991px) {body.page-publications-cycle .view.listing-page .image {height: 402px;}}
+@media only screen and 						    (max-width :  767px) {body.page-publications-cycle .view.listing-page .image {height: auto; }}
+
+
+
+.view.listing-page .image img {
+	border-radius: 5px 5px 0 0;
+	-webkit-border-radius: 5px 5px 0 0;
+	-moz-border-radius: 5px 5px 0 0;
+	width: 100%;
+	height: 100%;
+}
+
+@media only screen and (max-width :  767px) {
+	body.page-publications-cycle .view.listing-page .image img {
+		margin: 0 auto;
+	}
+}
+
+.view.listing-page .image-field-caption {
+	display: none;
+}
+
+.view.listing-page .terms {
+	display: block;
+	text-transform: lowercase;
+	font-size: 12px;
+	font-weight: 400;
+	text-align: center;
+	margin-bottom: 10px;
+	height: 22px;
+	overflow: hidden;
+}
+
+.view.listing-page .terms .field-name-field-town {
+	text-transform: capitalize;
+}
+
+.view.listing-page .yellow-line {
+	display: block;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.view.listing-page .title {
+	display: block;
+	text-align: center;
+	height: 90px;
+	margin-bottom: 20px;
+	font-size: 22px;
+	line-height: 24px;
+	font-weight: 700;
+}
+
+@media only screen and (min-width : 480px) and (max-width : 767px) {
+	.view.listing-page .title {
+		height: 70px;
+	}
+}
+
+@media only screen and (max-width : 479px) {
+	.view.listing-page .title {
+		height: 120px;
+	}
+}
+
+
+.view.listing-page .btn {
+	display: block;
+	width: 120px;
+	min-width: 120px;
+	margin: 0 auto 20px;
+}
+
+.view.listing-page a:hover .btn {
+	background-color: #f6b331;
+	color: #fff;
+}
+
+.view.listing-page a:active .btn {
+	background-color: #fdaf17;
+	color: #fff;
+}
+
+
+
+/*
+ * Top promoted article
+ */
+
+.promoted-article-wrapper {
+	padding: 0 15px 0 15px;
+}
+
+.promoted-article-wrapper .left-container,
+.promoted-article-wrapper .right-container {
+	width: 50%;
+	float: left;
+}
+
+.promoted-article-wrapper .right-container {
+	background-color: #029ed9;
+	color: #fff;
+	border-radius: 0 10px 10px 0;
+	-webkit-border-radius: 0 10px 10px 0;
+	-moz-border-radius: 0 10px 10px 0;
+	display: table;
+	margin-bottom: 20px;
+}
+
+.promoted-article-wrapper .right-container .wrapper {
+	display: table-cell;
+	vertical-align: middle;
+	padding: 15px;
+}
+
+.promoted-article-wrapper .image {
+	margin-bottom: 0 !important;
+}
+
+.promoted-article-wrapper .image img {
+	border-radius: 10px 0 0 10px !important;
+	-webkit-border-radius: 10px 0 0 10px !important;
+	-moz-border-radius: 10px 0 0 10px !important;
+}
+
+.promoted-article-wrapper .right-container {
+	/* height: 262px; */
+	height: 217px;
+}
+
+@media only screen and (min-width : 992px) and (max-width : 1199px) {
+	.promoted-article-wrapper .right-container {
+		/*height: 214px;*/
+		height: 178px;
+	}
+}
+
+.promoted-article-wrapper .right-container .title {
+	height: initial !important;
+}
+
+.promoted-article-wrapper .right-container a.btn {
+	color: #000;
+    padding: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+@media only screen and (max-width : 991px) {
+
+	.promoted-article-wrapper .left-container,
+	.promoted-article-wrapper .right-container {
+		width: 100%;
+		float: inherit;
+	}
+
+	.promoted-article-wrapper .image img {
+		border-radius: 10px 10px 0 0 !important;
+		-webkit-border-radius: 10px 10px 0 0 !important;
+		-moz-border-radius: 10px 10px 0 0 !important;
+		width: 100%;
+	}
+
+	.promoted-article-wrapper .right-container {
+		border-radius: 0 0 10px 10px;
+		-webkit-border-radius: 0 0 10px 10px;
+		-moz-border-radius: 0 0 10px 10px;
+	}
+
+}
+
+
+
+
+/*
+ * Filters
+ */
+
+#search-filters .views-exposed-form .views-exposed-widget {
+	float: left; /* Was inherit */
+	padding: 0;
+}
+
+#search-filters  .form-control  {
+	border: inherit;
+	height: inherit;
+	padding: 0;
+	float: left;
+}
+
+#search-filters .views-widget-sort-by .form-control  {
+	border: 1px solid #000;
+	height: 44px;
+	padding: 10px 20px;
+	margin-bottom: 20px;
+	margin-top: 15px;
+}
+
+#search-filters .form-control .form-item:last-child {
+	margin-bottom: 10px;
+}
+
+
+#search-filters .form-control input[type="radio"],
+#search-filters .form-control input[type="checkbox"] {
+	margin: 0 6px 0 0;
+	width: inherit;
+}
+
+#search-filters .views-exposed-form label {
+	font-weight: 400;
+}
+
+#search-filters .views-exposed-widget > label {
+	font-size: 18px;
+	line-height: 18px;
+	font-weight: 400;
+	margin-bottom: 12px;
+	padding-bottom: 12px;
+	border-bottom: 1px solid #000;
+	width: 100%;
+}
+
+#search-filters .btn {
+	margin: inherit;
+	border: 1px solid #fbb040;
+}
+
+#search-filters .views-submit-button .btn {
+	border: 1px solid #7a68ae;
+}
+
+#search-filters .views-submit-button .btn:hover {
+	border: 1px solid #fbb040;
+}
+
+#search-filters .views-submit-button,
+#search-filters .views-submit-button {
+	float: left !important;
+}
+
+#search-filters .views-submit-button button,
+#search-filters .views-submit-button button {
+	margin: 0 12px 12px 0;
+}
+
+@media only screen and (max-width : 991px) {
+	#search-filters section {
+		display: none;
+	}
+	#search-filters section:first-child { /* This should be the custom search block */
+		display: inherit;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+}
+
+
+
+/*
+ * Exposed forms that need to be centre aligned
+ * Ensure the view has the class "exposed-view"
+ */
+
+.view.exposed-view .views-exposed-widgets {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.view.exposed-view .views-exposed-form .views-exposed-widget {
+    float: left;
+    padding: 0 .5em 1em .5em;
+}
+
+.view.exposed-view .views-exposed-form .views-exposed-widget .btn {
+    margin-top: 4px;
+} 
+
+
+
+
+/* Advanced options */
+
+#search-filters #edit-secondary-wrapper.views-exposed-widget {
+	margin-top: 50px;
+	width: 100%;
+}
+
+#search-filters fieldset .panel-heading {
+	padding: 0;
+}
+
+#search-filters fieldset .panel-heading a.panel-title {
+ 	font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 18px;
+	line-height: 18px;
+	font-weight: 400;
+	text-decoration: none;
+    padding: 0 0 10px 0;
+	margin: 0 0 10px 0;
+	border-bottom: 1px solid #000;
+	outline: none;
+}
+
+#search-filters fieldset .panel-body {
+	padding: 0;
+}
+
+#search-filters fieldset .panel .form-item {
+	margin-bottom: 10px;
+}
+
+#search-filters .views-exposed-form label.control-label {
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+
+/*
+ * Sidebar layout
+ */
+
+#search-filters section {
+	margin-bottom: 50px;
+}
+
+
+
+/*
+ * Blogs
+ */
+
+.outer-wrapper {
+    position: relative;
+}
+
+.outer-wrapper > .image {
+    position: relative;
+    border: 0;
+}
+
+.author-wrapper {
+	display: block;
+    background-color: #f0f0f0;
+    border-radius: 10px 10px 0 0;
+    height: 50px;
+    margin-bottom: -50px;
+    padding: 10px;
+    bottom: 70px;
+    left: 10px;
+    position: relative;
+    width: 258px;
+}
+
+.view.listing-page a.sticky-Yes .author-wrapper {
+	background-color: #fff;
+}
+
+.view.listing-page a.sticky-Yes:hover .author-wrapper,
+.view.listing-page a.sticky-Yes:focus .author-wrapper,
+.view.listing-page a.sticky-Yes:active .author-wrapper {
+	background-color: #f6b331;
+}
+
+.view.listing-page a.sticky-No:hover .author-wrapper,
+.view.listing-page a.sticky-No:focus .author-wrapper,
+.view.listing-page a.sticky-No:active .author-wrapper {
+	background-color: #e0e0e0;
+}
+
+.author-picture {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.author-picture img {
+    border-radius: 16px;
+    display: inline-block;
+}
+
+.author-name {
+    display: inline-block;
+    font-size: 18px;
+}
+
+/*
+ * hide block exposed filters on recycle centres page
+ */
+
+form#views-exposed-form-recycle-centres-rc-ol-blocklist {
+    display: none;
+}

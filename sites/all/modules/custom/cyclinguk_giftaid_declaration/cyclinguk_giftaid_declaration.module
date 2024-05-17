@@ -1,0 +1,25 @@
+<?php
+
+/**
+ * @file
+ * Main module file.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function cyclinguk_giftaid_declaration_menu() {
+  /**$items['user/%user/gift_aid'] = [
+    'title' => 'Gift Aid',
+    'page callback' => 'cyclinguk_commerce_gift_aid_settings',
+    'file' => 'includes/gift_aid_declaration.inc',
+    'page arguments' => [
+      1,
+    ],
+    'access callback' => [
+      'user_is_logged_in',
+    ],
+    'type' => MENU_LOCAL_TASK,
+  ];
+  return $items;*/
+}

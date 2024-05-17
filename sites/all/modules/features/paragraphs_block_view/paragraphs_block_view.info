@@ -1,0 +1,17 @@
+name = Paragraphs block view
+description = Paragraphs view block bundle views - currently for mags and camps news
+core = 7.x
+package = Cycling UK Features
+version = 7.x-1.01
+dependencies[] = entity
+dependencies[] = fe_block
+dependencies[] = owlcarousel_views
+dependencies[] = views
+dependencies[] = views_bootstrap
+dependencies[] = views_responsive_grid
+features[ctools][] = views:views_default:3.0
+features[fe_block_settings][] = views-76e989afc9edb5d6b452af5314b7c8ec
+features[fe_block_settings][] = views-d5fb1b8bd2027c69932351d329775aba
+features[features_api][] = api:2
+features[views_view][] = paragraphs_views_blocks_views
+project path = sites/all/modules/features

@@ -1,0 +1,54 @@
+diff --git a/gmap_test/gmap_test.features.inc b/gmap_test/gmap_test.features.inc
+index c906091..5b41c41 100644
+--- a/gmap_test/gmap_test.features.inc
++++ b/gmap_test/gmap_test.features.inc
+@@ -19,8 +19,8 @@ function gmap_test_node_info() {
+     'gmap_person' => array(
+       'name' => t('GMapPerson'),
+       'base' => 'node_content',
+-      'description' => t('Defines a \'person\', which has a refernce to a GMapLocation.
+-Thi si sused to thest the Gmap via referenced entities'),
++      'description' => t('Defines a \'person\', which has a refernce to a GMapLocation.
++This is used to test the Gmap via referenced entities'),
+       'has_title' => '1',
+       'title_label' => t('Person name'),
+       'help' => '',
+@@ -28,9 +28,9 @@ Thi si sused to thest the Gmap via referenced entities'),
+     'gmapplace' => array(
+       'name' => t('GmapPlace'),
+       'base' => 'node_content',
+-      'description' => t('A node type that contains locations, in 3 different field types: 
+-- location
+-- geofield
++      'description' => t('A node type that contains locations, in 3 different field types:
++- location
++- geofield
+ - normal fields'),
+       'has_title' => '1',
+       'title_label' => t('Title'),
+diff --git a/lib/Drupal/gmap/GmapDefaults.php b/lib/Drupal/gmap/GmapDefaults.php
+index 4b36fc8..2fb12ac 100644
+--- a/lib/Drupal/gmap/GmapDefaults.php
++++ b/lib/Drupal/gmap/GmapDefaults.php
+@@ -104,7 +104,7 @@ class GmapDefaults {
+       'v' => variable_get('gmap_api_version', GMAP_API_VERSION),
+       'language' => $langcode,
+       'sensor' => 'false',
+-      'libraries' => implode(array_merge(variable_get('gmap_api_libraries', array()), gmap_module_invoke('libraries', $m)), ','),
++      'libraries' => implode(',', array_merge(variable_get('gmap_api_libraries', array()), gmap_module_invoke('libraries', $m))),
+     );
+     if ($key = gmap_get_key()) {
+       $query['key'] = $key;
+diff --git a/tests/inc/gmap_defaults.inc b/tests/inc/gmap_defaults.inc
+index 428ccdf..535263b 100644
+--- a/tests/inc/gmap_defaults.inc
++++ b/tests/inc/gmap_defaults.inc
+@@ -110,7 +110,7 @@ function legacy__gmap_base_js() {
+     'v' => variable_get('gmap_api_version', GMAP_API_VERSION),
+     'language' => $langcode,
+     'sensor' => 'false',
+-    'libraries' => implode(array_merge(variable_get('gmap_api_libraries', array()), legacy_gmap_module_invoke('libraries', $m)), ','),
++    'libraries' => implode(',', array_merge(variable_get('gmap_api_libraries', array()), legacy_gmap_module_invoke('libraries', $m))),
+   );
+   if ($key = legacy_gmap_get_key()) {
+     $query['key'] = $key;

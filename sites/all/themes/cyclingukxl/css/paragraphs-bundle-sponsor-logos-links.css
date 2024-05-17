@@ -1,0 +1,93 @@
+.paragraphs-item-sponsor-logos-with-links {
+  text-align: center;
+  margin: 0 auto 60px auto;
+}
+
+.paragraphs-logos-with-links {
+  margin-top: 20px;
+}
+
+/* flexbox sponsor logos */
+
+.field-name-field-sponsor.field-type-field-collection .field-items {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.field-name-field-sponsor .field-items .field-item {
+  width: auto;
+  margin: 20px 20px 30px;
+  height: auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.field-name-field-sponsor .field-items .field-item a {
+  display: block;
+  width: 100%;
+}
+
+.field-name-field-sponsor .field-items .field-item a img.img-responsive {
+  display: block;
+  max-height: 90px;
+  width: auto;
+  max-width: 150px;
+}
+
+.field-name-field-sponsor .field-items .field-item .field-collection-view {
+  padding: 0 0 0 0;
+  margin: 0 0;
+  border-bottom: 0px;
+  border-bottom: none;
+}
+
+.field-name-field-sponsor-image .image-field-caption p {
+  text-align: center;
+  bottom: 0;
+}
+
+.field-name-field-sponsor .field-collection-view .entity-field-collection-item {
+  float: none;
+  display: block;
+  margin: auto;
+}
+
+.paragraphs-item-sponsor-logos-with-links .container .row {
+  max-width: 980px;
+  margin: auto;
+}
+
+.paragraphs-item-sponsor-logos-with-links .field-collection-container {
+  border-bottom: 0px solid #fff;
+}
+
+.paragraphs-item-sponsor-logos-with-links .container {
+  margin: auto;
+}
+
+.paragraphs-item-sponsor-logos-with-links .field-name-field-subtitle h2 {
+  text-align: center;
+  color: #000;
+  margin-bottom: 30px;
+  margin-top: 20px;
+  font-size: 36px;
+  line-height: 110%;
+}
+
+/* not in use 
+.paragraphs-logos-with-links.remove_bottom_margin_yes {
+  margin-bottom: 0;
+} 
+*/
+
+@media only screen and (max-width: 767px) {
+  .field-name-field-sponsor .field-items .field-item a img.img-responsive {
+    margin: 15px;
+  }
+}

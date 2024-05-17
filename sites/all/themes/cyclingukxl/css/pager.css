@@ -1,0 +1,84 @@
+ul.pager {
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  margin: 30px auto 0 auto;
+}
+
+ul.pager > li {
+	display: inline-block;
+	margin-bottom: 10px;
+}
+
+ul.pager > li > a,
+.avatar-selection-pager-nav a {
+	margin-bottom: 0 !important;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+}
+
+ul.pager > li > a,
+ul.pager > li > span,
+ul.pager > li.pager-ellipsis,
+.avatar-selection-pager-nav a {
+  margin: 0 5px;
+  text-transform: capitalize;
+  padding: 8px 16px !important;
+  background-color: #f0f0f0 !important;
+  border-color: #f0f0f0 !important;
+  color: #000 !important;
+  text-decoration: none !important;
+  height: 40px;
+}
+
+ul.pager > li.pager-current,
+.avatar-selection-pager-nav .pager-current {
+  margin: 0 5px;
+  padding: 8px 16px !important;
+  background-color: #fff;
+  border: 1px solid #fbb040;
+  color: #000;
+  -webkit-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow:    0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+  box-shadow:         0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+}
+
+ul.pager > li.pager-current,
+ul.pager > li.pager-ellipsis,
+.avatar-selection-pager-nav .pager-current {
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+}
+
+ul.pager > li.pager-ellipsis {
+	position: relative;
+	top: -1px;
+}
+
+ul.pager > li > a:hover,
+ul.pager > li > span:hover,
+ul.pager > li > a:focus,
+ul.pager > li > span:focus {
+  background-color: #fbb040 !important;
+  border-color: #fbb040 !important;
+  color: #fff !important;
+  text-decoration: none !important;
+}
+
+/* Font Awesome replacements */
+
+li.pager-first    > a::after,
+li.pager-previous > a::after,
+li.pager-next     > a::after,
+li.pager-last     > a::after {
+  font-family: 'Font Awesome 5 Pro';
+  font-size: 14px;
+  font-weight: 600;
+}
+
+li.pager-first    > a::after {content: "\f049";}
+li.pager-previous > a::after {content: "\f04a";}
+li.pager-next     > a::after {content: "\f04e";}
+li.pager-last     > a::after {content: "\f050";}

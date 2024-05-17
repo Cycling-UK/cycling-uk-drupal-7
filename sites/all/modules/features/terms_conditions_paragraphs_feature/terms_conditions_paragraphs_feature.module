@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * Code for the Terms and Conditions paragraphs feature feature.
+ */
+
+include_once 'terms_conditions_paragraphs_feature.features.inc';

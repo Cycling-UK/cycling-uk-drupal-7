@@ -1,0 +1,154 @@
+/* Theming for challenge pages 
+
+/* Grid view */
+
+.page-bikeweek-challenges h1.page-header {
+  text-align: center;
+  color: #bc1512;
+}
+
+.view-challenge-grid .views-exposed-form {
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.view-challenge-grid .views-exposed-widget {
+  width: 100%;
+}
+
+.view-challenge-grid .views-exposed-widget > label {
+  font-family: "itc-american-typewriter", Georgia, serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 18px;
+  margin-bottom: 10px;
+}
+
+.view-challenge-grid .form-item-challenge-category {
+  display: inline-flex;
+  margin: 0 10px 10px 10px;
+}
+
+.view-challenge-grid #edit-challenge-category label {
+  font-weight: 500;
+  text-transform: uppercase;
+  padding-bottom: 5px;
+  border-bottom: 5px solid;
+}
+
+/* view all */
+#edit-challenge-level > div:nth-child(1) label {
+  border-color: #006633;
+}
+
+/* Challenge level one */
+.view-challenge-grid .challenge_image.level_one img,
+#edit-challenge-level > div:nth-child(2) label {
+  border-color: #fbb040;
+}
+
+/* Challenge level two */
+.view-challenge-grid .challenge_image.level_two img,
+#edit-challenge-level > div:nth-child(3) label {
+  border-color: #009fda;
+}
+
+/* Challenge level three */
+.view-challenge-grid .challenge_image.level_three img,
+#edit-challenge-level > div:nth-child(4) label {
+  border-color: #e6007e;
+}
+
+/* Challenge level four */
+.view-challenge-grid .challenge_image.level_four img,
+#edit-challenge-level > div:nth-child(5) label {
+  border-color: #8064a9;
+}
+
+/* Can colorise level text if wanted */
+/*
+.view-challenge-grid .challenge-level.Short {
+  color: #bc1512;
+}
+*/
+.view-challenge-grid .challenge-title {
+  font-family: "itc-american-typewriter", Georgia, serif;
+  font-weight: 500;
+  color: #bc1512;
+}
+
+.view-challenge-grid .challenge-pop-text {
+  color: teal;
+}
+.view-challenge-grid .challenge-headline {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  height: 50px;
+  overflow: hidden;
+  font-size: 14px;
+  line-height: 16px;
+  margin-bottom: 10px;
+}
+
+.view-challenge-grid .short-intro {
+  font-size: 16px;
+  line-height: 18px;
+  margin-bottom: 10px;
+}
+
+.view-challenge-grid .challenge-link span {
+  margin-right: 5px;
+}
+
+.view-challenge-grid .challenge-link i {
+  font-size: 16px;
+  line-height: 16px;
+}
+
+/* Colorbox node */
+
+.go-challenge.btn:hover {
+  background-color: #bc1512;
+}
+
+#cboxContent .node-cycle-challenge h2 {
+  font-family: "itc-american-typewriter", Georgia, serif;
+  font-weight: 500;
+}
+
+#cboxContent .node-cycle-challenge .field-name-field-headline {
+  color: #006633;
+  font-family: "itc-american-typewriter", Georgia, serif;
+}
+
+#cboxContent .node-cycle-challenge .group-social-links {
+  text-align: center;
+  font-size: 24px;
+  line-height: 24px;
+  margin-bottom: 10px;
+}
+
+#cboxContent .node-cycle-challenge .group-social-links .field {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+#cboxContent .node-cycle-challenge .group-social-links a,
+#cboxContent .node-cycle-challenge .group-social-links a:visited {
+  color: #aaa;
+  outline: none;
+  font-size: 24px;
+}
+
+#cboxContent .node-cycle-challenge .group-social-links a:hover,
+#cboxContent .node-cycle-challenge .group-social-links a:active {
+  color: #fbb040;
+  outline: none;
+}
+

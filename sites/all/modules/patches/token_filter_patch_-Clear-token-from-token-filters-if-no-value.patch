@@ -1,0 +1,34 @@
+From 760eefb7cb1e427a51d80eb161f6a2a2101ab6a7 Mon Sep 17 00:00:00 2001
+From: Ian <ian.taylor@cyclinguk.org>
+Date: Thu, 21 Sep 2017 14:43:26 +0100
+Subject: [PATCH] Clear token from token filters if no value
+
+---
+ docroot/sites/all/modules/contrib/token_filter/token_filter.module | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/docroot/sites/all/modules/contrib/token_filter/token_filter.module b/docroot/sites/all/modules/contrib/token_filter/token_filter.module
+index f997d90..24cbadf 100644
+--- a/docroot/sites/all/modules/contrib/token_filter/token_filter.module
++++ b/docroot/sites/all/modules/contrib/token_filter/token_filter.module
+@@ -24,7 +24,7 @@ function _token_filter_filter_tokens($text, $filter, $format, $langcode, $cache,
+   $options = array();
+ 
+   // Attempt to fetch the entity that is being viewed via a backtrace to the
+-  // field_attach_view($entity_type, $entity) function and parameters §if found.
++  // field_attach_view($entity_type, $entity) function and parameters ï¿½if found.
+   $backtrace = debug_backtrace();
+   foreach ($backtrace as $caller) {
+     if ($caller['function'] == 'field_attach_view') {
+@@ -46,7 +46,7 @@ function _token_filter_filter_tokens($text, $filter, $format, $langcode, $cache,
+       break;
+     }
+   }
+-
++  $options['clear'] = 'True';
+   return token_replace($text, $data, $options);
+ }
+ 
+-- 
+2.7.4
+

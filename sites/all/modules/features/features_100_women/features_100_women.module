@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the 100 Women feature.
+ */
+
+include_once 'features_100_women.features.inc';

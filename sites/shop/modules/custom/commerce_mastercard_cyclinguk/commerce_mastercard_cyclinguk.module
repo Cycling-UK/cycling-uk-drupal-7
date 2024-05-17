@@ -1,0 +1,24 @@
+<?php
+
+
+/**
+ * Implements hook_commerce_mastercard_post_data_alter().
+ */
+function commerce_mastercard_cyclinguk_commerce_mastercard_post_data_alter(&$data, $order) {
+  $order_wrapper = entity_metadata_wrapper('commerce_order', $order);
+  $address_value = $order_wrapper->commerce_customer_billing->field_care_address->value();
+  if (strpos($address_value['county'], 'Yorkshire') !== false) {
+    $address_value['county'] = 'Yorkshire';
+  }
+  if (strpos($address_value['county'], 'Dumfries') !== false) {
+    $address_value['county'] = 'Dumfries';
+  }
+  $address_value['county'] = substr($address_value['county'],0,20);
+  $country = care_country_to_iso3166($address_value['country_code'], 3);
+  $data['billing.address.street'] = $address_value['address_line_1'];
+  $data['billing.address.street2'] = $address_value['address_line_2'];
+  $data['billing.address.city'] = $address_value['town'];
+  $data['billing.address.stateProvince'] = $address_value['county'];
+  $data['billing.address.country'] = $country;
+  $data['billing.address.postcodeZip'] = $address_value['postcode'];
+}

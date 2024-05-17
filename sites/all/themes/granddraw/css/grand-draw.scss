@@ -1,0 +1,25 @@
+// vars
+$yellow: #f6b332;
+$blue: #009fda;
+$pink: #e6007e;
+$light-grey: #d2d7d9;
+$red: #d2232a;
+$green-valid: #009e4d;
+$purple: #7a68ae;
+
+$media_url: 'https://www.cyclinguk.org/sites/default/files/images_0/';
+$files_url: 'https://www.cyclinguk.org/sites/default/files/';
+
+@import "../scss/_mixins.scss";
+@import "../scss/_slick.scss";
+@import "../scss/_general.scss";
+@import "../scss/_menu.scss";
+@import "../scss/_form.scss";
+@import "../scss/_play-now.scss";
+@import "../scss/_home.scss";
+@import "../scss/_contact.scss";
+@import "../scss/_grand-draw.scss";
+@import "../scss/_thanks.scss";
+
+// fixes for commerce pages
+@import "../scss/_commerce.scss";

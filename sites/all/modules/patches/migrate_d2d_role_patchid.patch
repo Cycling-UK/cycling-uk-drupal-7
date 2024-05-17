@@ -1,0 +1,16 @@
+ docroot/sites/all/modules/contrib/migrate_d2d/role.inc | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/docroot/sites/all/modules/contrib/migrate_d2d/role.inc b/docroot/sites/all/modules/contrib/migrate_d2d/role.inc
+index 3a712d2..717d9a4 100644
+--- a/docroot/sites/all/modules/contrib/migrate_d2d/role.inc
++++ b/docroot/sites/all/modules/contrib/migrate_d2d/role.inc
+@@ -57,7 +57,7 @@ abstract class DrupalRoleMigration extends DrupalMigration {
+     $query = Database::getConnection('default', $this->sourceConnection)
+              ->select('role', 'r')
+              ->fields('r')
+-             ->condition('rid', 2, '>');
++             ->condition('rid', 4, '>');
+     return $query;
+   }
+ 

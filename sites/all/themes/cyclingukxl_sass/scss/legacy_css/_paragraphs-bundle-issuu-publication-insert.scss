@@ -1,0 +1,45 @@
+.paragraphs-item-issuu-publication-insert {
+    margin-bottom: 60px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.paragraphs-item-issuu-publication-insert.remove_bottom_margin_yes {
+    margin-bottom: 0;
+}
+
+.paragraphs-item-issuu-publication-insert h2 {
+    text-align: center;
+    font-size: 36px;
+    line-height: 36px;
+    margin-bottom: 30px;
+    color: $black;
+}
+
+.paragraphs-item-issuu-publication-insert .field-type-text-long {
+    text-align: center;
+    max-width: 800px;
+    display: block;
+    margin: 0 auto 30px;
+}
+
+.paragraphs-item-issuu-publication-insert .field-name-field-issuu-embed-code {
+    max-width: 1170px;
+    display: block;
+    margin: auto;
+}
+
+.paragraphs-item-issuu-publication-insert .field-name-field-attachments:after {
+    height: 0;
+    background-color: transparent;
+}
+
+.paragraphs-item-issuu-publication-insert .entity-paragraphs-item {
+    border-color: transparent;
+}
+
+@media only screen and (max-width: 768px) {
+    .paragraphs-item-issuu-publication-insert .field-name-field-issuu-embed-code iframe {
+        height: 400px !important;
+    }
+}

@@ -1,0 +1,73 @@
+footer.footer {
+	background-color: #231f20;
+}
+
+
+
+/* Scroll to top button */
+#scroll_top {
+    color: #231f20;
+}
+
+#scroll_top:hover,
+#scroll_top:active {
+	background-color: #ab853c !important;
+}
+
+#scroll_top:hover:after {
+	color: #fff;
+}
+
+
+
+/* Social media icons */
+ul.social-links a {
+	background-color: #ab853c;
+}
+
+ul.social-links a:hover,
+ul.social-links a:active {
+	color: #ab853c;
+}
+
+
+
+/* Newsletter sign-up */
+.newsletter-signup {
+	border-top: 5px solid #ab853c;
+	border-bottom: 5px solid #ab853c;
+}
+
+.newsletter-signup input {
+    border: 1px #ab853c solid;
+}
+
+.newsletter-signup button.form-submit {
+	border-color: #ab853c;
+}
+
+.newsletter-signup button.form-submit:hover,
+.newsletter-signup button.form-submit:focus {
+    background-color: #ab853c;
+    border-color: #ab853c;
+}
+
+.newsletter-signup button.form-submit:active {
+    background-color: #ab853c;
+    border-color: #ab853c;
+}
+
+
+
+/* Patron, President, Chief Executive footer text */
+.footer-text .yellow-text {
+	color: #ab853c;
+}
+
+
+
+/* Footer links */
+ul.footer-links a:hover,
+ul.footer-links a:active {
+	color: #ab853c;
+}

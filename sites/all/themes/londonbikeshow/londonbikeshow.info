@@ -1,0 +1,49 @@
+name = London Bike Show Sub-Sub-Theme (CDN)
+description = London Bike Show bootstrap sub-theme of Cycling UK sub-theme.
+core = 7.x
+base theme = cyclingukxl
+
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Regions
+;;;;;;;;;;;;;;;;;;;;;
+
+regions[navigation_left]   = 'Navigation left'
+regions[navigation_middle] = 'Navigation middle'
+regions[navigation_right]  = 'Navigation right'
+regions[navigation_bottom] = 'Navigation bottom'
+regions[header]            = 'Top Bar'
+regions[highlighted]       = 'Highlighted'
+regions[help]              = 'Help'
+regions[content]           = 'Content'
+regions[sidebar_first]     = 'Primary'
+regions[sidebar_second]    = 'Secondary'
+regions[footer]            = 'Footer'
+regions[page_top]          = 'Page top'
+regions[page_bottom]       = 'Page bottom'
+
+
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Stylesheets
+;;;;;;;;;;;;;;;;;;;;;
+
+stylesheets[all][] = css/lbs-style.css
+stylesheets[all][] = css/lbs-tabs.css
+stylesheets[all][] = css/lbs-search.css
+stylesheets[all][] = css/lbs-buttons.css
+stylesheets[all][] = css/lbs-links.css
+stylesheets[all][] = css/lbs-menu-top.css
+stylesheets[all][] = css/lbs-menu-desktop.css
+stylesheets[all][] = css/lbs-menu-mobile.css
+stylesheets[all][] = css/lbs-footer.css
+
+
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Scripts
+;;;;;;;;;;;;;;;;;;;;;
+
+scripts[] = js/modernizr/modernizr-custom.js
+scripts[] = js/custom-form-elements.js
+

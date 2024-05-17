@@ -1,0 +1,244 @@
+/**
+ * London Bike Show subtheme
+ */
+
+body {
+	background-color: #3b3a3c;
+}
+
+@media only screen and (max-width : 991px) {
+	.node-type-webform.page-layout-post .main-container > .row,
+	.node-type-webform.page-layout-post .main-container > .container > .row {
+			margin-top: 0px;
+	}
+	.node-type-webform.page-layout-post .main-container form {
+			margin-left: 15px;
+			margin-right: 15px;
+	}
+}
+
+@media only screen and (min-width : 992px) {
+	.node-type-webform.page-layout-post .main-container > .row,
+	.node-type-webform.page-layout-post .main-container > .container > .row {
+			margin-top: 12px;
+	}
+}
+
+.node-type-webform.page-layout-post .main-container .region-content {
+	background-color: #fff;
+}
+
+.node-type-webform.page-layout-post .main-container .group-header-inner-wrapper {
+	margin-left: 15px;
+	margin-right: 15px;
+	position: relative;
+}
+
+.node-type-webform.page-layout-post .top-left-wrapper {
+	background-color: #fff;
+	border-radius: 0;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-right: none;
+}
+
+.node-webform .top-left-wrapper {
+	text-align: center;
+}
+
+.node-type-webform.page-layout-post .top-wrapper > .image img,
+.node-type-webform.page-layout-post .top-wrapper > picture img {
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+}
+
+
+.node-type-webform.page-layout-post .field-name-title,
+.node-type-webform.page-layout-post .field-name-field-teaser,
+.node-type-webform.page-layout-post .field-name-body {
+	margin-left: 60px;
+	margin-right: 60px;
+	text-align: center;
+}
+
+
+
+.page-layout-post .field-name-title::before {
+    background-color: #ab853c;
+}
+
+.page-layout-post .field-name-field-teaser {
+	color: #ab853c;
+}
+
+h2 {
+	color: #ab853c;
+}
+
+.carousel-triplet .view-header,
+#comments h2.title {
+	color: #fff;
+}
+
+
+
+/* Unordered lists */
+
+.main-container form ul {
+	list-style: none;
+	padding: 0;
+	margin: 20px 0 20px 0;
+	padding-left: 44px;
+	text-indent: -24px;
+}
+
+.main-container form ul li:before {
+	content: "•";
+	margin-right: 20px;
+	color: #ab853c;
+}
+
+.main-container form ul li {
+	margin-bottom: 6px;
+}
+
+
+/* Logos */
+#wca-logos div {
+	display: inline-flex;
+	margin: 30px auto;
+	vertical-align: middle;
+}
+
+#wca-logos img {
+	height: 100%;
+}
+
+@media only screen and (max-width : 599px) {
+	#wca-logos div {
+		margin: 20px 0;
+	}
+	#wca-logos img {
+		width: 100%;
+		max-width: 250px;
+	}
+}
+@media only screen and (min-width : 600px) and (max-width : 767px) {#wca-logos .lbs img, #wca-logos .cyclinguk img {width: 150px;} #wca-logos .wca img {width: 200px; margin: 0 15px;}}
+@media only screen and (min-width : 768px) and (max-width : 991px) {#wca-logos .lbs img, #wca-logos .cyclinguk img {width: 180px;} #wca-logos .wca img {width: 260px; margin: 0 30px;}}
+@media only screen and (min-width : 992px) 						   {#wca-logos .lbs img, #wca-logos .cyclinguk img {width: 200px;} #wca-logos .wca img {width: 300px; margin: 0 50px;}}
+
+
+
+/* Shariff share icons */
+.shariff .orientation-horizontal {
+	margin-top: 60px;
+	justify-content: center;
+}
+
+
+
+/* Webform */
+
+fieldset.panel,
+fieldset.collapsed,
+fieldset.collapsed.panel {
+	border: 1px solid #ab853c !important;
+	text-align: left;
+	-webkit-box-shadow: inherit;
+	box-shadow: inherit;
+	padding: 15px;
+}
+
+.panel-default > .panel-heading {
+	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 400;
+	background-color: inherit;
+	border: none;
+	padding: 5px 15px 0px 15px;
+}
+
+.panel-default .panel-title {
+	font-size: 20px;
+	line-height: 20px;
+}
+
+.panel-default > .panel-heading a.panel-title {
+	font-size: 20px;
+	line-height: 20px;
+	color: #000;
+	text-decoration: none;
+	padding-left: 30px;
+	text-indent: -34px;
+}
+
+.panel-default > .panel-heading a.panel-title:hover {
+	color: #ab853c;
+	text-decoration: none;
+}
+
+.panel-default .form-group {
+	margin-bottom: 10px;
+}
+
+.panel-default .checkbox,
+.panel-default .radio {
+	margin-bottom: 5px;
+}
+
+.panel-default .help-block {
+	font-size: 16px;
+	line-height: 22px;
+	color: #000;
+}
+
+.information-panel {
+	background-color: #eee7db;
+	padding: 15px;
+
+}
+
+fieldset.panel.sponsors {
+	border: none !important;
+	margin-bottom: 60px;
+	font-weight: 600;
+}
+
+.form-item em:before {
+	content: "\A";
+	white-space: pre;
+}
+
+.form-item em {
+	font-style: normal;
+}
+
+.main-container form .form-actions {
+    margin: 0 auto 60px;
+    width: 140px;
+}
+
+a[aria-expanded="true"]:before {
+	content: "\f13a";
+	font-family: 'Font Awesome 5 Pro';
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 24px;
+	color: #ab853c;
+	margin-right: 10px;
+	position: relative;
+	top: 3px;
+}
+
+a.collapsed:before,
+a[aria-expanded="false"]:before {
+	content: "\F138";
+	font-family: 'Font Awesome 5 Pro';
+	font-weight: 600;
+	font-size: 24px;
+	line-height: 24px;
+	color: #ab853c;
+	margin-right: 10px;
+	position: relative;
+	top: 3px;
+}

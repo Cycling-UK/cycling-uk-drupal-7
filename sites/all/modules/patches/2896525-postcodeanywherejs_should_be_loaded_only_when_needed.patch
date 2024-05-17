@@ -1,0 +1,16 @@
+diff --git a/postcodeanywhere.module b/postcodeanywhere.module
+index e3f34cf..008d868 100644
+--- a/postcodeanywhere.module
++++ b/postcodeanywhere.module
+@@ -198,7 +198,10 @@ function postcodeanywhere_form_add_js($extra_settings = NULL) {
+ 
+   // Append settings into JS file.
+   drupal_add_js($settings, 'setting');
+-  drupal_add_js(drupal_get_path('module', 'postcodeanywhere') . '/postcodeanywhere.js', 'file');
++
++  if (current_path() != 'system/ajax') {
++    drupal_add_js(drupal_get_path('module', 'postcodeanywhere') . '/postcodeanywhere.js', 'file');
++  }
+ }
+ 
+ /**

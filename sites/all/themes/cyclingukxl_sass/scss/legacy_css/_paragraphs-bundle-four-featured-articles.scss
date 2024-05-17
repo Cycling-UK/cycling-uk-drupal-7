@@ -1,0 +1,25 @@
+.paragraphs-item-featured-articles-x4 {
+  margin: 0 auto 30px auto !important;
+}
+
+.paragraphs-item-featured-articles-x4 .field-name-field-title {
+  text-align: center;
+  font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 36px;
+  margin-bottom: 30px;
+}
+
+.paragraphs-item-featured-articles-x4 .carousel-triplet,
+.paragraphs-item-featured-articles-x4 .carousel-triplet .view-content {
+  margin-bottom: 0;
+}
+
+.paragraphs-item-featured-articles-x4 ul.pager {
+  display: none;
+}
+
+.not-front .entity-paragraphs-item.paragraphs-item-featured-articles-x4 .background-tint {
+  padding-top: 0;
+}

@@ -1,0 +1,957 @@
+/**
+ * Common page elements
+ */
+
+
+
+/*
+ * Bootstrap scaffolding // padding adjustments
+ * Currently for "post" content type.
+ * Better off making as a global CSS adjustment?
+ */
+
+@media only screen and (min-width :  768px) and (max-width:  991px) {.page-layout-post .top-right-wrapper {padding-left: 23px;padding-right: 23px;}
+																	 .node-type-page .top-right-wrapper   {padding-left: 23px;padding-right: 23px;}}
+
+@media only screen and (min-width :  992px) and (max-width: 1199px) {.page-layout-post .top-right-wrapper {padding-left: 35px;padding-right: 35px;}
+																	 .node-type-page .top-right-wrapper   {padding-left: 35px;padding-right: 35px;}}
+
+@media only screen and (min-width : 1200px)  						{.page-layout-post .top-right-wrapper {padding-left: 30px;padding-right: 30px;}
+																	 .node-type-page .top-right-wrapper   {padding-left: 30px;padding-right: 30px;}}
+
+
+.page-layout-post h1.page-header {
+	display: none;
+}
+
+.page-layout-post .top-left-wrapper {
+	padding: 20px 85px 60px;
+	background-color: #f5f5f5;
+	border-radius: 0 0 0 15px;
+	-webkit-border-radius: 0 0 0 15px;
+	-moz-border-radius: 0 0 0 15px;
+	border-right: 1px solid #fff;
+}
+
+.page-layout-post .top-right-wrapper {
+	padding-top: 20px;
+}
+
+.node-type-page .top-right-wrapper {
+	padding-top: 75px;
+}
+
+
+.page-layout-post .top-middle-row {
+	background-color: #f0f0f0;
+	border-radius: 0 0 15px 15px;
+	-webkit-border-radius: 0 0 15px 15px;
+	-moz-border-radius: 0 0 15px 15px;
+	margin-bottom: 90px;
+}
+
+
+
+@media only screen and (max-width : 359px) {
+
+	.page-layout-post .top-left-wrapper {
+		padding: 20px 10px 60px;
+		border-radius: 0px;
+		-webkit-border-radius: 0px;
+		-moz-border-radius: 0px;
+		border-right: inherit;
+	}
+
+	.page-layout-post .top-right-wrapper {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	.page-layout-post .top-middle-row {
+		border-radius: 0px;
+		-webkit-border-radius: 0px;
+		-moz-border-radius: 0px;
+	}
+
+}
+
+
+
+@media only screen and (min-width : 360px ) and (max-width : 767px) {
+
+	.page-layout-post .top-left-wrapper {
+		padding: 20px 30px 60px;
+		border-radius: 0px;
+		-webkit-border-radius: 0px;
+		-moz-border-radius: 0px;
+		border-right: inherit;
+	}
+
+	.page-layout-post .top-right-wrapper {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+
+	.page-layout-post .top-middle-row {
+		border-radius: 0px;
+		-webkit-border-radius: 0px;
+		-moz-border-radius: 0px;
+	}
+
+	.page-layout-post .bottom-left-wrapper {
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+
+	.node-type-page .top-right-wrapper {
+		padding-top: 60px;
+	}
+
+}
+
+
+
+@media only screen and (min-width : 768px) and (max-width: 991px) {
+
+	.page-layout-post .top-left-wrapper {
+		padding: 20px 20px 60px;
+	}
+
+	.node-type-page .top-left-wrapper {
+		padding: 20px 20px 60px;
+	}
+
+	.node-type-page .top-right-wrapper {
+		padding-top: 45px;
+	}
+
+}
+
+
+
+@media only screen and (min-width : 992px) and (max-width: 1199px) {
+	.node-type-page .top-right-wrapper {
+		padding-top: 45px;
+	}
+}
+
+
+
+.page-layout-post .field-name-ds-user-picture {
+	float: left;
+	margin-right: 10px;
+}
+
+.page-layout-post .field-name-ds-user-picture img {
+	border-radius: 50px;
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+}
+
+/*
+.page-layout-post .submitted-by {
+	display: block;
+	float: left;
+	position: relative;
+	top: 8px;
+}
+*/
+
+.page-layout-post .submitted-by {
+	display: block;
+	margin-top: 25px;
+}
+
+.page-layout-post .submitted-by span {
+	font-weight: 600;
+}
+
+/*
+.page-layout-post .field-name-post-date {
+	float: right;
+	position: relative;
+	top: 8px;
+}
+*/
+
+.page-layout-post.node-type-newsletter .field-name-post-date,
+.page-layout-post.node-type-group-child-page .field-name-post-date {
+	margin-top: 5px;
+}
+
+.page-layout-post.node-type-newsletter .field-name-title:before,
+.page-layout-post.node-type-group-child-page .field-name-title:before {
+	margin-top: 35px;
+}
+
+
+
+@media only screen and (max-width : 1199px) {
+	.page-layout-post .submitted-by {
+		float: none;
+		top: -4px;
+	}
+	.page-layout-post .field-name-post-date {
+		float: none;
+		top: -6px;
+	}
+}
+
+
+
+/* Main image at top of post */
+
+.page-layout-post .top-wrapper > .image,
+.page-layout-post .top-wrapper > picture {
+    margin-left: -15px;
+    display: block;
+    margin-right: -15px;
+}
+
+.field-name-field-caption {
+	position: relative;
+	margin: 0 -15px;
+}
+
+.page-layout-post .top-wrapper > .image img,
+.page-layout-post .top-wrapper > picture img {
+	border-radius: 15px 15px 0 0;
+	-webkit-border-radius: 15px 15px 0 0;
+	-moz-border-radius: 15px 15px 0 0;
+}
+
+.page-layout-post .main-container > .row {
+	margin-top: 30px;
+}
+
+@media only screen and (max-width : 767px) {
+	.page-layout-post .top-wrapper > .image img,
+	.page-layout-post .top-wrapper > picture img {
+		border-radius: 0px;
+		-webkit-border-radius: 0px;
+		-moz-border-radius: 0px;
+	}
+	.page-layout-post .main-container > .row {
+		margin-top: 0px;
+	}
+}
+
+.field-name-field-caption {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background-color: rgba(0,0,0,0.5);
+	color: #fff;
+	padding: 16px 85px;
+	z-index: 99;
+}
+
+@media only screen and (min-width : 768px) and (max-width: 991px) {.field-name-field-caption {padding: 16px 20px;}}
+@media only screen and (min-width : 360px) and (max-width: 767px) {.field-name-field-caption {padding: 16px 30px;}}
+@media only screen and                         (max-width: 359px) {.field-name-field-caption {padding: 16px 10px;}}
+
+
+
+.page-layout-post .field-name-title h1 {
+	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 400;
+	font-size: 56px;
+	line-height: 56px;
+	margin-bottom: 30px;
+}
+
+@media only screen and (min-width : 768px) and (max-width: 991px) {
+	.page-layout-post .field-name-title h1 {
+		font-size: 48px;
+		line-height: 48px;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.page-layout-post .field-name-title h1 {
+		font-size: 36px;
+		line-height: 36px;
+	}
+}
+
+
+.page-layout-post .field-name-field-teaser {
+	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 400;
+	font-size: 26px;
+	line-height: 32px;
+	margin-bottom: 30px;
+}
+
+@media only screen and (max-width: 767px) {
+	.page-layout-post .field-name-field-teaser {
+		font-size: 22px;
+		line-height: 26px;
+	}
+}
+
+
+.page-layout-post .field-name-body {
+	margin-bottom: 30px;
+}
+
+
+/* Inline images */
+
+.field-name-body .media {
+	margin-bottom: 15px;
+}
+
+.field-name-body .caption {
+	position: relative;
+}
+
+.field-name-body .media-element img {
+	width: 100%;
+	height: auto;
+	border-radius: 15px;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+}
+
+.field-name-body .caption p {
+	position: absolute;
+	bottom: 0px;
+	width: 100%;
+	background-color: rgba(0,0,0,0.5);
+	color: #fff;
+	padding: 16px 22px;
+	border-radius: 0 0 15px 15px;
+	-webkit-border-radius: 0 0 15px 15px;
+	-moz-border-radius: 0 0 15px 15px;
+}
+
+.field-name-field-additional-content img {
+	border-radius: 15px;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	margin-bottom: 15px;
+}
+
+
+
+.page-layout-post .field-name-field-additional-content {
+	margin-top: 10px;
+	margin-bottom: 60px;
+}
+
+.page-layout-post h2,
+.page-layout-post .field-label {
+	color: #fbb040;
+	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 24px;
+    line-height: 28px;
+    font-weight: 400;
+    margin-top: 30px;
+}
+
+.page-layout-post h3 {
+    font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 600;
+    font-size: 18px;
+    line-height: 22px;
+    margin-top: 36px;
+	margin-bottom: 12px;
+}
+
+
+
+/*
+ * Field labels
+ */
+
+.field-name-field-gpx-map .field-label,
+.field-name-field-location .field-label {
+	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 400;
+    font-size: 26px;
+    line-height: 32px;
+	margin-bottom: 12px;
+}
+
+.field-name-field-press-contact-information .field-label,
+.field-name-field-press-notes-to-editors .field-label {
+	margin-bottom: 6px;
+}
+
+.field-name-field-press-contact-information {
+	margin-bottom: 30px;
+}
+
+
+
+/*
+ * Dividing bars
+ */
+
+.page-layout-post .field-name-title:before {
+	display: block;
+	content: "";
+	width: 100%;
+	height: 5px;
+	background-color: #fbb040;
+	border-radius: 2.5px;
+	-webkit-border-radius: 2.5px;
+	-moz-border-radius: 2.5px;
+	position: relative;
+	top: -10px;
+/* 	margin-top: 65px; */
+	margin-top: 61px;
+}
+
+
+
+
+/* .field-name-field-additional-content::after, */
+.field-name-field-attachments:after,
+.field-name-field-gpx-files:after,
+.field-name-field-gallery-image:after,
+.field-name-field-press-notes-to-editors:after,
+.field-name-field-address:after {
+	display: block;
+	content: "";
+	width: 100%;
+	height: 5px;
+	background-color: #e0e0e0;
+	border-radius: 2.5px;
+	-webkit-border-radius: 2.5px;
+	-moz-border-radius: 2.5px;
+	position: relative;
+	top: 30px;
+	margin-bottom: 60px;
+}
+
+.top-left-wrapper .field:last-child:after {
+	display: none;
+}
+
+
+
+/*
+ * Standard attachments
+ */
+
+.field-name-field-location {
+	margin-bottom: 30px;
+}
+
+.field-name-field-attachments {
+	text-align: center;
+}
+
+.field-name-field-attachments .field-item {
+	display: inline-block;
+	vertical-align: top;
+	width: 120px;
+	text-align: center;
+	margin: 0 5px 15px 5px;
+}
+
+.field-name-field-attachments img,
+.field-name-field-attachments a {
+	color: #000;
+	display: block;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	-webkit-hyphens: auto;
+	-ms-hyphens: auto;
+	-moz-hyphens: auto;
+	hyphens: auto;
+}
+
+.field-name-field-attachments img {
+	width: 40px;
+	margin: 0 auto 15px;
+}
+
+
+
+/*
+ * GPX file attachments
+ */
+
+.field-name-field-gpx-map {
+	margin-bottom: 12px;
+}
+
+.field-name-field-gpx-files a {
+	color: #000;
+}
+
+.field-name-field-gpx-files img {
+	display: none;
+}
+
+
+
+/*
+ * Post Owl gallery carousel
+ */
+
+.field-name-field-gallery-image img,
+.gallery-attachment img {
+	border-radius: 18px;
+	-webkit-border-radius: 18px;
+	-moz-border-radius: 18px;
+}
+
+
+
+/*
+ * Mapping
+ */
+
+.field-type-geofield canvas {
+	border-radius: 18px;
+	-webkit-border-radius: 18px;
+	-moz-border-radius: 18px;
+}
+
+
+
+/*
+ * Post tags
+ */
+
+.field-name-field-tags {
+    width: 100%;
+    float: inherit;
+    margin-bottom: 30px;
+}
+
+@media only screen and (min-width : 1200px) {
+	.field-name-field-tags {
+		float: left;
+	    width: 400px;
+	}
+}
+
+/*
+.field-name-field-tags .field-item {
+	display: inline-block;
+	margin-right: 15px;
+}
+*/
+
+.field-name-field-tags .field-content {
+	font-size: 0;
+}
+
+.field-name-field-tags a::before {
+	content: "#";
+}
+
+.field-name-field-tags a {
+	color: #000000;
+	text-decoration: none;
+	background-color: #eaeaea;
+	padding: 5px 10px;
+	margin: 0 10px 10px 0 !important;
+	white-space: nowrap;
+	display: inline-block;
+	line-height: 24px;
+	border-radius: 20px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	font-size: 16px;
+}
+
+.field-name-field-tags a:hover,
+.field-name-field-tags a:focus,
+.field-name-field-tags a:active {
+	background-color: #e0e0e0;
+	color: #000;
+	text-decoration: none;
+}
+
+
+
+/*
+ * Banners
+ */
+
+.view.listing-page .top-wrapper,
+.post-banner {
+	height: 168px;
+	background-color: #029ed9;
+	background-image: url('../images/system/news-header.jpg');
+	background-position: right center;
+	background-repeat: no-repeat;
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+.view.listing-page .top-wrapper .inner-wrapper h1,
+.post-banner .inner-wrapper {
+	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 400;
+	color: #fff;
+	font-size: 40px;
+	line-height: 168px;
+}
+
+@media only screen and (min-width : 992px) and (max-width : 1199px) {
+	.view.listing-page .top-wrapper,
+	.post-banner {
+		height: 130px;
+		background-size: auto 130px;
+	}
+	.view.listing-page .top-wrapper .inner-wrapper h1,
+	.post-banner .inner-wrapper {
+		font-size: 36px;
+		line-height: 130px;
+	}
+}
+
+@media only screen and (min-width : 420px) and (max-width : 991px) {
+	.view.listing-page .top-wrapper,
+	.post-banner {
+		height: 80px;
+		background-size: auto 80px;
+	}
+	.view.listing-page .top-wrapper .inner-wrapper h1,
+	.post-banner .inner-wrapper {
+		font-size: 32px;
+		line-height: 80px;
+	}
+}
+
+@media only screen and (max-width : 419px) {
+	.view.listing-page .top-wrapper,
+	.post-banner {
+		height: 60px;
+		background-size: auto 60px;
+	}
+	.view.listing-page .top-wrapper .inner-wrapper h1,
+	.post-banner .inner-wrapper {
+		font-size: 28px;
+		line-height: 60px;
+	}
+}
+
+@media only screen and (max-width : 767px) {
+	.post-banner {
+		margin-bottom: 0;
+	}
+}
+
+
+
+/*
+ * Page management floating block
+ */
+
+#block-views-page-management-block {
+	position: absolute;
+	top: 40px !important;
+	left: 10px;
+	z-index: 999;
+	width: 200px;
+	padding: 10px;
+	background-color: rgba(170,51,51,0.8);
+	color: #fff;
+	font-size: 12px;
+	line-height: 14px;
+	border-radius: 			10px;
+	-webkit-border-radius: 	10px;
+	-moz-border-radius: 	10px;
+	-webkit-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow:    0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+	box-shadow:         0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+}
+
+@media only screen and (max-width : 767px) {
+	#block-views-page-management-block {
+		display: none;
+	}
+}
+
+#block-views-page-management-block h2.block-title {
+	color: #fff;
+	border-bottom: none;
+	padding-bottom: 0;
+}
+
+#block-views-page-management-block .views-field-field-page-management ul {
+	padding-left: 12px;
+}
+
+#block-views-page-management-block .views-label {
+	font-weight: 600;
+}
+
+#block-views-page-management-block .views-field {
+	margin-bottom: 8px;
+}
+
+#block-views-page-management-block .views-field:last-child {
+	margin-bottom: 0;
+}
+
+#block-views-page-management-block .btn {
+	font-size: 14px;
+	line-height: 24px;
+	padding: 0 10px;
+	min-width: 0;
+	border-radius: 			5px;
+	-webkit-border-radius: 	5px;
+	-moz-border-radius: 	5px;
+}
+
+
+
+/*
+ * Landing pages / announcements
+ * page-node-101331 is the /jobs landing page but is considered a "landing page" so inherited defaults need to be ovcerwritten
+ */
+
+body.landing-announcement .field-name-title h2 {
+	color: #000;
+}
+
+body.landing-announcement .field-name-body {
+	margin: 60px 60px;
+}
+
+body.landing-announcement .field-name-field-closing-date {
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 12px;
+	line-height: 12px;
+	letter-spacing: 1px;
+}
+
+body.landing-announcement .field-name-field-closing-date > div {
+	float: inherit;
+	display: inline-block;
+}
+
+body.landing-announcement .view-announcement .view-content > div:after {
+	content: "";
+	display: block;
+	width: 240px;
+	height: 5px;
+	border-radius: 2.5px; 
+	-webkit-border-radius: 2.5px; 
+	-moz-border-radius: 2.5px;
+	background-color: #fbb040;
+	margin: 60px auto 30px;
+}
+
+body.landing-announcement .view-announcement .view-content > div:last-child:after {
+	display: none;
+}
+
+body.landing-announcement .field-name-field-body-bottom {
+	text-align: center;
+	color: #fff;
+	background-color: #7a68ae;
+	padding: 20px;
+	border-radius: 			10px;
+	-webkit-border-radius: 	10px;
+	-moz-border-radius: 	10px;
+}
+
+body.landing-announcement .field-name-field-body-bottom a {
+	color: #fbb040;
+	text-decoration: none;
+}
+
+body.landing-announcement .field-name-field-body-bottom a:hover,
+body.landing-announcement .field-name-field-body-bottom a:focus,
+body.landing-announcement .field-name-field-body-bottom a:active {
+	color: #fbb040;
+	text-decoration: underline;
+}
+
+
+
+/*
+ * Big Bike Revival
+ * and other pages with a background image that require a full-width menu background
+ */
+ 
+.full-width-menu-container {
+	background-color: #fff;
+	padding-top: 20px;
+	margin-bottom: 0px;
+	height: 195px;
+}
+
+.tinted-background .full-width-menu-container {
+	margin-bottom: 130px;
+}
+
+@media only screen and (max-width : 767px) {
+	.full-width-menu-container {
+		margin-bottom: 0px;
+		height: 166px;
+	}
+	.tinted-background .full-width-menu-container {
+		margin-bottom: 0px;
+	}
+}
+
+.full-width-menu-container .navbar.container {
+	margin-top: 0;
+}
+
+.tinted-background .main-container {
+	background-color: rgba(255,255,255,0.85);
+}
+
+.tinted-background .accordion .panel {
+	background-color: inherit;
+}
+
+.tinted-background .accordion .btn-transparent {
+	background-color: #fff;
+}
+
+.tinted-background .accordion .btn-transparent:hover,
+.tinted-background .accordion .btn-transparent:focus {
+	background-color: #fbb040;
+}
+
+.tinted-background .accordion .btn-transparent:active {
+	background-color: #fdaf17;
+}
+
+/**
+ * 100 Women landing page.
+ *
+ * 100 women grid starting 2 cols on mobile, up to 10 cols on desktop.
+ */
+.view.one-hundred-women {
+	/* Reset page margins to get maximum width */
+	margin-left: -15px;
+	margin-right: -15px;
+}
+.view.one-hundred-women .views-row {
+	max-width: 50%;
+	float: left;
+	position: relative;
+}
+.view.one-hundred-women .views-row .views-field-title {
+	/* hide title by default */
+	display: none;
+	position: absolute;
+	width: 100%;
+	left: 0;
+	bottom: 0;
+}
+.view.one-hundred-women .views-row:hover .views-field-title {
+	/* display title on hover, with dark background */
+	display: block;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+.view.one-hundred-women .views-row .views-field-title > span {
+	display: table-cell;
+	width: 100%;
+	height: 50px;
+	vertical-align: middle;
+	text-align: center;
+	color: #fff;
+	text-decoration: none;
+	padding: 5px 15px;
+}
+/* Still fluid at this point, so fixed height overlay is required */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+	.view.one-hundred-women .views-row {
+		max-width: 20%;
+	}
+}
+/* Page is now fixed-width, so full overlay on hover */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	.view.one-hundred-women .views-row {
+		max-width: 20%;
+	}
+	.view.one-hundred-women .views-row .views-field-title {
+		width: 150px;
+		height: 94px;
+	}
+	.view.one-hundred-women .views-row:hover .views-field-title {
+	}
+	.view.one-hundred-women .views-row .views-field-title > span {
+		width: 150px;
+		height: 94px;
+		padding: 5px;
+	}
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+	.view.one-hundred-women .views-row {
+		max-width: 20%;
+	}
+	.view.one-hundred-women .views-row .views-field-title {
+		width: 194px;
+		height: 121px;
+	}
+	.view.one-hundred-women .views-row:hover .views-field-title {
+	}
+	.view.one-hundred-women .views-row .views-field-title > span {
+		width: 194px;
+		height: 121px;
+		padding: 5px;
+	}
+}
+/* Maximum 10 columns now for large desktop */
+@media only screen and (min-width: 1200px) {
+	.view.one-hundred-women .views-row {
+		max-width: 10%;
+	}
+	.view.one-hundred-women .views-row .views-field-title {
+		width: 117px;
+		height: 73px;
+	}
+	.view.one-hundred-women .views-row:hover .views-field-title {
+	}
+	.view.one-hundred-women .views-row .views-field-title > span {
+		width: 117px;
+		height: 73px;
+		padding: 5px;
+	}
+}
+
+/**
+ * 140 Routes: Route pages.
+ */
+.node-route .field-name-field-author > .field-label {
+	font-size: 16px;
+	line-height: 22px;
+}
+.node-route .field-name-field-author > .field-items {
+	margin-top: 30px;
+}
+.node-route .field-name-field-route-length .field-item:after {
+	content: " miles";
+}
+.node-route .btn.route-search {
+    margin-top: 30px;
+}
+.page-layout-post .node-route .top-middle-row {
+	margin-bottom: 0;
+}
+
+/* Style legal disclaimer text */
+.node-type-route .disclaimer-text,
+.node-type-landing-page .disclaimer-text {
+	background-color: #7a68ae;
+	color: #fff;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	padding: 30px;
+	margin-bottom: 60px;
+}
+
+/*
+ * Route search page.
+ */
+#block-views-route-search-route-search-block {
+	margin-bottom: 40px;
+}

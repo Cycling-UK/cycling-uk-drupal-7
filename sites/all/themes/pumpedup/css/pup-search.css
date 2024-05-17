@@ -1,0 +1,7 @@
+.search-block .form-control {
+  border: 1px solid #fac533;
+}
+
+.search-block .form-control:focus {
+  border: 1px solid #ec409f;
+}

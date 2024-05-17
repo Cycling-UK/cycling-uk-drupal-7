@@ -1,0 +1,224 @@
+.form-group {
+	margin-bottom: 30px;
+}
+
+label {
+	margin-bottom: 12px
+}
+
+.form-control,
+.form-item-field-ride-type-tid-1 .form-select /* BBR event type select list */ {
+    border: 1px solid #000;
+	border-radius: 22px; 
+	-webkit-border-radius: 22px; 
+	-moz-border-radius: 22px;
+    box-shadow: inherit;
+    color: #000;
+    font-size: 16px;
+    line-height: 16px;
+    height: 44px;
+    padding: 10px 20px;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+    width: 100%;
+}
+
+input[type=text],
+input[type=email],
+input[type=password],
+textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    box-shadow: none !important;
+}
+
+.form-control:focus {
+    border-color: #fbb040;
+    box-shadow: inherit;
+    outline: 0 none;
+}
+
+textarea {
+	resize: none;
+}
+
+.ui-widget,
+.ui-widget input,
+.ui-widget select,
+.ui-widget textarea {
+    font-family: "karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+input.btn,
+.ui-widget button,
+.ui-widget input.btn {
+    font-family: "karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 15px;
+    line-height: 34px;
+    margin-right: 10px;
+}
+
+
+
+/* Placeholder text */
+.form-control::-webkit-input-placeholder	{color: #999;} /* Chrome/Opera/Safari */
+.form-control::-moz-placeholder 			{color: #999;} /* Firefox 19+ */
+.form-control:-ms-input-placeholder 		{color: #999;} /* IE 10+ */
+.form-control:-moz-placeholder 				{color: #999;} /* Firefox 18- */
+
+
+
+/* Select boxes */
+.form-select {
+    -webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	background: url('../images/system/form-select-arrow.png') no-repeat right 20px center #ffffff;
+	overflow: hidden;
+}
+
+.form-select:focus {
+	color: #000;
+	color: rgba(0,0,0,0);
+	text-shadow: 0 0 0 #000;
+	outline: none;
+}
+
+select option {
+	color: #000 !important;
+	background-color: #fff !important;
+}
+
+
+
+/* Hide label from webform
+  
+   This method is used instead of using the webform UI to hide the label so that
+   the webform to PDF module can correctly see the field label and render the 
+   PDF correctly. The wrapper CSS class for the field needs to be set as 
+   "no-label". */
+
+.webform-component.no-label label {
+  display: none;
+}
+
+
+
+
+
+/**
+ * Webforms - ORIGINAL
+ */
+
+
+/* Help text */
+/*
+.control-group .help-inline,
+.help-block {
+	color: #000;
+    font-size: 13px;
+    line-height: 17px;
+	text-transform: uppercase;
+	margin: 12px 0 12px 0;
+}
+*/
+
+
+
+/* Date picker */
+/*
+.form-group.webform-component-date {
+	margin-bottom: 0;
+}
+
+.webform-container-inline.webform-datepicker > div {
+	float: left;
+	width: 120px;
+	margin-right: 10px;
+}
+
+.webform-container-inline.webform-datepicker input {
+	height: 42px;
+	width: 0px;
+	background: url('../images/system/date-picker.png');
+	padding-left: 40px;
+	margin-bottom: 32px;
+}
+
+.webform-container-inline.webform-datepicker input:focus {
+	outline: none;
+}
+
+@media only screen and (max-width : 469px) {
+	.webform-container-inline.webform-datepicker > div {
+		display: block !important;
+		float: inherit;
+		width: 100%;
+		margin-right: 0;
+		margin-bottom: 10px;
+	}
+}
+*/
+
+
+
+/* BBR events date picker label */
+/*
+#edit-secondary-wrapper #edit-date-filter-value .form-item-date-filter-value-date:before {
+	display: block;
+	content: 'Event date';
+	margin-bottom: 5px;
+	font-weight: 600;
+}
+*/
+
+
+
+/* Limit field widths */
+/*
+.webform-component-email,
+.webform-component-select {
+	max-width: 430px;
+}
+*/
+
+
+
+/*
+ * User registration form
+ */
+
+/*
+.cyclinguk-user-login-form-wrapper .field-wrapper {
+	margin-bottom: 30px;
+}
+ 
+.cyclinguk-user-login-form-wrapper .form-group {
+	margin-bottom: 0;
+}
+
+.cyclinguk-user-login-form-wrapper .field-wrapper-name legend {
+	display: none;
+}
+
+.cyclinguk-user-login-form-wrapper .field-wrapper-name .form-item {
+	margin-bottom: 30px;
+}
+
+.cyclinguk-user-login-form-wrapper .field-wrapper-name .form-item:last-child {
+	margin-bottom: 0px;
+}
+*/
+
+
+#subscribe-paragraph {
+  max-width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#subscribe-paragraph label {
+  font-weight: 700;
+}

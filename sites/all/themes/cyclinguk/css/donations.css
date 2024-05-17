@@ -1,0 +1,440 @@
+/*
+ * Donations widget
+ * This is the payment widget for both the /donate page and the donation panel on checkout
+ */
+
+body.node-type-product-donation article form {
+	background-color: #e6e0ee;
+	border: 4px solid rgba(128,100,169,1.0);
+	padding: 60px 30px 60px;
+	border-radius: 20px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+  -webkit-box-shadow: 0px 3px 0px 0px rgba(0,0,0,.1);
+  -moz-box-shadow: 0px 3px 0px 0px rgba(0,0,0,.1);
+  box-shadow: 0px 3px 0px 0px rgba(0,0,0,.1);
+  max-width: 1050px;
+  margin: 0 auto 60px auto;
+}
+
+
+#edit-checkout-donate {
+	background-color: #e6e0ee;
+	padding: 20px;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+  -webkit-box-shadow: 0px 3px 0px 0px rgba(0,0,0,.1);
+  -moz-box-shadow: 0px 3px 0px 0px rgba(0,0,0,.1);
+  box-shadow: 0px 3px 0px 0px rgba(0,0,0,.1);
+  max-width: 1050px;
+  margin: 0 auto 60px auto;
+}
+
+#edit-checkout-donate-body {
+  text-align: center;
+}
+
+body.node-type-product-donation article form:before {
+	content: "By giving a monthly or single gift you will be helping to change lives through cycling";
+	display: block;
+	text-align: center;
+	margin: 0 auto;
+	max-width: 700px;
+	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 400;
+	font-size: 28px;
+	line-height: 32px;
+	margin-bottom: 60px;
+}
+
+body.node-type-product-donation form #edit-line-item-fields > div,
+body.node-type-product-donation form #edit-line-item-fields > fieldset {
+	vertical-align: top;
+	margin-bottom: 0;
+	width: 100%;
+}
+
+body.node-type-product-donation form #edit-line-item-fields > div > div {
+	width: 100%;
+}
+
+body.node-type-product-donation form button {
+	margin: 0 auto;
+  width: 200px;
+  display: block;
+	background-color: #e6007e;
+	border: 1px solid #e6007e;
+	color: #fff;
+	font-weight: 600;
+	height: 50px;
+	letter-spacing: 1px;
+	border-radius: 30px;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+}
+
+body.node-type-product-donation form #edit-line-item-fields > fieldset .form-item-line-item-fields-field-payment-option-und {
+	margin-bottom: 15px;
+}
+
+body.node-type-product-donation #edit-line-item-fields-commerce-donate-amount .form-radios,
+body.node-type-product-donation #edit-line-item-fields-field-payment-option .form-radios,
+body.page-checkout #edit-checkout-donate-commerce-donate-amount-und-select {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+body.node-type-product-donation #edit-line-item-fields-commerce-donate-amount-und-select > div,
+body.node-type-product-donation #edit-line-item-fields-field-payment-option-und > div,
+body.node-type-product-donation input#edit-line-item-fields-commerce-donate-amount-und-other {
+	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 400;
+	border-radius: 40px;
+	-webkit-border-radius: 40px;
+	-moz-border-radius: 40px;
+	border: 2px solid rgba(128,100,169,1.0);
+  -webkit-box-shadow: 0px 3px 0px 0px rgba(0,0,0,.1);
+  -moz-box-shadow: 0px 3px 0px 0px rgba(0,0,0,.1);
+  box-shadow: 0px 3px 0px 0px rgba(0,0,0,.1);
+	background-color: #fff;
+  align-content: center;
+}
+
+body.page-checkout #edit-checkout-donate-commerce-donate-amount-und-select > div,
+body.page-checkout #edit-checkout-donate-field-payment-option-und > div,
+body.page-checkout input#edit-checkout-donate-commerce-donate-amount-und-other {
+	font-weight: 400;
+	border-radius: 40px;
+	-webkit-border-radius: 40px;
+	-moz-border-radius: 40px;
+	border: 2px solid rgba(128,100,169,1.0);
+  -webkit-box-shadow: 0px 3px 0px 0px rgba(0,0,0,.1);
+  -moz-box-shadow: 0px 3px 0px 0px rgba(0,0,0,.1);
+  box-shadow: 0px 3px 0px 0px rgba(0,0,0,.1);
+	background-color: #fff;
+  align-content: center;
+}
+
+
+body.node-type-product-donation #edit-line-item-fields-commerce-donate-amount-und-select > div {
+  margin: 0 5px 10px 5px;
+  display: flex;
+	font-size: 32px;
+	line-height: 20px;
+	padding: 20px;
+}
+
+body.page-checkout #edit-checkout-donate-commerce-donate-amount-und-select > div {
+  margin: 0 5px 10px 5px;
+  display: flex;
+	font-size: 18px;
+	line-height: 20px;
+	padding: 10px 18px;
+}
+
+body.page-checkout #edit-checkout-donate-commerce-donate-amount-und-select > div label {
+  margin: 0;
+}
+
+body.node-type-product-donation #edit-line-item-fields-field-payment-option-und > div,
+body.page-checkout #edit-checkout-donate-field-payment-option-und > div {
+  margin: 0 5px 10px 5px;
+  display: inline-flex;
+	font-size: 18px;
+	line-height: 20px;
+	padding: 10px 20px;
+}
+
+body.node-type-product-donation input#edit-line-item-fields-commerce-donate-amount-und-other {
+  display: flex;
+	padding: 20px;
+  max-width: 400px;
+  margin: 0 auto 40px auto;
+	font-size: 32px;
+	line-height: 20px;
+	height: 64px;
+	text-align: center;
+}
+
+body.page-checkout input#edit-checkout-donate-commerce-donate-amount-und-other {
+  display: flex;
+	padding: 20px;
+  max-width: 250px;
+  margin: 0 auto 40px auto;
+	font-size: 18px;
+	line-height: 20px;
+	height: 44px;
+	text-align: center;
+}
+
+body.page-checkout input#edit-checkout-donate-commerce-donate-amount-und-other {
+  margin-bottom: 0;
+}
+
+body.node-type-product-donation #edit-line-item-fields-field-payment-option > div > label {
+  margin-bottom: 12px;
+}
+
+body.node-type-product-donation #edit-line-item-fields-field-payment-option-und span.radio,
+body.node-type-product-donation #edit-line-item-fields-field-payment-option-und label.control-label,
+body.page-checkout #edit-checkout-donate-field-payment-option-und span.radio,
+body.page-checkout #edit-checkout-donate-field-payment-option-und label.control-label {
+  margin: 0;
+}
+
+body.node-type-product-donation .form-item-line-item-fields-commerce-donate-amount-und-select.form-group > label,
+body.node-type-product-donation fieldset.group-payment-option > div > div > div > label {
+  font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif !important;
+  font-weight: 600 !important;
+  display: block;
+  text-align: center;
+  font-size: 18px !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+body.page-checkout .form-item-checkout-donate-commerce-donate-amount-und-select.form-group > label,
+body.page-checkout .form-item-checkout-donate-field-payment-option-und.form-group > label {
+  font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif !important;
+  font-weight: 400 !important;
+  display: block;
+  text-align: center;
+  font-size: 18px !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+
+
+
+
+@media only screen and (max-width : 499px) {
+  body.node-type-product-donation article form,
+  #edit-checkout-donate {
+	  padding: 30px 10px 30px;
+	}
+  body.node-type-product-donation #edit-line-item-fields-commerce-donate-amount-und-select > div,
+  body.page-checkout #edit-checkout-donate-commerce-donate-amount-und-select > div {
+  	font-size: 24px;
+  }
+  
+  body.node-type-product-donation #edit-line-item-fields-field-payment-option-und > div,
+  body.page-checkout #edit-checkout-donate-field-payment-option-und > div {
+  	font-size: 16px;
+  }
+  
+  body.node-type-product-donation input#edit-line-item-fields-commerce-donate-amount-und-other,
+  body.page-checkout input#edit-checkout-donate-commerce-donate-amount-und-other {
+  	font-size: 24px;
+  }
+}
+
+
+
+
+#edit-checkout-donate .panel-title {
+	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 400;
+	font-size: 22px;
+	line-height: 26px;
+	display: block;
+	text-align: center;
+	margin: 0 auto 10px auto;
+}
+
+
+
+#donate-text h2:after,
+#donate-text h3:after {
+	display: block;
+	content: "";
+	width: 140px;
+	height: 5px;
+	background-color: #f6b331;
+	border-radius: 2.5px;
+	-webkit-border-radius: 2.5px;
+	-moz-border-radius: 2.5px;
+	position: relative;
+	margin: 20px auto 20px auto;
+}
+
+body.node-type-product-donation article form > div:before {
+	margin-bottom: 30px;
+}
+
+body.node-type-product-donation fieldset.group-payment-option,
+#edit-checkout-donate .panel-body {
+	padding: 0;
+	background-color: #e6e0ee;
+}
+
+body.node-type-product-donation fieldset.group-payment-option .panel-body {
+	padding: 0;
+}
+
+#edit-checkout-donate-commerce-donate-amount,
+fieldset .group-payment-option,
+#edit-line-item-fields-commerce-donate-amount {
+	display: inline-flex;
+	vertical-align: top;
+	background-color: #e6e0ee;
+}
+
+#edit-checkout-donate-commerce-donate-amount {
+  margin-bottom: 20px;
+}
+
+@media only screen and (max-width : 767px) {
+	#edit-checkout-donate-commerce-donate-amount,
+	fieldset .group-payment-option,
+	#edit-line-item-fields-commerce-donate-amount {
+		display: block;
+		width: 100%;
+		vertical-align: inherit;
+	}
+}
+
+@media only screen and (min-width : 500px) and (max-width : 767px) {
+	#edit-checkout-donate-field-payment-option-und > div {
+		display: inline-block;
+		width: 50%;
+	}
+}
+
+.form-item-checkout-donate-commerce-donate-amount-und-other input {
+	display: inline-block;
+}
+
+#edit-checkout-donate-commerce-donate-amount > div > div > div > label,
+#edit-checkout-donate-field-payment-option > div > label {
+	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 400;
+	font-size: 22px;
+	line-height: 24px;
+	margin-bottom: 15px;
+}
+
+
+
+
+/*
+ * Donation page layout
+ */
+
+.node-type-product-donation h1,
+#donate-text h2,
+#donate-text h3 {
+	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 400;
+	text-align: center;
+}
+
+.node-type-product-donation h1 {
+	font-size: 56px;
+	line-height: 56px;
+	margin-top: 45px;
+	margin-bottom: 45px;
+}
+
+#donate-text h2 {
+	font-size: 22px;
+	line-height: 24px;
+	max-width: 600px;
+	margin: 0 auto;
+	padding-bottom: 30px;
+}
+
+#donate-text h3 {
+	font-size: 32px;
+	line-height: 32px;
+	color: #009fda;
+	padding-bottom: 10px;
+}
+
+#donate-text .paragraph {
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+#donate-text .paragraph-1 {
+	padding-left: 80px;
+	padding-right: 40px;
+}
+
+#donate-text .paragraph-2 {
+	padding-left: 40px;
+	padding-right: 80px;
+}
+
+@media only screen and (max-width : 767px) {
+	#donate-text .paragraph-1,
+	#donate-text .paragraph-2 {
+		padding: 0 20px;
+		max-width: 600px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+#donate-text .reason {
+	text-align: center;
+	padding-left: 40px;
+	padding-right: 40px;
+	margin-bottom: 40px;
+}
+
+#donate-text .reason .image {
+	margin-bottom: 20px;
+}
+#donate-text .reason .image-title.outer-wrapper {
+	display: table;
+	margin-bottom: 20px;
+	min-height: 48px;
+	height: 48px;
+	width: 100%;
+}
+
+#donate-text .reason .image-title .inner-wrapper {
+	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 400;
+	font-size: 22px;
+	line-height: 24px;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+
+#donate-text .reason .yellow-line {
+	width: 140px;
+	height: 2px;
+	background-color: #f6b331;
+	border-radius: 1px;
+	-webkit-border-radius: 1px;
+	-moz-border-radius: 1px;
+	position: relative;
+	margin: 20px auto 20px auto;
+}
+
+#donate-text .reason .image-description {
+	font-size: 16px;
+	line-height: 22px;
+}
+
+@media only screen and (max-width : 767px) {
+	#donate-text .reason .image-description {
+		max-width: 400px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+
+
+
+/* Key workers donation */
+
+.key-work-graphic img {
+  width: 100%;
+  height: auto;
+}

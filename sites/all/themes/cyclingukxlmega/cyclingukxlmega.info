@@ -1,0 +1,36 @@
+name = Cycling UK XL Bootstrap Sub-Theme (CDN) running TB Mega Menu
+description = Cycling UK Bootstrap sub-theme with enhanced support for wide displays.
+core = 7.x
+base theme = cyclingukxl
+php = 5.3.0
+
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Regions
+;;;;;;;;;;;;;;;;;;;;;
+
+regions[navigation_left]   = 'Navigation left'
+regions[navigation_middle] = 'Navigation middle'
+regions[navigation_right]  = 'Navigation right'
+regions[navigation_bottom] = 'Navigation bottom'
+regions[header]            = 'Top Bar'
+regions[highlighted]       = 'Highlighted'
+regions[help]              = 'Help'
+regions[content]           = 'Content'
+regions[sidebar_first]     = 'Primary'
+regions[sidebar_second]    = 'Secondary'
+regions[footer]            = 'Footer'
+regions[page_top]          = 'Page top'
+regions[page_bottom]       = 'Page bottom'
+
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Stylesheets
+;;;;;;;;;;;;;;;;;;;;;
+
+stylesheets[all][] = css/header.css
+stylesheets[all][] = css/megamenu.css
+stylesheets[all][] = css/megamenusecond.css
+stylesheets[all][] = css/megamenumobile.css
+
+

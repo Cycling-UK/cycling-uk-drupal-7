@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Course Calendar feeds feature.
+ */
+
+include_once 'course_calendar_feeds.features.inc';

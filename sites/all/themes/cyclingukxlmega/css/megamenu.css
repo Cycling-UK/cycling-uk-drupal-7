@@ -1,0 +1,431 @@
+/* General layout and base theming */
+.tb-megamenu {
+	background-color: inherit;
+	color: #000;
+	font-size: 18px;
+	line-height: 27px;
+	margin-bottom: 10px;
+}
+
+ul.tb-megamenu-nav {
+	display: flex;
+	justify-content: center;
+}
+
+
+/* First level menu items */
+
+.tb-megamenu-menu-mega-main-menu .nav > li {
+	padding: 0px 20px;
+	height: 30px;
+}
+
+.tb-megamenu-menu-mega-main-menu .nav > li > a {
+	border-right: none;
+	border-top: none;
+	color: #000;
+	font-weight: inherit;
+	padding: 0;
+	text-decoration: none;
+	background-color: #fff;
+	border-bottom: 2px solid #fff;
+}
+
+.tb-megamenu-menu-mega-main-menu .mega-nav > li:first-child > a,
+.tb-megamenu-menu-mega-main-menu .dropdown-menu .mega-nav > li:first-child > a {
+	padding-top: 5px;
+}
+
+
+.tb-megamenu-menu-mega-main-menu .nav > li > a:focus,
+.tb-megamenu-menu-mega-main-menu .nav > li > a:hover,
+.tb-megamenu-menu-mega-main-menu .nav li.dropdown.open > .dropdown-toggle {
+	background-color: inherit;
+	color: #009fda;
+	border-bottom: 2px solid #009fda;
+}
+
+.tb-megamenu-menu-mega-main-menu .nav > li > a:hover,
+.tb-megamenu-menu-mega-main-menu .nav > li > a:focus {
+	border-bottom: none;
+}
+
+.tb-megamenu-menu-mega-main-menu .nav li.dropdown.active > .dropdown-toggle,
+.tb-megamenu-menu-mega-main-menu .nav li.dropdown.open.active > .dropdown-toggle,
+.tb-megamenu-menu-mega-main-menu .nav > li.dropdown.open.active > a:hover {
+  background-color: inherit;
+  border-color: inherit;
+  color: #009fda;
+	border-bottom: 2px solid #009fda;
+}
+
+
+/* Caret */
+.tb-megamenu-menu-mega-main-menu .nav li.dropdown > .dropdown-toggle .caret {
+  border-top-color: #009fda;
+  border-bottom-color: #009fda;
+	position: relative;
+	top: 3px;
+}
+
+/* There are lots of "hover" triggers so we'll list them separately for now */
+.tb-megamenu-menu-mega-main-menu .nav li.dropdown.open > .dropdown-toggle .caret,
+.tb-megamenu-menu-mega-main-menu .nav li.dropdown.active > .dropdown-toggle .caret,
+.tb-megamenu-menu-mega-main-menu .nav li.dropdown.open.active > .dropdown-toggle .caret {
+  border-top-color: #009fda;
+  border-bottom-color: #009fda;
+	transform: rotate(180deg);
+	-webkit-transition: 0.2s ease-in-out;
+	-moz-transition: 0.2s ease-in-out;
+	-o-transition: 0.2s ease-in-out;
+	transition: 0.2s ease-in-out;
+}
+
+.tb-megamenu-menu-mega-main-menu .nav li.dropdown > .dropdown-toggle:hover .caret {
+  border-top-color: #009fda;
+  border-bottom-color: #009fda;
+	transform: rotate(180deg);
+	-webkit-transition: 0.2s ease-in-out;
+	-moz-transition: 0.2s ease-in-out;
+	-o-transition: 0.2s ease-in-out;
+	transition: 0.2s ease-in-out;
+}
+
+.tb-megamenu-menu-mega-main-menu .nav li.dropdown.open .caret,
+.tb-megamenu-menu-mega-main-menu .nav li.dropdown.open.active .caret,
+.tb-megamenu-menu-mega-main-menu .nav li.dropdown.open a:hover .caret,
+.tb-megamenu-menu-mega-main-menu .nav li.dropdown.open a:focus .caret {
+  border-top-color: #009fda;
+  border-bottom-color: #009fda;
+	transform: rotate(180deg);
+	-webkit-transition: 0.2s ease-in-out;
+	-moz-transition: 0.2s ease-in-out;
+	-o-transition: 0.2s ease-in-out;
+	transition: 0.2s ease-in-out;
+}
+
+
+/* Submenu layout */
+/* Control the with and positioning of the submenu dropdown for different screen widths */
+.tb-megamenu-menu-mega-main-menu .dropup,
+.tb-megamenu-menu-mega-main-menu .dropdown {
+  position: inherit;
+}
+
+.tb-megamenu-menu-mega-main-menu .mega > .mega-dropdown-menu {
+	margin-left: auto;
+	margin-right: auto;
+	left: 0;
+	right: 0;
+	font-size: 18px;
+	line-height: 26px;
+	border: inherit;
+	border-bottom: 1px solid #cce5ef;
+	-webkit-box-shadow: inherit;
+	-moz-box-shadow: inherit;
+	box-shadow: inherit;
+}
+
+@media only screen and (min-width : 992px) and (max-width : 1199px) {
+	.tb-megamenu-menu-mega-main-menu .mega > .mega-dropdown-menu {
+		min-width: 950px;
+		max-width: 950px;
+	}
+}
+
+@media only screen and (min-width : 1200px) and (max-width : 1599px) {
+	.tb-megamenu-menu-mega-main-menu .mega > .mega-dropdown-menu {
+		min-width: 1160px;
+		max-width: 1160px;
+	}
+}
+
+@media only screen and (min-width : 1600px) {
+	.tb-megamenu-menu-mega-main-menu .mega > .mega-dropdown-menu {
+		min-width: 1530px;
+		max-width: 1530px;
+	}
+}
+
+.tb-megamenu-menu-mega-main-menu .row-fluid + .row-fluid {
+	border-top: inherit;
+	padding: 0;
+}
+
+
+/* Reposition the three major submenu elements so they appear in a row.
+ * It's easiest to configure the TB Mega Menu so that these elements appear in a column so we'll use flexbox to rearrange everything.
+ *
+ * Items come in the order:
+ *	1. Sub menu items
+ *	2. About this menu text block
+ *	3. Promoted article block
+ *
+ * These need to be reordered 2-1-3.
+ */
+
+ .tb-megamenu-menu-mega-main-menu .mega-dropdown-menu .mega-dropdown-inner {
+	display: flex;
+	flex-direction: row;
+	gap: 30px;
+	padding: 45px 30px;
+}
+
+.tb-megamenu-menu-mega-main-menu .mega-dropdown-menu .mega-dropdown-inner .tb-megamenu-row:nth-child(1) {width:50%; order:2; padding-top: 44px; border-right: 1px solid #ced4da;}
+.tb-megamenu-menu-mega-main-menu .mega-dropdown-menu .mega-dropdown-inner .tb-megamenu-row:nth-child(2) {width:25%; order:1;}
+.tb-megamenu-menu-mega-main-menu .mega-dropdown-menu .mega-dropdown-inner .tb-megamenu-row:nth-child(3) {width:25%; order:3;}
+
+
+/* TB Mega Menu doesn't recognise display modes for BEANs so we have to display the entire BEAN block twice and hide the fields we don't want */
+/* About this menu text block */
+.tb-megamenu-menu-mega-main-menu .mega-dropdown-menu .mega-dropdown-inner .tb-megamenu-row:nth-child(2) .image,
+.tb-megamenu-menu-mega-main-menu .mega-dropdown-menu .mega-dropdown-inner .tb-megamenu-row:nth-child(2) .field-name-field-subtitle,
+.tb-megamenu-menu-mega-main-menu .mega-dropdown-menu .mega-dropdown-inner .tb-megamenu-row:nth-child(2) .field-name-field-headline,
+.tb-megamenu-menu-mega-main-menu .mega-dropdown-menu .mega-dropdown-inner .tb-megamenu-row:nth-child(2) .field-name-field-caption,
+.tb-megamenu-menu-mega-main-menu .mega-dropdown-menu .mega-dropdown-inner .tb-megamenu-row:nth-child(2) .field-name-field-website {
+	display: none
+}
+
+/* About this menu text block */
+.tb-megamenu-menu-mega-main-menu .mega-dropdown-menu .mega-dropdown-inner .tb-megamenu-row:nth-child(3) h2,
+.tb-megamenu-menu-mega-main-menu .mega-dropdown-menu .mega-dropdown-inner .tb-megamenu-row:nth-child(3) .field-name-field-additional-content,
+.tb-megamenu-menu-mega-main-menu .mega-dropdown-menu .mega-dropdown-inner .tb-megamenu-row:nth-child(3) .field-name-field-link {
+	display: none;
+}
+
+.tb-megamenu-menu-mega-main-menu .mega-dropdown-menu .entity-bean h2 {
+	font-size: 32px;
+	line-height: 32px;
+	color: #009fda;
+	padding: 0;
+	margin: 0 0 16px 0;
+}
+.tb-megamenu-menu-mega-main-menu .mega-dropdown-menu .entity-bean .field-name-field-additional-content {
+	margin: 0 0 16px 0;
+}
+
+.tb-megamenu-menu-mega-main-menu .mega-dropdown-menu .entity-bean .field-name-field-link a {
+	display: inline-block;
+	text-decoration: none;
+	text-transform: uppercase;
+	padding: 6px 24px;
+	min-width: 120px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	background-color: #ced4da;
+	border-color: #ced4da;
+	color: #000000 !important;
+}
+
+.tb-megamenu-menu-mega-main-menu .mega-dropdown-menu .entity-bean .field-name-field-link a:hover,
+.tb-megamenu-menu-mega-main-menu .mega-dropdown-menu .entity-bean .field-name-field-link a:focus,
+.tb-megamenu-menu-mega-main-menu .mega-dropdown-menu .entity-bean .field-name-field-link a:active {
+	text-decoration: none;
+	text-transform: uppercase;
+	background-color: #adb5bd;
+	border-color: #adb5bd;
+	color: #000000 !important;
+}
+
+.tb-megamenu-menu-mega-main-menu .mega-dropdown-menu .entity-bean .field-name-field-subtitle {
+	font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 27px;
+	margin: 0 0 16px 0;
+}
+
+.tb-megamenu-menu-mega-main-menu .mega-dropdown-menu .entity-bean .image {
+	display: block;
+	margin: 0 0 10px 0;
+}
+
+.tb-megamenu-menu-mega-main-menu .mega-dropdown-menu .entity-bean .image img {
+	border-radius: 7px;
+	-webkit-border-radius: 7px;
+	-moz-border-radius: 7px;
+}
+
+.tb-megamenu-menu-mega-main-menu .mega-dropdown-menu .entity-bean .field-name-field-headline {
+	font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 400;
+	color: #009fda;
+	font-size: 18px;
+	line-height: 27px;
+	margin: 0 0 10px 0;
+}
+
+.tb-megamenu-menu-mega-main-menu .mega-dropdown-menu .entity-bean .field-name-field-caption {
+	position: inherit;
+	bottom: inherit;
+	width: inherit;
+	background-color: inherit;
+	color: inherit;
+	padding: inherit;
+	z-index: inherit;
+	margin: 0 0 16px 0;
+}
+
+.tb-megamenu-menu-mega-main-menu .mega-dropdown-menu .entity-bean .field-name-field-website a {
+	display: inline-block;
+	text-decoration: none;
+	text-transform: uppercase;
+	padding: 6px 24px;
+	min-width: 120px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+	background-color: #ced4da;
+	border-color: #ced4da;
+	color: #000000 !important;
+}
+
+.tb-megamenu-menu-mega-main-menu .mega-dropdown-menu .entity-bean .field-name-field-website a:hover,
+.tb-megamenu-menu-mega-main-menu .mega-dropdown-menu .entity-bean .field-name-field-website a:focus,
+.tb-megamenu-menu-mega-main-menu .mega-dropdown-menu .entity-bean .field-name-field-website a:active {
+	text-decoration: none;
+	text-transform: uppercase;
+	background-color: #adb5bd;
+	border-color: #adb5bd;
+	color: #000000 !important;
+}
+
+
+/* Submenu menu links */
+
+.tb-megamenu-row:nth-child(1) ul.tb-megamenu-subnav.level-1 {
+	column-count: 2;
+	column-gap: 30px;
+	margin-top: -5px;
+}
+
+.tb-megamenu-row:nth-child(1) ul.tb-megamenu-subnav.level-1 li {
+	display: flex;
+	padding: 7px 0;
+}
+
+.tb-megamenu .dropdown-menu li > a {
+	background-color: inherit !important;
+	text-decoration: none;
+	border-top: inherit;
+	border-bottom: 1px solid #fff;
+}
+
+.tb-megamenu .dropdown-menu li > a:hover,
+.tb-megamenu .dropdown-menu li > a:focus,
+.tb-megamenu .dropdown-menu li > a:active {
+	background-color: inherit !important;
+	color: #009fda;
+	text-decoration: none;
+	border-top: inherit;
+	border-bottom: 1px solid #009fda;
+}
+
+.tb-megamenu .dropdown-menu .active > a,
+.tb-megamenu .dropdown-menu .active > a:hover {
+	color: #009fda;
+	border-bottom: 1px solid #009fda;
+	background-color: inherit;
+	background-color: inherit;
+	background-image: inherit;
+	background-image: inherit;
+	background-image: inherit;
+	background-image: inherit;
+	background-image: inherit;
+	background-repeat: inherit;
+	filter: inherit;
+}
+
+
+/* Search main menu icon and dropdown menu */
+
+.tb-megamenu-menu-mega-main-menu .menu-item-search a {
+	font-size: 0px;
+}
+
+.tb-megamenu-menu-mega-main-menu .menu-item-search i {
+	font-size: 18px;
+	line-height: 27px;
+}
+
+.tb-megamenu-menu-mega-main-menu .menu-item-search .mega-dropdown-menu {
+	display: flex;
+	justify-content: center;
+}
+
+.tb-megamenu-menu-mega-main-menu .menu-item-search .mega-dropdown-menu .mega-dropdown-inner .tb-megamenu-row:nth-child(1) {
+	width: 100%;
+	order: inherit;
+	border-right: inherit;
+}
+
+.tb-megamenu-menu-mega-main-menu .menu-item-search .mega-dropdown-menu form.search-form {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 15px;
+}
+
+/* The block configuration as used elsewhere around the site has "none" for the search block title display.
+	 We still need that to be the case therefore we will add a pseudo class in front of the search block
+	 to display the block title.
+*/
+
+.tb-megamenu-menu-mega-main-menu .menu-item-search .mega-dropdown-menu .search-block h2.block-title {
+	display: none;
+}
+
+.tb-megamenu-menu-mega-main-menu .menu-item-search .mega-dropdown-menu .search-block::before {
+	display: block;
+	content: "Search the website";
+	font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 400;
+	color: #009fda;
+	font-size: 32px;
+	line-height: 32px;
+	text-align: center;
+	margin-bottom: 15px;
+}
+
+.tb-megamenu-menu-mega-main-menu .menu-item-search .mega-dropdown-menu .search-block .form-item {
+	width: inherit;
+	position: inherit;
+	top: inherit;
+	right: inherit;
+	margin: 0 auto;
+	display: inline-flex;
+}
+
+.tb-megamenu-menu-mega-main-menu .menu-item-search .mega-dropdown-menu .search-block .form-item input {
+	border: 2px solid #adb5bd;
+	background-color: #fff;
+	border-radius: 25px;
+	-webkit-border-radius: 25px;
+	-moz-border-radius: 25px;
+	padding: 15px;
+	width: 300px;
+	color: #000;
+	font-size: 18px;
+	line-height: 18px;
+	font-weight: inherit;
+}
+
+.tb-megamenu-menu-mega-main-menu .menu-item-search .mega-dropdown-menu .search-block .form-item input:focus {
+	border: 2px solid #009fda;
+}
+
+.tb-megamenu-menu-mega-main-menu .menu-item-search .mega-dropdown-menu .search-block .form-actions {
+	position: relative;
+	top: 4px;
+	right: inherit;
+	width: inherit;
+	height: inherit;
+	display: inline-flex;
+}
+
+.tb-megamenu-menu-mega-main-menu .menu-item-search .mega-dropdown-menu .search-block .form-actions input {
+	width: 20px;
+	height: auto;
+}

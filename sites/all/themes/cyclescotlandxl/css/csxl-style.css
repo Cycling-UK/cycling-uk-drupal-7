@@ -1,0 +1,140 @@
+p.lead {
+  display: none;
+}
+
+
+
+/* Cycle Scotland sponsor logos */
+
+.cyclescotland-company-logos {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cyclescotland-company-logos a {
+  outline: none;
+}
+
+.cyclescotland-company-logos .transport-scotland {
+  display: inline-flex;
+  align-items: center;
+}
+
+.cyclescotland-company-logos .cyclinguk {
+  display: inline-flex;
+  align-items: center;
+  margin-left: 30px;
+}
+
+
+
+/* Header overrides */
+
+header .logo img {
+  padding-top: 13px;
+  max-width: 130px;
+  height: auto;
+}
+
+@media only screen and (max-width : 370px) {
+	header .inner-wrapper .container-right {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+@media only screen and (max-width : 767px) {
+  header.header {
+  	height: 212px;
+  }
+  header > .inner-wrapper {
+  	margin: 10px auto 30px auto;
+  }
+  header .inner-wrapper .container-left {
+    top: 78px;
+  }
+  header .logo img {
+    width: 160px;
+  }
+  header .inner-wrapper .container-right {
+    background-color: #f0f0f0;
+    padding: 10px 0 5px 0;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+  }
+  header .inner-wrapper .container-right span.transport-scotland {
+    width: 50%;
+    justify-content: left;
+    text-align: left;
+    margin: 0;
+    padding: 0 0 0 10px;
+  }
+  header .inner-wrapper .container-right span.cyclinguk {
+    width: 50%;
+    justify-content: right;
+    text-align: right;
+    margin: 0;
+    padding: 0 10px 0 20px;
+  }
+  .cyclescotland-company-logos {
+    height: inherit;
+  }
+  header .inner-wrapper .container-right img {
+    width: 100%;
+  }
+}
+
+
+
+@media only screen and (min-width : 768px) {
+	header.header {
+		height: 239px;
+	}
+	header .inner-wrapper .container-left {
+		position: inherit;
+		text-align: left;
+	}
+	header .inner-wrapper .container-middle {
+		padding-top: 21px;
+	}	
+	header .inner-wrapper .container-right {
+		position: inherit;
+		text-align: right;
+		padding-top: 14px;
+	}	
+}
+
+
+
+@media only screen and (min-width : 768px) and (max-width : 1199px) {
+	header .inner-wrapper .container-right {
+		padding-left: 0;
+	}
+}
+
+
+
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+  header .inner-wrapper .container-right img {
+    width: 100%;
+  }
+  .cyclescotland-company-logos .cyclinguk {
+    margin-left: 20px;
+  }
+}
+
+
+
+@media only screen and (min-width : 1200px) {
+	header .logo img {
+  	padding: 0;
+	}
+	header .inner-wrapper .container-middle {
+		padding-top: 7px;
+	}	
+	header .inner-wrapper .container-right {
+		padding-top: 0px;
+	}	
+}
+

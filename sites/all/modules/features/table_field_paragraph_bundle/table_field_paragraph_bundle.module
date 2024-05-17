@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * Code for the Table field paragraph bundle feature.
+ */
+
+include_once 'table_field_paragraph_bundle.features.inc';

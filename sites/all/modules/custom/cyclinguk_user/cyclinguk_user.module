@@ -1,0 +1,439 @@
+<?php
+/**
+ * Implements hook_ckeditor_settings_alter()
+ */
+function cyclinguk_user_ckeditor_settings_alter(&$settings, $conf) {
+  // Comma separate names of plugins to remove.
+  $plugins_to_remove = 'image,image2';
+  $settings['removePlugins'] = !empty($settings['removePlugins'])
+    ? $settings['removePlugins'] . ',' . $plugins_to_remove
+    : $plugins_to_remove;
+}
+
+
+/**
+ * Change title of taxonomy views
+ */
+function cyclinguk_user_views_pre_render(&$view) {
+  //for taxonomy pages
+  if ($view->name == 'taxonomy' && stripos($view->current_display, 'page') !== FALSE) {
+      $title2 = NULL;
+      //check if the term ID is single or multiple
+      if (!is_numeric(arg(2))) {
+        // if multiple terms split out and find titles and redirect to terms page
+        $and_or = (strpos(arg(2), ',') !== FALSE ? ' > ' : ' / ');
+        if(strpos(arg(2), ',') !== FALSE) {
+          $tid = explode(',',arg(2));
+        } elseif (strpos(arg(2), '+') !== FALSE) {
+          $tid = explode('+',arg(2));
+        } elseif (strpos(arg(2), '%2B') !== FALSE) {
+          $tid = explode('%2B',arg(2));
+        } else {
+          $tid = explode(' ',arg(2));
+        }
+        foreach($tid as $item) {
+          if (empty(_taxonomy_title_get_title($item))) {
+            // Unset things, just to be safe.
+            $term = taxonomy_term_load($item);
+            $title = check_plain($term->name);
+          } else {
+            $title =  _taxonomy_title_get_title($item);
+          }
+          $title2 = ($title2===NULL ? '' : $title2 . $and_or) . $title;
+        }
+        if (arg(1) == 'term') {
+          $url = arg(0).'/terms/'.arg(2);
+          drupal_goto($url);
+        }
+      } else {
+        // if single find titles and redirect to term page
+        if (empty(_taxonomy_title_get_title(arg(2)))) {
+          // Unset things, just to be safe.
+          $term = taxonomy_term_load(arg(2));
+          $title2 = check_plain($term->name);
+        } else {
+          $title2 =  _taxonomy_title_get_title(arg(2));
+        }
+        if (arg(1) == 'terms') {
+          //this does not work when TVI module enabled and view is a TVI view because of TVI module only allows 1 term
+          $url = arg(0).'/term/'.arg(2);
+          drupal_goto($url);
+        }
+      }
+      $view->build_info['title'] = $title2;
+  } elseif (($view->name == 'taxonomy') && (stripos($view->current_display, 'block_carousel_taxonomy') !== FALSE || $view->current_display == 'block_listing_taxonomy')){
+    //for taxonomy blocks
+    $current_display = $view->current_display;
+    $and_or = (strpos($view->args[0], ',') !== FALSE ? ' > ' : ' / ');
+    $title2 = NULL;
+    if(strpos($view->args[0], ',') !== FALSE) {
+      $tid = explode(',',$view->args[0]);
+    } elseif(strpos($view->args[0], '+') !== FALSE) {
+      $tid = explode('+',$view->args[0]);
+    } else {
+      $tid = explode(' ',$view->args[0]);
+    }
+    foreach($tid as $item) {
+      $term = taxonomy_term_load($item);
+      if (!empty($term->name)) {
+        $title = check_plain($term->name);
+        $title2 = ($title2===NULL ? '' : $title2 . $and_or) . $title;
+      }
+
+    }
+
+    $view->display[$current_display]->display_title = $title2;
+
+    }
+}
+
+function cyclinguk_user_form_alter(&$form, &$form_state, $form_id) {
+
+    if($form_id == 'user_profile_form') {
+      global $user;
+      if ($user->uid != 1) {
+        hide($form['account']['mail']);
+        hide($form['account']['pass']);
+        hide($form['account']['current_pass_required_values']);
+        hide($form['account']['current_pass']);
+        //$form['account']['mail']['#access'] = false;
+      } else {
+        $form['field_care_name']['und'][0]['title']['#required'] = FALSE;
+        $form['field_care_name']['und'][0]['forenames']['#required'] = FALSE;
+        $form['field_care_name']['und'][0]['surname']['#required'] = FALSE;
+      }
+      #$form['field_membership_number']['#access'] = false;
+      #$form['field_memberships']['#access'] = false;
+    } elseif ($form_id == 'views_exposed_form' && stripos($form['#id'], 'views-exposed-form-taxonomy-page') !== FALSE) {
+      if (isset($form['keys'])) {
+        if ($form['keys']['#description'] == 'Search ') {
+          $form['keys']['#attributes'] = array('placeholder'=> 'Search within current page');
+        } else {
+          $form['keys']['#attributes'] = array('placeholder'=> array($form['keys']['#description']));
+        }
+        $form['keys']['#size'] = 50;
+
+      }
+    } elseif ($form_id == 'views_exposed_form' && $form_state['view']->name == 'recycle_centres' || $form_id == 'views_exposed_form' && $form_state['view']->name == 'groups' || $form_id == 'views_exposed_form' && $form_state['view']->name == 'events') {
+        array_unshift($form['#submit'], 'views_append_UK');
+    } elseif ($form_id == 'views_exposed_form' && $form_state['view']->name == 'route_search') {
+          array_unshift($form['#submit'], 'views_append_UK_140_routes');
+    } elseif ($form_id == 'change_pwd_page_form') {
+      $form['#submit'][] = 'cyclinguk_user_password_form_submit';
+    } elseif ($form_id == 'commerce_cart_add_to_cart_form_591561'  || $form_id == 'commerce_cart_add_to_cart_form_591566'  || $form_id == 'commerce_cart_add_to_cart_form_591576'  || $form_id == 'commerce_cart_add_to_cart_form_591571' || $form_id == 'commerce_cart_add_to_cart_form_409096'  || $form_id == 'commerce_cart_add_to_cart_form_409101'  || $form_id == 'commerce_cart_add_to_cart_form_409136') {
+      $form['line_item_fields']['field_payment_option']['und']= array(
+        '#default_value' => 'CCA',
+      );
+      if ($form_id == 'commerce_cart_add_to_cart_form_591561'  || $form_id == 'commerce_cart_add_to_cart_form_591566' || $form_id == 'commerce_cart_add_to_cart_form_409101' || $form_id == 'commerce_cart_add_to_cart_form_409136' || $form_id == 'commerce_cart_add_to_cart_form_409131') {
+        unset($form['line_item_fields']['field_job_title']);
+      }
+    } elseif (substr($form_id, 0, 33) == 'commerce_cart_add_to_cart_form_1_' ) { //membership for self page
+        unset($form['line_item_fields']['field_job_title']);
+    }elseif ($form_id == 'og_ui_edit_membership') {
+      global $user;
+      $uid = $user->uid;
+      $user_roles = og_get_user_roles('node', $form['membership_fields']['#entity']->gid, $uid, FALSE);
+
+      if (!array_key_exists(196,$user->roles) && $user->uid != 1 && !array_key_exists(106,$user_roles) && !array_key_exists(121,$user_roles)) {
+        #106 and 121 = group manager, 111 = Reg Officer, 116 = Communications Officer - these are only editable by staff, user 1 and group managers
+        if (array_key_exists(111,$form['og_user']['roles']['#options'])) {
+          if (!in_array(111,$form['og_user']['roles']['#default_value'])) {
+            $form['og_user']['roles'][111] = array(
+              '#disabled' => TRUE,
+            );
+          } else {
+            $form['og_user']['roles'][111] = array(
+              '#disabled' => TRUE,
+              '#value' => 111,
+            );
+          }
+        }
+        if (array_key_exists(116,$form['og_user']['roles']['#options'])) {
+          if (!in_array(116,$form['og_user']['roles']['#default_value'])) {
+            $form['og_user']['roles'][116] = array(
+              '#disabled' => TRUE,
+            );
+          } else {
+            $form['og_user']['roles'][116] = array(
+              '#disabled' => TRUE,
+              '#value' => 116,
+            );
+          }
+        }
+      }
+      if (!array_key_exists(196,$user->roles) && $user->uid != 1 ) {
+        if (array_key_exists(106,$form['og_user']['roles']['#options'])) {
+          if (!in_array(106,$form['og_user']['roles']['#default_value'])) {
+            $form['og_user']['roles'][106] = array(
+              '#disabled' => TRUE,
+            );
+          } else {
+            $form['og_user']['roles'][106] = array(
+              '#disabled' => TRUE,
+              '#value' => 106,
+            );
+          }
+        }
+        if (array_key_exists(121,$form['og_user']['roles']['#options'])) {
+          if (!in_array(121,$form['og_user']['roles']['#default_value'])) {
+            $form['og_user']['roles'][121] = array(
+              '#disabled' => TRUE,
+            );
+          } else {
+            $form['og_user']['roles'][121] = array(
+              '#disabled' => TRUE,
+              '#value' => 121,
+            );
+          }
+        }
+      }
+    } elseif ($form_id == 'commerce_checkout_form_complete') {
+      global $user;
+	  $user_details = user_load($user->uid);
+      $path = current_path();
+      $arg  = explode('/',$path);
+      $orderId = $arg[1];
+      $order = commerce_order_load($orderId);
+      $grand = commerce_order_rules_contains_product($order,'GRAND','>=',1);
+      if ($grand) {
+    		$orderNumber = $order->order_number;
+    		$orderDate = date('d M Y', $order->placed);
+    		$orderName = '';
+    		$orderPaymentType = '';
+    		$orderPaymentMethod = $order->data['payment_method'];
+    		$orderPaymentExpires = '';
+    		$orderTotal = $order->commerce_order_total['und'][0]['amount'] / 100;
+    		$orderTotal = number_format($orderTotal, 2);
+    		$orderAddress = ''; //$order->commerce_customer_shipping;
+    		$firstName = $user_details->profile_firstname;
+    		$lastName = $user_details->profile_lastname;
+
+        $form['checkout_completion_message']['message']['#markup'] = t('<div class="cukr cukr--header cukr--header-short"> <div class="cukr--header__inner"> <div class="cukr--header__inner__content"> <h1><span>Payment complete</span> Thank you</h1> <hr> <p>We’ll send you confirmation of your raffle tickets payment by email and your ticket numbers will be sent separately by the end of the next working day. Remember, every entry helps Cycling UK campaign for a safer world for cyclists everywhere.</p><p>Good luck with the raffle!</p></div><div class="cukr--header__inner__image" id="cukr--header-holding"></div><style>#cukr--header-holding{background: url(/sites/all/themes/granddraw/images/header-thanks.jpg) no-repeat center; background-size: cover;}</style> </div></div><div class="cukr cukr--pad cukr--text"> <div class="cukr--inner"> <h2>Share the fun </h2> <hr> <p>Why not tell your family and friends all about our Winter Raffle? They could win some great prizes, plus it will help spread the word about Cycling UK’s vital work.</p><div class="cukr--social-links"> <div class="addthis_inline_share_toolbox" data-url="https://www.cyclinguk.org/raffle" data-title="Cycling UK Winter Raffle" data-description="I’ve just entered Cycling UK’s Winter Raffle! Hopefully I win one of the eight amazing prizes!"> </div><script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5d8c8d4abaa68c71"></script> </div></div></div><div class="cukr cukr--pad cukr--order-summary"> <div class="cukr--inner"> <h3>Transaction details</h3> <p>Your payment has of £' . $orderTotal . ' has been processed successfully. Your order number is ' . $orderNumber .'</p></div></div><div class="cukr cukr--pad"> <div class="cukr--head"> <h2>The money from every raffle ticket sold goes directly towards</h2> </div><div class="cukr--features-wrap"> <div class="flex cukr--features"> <div class="col-4 cukr--feature cukr--feature--bike"> <div class="cukr--feature__inner"> <div class="icon-wrap"> <div class="icon"></div></div><hr> <p>Providing advice and information for cyclists everywhere, no matter their ability or experience </p></div></div><div class="col-4 cukr--feature cukr--feature--heart"> <div class="cukr--feature__inner"> <div class="icon-wrap"> <div class="icon"></div></div><hr> <p>Funding our award-winning campaign work making our towns and cities safer for cyclists</p></div></div><div class="col-4 cukr--feature cukr--feature--hand"> <div class="cukr--feature__inner"> <div class="icon-wrap"> <div class="icon"></div></div><hr> <p>Supplementing our community-based cycling projects which encourage people from all ages, backgrounds and abilities to ride more</p></div></div></div><div class="cukr--btn-wrap cukr--btn-wrap--centered"><a href="https://www.cyclinguk.org/raffle/play-now" class="btn btn-primary btn-white">ENTER NOW</a></div></div></div><div class="cukr cukr--legal-logos"> <div class="legal-logos"> <div class="legal-logo legal-logo--age" aria-label="16+"><span class="visually-hidden">16+</span></div><a class="legal-logo legal-logo--begambleaware" aria-label="beGambleGware.org" href="https://www.begambleaware.org/" target="_blank"><span class="visually-hidden">beGambleAware.org</span></a> </div></div><style>.page-header{display: none;}</style>');
+      }
+  }
+}
+//redirect to user view page
+function cyclinguk_user_password_form_submit($form, &$form_state)
+{
+  $form_state['redirect'] = '/user/me';
+}
+
+/*
+ * dynamic link to logged in user profile page
+ * used with permissions on main-menu
+ */
+function cyclinguk_user_menu()
+{
+  $menu['my_account'] = array
+  (
+    'title' => 'My Account',
+    'page callback' => 'cyclinguk_user_my_account_redirect',
+    'access callback' => 'user_is_logged_in',
+  );
+  $menu['user/log-out'] = [
+    'page callback' => 'cyclinguk_user_mini_orange_logout',
+    'access callback' => TRUE,
+  ];
+  $menu['user/me/content'] = [
+    'title' => 'My Content',
+    'page callback' => 'cyclinguk_user_my_content',
+    'access callback' => 'user_is_logged_in',
+  ];
+  $menu['user/%user/membership'] = [
+    'title' => 'My membership',
+    'page callback' => 'cyclinguk_user_my_membership',
+    'access callback' => 'user_is_logged_in',
+    'weight' => -50,
+    'type' => MENU_LOCAL_TASK,
+  ];
+  $menu['user/%user/home'] = [
+    'title' => 'Home',
+    'page callback' => 'cyclinguk_user_home_redirect',
+    'page arguments' => [
+      1,
+    ],
+    'access callback' => 'user_is_logged_in',
+    'weight' => -100,
+    'type' => MENU_LOCAL_TASK,
+  ];
+  $menu['user/%user/logout'] = [
+    'title' => 'Logout',
+    'page callback' => 'cyclinguk_user_mini_orange_logout',
+    'access callback' => 'user_is_logged_in',
+    'weight' => 100,
+    'type' => MENU_LOCAL_TASK,
+  ];
+  return $menu;
+}
+function cyclinguk_user_menu_alter(&$callback) {
+     $callback['user/%user/change-password'] = array('access arguments' => array(FALSE));
+ }
+function cyclinguk_user_my_account_redirect()
+{
+  global $user;
+  drupal_goto('user/' . $user->uid);
+}
+
+function cyclinguk_user_my_content()
+{
+  global $user;
+  drupal_goto('user/' . $user->uid . '/content');
+}
+function cyclinguk_user_mini_orange_logout()
+{
+  drupal_goto('user/logout');
+}
+function cyclinguk_user_my_membership()
+{
+  drupal_goto('https://my.cyclinguk.org');
+}
+#function cyclinguk_user_logout_redirect() {
+#	drupal_goto($path = '/user/logout');
+#}
+function cyclinguk_user_home_redirect() {
+	drupal_goto($path = '/');
+}
+
+function cyclinguk_user_admin_paths_alter(&$paths) {
+  $paths['user/*/change-password'] = FALSE;
+  $paths['user/*/edit'] = FALSE;
+}
+/**
+ * Custom User logout callback to use drupal_set_message() after session_destroy().
+ */
+function cyclinguk_user_user_logout_with_message() {
+  module_load_include('inc', 'user', 'user.pages');
+  user_logout_current_user();
+  drupal_set_message('You have been logged out');
+  drupal_goto();
+}
+// TMG 3-21-09
+// call to hook_views_pre_execute to override the query related posts
+//function cyclinguk_user_views_pre_execute(&$view) {
+   //drupal_set_message($view->name);
+   //if($view->name=="related") {
+     //print_r($view->build_info);
+     //$view->build_info['query']="SELECT node.created AS node_created, node.nid AS nid FROM node node LEFT JOIN field_data_field_further_reading field_data_field_further_reading ON node.nid = field_data_field_further_reading.entity_id AND (field_data_field_further_reading.entity_type = :views_join_condition_ AND field_data_field_further_reading.deleted = :views_join_condition_1) LEFT JOIN node node_field_data_field_further_reading ON field_data_field_further_reading.field_further_reading_target_id = node_field_data_field_further_reading.nid WHERE (( (node_field_data_field_further_reading.nid = :node_nid ) )AND(( (node.status = :db_condition_placeholder_0) ))) union SELECT node.created AS node_created, node.nid AS nid FROM node node LEFT JOIN field_data_field_further_reading field_data_field_further_reading ON node.nid = field_data_field_further_reading.field_further_reading_target_id AND (field_data_field_further_reading.entity_type = :views_join_condition_4 AND field_data_field_further_reading.deleted = :views_join_condition_5) LEFT JOIN node field_further_reading_node ON field_data_field_further_reading.entity_id = field_further_reading_node.nid WHERE (( (field_further_reading_node.nid = :node_nid1 ) )AND(( (node.status = :db_condition_placeholder_0) )))";
+   //}
+//}
+
+/**
+ * Implements hook_views_query_alter
+ * @param type $view
+ * @param type $query
+ * function cyclinguk_user_views_query_alter(&$view, &$query) {
+ *   if ($view->name == 'events' && ($view->current_display == 'page_1' || $view->current_display == 'events_ol_blocklist') || $view->name == 'og_extras_nodes' && $view->current_display == 'entity_view_2') {
+ *     $query->orderby = array(
+ *       array(
+ *         'field' => 'CASE WHEN field_data_field_date.field_date_value THEN field_data_field_date.field_date_value ELSE field_data_field_date_ride.field_date_ride_value END',
+ *         'direction' => 'ASC',
+ *       )
+ *     );
+ *   } elseif (($view->name == 'front_page_featured_events_carousel') && (stripos($view->current_display, 'block_event_and_rides_carosel') !== FALSE || $view->current_display == 'block_event_and_rides_carosel'))
+ *   {
+ *     $query->orderby = array(
+ *       array(
+ *         'field' => 'CASE WHEN field_data_field_date.field_date_value THEN field_data_field_date.field_date_value ELSE field_data_field_date_ride.field_date_ride_value END',
+ *         'direction' => 'ASC',
+ *       )
+ *     );
+ *   } elseif (($view->name == 'front_page_featured_events_carousel') && (stripos($view->current_display, 'block_event_and_rides_table') !== FALSE || $view->current_display == 'block_event_and_rides_table'))
+ *   {
+ *     $query->orderby = array(
+ *       array(
+ *         'field' => 'CASE WHEN field_data_field_date.field_date_value THEN field_data_field_date.field_date_value ELSE field_data_field_date_ride.field_date_ride_value END',
+ *         'direction' => 'ASC',
+ *       )
+ *     );
+ *   }
+ * }
+*/
+
+// Adds UK to the proximity search to restrict to UK, to give expected results.
+function views_append_UK($form, &$form_state) {
+	//modify form_state values of concerned field
+  if (isset($form_state['values']['geo']['origin'])) {
+    if ($form_state['values']['geo']['origin']) {
+      $new_geo = $form_state['values']['geo']['origin'].' UK';
+      $form_state['values']['geo']['origin'] = $new_geo;
+      //modify form_state of concerned field to pass to the view1
+      $form_state['view']->display_handler->handlers['filter']['field_geofield_distance']->validated_exposed_input = $new_geo;
+    }
+  }
+}
+
+// This view has different fields. Adds UK to the proximity search to restrict to UK and give expected results.
+function views_append_UK_140_routes($form, &$form_state) {
+	//modify form_state values of concerned field- the fields on routes search view are different than above
+  if (isset($form_state['values']['field_geofield_distance_1']['origin'])) {
+    if ($form_state['values']['field_geofield_distance_1']['origin']) {
+      $new_geo = $form_state['values']['field_geofield_distance_1']['origin'].' UK';
+      $form_state['values']['field_geofield_distance_1']['origin'] = $new_geo;
+      //modify form_state of concerned field to pass to the view1
+      $form_state['view']->display_handler->handlers['filter']['field_geofield_distance_1']->validated_exposed_input = $new_geo;
+    }
+  }
+}
+
+/**
+ * Implements hook_feeds_preserve().
+ */
+function cyclinguk_user_feeds_presave(FeedsSource $source, $entity, $item) {
+  if ($entity->type == 'ride') {
+    global $user;
+    $entity->uid = $user->uid;
+  }
+}
+
+/**
+ * add members listsing link to OG groups
+  */
+function cyclinguk_user_og_ui_get_group_admin($group_type, $gid) {
+  $items = array();
+  $default_access = og_is_group_default_access($group_type, $gid);
+  if (og_user_access($group_type, $gid, 'add user')) {
+    $items['view members'] = array(
+      'title' => t('Local lists'),
+      'weight' => -40,
+      'description' => t('View Cycling UK members living in your group&#39;s postcode area plus lists of riders active with the group.'),
+      'href' => 'members/view',
+    );
+  }
+  if (og_user_access($group_type, $gid, 'update field_caption field')) {
+    $items['view content'] = array(
+      'title' => t('Group Content'),
+      'weight' => 40,
+      'description' => t('Group content list including group, child pages, posts, events, rides and emails'),
+      'href' => 'content',
+    );
+  }
+  return $items;
+}
+
+
+function cyclinguk_user_og_ui_get_group_admin_alter(&$data, $context) {
+
+
+  if (og_ui_user_access_group('publish any content', $context['entity_type'], $context['etid'])) {
+    $data['manager']['title'] = t('Allocate the group manager role to another group member');
+    $data['manager']['weight'] = 0;
+    $data['manager']['description'] = t('As the group manager, you can allocate this role to another member within your group.');
+  }
+  if (og_ui_user_access_group('add user', $context['entity_type'], $context['etid'])) {
+    unset($data['add_people']);
+    $data['people']['title'] = t('Manage roles');
+    $data['people']['weight'] = -20;
+    $data['people']['description'] = t('Enable other members of the group to add and update group content, events and rides. <br>(Group managers can additionally give members permission to manage to local members&#39; information and create emails on behalf of the group.)');
+  }
+  uasort($data, 'drupal_sort_weight');
+}
+
+/**
+ * implements hook_block_MACHINE_NAME_alter()
+ */
+function cyclinguk_user_block_view_system_main_alter(&$data, $block) {
+  if (drupal_is_front_page()) {
+    $data['content'] = '';
+  }
+}
+

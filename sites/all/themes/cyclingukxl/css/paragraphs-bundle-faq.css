@@ -1,0 +1,27 @@
+.paragraphs-item-faq .field-name-field-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.paragraphs-item-faq .field-name-field-title h2 {
+  font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 36px;
+  color: #000;
+}
+
+.paragraphs-item-faq .field-name-field-faq {
+  max-width: 860px;
+  margin: 0 auto 60px auto;
+}
+
+.field-name-field-paragraph h3.faqfield-question {
+  text-align: left;
+  font-size: 20px;
+  line-height: 33px;
+}
+
+.field-name-field-paragraph h3.faqfield-question:after {
+  display: none;
+}

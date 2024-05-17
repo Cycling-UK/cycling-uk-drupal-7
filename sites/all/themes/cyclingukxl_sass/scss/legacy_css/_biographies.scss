@@ -1,0 +1,340 @@
+/* Theming for Biography pages */
+
+.node-type-biography .nav-tabs {
+  text-align: center;
+}
+
+.node-type-biography .nav-tabs li {
+  display: inline-block;
+  float: none;
+}
+
+.node-type-biography .field-name-field-biography-category {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.node-type-biography h1.page-header {
+  display: none;
+}
+
+.node-type-biography h1 {
+	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 400;
+	font-size: 48px;
+	line-height: 48px;
+	margin-bottom: 10px;
+	border-bottom: inherit;
+	text-align: center;
+}
+
+.node-type-biography .node-biography h2 {
+  color: $black;
+}
+
+.node-type-biography .page-content > img {
+  width: 100%;
+  height: auto;
+  max-width: 500px;
+  max-height: 500px;
+  border-radius: 250px;
+  -webkit-border-radius: 250px;
+  -moz-border-radius: 250px;
+  margin: 30px auto 30px;
+}
+
+.node-type-biography .community_champion img {border: 5px solid $yellow;}
+.node-type-biography .industry_mogul     img {border: 5px solid $blue;}
+.node-type-biography .cycle_influencer   img {border: 5px solid $pink;}
+.node-type-biography .sporting_hero      img {border: 5px solid $green;}
+
+.node-type-biography .field-name-field-headline {
+	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 400;
+	font-size: 24px;
+	line-height: 28px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.node-type-biography .group-social-links {
+  text-align: center;
+  font-size: 38px;
+  line-height: 38px;
+  margin-bottom: 30px;
+}
+
+.node-type-biography .group-social-links .field {
+  display: inline-block;
+  margin: 0 7px;
+}
+
+.node-type-biography .group-social-links a,
+.node-type-biography .group-social-links a:visited {
+  color: #aaa;
+  outline: none;
+}
+
+.node-type-biography .group-social-links a:hover,
+.node-type-biography .group-social-links a:active {
+  color: $yellow;
+  outline: none;
+}
+
+.node-type-biography .field-name-body:before {
+  display: block;
+  content: "";
+  width: 140px;
+  height: 5px;
+  background-color: $yellow;
+  border-radius: 2.5px;
+  -webkit-border-radius: 2.5px;
+  -moz-border-radius: 2.5px;
+  position: relative;
+  margin: 0 auto 35px auto;
+}
+
+.node-type-biography .field-name-share-buttons {
+  margin-bottom: 120px;
+}
+
+.node-type-biography .field-name-share-buttons ul {
+  justify-content: center;
+}
+
+.node-type-biography .field-name-share-buttons li {
+  margin: 0 7px;
+}
+
+
+
+/* Grid view */
+
+.page-womensfestival-100women-2020 h1.page-header {
+  text-align: center;
+}
+
+.view-biography-grid .views-exposed-form {
+  background-color: #f0f0f0;
+  border-radius: $border-radius-general;
+  -webkit-border-radius: $border-radius-general;
+  -moz-border-radius: $border-radius-general;
+  padding: 10px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.view-biography-grid .views-exposed-widget {
+  width: 100%;
+}
+
+.view-biography-grid .views-exposed-widget > label {
+	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 18px;
+	margin-bottom: 10px;
+}
+
+.view-biography-grid .form-item-field-biography-category-value {
+  display: inline-flex;
+  margin: 0 10px 10px 10px;
+}
+
+.view-biography-grid #edit-field-biography-category-value label {
+  font-weight: 400;
+  text-transform: uppercase;
+  padding-bottom: 5px;
+  border-bottom: 5px solid;
+}
+
+#edit-field-biography-category-value > div:nth-child(1) label {border-color: $gray;}
+#edit-field-biography-category-value > div:nth-child(2) label {border-color: $yellow;}
+#edit-field-biography-category-value > div:nth-child(3) label {border-color: $blue;}
+#edit-field-biography-category-value > div:nth-child(4) label {border-color: $pink;}
+#edit-field-biography-category-value > div:nth-child(5) label {border-color: $green;}
+
+.view-biography-grid .row > div {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.view-biography-grid .views-field {
+  border: 1px solid #eee;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.view-biography-grid .biography_image img {
+  border: 5px solid;
+  border-radius: 180px;
+  -webkit-border-radius: 180px;
+  -moz-border-radius: 180px;
+  margin-bottom: 10px;
+}
+
+.view-biography-grid .biography_image.community_champion img {border-color: $yellow;}
+.view-biography-grid .biography_image.industry_mogul img     {border-color: $blue;}
+.view-biography-grid .biography_image.cycle_influencer img   {border-color: $pink;}
+.view-biography-grid .biography_image.sporting_hero img      {border-color: $green;}
+
+.view-biography-grid .biography_category {
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 14px;
+  line-height: 14px;
+  margin-bottom: 10px;
+}
+
+.view-biography-grid .biography_title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 18px;
+	margin-bottom: 10px;
+}
+
+.view-biography-grid .biography_headline {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  height: 50px;
+  overflow: hidden;
+  font-size: 14px;
+  line-height: 16px;
+  margin-bottom: 10px;
+}
+
+.view-biography-grid .biography_short_biography {
+  font-size: 16px;
+  line-height: 18px;
+  margin-bottom: 10px;
+}
+
+.view-biography-grid .biography_link span {
+  margin-right: 5px;
+}
+
+.view-biography-grid .biography_link i {
+  font-size: 16px;
+  line-height: 16px;
+}
+
+
+
+/* Colorbox node */
+
+#cboxContent .node-biography {
+  text-align: center;
+}
+
+#cboxContent .node-biography img {
+  max-width: 140px;
+  max-height: 140px;
+  width: 100%;
+  height: auto;
+  border: 5px solid ;
+  border-radius: 180px;
+  -webkit-border-radius: 180px;
+  -moz-border-radius: 180px;
+  margin: 0 auto 5px auto;
+}
+
+#cboxContent .community_champion img {border-color: $yellow;}
+#cboxContent .industry_mogul     img {border-color: $blue;}
+#cboxContent .cycle_influencer   img {border-color: $pink;}
+#cboxContent .sporting_hero      img {border-color: $green;}
+
+#cboxContent .node-biography .field-name-field-biography-category {
+  font-size: 15px;
+  line-height: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+#cboxContent .node-biography h2 {
+	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 400;
+	font-size: 28px;
+	line-height: 28px;
+	margin-top: 0;
+	margin-bottom: 5px;
+	border-bottom: inherit;
+	text-align: center;
+}
+
+#cboxContent .node-biography .field-name-field-headline {
+	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 20px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+#cboxContent .node-biography .group-social-links {
+  text-align: center;
+  font-size: 24px;
+  line-height: 24px;
+  margin-bottom: 10px;
+}
+
+#cboxContent .node-biography .group-social-links .field {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+#cboxContent .node-biography .group-social-links a,
+#cboxContent .node-biography .group-social-links a:visited {
+  color: #aaa;
+  outline: none;
+}
+
+#cboxContent .node-biography .group-social-links a:hover,
+#cboxContent .node-biography .group-social-links a:active {
+  color: $yellow;
+  outline: none;
+}
+
+#cboxContent .node-biography .field-name-field-short-biography {
+  font-size: 14px;
+  line-height: 18px;
+  margin-bottom: 10px;
+}
+
+#cboxContent .node-biography .field-name-view-full-node a,
+#cboxContent .node-biography .field-name-view-full-node a:visited {
+  font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+  display: inline-block;
+  min-width: 140px;
+  font-size: 14px;
+  line-height: 28px;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  padding: 0 18px;
+  border-radius: $border-radius-general;
+  -webkit-border-radius: $border-radius-general;
+  -moz-border-radius: $border-radius-general;
+  background-color: $white;
+  color: $black;
+  border: 1px solid $yellow;
+}
+
+#cboxContent .node-biography .field-name-view-full-node a:hover {
+  background-color: $yellow;
+  color: $white;
+  border: 1px solid $yellow;
+}

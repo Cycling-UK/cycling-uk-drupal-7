@@ -1,0 +1,17 @@
+.nav-tabs > li > a {
+	color: #fff;
+    border-bottom: 4px solid #3b3a3c;
+}
+
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+	color: #fff;
+	background-color: #3b3a3c;
+    border-bottom: 4px solid #ab853c;
+}
+
+.nav > li > a:hover,
+.nav > li > a:focus {
+    border-bottom: 4px solid #ab853c;
+}

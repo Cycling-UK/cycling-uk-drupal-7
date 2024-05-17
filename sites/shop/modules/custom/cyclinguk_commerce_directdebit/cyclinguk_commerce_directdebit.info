@@ -1,0 +1,5 @@
+name = Cycling UK Direct Debit
+description = "Commerce DirectDebit module for Cycling UK use. Enables mixed payment, CC and/or DD."
+package = Cycling UK
+core = "7.x"
+version = 7.x-1.x

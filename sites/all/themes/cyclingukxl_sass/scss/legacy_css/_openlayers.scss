@@ -1,0 +1,185 @@
+/*
+ * Openlayers overrides
+ */
+
+.openlayers-map .ol-popup {
+	width: 300px;
+	left: -150px;
+}
+
+.openlayers-map .ol-popup:after {
+	left: 146px;
+}
+
+.openlayers-map .ol-popup-name {
+	display: none;
+}
+
+.openlayers-map ul {
+	margin: 0;
+}
+
+.openlayers-map ul li {
+	font-weight: 400;
+	text-indent: inherit;
+	padding: 0;
+	margin-bottom: 10px;
+}
+
+.openlayers-map ul li:before {
+	display: none;
+}
+
+.openlayers-map ul li:last-child {
+	margin-bottom: 0;
+}
+
+.openlayers-map .ol-popup-description a {
+	display: block;
+	font-size: 14px;
+	line-height: 14px;
+	font-weight: 400;
+    text-transform: uppercase;
+    text-decoration: none;
+	outline: none;
+	color: $black;
+	text-indent: -10px;
+	padding-left: 10px;
+}
+
+.openlayers-map .ol-popup-description a:hover,
+.openlayers-map .ol-popup-description a:focus,
+.openlayers-map .ol-popup-description a:active {
+	color: $purple;
+	text-decoration: underline;
+}
+
+.openlayers-map-container {
+	height: auto !important;
+	margin-bottom: 30px;
+}
+
+.ol-control {
+	background-color: rgba(255,255,255,0.5);
+}
+
+.ol-control:hover {
+	background-color: rgba(255,255,255,1);
+}
+
+.ol-control button {
+	margin: 2px;
+	font-size: 1.14em;
+	font-weight: 700;
+	height: 30px;
+	width: 30px;
+	line-height: 30px;
+	background-color: $purple;
+	border-radius: 2px;
+}
+
+.ol-control button:focus,
+.ol-control button:hover {
+	background-color: $yellow;
+}
+
+.ol-scale-line {
+	background: $purple;
+	border-radius: 2px;
+}
+
+.ol-zoomslider {
+	top: 5.5em;
+	left: .5em;
+}
+
+.ol-zoomslider button {
+	position: relative;
+	height: 10px;
+}
+
+
+
+/* Popup closer */
+
+.openlayers-map .ol-popup a {
+	color: $black;
+	outline: none;
+}
+
+.openlayers-map .ol-popup a:hover,
+.openlayers-map .ol-popup a:focus,
+.openlayers-map .ol-popup a:active {
+	color: $purple;
+}
+
+
+
+/* Resize map controls */
+.ol-geofield-controls button {
+    font-size: 2.14em;
+}
+
+
+
+/* Layer switcher */
+.openlayers-map .layerswitcher {
+	top: inherit;
+	left: inherit;
+	bottom: 0.5em;
+	right: 0.5em;
+	border: 5px solid rgba(255,255,255,0.5);
+	background: inherit;
+	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 2px 2px 0 0;
+	padding: 0;
+	margin: 0;
+	color: $white;
+}
+
+.openlayers-map .layerswitcher h3 {
+	background: $purple;
+	padding: 4px;
+	margin: 0;
+	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 14px;
+	border-radius: 2px 2px 0 0;
+	-webkit-border-radius: 2px 2px 0 0;
+	-moz-border-radius: 2px 2px 0 0;
+}
+
+.openlayers-map .layerswitcher ul {
+	background: $purple;
+	font-size: 12px;
+	margin: 0;
+	list-style: none;
+	padding: 0 4px 4px 4px;
+	border-radius: 0 0 2px 2px;
+	-webkit-border-radius: 0 0 2px 2px;
+	-moz-border-radius: 0 0 2px 2px;
+}
+
+.openlayers-map .layerswitcher li {
+	list-style: none;
+	margin: 0;
+}
+
+.openlayers-map .layerswitcher li:hover {
+	background-color: $yellow;
+}
+
+.openlayers-map .layerswitcher li label {
+	padding: 0;
+	margin: 0;
+}
+
+.openlayers-map .layerswitcher li label p {
+	display: inline-block;
+	margin: 0 0 0 4px;
+	padding: 0;
+}
+
+

@@ -1,0 +1,210 @@
+/**
+ * Main site navigation
+ * Based on Superfish "Simple Center Aligned" style
+ * Ensure that the Superfish block is configured to use no style, i.e. "none"
+ *
+ * Primary selectors:
+ *
+ *   -  ul#superfish-1-accordion  :: Mobile menu
+ *   -  ul#superfish-1            :: Desktop menu
+ */
+
+/* Remove border radius */
+.sf-menu.sf-style-simple-centre-aligned.sf-navbar > li:first-child,
+.sf-menu.sf-style-simple-centre-aligned.sf-navbar > li:last-child,
+.sf-menu.sf-style-simple-centre-aligned.sf-navbar li li li li:first-child,
+.sf-menu.sf-style-simple-centre-aligned.sf-vertical li li:first-child,
+.sf-menu.sf-style-simple-centre-aligned.sf-horizontal li li li:first-child,
+.sf-menu.sf-style-simple-centre-aligned.sf-navbar > li > ul > li:first-child,
+.sf-menu.sf-style-simple-centre-aligned.sf-navbar > li > ul > li:last-child,
+.sf-menu.sf-style-simple-centre-aligned.sf-vertical li:last-child,
+.sf-menu.sf-style-simple-centre-aligned.sf-horizontal li li:last-child,
+.sf-menu.sf-style-simple-centre-aligned.sf-navbar li li li:last-child,
+.sf-menu.sf-style-simple-centre-aligned.sf-vertical li > ul > li.firstandlast,
+.sf-menu.sf-style-simple-centre-aligned.sf-horizontal li > ul > li.firstandlast,
+.sf-menu.sf-style-simple-centre-aligned.sf-navbar li > ul > li.firstandlast {
+	-webkit-border-radius: inherit;
+	-moz-border-radius: inherit;
+	border-radius: inherit;
+}
+
+/* Remove border line */
+.sf-menu.sf-style-simple-centre-aligned.sf-horizontal li,
+.sf-menu.sf-style-simple-centre-aligned.sf-navbar li,
+.sf-menu.sf-style-simple-centre-aligned.sf-navbar li > ul > li:first-child,
+.sf-menu.sf-style-simple-centre-aligned.sf-navbar li > ul > li.firstandlast,
+.sf-menu.sf-style-simple.sf-navbar.rtl li > ul > li:last-child,
+.sf-menu.sf-style-simple-centre-aligned.sf-navbar li > ul > li,
+.sf-menu.sf-style-simple-centre-aligned.sf-navbar li > ul > li:last-child,
+.sf-menu.sf-style-simple-centre-aligned.sf-navbar li > ul > li.firstandlast,
+.sf-menu.sf-style-simple-centre-aligned.sf-navbar.rtl li > ul > li:first-child {
+	border: inherit;
+}
+
+/* Remove background gradients */
+.sf-menu.sf-style-simple-centre-aligned li:hover,
+.sf-menu.sf-style-simple-centre-aligned li.sfHover,
+.sf-menu.sf-style-simple-centre-aligned li {
+    background: inherit;
+}
+
+
+
+/* Force menu to full width */
+header .container-bottom .region-navigation-bottom {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+
+
+/* Hide mobile-menu only items */
+.menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-navbar a.mobile-menu-only {
+	display: none;
+}
+
+
+
+/* Replace "home" menu title with icon */
+.menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-navbar a#menu-home:before {
+	content: "\F80A";
+	font-family: 'Font Awesome 5 Pro';
+	font-weight: 200;
+	font-size: 24px;
+	position: relative;
+	top: 3px;
+}
+
+.menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-navbar a#menu-home .outer-wrapper {
+	display: none;
+}
+
+
+
+/* Typography */
+.menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-navbar a {
+  font-family: "karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 400;
+  color: #000;
+  text-shadow: inherit;
+  outline: none;
+}
+
+.menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-navbar a.sf-depth-1 {font-size: 18px; line-height: 18px;}
+.menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-navbar a.sf-depth-2 {font-size: 15px; line-height: 15px;}
+.menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-navbar a.sf-depth-3 {font-size: 15px; line-height: 15px;}
+
+
+
+/* First level padding */
+.menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-navbar li.sf-depth-1,
+.menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-navbar li.sf-depth-1 {
+  padding: 0 !important;
+}
+
+.menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-navbar li.sf-depth-1 > a,
+.menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-navbar li.sf-depth-1 span.nolink {
+  padding: 15px 22px;
+  margin: 0 10px;
+}
+
+
+
+/* First level underlines */
+.menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-navbar li.sf-depth-1 a.menu-colour-purple:hover,
+.menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-navbar li.sf-depth-1.sfHover a.menu-colour-purple	 {border-bottom: 4px solid #8065a9;}
+
+.menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-navbar li.sf-depth-1 a.menu-colour-pink:hover,
+.menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-navbar li.sf-depth-1.sfHover a.menu-colour-pink		 {border-bottom: 4px solid #00aeef;}
+
+.menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-navbar li.sf-depth-1 a.menu-colour-blue:hover,
+.menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-navbar li.sf-depth-1.sfHover a.menu-colour-blue    {border-bottom: 4px solid #cdce00;}
+
+.menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-navbar li.sf-depth-1 a.menu-colour-green:hover,
+.menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-navbar li.sf-depth-1.sfHover a.menu-colour-green   {border-bottom: 4px solid #e6007e;}
+
+.menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-navbar li.sf-depth-1 a.menu-colour-yellow:hover,
+.menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-navbar li.sf-depth-1.sfHover a.menu-colour-yellow  {border-bottom: 4px solid #fbb040;}
+
+.menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-navbar li.sf-depth-1 a.menu-colour-grey:hover,
+.menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-navbar li.sf-depth-1.sfHover a.menu-colour-grey    {border-bottom: 4px solid #3b3b3a;}
+
+
+
+/* Second level menu */
+.menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-navbar li.sf-depth-1 > ul {
+	height: 40px;
+	top: 42px;
+	-webkit-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+	box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+}
+
+.menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-navbar li.sf-depth-2 {
+  padding: 10px 0 !important;
+  position: relative;
+  top: 12px;
+}
+
+@media only screen and (min-width : 768px) and (max-width : 899px) {
+  .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-navbar li.sf-depth-2 > a,
+  .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-navbar li.sf-depth-2 span.nolink {
+    padding: 10px 16px;
+  }
+}
+
+.menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-navbar a.sf-depth-2:hover .inner-wrapper,
+.menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-navbar a.sf-depth-2:focus .inner-wrapper,
+.menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-navbar a.sf-depth-3:hover .inner-wrapper,
+.menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-navbar a.sf-depth-3:focus .inner-wrapper {
+  padding-bottom: 2px;
+  border-bottom: 1px solid #000;
+}
+
+
+
+/* Third level menu */
+.menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-navbar li.sf-depth-2 > ul {
+  border-radius: 			0 0 10px 10px;
+  -webkit-border-radius: 	0 0 10px 10px;
+  -moz-border-radius: 	0 0 10px 10px;
+  -webkit-box-shadow: 	0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow:    	0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+  box-shadow:    		    0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+}
+
+.menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-navbar a.sf-depth-3 {
+  padding: 15px 20px;
+}
+
+/* Second and third level background tints */
+.menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-navbar li.sf-depth-1 a.menu-colour-purple + ul,
+.menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-navbar li.sf-depth-1 a.menu-colour-purple + ul ul  {background-color: #bfb1d4;}
+
+.menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-navbar li.sf-depth-1 a.menu-colour-pink + ul,
+.menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-navbar li.sf-depth-1 a.menu-colour-pink + ul ul    {background-color: #7fd6f7;}
+
+.menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-navbar li.sf-depth-1 a.menu-colour-blue + ul,
+.menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-navbar li.sf-depth-1 a.menu-colour-blue + ul ul    {background-color: #e6e67f;}
+
+.menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-navbar li.sf-depth-1 a.menu-colour-green + ul,
+.menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-navbar li.sf-depth-1 a.menu-colour-green + ul ul   {background-color: #f27fbe;}
+
+.menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-navbar li.sf-depth-1 a.menu-colour-yellow + ul,
+.menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-navbar li.sf-depth-1 a.menu-colour-yellow + ul ul  {background-color: #fdd79f;}
+
+.menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-navbar li.sf-depth-1 a.menu-colour-grey + ul,
+.menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-navbar li.sf-depth-1 a.menu-colour-grey + ul ul    {background-color: #d8d8d8;}
+
+
+
+@media only screen and (min-width : 1200px) {
+  .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-navbar a.sf-depth-1 {font-size: 22px; line-height: 22px;}
+  .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-navbar a.sf-depth-2 {font-size: 18px; line-height: 18px;}
+  .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-navbar a.sf-depth-3 {font-size: 18px; line-height: 18px;}
+  
+  .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-navbar li.sf-depth-1 > ul {
+    height: 42px;
+    top: 45px;
+  }
+}

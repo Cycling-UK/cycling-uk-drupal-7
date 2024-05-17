@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Shop Content Types feature.
+ */
+
+include_once 'shop_content_types.features.inc';

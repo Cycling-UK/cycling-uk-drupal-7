@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * Code for the Content type - ecycles iFrame feature.
+ */
+
+include_once 'content_type_ecycles_iframe.features.inc';

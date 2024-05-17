@@ -1,0 +1,141 @@
+/*
+ * Child lists
+ * Also applies to related content on magazine pages
+ */
+
+
+
+.view.child-list .top-wrapper .inner-wrapper h1 {
+	margin: 0;
+}
+
+.view.child-list .view-content a,
+.node-type-publication .view-related a {
+	display: block;
+	color: #000;
+	text-decoration: none;
+	background-color: #f0f0f0;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+}
+
+.node-type-publication .view-related a {
+	padding: 20px !important;
+}
+
+.view.child-list .view-content a:hover,
+.view.child-list .view-content a:focus,
+.view.child-list .view-content a:active {
+	background-color: #e0e0e0;
+}
+
+
+
+/*
+ * Fields
+ */
+
+.view.child-list .view-content a {
+	margin-bottom: 20px;
+	outline: none;
+}
+
+.view.child-list .inner-wrapper {
+	display: block;
+	padding: 20px;
+}
+
+.view.child-list .date {
+	display: block;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 12px;
+	line-height: 12px;
+	font-weight: 400;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.view.child-list .image {
+	display: block;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	line-height: 0;
+}
+
+.view.child-list .image img {
+	width: 100%;
+	height: auto;
+	border-radius: 10px 10px 0 0;
+	-webkit-border-radius: 10px 10px 0 0;
+	-moz-border-radius: 10px 10px 0 0;
+}
+
+.view.child-list .image-field-caption {
+	display: none;
+}
+
+.view.child-list .terms {
+	display: block;
+	text-transform: lowercase;
+	font-size: 12px;
+	font-weight: 400;
+	text-align: center;
+	margin-bottom: 10px;
+	height: 22px;
+	overflow: hidden;
+}
+
+.view.child-list .title {
+	display: block;
+    font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	text-align: center;
+	margin: 60px 0 30px 0;
+    font-size: 30px;
+    line-height: 30px;
+	font-weight: 400;
+	color: #000;
+}
+
+.view.child-list .inner-wrapper .title {
+	height: 72px;
+	margin: 0px 0 20px 0;
+	font-size: 22px;
+	line-height: 24px;
+}
+
+
+@media only screen and (min-width : 480px) and (max-width : 767px) {
+	.view.child-list .title {
+		height: 70px;
+	}
+}
+
+@media only screen and (max-width : 479px) {
+	.view.child-list .title {
+		height: 120px;
+	}
+}
+
+.view.child-list .btn {
+	display: block;
+	width: 120px;
+	min-width: 120px;
+	margin: 0 auto;
+}
+
+.view.child-list .btn-transparent {
+	border-color: #8064a9;
+}
+
+.view.child-list a:hover .btn {
+	background-color: #8064a9;
+	color: #fff;
+}
+
+.view.child-list a:active .btn {
+	background-color: #8b6db9;
+	color: #fff;
+}

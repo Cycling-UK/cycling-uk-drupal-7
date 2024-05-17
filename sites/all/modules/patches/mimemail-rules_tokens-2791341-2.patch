@@ -1,0 +1,47 @@
+diff --git a/mimemail.module b/mimemail.module
+index 6355a3b..5ca1be5 100644
+--- a/mimemail.module
++++ b/mimemail.module
+@@ -140,6 +140,20 @@ function mimemail_mail($key, &$message, $params) {
+   $context = $params['context'];
+   $options = array('clear' => TRUE);
+ 
++  $replacement_objects = array();
++  // Get token replacements from the rules state of this is a rules email.
++  if (isset($context['state']) && is_a($context['state'], 'RulesState')) {
++    foreach ($context['state']->variables as $name => $variable) {
++      // If we have an entity metadata wrapper, get the original object.
++      if (is_a($variable, 'EntityMetadataWrapper')) {
++        $replacement_objects[$name] = $variable->value();
++      }
++      else {
++        $replacement_objects[$name] = $variable;
++      }
++    }
++  }
++
+   // Prepare the array of the attachments.
+   $attachments = array();
+   $attachments_string = trim($params['attachments']);
+@@ -163,16 +177,16 @@ function mimemail_mail($key, &$message, $params) {
+     $params[$param_key] = empty($params[$param_key]) ? array() : explode(',', $params[$param_key]);
+     if (!empty($params[$param_key])) {
+       foreach ($params[$param_key] as $key => $address) {
+-        $params[$param_key][$key] = token_replace($address, $context, $options);
++        $params[$param_key][$key] = token_replace($address, $replacement_objects, $options);
+       }
+       $message['headers'][$address_header] = implode(',', $params[$param_key]);
+     }
+   }
+ 
+-  $message['to'] = token_replace($message['to'], $context, $options);
+-  $message['subject'] = token_replace($context['subject'], $context, $options);
+-  $message['body'][] = token_replace($context['body'], $context, $options);
+-  $message['params']['plaintext'] = token_replace($params['plaintext'], $context, $options);
++  $message['to'] = token_replace($message['to'], $replacement_objects, $options);
++  $message['subject'] = token_replace($context['subject'], $replacement_objects, $options);
++  $message['body'][] = token_replace($context['body'], $replacement_objects, $options);
++  $message['params']['plaintext'] = token_replace($params['plaintext'], $replacement_objects, $options);
+   $message['params']['attachments'] = $attachments;
+ }
+ 

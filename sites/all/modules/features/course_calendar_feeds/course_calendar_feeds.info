@@ -1,0 +1,10 @@
+name = Course Calendar feeds
+description = feeds import for course calendar
+core = 7.x
+package = Cycling UK Features
+version = 7.x-1.0
+dependencies[] = feeds
+features[ctools][] = feeds:feeds_importer_default:1
+features[features_api][] = api:2
+features_exclude[dependencies][courses_and_venues] = courses_and_venues
+features_exclude[dependencies][ctools] = ctools

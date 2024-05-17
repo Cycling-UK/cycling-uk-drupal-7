@@ -1,0 +1,116 @@
+<?php
+
+/**
+ * @file
+ * No Referrer module.
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function noreferrer_menu() {
+  $items['admin/config/content/noreferrer'] = array(
+    'title' => 'Link types',
+    'description' => 'Configure the <code>rel="noopener"</code> and <code>rel="noreferrer"</code> link types.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('noreferrer_admin'),
+    'access arguments' => array('administer site configuration'),
+    'file' => 'noreferrer.admin.inc',
+  );
+  return $items;
+}
+
+/**
+ * Implements hook_cron().
+ */
+function noreferrer_cron() {
+  if ($url = variable_get('noreferrer_subscribe_url', '')) {
+    module_load_include('admin.inc', 'noreferrer');
+    noreferrer_subscribe($url);
+  }
+}
+
+/**
+ * As an optimization for the l() function, only define if enabled.
+ */
+if (variable_get('noreferrer_link', TRUE)) {
+
+  /**
+   * Implements hook_preprocess_link().
+   */
+  function noreferrer_preprocess_link(&$variables) {
+    if (isset($variables['options']['attributes']['rel']) && is_string($variables['options']['attributes']['rel'])) {
+      $variables['options']['attributes']['rel'] = explode(' ', $variables['options']['attributes']['rel']);
+    }
+    if (variable_get('noreferrer_noopener', TRUE) && isset($variables['options']['attributes']['target']) && $variables['options']['attributes']['target'] !== '') {
+      $variables['options']['attributes']['rel'][] = 'noopener';
+    }
+    if (variable_get('noreferrer_noreferrer', TRUE) && url_is_external($variables['path']) && !noreferrer_is_allowed($variables['path'])) {
+      $variables['options']['attributes']['rel'][] = 'noreferrer';
+    }
+  }
+
+}
+
+/**
+ * Helper function to determine if a host is in the domain allowlist.
+ */
+function noreferrer_is_allowed($url) {
+  $allowed_domains = variable_get('noreferrer_allowed_domains', '');
+  if (!$allowed_domains) {
+    return FALSE;
+  }
+  $allowed_domains = array_filter(explode(' ', $allowed_domains));
+  $host = parse_url($url, PHP_URL_HOST);
+  if (!$host) {
+    return FALSE;
+  }
+  foreach ($allowed_domains as $domain) {
+    if (!strcasecmp($domain, $host) || strripos($host, '.' . $domain) === strlen($host) - strlen($domain) - 1) {
+      return TRUE;
+    }
+  }
+  return FALSE;
+}
+
+/**
+ * Implements hook_filter_info().
+ */
+function noreferrer_filter_info() {
+  $filters['noreferrer'] = array(
+    'title' => t('Add <code>rel="noopener"</code> and/or <code>rel="noreferrer"</code> to links'),
+    'description' => t('Note, this filter includes the <em>Correct faulty and chopped off HTML</em> filter; there is no need to enable both filters.'),
+    'process callback' => 'noreferrer_filter_process',
+    'weight' => 10,
+  );
+  return $filters;
+}
+
+/**
+ * Filter process callback.
+ */
+function noreferrer_filter_process($text, $filter) {
+  $html_dom = filter_dom_load($text);
+  $links = $html_dom->getElementsByTagName('a');
+  $noopener = variable_get('noreferrer_noopener', TRUE);
+  $noreferrer = variable_get('noreferrer_noreferrer', TRUE);
+  foreach ($links as $link) {
+    $types = array();
+    if ($noopener && $link->getAttribute('target') !== '') {
+      $types[] = 'noopener';
+    }
+    if ($noreferrer && ($href = $link->getAttribute('href')) && url_is_external($href) && !noreferrer_is_allowed($href)) {
+      $types[] = 'noreferrer';
+    }
+    if ($types) {
+      // Merge existing rel values.
+      if ($rel = $link->getAttribute('rel')) {
+        $types = array_merge($types, explode(' ', $rel));
+        // Clear empty strings and ensure all values are unique.
+        $types = array_unique(array_filter($types));
+      }
+      $link->setAttribute('rel', implode(' ', $types));
+    }
+  }
+  return filter_dom_serialize($html_dom);
+}

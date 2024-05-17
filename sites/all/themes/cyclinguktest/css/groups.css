@@ -1,0 +1,1129 @@
+/*
+ * Context rule sets similar content type layouts with class body.page-layout-group
+ *
+ * groups.css applies to the following content types:
+ *
+ * - Group pages
+ * - Publication pages
+ * - Events
+ * - Rides
+ */
+
+
+
+body.node-type-group .main-container .region-content a,
+body.node-type-affiliated-centre .main-container .region-content a,
+body.node-type-event .main-container .region-content a,
+body.node-type-course-details .main-container .region-content a,
+body.node-type-course-calendar .main-container .region-content a,
+body.node-type-venue .main-container .region-content a,
+body.node-type-ride .main-container .region-content a { /* Defined per explicit content type otherwise it gets out of control */
+	color: #8065a9;
+	text-decoration: underline;
+}
+
+body.node-type-course-details .main-container .region-content .icon a {
+	color: #000000;
+	text-decoration: none;
+}
+
+
+body.node-type-group .main-container .region-content a:hover,
+body.node-type-affiliated-centre .main-container .region-content a:hover,
+body.node-type-event .main-container .region-content a:hover,
+body.node-type-course-details .main-container .region-content a:hover,
+body.node-type-course-calendar .main-container .region-content a:hover,
+body.node-type-venue .main-container .region-content a:hover,
+body.node-type-ride .main-container .region-content a:hover {
+	color: #fbb040;
+	text-decoration: underline;
+}
+
+/* Hide the default page header, use the one defined in Display Suite */
+body.page-layout-group h1.page-header {
+	display: none;
+}
+
+/* Tweak the top image banner width to line-up with the site navigation */
+body.page-layout-group #block-system-main .node .row:first-child {
+	position: relative;
+	margin-bottom: 80px;
+}
+
+body.page-layout-group #block-system-main .node .row:first-child > div {
+	position: relative;
+	padding: 0;
+	display: table;
+}
+
+/* Change the padding of the main content under the main photo */
+@media only screen and (min-width : 420px) and (max-width : 767px) {
+	body.page-layout-group #block-system-main .node .row:last-child {
+		padding-left: 60px;
+		padding-right: 60px;
+	}
+}
+
+/* Apply tint overlay to group image */
+body.page-layout-group .node .row:first-child > .image:after,
+body.page-layout-group .node .row:first-child > .field .image:after,
+body.page-layout-group .node .row:first-child picture:after {			/* Magazine pages */
+	display: block;
+	content: "";
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.15);
+	position: absolute;
+	top: 0;
+}
+
+/* Apply blur to group image */
+body.page-layout-group .col-sm-12 picture.img-responsive {
+	overflow: hidden;
+}
+
+body.page-layout-group .node .row:first-child > .image:hover img,
+body.page-layout-group .node .row:first-child > .field .image:hover img,
+body.page-layout-group .node .row:first-child picture:hover img {
+	filter: blur(10px);
+	-webkit-filter: blur(10px);
+	-moz-filter: blur(10px);
+	-o-filter: blur(10px);
+	-ms-filter: blur(10px);
+}
+
+/* Apply tint overlay to group image */
+body.page-layout-group .node .row:first-child > .image:hover:after,
+body.page-layout-group .node .row:first-child > .field .image:hover:after,
+body.page-layout-group .node .row:first-child picture:hover:after {
+	background-color: rgba(0,0,0,0.5);
+}
+
+body.page-layout-group .group-header-inner-wrapper {
+	width: 100%;
+	position: absolute;
+	bottom: 30px;
+}
+
+body.page-layout-group .group-header-inner-wrapper .field-name-title,
+body.page-layout-group .group-header-inner-wrapper .field-name-field-teaser,
+body.page-layout-group .group-header-inner-wrapper .field-name-field-welcome-message {
+	color: #fff;
+	text-align: center;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin-bottom: 20px !important;
+}
+
+@media only screen and (max-width : 767px) {
+
+	body.page-layout-group .group-header-inner-wrapper .field-name-title,
+	body.page-layout-group .group-header-inner-wrapper .field-name-field-teaser,
+	body.page-layout-group .group-header-inner-wrapper .field-name-field-welcome-message {
+		color: #fff;
+		text-align: center;
+		width: 90%;
+		margin-left: 5%;
+		margin-right: 5%;
+	}
+
+}
+
+body.page-layout-group.node-type-affiliated-centre .group-header-inner-wrapper .field-name-title:before {
+	display: block;
+	content: "Affiliated centre";
+	font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 14px;
+	line-height: 14px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	border-bottom: 5px solid #f6b331;
+	border-radius: 2.5px;
+	-webkit-border-radius: 2.5px;
+	-moz-border-radius: 2.5px;
+	width: 170px;
+	margin: 0 auto 10px;
+	padding-bottom: 10px;
+}
+
+body.page-layout-group.node-type-venue .group-header-inner-wrapper .field-name-title:before {
+	display: block;
+	content: "Venue";
+	font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 14px;
+	line-height: 14px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	border-bottom: 5px solid #f6b331;
+	border-radius: 2.5px;
+	-webkit-border-radius: 2.5px;
+	-moz-border-radius: 2.5px;
+	width: 170px;
+	margin: 0 auto 10px;
+	padding-bottom: 10px;
+}
+
+body.page-layout-group .field-name-title {
+	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 400;
+	color: #fff;
+	width: 100%;
+	text-align: center;
+}
+
+body.page-layout-group.node-type-course-calendar .field-name-title {
+	margin-bottom: 0;
+}
+
+body.page-layout-group .field-name-title h1 {
+    font-size: 60px;
+    line-height: 60px;
+	margin: 0 0 20px 0;
+	text-shadow: 0px 3px 0px rgba(0, 0, 0, 0.1);
+}
+
+body.page-layout-group.node-type-course-calendar .field-name-title h1 {
+	color: #000;
+	text-shadow: inherit;
+}
+
+
+@media only screen and (max-width : 639px) {
+	body.page-layout-group .field-name-title h1 {
+	    font-size: 36px;
+	    line-height: 38px;
+	}
+}
+
+@media only screen and (min-width : 769px) and (max-width : 991px) {
+	body.page-layout-group .field-name-title h1 {
+	    font-size: 36px;
+	    line-height: 38px;
+	}
+}
+
+
+body.page-layout-group .field-name-field-group-type,
+body.page-layout-group .field-name-field-publication-type,
+body.page-layout-group .group-header-inner-wrapper .field-name-field-date,
+body.page-layout-group .group-header-inner-wrapper .field-name-field-date-ride {
+	color: #fff;
+	width: 100%;
+	font-size: 14px;
+	line-height: 14px;
+	text-align: center;
+	margin-bottom: 20px !important;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	text-shadow: 0px 3px 0px rgba(0, 0, 0, 0.1);
+}
+
+body.page-layout-group .field-name-field-group-type:after,
+body.page-layout-group .field-name-field-publication-type:after,
+body.page-layout-group .group-header-inner-wrapper .field-name-field-date:after,
+body.page-layout-group .group-header-inner-wrapper .field-name-field-date-ride:after {
+	display: block;
+	content: "";
+	width: 140px;
+	height: 5px;
+	background-color: #f6b331;
+	border-radius: 2.5px;
+	-webkit-border-radius: 2.5px;
+	-moz-border-radius: 2.5px;
+	position: relative;
+	margin: 10px auto 0 auto;
+}
+
+body.page-layout-group .field-name-field-group-welcome,
+body.page-layout-group .group-header-location-wrapper {
+	color: #fff;
+	width: 100%;
+	font-size: 16px;
+	line-height: 18px;
+	text-align: center;
+	margin-bottom: 0px !important;
+	padding: 0 20px;
+	text-shadow: 0px 3px 0px rgba(0, 0, 0, 0.1);
+}
+
+body.page-layout-group .field-name-field-town,
+body.page-layout-group .field-name-field-postcode {
+	display: inline-block;
+	margin: 0 3px !important;
+}
+
+
+body.page-layout-group .field-name-welcome-message-mobile .field-name-field-group-welcome {
+	color: #000;
+	text-align: left;
+	font-size: 20px;
+	line-height: 24px;
+	font-weight: 400;
+	display: none;
+}
+
+
+
+@media only screen and (max-width : 639px) {
+	body.page-layout-group .field-name-field-group-welcome {
+		display: none;
+	}
+	body.page-layout-group .field-name-welcome-message-mobile .field-name-field-group-welcome {
+		display: inherit;
+	}
+
+}
+
+
+
+/* Theme Organic Group status - either user is a member [text display] or invite to join [link] */
+body.page-layout-group .field-name-group-group {
+	width: 100%;
+	text-align: center;
+}
+
+body.page-layout-group .field-name-group-group span,
+body.page-layout-group .field-name-group-group a {
+    font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	color: #fff !important;
+	font-size: 15px;
+	line-height: 34px;
+	font-weight: 400;
+	letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none !important;
+	display: inline-block;
+    padding: 0 18px;
+	border: 1px solid #f6b331;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+}
+
+body.page-layout-group .field-name-group-group a:hover,
+body.page-layout-group .field-name-group-group a:focus {
+	background-color: #f6b331;
+	color: #fff !important;
+}
+
+
+
+/*
+ * Group activities listing and Contact block icons
+ */
+
+
+body.page-layout-group .group-activities {
+	padding-left: 0;
+}
+
+body.page-layout-group .group-contact-details {
+	padding-right: 0;
+}
+
+@media only screen and (max-width : 1199px) {
+	body.page-layout-group .group-activities {
+		padding-right: 0;
+	}
+
+	body.page-layout-group .group-contact-details {
+		padding-left: 0;
+	}
+}
+
+
+
+body.page-layout-group .group-activities,
+body.page-layout-group .group-contact-details {
+	margin-bottom: 60px;
+}
+
+body.page-layout-group .group-contact-details .field-items,
+body.node-type-course-calendar .field-name-dynamic1 .views-field-field-course-venue-telephone .field-content {
+	display: inline-block;
+}
+
+body.page-layout-group .group-activities .field-item {
+	font-weight: 600;
+}
+
+body.page-layout-group .group-activities .field-item,
+body.page-layout-group .group-contact-details .field {
+	margin-bottom: 12px;
+}
+
+body.page-layout-group .group-activities .field-item:last-child,
+body.page-layout-group .group-contact-details .field:last-child {
+	margin-bottom: 0;
+}
+
+body.page-layout-group .group-contact-details .field:before,
+body.node-type-course-calendar .field-name-dynamic1 .views-field-field-course-venue-telephone:before {
+/*  font-family: 'FontAwesome'; */
+    font-family: 'Font Awesome 5 Pro';
+    font-size: 14px;
+    font-weight: 300;
+	display: inline-block;
+	margin-right: 10px;
+	width: 15px;
+}
+
+body.page-layout-group .field-name-field-group-contact-name:before,
+body.page-layout-group .field-name-field-contact-name:before {
+	content: "\F007";
+}
+
+body.page-layout-group .field-name-field-group-phone-number:before,
+body.page-layout-group .field-name-field-course-venue-telephone:before,
+body.page-layout-group .field-name-field-contact-number:before,
+body.node-type-course-calendar .field-name-dynamic1 .views-field-field-course-venue-telephone:before {
+	content: "\F095";
+}
+
+body.page-layout-group .field-name-field-group-contact-email:before,
+body.page-layout-group .field-name-field-course-venue-email:before,
+body.page-layout-group .field-name-field-contact-email:before {
+	content: "\F0E0";
+}
+
+body.page-layout-group .field-name-field-group-website:before,
+body.page-layout-group .field-name-field-course-venue-website:before,
+body.page-layout-group .field-name-field-link:before {
+	content: "\F0AC";
+}
+
+body.page-layout-group .field-name-field-facebook:before {
+	content: "\F09A";
+}
+
+body.page-layout-group .field-name-field-twitter:before {
+	content: "\F099";
+}
+
+body.page-layout-group .field-name-field-instagram:before {
+	content: "\F16D";
+}
+
+
+
+/*
+ * Page subheadings
+ */
+
+body.page-layout-group .field-group-div h3,
+body.page-layout-group .field-label,
+body.page-layout-group .view-og-extras-nodes h2,
+.field-name-og-node-content-links:before,
+body.page-layout-group .field-name-field-about-the-group h2,
+body.page-layout-group .field-name-field-about-the-group h3,
+body.page-layout-group .field-name-field-about-the-group h4,
+body.page-layout-group .field-name-field-group-ride-info h2,
+body.page-layout-group .field-name-field-group-ride-info h3,
+body.page-layout-group .field-name-field-group-ride-info h4 {
+    font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 19px;
+	line-height: 24px;
+	font-weight: 600;
+	padding-bottom: 10px;
+	margin: 0 0 25px 0;
+	border-bottom: 1px solid #000;
+}
+
+body.page-layout-group .field-name-field-about-the-group h2,
+body.page-layout-group .field-name-field-about-the-group h3,
+body.page-layout-group .field-name-field-about-the-group h4,
+body.page-layout-group .field-name-field-group-ride-info h2,
+body.page-layout-group .field-name-field-group-ride-info h3,
+body.page-layout-group .field-name-field-group-ride-info h4 {
+	margin-top: 60px;
+}
+
+body.page-layout-group .field-group-div,
+body.page-layout-group .field {
+	margin-bottom: 60px;
+}
+
+body.page-layout-group .field-name-field-image-gallery {
+	margin-bottom: 0;
+}
+
+
+body.page-layout-group .field-name-field-group-image,
+body.page-layout-group .field-name-welcome-message-mobile,
+body.page-layout-group .group-header-inner-wrapper .field {
+	margin-bottom: 0;
+}
+
+body.page-layout-group .field-name-field-gallery-image {
+	margin-bottom: 7px;
+}
+
+
+body.page-layout-group .field-name-body:before,
+body.page-layout-group .field-name-field-group-ride-info:before,
+body.page-layout-group .field-name-field-group-files:before {
+	display: block;
+	font-size: 19px;
+	line-height: 24px;
+	font-weight: 600;
+	margin: 60px 0 25px 0;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #000;
+}
+
+body.node-type-group .field-name-body:before					{content: 'About our rides';} /* CHECK ALL THESE FIELD NAME OVERRIDES */
+body.page-layout-group .field-name-field-group-files:before 	{content: 'Downloads';}
+
+body.page-layout-group .field-name-field-group-activities .field-item {
+	font-weight: 600;
+	margin-bottom: 12px;
+}
+
+/* Undo default grey underline for certain field */
+body.page-layout-group .field-name-field-attachments:after,
+body.page-layout-group .field-name-field-gallery-image:after,
+body.page-layout-group .field-name-field-gpx-files:after {
+	content: none;
+    height: 0;
+    margin-bottom: 0;
+    top: 0;
+}
+
+
+
+/*
+ * Group post pages
+ */
+
+.node-type-group-post .top-wrapper > picture {
+	margin-left: -15px;
+	margin-right: -15px;
+	max-width: inherit;
+}
+
+.node-type-group-post .top-wrapper > picture img {
+	border-radius: 15px 15px 0 0;
+	-webkit-border-radius: 15px 15px 0 0;
+	-moz-border-radius: 15px 15px 0 0;
+}
+
+
+
+/*
+ * Group post news / teaser listing
+ *
+ * IMPORTANT
+ * =========
+ *
+ * The original CSS code markup was based on the news and events being displayed with the
+ * custom 'teaser' display mode. This rendered the fields in the order: image, date, title.
+ * The teaser display mode was then changed for use on other parts of the website and
+ * rendered the fields in the order: date, image, title.
+ *
+ * The CSS code here has therefore been updated with absolute and relative positioning
+ * overrides to compensate for this change in behaviour. This may need further review as
+ * further code changes are implemented.
+ */
+
+
+/* Hide default teaser elements that are not required for display */
+.view-og-extras-nodes .sticky,
+.view-og-extras-nodes a.sticky-No,
+.view-og-extras-nodes a.sticky-Yes,
+.view-og-extras-nodes .terms,
+.view-og-extras-nodes .yellow-line {
+	display: none;
+}
+
+.view-og-extras-nodes img {
+	min-width: 120px;
+	max-width: 120px;
+	height: 77px;
+	border-radius: 10px 0 0 10px;
+	-webkit-border-radius: 10px 0 0 10px;
+	-moz-border-radius: 10px 0 0 10px;
+}
+
+.view-og-extras-nodes .views-row {
+	background-color: rgba(128,101,169,0.5);
+	margin-bottom: 20px;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	position: relative;
+	height: 77px;
+}
+
+.view-og-extras-nodes .views-row > a {
+	display: flex;
+	display: -webkit-flex;
+	color: #000 !important;
+	text-decoration: none !important;
+	height: 77px;
+	outline: none;
+}
+
+.view-og-extras-nodes span.image {
+	display: flex;
+	flex: 0;
+	-webkit-flex: 0;
+	-ms-flex: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.view-og-extras-nodes span.date {
+	position: absolute;
+	left: 130px;
+	font-weight: 600;
+	line-height: 14px;
+	padding-top: 10px;
+}
+
+.view-og-extras-nodes span.title {
+	display: flex;
+	flex: 1;
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	vertical-align: middle;
+	padding: 20px 50px 10px 0;
+	line-height: 14px;
+	position: absolute;
+	left: 130px;
+}
+
+.view-og-extras-nodes span.title .inner-container {
+	display: flex;
+	align-items: center;
+	height: 55px;
+	overflow: hidden;
+}
+
+.view-og-extras-nodes span.btn {
+	display: flex;
+	flex: 10;
+	-webkit-flex: 0;
+	-ms-flex: 0;
+	width: 50px;
+	max-width: 50px;
+	min-width: 50px;
+	border: inherit;
+	position: absolute;
+	right: 0;
+}
+
+.view-og-extras-nodes span.btn:hover,
+.view-og-extras-nodes span.btn:active,
+.view-og-extras-nodes span.btn:focus {
+	border: inherit;
+	background-color: inherit;
+}
+
+.view-og-extras-nodes span.btn .inner-container {
+	display: none;
+}
+
+.view-og-extras-nodes span.btn:before {
+/*  font-family: 'FontAwesome'; */
+    font-family: 'Font Awesome 5 Pro';
+    content: "\F054";
+    font-size: 25px;
+    line-height: 25px;
+    font-weight: 300;
+	display: inline-block;
+	position: relative;
+	top: 25px;
+}
+
+@media only screen and (max-width : 499px) {
+	.view-og-extras-nodes span.image {
+		display: none;
+	}
+	.view-og-extras-nodes span.date,
+	.view-og-extras-nodes span.title {
+		left: 20px;
+	}
+}
+
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+	.view-og-extras-nodes span.image {
+		display: none;
+	}
+	.view-og-extras-nodes span.date,
+	.view-og-extras-nodes span.title {
+		left: 20px;
+	}
+}
+
+
+
+/*
+ * Group page management
+ */
+
+.field-name-og-node-content-links:before {
+    content: "Manage this group";
+	display: block;
+
+}
+
+
+
+/*
+ * RSS feed button
+ */
+
+.feed-icon img {
+	display: none;
+}
+
+.feed-icon a {
+	text-decoration: none !important;
+}
+
+.feed-icon a:before {
+    content: "Subscribe to this RSS feed";
+	display: block;
+	text-align: center;
+	width: 260px;
+	margin: 30px auto 60px;
+}
+
+
+
+/*
+ * Rides and Activities repeating field
+ */
+
+.field-name-field-rides-and-activities .group-header:after,
+.field-name-field-rides-and-activities .group-description:after,
+.field-name-field-rides-and-activities .group-details:after {
+	display: block;
+	content: "";
+	width: 140px;
+	height: 5px;
+	border-radius: 2.5px;
+	-webkit-border-radius: 2.5px;
+	-moz-border-radius: 2.5px;
+	background-color: #fbb040;
+	margin: 0 auto 20px;
+}
+
+.field-name-field-rides-and-activities .field-group-div,
+.field-name-field-rides-and-activities .field-name-field-event-ride-type,
+.field-name-field-rides-and-activities .field-name-field-ride-distance,
+.field-name-field-rides-and-activities .field-name-field-event-ride-description,
+.field-name-field-rides-and-activities .field-name-field-event-ride-start,
+.field-name-field-rides-and-activities .field-name-field-link-booknow,
+.field-name-field-rides-and-activities .group-header .field:last-child,
+.field-name-field-rides-and-activities .group-details .field:last-child,
+.field-name-field-rides-and-activities .group-booking .field:last-child {
+	margin-bottom: 20px !important;
+}
+
+.field-name-field-rides-and-activities > .field-items > .field-item {
+	background-color: #f0f0f0;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	padding: 20px;
+	margin-bottom: 30px;
+	text-align: center;
+}
+
+.field-name-field-rides-and-activities .content .field-label {
+	font-size: 16px !important;
+	line-height: 22px !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	border-bottom: inherit !important;
+}
+
+.field-name-field-rides-and-activities .field-name-field-date-and-time {
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 12px;
+	line-height: 12px;
+	font-weight: 400;
+	margin-bottom: 10px !important;
+}
+
+.field-name-field-rides-and-activities .field-name-field-event-ride-name {
+	font-size: 22px;
+	line-height: 24px;
+	font-weight: 700;
+	margin-bottom: 10px !important;
+}
+
+.field-name-field-rides-and-activities .field-name-field-event-ride-type,
+.field-name-field-rides-and-activities .field-name-field-event-ride-datc .field-label,
+.field-name-field-rides-and-activities .field-name-field-event-ride-audax .field-label,
+.field-name-field-rides-and-activities .field-name-field-tri-vet-event .field-label,
+.field-name-field-rides-and-activities .field-name-field-event-ride-datc,
+.field-name-field-rides-and-activities .field-name-field-event-ride-audax,
+.field-name-field-rides-and-activities .field-name-field-tri-vet-event {
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 12px !important;
+	line-height: 12px !important;
+}
+
+.field-name-field-rides-and-activities .field-name-field-event-ride-type {
+	font-weight: 700;
+}
+
+.field-name-field-rides-and-activities .field-name-field-distance {
+	width: 80px;
+	height: 80px;
+	margin: 0 auto;
+	text-align: center;
+	background-color: #e0e0e0;
+	border-radius: 40px;
+	-webkit-border-radius: 40px;
+	-moz-border-radius: 40px;
+	margin-bottom: 20px !important;
+}
+
+.field-name-field-rides-and-activities .field-label {
+	display: none;
+}
+
+.field-name-field-rides-and-activities .mvf-unit-miles {
+	display: table-cell;
+	width: 80px;
+	height: 80px;
+	vertical-align: middle;
+}
+
+.field-name-field-rides-and-activities .mvf-subfield.mvf-value {
+	display: block;
+	text-align: center;
+	font-size: 34px;
+	line-height: 30px;
+}
+
+.field-name-field-rides-and-activities .mvf-subfield.mvf-unit {
+	display: block;
+	text-align: center;
+}
+
+.field-name-field-rides-and-activities .field-name-field-event-ride-datc,
+.field-name-field-rides-and-activities .field-name-field-event-ride-audax,
+.field-name-field-rides-and-activities .field-name-field-tri-vet-event {
+	margin-bottom: 10px !important;
+}
+
+.field-name-field-rides-and-activities .field-name-field-gpx-files a,
+.field-name-field-rides-and-activities .field-name-field-link-booknow a {
+	display: inline-block;
+	width: 180px;
+	font-size: 15px;
+	line-height: 34px;
+    text-transform: uppercase;
+    text-decoration: none !important;
+    padding: 0 18px;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+    border: 1px solid #f6b331;
+    color: #000 !important;
+    outline: none;
+}
+
+.field-name-field-rides-and-activities .field-name-field-gpx-files a:hover,
+.field-name-field-rides-and-activities .field-name-field-gpx-files a:focus,
+.field-name-field-rides-and-activities .field-name-field-link-booknow a:hover,
+.field-name-field-rides-and-activities .field-name-field-link-booknow a:focus {
+	background-color: #f6b331;
+    border: 1px solid #f6b331;
+    color: #fff !important;
+}
+
+.field-name-field-rides-and-activities .field-name-field-gpx-files a:active,
+.field-name-field-rides-and-activities .field-name-field-link-booknow a:active {
+	background-color: #fdaf17;
+    border: 1px solid #fdaf17;
+    color: #fff !important;
+}
+
+.field-name-field-rides-and-activities .field-name-field-gpx-files .file-size {
+	display: none;
+}
+
+
+
+body.page-layout-group .field-name-field-partner-logo .field-item {
+    width: 80px;
+    height: 80px;
+    display: inline-block;
+    margin: 0 20px 20px 0;
+}
+
+
+
+/*
+ * Ride content type
+ */
+
+/* Tweak to replace field label of Display Suite entity field as it leaves a stubborn colon on the field name */
+
+.field-name-ride-start-time .field-label {
+	display: none;
+}
+
+.field-name-ride-start-time > .field-items:before {
+	display: block;
+	content: "Start time";
+    font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 19px;
+    line-height: 24px;
+    font-weight: 600;
+    padding-bottom: 10px;
+    margin: 0 0 25px 0;
+    border-bottom: 1px solid #000;
+}
+
+
+
+/*
+ * Attachments
+ */
+
+body.page-layout-group .field-name-field-attachments .field-label {
+    text-align: left;
+}
+
+body.page-layout-group .field-name-field-group-ride-programme .field-item,
+body.page-layout-group .field-name-field-group-files .field-item {
+	margin-bottom: 16px;
+}
+
+
+
+/*
+ * Dynamic field - upcoming courses
+ * Dynamic field - upcoming courses per venue
+ * Dynamic field - venue details
+ */
+
+body.node-type-course-details .field-name-dynamic1 .title,
+body.node-type-course-calendar .field-name-dynamic1 .title,
+body.node-type-venue .field-name-dynamic1 .title {
+	font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 19px;
+	line-height: 24px;
+	font-weight: 600;
+	padding-bottom: 10px;
+	margin: 0 0 25px 0;
+	border-bottom: 1px solid #000;
+}
+
+.view-course-schedule .views-row,
+.view-upcoming-courses-per-venue .views-row {
+	margin-bottom: 60px;
+}
+
+.view-course-schedule .views-row:after,
+.view-upcoming-courses-per-venue .views-row:after {
+	display: block;
+	content: "";
+	width: 140px;
+	margin: 0 auto;
+	height: 5px;
+	/* background-color: #8065a9; */
+	background-color: #e0e0e0;
+	border-radius: 2.5px;
+	-webkit-border-radius: 2.5px;
+	-moz-border-radius: 2.5px;
+	position: relative;
+	top: 30px;
+}
+
+.view-course-schedule .views-row:last-of-type:after,
+.view-upcoming-courses-per-venue .views-row:last-of-type:after {
+	display: none;
+}
+
+.view-course-schedule .icon,
+.view-course-schedule .details,
+.view-upcoming-courses-per-venue .icon,
+.view-upcoming-courses-per-venue .details {
+	text-align: center;
+}
+
+.view-course-schedule .day-number,
+.view-upcoming-courses-per-venue .day-number {
+    width: 34px;
+    height: 34px;
+    background-image: url('../images/system/purple-calendar-icon.png');
+    background-repeat: no-repeat;
+    margin: 0 auto;
+}
+
+.view-course-schedule .date,
+.view-course-schedule .location,
+.view-course-schedule .title,
+.view-upcoming-courses-per-venue .date,
+.view-upcoming-courses-per-venue .location,
+.view-upcoming-courses-per-venue .title {
+	text-align: center;
+}
+
+.view-course-schedule .day-number,
+.view-course-schedule .day-month,
+.view-course-schedule .year,
+.view-course-schedule .location,
+.view-upcoming-courses-per-venue .day-number,
+.view-upcoming-courses-per-venue .day-month,
+.view-upcoming-courses-per-venue .year,
+.view-upcoming-courses-per-venue .location {
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 20px;
+}
+
+
+.view-course-schedule .day-number span,
+.view-upcoming-courses-per-venue .day-number span {
+	position: relative;
+	top: 10px;
+}
+
+.view-course-schedule .day-name,
+.view-upcoming-courses-per-venue .day-name {
+	font-size: 14px;
+	list-style: 14px;
+}
+
+.view-course-schedule .day-month,
+.view-upcoming-courses-per-venue .day-month {
+	text-transform: uppercase;
+}
+
+.view-course-schedule .year,
+.view-upcoming-courses-per-venue .year {
+	margin-bottom: 15px;
+}
+
+.course-title-title,
+.course-venue-title {
+	font-weight: 600;
+}
+
+.course-title {
+	margin-bottom: 10px;
+}
+
+body.node-type-course-calendar .field-name-dynamic1 .views-field-title {
+	font-weight: 600;
+	margin-bottom: 20px;
+}
+
+body.node-type-course-calendar .field-name-dynamic1 .views-field-field-location canvas {
+	border-radius: 18px;
+	-webkit-border-radius: 18px;
+	-moz-border-radius: 18px;
+}
+
+body.node-type-course-calendar .field-name-dynamic1 .views-field-field-course-venue-address,
+body.node-type-course-calendar .field-name-dynamic1 .views-field-field-course-venue-telephone {
+	margin-bottom: 20px;
+}
+
+
+body.node-type-course-calendar .field-name-dynamic1 .views-field-view-node a {
+	color: #000;
+	text-decoration: none;
+}
+
+body.node-type-course-calendar .field-name-dynamic1 .views-field-view-node a:hover,
+body.node-type-course-calendar .field-name-dynamic1 .views-field-view-node a:focus,
+body.node-type-course-calendar .field-name-dynamic1 .views-field-view-node a:active {
+	color: #fff;
+	text-decoration: none;
+}
+
+
+/*
+ * Venue accomodation table
+ */
+
+.field-name-field-course-venue-accommodation table {
+	margin: 30px 0;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+}
+
+.field-name-field-course-venue-accommodation table > tbody > tr:nth-of-type(2n+1) {
+    background-color: rgba(127,100,169,0.1);
+}
+
+.field-name-field-course-venue-accommodation table > tbody > tr > th,
+.field-name-field-course-venue-accommodation table > tbody > tr > td {
+    border-top: 1px solid #8064a9;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    line-height: 18px;
+    white-space: inherit;
+    padding: 5px;
+}
+
+
+
+/*
+ * Courses video player
+ */
+
+body.node-type-course-details .central-row .central-wrapper {
+	border: 1px solid #fbb040;
+	padding: 20px;
+	border-radius: 18px;
+	-webkit-border-radius: 18px;
+	-moz-border-radius: 18px;
+	-webkit-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+    margin-bottom: 80px;
+}
+
+@media only screen and (max-width : 767px) {
+	body.node-type-course-details .central-row .central-wrapper {
+		margin-left: 20px;
+		margin-right: 20px;
+	}
+}
+
+body.node-type-course-details .field-name-field-video {
+	margin: 0;
+}
+
+
+
+/*
+ * Group email CSS - for Ali to update/check
+ */
+
+.node-group-email.view-mode-full .field-name-og-group-ref {
+    padding: 20px 0;
+}
+
+.node-group-email.view-mode-full .field-name-field-email-footer .field-items:before {
+    display: block;
+    content: "";
+    width: 100%;
+    height: 5px;
+    background-color: #fbb040;
+    border-radius: 2.5px;
+    -webkit-border-radius: 2.5px;
+    -moz-border-radius: 2.5px;
+    position: relative;
+    top: -20px;
+    margin-top: 40px;
+}
+
+.node-group-email.view-mode-full .field-name-field-email-story-thumbnail img.img-responsive {
+    padding: 10px 0;
+}

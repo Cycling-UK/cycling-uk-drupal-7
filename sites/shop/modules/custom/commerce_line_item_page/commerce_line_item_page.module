@@ -1,0 +1,170 @@
+<?php
+
+/**
+ * @file
+ * view pages for commerce line items.
+ */
+
+/**
+ * Implements hook_entity_info_alter().
+ */
+function commerce_line_item_page_entity_info_alter(&$entity_info) {
+  $entity_info['commerce_line_item']['view modes']['administrator'] = array(
+    'label' => t('Administrator'),
+    'custom settings' => FALSE);
+  $entity_info['commerce_line_item']['view modes']['customer'] = array(
+    'label' => t('Customer'),
+    'custom settings' => FALSE);
+}
+
+function commerce_line_item_page_commerce_line_item_uri($line_item) {
+  return array(
+    'path' => 'admin/commerce/line-items/' . $line_item->line_item_id);
+}
+
+/**
+ * Implements hook_menu().
+ */
+function commerce_line_item_page_menu() {
+  $items['admin/commerce/line-items/%commerce_line_item'] = array(
+    'title callback' => 'entity_label',
+    'title arguments' => array(
+      'commerce_line_item',
+      3),
+    'page callback' => 'commerce_line_item_page_line_item_view',
+    'page arguments' => array(
+      3),
+    'access callback' => 'commerce_line_item_access',
+    'access arguments' => array(
+      'update',
+      3));
+  $items['admin/commerce/line-items/%commerce_line_item/view'] = array(
+    'title' => 'View',
+    'type' => MENU_DEFAULT_LOCAL_TASK,
+    'weight' => -10);
+  // Optional devel module integration
+  if (module_exists('devel')) {
+    $items['admin/commerce/line-items/%commerce_line_item/devel'] = array(
+      'title' => 'Devel',
+      'page callback' => 'devel_load_object',
+      'page arguments' => array(
+        'commerce_line_item',
+        2),
+      'access arguments' => array(
+        'access devel information'),
+      'type' => MENU_LOCAL_TASK,
+      'file' => 'devel.pages.inc',
+      'file path' => drupal_get_path('module', 'devel'),
+      'weight' => 100);
+    $items['admin/commerce/line-items/%commerce_line_item/devel/load'] = array(
+      'title' => 'Load',
+      'type' => MENU_DEFAULT_LOCAL_TASK,
+      'weight' => -10);
+    $items['admin/commerce/line-items/%commerce_line_item/devel/render'] = array(
+      'title' => 'Render',
+      'page callback' => 'devel_render_object',
+      'page arguments' => array(
+        'commerce_line_item',
+        3),
+      'access arguments' => array(
+        'access devel information'),
+      'file' => 'devel.pages.inc',
+      'file path' => drupal_get_path('module', 'devel'),
+      'type' => MENU_LOCAL_TASK,
+      'weight' => 100);
+    if (module_exists('token')) {
+      $items['admin/commerce/line-items/%commerce_line_item/devel/token'] = array(
+        'title' => 'Tokens',
+        'page callback' => 'token_devel_token_object',
+        'page arguments' => array(
+          'commerce_line_item',
+          3),
+        'access arguments' => array(
+          'access devel information'),
+        'type' => MENU_LOCAL_TASK,
+        'file' => 'token.pages.inc',
+        'file path' => drupal_get_path('module', 'token'),
+        'weight' => 5);
+    }
+  }
+  $items['order/%commerce_order/line-items/%commerce_line_item'] = array(
+    'title callback' => 'commerce_line_item_ui_order_title',
+    'title arguments' => array(
+      3),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array(
+      'commerce_line_item_page_line_item_edit_form',
+      3),
+    'access callback' => 'commerce_line_item_access',
+    'access arguments' => array(
+      'view',
+      3));
+  return $items;
+}
+
+function commerce_line_item_page_line_item_edit_form($form, &$form_state, $line_item) {
+  // Some code copied from commerce_cart_add_to_cart_form().
+  drupal_set_title(t('Edit Line Item'));
+  // Store the line item passed to the form builder for reference on submit.
+  $form_state['line_item'] = $line_item;
+  // Add the line item's fields to a container on the form.
+  $form['line_item_fields'] = array(
+    '#type' => 'container',
+    '#parents' => array(
+      'line_item_fields'),
+    '#weight' => 10,
+    '#tree' => TRUE);
+  field_attach_form('commerce_line_item', $form_state['line_item'], $form['line_item_fields'], $form_state);
+  // Loop over the fields we just added and remove any that haven't been
+  // marked for inclusion on this form.
+  foreach (element_children($form['line_item_fields']) as $field_name) {
+    $info = field_info_instance('commerce_line_item', $field_name, $form_state['line_item']->type);
+    $form['line_item_fields'][$field_name]['#commerce_cart_settings'] = commerce_cart_field_instance_access_settings($info);
+    if (empty($form['line_item_fields'][$field_name]['#commerce_cart_settings']['field_access'])) {
+      $form['line_item_fields'][$field_name]['#access'] = FALSE;
+    }
+  }
+  $form['update'] = array(
+    '#type' => 'submit',
+    '#value' => t('Update Line Item Details'),
+    '#weight' => 99);
+  return $form;
+}
+
+function commerce_line_item_page_line_item_edit_form_validate($form, &$form_state) {
+  // Validate any line item fields that may have been included on the form.
+  field_attach_form_validate('commerce_line_item', $form_state['line_item'], $form['line_item_fields'], $form_state);
+}
+
+function commerce_line_item_page_line_item_edit_form_submit($form, &$form_state) {
+  // Some code copied from commerce_cart_add_to_cart_form_submit().
+  $line_item = $form_state['line_item'];
+  // Remove line item field values the user didn't have access to modify.
+  foreach ($form_state['values']['line_item_fields'] as $field_name => $value) {
+    // Note that we're checking the Commerce Cart settings that we inserted
+    // into this form element array back when we built the form. This means a
+    // module wanting to alter a line item field widget to be available must
+    // update both its form element's #access value and the field_access value
+    // of the #commerce_cart_settings array.
+    if (empty($form['line_item_fields'][$field_name]['#commerce_cart_settings']['field_access'])) {
+      unset($form_state['values']['line_item_fields'][$field_name]);
+    }
+  }
+  // Unset the line item field values array if it is now empty.
+  if (empty($form_state['values']['line_item_fields'])) {
+    unset($form_state['values']['line_item_fields']);
+  }
+  // Add field data to the line item.
+  field_attach_submit('commerce_line_item', $line_item, $form['line_item_fields'], $form_state);
+  commerce_line_item_save($line_item);
+  $form_state['redirect'] = 'basket';
+}
+
+/**
+ * Implements hook_views_api().
+ */
+function commerce_line_item_page_views_api() {
+  return array(
+    'api' => 3,
+    'path' => drupal_get_path('module', 'commerce_line_item_page') . '/includes/views');
+}

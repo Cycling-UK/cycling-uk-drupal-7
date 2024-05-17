@@ -1,0 +1,67 @@
+name = *** Cycling UK (Core) Bootstrap Sub-Theme TEST *** (CDN)
+description = Core Cycling UK bootstrap sub-theme. Uses the jsDelivr CDN for all CSS and JavaScript. No source files or compiling is necessary and is recommended for simple sites or beginners.
+core = 7.x
+base theme = bootstrap
+
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Regions
+;;;;;;;;;;;;;;;;;;;;;
+
+regions[top_menu]       = 'Top menu'
+regions[navigation]     = 'Navigation'
+regions[header]         = 'Top Bar'
+regions[highlighted]    = 'Highlighted'
+regions[help]           = 'Help'
+regions[content]        = 'Content'
+regions[sidebar_first]  = 'Primary'
+regions[sidebar_second] = 'Secondary'
+regions[footer]         = 'Footer'
+regions[page_top]       = 'Page top'
+regions[page_bottom]    = 'Page bottom'
+
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Stylesheets
+;;;;;;;;;;;;;;;;;;;;;
+
+stylesheets[all][] = css/easydropdown.css
+stylesheets[all][] = css/style.css
+stylesheets[all][] = css/tabs.css
+stylesheets[all][] = css/childpages.css
+stylesheets[all][] = css/accordions.css
+stylesheets[all][] = css/comments.css
+stylesheets[all][] = css/search.css
+stylesheets[all][] = css/links.css
+stylesheets[all][] = css/footer.css
+stylesheets[all][] = css/webforms.css
+stylesheets[all][] = css/pages.css
+stylesheets[all][] = css/groups.css
+stylesheets[all][] = css/publications.css
+stylesheets[all][] = css/briefings.css
+stylesheets[all][] = css/listings.css
+stylesheets[all][] = css/carousels.css
+stylesheets[all][] = css/events.css
+stylesheets[all][] = css/heroes.css
+stylesheets[all][] = css/landing.css
+stylesheets[all][] = css/jplanner.css
+stylesheets[all][] = css/openlayers.css
+stylesheets[all][] = css/shop.css
+stylesheets[all][] = css/shop-membership.css
+stylesheets[all][] = css/donations.css
+stylesheets[all][] = css/kitpages.css
+stylesheets[all][] = css/menus.css
+stylesheets[all][] = css/user.css
+stylesheets[all][] = css/alerts.css
+stylesheets[all][] = css/route.css
+stylesheets[all][] = css/mapping.css
+stylesheets[all][] = css/billboards.css
+stylesheets[all][] = css/front.css
+
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Scripts
+;;;;;;;;;;;;;;;;;;;;;
+
+scripts[] = js/custom-form-elements.js
+;; scripts[] = js/centre-image.js

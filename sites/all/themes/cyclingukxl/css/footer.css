@@ -1,0 +1,314 @@
+footer.footer {
+	font-size: 14px;
+	line-height: 22px;
+	background-color: #009fda;
+	color: #fff;
+	padding-top: 30px;
+	padding-bottom: 200px;
+	margin-top: -1px;
+	border-top: none;
+}
+
+footer.footer .inner-wrapper {
+	position: relative;
+}
+
+footer.footer p {
+	margin: 0;
+}
+
+/* Scroll to top button */
+#block-scroll-button-scroll-button {
+	height: inherit;
+	width: inherit;
+	position: relative;
+	top: -60px;
+	margin-bottom: -50px;
+}
+
+#scroll_top {
+	background-image: none;
+	background-color: #fff !important;
+	color: #009fda;
+	border: inherit;
+	padding: 0;
+	width: 60px;
+	height: 60px;
+	border-radius: 30px;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+	text-align: center;
+	margin: 0 auto;
+}
+
+#scroll_top:hover,
+#scroll_top:active {
+	background-color: #fbb040 !important;
+	color: #fff;
+}
+
+#scroll_top:after {
+	font-family: "Font Awesome 5 Pro";
+	content: "\F077";
+	font-size: 20px;
+	line-height: 60px;
+	font-weight: 200;
+	display: inline-block;
+	width: 60px;
+}
+
+#scroll_top:hover:after {
+	color: #fff;
+}
+
+@media only screen and (min-width: 992px) {
+	#block-scroll-button-scroll-button {
+		top: 0;
+		margin-bottom: 0;
+	}
+}
+
+/* Social media icons */
+.social-icons {
+	text-align: center;
+}
+
+.social-icons .text {
+	font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 18px;
+	line-height: 50px;
+}
+
+ul.social-links,
+ul.social-links li {
+	display: flex;
+}
+
+ul.social-links {
+	justify-content: center;
+}
+
+ul.social-links a {
+	display: block;
+	width: 50px;
+	height: 50px;
+	background-color: #fbb040;
+	color: #fff;
+	border-radius: 25px;
+	-webkit-border-radius: 25px;
+	-moz-border-radius: 25px;
+	margin: 0 5px 0 5px;
+}
+
+ul.social-links a:hover,
+ul.social-links a:active {
+	background-color: #fff;
+	color: #fbb040;
+}
+
+ul.social-links i {
+	font-size: 25px;
+	line-height: 50px;
+}
+
+@media only screen and (min-width: 992px) {
+	.social-icons {
+		display: inline-flex;
+		position: absolute;
+		right: 15px;
+		top: 5px;
+	}
+	.social-icons .text {
+		display: flex;
+	}
+	ul.social-links a {
+		margin: 0 0 0 10px;
+	}
+}
+
+/* Newsletter sign-up */
+footer.footer .newsletter-signup {
+	margin-top: 30px;
+	margin-bottom: 30px;
+	padding-top: 30px;
+	padding-bottom: 30px;
+	border-top: 5px solid #fbb040;
+	border-bottom: 5px solid #fbb040;
+	text-align: center;
+}
+
+footer.footer .newsletter-signup label,
+footer.footer .newsletter-signup .webform-progressbar {
+	display: none;
+}
+
+footer.footer .newsletter-signup h2 {
+	color: #fff;
+	font-size: 24px;
+	line-height: 24px;
+	margin: 0 0 15px 0;
+}
+
+footer.footer .newsletter-signup h2,
+footer.footer .newsletter-signup form,
+footer.footer .newsletter-signup .form-item,
+footer.footer .newsletter-signup .form-actions {
+	display: block;
+}
+
+footer.footer .newsletter-signup .form-item {
+	max-width: 400px;
+	margin: 0 auto 15px auto;
+}
+
+footer.footer .newsletter-signup input {
+	border: 1px #f6b332 solid;
+	background-color: inherit;
+	color: #fff;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	height: 43px;
+	padding: 10px;
+}
+
+footer.footer .newsletter-signup input:focus {
+	border: 1px #fff solid;
+}
+
+footer.footer .newsletter-signup input::-webkit-input-placeholder {
+	color: #fff;
+} /* Chrome / Opera / Safari */
+footer.footer .newsletter-signup input::-moz-placeholder {
+	color: #fff;
+} /* Firefox 19+ */
+footer.footer .newsletter-signup input:-moz-placeholder {
+	color: #fff;
+} /* Firefox 18- */
+footer.footer .newsletter-signup input:-ms-input-placeholder {
+	color: #fff;
+} /* IE 10+ */
+
+footer.footer .newsletter-signup button.form-submit {
+	background-color: #fff;
+	border-color: #f6b331;
+	color: #000;
+	height: 45px;
+}
+
+footer.footer .newsletter-signup button.form-submit:hover,
+footer.footer .newsletter-signup button.form-submit:focus {
+	background-color: #fcb040;
+	border-color: #fcb040;
+	color: #fff;
+}
+
+footer.footer .newsletter-signup button.form-submit:active {
+	background-color: #fdaf17;
+	border-color: #fdaf17;
+	color: #fff;
+}
+
+@media only screen and (min-width: 992px) {
+	footer.footer .newsletter-signup {
+		text-align: left;
+	}
+	footer.footer .newsletter-signup h2 {
+		white-space: nowrap;
+		line-height: 45px;
+		margin: 0 15px 0 0;
+	}
+	footer.footer .newsletter-signup,
+	footer.footer .newsletter-signup form div {
+		display: flex;
+	}
+	footer.footer .newsletter-signup h2,
+	footer.footer .newsletter-signup form,
+	footer.footer .newsletter-signup .form-item,
+	footer.footer .newsletter-signup .form-actions {
+		display: inline-flex;
+	}
+	footer.footer .newsletter-signup .form-item {
+		max-width: inherit;
+		margin: 0 15px 0 0;
+	}
+}
+
+/* General footer text area */
+.footer-text {
+	text-align: center;
+}
+
+@media only screen and (min-width: 992px) {
+	.footer-text {
+		text-align: left;
+	}
+}
+
+/* Patron, President, Chief Executive footer text */
+.footer-text .yellow-text {
+	color: #fbb040;
+}
+
+/* Trading name text */
+.footer p.small-print {
+	max-width: 950px;
+}
+
+/* Hide footer webform progress bar */
+footer .webform-progressbar {
+	display: none;
+}
+
+/* Footer links */
+ul.footer-links li {
+	display: inline-block;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+ul.footer-links a {
+	color: #fff;
+	text-decoration: underline;
+}
+
+ul.footer-links a:hover,
+ul.footer-links a:active {
+	color: #fbb040;
+}
+
+/* Logos at end of website footer */
+.footer-end-logos {
+	padding: 0 0 20px 0;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: baseline;
+	align-content: flex-start;
+	clear: both;
+}
+
+.footer-end-logos div {
+	margin: 30px 90px 30px 0;
+}
+
+.footer-end-logos img.fundraising-regulator {
+	width: 143px;
+	height: 45px;
+}
+@media only screen and (max-width: 812px) {
+	.footer-end-logos {
+		justify-content: space-around;
+	}
+	.footer-end-logos div {
+		margin: 30px 20px 10px;
+	}
+}
+
+@media only screen and (min-width: 992px) {
+	ul.footer-links li {
+		margin-left: 0;
+		margin-right: 20px;
+	}
+}

@@ -1,0 +1,451 @@
+
+/* body should have bikeweekxl class on it */
+
+.bikeweekxl p.lead {
+	display: none;
+}
+
+.bikeweekxl .field-name-field-paragraph h2 {
+	color: #000;
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+/* Header overrides */
+
+.bikeweekxl header .logo img {
+	width: 154px;
+	height: auto;
+}
+
+@media only screen and (max-width: 370px) {
+	.bikeweekxl header .inner-wrapper .container-right {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.bikeweekxl header.header {
+		height: 206px;
+	}
+
+	header > .inner-wrapper {
+		position: relative;
+		margin: 20px auto;
+	}
+
+	.bikeweekxl header .inner-wrapper .container-left,
+	.bikeweekxl header .inner-wrapper .container-right {
+		position: inherit;
+	}
+	.bikeweekxl header .inner-wrapper .container-left {
+		text-align: left;
+		width: 30% !important;
+	}
+
+	.bikeweekxl header .inner-wrapper .container-middle {
+		width: 30% !important;
+		padding-top: 24px;
+	}
+	.bikeweekxl header .inner-wrapper .container-right {
+		padding-top: 16px;
+		width: 38% !important;
+		text-align: right;
+	}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+	.bikeweekxl header .inner-wrapper .container-right {
+		padding-left: 0;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.bikeweekxl header .logo img {
+		width: inherit;
+	}
+	.bikeweekxl header .inner-wrapper .container-right {
+		padding-top: 8px;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	/*.bikeweekxl header {
+		height: 168px;
+	}
+	.bikeweekxl header > .inner-wrapper {
+		margin: 10px auto 30px auto;
+	}
+	.bikeweekxl header .inner-wrapper .container-left {
+		top: 78px;
+	}*/
+	.bikeweekxl header .logo img {
+		width: 110px;
+	}
+	/*
+	.bikeweekxl header .inner-wrapper .container-right {
+		background-color: #f0f0f0;
+		padding: 10px 0 5px 0;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+	}
+*/
+	.bikeweekxl header .inner-wrapper .container-right img {
+		width: 100%;
+	}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	.bikeweekxl header .inner-wrapper .container-right img {
+		width: 100%;
+	}
+}
+
+.bikeweekxl hr {
+	border: none;
+	width: 120px;
+	height: 5px;
+	border-radius: 2.5px;
+	-webkit-border-radius: 2.5px;
+	-moz-border-radius: 2.5px;
+	background-color: #fbb040;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.bikeweekxl .support-cycling-reasons {
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 20px;
+	margin-top: 20px;
+	margin-bottom: 15px;
+}
+
+.bikeweekxl .support-cycling-reasons p {
+	margin-bottom: 20px;
+}
+
+.bikeweekxl .support-cycling-reasons ul {
+	padding-left: 25px;
+	text-align: left;
+}
+
+.bikeweekxl .support-cycling-reasons li {
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #fff;
+}
+
+.bikeweekxl .support-cycling-reasons li:last-child {
+	border-bottom: none;
+}
+
+.bikeweekxl .support-cycling-reasons ul li:before {
+	display: inline-block;
+	font-family: "Font Awesome 5 Pro";
+	font-weight: 200;
+	content: "\f00c";
+	width: 20px;
+	margin: 0 5px 0 -25px;
+	color: #fbb040;
+}
+
+@media only screen and (min-width: 768px) {
+	.bikeweekxl hr {
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
+/**
+ * Place your custom styles here.
+ */
+
+/**
+ * Links
+ */
+/*
+.bikeweekxl a {
+	color: #009ee1;
+}
+*/
+.bikeweekxl a:hover {
+	color: #bc1512;
+}
+
+/*
+ * Standard defaults
+ */
+
+.bikeweekxl .btn:hover,
+.bikeweekxl .btn:focus,
+.bikeweekxl .more-link a:hover,
+.bikeweekxl .more-link a:focus,
+.bikeweekxl .feed-icon a:hover:before,
+.bikeweekxl .feed-icon a:focus:before {
+	background-color: #fbb040;
+	color: #fff;
+}
+
+.bikeweekxl .btn:active,
+.bikeweekxl .more-link a:active,
+.bikeweekxl .feed-icon a:active:before {
+	background-color: #d21714;
+	color: #fff;
+	box-shadow: inherit;
+}
+
+/*
+ * Transparent buttons
+ * .btn-transparent
+ */
+
+.bikeweekxl .btn-transparent {
+	border-color: #bc1512;
+}
+
+.bikeweekxl .btn-transparent:hover,
+.bikeweekxl .btn-transparent:focus {
+	background-color: #bc1512;
+	border-color: #bc1512;
+}
+
+.bikeweekxl .btn-transparent:active {
+	background-color: #bc1512;
+	border-color: #bc1512;
+}
+
+/*
+ * Standard and Primary buttons
+ * .btn-standard
+ * .btn-primary
+ *
+ * Comments are themed in comments.css
+ */
+
+.bikeweekxl .more-link a,
+.bikeweekxl .feed-icon a:before {
+	background-color: #fff;
+	border: 1px solid #bc1512;
+	color: #000;
+}
+
+.bikeweekxl .btn-standard,
+.bikeweekxl .btn-primary,
+.bikeweekxl .more-link a,
+/* .view-accordion .ui-widget-content a, */
+.bikeweekxl .feed-icon a:before,
+button#edit-reset {
+	background-color: #fff;
+	border-color: #bc1512;
+	color: #000;
+}
+
+.bikeweekxl .btn-standard a,
+.bikeweekxl .btn-primary a {
+	color: #000;
+}
+
+.bikeweekxl .btn-standard:hover,
+.bikeweekxl .btn-standard:focus,
+.bikeweekxl .btn-primary:hover,
+.bikeweekxl .btn-primary:focus,
+.bikeweekxl .more-link a:hover,
+.bikeweekxl .more-link a:focus,
+/* .view-accordion .ui-widget-content a:hover,
+.view-accordion .ui-widget-content a:focus, */
+.bikeweekxl .feed-icon a:hover:before,
+.bikeweekxl .feed-icon a:focus:before,
+.bikeweekxl button#edit-reset:hover,
+.bikeweekxl button#edit-reset:focus {
+	color: #fff;
+	background-color: #bc1512;
+	border-color: #bc1512;
+}
+
+.bikeweekxl .btn-standard:active,
+.bikeweekxl .btn-primary:active,
+.bikeweekxl .more-link a:active,
+/* .view-accordion .ui-widget-content a:active, */
+.bikeweekxl .feed-icon a:active:before,
+.bikeweekxl button#edit-reset:active {
+	color: #fff;
+	background-color: #d21714;
+	border-color: #d21714;
+}
+
+.bikeweekxl .btn-standard:hover a,
+.bikeweekxl .btn-standard:focus a,
+.bikeweekxl .btn-standard:active a,
+.bikeweekxl .btn-primary:hover a,
+.bikeweekxl .btn-primary:focus a,
+.bikeweekxl .btn-primary:active a {
+	color: #000;
+}
+
+.bikeweekxl .btn-primary:active:hover,
+.bikeweekxl .btn-primary.active:hover,
+.bikeweekxl .btn-primary:active:focus,
+.bikeweekxl .btn-primary.active:focus,
+.bikeweekxl .btn-primary.focus:active,
+.bikeweekxl .btn-primary.active.focus {
+	background-color: #d21714;
+	border-color: #d21714;
+	color: #fff;
+}
+
+.bikeweekxl button#edit-reset:hover,
+.bikeweekxl button#edit-reset:focus,
+.bikeweekxl button#edit-reset:active {
+	color: #fff;
+}
+
+/*
+ * White buttons
+ * .btn-white
+ */
+
+.bikeweekxl .btn-white,
+.bikeweekxl a.group.subscribe,
+.bikeweekxl a.group.unsubsribe {
+	background-color: #fff;
+	border-color: #fff;
+	color: #000;
+}
+
+.bikeweekxl .btn-white a {
+	color: #000;
+	text-decoration: none;
+}
+
+.bikeweekxl .btn-white:hover,
+.bikeweekxl .btn-white:focus,
+.bikeweekxl a.group.subscribe:hover,
+.bikeweekxl a.group.unsubsribe:hover,
+.bikeweekxl a.group.subscribe:focus,
+.bikeweekxl a.group.unsubsribe:focus {
+	background-color: #bc1512;
+	border-color: #bc1512;
+}
+
+.bikeweekxl .btn-white:active,
+.bikeweekxl a.group.subscribe:active,
+.bikeweekxl a.group.unsubsribe:active {
+	background-color: #d21714;
+	border-color: #d21714;
+}
+
+.bikeweekxl .btn-white:hover a,
+.bikeweekxl .btn-white:focus a,
+.bikeweekxl .btn-white:active a {
+	color: #fff;
+}
+
+/*
+ * Purple buttons
+ * .btn-purple
+ */
+
+.bikeweekxl .btn-purple,
+.bikeweekxl button.form-submit,
+.bikeweekxl button#edit-submit-events,
+.bikeweekxl button#edit-submit-groups {
+	background-color: #006633;
+	border-color: #006633;
+}
+
+.bikeweekxl .btn-purple:hover,
+.bikeweekxl .btn-purple:focus,
+.bikeweekxl button.form-submit:hover,
+.bikeweekxl button.form-submit:focus,
+.bikeweekxl button#edit-submit-events:hover,
+.bikeweekxl button#edit-submit-events:focus,
+.bikeweekxl button#edit-submit-groups:hover,
+.bikeweekxl button#edit-submit-groups:focus {
+	background-color: #bc1512;
+	border-color: #bc1512;
+}
+
+.btn-purple:active,
+.bikeweekxl button.form-submit:active,
+.bikeweekxl button#edit-submit-events:active,
+.bikeweekxl button#edit-submit-groups:active {
+	background-color: #d21714;
+	border-color: #d21714;
+}
+
+/*
+ * Sign up to our newsletter button
+ */
+
+.bikeweekxl .newsletter-signup button.form-submit {
+	border-color: #bc1512;
+}
+
+.bikeweekxl .newsletter-signup button.form-submit:hover,
+.bikeweekxl .newsletter-signup button.form-submit:focus {
+	background-color: #bc1512;
+	border-color: #bc1512;
+}
+
+.bikeweekxl .newsletter-signup button.form-submit:active {
+	background-color: #d21714;
+	border-color: #d21714;
+}
+
+.bikeweekxl .btn-default:active:hover,
+.bikeweekxl .btn-default.active:hover,
+.bikeweekxl .open > .dropdown-toggle.btn-default:hover,
+.bikeweekxl .btn-default:active:focus,
+.bikeweekxl .btn-default.active:focus,
+.bikeweekxl .open > .dropdown-toggle.btn-default:focus,
+.bikeweekxl .btn-default.focus:active,
+.bikeweekxl .btn-default.active.focus,
+.bikeweekxl .open > .dropdown-toggle.btn-default.focus {
+	background-color: #d21714;
+	border-color: #d21714;
+}
+
+/*
+ * System
+ */
+
+.bikeweekxl .btn-success:hover {
+	background-color: #449d44 !important;
+}
+
+/*
+ * Listings
+ */
+
+.bikeweekxl .view.listing-page a:hover .btn {
+	background-color: #bc1512;
+	color: #fff;
+}
+
+.bikeweekxl .view.listing-page a:active .btn {
+	border-color: #d21714;
+	background-color: #d21714;
+	color: #fff;
+}
+
+.bikeweekxl #scroll_top:hover,
+.bikeweekxl #scroll_top:active {
+	background-color: #d21714 !important;
+	color: #fff;
+}
+
+
+.node-type-post.bikeweekxl .field-name-field-caption {
+	text-align: center;
+}
+
+.view.listing-page .top-wrapper .inner-wrapper h1, .post-banner .inner-wrapper {
+	font-family: "itc-american-typewriter", Georgia, serif;
+	font-weight: 500;
+    color: #fff;
+    font-size: 40px;
+    line-height: 168px;
+}

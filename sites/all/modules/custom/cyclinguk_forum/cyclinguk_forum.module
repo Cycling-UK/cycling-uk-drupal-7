@@ -1,0 +1,59 @@
+<?php
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function cyclinguk_forum_form_user_register_form_alter(&$form, &$form_state, $form_id) {
+  // Add additional validation with reference to Cycling UK Forum.
+  $form['#validate'][] = 'cyclinguk_forum_user_register_form_validate';
+}
+
+/**
+ * Additional form validation to check whether user exists in Cycling UK Forum.
+ */
+function cyclinguk_forum_user_register_form_validate($form, &$form_state) {
+  if ($form_state['values']['name']) {
+    $forum_database = array(
+      'driver' => 'mysql',
+      'host' => 'forum.cyclinguk.org',
+      'port' => 3306,
+      'database' => 'ctc_forum_phpbb3',
+      'username' => 'careintegration',
+      'password' => '395Bs7WP4n6WSwTK',
+      'prefix' => '',
+      'pdo' => array(
+        PDO::ATTR_TIMEOUT => 3));
+    Database::addConnectionInfo('forum', 'default', $forum_database);
+    try {
+      $connection = Database::getConnection('default', 'forum');
+      $query = $connection->select('phpbb_users', 'u');
+      $query->fields('u', array(
+        'username',
+        'user_email'));
+      $or = db_or();
+      $or->condition('username', $form_state['values']['name']);
+      $or->condition('user_email', $form_state['values']['mail']);
+      $query->condition($or);
+      $result = $query->execute();
+      $result = $result->fetchAssoc();
+      if ($result) {
+        if (strtolower($form_state['values']['mail']) != strtolower($result['user_email'])) {
+          form_set_error('mail', t('The username %username is being used in the Cycling UK Forum but the email address
+            you have entered does not match the Forum account’s email address.
+            Please use your Forum email address here, or choose a different username for this website.', array(
+            '%username' => $form_state['values']['name'])));
+        }
+        elseif (strtolower($form_state['values']['name']) != strtolower($result['username'])) {
+          form_set_error('name', t('The email address %email is being used in the Cycling UK Forum but the username
+            you have entered does not match the Forum account’s username.
+            Please register with your Forum username here, or enter a different email address for this website.', array(
+            '%email' => $form_state['values']['mail'])));
+        }
+      }
+    }
+    catch (Exception $e) {
+      form_set_error('', t('Error checking Cycling UK Forum: %error', array(
+        '%error' => $e->getMessage())));
+    }
+  }
+}

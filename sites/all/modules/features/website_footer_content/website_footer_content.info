@@ -1,0 +1,10 @@
+name = Website footer content
+description = Website footer content that sits below subscription form. Starts with Patron: Her Majesty The Queen
+core = 7.x
+package = Cycling UK Features
+version = 7.x-1.01
+dependencies[] = fe_block
+features[fe_block_boxes][] = footer
+features[fe_block_settings][] = block-footer
+features[features_api][] = api:2
+project path = sites/all/modules/features

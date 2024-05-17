@@ -1,0 +1,11 @@
+/* Top gold menu */
+
+ul.top-menu a {
+	color: #ab853c;
+}
+
+ul.top-menu a:hover,
+ul.top-menu a:active {
+	color: #fff;
+}
+

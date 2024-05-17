@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Shop Commerce feature.
+ */
+
+include_once 'shop_commerce.features.inc';

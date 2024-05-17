@@ -1,0 +1,777 @@
+/*
+ * Theming for custom landing pages
+ * e.g. Join
+ */
+
+
+
+.node-type-landing-page h1.page-header {
+	display: none;
+}
+
+.node-type-landing-page .group-header-inner-wrapper {
+	width: 100%;
+	position: absolute;
+	bottom: 30px;
+}
+
+.node-type-landing-page .group-header-inner-wrapper .field-name-title {
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-bottom: 20px !important;
+}
+
+	@media only screen and (max-width : 767px) {
+		.node-type-landing-page .group-header-inner-wrapper .field-name-title,
+		.node-type-landing-page .group-header-inner-wrapper .field-name-field-welcome-message {
+			padding-left: 0;
+			padding-right: 0;
+			width: 90%;
+			margin-left: 5%;
+			margin-right: 5%;
+		}
+	}
+
+
+
+/* Apply tint overlay to group image */
+body.node-type-landing-page .top-wrapper > span.image:after {
+	display: block;
+	content: "";
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0,0,0,0.15);
+	position: absolute;
+	top: 0;
+}
+
+/* Apply tint overlay to group image */
+body.node-type-landing-page .top-wrapper:hover > span.image:after {
+	background-color: rgba(0,0,0,0.5);
+}
+
+
+
+
+/* Apply blur to group image */
+body.node-type-landing-page .top-wrapper picture.img-responsive {
+	overflow: hidden;
+}
+
+body.node-type-landing-page .top-wrapper:hover > span.image img {
+	filter: blur(10px);
+	-webkit-filter: blur(10px);
+	-moz-filter: blur(10px);
+	-o-filter: blur(10px);
+	-ms-filter: blur(10px);
+}
+
+
+
+.node-type-landing-page .field-name-title {
+	color: #fff;
+	width: 100%;
+	text-align: center;
+}
+
+.node-type-landing-page .field-name-title h1 {
+	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 60px;
+	font-weight: 400;
+	line-height: 60px;
+	margin: 0 0 20px 0;
+	text-shadow: 0px 3px 0px rgba(0, 0, 0, 0.1);
+}
+
+	@media only screen and (max-width : 639px) {
+		.node-type-landing-page .field-name-title h1 {
+		    font-size: 36px;
+		    line-height: 38px;
+		}
+	}
+
+	@media only screen and (min-width : 769px) and (max-width : 991px) {
+		.node-type-landing-page .field-name-title h1 {
+		    font-size: 36px;
+		    line-height: 38px;
+		}
+	}
+
+
+
+.node-type-landing-page #block-system-main .node .row:first-child {
+	margin-bottom: 30px;
+}
+
+.node-type-landing-page #block-system-main .node .row:first-child > div {
+	position: relative;
+	padding: 0;
+	display: table;
+}
+
+.node-type-landing-page .field-name-field-welcome-message {
+	text-align: center;
+	font-size: 18px;
+	line-height: 20px;
+	color: #fff;
+	margin-bottom: 20px;
+	text-shadow: 0px 3px 0px rgba(0, 0, 0, 0.1);
+	padding: 0 100px;
+}
+
+@media only screen and (min-width : 769px) and (max-width : 991px) {
+	.node-type-landing-page .field-name-field-welcome-message {
+		padding: 0 30px;
+	}
+}
+
+
+
+.node-type-landing-page .field-name-field-links {
+	text-align: center;
+}
+
+.node-type-landing-page .field-name-field-teaser {
+	text-align: center;
+	font-size: 20px;
+	line-height: 24px;
+	margin-bottom: 30px;
+	color: #009fda;
+}
+
+.node-type-landing-page .field-name-field-teaser:after {
+	content: "";
+	display: block;
+	height: 5px;
+	width: 140px;
+	border-radius: 2.5px;
+	-webkit-border-radius: 2.5px;
+	-moz-border-radius: 2.5px;
+	background-color: #fbb040;
+	margin: 30px auto 30px;
+}
+
+.node-type-landing-page h2,
+.node-type-landing-page .view.listing-page h2.title,
+.node-type-landing-page .field-type-viewreference h2,
+.node-type-landing-page .field-name-field-links .field-label,
+.node-type-landing-page .field-name-field-attachments .field-label {
+	text-align: center;
+    font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: 400;
+	margin: 60px 0 30px 0;
+}
+
+.node-type-landing-page .view.listing-page h2.title {
+	height: 30px;
+}
+
+.node-type-landing-page .view.listing-page .title {
+	height: 70px;
+}
+
+.node-type-landing-page .field-name-body,
+.node-type-landing-page .field-name-field-body-middle,
+.node-type-landing-page .field-name-field-body-bottom {
+	/* margin: 60px 120px; */
+	margin: 60px 60px;
+}
+
+@media only screen and (min-width : 481px) and (max-width : 767px) 	{.node-type-landing-page .field-name-body,
+																	 .node-type-landing-page .field-name-field-body-middle,
+																	 .node-type-landing-page .field-name-field-body-bottom {margin: 60px 60px;}}
+@media only screen and (max-width : 480px) 							{.node-type-landing-page .field-name-body,
+																	 .node-type-landing-page .field-name-field-body-middle,
+																	 .node-type-landing-page .field-name-field-body-bottom {margin: 60px  0px;}}
+
+
+
+
+/*
+ * External links
+ */
+
+.node-type-landing-page .field-name-field-links .field-item {
+	display: inline-block;
+	margin: 10px;
+}
+
+.node-type-landing-page .field-name-field-links a {
+	display: block;
+	color: #000;
+	text-decoration: none;
+	padding: 0 15px 0 0;
+	border: 1px solid #7a68ae;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	outline: none;
+}
+
+.node-type-landing-page .field-name-field-links a:hover,
+.node-type-landing-page .field-name-field-links a:focus,
+.node-type-landing-page .field-name-field-links a:active {
+	background-color: #7a68ae;
+	color: #fff;
+}
+
+.node-type-landing-page .field-name-field-links a:before {
+	display: inline-block;
+    font-family: 'FontAwesome';
+	color: #fff;
+	background-color: #7a68ae;
+    margin-right: 15px;
+    font-size: 22px;
+    line-height: 22px;
+	content: "\F0AC";
+	padding: 10px;
+	border-radius: 9px 0 0 9px;
+	-webkit-border-radius: 9px 0 0 9px;
+	-moz-border-radius: 9px 0 0 9px;
+}
+
+
+
+/*
+ * Attachments
+ * Remove default grey line
+ */
+
+.node-type-landing-page .field-name-field-attachments:after {
+	display: none;
+}
+
+
+
+/*
+ * Tagging
+ */
+
+.node-type-landing-page .field-name-field-tags {
+	margin: 60px auto 0;
+	float: none;
+	text-align: center;
+}
+
+
+
+/*
+ * Twitter tag
+ * This needs to be a Twitter feed widget in time
+ */
+
+.node-type-landing-page .field-name-field-twitter-tag {
+	margin-top: 60px;
+	text-align: center;
+}
+
+.node-type-landing-page .field-name-field-twitter-tag a {
+	display: inline-block;
+	color: #fff;
+	font-size: 24px;
+	line-height: 64px;
+	text-decoration: none;
+	padding: 0 20px 0 10px;
+	background-color: #009fda;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	outline: none;
+}
+
+.node-type-landing-page .field-name-field-twitter-tag a:hover,
+.node-type-landing-page .field-name-field-twitter-tag a:focus,
+.node-type-landing-page .field-name-field-twitter-tag a:active {
+	background-color: #7a68ae;
+}
+
+
+.node-type-landing-page .field-name-field-twitter-tag a:before {
+	display: inline-block;
+    font-family: 'FontAwesome';
+	color: #fff;
+    font-size: 38px;
+    line-height: 38px;
+	content: "\F099";
+	padding: 10px;
+	border-radius: 9px 0 0 9px;
+	-webkit-border-radius: 9px 0 0 9px;
+	-moz-border-radius: 9px 0 0 9px;
+	position: relative;
+	top: 4px;
+}
+
+
+
+/*
+ * Carousel button fix
+ */
+
+.node-type-landing-page .owl-buttons {
+    top: -62px !important;
+}
+
+
+
+/*
+ * CTA button positioning
+ */
+
+.promobox .btn {
+	margin-top: 20px;
+}
+
+
+
+/*
+ * Join page
+ */
+
+#join-page span.yellow-line {
+	max-width: 240px;
+	margin: 0 auto;
+}
+
+.join-panel {
+	color: #000;
+	text-align: center;
+	text-decoration: none;
+	border: 1px solid #fbb040;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	padding: 20px;
+	margin-bottom: 60px;
+}
+
+#join-page .join-panel span.yellow-line {
+	margin-bottom: 30px;
+}
+
+.join-panel img {
+	border-radius: 5px 5px 0 0;
+	-webkit-border-radius: 5px 5px 0 0;
+	-moz-border-radius: 5px 5px 0 0;
+	margin-bottom: 30px;
+	width: 100%;
+	height: auto;
+}
+
+.join-quote {
+	background-color: #009fda;
+	color: #fff;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	padding: 30px;
+	margin-bottom: 60px;
+}
+
+.join-quote h2 {
+	color: #fbb040;
+	margin-top: 0;
+	margin-bottom: 12px;
+}
+
+.join-quote blockquote {
+	margin-bottom: 30px;
+}
+
+.join-quote blockquote::before {
+	margin: 0 auto;
+	max-width: 240px;
+}
+
+.contact-us .wrapper {
+	text-align: center;
+}
+
+.contact-us .label {
+	display: block;
+    font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #000;
+    padding: 0;
+	margin-bottom: 10px;
+}
+
+.contact-us .btn {
+	display: inline-block;
+	margin: 10px;
+}
+
+.small-print {
+    font-size: 13px;
+    line-height: 17px;
+	text-transform: uppercase;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+}
+
+.small-print p {
+	margin-bottom: 13px;
+}
+
+.contact-us .telephone,
+.contact-us .email {
+	margin-bottom: 30px;
+}
+
+.contact-us .small-print {
+	margin-bottom: 60px;
+}
+
+
+
+.buy-panel .panel-wrapper {
+	background-color: #7a68ae;
+	color: #fff;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	padding: 30px;
+	margin-bottom: 60px;
+}
+
+.buy-panel .item {
+	margin-bottom: 20px;
+	padding-bottom: 20px;
+	border-bottom: 1px solid #fff;
+}
+
+.buy-panel .item-title {
+	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 22px;
+    line-height: 36px;
+    font-weight: 400;
+}
+
+.buy-panel .btn {
+	display: inline-block;
+	float: right;
+	color: #fff;
+}
+
+@media only screen and (max-width : 499px) {
+	.buy-panel .btn {min-width: 70px;}
+	.buy-panel .btn span {display: none;}
+}
+
+
+
+/*
+ * Events and Groups listing
+ * Uses context rule to target the pages
+ */
+
+
+
+/* Main simple search layout */
+
+.page-layout-listing .field-name-body {
+	margin: 0;
+}
+
+.page-layout-listing .views-exposed-form #edit-geo-wrapper.views-exposed-widget,
+.page-layout-listing .views-exposed-form #edit-secondary-wrapper.views-exposed-widget {
+	float: inherit;
+	display: flex;
+	justify-content: center;
+}
+
+.page-layout-listing #edit-geo-wrapper,
+.page-layout-listing #edit-secondary-wrapper {
+	padding: 0 200px;
+}
+
+	@media only screen and (min-width : 992px) and (max-width : 1199px) {
+		.page-layout-listing #edit-geo-wrapper,
+		.page-layout-listing #edit-secondary-wrapper {
+			padding: 0 100px;
+		}
+	}
+
+	@media only screen and (max-width : 991px) {
+		.page-layout-listing #edit-geo-wrapper,
+		.page-layout-listing #edit-secondary-wrapper {
+			padding: 0;
+		}
+	}
+
+.page-layout-listing .geofield-proximity-field-wrapper .form-item {
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.page-layout-listing #edit-geo {
+	display: flex;
+}
+
+.page-layout-listing #edit-geo .form-item-geo-distance {
+	display: flex;
+	flex: 0;
+	-webkit-flex: 0;
+	-ms-flex: 0;
+	width: 70px;
+	min-width: 70px;
+	max-width: 70px;
+}
+
+.page-layout-listing #edit-geo .form-item-geo-unit {
+	display: flex;
+	flex: 0;
+	-webkit-flex: 0;
+	-ms-flex: 0;
+	width: 150px;
+	min-width: 150px;
+	max-width: 150px;
+	padding: 0;
+}
+
+.page-layout-listing #edit-geo .geofield-proximity-origin-from {
+	padding-top: 11px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.page-layout-listing #edit-geo .form-item-geo-origin {
+	display: flex;
+	flex: 1;
+	-webkit-flex: 1;
+	-ms-flex: 1;
+}
+
+@media only screen and (max-width : 499px) {
+	.page-layout-listing #edit-geo {
+		display: inherit;
+		text-align: center;
+	}
+	.page-layout-listing #edit-geo .form-item-geo-distance,
+	.page-layout-listing #edit-geo .form-item-geo-unit,
+	.page-layout-listing #edit-geo .geofield-proximity-origin-from,
+	.page-layout-listing #edit-geo .form-item-geo-origin {
+		display: block;
+		width: inherit;
+		min-width: inherit;
+		max-width: inherit;
+		float: inherit;
+		padding: 0;
+		margin: 0 0 10px 0;
+	}
+}
+
+
+
+/* Advanced search button */
+
+.page-layout-listing #edit-secondary-wrapper {
+	margin-top: 10px;
+}
+
+.page-layout-listing #edit-secondary-wrapper legend.panel-heading {
+	float: inherit;
+	text-align: center;
+}
+
+.page-layout-listing #edit-secondary-wrapper a.panel-title {
+    font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	display: inline-block;
+	font-size: 15px;
+	line-height: 15px;
+	font-weight: 400;
+    text-transform: uppercase;
+    text-decoration: none;
+    outline: none;
+    padding: 3px 0;
+    border-bottom: 1px solid #000;
+}
+
+.page-layout-listing #edit-secondary-wrapper a.panel-title:after {
+	display: inline-block;
+    font-family: 'FontAwesome';
+	color: #f6b331;
+    margin-left: 5px;
+    font-size: 18px;
+    line-height: 18px;
+	content: "\F107";
+}
+
+.page-layout-listing #edit-secondary-wrapper a.panel-title[aria-expanded="true"]:after {
+	content: "\F106";
+}
+
+
+
+/* Advanced search features */
+
+.page-layout-listing #edit-secondary-wrapper > .views-widget {
+	padding: 0 5px;
+}
+
+.page-layout-listing #edit-secondary-wrapper .panel-body {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.page-layout-listing #edit-secondary-wrapper .bef-secondary-options {
+	display: flex;
+}
+
+.page-layout-listing #edit-secondary-wrapper .bef-secondary-options .form-item {
+	text-align: left;
+	display: block;
+	flex: 1;
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	margin: 0 5px;
+}
+
+.page-layout-listing #edit-secondary-wrapper .bef-secondary-options label {
+	display: block;
+	width: 100%;
+}
+
+
+@media only screen and (max-width : 499px) {
+	.page-layout-listing #edit-secondary-wrapper {
+		padding: 0;
+	}
+	.page-layout-listing #edit-secondary-wrapper .bef-secondary-options {
+		display: inherit;
+		text-align: center;
+	}
+	.page-layout-listing #edit-secondary-wrapper .bef-secondary-options .form-item {
+		display: block;
+		width: inherit;
+		min-width: inherit;
+		max-width: inherit;
+		float: inherit;
+		padding: 0;
+		margin: 0 0 10px 0;
+	}
+	.page-layout-listing #edit-secondary-wrapper .bef-secondary-options #edit-date-filter-value,
+	.page-layout-listing #edit-secondary-wrapper .bef-secondary-options #edit-date-filter-value input {
+		width: 100%;
+	}
+}
+
+
+
+/* Search and reset buttons */
+
+.page-layout-listing .views-exposed-widgets {
+	text-align: center;
+}
+
+.page-layout-listing .views-submit-button,
+.page-layout-listing .views-reset-button {
+	display: inline-block;
+	float: inherit;
+	padding: 0;
+	margin: 30px 5px;
+}
+
+.page-layout-listing .views-exposed-widgets .btn {
+	margin: 0;
+	min-width: 133px;
+}
+
+
+
+/* Table */
+
+.page-layout-listing table .views-field-title a,
+.page-layout-listing table .views-field-nothing a {
+	text-transform: uppercase;
+	text-decoration: underline;
+	outline: none;
+	/* color: #8064a9; */
+}
+
+.page-layout-listing table .views-field-title a:hover,
+.page-layout-listing table .views-field-title a:focus,
+.page-layout-listing table .views-field-title a:active,
+.page-layout-listing table .views-field-nothing a:hover,
+.page-layout-listing table .views-field-nothing a:focus,
+.page-layout-listing table .views-field-nothing a:active {
+	color: #f6b331;
+	text-decoration: underline;
+}
+
+
+
+/* Pager
+ * Undo default <li> formatting
+ */
+
+.page-layout-listing .field-name-body ul li:before {
+	content: inherit;
+	margin-right: inherit;
+}
+
+
+.page-layout-listing .field-name-body ul li {
+	padding-left: inherit;
+	text-indent: inherit;
+}
+
+
+
+/*
+ * Q&A Section listing
+ */
+
+.view-display-id-block_listing_taxonomy .views-responsive-grid .views-field-title {
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.view-display-id-block_listing_taxonomy .views-responsive-grid .views-field-title a {
+	color: #000;
+	text-decoration: none;
+	outline: none;
+}
+
+.view-display-id-block_listing_taxonomy .views-responsive-grid .views-field-title a:hover,
+.view-display-id-block_listing_taxonomy .views-responsive-grid .views-field-title a:focus,
+.view-display-id-block_listing_taxonomy .views-responsive-grid .views-field-title a:active {
+	color: #f6b331;
+}
+
+
+
+/*
+ * Fix display issue where "more" button on certain views bleeds over the view content
+ */
+
+.view-display-id-block_listing_taxonomy .view-content:after {
+	content: "";
+	display: table;
+	clear: both;
+	margin-bottom: 60px;
+}
+
+
+
+/* Sharing buttons */
+
+.node-type-landing-page .field-name-share-buttons {
+	float: initial;
+	display: flex;
+	justify-content: center;
+	margin: 30px 0;
+}
+
+.node-type-landing-page .field-name-share-buttons:before {
+	content: 'Share this article';
+	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 20px;
+    line-height: 50px;
+    font-weight: 400;
+	margin-right: 10px;
+}

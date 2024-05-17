@@ -1,0 +1,87 @@
+.cukr--header-thanks {
+	h1 { font-size: 48px;  }
+	.cukr--header__inner {
+	padding: 40px 7% 0 7%;
+	}
+	@include respond-medium-down {
+		.cukr--header h1 {
+			font-size: 46px;
+		}
+	}
+}
+
+.cukr--order-summary {
+	text-align: center;
+	.cukr--inner {
+		max-width: 870px;
+		border: 1px solid #d2d7d9;
+		padding: 50px;
+		margin: 20px auto 70px auto;
+		border-radius: 8px;
+	}
+	.flex {
+		margin: 60px -15px 0 -15px;
+		.col-6 {
+			padding: 0 15px;
+		}
+	}
+	table {
+		text-align: left;
+		border-collapse: collapse;
+		width:100%;
+		th, td {
+			padding: 5px;
+			text-align: left;
+			&:nth-child(2) {
+			    word-break: break-all;
+			}
+		}
+	}
+	@include respond-medium-down {
+		.cukr--inner {
+			padding: 40px 7%;
+		}
+		.flex {
+			flex-direction: column;
+			.col-6 {
+				width: 100%;
+				&:first-child {
+					margin-bottom: 40px;
+				}
+			}
+		}
+	}
+}
+
+
+.cukr--social-links {
+	text-align: center;
+	margin-top: 30px;
+	.cukr--social-link {
+		display: inline-block;
+		color: #fff;
+		font-size: 15px;
+		line-height: 15px;
+		text-transform: uppercase;
+		padding: 11px 20px;
+		border-radius: 8px;
+		margin: 15px;
+		text-decoration: none;
+		i {
+			display: inline-block;
+			margin-right:10px;
+		}
+		&--fb {
+			background: #3b5998;
+			&:hover, &:focus {
+				background: darken(#3b5998, 10%);
+			}
+		}
+		&--twitter {
+			background: #1da1f2;
+			&:hover, &:focus {
+				background: darken(#1da1f2, 10%);
+			}
+		}
+	}
+}

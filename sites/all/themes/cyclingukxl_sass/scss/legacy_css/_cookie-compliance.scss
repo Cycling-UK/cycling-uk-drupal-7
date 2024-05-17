@@ -1,0 +1,122 @@
+/*
+ * EU cookie compliance popup
+ */
+
+#sliding-popup {
+	background-color: #3b3b3a;
+	color: $white;
+	max-width: 420px;
+	font-size: 14px;
+	line-height: 16px;
+	padding-bottom: 20px;
+}
+
+#sliding-popup h2 {
+	color: $yellow;
+	font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 400;
+	font-size: 24px;
+	line-height: 28px;
+	margin-top: 30px;
+	margin-bottom: 10px;
+	text-align: left;
+}
+
+#sliding-popup .popup-content {
+	max-width: 83%;
+}
+
+@media only screen and (max-width: 600px) {
+	#sliding-popup .popup-content {
+		max-width: 83%;
+	}
+}
+
+#sliding-popup .popup-content #popup-text {
+	float: inherit;
+	max-width: 100%;
+}
+
+#sliding-popup #eu-cookie-compliance-categories .eu-cookie-compliance-category {
+	margin-bottom: 10px;
+}
+
+#sliding-popup #eu-cookie-compliance-categories .eu-cookie-compliance-categories-buttons {
+	margin-top: 20px;
+}
+
+#sliding-popup .eu-cookie-compliance-category input {
+	margin-right: 6px;
+}
+
+#sliding-popup .eu-cookie-compliance-category > div {
+	font-weight: 600;
+	margin-bottom: 2px;
+}
+
+#sliding-popup .eu-cookie-compliance-category label {
+  margin-bottom: 0;
+}
+
+#sliding-popup .eu-cookie-compliance-category > .eu-cookie-compliance-category-description {
+	font-weight: 400;
+}
+
+#sliding-popup .popup-content #popup-buttons {
+	float: inherit;
+	max-width: 100%;
+}
+
+#sliding-popup .eu-cookie-compliance-banner button,
+#sliding-popup .eu-cookie-compliance-banner button:visited {
+	font-family: "karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	min-width: 190px;
+	font-size: 15px;
+	line-height: 34px;
+	font-weight: 400;
+	text-transform: uppercase;
+	text-decoration: none;
+	margin-bottom: 10px;
+	padding: 0 18px;
+	border-radius: $border-radius-general;
+	-webkit-border-radius: $border-radius-general;
+	-moz-border-radius: $border-radius-general;
+	-moz-box-shadow: inherit;
+	-webkit-box-shadow: inherit;
+	box-shadow: inherit;
+	background: inherit;
+	background-color: inherit;
+	text-shadow: inherit;
+	border: 1px solid $white;
+	color: $white;
+	outline: none;
+}
+
+#sliding-popup .eu-cookie-compliance-banner button:hover,
+#sliding-popup .eu-cookie-compliance-banner button:focus {
+	border: 1px solid $yellow;
+}
+
+#sliding-popup .eu-cookie-compliance-banner button:active {
+	border: 1px solid $yellow;
+	background-color: $yellow;
+	color: $white;
+}
+
+
+/* sacha 19-10-2020 */
+/* class for jquery link to open the eu cookie compliance banner. Not an anchor, but styled to look like it */
+.galleta-comp {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.galleta-comp:hover {
+	color: $yellow;
+}
+
+
+/* hiding the update consent button on the eu cookie compliance banner, which does not want to go away despite the module settings */
+.eu-cookie-compliance-hidden {
+	display: none;
+}

@@ -1,0 +1,97 @@
+/**
+ * Events
+ */
+
+
+
+/*
+ * Events listing strip
+ */
+
+.event-listing-strip .view-header {
+	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 400;
+	margin: 0 auto 30px;
+	font-size: 30px;
+	line-height: 36px;
+	display: table;
+}
+
+.event-listing-strip .views-row {
+	width: 160px;
+	margin: 0 15px;
+	float: left;
+}
+
+@media only screen and (max-width : 1199px) {
+	.event-listing-strip .views-row-6 {display: none;}
+	.event-listing-strip .views-row {width: 158px;}
+}
+
+@media only screen and (max-width : 991px) {
+	.event-listing-strip .views-row-5 {display: none;}
+	.event-listing-strip .views-row {width: 150px;}
+}
+
+
+.event-listing-strip .date,
+.event-listing-strip .location,
+.event-listing-strip .title {
+	text-align: center;
+}
+
+.event-listing-strip .day-number,
+.event-listing-strip .day-month,
+.event-listing-strip .year,
+.event-listing-strip .location {
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 20px;
+}
+
+.event-listing-strip .day-number {
+	width: 34px;
+	height: 34px;
+	margin: 0 auto 10px;
+	background-image: url('../images/system/purple-calendar-icon.png');
+	background-repeat: no-repeat;
+}
+
+.event-listing-strip .day-number span {
+	position: relative;
+	top: 10px;
+}
+
+.event-listing-strip .day-name {
+	font-size: 14px;
+	list-style: 14px;
+}
+
+.event-listing-strip .day-month {
+	text-transform: uppercase;
+}
+
+.event-listing-strip .year {
+	margin-bottom: 15px;
+}
+
+.event-listing-strip .purple-line {
+	width: 120px;
+	margin: 0 auto 10px;
+}
+
+.event-listing-strip .title {
+	height: 76px;
+}
+
+.event-listing-strip .btn {
+	display: block;
+	width: 120px;
+	margin: 0 auto;
+}
+
+
+
+.date-display-single {
+	white-space: nowrap;
+}

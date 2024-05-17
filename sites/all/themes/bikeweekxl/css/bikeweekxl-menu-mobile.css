@@ -1,0 +1,15 @@
+/* Any subtheme menu changes go here */
+.bikeweekxl ul.top-menu a {
+	color: #bc1521;
+}
+
+.menu-theme-cyclinguk div.sf-accordion-toggle.sf-style-simple-centre-aligned a {
+	top: 38px;
+	border: 2px solid #bc1521;
+}
+
+.menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-accordion a.sf-depth-1 {
+	font-family: "itc-american-typewriter", Georgia, serif;
+	font-weight: 500;
+}
+

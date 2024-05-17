@@ -1,0 +1,502 @@
+/**
+ * Place your custom styles here.
+ */
+
+
+/**
+ * Links
+ */
+
+a {
+    color: #009fda;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #fbb040;
+    text-decoration: underline;
+}
+
+/* Custom hover text / tooltips */
+/* Do not use yet * /
+/* a[title]:hover:after {
+	content: attr(title);
+	padding: 6px 10px;
+	background-color: #FED534;
+	color: #000;
+	font-size: 16px;
+	line-height: 16px;
+	position: absolute;
+	left: 0;
+	top: 100%;
+	z-index: 20;
+	white-space: nowrap;
+	-moz-border-radius:		14px;
+	-webkit-border-radius: 	14px;
+	border-radius: 			14px;
+	-webkit-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow:    0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+	box-shadow:         0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+} */
+
+
+/**
+ * Buttons
+ *
+ * Possible CSS combinations:
+ * .btn .btn-standard    .btn-shadow
+ *      .btn-transparent
+ *      .btn-white
+ *      .btn-yellow
+ *      .btn-purple
+ *      .btn-green
+ *
+ * Comments are themed in comments.css
+ */
+
+
+
+/*
+ * Standard defaults
+ */
+
+.btn,
+.btn-default,
+.btn-primary,
+.more-link a,
+.feed-icon a:before,
+a.group.subscribe,
+a.group.unsubsribe {
+    font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	display: inline-block;
+	min-width: 140px;
+	font-size: 15px;
+	line-height: 34px;
+	font-weight: 400;
+    text-transform: uppercase;
+    text-decoration: none !important;
+    padding: 0 18px;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+}
+
+.btn a,
+.btn a:hover,
+.btn a:focus,
+.btn a:active,
+.more-link a,
+.more-link a:hover,
+.more-link a:focus,
+.more-link a:active,
+.feed-icon a::before,
+.feed-icon a:hover:before,
+.feed-icon a:active:before,
+.feed-icon a:focus:before,
+a.group.subscribe,
+a.group.unsubsribe {
+    text-decoration: none;
+    outline: none;
+}
+
+.btn:hover,
+.btn:focus,
+.more-link a:hover,
+.more-link a:focus,
+.feed-icon a:hover:before,
+.feed-icon a:focus:before {
+	background-color: #fbb040;
+    color: #fff;
+    box-shadow: inherit;
+}
+
+.btn:active,
+.more-link a:active,
+.feed-icon a:active:before {
+	background-color: #fdaf17;
+    color: #fff;
+    box-shadow: inherit;
+}
+
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn.focus:active,
+.btn.active.focus,
+.more-link a:focus,
+.more-link a:active,
+.feed-icon a:focus:before,
+.feed-icon a:active:before {
+    outline: inherit;
+    outline-offset: inherit;
+}
+
+
+/*
+ * Transparent buttons
+ * .btn-transparent
+ */
+
+.btn-transparent {
+    background-color: inherit;
+    border-color: #f6b331;
+    color: #000;
+}
+
+.btn-transparent a {
+    color: #000;
+}
+
+.btn-transparent:hover,
+.btn-transparent:focus {
+    background-color: #f6b331;
+    border-color: #f6b331;
+}
+
+.btn-transparent:active {
+    background-color: #fdaf17;
+    border-color: #fdaf17;
+}
+
+.btn-transparent:hover a,
+.btn-transparent:focus a,
+.btn-transparent:active a {
+    color: #000;
+}
+
+.btn-margin {
+  margin: 5px 0;
+}
+
+
+/*
+ * Standard and Primary buttons
+ * .btn-standard
+ * .btn-primary
+ *
+ * Comments are themed in comments.css
+ */
+
+.more-link a,
+.feed-icon a:before {
+	display: block;
+	width: 140px;
+	margin: -30px auto 60px;
+    background-color: #fff;
+    border: 1px solid #f6b331;
+    color: #000;
+    text-align: center;
+	-webkit-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow:    0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+	box-shadow:         0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+}
+
+.btn-standard,
+.btn-primary,
+.more-link a,
+/* .view-accordion .ui-widget-content a, */
+.feed-icon a:before,
+button#edit-reset {
+    background-color: #fff;
+    border-color: #f6b331;
+    color: #000;
+}
+
+.btn-standard a,
+.btn-primary a {
+    color: #000;
+}
+
+.btn-standard:hover,
+.btn-standard:focus,
+.btn-primary:hover,
+.btn-primary:focus,
+.more-link a:hover,
+.more-link a:focus,
+/* .view-accordion .ui-widget-content a:hover,
+.view-accordion .ui-widget-content a:focus, */
+.feed-icon a:hover:before,
+.feed-icon a:focus:before,
+button#edit-reset:hover,
+button#edit-reset:focus {
+	color: #fff;
+    background-color: #f6b331;
+    border-color: #f6b331;
+}
+
+.btn-standard:active,
+.btn-primary:active,
+.more-link a:active,
+/* .view-accordion .ui-widget-content a:active, */
+.feed-icon a:active:before,
+button#edit-reset:active {
+	color: #fff;
+    background-color: #fdaf17;
+    border-color: #fdaf17;
+}
+
+.btn-standard:hover a,
+.btn-standard:focus a,
+.btn-standard:active a,
+.btn-primary:hover a,
+.btn-primary:focus a,
+.btn-primary:active a {
+    color: #000;
+}
+
+.btn-primary:active:hover,
+.btn-primary.active:hover,
+.btn-primary:active:focus,
+.btn-primary.active:focus,
+.btn-primary.focus:active,
+.btn-primary.active.focus {
+    background-color: #fdaf17;
+    border-color: #fdaf17;
+    color: #fff;
+}
+
+button#edit-reset:hover,
+button#edit-reset:focus,
+button#edit-reset:active {
+	color: #fff;
+}
+
+
+
+/*
+ * White buttons
+ * .btn-white
+ */
+
+.btn-white,
+a.group.subscribe,
+a.group.unsubsribe {
+    background-color: #fff;
+    border-color: #fff;
+    color: #000;
+}
+
+.btn-white a {
+    color: #000;
+}
+
+.btn-white:hover,
+.btn-white:focus,
+a.group.subscribe:hover,
+a.group.unsubsribe:hover,
+a.group.subscribe:focus,
+a.group.unsubsribe:focus {
+    background-color: #fcb040;
+    border-color: #fcb040;
+}
+
+.btn-white:active,
+a.group.subscribe:active,
+a.group.unsubsribe:active {
+    background-color: #fdaf17;
+    border-color: #fdaf17;
+}
+
+.btn-white:hover a,
+.btn-white:focus a,
+.btn-white:active a {
+    color: #fff;
+}
+
+
+
+/*
+ * Yellow buttons
+ * .btn-yellow
+ */
+
+.btn-yellow {
+}
+
+.btn-yellow a {
+}
+
+.btn-yellow:hover,
+.btn-yellow:focus {
+}
+
+.btn-yellow:active {
+}
+
+.btn-yellow:hover a,
+.btn-yellow:focus a,
+.btn-yellow:active a {
+}
+
+
+
+/*
+ * Purple buttons
+ * .btn-purple
+ */
+
+.btn-purple,
+button.form-submit,
+button#edit-submit-events,
+button#edit-submit-groups,
+body.node-type-course-calendar .main-container .region-content a.btn.btn-purple,
+body.node-type-course-details .main-container .region-content a.btn.btn-purple{
+    background-color: #7a68ae;
+    border-color: #7a68ae;
+    color: #fff;
+}
+
+body.node-type-course-details .main-container .region-content a.btn.btn-purple{
+    margin-top:15px;
+}
+
+
+.btn-purple a,
+button#edit-submit-events a,
+button#edit-submit-groups a,
+body.node-type-course-calendar .main-container .region-content a.btn.btn-purple,
+body.node-type-course-details .main-container .region-content a.btn.btn-purple {
+    color: #fff;
+}
+
+.btn-purple:hover,
+.btn-purple:focus,
+button.form-submit:hover,
+button.form-submit:focus,
+button#edit-submit-events:hover,
+button#edit-submit-events:focus,
+button#edit-submit-groups:hover,
+button#edit-submit-groups:focus {
+    background-color: #fcb040;
+    border-color: #fcb040;
+}
+
+.btn-purple:active,
+button.form-submit:active,
+button#edit-submit-events:active,
+button#edit-submit-groups:active {
+    background-color: #fdaf17;
+    border-color: #fdaf17;
+}
+
+.btn-purple:hover a,
+.btn-purple:focus a,
+.btn-purple:active a,
+button#edit-submit-events:hover a,
+button#edit-submit-events:focus a,
+button#edit-submit-events:active a,
+button#edit-submit-groups:hover a,
+button#edit-submit-groups:focus a,
+button#edit-submit-groups:active a {
+    color: #fff;
+    font-weight: 400;
+}
+
+/*
+ * Sign up to our newsletter button
+ */
+
+.newsletter-signup button.form-submit {
+	background-color: #fff;
+	border-color: #f6b331;
+	color: #000;
+}
+
+.newsletter-signup button.form-submit:hover,
+.newsletter-signup button.form-submit:focus {
+    background-color: #fcb040;
+    border-color: #fcb040;
+    color: #fff;
+}
+
+.newsletter-signup button.form-submit:active {
+    background-color: #fdaf17;
+    border-color: #fdaf17;
+    color: #fff;
+}
+
+
+
+/*
+ * Green buttons
+ * .btn-green
+ */
+
+.btn-green {
+    background-color: #cdce00;
+    border-color: #cdce00;
+    color: #fff;
+}
+
+.btn-green a {
+    color: #fff;
+}
+
+.btn-green:hover,
+.btn-green:focus {
+    background-color: #dadb03;
+    border-color: #dadb03;
+}
+
+.btn-green:active {
+    background-color: #cdce00;
+    border-color: #cdce00;
+}
+
+.btn-green:hover a,
+.btn-green:focus a,
+.btn-green:active a {
+    color: #fff;
+    font-weight: 400;
+}
+
+
+
+
+
+
+
+
+.btn-standard,
+.btn-standard:hover,
+.btn-standard:focus,
+.btn-standard:active,
+.btn-primary,
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-shadow,
+.btn-shadow:hover,
+.btn-shadow:focus,
+.btn-shadow:active,
+a.group.subscribe,
+a.group.unsubsribe {
+	-webkit-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow:    0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+	box-shadow:         0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+}
+
+.btn-default:active:hover,
+.btn-default.active:hover,
+.open > .dropdown-toggle.btn-default:hover,
+.btn-default:active:focus,
+.btn-default.active:focus,
+.open > .dropdown-toggle.btn-default:focus,
+.btn-default.focus:active,
+.btn-default.active.focus,
+.open > .dropdown-toggle.btn-default.focus {
+    background-color: #fdaf17;
+    border-color: #fdaf17;
+    color: #fff;
+}
+
+
+
+/*
+ * System
+ */
+
+.btn-success:hover {
+    background-color: #449d44 !important;
+}

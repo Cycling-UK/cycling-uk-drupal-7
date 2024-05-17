@@ -1,0 +1,1126 @@
+/**
+ * Shop
+ */
+
+
+
+/*
+ * Product listing view
+ */
+
+.page-node-6 .view.child-list .image,
+.page-node-6 .view.kit-list .image {
+	margin: 20px;
+	position: relative;
+	top: 20px;
+}
+
+.page-node-6 .view.child-list .image img,
+.page-node-6 .view.kit-list .image img {
+	padding: 20px;
+	background-color: #fff;
+}
+
+
+
+/*
+ * Redefine button appearances
+ */
+
+body.page-checkout .checkout-buttons > div {
+	padding: 0;
+}
+
+
+body.page-checkout .checkout-buttons button {
+	margin-bottom: 15px;
+}
+
+/* White buttons */
+
+.node-type-product-display .btn,									/* Product add to cart */
+.view-commerce-cart-form button#edit-submit,						/* Update basket */
+.view-commerce-cart-form button#edit-submit--2,						/* Update basket */
+form#commerce-checkout-form-checkout button#edit-back,				/* Your details - go back */
+form#commerce-checkout-form-checkout button#edit-cancel,			/* Your details - cancel */
+form#commerce-checkout-form-checkout-step-2 button#edit-back,		/* Shopping basket contents - go back */
+form#commerce-checkout-form-checkout-step-2 button#edit-cancel,		/* Shopping basket contents - cancel */
+form#commerce-checkout-form-checkout-step-3 button#edit-back,		/* Gift Aid - go back */
+form#commerce-checkout-form-checkout-step-3 button#edit-cancel,		/* Gift Aid - cancel */
+form#commerce-checkout-form-step-4 button#edit-back,				/* Direct Debit - go back */
+form#commerce-checkout-form-step-4 button#edit-cancel,				/* Direct Debit - cancel */
+form#commerce-checkout-form-shipping button#edit-back,				/* Shipping - go back */
+form#commerce-checkout-form-review button#edit-back,				/* Review order - go back */
+input#postcodeanywhere-lookup-button,								/* Postcode Anywhere button */
+input#postcodeanywhere-reset-button,								/* Postcode Anywhere button */
+button#edit-cyclinguk-commerce-directdebit-fieldset-validate {		/* Validate direct debit payment */
+	border: 1px #fbb040 solid;
+	background-color: #fff;
+    color: #000;
+}
+
+.node-type-product-display .btn:hover,
+.node-type-product-display .btn:focus,
+.view-commerce-cart-form button#edit-submit:hover,
+.view-commerce-cart-form button#edit-submit:focus,
+.view-commerce-cart-form button#edit-submit--2:hover,
+.view-commerce-cart-form button#edit-submit--2:focus,
+form#commerce-checkout-form-checkout button#edit-back:hover,
+form#commerce-checkout-form-checkout button#edit-back:focus,
+form#commerce-checkout-form-checkout button#edit-cancel:hover,
+form#commerce-checkout-form-checkout button#edit-cancel:focus,
+form#commerce-checkout-form-checkout-step-2 button#edit-back:hover,
+form#commerce-checkout-form-checkout-step-2 button#edit-back:focus,
+form#commerce-checkout-form-checkout-step-2 button#edit-cancel:hover,
+form#commerce-checkout-form-checkout-step-2 button#edit-cancel:focus,
+form#commerce-checkout-form-checkout-step-3 button#edit-back:hover,
+form#commerce-checkout-form-checkout-step-3 button#edit-back:focus,
+form#commerce-checkout-form-checkout-step-3 button#edit-cancel:hover,
+form#commerce-checkout-form-checkout-step-3 button#edit-cancel:focus,
+form#commerce-checkout-form-step-4 button#edit-back:hover,
+form#commerce-checkout-form-step-4 button#edit-back:focus,
+form#commerce-checkout-form-step-4 button#edit-cancel:hover,
+form#commerce-checkout-form-step-4 button#edit-cancel:focus,
+form#commerce-checkout-form-shipping button#edit-back:hover,
+form#commerce-checkout-form-shipping button#edit-back:focus,
+form#commerce-checkout-form-review button#edit-back:hover,
+form#commerce-checkout-form-review button#edit-back:focus,
+input#postcodeanywhere-lookup-button:hover,
+input#postcodeanywhere-lookup-button:focus,
+input#postcodeanywhere-reset-button:hover,
+input#postcodeanywhere-reset-button:focus,
+button#edit-cyclinguk-commerce-directdebit-fieldset-validate:hover,
+button#edit-cyclinguk-commerce-directdebit-fieldset-validate:focus {
+	border: 1px #fbb040 solid !important;
+	background-color: #fbb040 !important;
+    color: #fff !important;
+    text-decoration: none;
+}
+
+.node-type-product-display .btn:active,
+.view-commerce-cart-form button#edit-submit:active,
+.view-commerce-cart-form button#edit-submit--2:active,
+form#commerce-checkout-form-checkout button#edit-back:active,
+form#commerce-checkout-form-checkout button#edit-cancel:active,
+form#commerce-checkout-form-checkout-step-2 button#edit-back:active,
+form#commerce-checkout-form-checkout-step-2 button#edit-cancel:active,
+form#commerce-checkout-form-checkout-step-3 button#edit-back:active,
+form#commerce-checkout-form-checkout-step-3 button#edit-cancel:active,
+form#commerce-checkout-form-step-4 button#edit-back:active,
+form#commerce-checkout-form-step-4 button#edit-cancel:active,
+form#commerce-checkout-form-shipping button#edit-back:active,
+form#commerce-checkout-form-review button#edit-back:active,
+input#postcodeanywhere-lookup-button:active,
+input#postcodeanywhere-reset-button:active,
+button#edit-cyclinguk-commerce-directdebit-fieldset-validate:active {
+	border: 1px #fdaf17 solid !important;
+	background-color: #fdaf17 !important;
+    color: #fff !important;
+}
+
+
+
+/* Yellow buttons */
+
+.view-commerce-cart-form button#edit-checkout,						/* Update basket */
+form#commerce-checkout-form-checkout button#edit-continue,			/* Your details - continue */
+form#commerce-checkout-form-checkout-step-2 button#edit-continue,	/* Shopping basket contents - continue */
+form#commerce-checkout-form-checkout-step-3 button#edit-continue,	/* Gift Aid - continue */
+form#commerce-checkout-form-step-4 button#edit-continue,			/* Direct Debit - continue */
+form#commerce-checkout-form-shipping button#edit-continue,			/* Shipping - continue */
+form#commerce-checkout-form-review button#edit-continue,			/* Review order - continue */
+form#commerce-tnspay-redirect-form button#edit-submit,				/* TNSPay - continue */
+button#edit-commerce-checkout-complete-registration-submit,			/* TNSPay - continue */
+form.commerce-add-to-cart button {
+	border: 1px #fbb040 solid;
+	background-color: #fbb040;
+    color: #fff;
+}
+
+.view-commerce-cart-form button#edit-checkout:hover,
+.view-commerce-cart-form button#edit-checkout:focus,
+form#commerce-checkout-form-checkout button#edit-continue:hover,
+form#commerce-checkout-form-checkout button#edit-continue:focus,
+form#commerce-checkout-form-checkout-step-2 button#edit-continue:hover,
+form#commerce-checkout-form-checkout-step-2 button#edit-continue:focus,
+form#commerce-checkout-form-checkout-step-3 button#edit-continue:hover,
+form#commerce-checkout-form-checkout-step-3 button#edit-continue:focus,
+form#commerce-checkout-form-step-4 button#edit-continue:hover,
+form#commerce-checkout-form-step-4 button#edit-continue:focus,
+form#commerce-checkout-form-shipping button#edit-continue:hover,
+form#commerce-checkout-form-shipping button#edit-continue:focus,
+form#commerce-checkout-form-review button#edit-continue:hover,
+form#commerce-checkout-form-review button#edit-continue:focus,
+form#commerce-tnspay-redirect-form button#edit-submit:hover,
+form#commerce-tnspay-redirect-form button#edit-submit:focus,
+button#edit-commerce-checkout-complete-registration-submit:hover,
+button#edit-commerce-checkout-complete-registration-submit:focus,
+form.commerce-add-to-cart button:hover,
+form.commerce-add-to-cart button:focus {
+	border: 1px #fdaf17 solid !important;
+	background-color: #fdaf17 !important;
+    color: #fff !important;
+}
+
+.view-commerce-cart-form button#edit-checkout:active,
+form#commerce-checkout-form-checkout button#edit-continue:active,
+form#commerce-checkout-form-checkout-step-2 button#edit-continue:active,
+form#commerce-checkout-form-checkout-step-3 button#edit-continue:active,
+form#commerce-checkout-form-step-4 button#edit-continue:active,
+form#commerce-checkout-form-shipping button#edit-continue:active,
+form#commerce-checkout-form-review button#edit-continue:active,
+form#commerce-tnspay-redirect-form button#edit-submit:active,
+button#edit-commerce-checkout-complete-registration-submit:active,
+form.commerce-add-to-cart button:active {
+	border: 1px #fdaf17 solid !important;
+	background-color: #fdaf17 !important;
+    color: #fff !important;
+}
+
+
+
+/* Red buttons - e.g. remove item from shooping basket */
+
+.view-commerce-cart-form button.delete-line-item {
+    border: 1px #7a68ae solid !important;
+    background-color: #7a68ae !important;
+    color: #fff !important;
+}
+
+.view-commerce-cart-form button.delete-line-item:hover,
+.view-commerce-cart-form button.delete-line-item:focus {
+    border: 1px #fcb040 solid !important;
+    background-color: #fcb040 !important;
+}
+
+.view-commerce-cart-form button.delete-line-item:active {
+    border: 1px #fdaf17 solid !important;
+    background-color: #fdaf17 !important;
+}
+
+
+
+/* Button shadows */
+
+.node-type-product-display .btn,
+.view-commerce-cart-form button#edit-checkout,
+form#commerce-checkout-form-checkout button#edit-continue,
+form#commerce-checkout-form-checkout-step-2 button#edit-continue,
+form#commerce-checkout-form-checkout-step-3 button#edit-continue,
+form#commerce-checkout-form-step-4 button#edit-continue,
+form#commerce-checkout-form-shipping button#edit-continue,
+form#commerce-checkout-form-review button#edit-continue,
+form#commerce-tnspay-redirect-form button#edit-submit {
+	-webkit-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow:    0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+	box-shadow:         0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Other button tweaks */
+
+.checkout-buttons .checkout-cancel,
+.checkout-buttons .checkout-back {
+	padding: 0;
+}
+
+.button-operator {
+	margin-left: 10px;
+	margin-right: 10px;
+	position: relative;
+	top: -7px;
+}
+
+
+
+/* Edit button for updating line items, e.g. gift membership details */
+
+.view-commerce-cart-form td.views-field-line-item-title a, .view-commerce-cart-form td.views-field-title a  {
+	margin-left: 10px;
+	background-color: #7a68ae;
+	color: #fff;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 12px;
+	line-height: 12px;
+	font-weight: 400;
+	padding: 2px 10px;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	outline: none;
+}
+
+.view-commerce-cart-form td.views-field-line-item-title a:hover,
+.view-commerce-cart-form td.views-field-line-item-title a:focus,
+.view-commerce-cart-form td.views-field-title a:hover,
+.view-commerce-cart-form td.views-field-title a:focus {
+	background-color: #fcb040;
+}
+
+.view-commerce-cart-form td.views-field-line-item-title a:active,
+.view-commerce-cart-form td.views-field-title a:active  {
+	background-color: #fdaf17;
+}
+
+
+
+
+
+/*
+ * Product displays
+ */
+
+.field-name-field-product-help-text {
+	margin-bottom: 30px;
+	border: inherit;
+	border-radius: 15px;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	-webkit-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow:    0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+	box-shadow:         0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+	color: #fff;
+	background-color: #cdce00;
+	padding: 20px 30px;
+}
+
+.commerce-product-field-commerce-price {
+	display: inline-block;
+	background-color: #8064a9;
+	color: #fff;
+	font-weight: 700;
+	padding: 10px 20px;
+	margin: 20px 0;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+}
+
+form.commerce-add-to-cart .panel-body {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+
+
+/*
+ * Tables
+ * Shopping basket
+ */
+
+ #edit-cart-contents-form table {
+	 margin-top: 0;
+ }
+
+.table-responsive {
+	border: inherit;
+}
+
+.table-responsive > .table > tbody > tr > td {
+	vertical-align: middle;
+}
+
+.table-striped > tbody > tr:nth-of-type(2n+1):hover {
+    background-color: rgba(0,159,218,0.1);
+}
+
+.table-striped > tbody > tr:nth-of-type(2n):hover {
+    background-color: rgba(255,255,255,1);
+}
+
+
+.view-commerce-cart-form a {
+	color: #000;
+}
+
+.view-commerce-cart-form .form-control {
+	height: 36px;
+	width: 70px;
+}
+
+
+
+/*
+ * Your details
+ */
+
+.panel-default {
+	border: inherit;
+}
+
+.panel-default > .panel-heading {
+	color: #000;
+	background-color: inherit;
+	border: none;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.panel-title {
+	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 400;
+	font-size: 24px;
+	line-height: 24px;
+}
+
+legend {
+    font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 19px;
+	line-height: 24px;
+	font-weight: 600;
+	margin: 0 0 10px 0;
+	border-bottom: none;
+}
+
+.panel {
+	box-shadow: inherit;
+}
+
+.panel label {
+	display: block;
+	margin-bottom: 5px;
+}
+
+.panel .form-item {
+	display: block;
+	margin-bottom: 20px;
+}
+
+form#commerce-checkout-form-checkout .field-name-field-address:after {
+	display: none;
+}
+
+#edit-customer-profile-billing-field-membership-number {
+	/* padding: 15px; */
+	display: none;
+}
+
+
+
+/*
+ * Postcode Anywhere
+ */
+
+input#postcodeanywhere-lookup-button {
+	margin-bottom: 10px;
+}
+
+input#edit-customer-profile-shipping-field-care-address-und-0-postcode-lookup,
+input#edit-customer-profile-billing-field-care-address-und-0-postcode-lookup,
+input#edit-customer-profile-billing-field-address-und-0-postcode-lookup,
+input#edit-line-item-fields-field-care-address-und-0-postcode-lookup {
+	margin-bottom: 10px;
+}
+
+#postcodeanywhere-address-list {
+	background-color: #bfb1d4;
+	padding: 20px;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow:    0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+	box-shadow:         0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+}
+
+#postcodeanywhere-address-list input,
+#postcodeanywhere-address-list label {
+	display: inline-block;
+}
+
+#postcodeanywhere-address-list input {
+	margin-right: 10px;
+}
+
+#postcodeanywhere-address-list label {
+	font-weight: 400;
+}
+
+.pca-address-details .fieldset-legend {
+     display: none;
+}
+
+
+
+/*
+ * Checkout options
+ */
+
+/* Donate */
+
+.panel .field-name-commerce-donate-amount .form-item,
+.panel .field-name-field-payment-option .form-item {
+	margin-bottom: 0px;
+}
+
+
+
+/*
+ * Membership details review panel on review
+ * Gift Aid statement
+ */
+
+.group-member-details.panel,
+.group-donation-details.panel,
+.commerce-line-item-family-membership-self,
+.group-delegate-details.panel {
+	background-color: #fff;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	padding: 10px;
+	border: 1px solid #cdcdcd;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow:    0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+	box-shadow:         0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+
+/*
+ * Gift Aid
+ */
+
+/* Image header spacing */
+
+.page-checkout-checkout-step-3  h1 {
+	margin-bottom: 0px;
+}
+
+.page-checkout-checkout-step-3  h4 {
+	border-bottom: 1px solid #000;
+	margin-top: 40px;
+	margin-bottom: 12px;
+	padding-bottom: 6px;
+}
+
+#commerce-checkout-form-checkout-step-3 .checkout-help {
+	display: none;
+}
+
+.commerce_giftaid_pane .panel-title.fieldset-legend {
+	display: none;
+}
+
+.commerce_giftaid_pane #edit-commerce-giftaid-pane-image p {
+	text-align: right;
+}
+
+.commerce_giftaid_pane fieldset#edit-commerce-giftaid-pane-gift-aid {
+	background-color: #fff;
+	margin-top: 20px;
+	margin-bottom: 25px;
+	border: 1px solid #8064a9;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow:    0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+	box-shadow:         0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+	width: auto;
+}
+
+.commerce_giftaid_pane div#edit-commerce-giftaid-pane-amount {
+    margin-bottom: 0px;
+}
+
+.commerce_giftaid_pane label.control-label {
+    max-width: 800px;
+		font-weight: 600;
+}
+
+/* Radio button formatting and spacing */
+.commerce_giftaid_pane .radio {
+    padding-left: 15px;
+}
+
+.commerce_giftaid_pane #edit-commerce-giftaid-pane {
+	margin-bottom: 20px;
+}
+
+/* Gift aid help text to standard formating - too long for uppercase */
+.commerce_giftaid_pane .help-block {
+	text-transform: none;
+	color: #000;
+	font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 22px;
+}
+
+
+
+/*
+ * Login panel
+ */
+
+fieldset#edit-commerce-checkout-complete-registration,
+fieldset#user-login-form {
+	background-color: #fff;
+	padding: 20px;
+	border: 1px solid #fbb040;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow:    0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+	box-shadow:         0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+}
+
+fieldset#user-login-form a {
+	color: #000;
+	text-decoration: none;
+}
+
+.checkout-registration-confirmation-text,
+.commerce-extra-login-page-description {
+	margin-bottom: 20px;
+}
+
+
+
+/*
+ * Hide checkout Help - not being used?
+ */
+
+body.page-checkout .checkout-help {
+	display: none;
+}
+
+
+
+/*
+ * CARE number
+ */
+
+.carenumber {
+	display: block !important;
+    font-size: 13px;
+    line-height: 17px;
+	text-transform: uppercase;
+	margin-bottom: 20px;
+}
+
+
+
+/*
+ * Improved form display
+ */
+
+body.page-layout-product h1,
+body.page-layout-certificate h1 {
+	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 400;
+	font-size: 38px;
+	line-height: 38px;
+	margin-top: 30px;
+	margin-bottom: 30px;
+	border-bottom: inherit;
+	text-align: center;
+}
+
+/* Hide default page title and let Display Suite display the new one */
+body.page-layout-product h1.page-header,
+body.page-layout-certificate h1.page-header {
+	display: none;
+}
+
+body.page-layout-product .submitted-by,
+body.page-layout-product .form-item-line-item-fields-field-care-address-und-0-address-index label {
+	display: none;
+}
+
+/* Pad the top image - could be a single image or a carousel */
+body.page-layout-product .top-wrapper .inner-wrapper > div:first-child,
+body.page-layout-certificate .top-wrapper .inner-wrapper > div:first-child {
+	margin-top: 30px;
+}
+
+body.page-layout-product .colorbox > img,
+body.page-layout-certificate .colorbox > img {
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+}
+
+body.page-layout-product .owl-controls,
+body.page-layout-certificate .owl-controls {
+	margin-bottom: -49px;
+}
+
+body.page-layout-product .field-name-body,
+body.page-layout-certificate .field-name-body {
+/*
+	background-color: rgba(127,100,169,1);
+	color: #fff;
+	padding: 20px;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow:    0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+	box-shadow:         0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+*/
+	margin-bottom: 30px;
+}
+
+/*
+body.page-layout-product .field-name-body a {
+	color: #fbb040;
+	text-decoration: none;
+}
+*/
+
+/*
+body.page-layout-product .field-name-body p {
+	margin-bottom: 0;
+}
+*/
+
+body.page-layout-product .field-commerce-stock {
+	display: inline-block;
+	background-color: #da4500;
+	color: #fff;
+	font-weight: 700;
+	padding: 10px 20px;
+	margin: 0 0 30px 0;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+}
+
+body.page-layout-product .field-name-field-products,
+body.page-layout-certificate .field-name-field-products {
+	background-color: #f6f6f6;
+	border-radius: 15px;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	padding: 30px;
+}
+
+body.page-layout-product .field-name-field-products .form-group {
+	margin-bottom: 15px;
+}
+
+body.page-layout-product .field-name-field-products label,
+body.page-layout-product .field-name-field-products input,
+body.page-layout-product .field-name-field-products select {
+	display: inline-block;
+}
+
+body.page-layout-product .field-name-field-products label {
+	width: 100px;
+}
+
+body.page-layout-certificate .field-name-field-products label {
+	margin-bottom: 5px;
+}
+
+body.page-layout-product .field-name-field-products input,
+body.page-layout-product .field-name-field-products select {
+	width: 300px;
+}
+
+body.page-layout-certificate .field-name-field-products input#edit-line-item-fields-field-certificate-name-und-0-value,
+body.page-layout-certificate .field-name-field-products input#edit-line-item-fields-field-certificate-starting-place-und-0-value,
+body.page-layout-certificate .field-name-field-products input#edit-line-item-fields-field-certificate-finish-und-0-value,
+body.page-layout-certificate .field-name-field-products select {
+	width: 370px;
+}
+
+body.page-layout-certificate .field-name-field-products input#edit-line-item-fields-field-certificate-mileage-und-0-value {
+	width: 215px;
+}
+
+
+body.page-layout-product .field-name-field-products input#edit-quantity {
+	width: 100px;
+}
+
+body.page-layout-product .field-name-field-products button#edit-submit {
+	margin-left: 100px;
+}
+
+
+
+@media only screen and (max-width : 767px) {
+	body.page-layout-product .field-name-field-products {
+		text-align: center;
+	}
+	body.page-layout-product .field-name-field-products label,
+	body.page-layout-product .field-name-field-products input,
+	body.page-layout-product .field-name-field-products select {
+		display: block;
+		width: 100%
+	}
+	body.page-layout-product .field-name-field-products label {
+		margin-bottom: 5px;
+	}
+	body.page-layout-product .field-name-field-products input#edit-quantity {
+		margin: 0 auto;
+	}
+	body.page-layout-product .field-name-field-products button#edit-submit {
+		margin-left: 0px;
+	}
+
+}
+
+
+
+body.page-layout-certificate .panel-body {
+	padding: 0;
+}
+
+body.page-layout-certificate .field-type-datetime .form-item {
+	margin-bottom: 0;
+}
+
+body.page-layout-certificate .field-type-datetime .date-padding {
+	padding: 0;
+}
+
+body.page-layout-certificate .panel {
+	background-color: #f6f6f6;
+}
+
+body.page-layout-certificate .panel-title {
+	font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 22px;
+}
+
+body.page-layout-certificate .form-type-managed-file input.form-file {
+	padding: 0;
+	height: 36px;
+	border: inherit;
+	z-index: 0;
+}
+
+body.page-layout-certificate .form-type-managed-file .help-block {
+	display: inline-grid;
+}
+
+body.page-layout-product .commerce-add-to-cart .panel .form-item {
+	margin-bottom: 10px;
+}
+
+/* Panel tints */
+body.page-layout-product .commerce-add-to-cart fieldset > .panel-body,
+body.page-layout-product .commerce-add-to-cart #edit-line-item-fields-field-care-dob,
+body.page-layout-product .commerce-add-to-cart #edit-line-item-fields-field-care-email,
+body.page-layout-product .commerce-add-to-cart #edit-line-item-fields-field-care-telephone {
+	/* background-color: #bfb1d4; */
+	background-color: rgba(127,100,169,0.1);
+	padding: 20px;
+	margin-bottom: 30px;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+}
+
+/* Field lengths */
+body.page-layout-product select#edit-line-item-fields-field-care-name-und-0-title,
+body.page-layout-product input#edit-line-item-fields-field-care-address-und-0-postcode-lookup,
+body.page-layout-product input#edit-line-item-fields-field-care-address-und-0-postcode {
+	width: 150px;
+}
+
+body.page-layout-product select#edit-product-id,
+body.page-layout-product input#edit-line-item-fields-field-care-name-und-0-forenames,
+body.page-layout-product input#edit-line-item-fields-field-care-name-und-0-surname,
+body.page-layout-product select#edit-line-item-fields-field-care-address-und-0-country-code,
+body.page-layout-product input#edit-line-item-fields-field-care-address-und-0-county,
+body.page-layout-product input#edit-line-item-fields-field-care-email-und-0-email,
+body.page-layout-product input#edit-line-item-fields-field-care-telephone-und-0-telephone,
+body.page-layout-product select#edit-line-item-fields-field-care-telephone-und-0-device-code {
+	width: 300px;
+}
+
+body.page-layout-product input#edit-line-item-fields-field-care-address-und-0-address-line-1,
+body.page-layout-product input#edit-line-item-fields-field-care-address-und-0-address-line-2,
+body.page-layout-product input#edit-line-item-fields-field-care-address-und-0-address-line-3,
+body.page-layout-product input#edit-line-item-fields-field-care-address-und-0-town {
+	width: 450px;
+}
+
+
+
+/* Field positioning */
+body.page-layout-product #edit-line-item-fields-field-care-name .form-item {
+	display: inline-block;
+	margin-right: 10px;
+}
+
+body.page-layout-product input#edit-line-item-fields-field-care-address-und-0-postcode-lookup,
+body.page-layout-product input#postcodeanywhere-lookup-button,
+body.page-layout-product #edit-line-item-fields-field-care-telephone .form-item-line-item-fields-field-care-telephone-und-0-telephone,
+body.page-layout-product #edit-line-item-fields-field-care-telephone .form-item-line-item-fields-field-care-telephone-und-0-device-code {
+	display: inline-block;
+	margin-right: 10px;
+}
+
+body.page-layout-product input#postcodeanywhere-lookup-button {
+	position: relative;
+	top: 4px;
+}
+
+body.page-layout-product .field-widget-care-date-widget select.form-control {
+	padding: 10px 15px;
+}
+
+/* Format width of day field */
+body.page-layout-product .field-widget-care-date-widget .fieldset-wrapper > div:nth-child(1) {
+	display: inline-block;
+	width: 87px;
+	margin-right: 10px;
+}
+
+/* Format width of month field */
+body.page-layout-product .field-widget-care-date-widget .fieldset-wrapper > div:nth-child(2) {
+	display: inline-block;
+	width: 172px;
+	margin-right: 10px;
+}
+
+/* Format width of year field */
+body.page-layout-product .field-widget-care-date-widget .fieldset-wrapper > div:nth-child(3) {
+	display: inline-block;
+	width: 105px;
+}
+
+/* hide course details field - can remove later when care sync finished. */
+div.field-name-field-course-details {
+    display: none;
+}
+
+/* hide N/A options for radio boxes on course booking pages */
+.form-item.form-item-line-item-fields-field-medical-details-und--none.form-type-checkbox.checkbox,
+.form-item.form-item-line-item-fields-field-learning-difficulties-und--none.form-type-checkbox.checkbox,
+.form-item.form-item-line-item-fields-field-dietary-requirements-und--none.form-type-checkbox.checkbox {
+    display: none;
+}
+
+/*Next of kin fieldset style */
+div#edit-line-item-fields-field-next-of-kin,
+fieldset.required-fields.group-course-participant.field-group-fieldset.panel.panel-default.form-wrapper,
+fieldset.required-fields.group-additional-details.field-group-fieldset.panel.panel-default.form-wrapper {
+    padding: 20px;
+    border: 1px #000 solid;
+}
+
+div#edit-line-item-fields-field-next-of-kin {
+	  margin-bottom: 20px;
+}
+
+
+
+/*
+ * Restore missing CSS for shop checkout review
+ * 1 May 2019
+ */
+
+/* Add extra space for Care Membership nuumber help text */
+.field-type-care-membership-number .help-block {
+    margin: 5px;
+}
+
+/* Courses extra */
+.group-additional-details .panel .form-item {
+    margin-bottom: 5px;
+}
+
+#edit-line-item-fields-field-next-of-kin-und-0-field-care-telephones .tabledrag-toggle-weight-wrapper {
+    display: none;
+}
+
+/* Account info on review page */
+form#commerce-checkout-form-review .checkout-review label.control-label,
+form#commerce-checkout-form-review .form-item.form-type-item.form-group {
+    margin-bottom: 0px;
+}
+
+table.checkout-review .panel-body {
+    padding: 0;
+}
+table.checkout-review .pane-data-full {
+    padding: 1em;
+}
+
+/* Add extra bottom margin to hear more from cycling uk checkbox on checkout */
+.commerce_fieldgroup_pane__group_data_protection label.control-label,
+.commerce_fieldgroup_pane__group_terms label.control-label,
+.commerce_fieldgroup_pane__group_course_booking_terms label.control-label {
+    margin-bottom: 30px;
+}
+
+/* Order review page CSS tweeks */
+.page-checkout-review .checkout-help {
+    display: none;
+}
+
+.page-checkout-review .cart_contents legend.panel-heading {
+    display: none;
+}
+
+.page-checkout-review .main-container table {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.page-checkout-review div#edit-checkout-review {
+    padding: 15px;
+}
+
+
+
+/*
+ * Shop progress bar
+ */
+
+#block-commerce-checkout-progress-indication ol {
+	list-style: none;
+	counter-reset: my-awesome-counter;
+	padding: 0;
+	margin: 0 0 20px 0;
+}
+
+#block-commerce-checkout-progress-indication ol li {
+	counter-increment: my-awesome-counter;
+	display: inline-block;
+	float: inherit;
+	width: inherit;
+	margin: 0 10px 10px 0;
+	border: 1px solid #7a68ae;
+	padding: 6px 12px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 11px;
+	line-height: 11px;
+	border-radius: 13px;
+	-webkit-border-radius: 13px;
+	-moz-border-radius: 13px;
+}
+
+@media only screen and (max-width : 399px) {
+	#block-commerce-checkout-progress-indication ol li {
+		margin: 0 0 10px 0;
+	}
+}
+
+#block-commerce-checkout-progress-indication ol li::after {
+	content: "\F054";
+	font-family: "Font Awesome 5 Pro";
+	font-size: 11px;
+	font-weight: 100;
+	display: inline-block;
+	width: 15px;
+	position: relative;
+	left: 9px;
+}
+
+#block-commerce-checkout-progress-indication ol li:last-child::after {
+	content: none;
+}
+
+#block-commerce-checkout-progress-indication ol li.active {
+	background-color: #7a68ae;
+	color: #fff;
+}
+
+/* Enable this rule to insert numbers on the progress bar
+#block-commerce-checkout-progress-indication ol li::before {
+	content: counter(my-awesome-counter) ". ";
+}
+*/
+
+
+
+/*
+ * Basket "Edit line item" buttons
+ * The edit link doesn't have a class or ID associated with it so need to target the exact HTML path
+ */
+
+#edit-cart-contents-form td.views-field-title strong a {
+	display: block;
+	float: right;
+	font-weight: 400;
+	font-size: 15px;
+	line-height: 16px;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #fff;
+	background-color: #7a68ae;
+	padding: 3px 10px;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	outline: none;
+}
+
+#edit-cart-contents-form td.views-field-title strong a:hover {
+	background-color: #fcb040;
+}
+
+
+
+
+@media screen and (min-width : 768px) and (max-width : 991px) {
+	#edit-cart-contents-form td.views-field-title strong a {
+		font-size: 12px;
+		line-height: 14px;
+	}
+	#edit-cart-contents-form table tbody .views-field-edit-delete button.form-submit {
+		font-size: 12px;
+		min-width: inherit;
+		width: 90px;
+	}
+}
+
+@media screen and (min-width : 450px) and (max-width : 767px) {
+	#edit-cart-contents-form td.views-field-title strong a {
+		font-size: 14px;
+		line-height: 16px;
+	}
+	#edit-cart-contents-form table tbody .views-field-edit-delete button.form-submit {
+		font-size: 14px;
+		min-width: inherit;
+		width: 100px;
+	}
+}
+
+@media screen and (max-width : 449px) {
+	#edit-cart-contents-form td.views-field-title strong a {
+		font-size: 10px;
+		line-height: 12px;
+	}
+	#edit-cart-contents-form table tbody .views-field-edit-delete button.form-submit {
+		font-size: 10px;
+		min-width: inherit;
+		width: 100px;
+	}
+}
+.commerce_payment {
+    display: none;
+}
+
+
+/* 14 March 2023
+   Poor old neglected shop, suffering with layout issues. The issue (without
+   spending too much time on the problem) is that this theme is shared with the 
+   main site still in some places so we need to isolate these fixes.
+   Add a sitewide context rule on the shop site called "shop-site" so that these
+   CSS rules will fire only on the shop.
+*/
+
+@media (min-width: 1600px) {
+  body.shop-site .container {
+    max-width: 1530px !important;
+  }
+}

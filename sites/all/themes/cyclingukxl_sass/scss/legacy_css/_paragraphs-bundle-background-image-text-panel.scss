@@ -1,0 +1,186 @@
+/* Adjust text colour depending on background colour */
+.paragraphs-item-background-image-with-text-panel .paragraph_background_colour_blue   .field-name-field-subtitle,
+.paragraphs-item-background-image-with-text-panel .paragraph_background_colour_pink   .field-name-field-subtitle,
+.paragraphs-item-background-image-with-text-panel .paragraph_background_colour_purple .field-name-field-subtitle,
+.paragraphs-item-background-image-with-text-panel .paragraph_background_colour_grey   .field-name-field-subtitle {
+  color: $yellow;
+}
+
+.paragraphs-item-background-image-with-text-panel .paragraph_background_colour_blue   .field-name-field-text,
+.paragraphs-item-background-image-with-text-panel .paragraph_background_colour_pink   .field-name-field-text,
+.paragraphs-item-background-image-with-text-panel .paragraph_background_colour_purple .field-name-field-text,
+.paragraphs-item-background-image-with-text-panel .paragraph_background_colour_grey   .field-name-field-text {
+  color: $white;
+}
+
+
+.paragraphs-item-background-image-with-text-panel .paragraph_background_colour_yellow .field-name-field-subtitle,
+.paragraphs-item-background-image-with-text-panel .paragraph_background_colour_yellow .field-name-field-text,
+.paragraphs-item-background-image-with-text-panel .paragraph_background_colour_white  .field-name-field-subtitle,
+.paragraphs-item-background-image-with-text-panel .paragraph_background_colour_white  .field-name-field-text {
+  color: $black;
+}
+
+
+
+.paragraph-bundle-background-image-with-text-panel.desktop-view .paragraphs-item-background-image-with-text-panel .panel {
+  padding: 20px;
+  border-radius: $border-radius-general;
+  -webkit-border-radius: $border-radius-general;
+  -moz-border-radius: $border-radius-general;
+  -webkit-box-shadow: 0px 3px 0px 0px rgba(0,0,0,.1);
+  -moz-box-shadow: 0px 3px 0px 0px rgba(0,0,0,.1);
+  box-shadow: 0px 3px 0px 0px rgba(0,0,0,.1);
+}
+
+.paragraphs-item-background-image-with-text-panel.mobile-view .panel {
+  border-radius: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  padding: 30px;
+  margin-bottom: 60px;
+}
+
+.paragraph-bundle-background-image-with-text-panel.desktop-view .paragraphs-item-background-image-with-text-panel {
+  margin-bottom: 60px;
+  padding: 60px 30px;
+}
+
+
+
+/* Remove bottom margin */
+
+.remove_bottom_margin_yes.paragraph-bundle-background-image-with-text-panel.desktop-view .paragraphs-item-background-image-with-text-panel,
+.remove_bottom_margin_yes.paragraphs-item-background-image-with-text-panel.mobile-view .panel {
+  margin-bottom: 0;
+}
+
+
+
+.paragraphs-item-background-image-with-text-panel .field-name-field-subtitle {
+  font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 36px;
+  margin-bottom: 20px;
+}
+
+
+
+/* Links */
+
+.paragraphs-item-background-image-with-text-panel .field-name-field-text {
+  margin-bottom: 30px;
+}
+
+.paragraphs-item-background-image-with-text-panel .field-name-field-links .field-item {
+  display: inline-block;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+
+.paragraphs-item-background-image-with-text-panel .field-name-field-links .field-item:last-of-type {
+  margin-bottom: 0;
+}
+
+.paragraphs-item-background-image-with-text-panel .field-name-field-links .field-item a,
+.paragraphs-item-background-image-with-text-panel .field-name-field-links .field-item a:hover,
+.paragraphs-item-background-image-with-text-panel .field-name-field-links .field-item a:focus {
+  outline: none;
+  border: 1px solid $yellow;
+  text-align: center;
+  -webkit-box-shadow: 0px 3px 0px 0px rgba(0,0,0,.1);
+  -moz-box-shadow: 0px 3px 0px 0px rgba(0,0,0,.1);
+  box-shadow: 0px 3px 0px 0px rgba(0,0,0,.1);
+}
+
+/* Need a different button colour scheme if the background is yellow */
+.paragraphs-item-background-image-with-text-panel .paragraph_background_colour_yellow .field-name-field-links .field-item a:hover,
+.paragraphs-item-background-image-with-text-panel .paragraph_background_colour_yellow .field-name-field-links .field-item a:focus {
+  outline: none;
+  border: 1px solid #8065a9;
+  background-color: #8065a9;
+  color: $white;
+  text-align: center;
+  -webkit-box-shadow: 0px 3px 0px 0px rgba(0,0,0,.1);
+  -moz-box-shadow: 0px 3px 0px 0px rgba(0,0,0,.1);
+  box-shadow: 0px 3px 0px 0px rgba(0,0,0,.1);
+}
+
+
+
+/* Hyperlinks */
+
+.paragraphs-item-background-image-with-text-panel .field-name-field-text a {
+  color: inherit;
+  text-decoration: underline;
+  outline: none;
+}
+
+.paragraphs-item-background-image-with-text-panel .paragraph_background_colour_blue    .field-name-field-text a:hover,
+.paragraphs-item-background-image-with-text-panel .paragraph_background_colour_blue    .field-name-field-text a:focus,
+.paragraphs-item-background-image-with-text-panel .paragraph_background_colour_pink    .field-name-field-text a:hover,
+.paragraphs-item-background-image-with-text-panel .paragraph_background_colour_pink    .field-name-field-text a:focus,
+.paragraphs-item-background-image-with-text-panel .paragraph_background_colour_purple  .field-name-field-text a:hover,
+.paragraphs-item-background-image-with-text-panel .paragraph_background_colour_purple  .field-name-field-text a:focus,
+.paragraphs-item-background-image-with-text-panel .paragraph_background_colour_grey    .field-name-field-text a:hover,
+.paragraphs-item-background-image-with-text-panel .paragraph_background_colour_grey    .field-name-field-text a:focus,
+.paragraphs-item-background-image-with-text-panel .paragraph_background_colour_white   .field-name-field-text a:hover,
+.paragraphs-item-background-image-with-text-panel .paragraph_background_colour_white   .field-name-field-text a:focus {
+  color: $yellow;
+}
+
+.paragraphs-item-background-image-with-text-panel .paragraph_background_colour_green   .field-name-field-text a:hover,
+.paragraphs-item-background-image-with-text-panel .paragraph_background_colour_green   .field-name-field-text a:focus,
+.paragraphs-item-background-image-with-text-panel .paragraph_background_colour_yellow  .field-name-field-text a:hover,
+.paragraphs-item-background-image-with-text-panel .paragraph_background_colour_yellow  .field-name-field-text a:focus {
+  color: $white;
+}
+
+
+
+/* Set bullet point colour */
+
+.paragraphs-item-background-image-with-text-panel .paragraph_background_colour_blue    .field-name-field-text li:before,
+.paragraphs-item-background-image-with-text-panel .paragraph_background_colour_pink    .field-name-field-text li:before,
+.paragraphs-item-background-image-with-text-panel .paragraph_background_colour_purple  .field-name-field-text li:before,
+.paragraphs-item-background-image-with-text-panel .paragraph_background_colour_grey    .field-name-field-text li:before,
+.paragraphs-item-background-image-with-text-panel .paragraph_background_colour_white   .field-name-field-text li:before {
+  color: $yellow;
+}
+
+.paragraphs-item-background-image-with-text-panel .paragraph_background_colour_green   .field-name-field-text li:before,
+.paragraphs-item-background-image-with-text-panel .paragraph_background_colour_yellow  .field-name-field-text li:before {
+  color: $white;
+}
+
+
+
+/* Mobile */
+
+.paragraphs-item-background-image-with-text-panel.mobile-view {
+  display: none;
+}
+
+@media only screen and (max-width : 767px) {
+  .paragraphs-item-background-image-with-text-panel.mobile-view {
+    display: inherit;
+  }
+  .paragraph-bundle-background-image-with-text-panel.desktop-view .panel {
+    display: none;
+  }
+  .paragraph-bundle-background-image-with-text-panel.desktop-view .paragraphs-item-background-image-with-text-panel {
+    height: 400px;
+    margin-bottom: 0 !important;
+  }
+  
+  .paragraphs-item-background-image-with-text-panel .field-name-field-subtitle,
+  .paragraphs-item-background-image-with-text-panel .field-name-field-text,
+  .paragraphs-item-background-image-with-text-panel .field-name-field-links {
+    text-align: center;
+  }
+  .paragraphs-item-background-image-with-text-panel .field-name-field-links .field-item {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}

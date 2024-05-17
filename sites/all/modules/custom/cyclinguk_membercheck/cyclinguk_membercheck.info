@@ -1,0 +1,6 @@
+name = Cycling UK Member Check
+description = "Custom membership number checking for Cycling UK website."
+package = Cycling UK
+core = "7.x"
+version = 7.x-1.x
+dependencies[] = care

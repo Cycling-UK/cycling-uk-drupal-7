@@ -1,0 +1,81 @@
+a#superfish-1-toggle {
+	border: 2px solid #ab853c;
+	color: #fff;
+}
+
+ul#superfish-1-accordion a {
+	color: #000;
+}
+
+ul#superfish-1-accordion a.sf-depth-2:hover .inner-wrapper,
+ul#superfish-1-accordion a.sf-depth-2:focus .inner-wrapper,
+ul#superfish-1-accordion a.sf-depth-3:hover .inner-wrapper,
+ul#superfish-1-accordion a.sf-depth-3:focus .inner-wrapper {
+    padding-bottom: 2px;
+    border-bottom: 1px solid #000;
+}
+
+ul#superfish-1-accordion a.sf-depth-1 {
+	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 20px;
+	color:#000;
+	text-shadow: inherit;
+	padding: 15px;
+}
+
+/* Mobile dropdown arrows */
+ul#superfish-1-accordion > li > a::after,						/* Top level    */
+ul#superfish-1-accordion a.sf-depth-2.menuparent::after {		/* Second level */
+	font-family: 'Font Awesome 5 Pro';
+	font-weight: 200;
+	font-size: 28px;
+	display: inline-block;
+	content: "\F105";
+	float: right;
+	margin-right: 10px;
+}
+
+ul#superfish-1-accordion > li.sf-expanded > a::after,				/* Top level    */
+ul#superfish-1-accordion li ul li.sf-expanded a.sf-depth-2::after {		/* Second level */
+	content: "\F107";
+}
+
+/* Background tints */
+ul#superfish-1-accordion > li.sf-expanded a#menu-go-cycling,
+ul#superfish-1-accordion > li.sf-expanded a#menu-go-cycling + ul,
+ul#superfish-1-accordion > li.sf-expanded a#menu-go-cycling + ul a,
+ul#superfish-1-accordion > li.sf-expanded a#menu-go-cycling + ul ul,
+ul#superfish-1-accordion > li.sf-expanded a#menu-volunteer,
+ul#superfish-1-accordion > li.sf-expanded a#menu-volunteer + ul,
+ul#superfish-1-accordion > li.sf-expanded a#menu-volunteer + ul a,
+ul#superfish-1-accordion > li.sf-expanded a#menu-volunteer + ul ul 		{background-color: #7fd6f7;}   /* Blue   */
+
+ul#superfish-1-accordion > li.sf-expanded a#menu-campaigning,
+ul#superfish-1-accordion > li.sf-expanded a#menu-campaigning + ul,
+ul#superfish-1-accordion > li.sf-expanded a#menu-campaigning + ul a,
+ul#superfish-1-accordion > li.sf-expanded a#menu-campaigning + ul ul,
+ul#superfish-1-accordion > li.sf-expanded a#menu-donate,
+ul#superfish-1-accordion > li.sf-expanded a#menu-donate + ul,
+ul#superfish-1-accordion > li.sf-expanded a#menu-donate + ul a,
+ul#superfish-1-accordion > li.sf-expanded a#menu-donate + ul ul 		{background-color: #e6e67f;}   /* Green  */
+
+ul#superfish-1-accordion > li.sf-expanded a#menu-charity,
+ul#superfish-1-accordion > li.sf-expanded a#menu-charity + ul,
+ul#superfish-1-accordion > li.sf-expanded a#menu-charity + ul a,
+ul#superfish-1-accordion > li.sf-expanded a#menu-charity + ul ul,
+ul#superfish-1-accordion > li.sf-expanded a#menu-account,
+ul#superfish-1-accordion > li.sf-expanded a#menu-account + ul,
+ul#superfish-1-accordion > li.sf-expanded a#menu-account + ul a,
+ul#superfish-1-accordion > li.sf-expanded a#menu-account + ul ul 		{background-color: #f27fbe;}   /* Pink   */
+
+ul#superfish-1-accordion > li.sf-expanded a#menu-about,
+ul#superfish-1-accordion > li.sf-expanded a#menu-about + ul,
+ul#superfish-1-accordion > li.sf-expanded a#menu-about + ul a,
+ul#superfish-1-accordion > li.sf-expanded a#menu-about + ul ul,
+ul#superfish-1-accordion > li.sf-expanded a#menu-membership,
+ul#superfish-1-accordion > li.sf-expanded a#menu-membership + ul,
+ul#superfish-1-accordion > li.sf-expanded a#menu-membership + ul a,
+ul#superfish-1-accordion > li.sf-expanded a#menu-membership + ul ul		{background-color: #fdd79f;}   /* Yellow */
+ 

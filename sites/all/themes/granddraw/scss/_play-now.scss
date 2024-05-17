@@ -1,0 +1,327 @@
+.cukr--play-now__steps {
+	width:100%;
+	text-align: center;
+	padding-bottom: 30px;
+    padding-top: 30px;
+	&__inner {
+		display: flex;
+		justify-content: center;
+	}
+	.cukr--play-now__spacer {
+		width:100%;
+		max-width: 70px;
+		height: 3px;
+		background: $blue;
+		margin: 26px 8px 0 8px;
+		border-radius: 3px;
+		&--active {
+			background: $yellow;
+		}
+	}
+
+	@include respond-medium-down {
+		.cukr--play-now__spacer {
+			max-width: 40px;
+		}
+	}
+}
+
+.cukr--play-now__step {
+	display: inline-block;
+	padding:0;
+	&__circle {
+		width:55px;
+		height:55px;
+		background: #fff;
+		border: 5px solid $blue;
+		border-radius: 50%;
+		text-align: center;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 0 auto 10px auto;
+		font-size: 30px;
+		line-height: 30px;
+		font-weight: 700;
+		font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	}
+	&__label {
+		font-size: 16px;
+		line-height: 16px;
+		font-weight: 500;
+		font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+		position:relative;
+		span {
+			position: absolute;
+			left: 50%;
+			margin-left: -100px;
+			width: 200px;
+		}
+	}
+
+	&--active {
+		.cukr--play-now__step__circle {
+			color: #fff;
+			background: $blue;
+		}
+	}
+	&--complete {
+		.cukr--play-now__step__circle {
+			background: $yellow;
+			border-color: $yellow;
+			span {
+				display: none;
+			}
+			&:after {
+				font-weight: normal;
+				content: '\f00c';
+				color: #fff;
+				font-family: "FontAwesome";
+			}
+		}
+	}
+
+	@include respond-medium-down {
+		padding:0;
+		margin: 0 10px;
+		&__circle {
+			width:50px;
+			height: 50px;
+			font-size: 20px;
+			line-height: 20px;
+		}
+		&__label {
+			font-size: 12px;
+		}
+	}
+
+	@include respond-small-down {
+		margin: 0;
+	}
+}
+
+
+.cukr--play-now__header {
+	text-align: center;
+	margin: 50px 0;
+	> span {
+		color: $pink;
+		font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+		font-weight: 700;
+		font-size: 27px;
+		line-height: 32px;
+		margin: 25px auto;
+	}
+	h1 {
+		color: $blue;
+		font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+		font-weight: 700;
+		font-size: 48px;
+		line-height: 60px;
+		max-width: 560px;
+		margin: 25px auto;
+	}
+	hr {
+		width: 80%;
+		max-width: 120px;
+		border-width: 5px;
+		border-color: #fbb040;
+		border-radius: 2px;
+		margin: 20px auto 30px auto;
+	}
+	p {
+		font-size: 18px;
+		line-height: 28px;
+		max-width: 600px;
+		margin: 25px auto;
+	}
+
+	@include respond-medium-down {
+		h1 {
+			font-size: 36px;
+			line-height: 40px;
+		}
+	}
+}
+
+.cukr--play-now__ticket-select {
+	max-width: 890px;
+	margin: 50px auto 0 auto;
+
+	.ticket-select {
+		flex-wrap: wrap;
+		margin: 0 -15px 40px -15px;
+		&__option {
+			padding:15px;
+			width: 50%;
+			&__inner {
+				padding:15px 7%;
+				border: 1px solid $light-grey;
+				border-radius: 10px;
+				display: flex;
+				align-items: center;
+				min-height: 125px;
+				position:relative;
+			}
+			&__radio {
+				width:50px;
+				.cukr--radio {
+					width:35px;
+					height:35px;
+					border: 2px solid $light-grey;
+					border-radius: 50%;
+					font-size: 22px;
+					text-align: center;
+					padding: 4px 0;
+					outline: none;
+					transition: border-color 0.3s ease-out, background-color 0.3s ease-out;
+					&:hover, &:focus {
+						background-color: $yellow;
+						border-color: $yellow;
+					}
+				}
+			}
+			&__amount {
+				width: calc(40% - 25px);
+				h2 {
+					font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+					font-weight: 700;
+					font-size: 66px;
+					line-height: 66px;
+					color: $blue;
+					margin: 0;
+				}
+				h3 {
+					font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+					font-weight: 700;
+					font-size: 22px;
+					line-height: 22px;
+					color: $blue;
+					margin: 0 0 12px 0;
+				}
+				span {
+					font-size: 14px;
+					line-height: 20px;
+					color: #000;
+				}
+			}
+			&__desc {
+				width: calc(60% - 25px);
+				padding-left: 10px;
+				span {
+					max-width: 150px;
+					font-size: 18px;
+					line-height: 28px;
+				}
+				.cukr--input-ticket {
+					border: 1px solid #6b7980;
+					border-radius: 20px;
+					padding-left: 42px;
+					overflow: hidden;
+					height: 44px;
+					position: relative;
+					&:before {
+						content: '';
+						width: 40px;
+						height: 44px;
+						background: $blue;
+						position: absolute;
+						top: 0;
+						left: 0;
+					}
+					&:after {
+						content: '\F145';
+						color: #fff;
+						font-family: "fontello";
+						font-weight: normal;
+						font-size: 22px;
+						position: absolute;
+						top: 9px;
+						left: 13px;
+					}
+					input {
+						width: 100%;
+						height: 44px;
+						margin: 0;
+						padding: 10px;
+						border-top-right-radius: 20px;
+						border-bottom-right-radius: 20px;
+						box-shadow: none;
+						border: none;
+						-webkit-appearance: none;
+						outline: none;
+					}
+				}
+			}
+			&.active {
+				.ticket-select__option__inner:after {
+					content:'';
+					position: absolute;
+					top: -3px;
+					left: -3px;
+					width: calc(100% + 6px);
+					height: calc(100% + 6px);
+					pointer-events: none;
+					border: 6px solid $yellow;
+					border-radius: 10px;
+				}
+				.ticket-select__option__radio .cukr--radio {
+					background: $yellow;
+					border-color: $yellow;
+					&:after {
+						font-weight: normal;
+						content: '\f00c';
+						color: #fff;
+						font-family: "FontAwesome";
+					}
+				}
+			}
+			@include respond-medium-down {
+				&__radio {
+					width:40px;
+				}
+				&__amount,
+				&__desc {
+					padding-left: 10px;
+					h2 {
+						font-size: 50px;
+						line-height: 50px;
+					}
+				}
+				&--input {
+					.ticket-select__option__inner {
+						flex-wrap: wrap;
+					}
+					.ticket-select__option__amount {
+						width: calc(100% - 40px);
+						padding-left: 15px;
+					}
+					.ticket-select__option__desc {
+						width: 100%;
+						padding-top: 20px;
+						padding-left: 52px;
+					}
+				}
+			}
+		}
+	}
+
+	.form-type-checkbox {
+		max-width: 560px;
+		margin: 0 auto 60px auto;
+	}
+
+	@include respond-medium-down {
+		max-width: 400px;
+
+		.ticket-select__option {
+			width: 100%;
+			padding: 10px 15px;
+		}
+	}
+}
+
+.cukr--errors {
+	max-width: 560px;
+	margin: 0 auto;
+}

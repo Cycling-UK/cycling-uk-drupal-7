@@ -1,0 +1,235 @@
+<?php
+
+/**
+ * @file
+ * Main module file.
+ */
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function cyclinguk_registration_form_user_register_form_alter(&$form, &$form_state, $form_id) {
+  // Add additional validation with reference to CARE.
+  $form['#validate'][] = 'cyclinguk_registration_user_register_form_validate';
+  $form['actions']['submit']['#submit'] = [
+    'cyclinguk_registration_user_register_form_submit',
+  ];
+}
+
+/**
+ * Custom registration form validation function.
+ */
+function cyclinguk_registration_user_register_form_validate($form, &$form_state) {
+  $membership_number_field_name = variable_get('care_user_membership_number_field', '');
+  if ($membership_number_field_name == '') {
+    drupal_set_message('Cannot validate: CARE membership number field not configured.', 'error');
+    return;
+  }
+  $name_field_name = variable_get('care_user_name_field', '');
+  if ($name_field_name == '') {
+    drupal_set_message('Cannot validate: CARE name field not configured.', 'error');
+    return;
+  }
+  // PHASE 1: Check for existing user.
+  $query = db_select('users')->fields('users', [
+    'uid',
+  ]);
+  $query->condition('uid', 0, '<>');
+  $query->condition('mail', db_like($form_state['values']['mail']), 'LIKE');
+  $email_already_used_uid = $query->range(0, 1)->execute()->fetchField();
+  $email = $form_state['values']['mail'];
+  // @TODO: metadata wrapper?
+  $forename = $form_state['values'][$name_field_name][LANGUAGE_NONE][0]['forenames'];
+  $surname = $form_state['values'][$name_field_name][LANGUAGE_NONE][0]['surname'];
+  $membership_number = trim($form_state['values'][$membership_number_field_name][LANGUAGE_NONE][0]['number']);
+  if ($membership_number) {
+    // Look for membership number in existing site users.
+    $query = new EntityFieldQuery();
+    $query->entityCondition('entity_type', 'user');
+    $query->propertyCondition('uid', 0, '<>');
+    $query->fieldCondition($membership_number_field_name, 'number', $membership_number, 'LIKE');
+    $query->addMetaData('account', user_load(1));
+    $result = $query->addTag('debug')->execute();
+    if ($result) {
+      $user_ids = array_keys($result['user']);
+      if ($user_ids[0] == $email_already_used_uid) {
+        $message = t('This membership number and email address already have an account registered.') . ' ';
+        drupal_set_message($message);
+        $message = t('Please log in below or <a href="@password">request a new password</a>.', [
+          '@password' => url('user/password'),
+        ]);
+        drupal_set_message($message);
+        form_unset_error('mail');
+        form_unset_error('field_user_name][und][0][title');
+        form_unset_error('field_user_name][und][0][forenames');
+        form_unset_error('field_user_name][und][0][surname');
+        $form_state['redirect'] = 'user/login';
+        return;
+      }
+      // Check if this email is linked to this membership number in CARE.
+      $care_email_match = FALSE;
+      $data = [
+        'ContactNumber' => $membership_number,
+      ];
+      $type_data = [
+        'pSelectDataType' => 'xcdtContactCommsNumbers',
+      ];
+      $care_xml_data = care_call_method('SelectContactData', $data, $type_data);
+      if (isset($care_xml_data->ErrorMessage)) {
+        drupal_set_message($care_xml_data->ErrorMessage);
+      }
+      else {
+        foreach ($care_xml_data as $care_address) {
+          $valid_to = date_create_from_format('d/m/Y', (string) $care_address->ValidTo);
+          if ($care_address->Email == 'Y' && $care_address->IsActive == 'Yes' && (!$valid_to || $valid_to >= date_create())) {
+            $address = (string) $care_address->PhoneNumber;
+            if ($address == $email) {
+              $care_email_match = TRUE;
+            }
+          }
+        }
+      }
+      if ($care_email_match) {
+        $existing_account = user_load($user_ids[0]);
+        $existing_account->mail = $email;
+        user_save($existing_account);
+        $message_args = [
+          '%email' => $email,
+          '@password' => url('user/password'),
+        ];
+        $message = t('A website account for you already exists, but had a different email address. This website account email address has now been updated to be %email.', $message_args) . ' ';
+        $message .= t('Please log in below, or <a href="@password">request a new password</a>.', $message_args);
+        drupal_set_message($message);
+        form_unset_error('field_user_name][und][0][title');
+        form_unset_error('field_user_name][und][0][forenames');
+        form_unset_error('field_user_name][und][0][surname');
+        $form_state['redirect'] = 'user/login';
+        return;
+      }
+      $message_args = [
+        '%number' => $membership_number,
+        '@login' => url('user/login'),
+        '@password' => url('user/password'),
+      ];
+      form_set_error($membership_number_field_name, t('The membership number %number already has an account registered, but with a different email address. Please check the membership number
+entered is correct. If it is correct please either <a href="@login">log in</a> with your original details, <a href="@password">request a new password</a>,
+or contact Cycling UK membership department for further help.', $message_args));
+      return;
+    }
+    if ($email_already_used_uid) {
+      form_unset_error('mail');
+      form_set_error($membership_number_field_name, t('The email address %email has already been registered to a different membership number. Please use another email address, or contact Cycling UK membership department for further help.', [
+        '%email' => $email,
+      ]));
+    }
+    // PHASE 2: New user: check details against CARE.
+    // Look up membership details for this number in CARE.
+    $data = [
+      'ContactNumber' => $membership_number,
+    ];
+    $type_data = [
+      'pSelectDataType' => 'xcdtContactInformation',
+    ];
+    $care_result_xml = care_call_method('SelectContactData', $data, $type_data);
+    if (isset($care_result_xml->ErrorMessage)) {
+      form_set_error($membership_number_field_name, t('Membership Number %number is not valid.', [
+        '%number' => $membership_number,
+      ]));
+    }
+    else {
+      $surname_match = (strtolower($surname) == strtolower((string) $care_result_xml->DataRow->Surname));
+      $email_match = FALSE;
+      $data = [
+        'EmailAddress' => $email,
+      ];
+      $care_result_xml = care_call_method('FindContacts', $data);
+      foreach ($care_result_xml as $care_contact) {
+        if ($membership_number == (string) $care_contact->ContactNumber) {
+          $email_match = TRUE;
+          break;
+        }
+      }
+      if ($surname && !$surname_match) {
+        form_set_error($name_field_name . '][und][0][surname', t('Invalid surname for this membership number.'));
+      }
+      if (!$email_match) {
+        form_set_error('mail', t('Invalid email address for this membership number.'));
+      }
+    }
+  }
+  elseif ($email) {
+    // Look up email in CARE.
+    $non_matching_member_found = FALSE;
+    $data = [
+      'EmailAddress' => $email,
+    ];
+    $care_result_xml = care_call_method('FindContacts', $data);
+    foreach ($care_result_xml as $care_contact) {
+      $surname_match = ($surname == (string) $care_contact->Surname);
+      $initial_match = (strtoupper(substr($forename, 0, 1)) == strtoupper(substr((string) $care_contact->Forenames, 0, 1)));
+      if ($surname_match && $initial_match) {
+        // Set Membership number from first matching CARE record with this
+        // email, surname and initial.
+        form_set_value($form[$membership_number_field_name][LANGUAGE_NONE][0]['number'], (string) $care_contact->ContactNumber, $form_state);
+        $non_matching_member_found = FALSE;
+        break;
+      }
+
+      $data = [
+        'ContactNumber' => (string) $care_contact->ContactNumber,
+      ];
+      $care_xml_data = care_call_method('FindMembers', $data);
+      if (!$care_xml_data->ErrorMessage) {
+        foreach ($care_xml_data as $member) {
+          if ((string) $member->CancellationReason == '') {
+            $non_matching_member_found = TRUE;
+          }
+        }
+      }
+    }
+    if ($non_matching_member_found) {
+      form_set_error('mail', t('Email address %email is associated with a current Cycling UK member but details entered do not match.', [
+        '%email' => $email,
+      ]));
+    }
+  }
+}
+
+/**
+ * Custom user registration form submit function.
+ */
+function cyclinguk_registration_user_register_form_submit($form, &$form_state) {
+  if ($form_state['redirect'] == 'user/login') {
+    // Use existing account, redirect to login page.
+    $form_state['redirect'] = 'user/login';
+  }
+  else {
+    // Create new account as normal.
+    user_register_submit($form, $form_state);
+  }
+}
+
+/**
+ * Define form_unset_error if not yet in Drupal.
+ */
+if (!function_exists('form_unset_error')) {
+
+  /**
+   * Drupal function to unset an error message.
+   */
+  function form_unset_error($name) {
+    $errors = &drupal_static('form_set_error', []);
+    $removed_messages = [];
+    if (isset($errors[$name])) {
+      $removed_messages[] = $errors[$name];
+      unset($errors[$name]);
+    }
+    if (isset($_SESSION['messages']) && is_array($_SESSION['messages']['error'])) {
+      $_SESSION['messages']['error'] = array_diff($_SESSION['messages']['error'], $removed_messages);
+    }
+    if (empty($_SESSION['messages']['error'])) {
+      unset($_SESSION['messages']['error']);
+    }
+  }
+
+}

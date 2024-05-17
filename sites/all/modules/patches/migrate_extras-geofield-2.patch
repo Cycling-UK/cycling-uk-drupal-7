@@ -1,0 +1,22 @@
+ docroot/sites/all/modules/contrib/migrate_extras/geofield.inc | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/docroot/sites/all/modules/contrib/migrate_extras/geofield.inc b/docroot/sites/all/modules/contrib/migrate_extras/geofield.inc
+index c3d3f0e..596708e 100644
+--- a/docroot/sites/all/modules/contrib/migrate_extras/geofield.inc
++++ b/docroot/sites/all/modules/contrib/migrate_extras/geofield.inc
+@@ -45,10 +45,14 @@ class MigrateGeoFieldHandler extends MigrateFieldHandler {
+ 	// patch: Added support geofield WKT GEOM
+     $delta = 0;
+     foreach ($values as $value) {
++      //Exception: Cannot construct Point, ...should be numeric
++      $value = str_replace('( ', '(', $value);
++      $value = str_replace(' )', ')', $value);        
+       $return[$language][$delta] = array('geom' => $value) + array_intersect_key($arguments, $field_info['columns']);
+       $delta++;
+     }
+ 
++    
+     return isset($return) ? $return : NULL;
+   }
+ }

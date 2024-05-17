@@ -1,0 +1,340 @@
+.navbar-default {
+	background-color: inherit;
+	border: none;
+	/* margin-bottom: 60px; */
+}
+
+@media only screen and (max-width: 767px) {
+	.navbar-default {
+		margin-bottom: 20px;
+	}
+}
+
+/*
+ * Disable NavBar collape
+ * http://stackoverflow.com/questions/23535289/bootstrap-3-disable-navbar-collapse
+ */
+
+.navbar-collapse.collapse {
+	display: block !important;
+}
+
+.navbar-nav > li,
+.navbar-nav {
+	float: left !important;
+}
+
+.navbar-nav.navbar-right:last-child {
+	margin-right: -15px !important;
+}
+
+.navbar-right {
+	float: right !important;
+}
+
+/*
+ * Remove default Bootstrap hamburger menu on mobile
+ */
+
+@media only screen and (max-width: 767px) {
+	#navbar .navbar-header {
+		display: none;
+	}
+}
+
+/*
+ * Top menu
+ */
+
+.top-menu-container {
+	height: 115px;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	.top-menu-container {
+		margin-left: -15px;
+		margin-right: -15px;
+	}
+}
+
+.top-menu-container a.logo {
+	outline: none;
+}
+
+/*
+.top-menu-block {
+	top: 26px;
+}
+*/
+/*
+@media only screen and (max-width : 767px) {
+	.top-menu-block {top: -65px;}
+}
+*/
+ul#superfish-4 {
+	padding: 16px 0 0 0;
+	display: inline-block;
+}
+
+ul#superfish-4 li {
+	display: inline-block;
+	margin-left: 20px;
+	height: 32px;
+	background-image: url("../images/menu/bw-top-menu-icons.png");
+	height: 32px;
+	padding: 0;
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+	ul#superfish-4 li {
+		margin-left: 15px;
+	}
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	ul#superfish-4 li {
+		margin-left: 12px;
+	}
+}
+
+ul#superfish-4 a {
+	display: block;
+	border: inherit;
+	text-decoration: none;
+}
+
+ul#superfish-4 a:link,
+ul#superfish-4 a:hover,
+ul#superfish-4 a:active {
+	text-decoration: none;
+	outline: none;
+}
+
+ul#superfish-4 span {
+	display: none;
+}
+
+ul#superfish-4 li.contact a {
+	width: 27px;
+	height: 32px;
+}
+ul#superfish-4 li.shop a {
+	width: 29px;
+	height: 32px;
+}
+ul#superfish-4 li.forum a {
+	width: 32px;
+	height: 32px;
+}
+ul#superfish-4 li.maps a {
+	width: 34px;
+	height: 32px;
+}
+ul#superfish-4 li.login a {
+	width: 25px;
+	height: 32px;
+}
+ul#superfish-4 li.my-account a {
+	width: 29px;
+	height: 32px;
+}
+ul#superfish-4 li.logout a {
+	width: 28px;
+	height: 32px;
+}
+ul#superfish-4 li.search a {
+	width: 29px;
+	height: 32px;
+}
+ul#superfish-4 li.instagram a {
+	width: 28px;
+	height: 32px;
+}
+ul#superfish-4 li.facebook a {
+	width: 17px;
+	height: 32px;
+}
+ul#superfish-4 li.twitter a {
+	width: 33px;
+	height: 32px;
+}
+ul#superfish-4 li.youtube a {
+	width: 38px;
+	height: 32px;
+}
+
+ul#superfish-4 li.contact {
+	background-position: -18px -32px;
+}
+ul#superfish-4 li.shop {
+	background-position: -222px -32px;
+}
+ul#superfish-4 li.forum {
+	background-position: -45px -32px;
+}
+ul#superfish-4 li.maps {
+	background-position: -77px -32px;
+}
+ul#superfish-4 li.login {
+	background-position: -169px -32px;
+}
+ul#superfish-4 li.my-account {
+	background-position: -111px -32px;
+}
+ul#superfish-4 li.logout {
+	background-position: -194px -32px;
+}
+ul#superfish-4 li.search {
+	background-position: -140px -32px;
+}
+ul#superfish-4 li.instagram {
+	background-position: -251px -32px;
+}
+ul#superfish-4 li.facebook {
+	background-position: -279px -32px;
+}
+ul#superfish-4 li.twitter {
+	background-position: -297px -32px;
+}
+ul#superfish-4 li.youtube {
+	background-position: -330px -32px;
+}
+
+ul#superfish-4 li.contact:hover {
+	background-position: -18px 0px;
+}
+ul#superfish-4 li.shop:hover {
+	background-position: -222px 0px;
+}
+ul#superfish-4 li.forum:hover {
+	background-position: -45px 0px;
+}
+ul#superfish-4 li.maps:hover {
+	background-position: -77px 0px;
+}
+ul#superfish-4 li.login:hover {
+	background-position: -169px 0px;
+}
+ul#superfish-4 li.my-account:hover {
+	background-position: -111px 0px;
+}
+ul#superfish-4 li.logout:hover {
+	background-position: -194px 0px;
+}
+ul#superfish-4 li.search:hover {
+	background-position: -140px 0px;
+}
+ul#superfish-4 li.instagram:hover {
+	background-position: -251px 0px;
+}
+ul#superfish-4 li.facebook:hover {
+	background-position: -279px 0px;
+}
+ul#superfish-4 li.twitter:hover {
+	background-position: -297px 0px;
+}
+ul#superfish-4 li.youtube:hover {
+	background-position: -330px 0px;
+}
+
+body.not-logged-in ul#superfish-4 li.my-account,
+body.not-logged-in ul#superfish-4 li.logout {
+	display: none;
+}
+
+body.logged-in ul#superfish-4 li.login {
+	display: none;
+}
+
+@media only screen and (min-width: 768px) {
+	ul#superfish-4 li.search {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.navbar .logo {
+		display: block;
+		margin: 0;
+		padding: 0;
+		position: relative;
+		top: 52px;
+		left: 15px;
+	}
+	/*
+	.top-menu-block {
+		text-align: center;
+		width: 100%;
+		margin: 0 auto;
+	}
+*/
+	ul#superfish-4 {
+		list-style: none;
+		margin: 0 auto;
+		display: inline-block;
+		padding-top: 0;
+	}
+
+	ul#superfish-4 li {
+		float: left;
+		margin: 0 13px;
+	}
+}
+
+/* ul#superfish-4 li {
+	margin: 0 10px !important;
+} */
+
+@media only screen and (min-width: 320px) and (max-width: 349px) {
+	ul#superfish-4 li {
+		margin: 0 4px 0 4px !important;
+	}
+}
+@media only screen and (min-width: 350px) and (max-width: 399px) {
+	ul#superfish-4 li {
+		margin: 0 8px 0 8px !important;
+	}
+}
+@media only screen and (min-width: 400px) and (max-width: 767px) {
+	ul#superfish-4 li {
+		margin: 0 10px 0 10px !important;
+	}
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	ul#superfish-4 li {
+		margin: 0 0px 0 15px !important;
+	}
+}
+@media only screen and (min-width: 992px) {
+	ul#superfish-4 li {
+		margin: 0 0px 0 20px !important;
+	}
+}
+
+@media only screen and (min-width: 992px) {
+	.navbar.container {
+		padding: 0;
+	}
+}
+
+#navbar .navbar-collapse {
+	margin: 0 -15px;
+	padding: 0;
+}
+
+/* Adjust navbar margins when viewed on a tablet */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	#navbar .navbar-collapse {
+		margin: 0 -30px;
+	}
+}
+
+/*********************************/
+
+@media only screen and (max-width: 1024px) {
+	.bikeweekxl .sf-menu.sf-style-simple-centre-aligned.sf-horizontal > li,
+	.bikeweekxl .sf-menu.sf-style-simple-centre-aligned.sf-navbar > li,
+	.bikeweekxl .sf-menu.sf-style-simple-centre-aligned.sf-navbar > li > ul > li {
+		/*display: inline-block;*/
+		margin-bottom: 12px;
+	}
+}

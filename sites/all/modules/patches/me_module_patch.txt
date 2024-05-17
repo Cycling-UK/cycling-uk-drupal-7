@@ -1,0 +1,5 @@
+line 460 me.module chnaged to pass on current URL once user goes to login page (set via config)
+
+changed to drupal_goto($redirect_path, array('query' => array('current' => current_path())));
+
+from drupal_goto($redirect_path);

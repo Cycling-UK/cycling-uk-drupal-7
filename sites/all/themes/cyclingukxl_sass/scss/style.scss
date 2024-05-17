@@ -1,0 +1,67 @@
+// Default variables.
+@import 'default-variables';
+
+// Bootstrap Framework.
+@import '../bootstrap/assets/stylesheets/bootstrap';
+
+// Base-theme overrides.
+@import 'overrides';
+
+// Legacy css from cdn version of cyclinguk xl
+
+@import 'legacy_css/accordions';
+@import 'legacy_css/reset';
+@import 'legacy_css/bootstrap-xlgrid';
+@import 'legacy_css/alerts';
+@import 'legacy_css/style';
+@import 'legacy_css/links';
+@import 'legacy_css/buttons';
+@import 'legacy_css/pager';
+@import 'legacy_css/menu-top';
+@import 'legacy_css/menu-desktop';
+@import 'legacy_css/menu-mobile';
+@import 'legacy_css/menu-side';
+@import 'legacy_css/tabs';
+@import 'legacy_css/header';
+@import 'legacy_css/footer';
+@import 'legacy_css/search';
+@import 'legacy_css/front';
+@import 'legacy_css/carousels';
+@import 'legacy_css/comments';
+@import 'legacy_css/webforms';
+@import 'legacy_css/easydropdown';
+@import 'legacy_css/posts';
+@import 'legacy_css/groups';
+@import 'legacy_css/openlayers';
+@import 'legacy_css/heroes';
+@import 'legacy_css/biographies';
+@import 'legacy_css/challenges';
+@import 'legacy_css/landing-xl';
+@import 'legacy_css/paragraphs';
+@import 'legacy_css/join';
+@import 'legacy_css/member-benefits';
+@import 'legacy_css/cta';
+@import 'legacy_css/paragraphs-bundle-file-downloads';
+@import 'legacy_css/paragraphs-bundle-four-featured-articles';
+@import 'legacy_css/paragraphs-bundle-four-featured-videos';
+@import 'legacy_css/paragraphs-bundle-simple-text-block';
+@import 'legacy_css/paragraphs-bundle-simple-buttons';
+@import 'legacy_css/paragraphs-bundle-parallax';
+@import 'legacy_css/paragraphs-bundle-blockquote';
+@import 'legacy_css/paragraphs-bundle-text-columns';
+@import 'legacy_css/paragraphs-bundle-background-image-text-panel';
+@import 'legacy_css/paragraphs-bundle-background-colour-text-panel';
+@import 'legacy_css/paragraphs-bundle-text-left-image-right';
+@import 'legacy_css/paragraphs-bundle-video-player';
+@import 'legacy_css/paragraphs-bundle-faq';
+@import 'legacy_css/paragraphs-bundle-issuu-publication-insert';
+@import 'legacy_css/paragraphs-bundle-related-content';
+@import 'legacy_css/paragraphs-bundle-join-icons';
+@import 'legacy_css/paragraphs-bundle-code';
+@import 'legacy_css/paragraphs-bundle-sponsor-logos-links';
+@import 'legacy_css/paragraphs-bundle-views';
+@import 'legacy_css/paragraphs-bundle-youtube-video';
+@import 'legacy_css/paragraphs-bundle-cta-buttons';
+@import 'legacy_css/cookie-compliance';
+@import 'legacy_css/paragraphs-terms-conditions';
+@import 'legacy_css/paragraphs-bundle-logged-in-content';

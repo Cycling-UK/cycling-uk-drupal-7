@@ -1,0 +1,192 @@
+/* Mobile icon theming */
+.site-mobile-menu-block > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 36px;
+  width: 36px;
+  border-radius: 25px;
+  background-color: #009fda;
+  color: #fff;
+  text-decoration: none;
+}
+
+.site-mobile-menu-block > a:hover,
+.site-mobile-menu-block > a:focus {
+  background-color: #007fae;
+}
+
+.site-mobile-menu-block > a span {
+  display: none;
+}
+
+
+/* Mobile menu theming */
+.mmenu-nav.mm-basic {
+  background: #fff;
+  color: #000;
+  text-shadow: inherit;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 20px;
+  box-shadow: inherit !important;
+  padding: 0 30px;
+}
+
+.mmenu-nav.mm-basic.mm-hasheader > .mm-panel {
+  padding: 140px 30px 30px 30px;
+}
+
+.mmenu-nav.mm-basic.mm-hasheader > .mm-panel.mmenu-mm-list-level-2 {
+  padding: 120px 30px 30px 30px;
+}
+
+
+.mm-list > li > a,
+.mm-list > li > span {
+  font: inherit;
+  font-size: 16px;
+  line-height: 20px;
+  padding: 0;
+}
+
+.mm-menu .mm-list {
+  padding: 0;
+}
+
+
+/* Main menu title */
+.mmenu-nav.mm-basic > .mm-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: inherit;
+  background: #fff;
+  filter: none; 
+  padding: 60px 0;
+  border-bottom: 1px solid #00aeef;
+  width: calc(100% - 60px);
+  margin-left: 30px;
+  margin-right: 30px;
+} 
+
+.mmenu-nav.mm-basic > .mm-header .mm-title {
+  display: block;
+  border: none;
+  padding: inherit;
+  width: 100%;
+  font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 400;
+	font-size: 28px;
+	line-height: 36px;
+  color: #009fda;
+}
+
+
+.mmenu-nav.mm-basic > .mm-header .mm-prev,
+.mmenu-nav.mm-basic > .mm-header .mm-next {
+  display: block;
+  position: relative;
+  top: inherit;
+  left: inherit;
+  right: inherit;
+  bottom: inherit;
+  height: 18px;
+}
+
+.mmenu-nav.mm-basic > .mm-header .mm-prev:before,
+.mmenu-nav.mm-basic > .mm-header .mm-next:before {
+  border-color: #009fda;
+}
+
+
+
+
+
+/* Remove ALL borders provided by the module */
+.mmenu-nav.mm-basic > .mm-list li {
+  border-top: none;
+  border-bottom: none;
+}
+
+.mm-list > li:not(.mm-subtitle):not(.mm-label):not(.mm-search):not(.mm-noresults):after {
+  content: inherit;
+  border: inherit;
+}
+
+/* Now add our borders */
+/* First the top main menu */
+.mmenu-nav.mm-basic li.mmenu-block-wrap ul.mm-list li {
+  border-top: 1px solid #00aeef;
+  border-bottom: none;
+}
+
+/* And then the second user menu */
+.mmenu-nav.mm-basic > ul.mm-list > ul.mmenu-mm-list-level-1.mm-list > li {
+  border-top: 1px solid #00aeef;
+}
+
+.mmenu-nav.mm-basic > ul.mm-list > ul.mmenu-mm-list-level-1.mm-list > li:last-of-type {
+  border-bottom: 1px solid #00aeef;
+}
+
+/* And finally the submenus */
+.mmenu-nav.mm-basic > ul.mmenu-mm-list-level-2 > li {
+  border-top: 1px solid #00aeef;
+}
+
+.mmenu-nav.mm-basic > ul.mmenu-mm-list-level-2 > li:last-of-type {
+  border-bottom: 1px solid #00aeef;
+}
+
+
+.mmenu-nav.mm-basic > .mm-list li > a:not(.mm-subopen):not(.mm-subclose):not(.mm-fullsubopen) {
+  padding: 20px 10px;
+}
+
+
+/* Remove ALL Font Awesome icons for the main menu provided by the modules */
+.mmenu-nav.mm-basic > .mm-list li i {
+  display: none;
+}
+
+/* And now add the icons to the secondary menu */
+.mmenu-nav.mm-basic > ul.mm-list > ul.mmenu-mm-list-level-1.mm-list > li a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.mmenu-nav.mm-basic > ul.mm-list > ul.mmenu-mm-list-level-1.mm-list > li a::before {
+  display: inline-flex;
+  width: 20px;
+  font-family: 'Font Awesome 5 Pro';
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 16px;
+  outline: none;
+  color: #00aeef;
+  content: "\f4bc";
+}
+
+/* User join */       .mmenu-nav.mm-basic > ul.mm-list > ul.mmenu-mm-list-level-1.mm-list > li.mmenu-mm-list-path-user-register a::before   {content: "\f234";}
+/* My account */      .mmenu-nav.mm-basic > ul.mm-list > ul.mmenu-mm-list-level-1.mm-list > li.mmenu-mm-list-path-user a::before            {content: "\f007";}
+/* Member benefits */ .mmenu-nav.mm-basic > ul.mm-list > ul.mmenu-mm-list-level-1.mm-list > li.mmenu-mm-list-path-member-benefits a::before {content: "\f06b";}
+/* Login */           .mmenu-nav.mm-basic > ul.mm-list > ul.mmenu-mm-list-level-1.mm-list > li.mmenu-mm-list-path-user-login a::before      {content: "\f090";}
+/* Logout */          .mmenu-nav.mm-basic > ul.mm-list > ul.mmenu-mm-list-level-1.mm-list > li.mmenu-mm-list-path-user-logout a::before     {content: "\f08b";}
+/* Search */          .mmenu-nav.mm-basic > ul.mm-list > ul.mmenu-mm-list-level-1.mm-list > li.mmenu-mm-list-path-search a::before          {content: "\f002";}
+
+
+/* Remove the first search menu item which is associated with the main menu. We will use the search menu item associated with the secondary menu. */
+/* This assumes the search menu item is the last item on the ul li list */
+
+.mmenu-nav.mm-basic li.mmenu-block-wrap ul.mm-list li:last-child {
+  display: none;
+}
+
+.mmenu-nav.mm-basic .mm-subopen::after,
+.mmenu-nav.mm-basic .mm-subclose::after {
+  border-color: #00aeef !important;
+}
+

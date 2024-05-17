@@ -1,0 +1,79 @@
+<?php
+/**
+ * @file
+ * Main module file.
+ */
+
+/**
+ * Implements hook_menu().
+ *
+ * @noinspection PhpUnused
+ */
+function cyclinguk_membercheck_menu() {
+  $menu['membercheck/%'] = [
+    'page callback' => 'cyclinguk_membercheck_check',
+    'page arguments' => [1],
+    'type' => MENU_CALLBACK,
+    'access callback' => TRUE,
+  ];
+  return $menu;
+}
+
+/**
+ * Check whether the given membership number is a current member.
+ *
+ * @param $membership_number int The membership number to check.
+ *
+ * @noinspection PhpUnused
+ */
+function cyclinguk_membercheck_check($membership_number) {
+  $membership_number = (int) $membership_number;
+  if (!$membership_number) {
+    _cyclinguk_membercheck_respond('false');
+  }
+  $data = ['ContactNumber' => $membership_number];
+  $care_xml_data = care_call_method('FindMembers', $data);
+  if (isset($care_xml_data->ErrorMessage)) {
+    _cyclinguk_membercheck_respond('error');
+  }
+  elseif (count($care_xml_data) == 0) {
+    _cyclinguk_membercheck_respond('false');
+  }
+  else {
+    foreach ($care_xml_data as $membership) {
+      $not_cancelled = (string) $membership->CancellationReason == '';
+      if ($not_cancelled) {
+        $renewal_date = DateTime::createFromFormat('d/m/Y', $membership->RenewalDate);
+        if ($renewal_date > new DateTime()) {
+          // Renewal date is in the future.
+          _cyclinguk_membercheck_respond('true');
+        }
+        else {
+          // Renewal date is in the past, check for DD payment plan.
+          $payment_method = '';
+          $data = [
+            'PaymentPlanNumber' => (int) $membership->PaymentPlanNumber,
+          ];
+          $care_dd_xml_data = care_call_method('FindPaymentPlans', $data);
+          if (!isset($care_dd_xml_data->ErrorMessage)) {
+            $plan = $care_dd_xml_data->DataRow;
+            $payment_method = (string) $plan->PaymentMethod;
+          }
+          _cyclinguk_membercheck_respond($payment_method == 'DD' ? 'true' : 'lapsed');
+        }
+      }
+    }
+    _cyclinguk_membercheck_respond('false');
+  }
+}
+
+/**
+ * Return the check result as a simple text/plain response.
+ *
+ * @param $text string The text to return.
+ */
+function _cyclinguk_membercheck_respond(string $text) {
+  drupal_add_http_header('Content-Type', 'text/plain');
+  echo $text;
+  drupal_exit();
+}

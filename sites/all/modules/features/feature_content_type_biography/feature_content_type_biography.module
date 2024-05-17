@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * Code for the Content type - biography feature.
+ */
+
+include_once 'feature_content_type_biography.features.inc';

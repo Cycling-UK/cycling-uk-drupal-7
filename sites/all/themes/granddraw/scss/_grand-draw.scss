@@ -1,0 +1,14 @@
+.node-type-grand-draw {
+	h1.page-header {
+		display: none;
+	}
+	.form-item-quantity {
+		text-align: left;
+	}
+	.field-type-care-telephone,
+	.field-type-care-email {
+		.fieldset-legend {
+			display: none !important;
+		}
+	}
+}

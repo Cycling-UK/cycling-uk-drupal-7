@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * Code for the Leader Board Entry content type feature.
+ */
+
+include_once 'leader_board_entry_content_type.features.inc';

@@ -1,0 +1,71 @@
+<?php
+
+/**
+ * @file
+ * Views Override module file.
+ */
+
+/**
+ * Implements hook_views_api().
+ */
+function views_override_views_api($module = NULL, $api = NULL) {
+  return array(
+    'api' => 3,
+    'path' => drupal_get_path('module', 'views_override') . '/views',
+  );
+}
+
+/**
+ * Implements hook_menu().
+ */
+function views_override_menu() {
+  $items['admin/config/system/views-override'] = array(
+    'title' => 'Views Override',
+    'description' => 'Configure which views should be overridden.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('views_override_admin_form'),
+    'file' => 'views_override.admin.inc',
+    'access arguments' => array('administer views override'),
+    'type' => MENU_NORMAL_ITEM,
+  );
+
+  return $items;
+}
+
+/**
+ * Implements hook_permission().
+ */
+function views_override_permission() {
+  return array(
+    'administer views override' => array(
+      'title' => t('Administer Views override'),
+      'description' => t('Configure standard overrides for built in views.'),
+    ),
+  );
+}
+
+/**
+ * Implements hook_schema_alter().
+ */
+function views_override_schema_alter(&$schema) {
+  if (isset($schema['views_view'])) {
+    // We specify a load callback which gets precedence
+    // over the regular way views are loaded.
+    $schema['views_view']['export']['load callback'] = '_views_override_load_view';
+  }
+}
+
+/**
+ * Overriden callback to load view.
+ */
+function _views_override_load_view($name) {
+  $replacements = variable_get('views_override', array());
+  if (isset($replacements[$name])) {
+    $name = $replacements[$name];
+  }
+
+  $result = ctools_export_load_object('views_view', 'names', array($name));
+  if (isset($result[$name])) {
+    return $result[$name];
+  }
+}

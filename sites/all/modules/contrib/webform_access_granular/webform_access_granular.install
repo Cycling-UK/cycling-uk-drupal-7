@@ -1,0 +1,44 @@
+<?php
+
+/**
+ * @file
+ * Install, update, uninstall, disable and enable functions.
+ */
+
+/**
+ * Implements hook_schema().
+ *
+ * Create the table webform_access_granular, if it doesn't exist.
+ */
+function webform_access_granular_schema() {
+  // Database schema for webform_access_granular.
+  $schema['webform_access_granular'] = [
+    'description' => 'Table for storing information about granular access for webform results.',
+    'fields' => [
+      'nid' => [
+        'description' => 'The node identifier of a webform.',
+        'type' => 'int',
+        'unsigned' => TRUE,
+        'not null' => TRUE,
+      ],
+      'role' => [
+        'description' => 'Integer value 1 or NULL to state whether the webform role is to be used.',
+        'type' => 'int',
+        'size' => 'tiny',
+      ],
+      'users' => [
+        'description' => 'A comma delimited string of user ids to identify which users have access to the webform results.',
+        'type' => 'text',
+        'size' => 'big',
+      ],
+      'users_unpublished' => [
+        'description' => 'A comma delimited string of user ids to identify which users have access to the unpublished webform results.',
+        'type' => 'text',
+        'size' => 'big',
+      ],
+    ],
+    'primary key' => ['nid'],
+  ];
+
+  return $schema;
+}

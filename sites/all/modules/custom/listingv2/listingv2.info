@@ -1,0 +1,12 @@
+name = listingv2
+description = newer version of listing for groups & events
+core = 7.x
+package = Cycling UK Features
+version = 7.x-1.1
+dependencies[] = views
+features[ctools][] = views:views_default:3.0
+features[features_api][] = api:2
+features[views_view][] = events_v2
+features[views_view][] = groups_v2
+features_exclude[dependencies][ctools] = ctools
+files[] = listingv2.pages.inc

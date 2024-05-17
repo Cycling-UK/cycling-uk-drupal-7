@@ -1,0 +1,1195 @@
+/*
+ * Pumped Up styling
+ */
+
+/* Common CSS identifiers */
+
+.background-colour-light-pink {
+  background-color: #f9bfe0;
+}
+.background-colour-medium-pink {
+  background-color: #f289bf;
+}
+.background-colour-dark-pink {
+  background-color: #ec409f;
+}
+.background-colour-purple {
+  background-color: #8065a9;
+}
+.background-colour-yellow {
+  background-color: #fac533;
+}
+
+.text-colour-light-pink {
+  color: #f9bfe0 !important;
+}
+.text-colour-medium-pink {
+  color: #f289bf !important;
+}
+.text-colour-dark-pink {
+  color: #ec409f !important;
+}
+.text-colour-purple {
+  color: #8065a9 !important;
+}
+.text-colour-yellow {
+  color: #fac533 !important;
+}
+.text-colour-black {
+  color: #000000 !important;
+}
+.text-colour-white {
+  color: #ffffff !important;
+}
+
+.text-align-mobile-left {
+  text-align: left !important;
+}
+.text-align-mobile-center {
+  text-align: center !important;
+}
+
+@media only screen and (min-width: 992px) {
+  .text-align-desktop-left {
+    text-align: left !important;
+  }
+  .text-align-desktop-center {
+    text-align: center !important;
+  }
+}
+
+.pumpedup-underlined {
+  display: inline-block;
+}
+
+.pumpedup-underlined:after {
+  display: block;
+  content: "";
+  width: 100%;
+  height: 8px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  margin-top: 5px;
+}
+
+.pumpedup-underlined-colour-light-pink:after {
+  background-color: #f9bfe0;
+}
+.pumpedup-underlined-colour-medium-pink:after {
+  background-color: #f289bf;
+}
+.pumpedup-underlined-colour-dark-pink:after {
+  background-color: #ec409f;
+}
+.pumpedup-underlined-colour-purple:after {
+  background-color: #8065a9;
+}
+.pumpedup-underlined-colour-yellow:after {
+  background-color: #fac533;
+}
+.pumpedup-underlined-colour-white:after {
+  background-color: #ffffff;
+}
+
+.rounded-corners {
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+}
+
+.text-size-larger {
+  font-size: 1.2em;
+  line-height: 1.3em;
+}
+
+.pumpedup-body ul {
+  list-style-type: square;
+  padding-left: 15px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.pumpedup-body ul li {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+/* Framework */
+
+.pumpedup-paragraph {
+  padding: 60px 0 0 0;
+}
+
+.pumpedup-panel {
+  margin-left: -15px;
+  margin-right: -15px;
+  padding: 30px 0 30px 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .pumpedup-panel {
+    padding: 30px;
+  }
+}
+
+/* Typography */
+h1,
+.view-front-page-featured-content.top-article .featured-content-title {
+  font-family: korolev-rounded, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  text-transform: uppercase;
+  color: #fac533;
+  text-shadow: inherit;
+}
+
+.pumpedup-paragraph h2,
+h2.pumpedup-title {
+  font-family: korolev-rounded, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  text-transform: uppercase;
+  font-size: 36px;
+  line-height: 36px;
+  margin: 0 0 15px 0 !important;
+}
+
+.block.covid-19 .covid-19-title {
+  font-family: korolev-rounded, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* Links */
+
+a {
+  color: #ec409f;
+}
+
+a:hover,
+a:focus,
+a:active {
+  color: #8064a9;
+}
+
+/* Buttons */
+
+a.pumpedup-btn,
+.btn-primary,
+.node-webform .form-actions .btn,
+.main-container .block-webform .form-actions .btn,
+.view-biography-grid .biography_link .btn,
+#cboxContent .node-biography .field-name-view-full-node a {
+  display: inline-block;
+  font-family: korolev-rounded, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 16px;
+  outline: none;
+  padding: 10px 20px !important;;
+  border: inherit;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+}
+
+a.pumpedup-btn.btn-colour-off-dark-pink,
+.btn-primary,
+.node-webform .form-actions .btn,
+.main-container .block-webform .form-actions .btn,
+.view-biography-grid .biography_link .btn,
+#cboxContent .node-biography .field-name-view-full-node a,
+#cboxContent .node-biography .field-name-view-full-node a:visited {
+  border: inherit;
+  background-color: #ec409f;
+  color: #fff;
+}
+
+a.pumpedup-btn.btn-colour-off-yellow {
+  border: inherit;
+  background-color: #fac533;
+  color: #fff;
+}
+
+a.pumpedup-btn.btn-colour-on-yellow:focus,
+a.pumpedup-btn.btn-colour-on-yellow:hover,
+a.pumpedup-btn.btn-colour-on-yellow:active,
+.main-container .block-webform .form-actions .btn:focus,
+.main-container .block-webform .form-actions .btn:hover,
+.main-container .block-webform .form-actions .btn:active {
+  border: inherit;
+  background-color: #fac533;
+  color: #fff;
+}
+
+a.pumpedup-btn.btn-colour-on-purple:focus,
+a.pumpedup-btn.btn-colour-on-purple:hover,
+a.pumpedup-btn.btn-colour-on-purple:active,
+.btn-primary:focus,
+.btn-primary:hover,
+.btn-primary:active,
+.node-webform .form-actions .btn:focus,
+.node-webform .form-actions .btn:hover,
+.node-webform .form-actions .btn:active,
+.view-biography-grid .biography_link .btn:focus,
+.view-biography-grid .biography_link .btn:hover,
+.view-biography-grid .biography_link .btn:active,
+#cboxContent .node-biography .field-name-view-full-node a:focus,
+#cboxContent .node-biography .field-name-view-full-node a:hover,
+#cboxContent .node-biography .field-name-view-full-node a:active {
+  border: inherit;
+  background-color: #8065a9;
+  color: #fff;
+}
+
+.assemble-link {
+  display: block;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 0.8em;
+  line-height: 0.8em;
+  text-decoration: none;
+  outline: none;
+  margin-top: 10px;
+}
+
+.assemble-link:focus,
+.assemble-link:hover,
+.assemble-link:active {
+  color: #fff;
+  text-decoration: underline;
+}
+
+/* Paragraphs dividing white line */
+
+.entity-paragraphs-item {
+  border-bottom: 5px solid #fff;
+  margin-bottom: 1px;
+}
+
+/* Logo graphics */
+
+.pumpedup-graphic {
+  max-width: 400px;
+  margin: 0 auto 0 auto;
+  padding: 20px;
+}
+
+@media only screen and (max-width: 991px) {
+  .pumpedup-graphic {
+    margin: 0 auto 30px auto;
+  }
+}
+
+.pumpedup-graphic img {
+  width: 100%;
+  height: auto;
+}
+
+/* Portraits */
+
+.pumpedup-portraits {
+  display: flex;
+  flex-direction: row-reverse;
+  align-content: center;
+  width: 80%;
+  height: 200px;
+  margin: 30px auto 30px auto;
+}
+
+.pumpedup-portrait {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 12.5%;
+  height: auto;
+}
+
+.pumpedup-portrait img {
+  border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  border-width: 5px;
+  border-style: solid;
+  width: 200px;
+}
+
+.pumpedup-portrait-01 img,
+.pumpedup-portrait-05 img {
+  border-color: #ec409f;
+}
+.pumpedup-portrait-02 img,
+.pumpedup-portrait-06 img {
+  border-color: #f280bf;
+}
+.pumpedup-portrait-03 img,
+.pumpedup-portrait-07 img {
+  border-color: #f9bfe0;
+}
+.pumpedup-portrait-04 img,
+.pumpedup-portrait-08 img {
+  border-color: #fac533;
+}
+
+@media only screen and (max-width: 399px) {
+  .pumpedup-portraits {
+    height: 120px;
+  }
+  .pumpedup-portrait {
+    width: 25%;
+  }
+  .pumpedup-portrait-01,
+  .pumpedup-portrait-02,
+  .pumpedup-portrait-03,
+  .pumpedup-portrait-04 {
+    display: none;
+  }
+  .pumpedup-portrait img {
+    border-width: 3px;
+    width: 120px;
+  }
+}
+
+@media only screen and (min-width: 400px) and (max-width: 599px) {
+  .pumpedup-portraits {
+    height: 150px;
+  }
+  .pumpedup-portrait {
+    width: 20%;
+  }
+  .pumpedup-portrait-01,
+  .pumpedup-portrait-02,
+  .pumpedup-portrait-03 {
+    display: none;
+  }
+  .pumpedup-portrait img {
+    border-width: 4px;
+    width: 150px;
+  }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 991px) {
+  .pumpedup-portraits {
+    height: 180px;
+  }
+  .pumpedup-portrait {
+    width: 16.6%;
+  }
+  .pumpedup-portrait-01,
+  .pumpedup-portrait-02 {
+    display: none;
+  }
+}
+
+/* Crew */
+
+.pumpedup-crew {
+  margin: 30px auto 30px auto;
+}
+
+.pumpedup-crew .image {
+  display: flex;
+}
+
+.pumpedup-crew .image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px 20px 0 0;
+  -webkit-border-radius: 20px 20px 0 0;
+  -moz-border-radius: 20px 20px 0 0;
+}
+
+.pumpedup-crew a {
+  display: block;
+  width: 100%;
+  height: 70px;
+  font-family: korolev-rounded, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 36px;
+  line-height: 70px;
+  background-color: #ec409f;
+  color: #fff;
+  outline: none;
+  border-radius: 0 0 20px 20px;
+  -webkit-border-radius: 0 0 20px 20px;
+  -moz-border-radius: 0 0 20px 20px;
+}
+
+.pumpedup-crew a:focus,
+.pumpedup-crew a:hover,
+.pumpedup-crew a:active {
+  background-color: #8064a9;
+  color: #fff;
+}
+
+@media only screen and (max-width: 991px) {
+  .pumpedup-crew > div {
+    margin-bottom: 30px;
+  }
+  .pumpedup-crew > div:last-child {
+    margin-bottom: 0;
+  }
+  .pumpedup-crew .image,
+  .pumpedup-crew .text {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Member benefits */
+
+.pumpedup-panel.member-benefits {
+  background-size: cover;
+}
+
+.pumpedup-panel.member-benefits .left-container {
+  padding: 20px;
+}
+
+.pumpedup-panel.member-benefits .pumpedup-body {
+  font-family: korolev-rounded, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  text-transform: uppercase;
+  font-size: 24px;
+  line-height: 28px;
+  margin-bottom: 10px;
+}
+
+.webp .pumpedup-panel.member-benefits {
+  background-image: url("/sites/all/themes/pumpedup/images/photos/member-benefits-sm.webp");
+}
+.no-webp .pumpedup-panel.member-benefits {
+  background-image: url("/sites/all/themes/pumpedup/images/photos/member-benefits-sm.jpg");
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+  .webp .pumpedup-panel.member-benefits {
+    background-image: url("/sites/all/themes/pumpedup/images/photos/member-benefits-md.webp");
+  }
+  .no-webp .pumpedup-panel.member-benefits {
+    background-image: url("/sites/all/themes/pumpedup/images/photos/member-benefits-md.jpg");
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .webp .pumpedup-panel.member-benefits {
+    background-image: url("/sites/all/themes/pumpedup/images/photos/member-benefits-lg.webp");
+  }
+  .no-webp .pumpedup-panel.member-benefits {
+    background-image: url("/sites/all/themes/pumpedup/images/photos/member-benefits-lg.jpg");
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .pumpedup-panel.member-benefits {
+    padding-top: 170px;
+    background-position: center top;
+  }
+  .pumpedup-panel.member-benefits .pumpedup-graphic {
+    max-width: 200px;
+  }
+  .pumpedup-panel.member-benefits .left-container {
+    margin-top: 0;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .pumpedup-panel.member-benefits {
+    padding-top: 300px;
+    background-position: right top;
+  }
+  .pumpedup-panel.member-benefits .left-container {
+    margin-top: 190px;
+  }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1599px) {
+  .pumpedup-panel.member-benefits {
+    padding-top: 300px;
+    background-position: right top;
+  }
+  .pumpedup-panel.member-benefits .left-container {
+    margin-top: 220px;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .pumpedup-panel.member-benefits {
+    padding-top: 300px;
+    background-position: right top;
+  }
+  .pumpedup-panel.member-benefits .left-container {
+    margin-top: 260px;
+  }
+}
+
+/* News */
+
+.pumpedup-paragraph .carousel-triplet a,
+.pumpedup-paragraph .home-page-video .title {
+  font-family: korolev-rounded, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  text-transform: uppercase;
+  font-size: 24px;
+  line-height: 28px;
+  background-color: #ec409f;
+  color: #fff;
+  outline: none;
+}
+
+.pumpedup-paragraph .carousel-triplet .more-link a {
+  padding: 10px 16px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  display: block;
+  margin: auto;
+  max-width: 100px;
+  text-align: center;
+}
+
+.pumpedup-paragraph .carousel-triplet a:focus,
+.pumpedup-paragraph .carousel-triplet a:hover,
+.pumpedup-paragraph .carousel-triplet a:active {
+  background-color: #8065a9;
+  color: #fff;
+}
+
+.pumpedup-paragraph .carousel-triplet .pager a {
+  font-style: normal;
+  border: inherit;
+  background-color: #ec409f !important;
+  color: #fff !important;
+  outline: none;
+}
+
+.pumpedup-paragraph .carousel-triplet .pager a:focus,
+.pumpedup-paragraph .carousel-triplet .pager a:hover,
+.pumpedup-paragraph .carousel-triplet .pager a:active {
+  background-color: #8065a9 !important;
+  color: #fff !important;
+}
+
+@media only screen and (max-width: 479px) {
+  .pumpedup-paragraph .carousel-triplet {
+    width: 270px !important;
+  }
+}
+
+/* Advert */
+
+.pumpedup-panel.pumpedup-advert {
+  display: flex;
+  align-items: stretch;
+}
+
+@media only screen and (max-width: 499px) {
+  .pumpedup-panel.pumpedup-advert {
+    display: none;
+  }
+}
+
+.pumpedup-panel.pumpedup-advert .left-container .pumpedup-graphic {
+  margin: 0 auto;
+}
+
+.pumpedup-panel.pumpedup-advert .right-container {
+  width: 100%;
+  display: flex;
+  align-items: stretch;
+}
+
+.pumpedup-panel.pumpedup-advert .pumpedup-advert-nurse {
+  width: 100%;
+  background-image: url("/sites/all/themes/pumpedup/images/photos/nurse.jpg");
+  background-position: center top;
+  background-size: cover;
+}
+
+/* Video player and four buttons */
+
+.pumpedup-paragraph #main-video .background-tint {
+  background-image: inherit;
+  background-color: #fac533;
+}
+
+.pumpedup-paragraph #main-video .inner-wrapper a {
+  background-color: #ec409f;
+  border-color: #ec409f;
+  color: #fff;
+  outline: none;
+}
+
+.pumpedup-paragraph #main-video .inner-wrapper a:focus,
+.pumpedup-paragraph #main-video .inner-wrapper a:hover,
+.pumpedup-paragraph #main-video .inner-wrapper a:active {
+  background-color: #8065a9;
+  border-color: #8065a9;
+  color: #fff;
+}
+
+.pumpedup-paragraph #main-video .icon-label {
+  font-family: korolev-rounded, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  text-transform: uppercase;
+  font-size: 24px;
+  line-height: 24px;
+  color: #fff;
+}
+
+/*
+.pumpedup-paragraph .main-video-block {
+  margin-bottom: -400px !important;
+}
+*/
+
+/* Newsletter signup */
+
+.pumpedup-panel.pumpedup-newsletter-signup {
+  background-size: cover;
+  background-position: right top;
+}
+
+.pumpedup-panel.pumpedup-newsletter-signup .left-container {
+  padding: 20px;
+}
+
+.pumpedup-panel.pumpedup-newsletter-signup h2.block-title,
+.pumpedup-panel.pumpedup-newsletter-signup form label {
+  display: none;
+}
+
+.pumpedup-panel.pumpedup-newsletter-signup .pumpedup-webform {
+  font-family: korolev-rounded, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  text-transform: uppercase;
+  font-size: 18px;
+  line-height: 18px;
+  color: #fff;
+}
+
+.pumpedup-panel.pumpedup-newsletter-signup .pumpedup-body,
+.pumpedup-panel.pumpedup-newsletter-signup .form-group {
+  margin-bottom: 10px;
+}
+
+.pumpedup-panel.pumpedup-newsletter-signup .form-control {
+  border: 1px solid #f9bfe0;
+}
+.pumpedup-panel.pumpedup-newsletter-signup .form-control:focus {
+  border: 1px solid #ec409f;
+}
+
+.webp .pumpedup-panel.pumpedup-newsletter-signup {
+  background-image: url("/sites/all/themes/pumpedup/images/photos/newsletter-signup-sm.webp");
+}
+.no-webp .pumpedup-panel.pumpedup-newsletter-signup {
+  background-image: url("/sites/all/themes/pumpedup/images/photos/newsletter-signup-sm.jpg");
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+  .webp .pumpedup-panel.pumpedup-newsletter-signup {
+    background-image: url("/sites/all/themes/pumpedup/images/photos/newsletter-signup-md.webp");
+  }
+  .no-webp .pumpedup-panel.pumpedup-newsletter-signup {
+    background-image: url("/sites/all/themes/pumpedup/images/photos/newsletter-signup-md.jpg");
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .webp .pumpedup-panel.pumpedup-newsletter-signup {
+    background-image: url("/sites/all/themes/pumpedup/images/photos/newsletter-signup-lg.webp");
+  }
+  .no-webp .pumpedup-panel.pumpedup-newsletter-signup {
+    background-image: url("/sites/all/themes/pumpedup/images/photos/newsletter-signup-lg.jpg");
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  .pumpedup-panel.pumpedup-newsletter-signup .left-container {
+    margin-top: 300px;
+  }
+  .pumpedup-panel.pumpedup-newsletter-signup {
+    background-position: center top;
+  }
+}
+
+/* Pumped Up Profiles grid view */
+
+.page-pumpedup-portraits h1.page-header {
+  font-family: korolev-rounded, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.node-type-biography .field-name-title h1,
+.view-biography-grid .biography_title,
+#cboxContent .node-biography h2,
+#cboxContent .node-biography .field-name-field-headline {
+  font-family: korolev-rounded, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.view-biography-grid .biography_category {
+  display: none;
+}
+
+#cboxContent .node-biography h2,
+#cboxContent .node-biography .field-name-field-headline {
+  color: #000;
+}
+
+.view-biography-grid .biography_image.pumped_up img,
+.node-type-biography .pumped_up img,
+#cboxContent .node-biography img {
+  border: 5px solid #fac533;
+}
+
+/* Pumped Up Crew */
+
+.pumpedup-panel.pumpedup-crew-promote .left-container,
+.pumpedup-panel.pumpedup-crew-pedal .right-container,
+.pumpedup-panel.pumpedup-crew-partner .left-container {
+  padding: 20px;
+}
+
+.pumpedup-panel.pumpedup-crew-promote,
+.pumpedup-panel.pumpedup-crew-partner {
+  background-size: cover;
+  background-position: right top;
+}
+
+.pumpedup-panel.pumpedup-crew-pedal {
+  background-size: cover;
+  background-position: left top;
+}
+
+@media only screen and (max-width: 767px) {
+  .pumpedup-panel.pumpedup-crew-promote .left-container,
+  .pumpedup-panel.pumpedup-crew-pedal .right-container,
+  .pumpedup-panel.pumpedup-crew-partner .left-container {
+    margin-top: 380px;
+  }
+  .pumpedup-panel.pumpedup-crew-promote,
+  .pumpedup-panel.pumpedup-crew-pedal,
+  .pumpedup-panel.pumpedup-crew-partner {
+    background-position: center top;
+  }
+}
+
+.webp .pumpedup-panel.pumpedup-crew-promote {
+  background-image: url("/sites/all/themes/pumpedup/images/crew/promote-hero-background-sm.webp");
+}
+.no-webp .pumpedup-panel.pumpedup-crew-promote {
+  background-image: url("/sites/all/themes/pumpedup/images/crew/promote-hero-background-sm.jpg");
+}
+.webp .pumpedup-panel.pumpedup-crew-pedal {
+  background-image: url("/sites/all/themes/pumpedup/images/crew/pedal-hero-background-sm.webp");
+}
+.no-webp .pumpedup-panel.pumpedup-crew-pedal {
+  background-image: url("/sites/all/themes/pumpedup/images/crew/pedal-hero-background-sm.jpg");
+}
+.webp .pumpedup-panel.pumpedup-crew-partner {
+  background-image: url("/sites/all/themes/pumpedup/images/crew/partner-hero-background-sm.webp");
+}
+.no-webp .pumpedup-panel.pumpedup-crew-partner {
+  background-image: url("/sites/all/themes/pumpedup/images/crew/partner-hero-background-sm.jpg");
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+  .webp .pumpedup-panel.pumpedup-crew-promote {
+    background-image: url("/sites/all/themes/pumpedup/images/crew/promote-hero-background-md.webp");
+  }
+  .no-webp .pumpedup-panel.pumpedup-crew-promote {
+    background-image: url("/sites/all/themes/pumpedup/images/crew/promote-hero-background-md.jpg");
+  }
+  .webp .pumpedup-panel.pumpedup-crew-pedal {
+    background-image: url("/sites/all/themes/pumpedup/images/crew/pedal-hero-background-md.webp");
+  }
+  .no-webp .pumpedup-panel.pumpedup-crew-pedal {
+    background-image: url("/sites/all/themes/pumpedup/images/crew/pedal-hero-background-md.jpg");
+  }
+  .webp .pumpedup-panel.pumpedup-crew-partner {
+    background-image: url("/sites/all/themes/pumpedup/images/crew/partner-hero-background-md.webp");
+  }
+  .no-webp .pumpedup-panel.pumpedup-crew-partner {
+    background-image: url("/sites/all/themes/pumpedup/images/crew/partner-hero-background-md.jpg");
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .webp .pumpedup-panel.pumpedup-crew-promote {
+    background-image: url("/sites/all/themes/pumpedup/images/crew/promote-hero-background-lg.webp");
+  }
+  .no-webp .pumpedup-panel.pumpedup-crew-promote {
+    background-image: url("/sites/all/themes/pumpedup/images/crew/promote-hero-background-lg.jpg");
+  }
+  .webp .pumpedup-panel.pumpedup-crew-pedal {
+    background-image: url("/sites/all/themes/pumpedup/images/crew/pedal-hero-background-lg.webp");
+  }
+  .no-webp .pumpedup-panel.pumpedup-crew-pedal {
+    background-image: url("/sites/all/themes/pumpedup/images/crew/pedal-hero-background-lg.jpg");
+  }
+  .webp .pumpedup-panel.pumpedup-crew-partner {
+    background-image: url("/sites/all/themes/pumpedup/images/crew/partner-hero-background-lg.webp");
+  }
+  .no-webp .pumpedup-panel.pumpedup-crew-partner {
+    background-image: url("/sites/all/themes/pumpedup/images/crew/partner-hero-background-lg.jpg");
+  }
+}
+
+.pumpedup-crew-promote a.pumpedup-btn,
+.pumpedup-crew-pedal a.pumpedup-btn,
+.pumpedup-crew-partner a.pumpedup-btn {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* Get fixed up */
+
+.pumpedup-panel.pumpedup-fixed-england .left-container,
+.pumpedup-panel.pumpedup-fixed-scotland .right-container {
+  padding: 20px;
+}
+
+.pumpedup-panel.pumpedup-fixed-england,
+.pumpedup-panel.pumpedup-fixed-scotland {
+  background-size: cover;
+  background-position: right top;
+}
+
+@media only screen and (max-width: 991px) {
+  .pumpedup-panel.pumpedup-fixed-england .left-container,
+  .pumpedup-panel.pumpedup-fixed-scotland .right-container {
+    margin-top: 380px;
+  }
+  .pumpedup-panel.pumpedup-fixed-england,
+  .pumpedup-panel.pumpedup-fixed-scotland {
+    background-position: center top;
+  }
+}
+
+.webp .pumpedup-panel.pumpedup-fixed-england {
+  background-image: url("/sites/all/themes/pumpedup/images/fixed/repair-scheme-england-sm.jpg");
+}
+.no-webp .pumpedup-panel.pumpedup-fixed-england {
+  background-image: url("/sites/all/themes/pumpedup/images/fixed/repair-scheme-england-sm.jpg");
+}
+.webp .pumpedup-panel.pumpedup-fixed-scotland {
+  background-image: url("/sites/all/themes/pumpedup/images/fixed/repair-scheme-scotland-sm.jpg");
+}
+.no-webp .pumpedup-panel.pumpedup-fixed-scotland {
+  background-image: url("/sites/all/themes/pumpedup/images/fixed/repair-scheme-scotland-sm.jpg");
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+  .webp .pumpedup-panel.pumpedup-fixed-england {
+    background-image: url("/sites/all/themes/pumpedup/images/fixed/repair-scheme-england-md.jpg");
+  }
+  .no-webp .pumpedup-panel.pumpedup-fixed-england {
+    background-image: url("/sites/all/themes/pumpedup/images/fixed/repair-scheme-england-md.jpg");
+  }
+  .webp .pumpedup-panel.pumpedup-fixed-scotland {
+    background-image: url("/sites/all/themes/pumpedup/images/fixed/repair-scheme-scotland-md.jpg");
+  }
+  .no-webp .pumpedup-panel.pumpedup-fixed-scotland {
+    background-image: url("/sites/all/themes/pumpedup/images/fixed/repair-scheme-scotland-md.jpg");
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .webp .pumpedup-panel.pumpedup-fixed-england {
+    background-image: url("/sites/all/themes/pumpedup/images/fixed/repair-scheme-england-lg.jpg");
+  }
+  .no-webp .pumpedup-panel.pumpedup-fixed-england {
+    background-image: url("/sites/all/themes/pumpedup/images/fixed/repair-scheme-england-lg.jpg");
+  }
+  .webp .pumpedup-panel.pumpedup-fixed-scotland {
+    background-image: url("/sites/all/themes/pumpedup/images/fixed/repair-scheme-scotland-lg.jpg");
+  }
+  .no-webp .pumpedup-panel.pumpedup-fixed-scotland {
+    background-image: url("/sites/all/themes/pumpedup/images/fixed/repair-scheme-scotland-lg.jpg");
+  }
+}
+
+.pumpedup-fixed-england a.pumpedup-btn,
+.pumpedup-fixed-scotland a.pumpedup-btn {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* Get Riding - WBBR */
+
+.pumpedup-panel.wbbr .right-container {
+  padding: 20px;
+}
+
+.pumpedup-panel.wbbr {
+  background-size: cover;
+  background-position: center top;
+}
+
+.webp .pumpedup-panel.wbbr {
+  background-image: url("/sites/all/themes/pumpedup/images/wbbr/wbbr-background-sm.webp");
+}
+.no-webp .pumpedup-panel.wbbr {
+  background-image: url("/sites/all/themes/pumpedup/images/wbbr/wbbr-background-sm.jpg");
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+  .webp .pumpedup-panel.wbbr {
+    background-image: url("/sites/all/themes/pumpedup/images/wbbr/wbbr-background-md.webp");
+  }
+  .no-webp .pumpedup-panel.wbbr {
+    background-image: url("/sites/all/themes/pumpedup/images/wbbr/wbbr-background-md.jpg");
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .webp .pumpedup-panel.wbbr {
+    background-image: url("/sites/all/themes/pumpedup/images/wbbr/wbbr-background-lg.webp");
+  }
+  .no-webp .pumpedup-panel.wbbr {
+    background-image: url("/sites/all/themes/pumpedup/images/wbbr/wbbr-background-lg.jpg");
+  }
+}
+
+.pumpedup-panel.wbbr .left-container img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.pumpedup-panel.wbbr .block-webform h2.block-title {
+  display: none;
+}
+
+.pumpedup-panel.wbbr .block-webform {
+  font-family: korolev-rounded, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  text-transform: uppercase;
+  font-size: 18px;
+  line-height: 18px;
+  color: #fff;
+}
+
+.pumpedup-panel.wbbr .pumpedup-body,
+.pumpedup-panel.wbbr .form-group {
+  margin-bottom: 10px;
+}
+
+.pumpedup-panel.wbbr .form-control {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.pumpedup-panel.wbbr .form-control {
+  border: 1px solid #f9bfe0;
+}
+.pumpedup-panel.wbbr .form-control:focus {
+  border: 1px solid #ec409f;
+}
+
+.wbbr-download-flyer-panel {
+  max-width: 600px;
+  margin: 0 auto 60px auto;
+}
+
+.wbbr-download-flyer span {
+  display: block;
+}
+
+.wbbr-download-flyer a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.wbbr-download-flyer a:hover,
+.wbbr-download-flyer a:focus,
+.wbbr-download-flyer a:active {
+  text-decoration: none;
+  color: #fac533;
+}
+
+.wbbr-download-flyer a i {
+  font-size: 64px;
+  line-height: 64px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.wbbr-download-flyer .label {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 14px;
+  line-height: 14px;
+}
+
+/* WBBR advert */
+
+.pumpedup-panel.wbbr-advert {
+  background-size: cover;
+}
+
+.pumpedup-panel.wbbr-advert .left-container {
+  padding: 20px;
+}
+
+.pumpedup-panel.wbbr-advert .pumpedup-body {
+  font-family: korolev-rounded, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  text-transform: uppercase;
+  font-size: 24px;
+  line-height: 28px;
+  margin-bottom: 10px;
+}
+
+.webp .pumpedup-panel.wbbr-advert {
+  background-image: url("/sites/all/themes/pumpedup/images/wbbr/wbbr-advert-sm.webp");
+}
+.no-webp .pumpedup-panel.wbbr-advert {
+  background-image: url("/sites/all/themes/pumpedup/images/wbbr/wbbr-advert-sm.jpg");
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+  .webp .pumpedup-panel.wbbr-advert {
+    background-image: url("/sites/all/themes/pumpedup/images/wbbr/wbbr-advert-md.webp");
+  }
+  .no-webp .pumpedup-panel.wbbr-advert {
+    background-image: url("/sites/all/themes/pumpedup/images/wbbr/wbbr-advert-md.jpg");
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .webp .pumpedup-panel.wbbr-advert {
+    background-image: url("/sites/all/themes/pumpedup/images/wbbr/wbbr-advert-lg.webp");
+  }
+  .no-webp .pumpedup-panel.wbbr-advert {
+    background-image: url("/sites/all/themes/pumpedup/images/wbbr/wbbr-advert-lg.jpg");
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .pumpedup-panel.wbbr-advert {
+    padding-top: 380px;
+    background-position: center top;
+  }
+  .pumpedup-panel.wbbr-adverts .pumpedup-graphic {
+    max-width: 200px;
+  }
+  .pumpedup-panel.wbbr-advert .left-container {
+    margin-top: 0;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .pumpedup-panel.wbbr-advert {
+    padding-top: 380px;
+    background-position: right top;
+  }
+  .pumpedup-panel.wbbr-adverts .pumpedup-graphic {
+    max-width: 200px;
+  }
+  .pumpedup-panel.wbbr-advert .left-container {
+    margin-top: 0;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .pumpedup-panel.wbbr-advert {
+    padding-top: 300px;
+    background-position: right top;
+  }
+  .pumpedup-panel.wbbr-advert .left-container {
+    margin-top: 190px;
+  }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1599px) {
+  .pumpedup-panel.wbbr-advert {
+    padding-top: 300px;
+    background-position: right top;
+  }
+  .pumpedup-panel.wbbr-advert .left-container {
+    margin-top: 220px;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .pumpedup-panel.wbbr-advert {
+    padding-top: 300px;
+    background-position: right top;
+  }
+  .pumpedup-panel.wbbr-advert .left-container {
+    margin-top: 260px;
+  }
+}
+
+/* Journey Planner */
+
+.pumpedup-panel.journey-planner .inner-container {
+  padding: 20px;
+  margin-top: 90px;
+  margin-bottom: 90px;
+}
+
+.pumpedup-panel.journey-planner {
+  background-size: cover;
+  background-position: center center;
+}
+
+.pumpedup-panel.journey-planner .pumpedup-body {
+  margin-bottom: 10px;
+}
+
+.webp .pumpedup-panel.journey-planner {
+  background-image: url("/sites/all/themes/pumpedup/images/photos/journey-planner-sm.webp");
+}
+.no-webp .pumpedup-panel.journey-planner {
+  background-image: url("/sites/all/themes/pumpedup/images/photos/journey-planner-sm.jpg");
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+  .webp .pumpedup-panel.journey-planner {
+    background-image: url("/sites/all/themes/pumpedup/images/photos/journey-planner-md.webp");
+  }
+  .no-webp .pumpedup-panel.journey-planner {
+    background-image: url("/sites/all/themes/pumpedup/images/photos/journey-planner-md.jpg");
+  }
+  .pumpedup-panel.journey-planner .inner-container {
+    margin-top: 90px;
+    margin-bottom: 90px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .webp .pumpedup-panel.journey-planner {
+    background-image: url("/sites/all/themes/pumpedup/images/photos/journey-planner-lg.webp");
+  }
+  .no-webp .pumpedup-panel.journey-planner {
+    background-image: url("/sites/all/themes/pumpedup/images/photos/journey-planner-lg.jpg");
+  }
+  .pumpedup-panel.journey-planner .inner-container {
+    margin-top: 150px;
+    margin-bottom: 150px;
+  }
+}

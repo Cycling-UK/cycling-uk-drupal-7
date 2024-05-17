@@ -1,0 +1,324 @@
+/* --- EASYDROPDOWN METRO THEME --- */
+
+/* Prefixed CSS */
+.markup .dropdown,
+.markup .dropdown div,
+.markup .dropdown li,
+.markup .dropdown div::after,
+.markup .dropdown .carat,
+.markup .dropdown .carat:after,
+.markup .dropdown .selected::after,
+.markup .dropdown:after {
+	-webkit-transition: all 150ms ease-in-out;
+	-moz-transition: all 150ms ease-in-out;
+	-ms-transition: all 150ms ease-in-out;
+	transition: all 150ms ease-in-out;
+}
+
+.markup .dropdown .selected::after,
+.markup .dropdown.scrollable div::after {
+	-webkit-pointer-events: none;
+	-moz-pointer-events: none;
+	-ms-pointer-events: none;
+	pointer-events: none;
+}
+
+
+
+/* Wrapper */
+.markup .dropdown {
+	position: relative;
+	width: 300px;
+	cursor: pointer;
+	font-weight: 200;
+	background: inherit;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+}
+
+.markup .dropdown.open {
+	z-index: 2;
+}
+
+.markup .dropdown:hover {
+	background: #fbb040;
+}
+
+.markup .dropdown:after {
+	content: '';
+	position: absolute;
+	right: 3px;
+	bottom: 3px;
+	top: 2px;
+	width: 30px;
+	background: transparent;
+}
+
+
+
+/* Carat */
+.markup .dropdown .carat,
+.markup .dropdown .carat:after {
+	content: '';
+	position: absolute;
+	right: 10px;
+	top: 50%;
+	margin-top: -4px;
+	border: 8px solid transparent;
+	border-top: 8px solid #000;
+	z-index: 2;
+	-webkit-transform-origin: 50% 20%;
+	-moz-transform-origin: 50% 20%;
+	-ms-transform-origin: 50% 20%;
+	transform-origin: 50% 20%;	
+}
+
+.markup .dropdown .carat:after {
+	margin-top: -10px;
+	right: -8px;
+	border-top-color: #fff;
+}
+
+.markup .dropdown:hover .carat:after {
+	border-top-color: #fbb040;
+}
+
+.markup .dropdown.focus .carat {
+	border-top-color: #000;
+}
+
+.markup .dropdown.focus .selected {
+	background-color: #fff;
+}
+
+.markup .dropdown.focus .carat:after {
+	border-top-color: #fff;
+}
+
+.markup .dropdown.open .carat {
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+
+
+
+/* Old select (hidden) */
+.markup .dropdown .old {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 0;
+	width: 0;
+	overflow: hidden;
+}
+
+.markup .dropdown select {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+
+.markup .dropdown.touch .old {
+	width: 100%;
+	height: 100%;
+}
+
+.markup .dropdown.touch select {
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+}
+
+
+
+/* Selected feedback item */ 
+.markup .dropdown .selected,
+.markup .dropdown li {
+	display: block;
+	font-size: 18px;
+	line-height: 1;
+	color: #000;
+	padding: 15px 15px;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+
+
+/* Drop down wrapper */
+.markup .dropdown div {
+	position: absolute;
+	height: 0;
+	left: 0;
+	right: 0;
+	top: 100%;
+	background: #fff;
+	overflow: hidden;
+	opacity: 0;
+	border-left: 1px solid #fbb040;
+	border-bottom: 1px solid #fbb040;
+	border-right: 1px solid #fbb040;
+	border-radius: 0 0 10px 10px;
+	-webkit-border-radius: 0 0 10px 10px;
+	-moz-border-radius: 0 0 10px 10px;
+	-webkit-box-shadow: 0px 3px 0px 0px rgba(0,0,0,.1);
+	-moz-box-shadow: 0px 3px 0px 0px rgba(0,0,0,.1);
+	box-shadow: 0px 3px 0px 0px rgba(0,0,0,.1);
+}
+
+.markup .dropdown:hover div {
+	background: #fff;
+}
+
+
+
+/* Height is adjusted by JS on open */
+.markup .dropdown.open div {
+	opacity: 1;
+	z-index: 2;
+}
+
+
+
+/* Fade overlay for scrolling lists */
+.markup .dropdown.scrollable div::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 50px;
+}
+
+.markup .dropdown.scrollable.bottom div::after {
+	opacity: 0;
+}
+
+
+
+/* Drop down list */
+.markup .dropdown ul {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	list-style: none;
+	overflow: hidden;
+}
+
+.markup .dropdown.scrollable.open ul {
+	overflow-y: auto;
+}
+
+
+
+/* Drop down list items */
+.markup .dropdown li {
+	list-style: none;
+	padding: 8px 12px;
+}
+
+
+
+/* .focus class is also added on hover */
+.markup .dropdown li.focus {
+	background: #fbb040;
+	position: relative;
+	z-index: 3;
+	color: #fff;
+}
+
+.markup .dropdown li.active {
+	background: #fbb040;
+	color: #fff;
+}
+
+
+
+/* Cycling UK theming */
+.markup .select-wrapper {
+	background-color: #fff;
+	border: 1px solid #fbb040;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	display: flex;
+}
+
+.markup .select-wrapper .text {
+	color: #000 !important;
+	font-size: 18px;
+	line-height: 18px;
+	display: inline-flex;
+	align-items: center;
+	padding: 15px 25px;
+}
+
+.markup .select-wrapper .divider {
+	display: inline-flex !important;
+	width: 1px;
+	background-color: #fbb040;
+	margin: 10px 0;
+}
+
+.markup .select-wrapper form {
+	text-align: left;
+}
+
+
+/* Button */
+.markup .select-wrapper input {
+    display: inline-flex;
+    border: none;
+	padding: 10px 25px;
+	font-size: 18px;
+    margin: 0;
+    text-decoration: none;
+    background: #fff;
+    color: #000;
+    text-align: center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+	border-radius: 0 10px 10px 0;
+	-webkit-border-radius: 0 10px 10px 0;
+	-moz-border-radius: 0 10px 10px 0;
+}
+
+.markup .select-wrapper input:hover,
+.markup .select-wrapper input:focus {
+	background: #fbb040;
+}
+
+
+
+@media only screen and (max-width: 599px) {
+	.markup .dropdown {
+		width: 250px;
+	}
+	.markup .dropdown .selected,
+	.markup .dropdown li {
+		padding: 15px 5px;
+	}
+	.markup .dropdown .selected,
+	.markup .dropdown li,
+	.markup .select-wrapper input {
+		font-size: 16px;
+	}
+	.markup .select-wrapper .text {
+		color: transparent !important;
+		width: 10px;
+		font-size: 1px;
+		line-height: 1px;
+		padding: 15px 0;
+	}
+	.markup .select-wrapper .divider:first-of-type {
+		display: none !important;
+	}
+	.markup .select-wrapper input {
+		padding: 10px 15px;
+	}
+}

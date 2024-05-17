@@ -1,0 +1,168 @@
+/* Adjust text colour depending on background colour */
+.paragraph_background_colour_blue   > .paragraphs-item-background-colour-and-text-panel .field-name-field-subtitle,
+.paragraph_background_colour_pink   > .paragraphs-item-background-colour-and-text-panel .field-name-field-subtitle,
+.paragraph_background_colour_purple > .paragraphs-item-background-colour-and-text-panel .field-name-field-subtitle,
+.paragraph_background_colour_grey   > .paragraphs-item-background-colour-and-text-panel .field-name-field-subtitle {
+  color: $yellow;
+}
+
+.paragraph_background_colour_blue   > .paragraphs-item-background-colour-and-text-panel .field-name-field-text,
+.paragraph_background_colour_pink   > .paragraphs-item-background-colour-and-text-panel .field-name-field-text,
+.paragraph_background_colour_purple > .paragraphs-item-background-colour-and-text-panel .field-name-field-text,
+.paragraph_background_colour_grey   > .paragraphs-item-background-colour-and-text-panel .field-name-field-text {
+  color: $white;
+}
+
+.paragraph_background_colour_green  > .paragraphs-item-background-colour-and-text-panel .field-name-field-subtitle,
+.paragraph_background_colour_green  > .paragraphs-item-background-colour-and-text-panel .field-name-field-text,
+.paragraph_background_colour_yellow > .paragraphs-item-background-colour-and-text-panel .field-name-field-subtitle,
+.paragraph_background_colour_yellow > .paragraphs-item-background-colour-and-text-panel .field-name-field-text,
+.paragraph_background_colour_white  > .paragraphs-item-background-colour-and-text-panel .field-name-field-subtitle,
+.paragraph_background_colour_white  > .paragraphs-item-background-colour-and-text-panel .field-name-field-text {
+  color: $black;
+}
+
+.paragraphs-item-background-colour-and-text-panel {
+  margin-bottom: 60px;
+  padding: 60px 0;
+}
+
+.remove_bottom_margin_yes > .paragraphs-item-background-colour-and-text-panel {
+  margin-bottom: 0;
+}
+
+.paragraphs-item-background-colour-and-text-panel .field-name-field-subtitle {
+  font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 36px;
+  margin-bottom: 20px;
+}
+
+.paragraphs-item-background-colour-and-text-panel .field-name-field-text {
+  margin-bottom: 30px;
+}
+
+.paragraphs-item-background-colour-and-text-panel .field-name-field-links .field-item {
+  display: inline-block;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+
+.paragraphs-item-background-colour-and-text-panel .field-name-field-links .field-item:last-of-type {
+  margin-bottom: 0;
+}
+
+.paragraphs-item-background-colour-and-text-panel .field-name-field-links .field-item a,
+.paragraphs-item-background-colour-and-text-panel .field-name-field-links .field-item a:hover,
+.paragraphs-item-background-colour-and-text-panel .field-name-field-links .field-item a:focus {
+  outline: none;
+  border: 1px solid $yellow;
+  text-align: center;
+  -webkit-box-shadow: 0px 3px 0px 0px rgba(0,0,0,.1);
+  -moz-box-shadow: 0px 3px 0px 0px rgba(0,0,0,.1);
+  box-shadow: 0px 3px 0px 0px rgba(0,0,0,.1);
+}
+
+/* Need a different button colour scheme if the background is yellow */
+.paragraph_background_colour_yellow > .paragraphs-item-background-colour-and-text-panel .field-name-field-links .field-item a:hover,
+.paragraph_background_colour_yellow > .paragraphs-item-background-colour-and-text-panel .field-name-field-links .field-item a:focus {
+  outline: none;
+  border: 1px solid #8065a9;
+  background-color: #8065a9;
+  color: $white;
+  text-align: center;
+  -webkit-box-shadow: 0px 3px 0px 0px rgba(0,0,0,.1);
+  -moz-box-shadow: 0px 3px 0px 0px rgba(0,0,0,.1);
+  box-shadow: 0px 3px 0px 0px rgba(0,0,0,.1);
+}
+
+
+
+/* Hyperlinks */
+
+.paragraphs-item-background-colour-and-text-panel .field-name-field-text a {
+  color: inherit;
+  text-decoration: underline;
+  outline: none;
+}
+
+.paragraph_background_colour_blue   > .paragraphs-item-background-colour-and-text-panel .field-name-field-text a:hover,
+.paragraph_background_colour_blue   > .paragraphs-item-background-colour-and-text-panel .field-name-field-text a:focus,
+.paragraph_background_colour_pink   > .paragraphs-item-background-colour-and-text-panel .field-name-field-text a:hover,
+.paragraph_background_colour_pink   > .paragraphs-item-background-colour-and-text-panel .field-name-field-text a:focus,
+.paragraph_background_colour_purple > .paragraphs-item-background-colour-and-text-panel .field-name-field-text a:hover,
+.paragraph_background_colour_purple > .paragraphs-item-background-colour-and-text-panel .field-name-field-text a:focus,
+.paragraph_background_colour_grey   > .paragraphs-item-background-colour-and-text-panel .field-name-field-text a:hover,
+.paragraph_background_colour_grey   > .paragraphs-item-background-colour-and-text-panel .field-name-field-text a:focus,
+.paragraph_background_colour_white  > .paragraphs-item-background-colour-and-text-panel .field-name-field-text a:hover,
+.paragraph_background_colour_white  > .paragraphs-item-background-colour-and-text-panel .field-name-field-text a:focus {
+  color: $yellow;
+}
+
+.paragraph_background_colour_green  > .paragraphs-item-background-colour-and-text-panel .field-name-field-text a:hover,
+.paragraph_background_colour_green  > .paragraphs-item-background-colour-and-text-panel .field-name-field-text a:focus,
+.paragraph_background_colour_yellow > .paragraphs-item-background-colour-and-text-panel .field-name-field-text a:hover,
+.paragraph_background_colour_yellow > .paragraphs-item-background-colour-and-text-panel .field-name-field-text a:focus {
+  color: $white;
+}
+
+
+
+/* Set bullet point colour */
+
+.paragraph_background_colour_blue   > .paragraphs-item-background-colour-and-text-panel .field-name-field-text li:before,
+.paragraph_background_colour_pink   > .paragraphs-item-background-colour-and-text-panel .field-name-field-text li:before,
+.paragraph_background_colour_purple > .paragraphs-item-background-colour-and-text-panel .field-name-field-text li:before,
+.paragraph_background_colour_grey   > .paragraphs-item-background-colour-and-text-panel .field-name-field-text li:before,
+.paragraph_background_colour_green  > .paragraphs-item-background-colour-and-text-panel .field-name-field-text li:before,
+.paragraph_background_colour_white  > .paragraphs-item-background-colour-and-text-panel .field-name-field-text li:before {
+  color: $yellow;
+}
+
+.paragraph_background_colour_yellow > .paragraphs-item-background-colour-and-text-panel .field-name-field-text li:before {
+  color: $white;
+}
+
+
+
+/* Image corners */
+
+.remove_image_corners_no .paragraphs-item-background-colour-and-text-panel img {
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+}
+
+
+
+/* Mobile */
+
+@media only screen and (max-width : 767px) {
+  .paragraphs-item-background-colour-and-text-panel {
+    padding: 0;
+  }
+  .paragraph_panel_location_left .paragraphs-item-background-colour-and-text-panel .right-col,
+  .paragraph_panel_location_right .paragraphs-item-background-colour-and-text-panel .left-col {
+    padding: 0;
+  }
+  .paragraph_panel_location_left .paragraphs-item-background-colour-and-text-panel .left-col,
+  .paragraph_panel_location_right .paragraphs-item-background-colour-and-text-panel .right-col {
+    padding: 30px 30px 60px 30px;
+  }
+  .remove_image_corners_no  .paragraphs-item-background-colour-and-text-panel img,
+  .remove_image_corners_yes .paragraphs-item-background-colour-and-text-panel img {
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+  }
+  .paragraphs-item-background-colour-and-text-panel .field-name-field-subtitle,
+  .paragraphs-item-background-colour-and-text-panel .field-name-field-text,
+  .paragraphs-item-background-colour-and-text-panel .field-name-field-links {
+    text-align: center;
+  }
+  .paragraphs-item-background-colour-and-text-panel .field-name-field-links .field-item {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}

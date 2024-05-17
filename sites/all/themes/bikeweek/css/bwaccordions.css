@@ -1,0 +1,67 @@
+.accordion .panel {
+    border-bottom: 1px solid #bc1512;
+}
+
+.accordion .panel-title {
+	font-family: 'itc-american-typewriter',Georgia,serif;
+}
+
+.accordion .panel-title a:after {
+	background-image: url("../images/system/bw-accordion-buttons.png");
+}
+
+
+
+.featured-article .two-column-layout h5,
+.ui-accordion .ui-accordion-content h5,
+.accordion h5 {
+	font-family: 'itc-american-typewriter',Georgia,serif;
+	font-size: 48px;
+	line-height: 48px;
+	color: #bc1512;
+	margin-top: 0;
+	margin-bottom: 25px;
+}
+
+
+
+/* JQuery Accordion overrides */
+
+.ui-widget-content a {
+	color: #009ee1;
+}
+
+
+
+/* Landing page accordions - JQuery */
+
+.ui-accordion .ui-accordion-header {
+	font-family: 'itc-american-typewriter',Georgia,serif;
+	font-size: 18px;    	/* 30px */
+	line-height: 20px;  	/* 90px */
+	font-weight: 500;
+	color: #006633;
+}
+
+body.node-type-landing-page .ui-accordion .ui-accordion-header {
+	font-size: 22px;
+	line-height: 24px;
+}
+
+@media only screen and (max-width : 479px) {
+	.ui-accordion .ui-accordion-header {
+		font-size: 18px;
+	}
+	body.node-type-landing-page .ui-accordion .ui-accordion-header {
+		font-size: 18px;
+		line-height: 22px;
+	}	
+}
+
+.ui-accordion > .views-row {
+    border-bottom: 1px solid #bc1512;
+}
+
+.ui-accordion .ui-accordion-header .ui-accordion-header-icon {
+	background-image: url("../images/system/bw-accordion-buttons.png");
+}

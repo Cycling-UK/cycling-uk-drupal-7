@@ -1,0 +1,46 @@
+header {
+	padding-top: 15px;
+}
+
+header#page-header {
+	display: none;
+}
+
+header .logo img {
+	width: 164px;
+	height: auto;
+}
+
+header .container-right {
+	display: flex;
+	justify-content: flex-end;
+}
+
+@media only screen and (max-width : 992px) {
+	header {
+		height: 90px;
+		padding-bottom: 15px;
+	}
+
+	header .inner-wrapper  > .row {
+		display: flex;
+		align-items: center;
+	}
+
+	header .inner-wrapper  > .row > div {
+		height: 60px;
+		align-items: center;
+	}
+
+	#block-tb-megamenu-menu-mega-main-menu,
+	#block-tb-megamenu-menu-mega-secondary-menu {
+		display: none;
+	}
+}
+
+@media only screen and (min-width : 993px) {
+	.site-mobile-menu-block {
+		display: none;
+	}
+}
+

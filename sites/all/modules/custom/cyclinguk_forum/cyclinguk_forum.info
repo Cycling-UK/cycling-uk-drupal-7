@@ -1,0 +1,4 @@
+name = Cycling UK Forum
+description = Code for integrating with Cycling UK Forum in phpBB3.
+core = 7.x
+package = Cycling UK

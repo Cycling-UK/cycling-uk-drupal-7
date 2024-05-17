@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * Code for the Publications Cycling Magazine Block feature.
+ */
+
+include_once 'publications_magazine_block.features.inc';

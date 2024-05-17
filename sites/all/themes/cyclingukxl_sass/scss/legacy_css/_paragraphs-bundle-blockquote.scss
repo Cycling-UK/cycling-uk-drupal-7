@@ -1,0 +1,39 @@
+.paragraphs-item-blockquote {
+	max-width: 800px;
+	font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 400;
+	font-size: 22px;
+	line-height: 26px;
+	text-align: center;
+	margin: 0 auto 60px auto;
+}
+
+.paragraphs-item-blockquote .field-name-field-text {
+	display: flex;
+	margin-bottom: 10px;
+	align-items: center;
+	justify-content: center;
+}
+
+.paragraphs-item-blockquote .field-name-field-text:before,
+.paragraphs-item-blockquote .field-name-field-text:after {
+	font-family: "Font Awesome 5 Pro";
+	font-weight: 600;
+	font-size: 28px;
+	line-height: 28px;
+	color: $yellow;
+	display: inline-flex;
+}
+
+.paragraphs-item-blockquote .field-name-field-text:before {
+	content: "\F10d";
+	display: inline-flex;
+	margin-right: 10px;
+}
+
+.paragraphs-item-blockquote .field-name-field-text:after {
+	content: "\F10e";
+	display: inline-flex;
+	flex-direction: column-reverse;
+	margin-left: 10px;
+}

@@ -1,0 +1,78 @@
+/*
+ * Standard attachments
+ */
+
+
+.field-name-field-logged-in-attachments {
+	text-align: center;
+}
+
+.field-name-field-logged-in-attachments .field-item {
+	display: inline-block;
+	vertical-align: top;
+	width: 140px;
+	text-align: center;
+	margin: 0 5px 15px 5px;
+}
+
+.field-name-field-logged-in-attachments img,
+.field-name-field-logged-in-attachments a {
+	color: $black;
+	display: block;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+	-webkit-hyphens: auto;
+	-ms-hyphens: auto;
+	-moz-hyphens: auto;
+	hyphens: auto;
+}
+
+.field-name-field-logged-in-attachments img {
+	width: 40px;
+	margin: 0 auto 15px;
+}
+/* ************ */
+
+
+.paragraphs-item-logged-in-content {
+    margin-bottom: 60px;
+    padding: 30px 30px 0;
+    box-sizing: border-box;
+}
+
+.paragraphs-item-logged-in-content.remove_bottom_margin_yes {
+    margin-bottom: 0;
+}
+
+.paragraphs-item-logged-in-content .field-name-field-title {
+    text-align: center;
+    font-size: 36px;
+    line-height: 36px;
+    margin-top: 0;
+    margin-bottom: 30px;
+    color: $black;
+}
+
+.paragraphs-item-logged-in-content p {
+    text-align: center;
+    max-width: 800px;
+    display: block;
+    margin: 0 auto 10px;
+}
+
+.paragraphs-item-logged-in-content .field-name-field-logged-in-attachments {
+    margin-top: 12px;
+}
+
+.paragraphs-item-logged-in-content .field-name-field-logged-in-attachments:after {
+    height: 0;
+    background-color: transparent;
+}
+
+.paragraphs-item-logged-in-content {
+    border-color: transparent;
+}
+
+.paragraphs-item-logged-in-content .field-type-text-with-summary {
+    margin-bottom: 40px;
+}

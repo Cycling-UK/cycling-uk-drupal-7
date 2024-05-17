@@ -1,0 +1,433 @@
+/**
+ * Journey planner
+ */
+
+
+
+/*
+ * Typography
+ */
+
+#jplannerresults h2,
+#jplannertext h2,
+h2.jplannermap,
+p.elevationchart {
+	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 400;
+	font-size: 24px;
+	line-height: 24px;
+}
+
+
+
+/*
+ * INPUT
+ */
+
+/* Rearrange page header elements to maximise content space */
+
+@media only screen and (min-width : 768px) {
+	body.page-journey-planner .navbar-collapse {
+		display: none !important;
+	}
+}
+
+body.page-journey-planner .navbar {
+	margin-bottom: 0;
+}
+
+body.page-journey-planner h1.page-header {
+	margin-top: 0;
+	margin-bottom: 0;
+	text-align: center;
+}
+
+
+
+/* Journey planner formatting */
+
+#jplannerforms {
+	margin-bottom: 30px;
+}
+
+#jplannerforms > div {
+	padding: 5px 0;
+}
+
+#mainmap_from > div,
+#mainmap_to > div,
+#mainmap_action > div {
+	display: table;
+	width: 100%;
+}
+
+#jplannerforms .header {
+	display: table-cell;
+	vertical-align: middle;
+	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 48px;
+}
+
+#jplannerforms .name-inner-wrapper {
+	display: table;
+	height: 48px;
+}
+
+#jplannerforms .name {
+	display: table-cell;
+	vertical-align: middle;
+	line-height: 18px;
+}
+
+#jplannerforms .input {
+	display: table-cell;
+	vertical-align: middle;
+}
+
+#jplannerforms input.form-control,
+#jplannerforms select.form-control {
+	margin: 2px 0;
+	padding: 10px 18px;
+}
+
+#mainmap_from .form-control {
+	border: 1px solid #cdce00;
+}
+
+#mainmap_to .form-control {
+	border: 1px solid #e600e0;
+}
+
+#jplannerforms .btn {
+	margin: 6px 0;
+	min-width: inherit;
+}
+
+#jplannerforms .detect.btn:hover > a {
+	color: #fff !important;
+}
+
+#jplannerforms span.coords {
+	display: none;
+}
+
+#mainmap_go {
+	padding: 0;
+}
+
+
+
+/* Suggestion popup list */
+
+#jplannerforms .typeahead__list {
+	position: absolute;
+	left: 0;
+	z-index: 4;
+	width: 100%;
+	min-width: 160px;
+	padding: 10px 20px;
+	margin: 50px 0 0;
+	list-style: none;
+	text-align: left;
+	background-color: #fff;
+	border: 1px solid #fbb040;
+	border-radius: 10px;
+	background-clip: padding-box;
+	-webkit-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow:    0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+	box-shadow:         0px 3px 0px 0px rgba(0, 0, 0, 0.1);	
+}
+
+#jplannerforms .typeahead__list li {
+	margin: 5px 0px;
+}
+
+#jplannerforms .typeahead__list a {
+	color: #000;
+	font-size: 14px;
+	line-height: 16px;
+	text-decoration: none;
+}
+
+#jplannerforms .typeahead__list a:hover {
+	color: #fbb040;
+}
+
+#jplannerforms .typeahead-name {
+	text-transform: uppercase;
+}
+
+#jplannerforms .typeahead-near {
+	
+}
+
+
+
+/* #mainmap {
+	height: 240px;
+} */
+
+
+/* Tablet and mobile */
+
+@media only screen and (max-width : 767px) {
+
+	/* Reduce and compact top menu to maximise space */
+	
+	body.page-journey-planner .top-menu,
+	body.page-journey-planner .top-menu {
+		display: none;
+	}
+
+	body.page-journey-planner .top-menu-container,
+	body.page-journey-planner .top-menu-container {
+		height: 45px;
+	}
+
+	body.page-journey-planner .navbar .logo,
+	body.page-journey-planner .navbar .logo {
+		top: 0;
+	}
+	
+	#jplannerforms {
+		margin-bottom: 10px;
+	}
+
+	#jplannerforms .third-column {
+		display: block;
+		width: 48px !important;
+	}
+
+	
+	/* And on with the rest... */
+	
+	body.page-journey-planner h1.page-header,
+	body.page-journey-planner h1.page-header {
+		font-size: 26px;
+		line-height: 26px;
+	}
+
+	#jplannerforms > div {
+		padding: 0px 15px 0px 0px;
+	}
+
+	#jplannerforms span.header {
+		padding-right: 0;
+		width: 70px;
+	}
+
+	#jplannerforms .name-outer-wrapper,
+	#jplannerforms .name-inner-wrapper {
+		display: table-cell;
+		vertical-align: middle;
+	}
+	
+	#jplannerforms .btn-wrapper {
+		display: block;
+		width: 44px;
+	}
+
+	#jplannerforms .detect.btn::before {
+	    font-family: 'FontAwesome';
+		content: "\F124";
+	}
+
+	#jplannerforms .change.btn::before {
+	    font-family: 'FontAwesome';
+		content: "\F002";
+	}
+	
+	#jplannerforms .detect.btn span,
+	#jplannerforms .btn span {
+		display: none;
+	}
+	
+	#jplannerforms .btn {
+		float: right;
+		line-height: 44px;
+		width: 46px;
+		padding: 0;
+	}
+	
+}
+
+
+
+/*
+ * OUTPUT
+ */
+
+ul#jplannertype {
+	text-align: center;
+}
+
+ul#jplannertype li {
+	display: inline-block;
+	float: inherit;
+	margin: 0 5px;
+}
+
+#jplannerresults {
+	margin-bottom: 30px;
+}
+
+#jplannerresults ul {
+	list-style: none;
+    padding: 0;
+    margin: 0 0 10px 0;
+}
+
+#jplannerresults li::before {
+    font-family: 'FontAwesome';
+    margin-right: 10px;
+}
+
+#jplannerresults li.timing::before 		{content: "\F017";}
+#jplannerresults li.distance::before 	{content: "\F061";}
+#jplannerresults li.calories::before 	{content: "\F004";}
+#jplannerresults li.co2::before 		{content: "\F0AC";}
+#jplannerresults li.quietness::before 	{content: "\F1BB";}
+
+#jplannerresults li.externallink {
+	margin-top: 12px;
+}
+
+#jrd {
+	margin-bottom: 40px;
+}
+
+#jelevation {
+	margin-bottom: 20px;
+}
+
+#mainmap {
+	margin-bottom: 40px;
+}
+
+
+
+/* Journey details */
+
+#jplannertext {
+	margin-bottom: 60px;
+}
+
+#jplannertext h2 {
+	text-align: center;
+}
+
+#jplannertext table {
+	margin: 0 auto;
+}
+
+#jplannertext th,
+#jplannertext td {
+	padding: 10px;
+}
+
+@media only screen and (max-width : 767px) {
+	#jplannertext th,
+	#jplannertext td {
+		padding: 5px;
+	}
+}
+
+#jplannertext th {
+	border-bottom: 1px solid #009fda;
+	background-color: #009fda;
+}
+
+#jplannertext tr {
+	border-bottom: 1px solid #cdcdcd;
+}
+
+#jplannertext td.turn {
+	text-transform: uppercase;
+}
+
+#jplannertext tr:nth-child(odd) {
+	background-color: #f5f5f5;;
+}
+
+#jplannertext tr:nth-child(even) {
+	background-color: #fff;
+}
+
+@media only screen and (max-width : 479px) {
+	#jplannertext table {
+		font-size: 12px;
+		line-height: 14px;
+	}
+}
+
+
+
+
+/* Tablet and mobile */
+
+@media only screen and (max-width : 767px) {
+	#jplannerresults {
+		text-align: center;
+	}
+
+	#jplannerforms .typeahead__list {
+		margin:0px
+	}
+}
+
+
+
+/* Other UI elements */
+
+
+
+#new-journey {
+	text-align: center;
+}
+
+
+
+/* Loader */
+
+#jloader {
+	position:absolute;
+	top: 50%;
+	left: 50%;
+	width: 300px;
+	height: 200px;
+	margin-left: -150px;   /* negative half of width above */
+	margin-top: -100px;   /* negative half of height above */
+	padding: 20px;
+	background-color: rgba(0,0,0,0.8);
+	color: #fff;
+	text-align: center;
+	border-radius: 15px; 
+	-webkit-border-radius: 15px; 
+	-moz-border-radius: 15px;
+	z-index: 999;
+}
+
+#jloader .description {
+	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 16px;
+	margin-bottom: 20px;
+}
+
+#jloader .loader {
+    border: 16px solid orange;
+    border-top: 16px solid #008fc3;
+    border-bottom: 16px solid #008fc3;
+    border-radius: 50%;    
+    width: 100px;
+    height: 100px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+}
+
+
+
+

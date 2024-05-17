@@ -1,0 +1,16 @@
+name = EU Cookie Compliance
+description = Settings for EU GDPR cookie compliance regulations.
+core = 7.x
+package = Cycling UK Features
+version = 7.x-1.05
+dependencies[] = ctools
+dependencies[] = eu_cookie_compliance
+dependencies[] = features
+dependencies[] = strongarm
+features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:2
+features[user_permission][] = administer EU Cookie Compliance popup
+features[user_permission][] = display EU Cookie Compliance popup
+features[variable][] = eu_cookie_compliance
+features[variable][] = eu_cookie_compliance_cookie_lifetime
+features[variable][] = eu_cookie_compliance_domain

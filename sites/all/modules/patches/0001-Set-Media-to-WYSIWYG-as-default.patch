@@ -1,0 +1,34 @@
+From daa297eb972420be48981766e26c955efd34a6e5 Mon Sep 17 00:00:00 2001
+From: Ian Taylor <ian.taylor@ctc.org.uk>
+Date: Fri, 31 May 2019 16:35:32 +0100
+Subject: [PATCH] Set Media to WYSIWYG as default
+
+---
+ .../modules/media_wysiwyg/includes/media_wysiwyg.pages.inc    | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/docroot/sites/all/modules/contrib/media/modules/media_wysiwyg/includes/media_wysiwyg.pages.inc b/docroot/sites/all/modules/contrib/media/modules/media_wysiwyg/includes/media_wysiwyg.pages.inc
+index 470e654d..42c180d9 100644
+--- a/docroot/sites/all/modules/contrib/media/modules/media_wysiwyg/includes/media_wysiwyg.pages.inc
++++ b/docroot/sites/all/modules/contrib/media/modules/media_wysiwyg/includes/media_wysiwyg.pages.inc
+@@ -37,7 +37,7 @@ function media_wysiwyg_format_form($form, &$form_state, $file) {
+   $form['#formats'] = &$form_state['storage']['view_mode_previews'];
+ 
+   // Allow for overrides to the display format.
+-  $default_view_mode = is_array($query_fields) && isset($query_fields['format']) ? $query_fields['format'] : variable_get('media_wysiwyg_wysiwyg_default_view_mode', 'full');
++  $default_view_mode = is_array($query_fields) && isset($query_fields['format']) ? $query_fields['format'] :'wysiwyg';
+   if (!isset($options[$default_view_mode])) {
+     reset($options);
+     $default_view_mode = key($options);
+@@ -172,7 +172,7 @@ function media_wysiwyg_format_form_view_mode(&$form, $form_state, $file) {
+   // that does not exist in the list of format options presented on this
+   // form, use the default view mode.
+   if (!isset($view_mode) || !array_key_exists($view_mode, $form['options']['format']['#options'])) {
+-    $view_mode = variable_get('media_wysiwyg_wysiwyg_default_view_mode', 'full');
++    $view_mode = 'wysiwyg';
+   }
+ 
+   $link_options = array(
+-- 
+2.19.1.windows.1
+

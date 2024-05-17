@@ -1,0 +1,48 @@
+.paragraphs-item-text-field-with-one-or-more-colu {
+  margin-bottom: 60px;
+}
+
+.paragraphs-item-text-field-with-one-or-more-colu .field-name-field-subtitle {
+  text-align: center;
+  font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 36px;
+  margin-bottom: 30px;
+}
+
+.paragraph_number_of_text_columns_two .field-name-field-landing-page-text,
+.paragraph_number_of_text_columns_three .field-name-field-landing-page-text,
+.paragraph_number_of_text_columns_four .field-name-field-landing-page-text {
+  column-count: 1;
+  column-gap: 60px;
+  column-rule: 1px solid $gray-lightest;
+  text-align: center;
+}
+
+@media only screen and (min-width : 768px) {
+  .paragraph_number_of_text_columns_one .field-name-field-landing-page-text,
+  .paragraph_number_of_text_columns_two .field-name-field-landing-page-text,
+  .paragraph_number_of_text_columns_three .field-name-field-landing-page-text,
+  .paragraph_number_of_text_columns_four .field-name-field-landing-page-text {
+    text-align: left;
+  }
+}
+
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+  .paragraph_number_of_text_columns_two   .field-name-field-landing-page-text {column-count: 2;}
+  .paragraph_number_of_text_columns_three .field-name-field-landing-page-text {column-count: 2;}
+  .paragraph_number_of_text_columns_four  .field-name-field-landing-page-text {column-count: 2;}
+}
+
+@media only screen and (min-width : 992px) and (max-width : 1199px) {
+  .paragraph_number_of_text_columns_two   .field-name-field-landing-page-text {column-count: 2;}
+  .paragraph_number_of_text_columns_three .field-name-field-landing-page-text {column-count: 3;}
+  .paragraph_number_of_text_columns_four  .field-name-field-landing-page-text {column-count: 3;}
+}
+
+@media only screen and (min-width : 1200px)  {
+  .paragraph_number_of_text_columns_two   .field-name-field-landing-page-text {column-count: 2;}
+  .paragraph_number_of_text_columns_three .field-name-field-landing-page-text {column-count: 3;}
+  .paragraph_number_of_text_columns_four  .field-name-field-landing-page-text {column-count: 4;}
+}

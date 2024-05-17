@@ -1,0 +1,272 @@
+/* TO MERGE INTO MAIN PARAGRAPHS.CSS FILE */
+
+.node-type-member-benefit h1.page-header {
+  display: none;
+}
+
+.node-member-benefit .main-content-wrapper > a {
+  display: block;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.node-member-benefit .field-name-title {
+  display: block;
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 60px;
+  text-shadow: 0px 3px 0px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.node-member-benefit .paragraph_background_colour_white .field-name-title {
+	color: #000;
+	text-shadow: none;
+}
+
+.node-member-benefit .field-name-field-teaser {
+  text-align: center;
+  font-size: 20px;
+  line-height: 24px;
+  color: #009fda;
+  max-width: 800px;
+  margin: 0 auto 60px auto;
+}
+
+.node-member-benefit .group-title-wrapper {
+  padding: 20px;
+  margin: 0 -15px 30px -15px;
+}
+
+.node-member-benefit .paragraph_background_colour_blue .group-title-wrapper {
+  background-color: #009fda;
+}
+
+.node-member-benefit .paragraph_background_colour_pink .group-title-wrapper {
+  background-color: #e6007e;
+}
+
+.node-member-benefit .paragraph_background_colour_purple .group-title-wrapper {
+  background-color: #8065a9;
+}
+
+.node-member-benefit .paragraph_background_colour_yellow .group-title-wrapper {
+  background-color: #fbb040;
+}
+
+.node-member-benefit .paragraph_background_colour_green .group-title-wrapper {
+  background-color: #cdde00;
+}
+
+.node-member-benefit .paragraph_background_colour_grey .group-title-wrapper {
+  background-color: #3b3b3a;
+}
+
+
+
+
+/* CUSTOM CSS */
+
+.node-member-benefit picture.img-responsive img.img-responsive {
+  min-width: 100%;
+}
+
+.node-member-benefit .field-name-share-buttons {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  float: inherit;
+  margin-bottom: 90px;
+}
+
+.paragraphs-item-member-benefit {
+  background-color: #e6007e;
+  padding: 30px;
+  margin: 0 -15px 60px -15px;
+}
+
+.paragraphs-item-member-benefit .field-name-field-public-only-content,
+.paragraphs-item-member-benefit .field-name-field-member-only-content {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.paragraphs-item-member-benefit .field-name-field-public-only-content .field-label,
+.paragraphs-item-member-benefit .field-name-field-member-only-content .field-label {
+  color: #000;
+  margin: 0 0 30px 0;
+  font-size: 36px;
+  line-height: 36px;
+}
+
+
+
+/*
+ * Member benefits grid
+ */
+ 
+.page-member-benefits h1 {
+  text-align: center;
+}
+
+.view-member-benefits .views-exposed-form {
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.view-member-benefits .views-exposed-widget {
+  width: 100%;
+}
+
+.view-member-benefits .views-exposed-widget > label {
+	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 400;
+	font-size: 18px;
+	line-height: 18px;
+	margin-bottom: 10px;
+}
+
+.view-member-benefits .form-item-field-member-benefit-category-value {
+  display: inline-flex;
+  margin: 0 10px 10px 10px;
+}
+
+.view-member-benefits .form-item-field-member-benefit-category-value label {
+  font-weight: 400;
+  text-transform: uppercase;
+  padding-bottom: 5px;
+  border-bottom: 5px solid;
+}
+
+.view-member-benefits .views-widget .form-radios > div:nth-child(1) label {border-color: #333333;}
+.view-member-benefits .views-widget .form-radios > div:nth-child(2) label {border-color: #fbb040;}
+.view-member-benefits .views-widget .form-radios > div:nth-child(3) label {border-color: #009fda;}
+.view-member-benefits .views-widget .form-radios > div:nth-child(4) label {border-color: #e6007e;}
+.view-member-benefits .views-widget .form-radios > div:nth-child(5) label {border-color: #cdce00;}
+
+.view-member-benefits .member_benefit_container,
+.view-member-benefits .member_benefit_container:visited {
+  display: block;
+  position: relative;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  text-decoration: none;
+  text-align: center;
+  margin-bottom: 30px;
+  outline: none;
+}
+
+.page-user .view-member-benefits .member_benefit_container,
+.page-user .view-member-benefits .member_benefit_container:visited {
+  background-color: #e0e0e0;
+}
+
+.view-member-benefits .member_benefit_container:focus,
+.view-member-benefits .member_benefit_container:hover,
+.view-member-benefits .member_benefit_container:active {
+  background-color: #e0e0e0;
+  text-decoration: none;
+}
+
+.page-user .view-member-benefits .member_benefit_container:focus,
+.page-user .view-member-benefits .member_benefit_container:hover,
+.page-user .view-member-benefits .member_benefit_container:active {
+  background-color: #d0d0d0;
+}
+
+
+.view-member-benefits .member_benefit_image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px 10px 0 0;
+  -webkit-border-radius: 10px 10px 0 0;
+  -moz-border-radius: 10px 10px 0 0;
+}
+
+.view-member-benefits .member_benefit_container.insurance .member_benefit_category {background-color: #fbb040;}
+.view-member-benefits .member_benefit_container.discounts .member_benefit_category {background-color: #009fda;}
+.view-member-benefits .member_benefit_container.travel    .member_benefit_category {background-color: #e6007e;}
+.view-member-benefits .member_benefit_container.exclusive .member_benefit_category {background-color: #cdce00;}
+
+.view-member-benefits .member_benefit_category {
+  position: absolute;
+  top: 0;
+  border-radius: 10px 0 10px 0;
+  -webkit-border-radius: 10px 0 10px 0;
+  -moz-border-radius: 10px 0 10px 0;
+  padding: 4px 8px;
+  color: #fff;
+  font-size: 14px;
+  line-height: 14px;
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.view-member-benefits .member_benefit_title_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 18px;
+  padding: 0 20px;
+  color: #000;
+  text-decoration: none;
+}
+
+
+.page-user .view-member-benefits .member_benefit_title_wrapper {
+  font-size: 16px;
+  line-height: 16px;
+}
+
+
+/*
+ * Member benefts grid - mobile
+ */
+
+@media only screen and (max-width : 479px) {
+  .page-member-benefits .main-container > .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .view-member-benefits .views-exposed-widget {
+    font-size: 14px;
+  }
+  .view-member-benefits .col-xl-2 {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .view-member-benefits .member_benefit_category {
+    border-radius: 10px 10px 0 0;
+    -webkit-border-radius: 10px 10px 0 0;
+    -moz-border-radius: 10px 10px 0 0;
+    padding: 4px 5px;
+    text-align: center;
+    width: 100%;
+  }
+  .view-member-benefits .member_benefit_title_wrapper {
+    font-size: 16px;
+    line-height: 16px;
+    padding: 0 10px;
+  }
+}

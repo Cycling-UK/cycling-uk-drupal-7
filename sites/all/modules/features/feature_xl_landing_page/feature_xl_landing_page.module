@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * Code for the Feature XL Landing Page feature.
+ */
+
+include_once 'feature_xl_landing_page.features.inc';

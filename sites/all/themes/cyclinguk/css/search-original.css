@@ -1,0 +1,408 @@
+/**
+ * Main site search block
+ */
+
+/*
+.search-block {
+	display: block;
+	position: relative;
+	top: 20px;
+	width: 225px;
+	height: 35px;
+	margin: 0 auto;
+}
+
+@media only screen and (max-width : 767px) {
+	.search-block {
+		display: none;
+	}
+}
+
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+	body.logged-in .search-block {
+		margin: inherit;
+		left: 206px;
+	}
+	body.not-logged-in .search-block {
+		margin: inherit;
+		left: 229px;
+	}
+}
+
+.search-block .form-control {
+    border: 1px solid #fbb040;
+	border-radius: 18px;
+	-webkit-border-radius: 18px;
+	-moz-border-radius: 18px;
+	box-shadow: inherit;
+	transition: inherit;
+	width: 225px;
+    height: 35px;
+    color: #000000;
+    font-size: 15px;
+    line-height: 15px;
+    font-weight: 300;
+    display: block;
+    padding: 6px 12px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.search-block .form-control:focus {
+    border: 1px solid #000;
+/* 	-webkit-box-shadow: 0px 2px 0px 0px rgba(0, 0, 0, 0.1) inset;
+	-moz-box-shadow:    0px 2px 0px 0px rgba(0, 0, 0, 0.1) inset;
+	box-shadow:         0px 2px 0px 0px rgba(0, 0, 0, 0.1) inset; */
+
+
+.search-block .form-control::-webkit-input-placeholder 	{color: #000; opacity: 1;}  /* Chrome / Opera / Safari */
+.search-block .form-control::-moz-placeholder			{color: #000; opacity: 1;}  /* Firefox 19+ */
+.search-block .form-control:-moz-placeholder			{color: #000; opacity: 1;}  /* Firefox 18- */
+.search-block .form-control:-ms-input-placeholder		{color: #000; opacity: 1;}  /* IE 10+ */
+
+/*
+.search-block .form-item {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	margin: 0px;
+}
+
+.search-block .form-actions {
+	position: absolute;
+	top: 8px;
+	right: 15px;
+	width: 18px;
+	height: 19px;
+	overflow: hidden;
+}
+*/
+
+
+/*
+ * Posts - search news
+ */
+
+form#custom-search-blocks-form-2 .form-group {
+	margin-bottom: 0;
+}
+
+#search-filters form[id^="views-exposed-form-taxonomy-page"] .bef-secondary-options > .form-group {
+	margin-bottom: 30px;
+}
+
+#search-filters form[id^="views-exposed-form-taxonomy-page"] .bef-secondary-options .bef-checkboxes .form-item {
+	margin-bottom: 10px;
+}
+
+#search-filters form[id^="views-exposed-form-taxonomy-page"] .bef-secondary-options > .form-item > .form-control {
+	float: inherit;
+}
+
+form#custom-search-blocks-form-2 .form-control,
+#search-filters form[id^="views-exposed-form-taxonomy-page"] .form-item-keys .form-control {
+    border: inherit;
+	border-radius: 18px;
+	-webkit-border-radius: 18px;
+	-moz-border-radius: 18px;
+	box-shadow: inherit;
+	transition: inherit;
+	width: 100%;
+    height: 35px;
+    background-color: #f5f5f5;
+    color: #000000;
+    font-size: 15px;
+    line-height: 15px;
+    font-weight: 300;
+    display: block;
+    padding: 6px 12px;
+    float: inherit;
+}
+
+
+
+/* Chrome / Opera / Safari */
+form#custom-search-blocks-form-2 .form-control::-webkit-input-placeholder,
+form[id^="views-exposed-form-taxonomy-page"] .form-item-keys .form-control::-webkit-input-placeholder {
+	color: #848484;
+	opacity: 1;
+}
+
+/* Firefox 19+ */
+form#custom-search-blocks-form-2 .form-control::-moz-placeholder,
+form[id^="views-exposed-form-taxonomy-page"] .form-item-keys .form-control::-moz-placeholder {
+	color: #848484;
+	opacity: 1;}
+
+/* Firefox 18- */
+form#custom-search-blocks-form-2 .form-control:-moz-placeholder,
+form[id^="views-exposed-form-taxonomy-page"] .form-item-keys .form-control:-moz-placeholder {
+	color: #848484;
+	opacity: 1;
+}
+
+/* IE 10+ */
+form#custom-search-blocks-form-2 .form-control:-ms-input-placeholder,
+form[id^="views-exposed-form-taxonomy-page"] .form-item-keys .form-control:-ms-input-placeholder {
+	color: #848484;
+	opacity: 1;
+}  
+
+
+
+/*
+ * Solr search results
+ */
+ 
+/* Sidebar formatting */
+
+.block-facetapi {
+	margin-bottom: 30px;
+}
+
+.block-facetapi ul {
+	padding: 0;	
+}
+
+.block-facetapi ul li input {
+	margin-right: 10px;
+}
+
+.block-facetapi .leaf a {
+	color: #000;
+	text-decoration: none;
+	outline: none;
+}
+
+.block-facetapi .leaf a:hover,
+.block-facetapi .leaf a:focus,
+.block-facetapi .leaf a:active {
+	color: #fbb040;
+	text-decoration: underline;
+}
+
+
+
+/*
+
+.block-facetapi .leaf {
+	position: relative;
+	margin-bottom: 5px;
+}
+
+.block-facetapi input.facetapi-checkbox {
+	position: absolute;
+	top: 0;
+  margin-right: 8px;
+}
+
+a.facetapi-limit-link {
+    display: block;
+    font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 15px;
+    line-height: 34px;
+    font-weight: 400;
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    outline: none;
+    width: 140px;
+    min-width: 140px;
+    padding: 0 18px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    margin: 0 auto;
+    color: #000;
+    background-color: #fff;
+    border: 1px solid #f6b331;
+}
+
+a.facetapi-limit-link:hover,
+a.facetapi-limit-link:focus {
+    text-decoration: none;
+    color: #fff;
+    background-color: #f6b331;
+    border-color: #f6b331;			
+}
+
+a.facetapi-limit-link:active {
+    text-decoration: none;
+    color: #fff;
+    background-color: #fdaf17;
+    border-color: #fdaf17;		
+}
+*/
+
+
+/* Search input */
+
+@media only screen and (min-width : 768px) {
+	#search-form input {
+		margin: 0 10px;
+	}
+}
+
+.spelling-suggestions {
+	background-color: #f0f0f0;
+	padding: 20px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+}
+
+
+
+/* Search listing */
+
+body.page-site-search .main-container h2 {
+	margin-top: 60px;
+	margin-bottom: 30px;
+	border-bottom: 1px solid #000;
+	padding-bottom: 10px;
+}
+
+p.search-info {
+	font-size: 13px;
+	line-height: 17px;
+	text-transform: uppercase;
+}
+
+p.search-info a {
+	color: #000;
+	text-decoration: none;
+}
+
+p.search-info a:hover,
+p.search-info a:focus,
+p.search-info a:active {
+	color: #fbb040;
+	text-decoration: underline;
+}
+
+
+
+/*
+ * April 2021 - Search update
+ */
+
+.page-site-search .search-filters {
+	margin-top: 30px;
+}
+
+.page-site-search .views-exposed-widgets {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+.page-site-search .views-exposed-form {
+	margin-bottom: 40px;
+}
+
+.page-site-search .views-exposed-form .views-widget-filter-keyword {
+	max-width: 300px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-right: 10px;
+}
+
+.page-site-search .views-exposed-form .views-widget-sort-by {
+	width: 145px;
+	min-width: 145px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-right: 10px;
+}
+
+.page-site-search .views-exposed-form label {
+	display: none;
+}
+
+.page-site-search .views-exposed-form .views-exposed-widget {
+	float: inherit;
+	padding: 0;
+}
+
+.page-site-search .views-exposed-form .views-exposed-widget .form-submit {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	min-width: 120px;
+}
+
+@media only screen and (max-width : 767px) {
+	.blank-block {
+		display: none;
+	}
+	.page-site-search h1.page-header {
+		margin-top: 0;
+		margin-bottom: 10px;
+	}
+}
+
+
+.page-site-search .views-field-bundle-name .field-content div {
+	display: none;
+	/* display: inline-block; */
+	font-size: 12px;
+	line-height: 12px;
+	font-weight: 600;
+	text-transform: uppercase;
+	margin-bottom: 5px;
+	color: #fff;
+	background-color: #999;
+	padding: 4px 8px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+}
+
+.page-site-search .views-field-bundle-name .field-content div.member_benefit,
+.page-site-search .views-field-bundle-name .field-content div.publication,
+.page-site-search .views-field-bundle-name .field-content div.group,
+.page-site-search .views-field-bundle-name .field-content div.route,
+.page-site-search .views-field-bundle-name .field-content div.ride {
+	display: inline-block;
+}
+
+.page-site-search .views-field-ds-created,
+.page-site-search .views-field-timestamp,
+.page-site-search .views-field-score {
+	display: block;
+	font-size: 12px;
+	line-height: 12px;
+	margin-bottom: 10px;
+	font-weight: 600;
+	color: #777;
+}
+
+.page-site-search .views-field-score {
+	margin-top: 10px;
+}
+
+.page-site-search .views-label-ds-created,
+.page-site-search .views-label-timestamp {
+		font-weight: 600;
+}
+
+.page-site-search h3 {
+	margin-top: 0;
+	margin-bottom: 5px;
+	font-size: 20px;
+	line-height: 20px;
+}
+
+.page-site-search h3 a {
+	text-decoration: none;
+}
+
+.page-site-search .view-search-results {
+	max-width: 700px;
+}
+
+.page-site-search .view-search-results .view-content .views-row {
+	padding-bottom: 30px;
+	border-bottom: 1px solid #eee;
+	margin-bottom: 30px;
+}

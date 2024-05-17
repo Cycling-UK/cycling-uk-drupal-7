@@ -1,0 +1,52 @@
+diff --git a/form_placeholder.js b/form_placeholder.js
+index 352bf41..8884df0 100644
+--- a/form_placeholder.js
++++ b/form_placeholder.js
+@@ -26,19 +26,19 @@
+       var required_indicator = settings.form_placeholder.required_indicator;
+ 
+       $(include, context).not(exclude).each(function() {
+-        $textfield = $(this);
++        $field = $(this);
+ 
+-        // Check if element is a textfield.
+-        if (!$textfield.is('input[type=text], input[type=email], input[type=password], textarea')) {
++        // Check if element is a textfield or select.
++        if (!$field.is('input[type=text], input[type=email], input[type=password], textarea, select')) {
+           return;
+         }
+         // Placeholder is supported.
+         else if (Drupal.form_placeholder.placeholderIsSupported() || settings.form_placeholder.fallback_support) {
+-          $form = $textfield.closest('form');
++          $form = $field.closest('form');
+           $label = $form.find('label[for=' + this.id + ']');
+ 
+           if (required_indicator === 'append') {
+-            $label.find('.form-required').insertAfter($textfield).prepend('&nbsp;');
++            $label.find('.form-required').insertAfter($field).prepend('&nbsp;');
+           }
+           else if (required_indicator === 'remove') {
+             $label.find('.form-required').remove();
+@@ -47,12 +47,20 @@
+             $label.find('.form-required').text('(' + Drupal.t('required') + ')');
+           }
+ 
+-          $textfield.attr('placeholder', $.trim($label.text()));
++          if ($field.is('select')) {
++            $selected = $field.find('[value=""]');
++            $selected.text($label.text());
++            $selected.prop('disabled', true);
++          }
++          else {
++            $field.attr('placeholder', $.trim($label.text()));
++          }
++
+           $label.hide();
+ 
+           // Fallback support for older browsers.
+           if (!Drupal.form_placeholder.placeholderIsSupported() && settings.form_placeholder.fallback_support) {
+-            $textfield.placeholder();
++            $field.placeholder();
+           }
+         }
+       });

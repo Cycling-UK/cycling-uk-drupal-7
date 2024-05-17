@@ -1,0 +1,21 @@
+/**
+ * Workplaces SLIM subtheme
+ */
+
+header#navbar a.logo img {
+	width: 145px;
+	height: auto;
+}
+
+@media only screen and (max-width : 767px) {
+	header#navbar a.logo img {
+		width: 120px;
+		height: auto;
+	}
+}
+
+.full-width-menu-container {
+	height: 206px;
+}
+
+

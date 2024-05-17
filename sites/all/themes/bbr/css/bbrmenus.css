@@ -1,0 +1,363 @@
+.navbar-default {
+    background-color: inherit;
+    border: none;
+    /* margin-bottom: 60px; */
+}
+
+@media only screen and (max-width : 767px) {
+	.navbar-default {
+		margin-bottom: 20px;
+	}
+}
+
+
+
+
+/**
+ * Main site navigation
+ * Based on Superfish "Simple Center Aligned" style
+ * Ensure that the Superfish block is configured to use no style, i.e. "none"
+ *
+ * Primary selectors:
+ *
+ *   -  ul#superfish-5-accordion  :: Mobile menu
+ *   -  ul#superfish-5            :: Desktop menu
+ */
+
+
+
+/*
+ * Desktop overrides
+ */
+
+
+
+/* Typography */
+ul#superfish-5.sf-menu.sf-style-simple-centre-aligned a,
+ul#superfish-5.sf-menu.sf-style-simple-centre-aligned a:visited,
+ul#superfish-5.sf-menu.sf-style-simple-centre-aligned span.nolink {
+    color: #000;
+    font-size: 15px;
+    line-height: 15px;
+    font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+    text-shadow: inherit;
+}
+
+ul#superfish-5.sf-menu.sf-style-simple-centre-aligned li a.sf-depth-1 {
+	font-size: 18px;
+	line-height: 18px;
+}
+
+
+/* Shadows */
+ul#superfish-5.sf-menu.sf-style-simple-centre-aligned.sf-navbar a + ul {
+	-webkit-box-shadow: 	0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow:    	0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+	box-shadow:         	0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* Home icon */
+a#menu-1 {
+	width: 18px;
+	height: 58px;
+    background-image: url('../images/menu/home.png');
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+
+a#menu-1 span.outer-wrapper {
+	display: inline-block;
+}
+
+a#menu-1 span.inner-wrapper {
+	display: none;
+}
+
+
+
+/*
+ * Top level
+ */
+
+ul#superfish-5 {
+	border-bottom: 1px solid #e0e0e0;
+	height: 40px;
+	margin-bottom: 20px;
+}
+
+
+ul#superfish-5.sf-menu.sf-style-simple-centre-aligned a.sf-depth-1,
+ul#superfish-5.sf-menu.sf-style-simple-centre-aligned a.sf-depth-1 span.nolink {
+	padding: 15px 25px;
+	margin: 0 10px;
+}
+
+
+@media only screen and (min-width : 768px) and (max-width :  991px) {
+	ul#superfish-5.sf-menu.sf-style-simple-centre-aligned a.sf-depth-1,
+	ul#superfish-5.sf-menu.sf-style-simple-centre-aligned a.sf-depth-1 span.nolink {
+		padding: 15px 14px;
+		margin: 0 10px;
+	}
+}
+
+
+
+
+ul#superfish-5.sf-menu.sf-style-simple-centre-aligned.sf-navbar a {
+	border-bottom: 4px solid transparent;
+}
+
+
+
+
+ul#superfish-5.sf-menu.sf-style-simple-centre-aligned.sf-navbar > li:hover > ul,
+ul#superfish-5.sf-menu.sf-style-simple-centre-aligned.sf-navbar > li.sfHover > ul,
+ul#superfish-5.sf-menu.sf-style-simple-centre-aligned.sf-navbar > li.active-trail > ul {
+    top: 40px;
+}
+
+ul#superfish-5 li > ul {
+	height: 40px;
+}
+
+ul#superfish-5.sf-menu.sf-style-simple-centre-aligned.sf-horizontal > li,
+ul#superfish-5.sf-menu.sf-style-simple-centre-aligned.sf-navbar > li {
+    padding: 0 !important;
+}
+
+
+
+/* Top level underlines */
+ul#superfish-5 a#menu-1:hover,
+ul#superfish-5 li.sfHover a#menu-1	{border-bottom: 4px solid #8065a9;}   /* Purple */
+
+ul#superfish-5 a#menu-2:hover,
+ul#superfish-5 li.sfHover a#menu-2g	{border-bottom: 4px solid #00aeef;}   /* Blue   */
+
+ul#superfish-5 a#menu-3:hover,
+ul#superfish-5 li.sfHover a#menu-3 	{border-bottom: 4px solid #cdce00;}   /* Green  */
+
+ul#superfish-5 a#menu-4:hover,
+ul#superfish-5 li.sfHover a#menu-4 	{border-bottom: 4px solid #e6007e;}   /* Pink   */
+
+ul#superfish-5 a#menu-5:hover,
+ul#superfish-5 li.sfHover a#menu-5 	{border-bottom: 4px solid #fbb040;}   /* Yellow */
+
+
+
+/*
+ * Second and third level background tints
+ */
+
+ul#superfish-5 a#menu-1 + ul,
+ul#superfish-5 a#menu-1 + ul ul 	{background-color: #bfb1d4;}   /* Purple */
+
+ul#superfish-5 a#menu-2 + ul,
+ul#superfish-5 a#menu-2 + ul ul 	{background-color: #7fd6f7;}   /* Blue   */
+
+ul#superfish-5 a#menu-3 + ul,
+ul#superfish-5 a#menu-3 + ul ul 	{background-color: #e6e67f;}   /* Green  */
+
+ul#superfish-5 a#menu-4 + ul,
+ul#superfish-5 a#menu-4 + ul ul		{background-color: #f27fbe;}   /* Pink   */
+
+ul#superfish-5 a#menu-5 + ul,
+ul#superfish-5 a#menu-5 + ul ul 	{background-color: #fdd79f;}   /* Yellow */
+
+
+
+
+/*
+ * Second level menu
+ */
+
+ul#superfish-5.sf-menu.sf-style-simple-centre-aligned li li {
+	padding: 10px 0 !important;
+	position: relative;
+	top: 12px;
+}
+
+
+/*
+ * Third level menu
+ */
+
+/* Bottom border radius */
+ul#superfish-5.sf-menu.sf-style-simple-centre-aligned.sf-navbar a + ul ul {
+	border-radius: 			0 0 10px 10px;
+	-webkit-border-radius: 	0 0 10px 10px;
+	-moz-border-radius: 	0 0 10px 10px;
+	-webkit-box-shadow: 	0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow:    	0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+	box-shadow:    		    0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+}
+
+ul#superfish-5 a.sf-depth-3 {
+    padding: 0px 20px;
+}
+
+
+
+/*********************************/
+
+
+
+/*
+ * Mobile overrides
+ */
+
+.navbar-default .navbar-collapse,
+.navbar-default .navbar-form {
+	border-color: #fff;
+}
+
+@media only screen and (max-width : 767px) {
+	#navbar .navbar-collapse {
+		padding: 0 10px 10px 10px;
+	}
+}
+
+
+
+/* Typography */
+ul#superfish-5-accordion.sf-menu.sf-style-simple-centre-aligned .sf-depth-1 li.sf-clone-parent a,
+ul#superfish-5-accordion.sf-menu.sf-style-simple-centre-aligned .sf-depth-2 a,
+ul#superfish-5-accordion.sf-menu.sf-style-simple-centre-aligned .sf-depth-2 a:visited,
+ul#superfish-5-accordion.sf-menu.sf-style-simple-centre-aligned .sf-depth-2 span.nolink {
+    color: #000;
+    font-size: 22px;
+    line-height: 28px;
+    font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+    text-shadow: inherit;
+	text-shadow: inherit;
+	padding: 15px 10px 15px 0;
+}
+
+@media only screen and (max-width : 479px) {
+	ul#superfish-5-accordion.sf-menu.sf-style-simple-centre-aligned .sf-depth-1 li.sf-clone-parent a,
+	ul#superfish-5-accordion.sf-menu.sf-style-simple-centre-aligned .sf-depth-2 a,
+	ul#superfish-5-accordion.sf-menu.sf-style-simple-centre-aligned .sf-depth-2 a:visited,
+	ul#superfish-5-accordion.sf-menu.sf-style-simple-centre-aligned .sf-depth-2 span.nolink {
+		font-size: 16px;
+		line-height: 22px;
+		padding: 10px 10px 10px 0;
+	}
+}
+
+
+/*
+ * Top level
+ */
+
+ul#superfish-5-accordion {
+	padding: 0 20px 20px;
+	background-color: #fff;
+}
+
+@media only screen and (max-width : 479px) {
+	ul#superfish-5-accordion {
+		padding: 0 10px 10px;
+	}
+}
+
+ul#superfish-5-accordion a {
+	outline: none;
+}
+
+
+
+
+
+/* Remove Home icon */
+ul#superfish-5-accordion > li:first-child {
+	display: none;
+}
+
+
+
+/*
+ * Top level
+ */
+
+ul#superfish-5-accordion > li {
+	border-bottom: 1px solid #000;
+}
+
+ul#superfish-5-accordion > li:last-child {
+	border-bottom: inherit;
+}
+
+ul#superfish-5-accordion .sf-depth-1 ul {
+	padding-bottom: 10px;
+}
+
+ul#superfish-5-accordion a,
+ul#superfish-5-accordion a:visited,
+ul#superfish-5-accordion span.nolink {
+    color: #000;
+    font-size: 15px;
+    line-height: 15px;
+    font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+    text-shadow: inherit;
+}
+
+ul#superfish-5-accordion.sf-menu.sf-style-simple-centre-aligned.sf-accordion li li {
+    margin-left: 20px;
+}
+
+ul#superfish-5-accordion.sf-menu.sf-style-simple-centre-aligned.sf-accordion li ul {
+    margin: 0;
+}
+
+
+
+/*
+ * Background tints
+ */
+
+ul#superfish-5-accordion li.sf-expanded a#menu-2,
+ul#superfish-5-accordion li.sf-expanded a#menu-2 + ul,
+ul#superfish-5-accordion li.sf-expanded a#menu-2 + ul a,
+ul#superfish-5-accordion li.sf-expanded a#menu-2 + ul ul 	{background-color: #7fd6f7;}   /* Blue   */
+
+ul#superfish-5-accordion li.sf-expanded a#menu-3,
+ul#superfish-5-accordion li.sf-expanded a#menu-3 + ul,
+ul#superfish-5-accordion li.sf-expanded a#menu-3 + ul a,
+ul#superfish-5-accordion li.sf-expanded a#menu-3 + ul ul 	{background-color: #e6e67f;}   /* Green  */
+
+ul#superfish-5-accordion li.sf-expanded a#menu-4,
+ul#superfish-5-accordion li.sf-expanded a#menu-4 + ul,
+ul#superfish-5-accordion li.sf-expanded a#menu-4 + ul a,
+ul#superfish-5-accordion li.sf-expanded a#menu-4 + ul ul 	{background-color: #f27fbe;}   /* Pink   */
+
+ul#superfish-5-accordion li.sf-expanded a#menu-5,
+ul#superfish-5-accordion li.sf-expanded a#menu-5 + ul,
+ul#superfish-5-accordion li.sf-expanded a#menu-5 + ul a,
+ul#superfish-5-accordion li.sf-expanded a#menu-5 + ul ul	{background-color: #fdd79f;}   /* Yellow */
+
+
+
+/*
+ * Mobile dropdown arrows
+ */
+
+ul#superfish-5-accordion > li > a::after,																				/* Top level    */
+ul#superfish-5-accordion.sf-menu.sf-style-simple-centre-aligned.sf-accordion li.sf-depth-2.menuparent > a::after {		/* Second level */
+    font-family: 'FontAwesome';
+    font-size: 28px;
+    font-weight: 400;
+	display: inline-block;
+	content: "\F105";
+	float: right;
+	margin-right: 10px;
+}
+
+ul#superfish-5-accordion > li.sf-expanded > a::after,																				/* Top level    */
+ul#superfish-5-accordion.sf-menu.sf-style-simple-centre-aligned.sf-accordion li.sf-depth-2.menuparent.sf-expanded > a::after {		/* Second level */
+	content: "\F107";
+}
+
+

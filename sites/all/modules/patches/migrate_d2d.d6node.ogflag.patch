@@ -1,0 +1,51 @@
+ .../sites/all/modules/contrib/migrate_d2d/d6/node.inc    | 16 ++++++++++++++++
+ 1 file changed, 16 insertions(+)
+
+diff --git a/docroot/sites/all/modules/contrib/migrate_d2d/d6/node.inc b/docroot/sites/all/modules/contrib/migrate_d2d/d6/node.inc
+index 11f49db..bf75091 100644
+--- a/docroot/sites/all/modules/contrib/migrate_d2d/d6/node.inc
++++ b/docroot/sites/all/modules/contrib/migrate_d2d/d6/node.inc
+@@ -17,6 +17,8 @@ class DrupalNode6Migration extends DrupalNodeMigration {
+    *  value: Subfield notation (e.g., field_buy_link:title).
+    */
+   protected $fixFieldNames = array();
++  
++  protected $includeOGroups = FALSE;
+ 
+   /**
+    * Keep track of any file field data columns we'll need to unpack in
+@@ -30,6 +32,9 @@ class DrupalNode6Migration extends DrupalNodeMigration {
+    * @param array $arguments
+    */
+   public function __construct(array $arguments) {
++    if (!empty($arguments['include_organic_groups'])) {
++      $this->includeOGroups = $arguments['include_organic_groups'];
++    }
+     parent::__construct($arguments);
+ 
+     $query = $this->query();
+@@ -120,6 +125,12 @@ class DrupalNode6Migration extends DrupalNodeMigration {
+       $query->addField('nc', 'timestamp');
+       $query->addField('nc', 'totalcount');
+     }
++    // Support for Organic Groups
++    if ($this->includeOGroups) {
++        $query->leftJoin('og_ancestry', 'ogan', 'n.nid=ogan.nid');
++        $query->addExpression('GROUP_CONCAT(DISTINCT ogan.group_nid)', 'og_ref');
++    }
++    
+     return $query;
+   }
+ 
+@@ -186,6 +197,11 @@ class DrupalNode6Migration extends DrupalNodeMigration {
+     if (empty($row->teaser) || $row->teaser == text_summary($row->body)) {
+       $row->teaser = '';
+     }
++    
++    //support for multiple OG references
++    if (!empty($row->og_ref)) {
++        $row->og_ref = explode(',', $row->og_ref);
++    }
+   }
+ 
+   public function complete($node, stdClass $row) {

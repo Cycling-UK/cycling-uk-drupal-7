@@ -1,0 +1,450 @@
+<?php
+
+/**
+ * @file
+ * Provide a TNSPay API payment method for Drupal Commerce.
+ */
+
+// TNSPay transaction mode definitions.
+define('COMMERCE_TNSPAY_TXN_MODE_LIVE', 'live');
+define('COMMERCE_TNSPAY_TXN_MODE_TEST', 'test');
+
+// TNSPay URLs for live and test environments.
+define('COMMERCE_TNSPAY_SERVER_LIVE', 'https://vpos.amxvpos.com/vpcpay');
+define('COMMERCE_TNSPAY_SERVER_TEST', 'https://vpos.amxvpos.com/vpcpay');
+
+/**
+ * Specify default settings for TNSPay API.
+ */
+function commerce_tnspay_default_settings() {
+  return [
+    'access_code' => '',
+    'merchant_id' => '',
+    'merchant_secret_key' => '',
+    'transact_mode' => COMMERCE_TNSPAY_TXN_MODE_TEST,
+    'live_transact_url' => COMMERCE_TNSPAY_SERVER_LIVE,
+    'test_transact_url' => COMMERCE_TNSPAY_SERVER_TEST,
+    'order_info' => 'Clubvivre Order',
+    'debug_mode' => FALSE,
+  ];
+}
+
+/**
+ * Implements hook_menu().
+ */
+function commerce_tnspay_menu() {
+  $items = [];
+  $items['commerce-tnspay/payment-status'] = [
+    'page callback' => 'commerce_tnspay_payment_status',
+    'access callback' => '_commerce_tnspay_return_url_access',
+    'access arguments' => [],
+  ];
+  $items['checkout/complete'] = array(
+    'title' => 'Checkout complete',
+    'page callback' => 'commerce_tnspay_checkout_complete',
+    'access callback' => '_commerce_tnspay_return_url_access',
+  );
+  return $items;
+}
+
+function commerce_tnspay_checkout_complete() {
+  return t('Thank you for your order and supporting Cycling UK, your order number is @id. We have sent a confirmation of your order by email.',
+    array('@id' => $_SESSION['commerce_tnspay_order_id']));
+}
+
+/**
+ * Access callback for the return URLs.
+ */
+function _commerce_tnspay_return_url_access() {
+  if (empty($_SESSION['commerce_tnspay_order_id'])) {
+    // The session should exist if the return URL is accessed.
+    return FALSE;
+  }
+  return TRUE;
+}
+
+/**
+ * Helper function to get the last checkout order of current user.
+ */
+function _commerce_tnspay_get_last_checkout_order($uid = NULL) {
+  if ($uid === NULL) {
+    global $user;
+    $uid = $user->uid;
+  }
+  $query = new EntityFieldQuery();
+  $query->entityCondition('entity_type', 'commerce_order')
+    ->propertyCondition('status', 'checkout_', 'STARTS_WITH')
+    ->propertyCondition('status', 'checkout_complete', '!=')
+    ->propertyCondition('uid', $uid)
+    ->propertyOrderBy('changed', 'DESC')
+    ->range(0, 1);
+  $result = $query->execute();
+  if (isset($result['commerce_order'])) {
+    $order_ids = array_keys($result['commerce_order']);
+    return array_shift($order_ids);
+  }
+  return NULL;
+}
+
+/**
+ * Helper function to return to the checkout page if anything goes wrong.
+ */
+function _commerce_tnspay_goto_previous_state($order_id, $request, $debug_mode) {
+  include_once drupal_get_path('module', 'commerce_tnspay') . '/commerce_tnspay.inc';
+
+  drupal_set_message(t('It appears we can not proceed with the payment as the problem mentioned below arise:<br /> <i>@details</i>.<br /><br />Please go back to previous page to choose other type of payment.<br />Apologise for the inconvenience caused. Thank you.', [
+    '@details' => getResultDescription($request['vpc_TxnResponseCode']),
+  ]), 'error');
+  if ($debug_mode == TRUE) {
+    watchdog('commerce_tnspay', 'Payment gateway has received an error with following details: <pre>@result</pre>', [
+      '@result' => print_r($request, TRUE),
+    ], WATCHDOG_DEBUG);
+  }
+
+  watchdog('commerce_tnspay', 'Something went wrong response for order @order+id. Result from TNSpay was: <pre>@result</pre>', [
+    '@order_id' => $order_id,
+    '@result' => print_r($request, TRUE),
+  ], WATCHDOG_ERROR);
+
+  $order = FALSE;
+  if (empty($order_id)) {
+    // Try to get the latest order being checkout.
+    $order_id = _commerce_tnspay_get_last_checkout_order();
+  }
+
+  if (!empty($order_id) && is_numeric($order_id)) {
+    $order = commerce_order_load($order_id);
+  }
+
+  if ($order !== FALSE) {
+    commerce_order_status_update($order, 'checkout_review');
+    // Immediately unload to make the order available to everyone again.
+    // Ref. http://drupal.org/node/1514618
+    entity_get_controller('commerce_order')->resetCache([
+      $order->order_id,
+    ]);
+    drupal_goto('checkout/' . $order_id . '/review');
+  }
+}
+
+/**
+ * Return URL.
+ */
+function commerce_tnspay_payment_status() {
+  $payment_setting = commerce_payment_method_instance_load('commerce_tnspay|commerce_payment_commerce_tnspay');
+  $debug_mode = $payment_setting['settings']['debug_mode'];
+  if ($debug_mode == TRUE) {
+    watchdog('commerce_tnspay', 'Payment gateway has received the payment status with following details: <pre>@result</pre>', [
+      '@result' => print_r($_REQUEST, TRUE),
+    ], WATCHDOG_DEBUG);
+  }
+
+  // Double check the internal session for security purpose.
+  if (!empty($_SESSION['commerce_tnspay_order_id'])) {
+    if (!empty($_REQUEST['vpc_TxnResponseCode']) || isset($_REQUEST['vpc_TxnResponseCode'])) {
+      $order = FALSE;
+      $order_number = isset($_REQUEST['vpc_MerchTxnRef']) ? $_REQUEST['vpc_MerchTxnRef'] : NULL;
+
+      $response_codes = [
+        "0" => "Transaction Successful",
+        "?" => "Transaction status is unknown",
+        "E" => "Referred",
+        "1" => "Transaction Declined",
+        "2" => "Bank Declined Transaction",
+        "3" => "No Reply from Bank",
+        "4" => "Expired Card",
+        "5" => "Insufficient funds",
+        "6" => "Error Communicating with Bank",
+        "7" => "Payment Server detected an error",
+        "8" => "Transaction Type Not Supported",
+        "9" => "Bank declined transaction (Do not contact Bank)",
+        "A" => "Transaction Aborted",
+        "C" => "Transaction Cancelled",
+        "D" => "Deferred transaction has been received and is awaiting processing",
+        "F" => "3D Secure Authentication failed",
+        "I" => "Card Security Code verification failed",
+        "L" => "Shopping Transaction Locked (Please try the transaction again later)",
+        "N" => "Cardholder is not enrolled in Authentication scheme",
+        "P" => "Transaction has been received by the Payment Adaptor and is being processed",
+        "R" => "Transaction was not processed - Reached limit of retry attempts allowed",
+        "S" => "Duplicate SessionID (Amex Only)",
+        "T" => "Address Verification Failed",
+        "U" => "Card Security Code Failed",
+        "V" => "Address Verification and Card Security Code Failed",
+      ];
+
+      // Transaction success is determined by integer 0.
+      if ((string) $_REQUEST['vpc_TxnResponseCode'] === '0') {
+        if (!empty($order_number)) {
+          $order = commerce_order_load_by_number($order_number);
+          $order_id = $order->order_id;
+        }
+
+        if ($order !== FALSE) {
+          if (strncmp($order->status, 'checkout_', 9) == 0) {
+            // If it is still in checkout.
+            commerce_order_status_update($order, 'checkout_complete');
+          }
+          // Immediately unload to make the order available to everyone again.
+          // Ref. http://drupal.org/node/1514618
+          entity_get_controller('commerce_order')->resetCache([
+            $order->order_id,
+          ]);
+          commerce_checkout_complete($order);
+
+          // Save the transaction details in website.
+          $payment_method = commerce_payment_method_instance_load($order->data['payment_method']);
+          $charge = [
+            'amount' => $_REQUEST['vpc_Amount'],
+            'currency_code' => $_REQUEST['vpc_Currency'],
+          ];
+
+          $details_transact = 'TransactionNo: ' . $_REQUEST['vpc_TransactionNo'];
+          $remote_id = $_REQUEST['vpc_ReceiptNo'];
+          commerce_tnspay_transaction($payment_method, $order, $charge, $details_transact, COMMERCE_PAYMENT_STATUS_SUCCESS, $remote_id);
+
+          drupal_goto('checkout/' . $order_id);
+        }
+        else {
+          _commerce_tnspay_goto_previous_state($order_id, $_REQUEST, $debug_mode);
+        }
+      }
+      else {
+        _commerce_tnspay_goto_previous_state($order_id, $_REQUEST, $debug_mode);
+      }
+    }
+    else {
+      _commerce_tnspay_goto_previous_state($order_id, $_REQUEST, $debug_mode);
+    }
+  }
+  else {
+    drupal_set_message(t('Invalid access.'), 'error');
+  }
+  return '';
+}
+
+/**
+ * Implements hook_commerce_payment_method_info().
+ */
+function commerce_tnspay_commerce_payment_method_info() {
+  $payment_methods = [];
+  $payment_methods['commerce_tnspay'] = [
+    'base' => 'commerce_tnspay',
+    'title' => t('TNSPay'),
+    'short_title' => t('TNSPay'),
+    'display_title' => t('TNSPay'),
+    'description' => t('Integration with TNSPay payment.'),
+    'offsite' => TRUE,
+    'offsite_autoredirect' => TRUE,
+  ];
+  return $payment_methods;
+}
+
+/**
+ * Settings form for TNSPay payment method.
+ */
+function commerce_tnspay_settings_form($settings = NULL) {
+  $form = [];
+  // Merge default settings into the stored settings array.
+  $settings = (array) $settings + commerce_tnspay_default_settings();
+
+  $form['access_code'] = [
+    '#type' => 'textfield',
+    '#title' => t('Access code'),
+    '#description' => t('This is the access code that TNSPay sent you when you set up your account.'),
+    '#default_value' => $settings['access_code'],
+    '#required' => TRUE,
+  ];
+
+  $form['merchant_id'] = [
+    '#type' => 'textfield',
+    '#title' => t('Merchant ID'),
+    '#description' => t('This is the merchant ID that TNSPay sent you when you set up your account.'),
+    '#default_value' => $settings['merchant_id'],
+    '#required' => TRUE,
+  ];
+
+  $form['merchant_secret_key'] = [
+    '#type' => 'textfield',
+    '#title' => t('Merchant secret key'),
+    '#description' => t('This is the merchant secret key that TNSPay sent you when you set up your account.'),
+    '#default_value' => $settings['merchant_secret_key'],
+    '#required' => TRUE,
+  ];
+
+  $form['live_transact_url'] = [
+    '#type' => 'textfield',
+    '#title' => t('Live transaction URL'),
+    '#description' => t('This is for live transaction URL.'),
+    '#default_value' => $settings['live_transact_url'],
+    '#required' => TRUE,
+  ];
+
+  $form['test_transact_url'] = [
+    '#type' => 'textfield',
+    '#title' => t('Test transaction URL'),
+    '#description' => t('This is for test transaction URL.'),
+    '#default_value' => $settings['test_transact_url'],
+    '#required' => TRUE,
+  ];
+
+  $form['transact_mode'] = [
+    '#type' => 'radios',
+    '#title' => t('Transaction mode'),
+    '#description' => t('Adjust to live transactions when you are ready to start processing actual payments.'),
+    '#options' => [
+      COMMERCE_TNSPAY_TXN_MODE_LIVE => t('Live transactions in a live account (@url)', [
+        '@url' => $settings['live_transact_url'],
+      ]),
+      COMMERCE_TNSPAY_TXN_MODE_TEST => t('Test transactions in a test account (@url)', [
+        '@url' => $settings['test_transact_url'],
+      ]),
+    ],
+    '#default_value' => $settings['transact_mode'],
+  ];
+
+  $form['order_info'] = [
+    '#type' => 'textfield',
+    '#title' => t('Custom order info'),
+    '#description' => t('Append text for order info, otherwise default value would be use.'),
+    '#default_value' => $settings['order_info'],
+    '#required' => TRUE,
+  ];
+
+  $form['debug_mode'] = [
+    '#type' => 'checkbox',
+    '#title' => t('Debug mode'),
+    '#description' => t("Turn on 'debug mode' for development purpose."),
+    '#default_value' => $settings['debug_mode'],
+  ];
+  return $form;
+}
+
+/**
+ * Payment method callback: adds a message and CSS to the submission form.
+ */
+function commerce_tnspay_submit_form($payment_method, $pane_values, $checkout_pane, $order) {
+  $form['tnspay_information'] = [
+    '#markup' => '<span class="commerce-tnspay-info">' . t('(Continue with checkout to complete payment via TNSPay.)') . '</span>',
+  ];
+  return $form;
+}
+
+/**
+ * Payment method callback: redirect form.
+ */
+function commerce_tnspay_redirect_form($form, &$form_state, $order, $payment_method) {
+  return commerce_tnspay_order_form($form, $form_state, $order, $payment_method['settings']);
+}
+
+/**
+ * Payment method order form.
+ */
+function commerce_tnspay_order_form($form, &$form_state, $order, $settings) {
+  $order_ref = $order->order_id;
+
+  // Set the session variable for return URLs access control.
+  $_SESSION['commerce_tnspay_order_id'] = $order_ref;
+
+  $order_wrapper = entity_metadata_wrapper('commerce_order', $order);
+
+  $return_url = url('commerce-tnspay/payment-status', [
+    'absolute' => TRUE,
+  ]);
+
+  $payment_data = $order_wrapper->commerce_order_total->data->value();
+  $payment_components = $payment_data['components'];
+  $transaction_amount = 0;
+  foreach ($payment_components as $component) {
+    // Strip out amounts to be paid by DD.
+    if (strpos($component['name'], 'direct_debit') !== 0) {
+      $transaction_amount += $component['price']['amount'];
+    }
+  }
+
+  $data = [
+    'vpc_AccessCode' => $settings['access_code'],
+    'vpc_Amount' => $transaction_amount,
+    'vpc_Command' => 'pay',
+    'vpc_Currency' => $order_wrapper->commerce_order_total->currency_code->value(),
+    'vpc_Locale' => 'en',
+    'vpc_MerchTxnRef' => $order->order_number,
+    'vpc_Merchant' => $settings['merchant_id'],
+    'vpc_OrderInfo' => $settings['order_info'] . " $order->order_number",
+    'vpc_ReturnURL' => $return_url,
+    'vpc_Version' => 1,
+  ];
+  $billing_address = $order_wrapper->commerce_customer_billing->value();
+  if ($billing_address) {
+    $address_value = $order_wrapper->commerce_customer_billing->field_care_address->value();
+    $data['vpc_AVS_Street01'] = $address_value['address_line_1'];
+    $data['vpc_AVS_City'] = $address_value['town'];
+    $data['vpc_AVS_PostCode'] = $address_value['postcode'];
+    $data['vpc_AVS_Country'] = $address_value['country_code'];
+  }
+  ksort($data);
+
+  $hash_data = [];
+  foreach ($data as $key => $value) {
+    $hash_data[] = $key . '=' . $value;
+  }
+  $hash_data = implode('&', $hash_data);
+  $hash = hash_hmac('sha256', $hash_data, pack('H*', $settings['merchant_secret_key']));
+  $data['vpc_SecureHash'] = $hash;
+  $data['vpc_SecureHashType'] = 'SHA256';
+
+  $form['#action'] = ($settings['transact_mode'] == COMMERCE_TNSPAY_TXN_MODE_LIVE) ? $settings['live_transact_url'] : $settings['test_transact_url'];
+
+  foreach ($data as $name => $value) {
+    if (!empty($value)) {
+      $form[$name] = [
+        '#type' => 'hidden',
+        '#value' => $value,
+      ];
+    }
+  }
+
+  $payment_setting = commerce_payment_method_instance_load('commerce_tnspay|commerce_payment_commerce_tnspay');
+  $debug_mode = $payment_setting['settings']['debug_mode'];
+  if ($debug_mode == TRUE) {
+    watchdog('commerce_tnspay', 'TNSPay has sent this following data: <pre>@result</pre>', [
+      '@result' => print_r($data, TRUE),
+    ], WATCHDOG_DEBUG);
+    watchdog('commerce_tnspay', 'TNSPay has sent this following post form data: <pre>@result</pre>', [
+      '@result' => print_r($form, TRUE),
+    ], WATCHDOG_DEBUG);
+  }
+
+  $form['submit'] = [
+    '#type' => 'submit',
+    '#value' => t('Proceed to TNSPay'),
+  ];
+  return $form;
+}
+
+/**
+ * Creates an TNSPay payment transaction for the specified charge amount.
+ *
+ * @param object $payment_method
+ *   The payment method instance object used to charge this payment.
+ * @param object $order
+ *   The order object the payment applies to.
+ * @param array $charge
+ *   An array indicating the amount and currency code to charge.
+ * @param string $name
+ *   The name entered on the submission form.
+ */
+function commerce_tnspay_transaction($payment_method, $order, array $charge, $name, $status, $remote_id = NULL, $remote_status = '') {
+  $transaction = commerce_payment_transaction_new('commerce_tnspay', $order->order_id);
+  $transaction->instance_id = $payment_method['instance_id'];
+  $transaction->amount = $charge['amount'];
+  $transaction->currency_code = $charge['currency_code'];
+  $transaction->status = $status;
+  $transaction->message = '@name';
+  $transaction->message_variables = [
+    '@name' => $name,
+  ];
+  $transaction->remote_id = $remote_id;
+  $transaction->remote_status = $remote_status;
+  commerce_payment_transaction_save($transaction);
+}

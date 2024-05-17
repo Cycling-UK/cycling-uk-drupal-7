@@ -1,0 +1,38 @@
+ docroot/sites/all/modules/contrib/redirect/redirect.module | 5 +++++
+ 1 file changed, 5 insertions(+)
+
+diff --git a/docroot/sites/all/modules/contrib/redirect/redirect.module b/docroot/sites/all/modules/contrib/redirect/redirect.module
+index 993eeed..680f86a 100644
+--- a/docroot/sites/all/modules/contrib/redirect/redirect.module
++++ b/docroot/sites/all/modules/contrib/redirect/redirect.module
+@@ -774,6 +774,7 @@ function redirect_object_prepare($redirect, $defaults = array()) {
+  * @ingroup redirect_api
+  */
+ function redirect_save($redirect) {
++    
+   $transaction = db_transaction();
+ 
+   try {
+@@ -803,11 +804,13 @@ function redirect_save($redirect) {
+     // Save the redirect to the database and invoke the post-save hooks.
+     if ($redirect->is_new) {
+       drupal_write_record('redirect', $redirect);
++      $rid = $redirect->rid;
+       module_invoke_all('redirect_insert', $redirect);
+       module_invoke_all('entity_insert', $redirect, 'redirect');
+     }
+     else {
+       drupal_write_record('redirect', $redirect, array('rid'));
++      $rid = $redirect->rid;
+       module_invoke_all('redirect_update', $redirect);
+       module_invoke_all('entity_update', $redirect, 'redirect');
+     }
+@@ -828,6 +831,8 @@ function redirect_save($redirect) {
+     watchdog_exception('redirect', $e);
+     throw $e;
+   }
++  
++  return $rid;
+ }
+ 
+ /**

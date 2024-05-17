@@ -1,0 +1,58 @@
+/* Typography */
+.social-icons .text,
+.newsletter-signup h2 {
+  font-family: korolev-rounded, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+
+
+/* Colour overrides */
+footer.footer {
+	background-color: #8065a9;
+}
+
+#scroll_top {
+  color: #8065a9;
+}
+
+#scroll_top:hover,
+#scroll_top:active {
+	background-color: #fac533 !important;
+}
+
+ul.social-links a,
+.newsletter-signup button.form-submit:hover,
+.newsletter-signup button.form-submit:focus,
+.newsletter-signup button.form-submit:active {
+	background-color: #fac533;
+}
+
+ul.social-links a:hover,
+ul.social-links a:active,
+ul.footer-links a:hover,
+ul.footer-links a:active,
+.footer-text .yellow-text {
+	color: #fac533;
+}
+
+
+
+/* Borders */
+.newsletter-signup {
+	border-top: 5px solid #fac533;
+	border-bottom: 5px solid #fac533;
+}
+
+.newsletter-signup input {
+  border: 1px #fac533 solid;
+}
+
+.newsletter-signup button.form-submit,
+.newsletter-signup button.form-submit:hover,
+.newsletter-signup button.form-submit:focus,
+.newsletter-signup button.form-submit:active {
+  border-color: #fac533;
+}

@@ -1,0 +1,142 @@
+.renew-message {
+  max-width: 800px;
+  margin: 30px auto;
+  background-color: #009fda;
+  color: #fff;
+  padding: 20px;
+/*   text-align: center; */
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+}
+
+.renew-contact {
+  background-color: #8064a9;
+  color: #fff;
+  padding: 15px;
+  text-align: center;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.renew-contact h3 {
+  margin-top: 0;
+  font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 22px;
+}
+
+.renew-contact .btn {
+  margin: 5px 0;
+}
+
+.renew-contact .btn i {
+  margin-right: 5px;
+}
+
+.page-membership-renew .main-container {
+  background-image: url('/sites/all/themes/cyclinguk/images/shop/renew-sm.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: right top;
+  background-size: cover ;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  width: inherit;
+}
+
+@media only screen and (min-width : 768px) and (max-width : 1199px) {
+  .page-membership-renew .main-container {background-image: url('/sites/all/themes/cyclinguk/images/shop/renew-md.jpg');}
+}
+
+@media only screen and (min-width : 1200px) {
+  .page-membership-renew .main-container {background-image: url('/sites/all/themes/cyclinguk/images/shop/renew-lg.jpg');}
+}
+
+
+
+.page-membership-renew .main-container > .row {
+  position: relative;
+  margin: 60px auto;
+  left: -300px;
+  max-width: 500px;
+  padding: 15px;
+  background-color: rgba(255,255,255,0.9);
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+}
+
+@media only screen and  (max-width : 767px) {
+  .page-membership-renew .main-container > .row {
+    margin-top: 280px;
+    padding: 15px 0;
+  }
+}
+
+@media only screen and (min-width : 1200px) {
+  .page-membership-renew .main-container > .row {
+    left: -300px;
+  }
+}  
+  
+@media only screen and (min-width : 992px) and (max-width : 1199px) {
+  .page-membership-renew .main-container > .row {
+    left: -210px;
+  }
+}  
+
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+  .page-membership-renew .main-container > .row {
+    left: -110px;
+  }
+}  
+
+@media only screen and  (max-width : 767px) {
+  .page-membership-renew .main-container > .row {
+    left: 0px;
+  }
+}  
+
+.page-membership-renew #edit-line-item-fields-field-new-membership-type-und > div {
+  line-height: 22px;
+}
+
+.page-membership-renew #edit-line-item-fields-field-new-membership-type-und span {
+  display: none;
+}
+
+.page-membership-renew .main-container .panel {
+  background-color: inherit;
+}
+
+.page-membership-renew footer {
+  width: inherit;
+}
+
+
+@media only screen and (min-width : 992px) and (max-width : 1199px) {
+  .page-membership-renew .region-footer {
+    margin: 0 auto;
+    position: relative;
+  }
+}
+
+@media only screen and (min-width : 1200px) {
+  .page-membership-renew .region-footer {
+    width: 1100px;
+    margin: 0 auto;
+    position: relative;
+  }
+}
+
+@media only screen and (min-width : 992px) {
+  .page-membership-renew .social-icons {
+    top: 7px;
+    right: 0px;
+    width: 337px;
+  }
+}

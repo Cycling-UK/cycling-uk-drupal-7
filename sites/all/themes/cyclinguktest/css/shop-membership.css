@@ -1,0 +1,403 @@
+
+
+
+
+#membership-alternative-links {
+	background-color: rgba(0,0,0,0.5);
+	padding: 15px;
+	border-radius: 15px;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;	
+	margin-top: 30px;
+	margin-bottom: 30px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	max-width: 750px;
+}
+
+#membership-alternative-links .alternative-link {
+	width: 185px;
+	margin: 0 10px 0 10px;
+	display: inline-block;
+}
+
+@media only screen and (max-width : 679px) {
+	#membership-alternative-links .item-1,
+	#membership-alternative-links .item-2 {
+		margin-bottom: 30px;
+	}
+}
+
+#membership-alternative-links .small-print {
+	font-size: 12px;
+	line-height: 14px;
+}
+
+#membership-alternative-links .icon {
+	margin-bottom: 15px;
+}
+
+#membership-alternative-links .icon i {
+	text-align: center;
+	font-size: 28px;
+	line-height: 28px;
+	padding: 14px;
+	border: 1px solid #fff;
+	border-radius: 30px;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;	
+}
+
+#membership-alternative-links .icon i.fa-user {
+	padding: 14px 15px;
+}
+
+#membership-alternative-links .icon i.fa-users {
+	padding: 14px 10px;
+}
+
+#membership-alternative-links a {
+	outline: none;
+}
+
+#membership-alternative-links a,
+#membership-alternative-links a:visited {
+	color: #fff;
+	text-decoration: none;
+}
+
+#membership-alternative-links a:hover,
+#membership-alternative-links a:active {
+	color: #fbb040;
+	text-decoration: none;
+}
+
+#membership-alternative-links a:hover .icon i,
+#membership-alternative-links a:active .icon i {
+	border: 1px solid #fbb040;
+}
+
+
+
+body.page-layout-shop-membership .main-container {
+	background-color: inherit;
+}
+
+body.page-layout-shop-membership .top-wrapper {
+	text-align: center;
+	color: #fff;
+}
+
+body.page-layout-shop-membership h1 {
+	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 400;
+	font-size: 44px;
+	line-height: 44px;
+	margin-top: 70px;
+	margin-bottom: 100px;
+	border-bottom: inherit;
+	text-align: center;
+	text-shadow: 0px 3px 0px rgba(0,0,0,0.1);
+}
+
+body.page-layout-shop-membership .central-wrapper {
+	background-color: #ebe0ee;
+	padding: 15px;
+	border-radius: 15px;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+}
+
+body.page-layout-shop-membership .commerce-product-field-field-terms,
+body.page-layout-shop-membership fieldset.group-payment {
+	margin-bottom: 30px;
+}
+
+body.page-layout-shop-membership .commerce-product-field-field-terms .field-label {
+	font-size: 18px;
+	line-height: 18px;
+	font-weight: 600;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #fff;
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+body.page-layout-shop-membership fieldset.form-wrapper {
+	background-color: #ebe0ee;
+	border: 1px solid #8064a9;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+}
+
+body.page-layout-shop-membership fieldset fieldset.form-wrapper {
+	border: inherit;
+}
+
+body.page-layout-shop-membership legend.panel-heading {
+	background-color: #8064a9;
+	border-radius: 9px 9px 0 0;
+	-webkit-border-radius: 9px 9px 0 0;
+	-moz-border-radius: 9px 9px 0 0;
+	border: 1px solid #8064a9;
+	padding: 10px 15px;
+}
+
+body.page-layout-shop-membership .panel-title {
+	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 20px;
+	color: #fff;
+}
+
+body.page-layout-shop-membership fieldset fieldset.form-wrapper > legend {
+	font-size: 18px;
+	line-height: 18px;
+	font-weight: 600;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #fff;
+}
+
+body.page-layout-shop-membership fieldset.form-wrapper.panel-default > div {
+	padding: 15px;
+}
+
+body.page-layout-shop-membership .form-control,
+body.page-layout-shop-membership .form-select {
+	border: 1px solid #8064a9;
+}
+
+body.page-layout-shop-membership .form-control:focus,
+body.page-layout-shop-membership .form-select:focus {
+	border: 1px solid #fbb040;
+}
+
+
+
+/*
+ * Tidy up field group layouts
+ */
+
+/* Your details - name */
+body.page-layout-shop-membership .field-type-care-name label.control-label {
+	display: none;
+}
+
+body.page-layout-shop-membership .field-type-care-name .form-item {
+	display: block;
+	margin-bottom: 10px;
+}
+
+body.page-layout-shop-membership .form-item-line-item-fields-field-care-name-und-0-title > select {
+	width: 150px;
+}
+
+
+/* Your details - address */
+
+body.page-layout-shop-membership .form-item-line-item-fields-field-care-address-und-0-postcode-lookup input.form-control {
+	width: 166px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+body.page-layout-shop-membership .form-item-line-item-fields-field-care-address-und-0-postcode-lookup input.form-control,
+body.page-layout-shop-membership .form-item-line-item-fields-field-care-address-und-0-postcode-lookup input.btn {
+	display: inline-flex;
+}
+
+body.page-layout-shop-membership .form-item-line-item-fields-field-care-address-und-0-country-code > select {
+	width: 280px;
+}
+
+body.page-layout-shop-membership .field-type-care-address .form-item-line-item-fields-field-care-address-und-0-country-code label {
+	display: none;
+}
+
+body.page-layout-shop-membership .field-type-care-address .form-item-line-item-fields-field-care-address-und-0-country-code,
+body.page-layout-shop-membership .field-type-care-address .address-details-membership_self .form-group {
+	margin-bottom: 10px;
+}
+
+
+
+/* Your details - date of birth */
+body.page-layout-shop-membership .field-type-care-date .fieldset-wrapper > div {
+	display: block;
+	margin-bottom: 10px;
+}
+
+body.page-layout-shop-membership .form-item-line-item-fields-field-care-dob-und-0-day > select,
+body.page-layout-shop-membership .form-item-line-item-fields-field-care-dob-und-0-year > select {
+	width: 150px;
+}
+
+body.page-layout-shop-membership .form-item-line-item-fields-field-care-dob-und-0-month > select {
+	width: 280px;
+}
+
+
+
+/*
+ * Additional family members table
+ */
+
+body.page-layout-shop-membership .field-name-field-family-members table thead {
+	border: inherit;
+	background-color: #8064a9;
+}
+
+body.page-layout-shop-membership .field-name-field-family-members table th.field-label {
+	padding: 10px 15px;
+}
+
+body.page-layout-shop-membership .field-name-field-family-members table thead tr th {
+	border-top: inherit;
+}
+
+body.page-layout-shop-membership .field-name-field-family-members tr th,
+body.page-layout-shop-membership .field-name-field-family-members tr td {
+	border-left: inherit;
+}
+
+body.page-layout-shop-membership .field-name-field-family-members tr td {
+	border-top: 1px solid #8064a9;
+	padding: 20px 0;
+}
+
+body.page-layout-shop-membership .field-name-field-family-members table tbody {
+	border: inherit;
+}
+
+body.page-layout-shop-membership .field-name-field-family-members table > tbody > tr:nth-of-type(2n),
+body.page-layout-shop-membership .field-name-field-family-members table > tbody > tr:nth-of-type(2n+1) {
+	background-color: inherit;
+}
+
+body.page-layout-shop-membership .field-name-field-family-members .tabledrag-toggle-weight-wrapper,
+body.page-layout-shop-membership .field-name-field-family-members td.field-multiple-drag {
+	display: none;
+}
+
+
+
+
+/* Format name fields */
+body.page-layout-shop-membership #edit-line-item-fields-field-family-members-und-0-field-member-name .form-item-line-item-fields-field-family-members-und-0-field-member-name-und-0-title {
+	width: 150px;
+}
+
+body.page-layout-shop-membership #edit-line-item-fields-field-family-members-und-0-field-member-name .form-item-line-item-fields-field-family-members-und-0-field-member-name-und-0-forenames,
+body.page-layout-shop-membership #edit-line-item-fields-field-family-members-und-0-field-member-name .form-item-line-item-fields-field-family-members-und-0-field-member-name-und-0-surname {
+	width: inherit;
+}
+
+
+
+/* Format DoB fields */
+
+body.page-layout-shop-membership #edit-line-item-fields-field-family-members-und-0-field-care-dob .form-item-line-item-fields-field-family-members-und-0-field-care-dob-und-0-day {
+	width: 150px;
+}
+
+body.page-layout-shop-membership #edit-line-item-fields-field-family-members-und-0-field-care-dob .form-item-line-item-fields-field-family-members-und-0-field-care-dob-und-0-month {
+	width: 250px;
+}
+
+body.page-layout-shop-membership #edit-line-item-fields-field-family-members-und-0-field-care-dob .form-item-line-item-fields-field-family-members-und-0-field-care-dob-und-0-year {
+	width: 150px;
+}
+
+
+
+@media only screen and (min-width : 992px) {
+
+	/* Reduce font size and paddings for this panel */
+	body.page-layout-shop-membership .field-name-field-family-members .form-control {
+		padding: 10px 10px;
+		font-size: 14px;
+		line-height: 16px;
+	}
+	
+	/* Format name fields */
+	body.page-layout-shop-membership #edit-line-item-fields-field-family-members-und-0-field-member-name .fieldset-wrapper > div {
+		display: inline-block;
+	}
+	
+	body.page-layout-shop-membership #edit-line-item-fields-field-family-members-und-0-field-member-name .form-item-line-item-fields-field-family-members-und-0-field-member-name-und-0-title {
+		width: 115px;
+		margin-right: 10px;
+	}
+	
+	body.page-layout-shop-membership #edit-line-item-fields-field-family-members-und-0-field-member-name .form-item-line-item-fields-field-family-members-und-0-field-member-name-und-0-forenames {
+		width: 145px;
+		margin-right: 10px;
+	}
+	
+	body.page-layout-shop-membership #edit-line-item-fields-field-family-members-und-0-field-member-name .form-item-line-item-fields-field-family-members-und-0-field-member-name-und-0-surname {
+		width: 145px;
+	}
+	
+	/* Format DoB fields */
+	body.page-layout-shop-membership #edit-line-item-fields-field-family-members-und-0-field-care-dob .fieldset-wrapper > div {
+		display: inline-block;
+	}
+	
+	body.page-layout-shop-membership #edit-line-item-fields-field-family-members-und-0-field-care-dob .form-item-line-item-fields-field-family-members-und-0-field-care-dob-und-0-day {
+		width: 115px;
+		margin-right: 10px;
+	}
+	
+	body.page-layout-shop-membership #edit-line-item-fields-field-family-members-und-0-field-care-dob .form-item-line-item-fields-field-family-members-und-0-field-care-dob-und-0-month {
+		width: 145px;
+		margin-right: 10px;
+	}
+	
+	body.page-layout-shop-membership #edit-line-item-fields-field-family-members-und-0-field-care-dob .form-item-line-item-fields-field-family-members-und-0-field-care-dob-und-0-year {
+		width: 145px;
+	}
+
+}
+
+
+
+body.page-layout-shop-membership #edit-line-item-fields-field-gift-start-date legend.panel-heading {
+	background-color: inherit;
+	padding: 0 0 10px 0;
+	border: inherit;
+	border-bottom: 1px solid #fff;
+}
+
+body.page-layout-shop-membership #edit-line-item-fields-field-gift-start-date .panel-title {
+	font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	color: #000;
+	font-size: 18px;
+	line-height: 18px;
+	font-weight: 600;
+}
+
+body.page-layout-shop-membership #edit-line-item-fields-field-gift-start-date fieldset.form-wrapper.panel-default > div,
+body.page-layout-shop-membership #edit-line-item-fields-field-gift-start-date .date-padding {
+	padding: 0;
+}
+
+body.page-layout-shop-membership #edit-line-item-fields-field-gift-start-date .form-item-line-item-fields-field-gift-start-date-und-0-value-year {
+	width: 100px;
+	margin-right: 10px;
+}
+
+body.page-layout-shop-membership #edit-line-item-fields-field-gift-start-date .form-item-line-item-fields-field-gift-start-date-und-0-value-month {
+	width: 100px;
+	margin-right: 10px;
+}
+
+body.page-layout-shop-membership #edit-line-item-fields-field-gift-start-date .form-item-line-item-fields-field-gift-start-date-und-0-value-day {
+	width: 100px;
+}
+
+
+
+

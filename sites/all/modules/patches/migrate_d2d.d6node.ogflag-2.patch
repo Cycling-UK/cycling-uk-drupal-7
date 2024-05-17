@@ -1,0 +1,15 @@
+ docroot/sites/all/modules/contrib/migrate_d2d/d6/node.inc | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/docroot/sites/all/modules/contrib/migrate_d2d/d6/node.inc b/docroot/sites/all/modules/contrib/migrate_d2d/d6/node.inc
+index bf75091..6b76620 100644
+--- a/docroot/sites/all/modules/contrib/migrate_d2d/d6/node.inc
++++ b/docroot/sites/all/modules/contrib/migrate_d2d/d6/node.inc
+@@ -129,6 +129,7 @@ class DrupalNode6Migration extends DrupalNodeMigration {
+     if ($this->includeOGroups) {
+         $query->leftJoin('og_ancestry', 'ogan', 'n.nid=ogan.nid');
+         $query->addExpression('GROUP_CONCAT(DISTINCT ogan.group_nid)', 'og_ref');
++        $query->groupBy('n.nid');
+     }
+     
+     return $query;

@@ -1,0 +1,97 @@
+#join-choose-membership {
+  max-width: 1200px;
+  margin: 0 auto 60px auto;
+  text-align: center;
+}
+
+#join-choose-membership .subtitle {
+  margin-bottom: 30px;
+}
+
+.join-choose-membership-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.join-choose-membership-item {
+  width: 300px;
+  margin: 0 15px 30px 15px;
+}
+
+.join-choose-membership-item .join-wrapper,
+.join-choose-membership-item a .join-wrapper,
+.join-choose-membership-item a:visited .join-wrapper {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 0 0 10px 10px;
+  -webkit-border-radius: 0 0 10px 10px;
+  -moz-border-radius: 0 0 10px 10px;
+  outline: none;
+}
+
+.join-choose-membership-item a:focus .join-wrapper,
+.join-choose-membership-item a:hover .join-wrapper,
+.join-choose-membership-item a:active .join-wrapper {
+  background-color: #e0e0e0;
+  outline: none;
+}
+
+.join-choose-membership-item .join-item-image {
+  border-radius: 10px 10px 0 0;
+  -webkit-border-radius: 10px 10px 0 0;
+  -moz-border-radius: 10px 10px 0 0;
+  height: 200px;
+  background-size: cover;
+}
+
+.join-choose-membership-item.join-item-individual           .join-item-image {background-image: url('/sites/all/themes/cyclingukxl/images/join/join-individual.jpg');}
+.join-choose-membership-item.join-item-household            .join-item-image {background-image: url('/sites/all/themes/cyclingukxl/images/join/join-household.jpg');}
+.join-choose-membership-item.join-item-member-benefits      .join-item-image {background-image: url('/sites/all/themes/cyclingukxl/images/join/join-benefits.jpg');}
+.join-choose-membership-item.join-item-group-membership     .join-item-image {background-image: url('/sites/all/themes/cyclingukxl/images/join/join-group.jpg');}
+.join-choose-membership-item.join-item-life-membership      .join-item-image {background-image: url('/sites/all/themes/cyclingukxl/images/join/join-life.jpg');}
+.join-choose-membership-item.join-item-employer-membership  .join-item-image {background-image: url('/sites/all/themes/cyclingukxl/images/join/join-employer.jpg');}
+.join-choose-membership-item.join-item-gift-membership      .join-item-image {background-image: url('/sites/all/themes/cyclingukxl/images/join/join-gift.jpg');}
+.join-choose-membership-item.join-item-become-supporter     .join-item-image {background-image: url('/sites/all/themes/cyclingukxl/images/join/join-supporter.jpg');}
+.join-choose-membership-item.join-item-renew-membership     .join-item-image {background-image: url('/sites/all/themes/cyclingukxl/images/join/join-renew.jpg');}
+
+.join-choose-membership-item .join-item-title,
+.join-choose-membership-item > a {
+  display: grid;
+  align-items: center;
+  font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 24px;
+  color: #000;
+  text-decoration: none;
+}
+
+.join-choose-membership-item .join-item-link {
+  margin-top: 15px;
+}
+
+#membership-links {
+	margin-bottom: 60px;
+}
+
+#contact-membership {
+	text-align: center;
+	margin-bottom: 60px;
+}
+
+#membership-links div,
+#contact-membership div {
+	margin: 20px 0;
+}
+
+#membership-links a,
+#contact-membership a {
+	width: 280px;
+}
+
+#membership-links i,
+#contact-membership i {
+	margin-right: 10px;
+}

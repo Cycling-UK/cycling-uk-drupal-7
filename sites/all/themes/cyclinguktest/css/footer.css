@@ -1,0 +1,401 @@
+.footer {
+	font-size: 14px;
+	line-height: 22px;
+	font-weight: 200;
+	background-color: #009fda;
+	color: #ffffff;
+    border-top: inherit;
+    margin-top: 0px;
+    padding: 30px 55px 200px;
+    position: relative;
+}
+
+.footer p {
+	margin: 0;
+}
+
+
+
+.footer strong {
+	font-weight: 600;
+}
+
+/**
+ * Links
+ */
+
+ul.footer-links {
+	list-style-type: none;
+	padding-left: 0;
+}
+
+ul.footer-links li {
+	display: block;
+	float: left;
+	margin-right: 20px;
+}
+
+ul.footer-links a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+ul.footer-links a:hover {
+    color: #fbb040;
+    text-decoration: underline;
+}
+
+
+@media only screen and (min-width : 1200px) {
+	.footer p.small-print {
+		width: 950px;
+	}
+}
+
+@media only screen and (max-width : 1199px) {
+	.footer p.small-print {
+		width: 100%;
+	}
+}
+
+@media only screen and (max-width : 991px) {
+	ul.footer-links {
+		text-align: center;
+		width: 100%;
+		margin: 0 auto;
+	}
+
+	ul.footer-links li {
+		display: inline-block;
+		float: inherit;
+		margin-left: 10px;
+		margin-right: 10px;
+	}
+
+	.footer-text {
+		text-align: center;
+	}
+
+	.footer {
+		padding: 30 55px 70px;
+	}
+}
+
+@media only screen and (max-width : 479px) {
+	.footer {
+		padding: 30px 15px 70px;
+	}
+}
+
+
+
+/**
+ * Back to top
+ */
+
+#block-scroll-button-scroll-button {
+    width: 280px;
+    height: 60px;
+    margin: 0 auto;
+}
+
+@media only screen and (max-width : 991px) {
+	#block-scroll-button-scroll-button {
+		position: relative;
+		top: -60px;
+		margin-bottom: -15px;
+	}
+}
+
+
+#scroll_top {
+    /* font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif; --- Not firing for some reason! */
+	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 400;
+	font-size: 17px;
+	line-height: 17px;	
+}
+
+#scroll_top::before {
+    content: "Back to top";
+    position: relative;
+    left: -100px;
+    top: 18px;
+    vertical-align: middle;
+}
+
+@media only screen and (max-width : 991px) {
+	#scroll_top::before {
+		display: none;
+		content: inherit;
+	}
+}
+
+.scroll-button {
+    margin: 0 auto;
+    width: 100px; /* Allows #scroll_top::before to be wide enough for text string */
+    height: 60px;
+    background-image: url("../images/footer/back-to-top.png");
+    background-position: center top;
+    background-color: inherit !important;
+    border: inherit;   
+}
+
+.scroll-button:hover {
+	background-position: center -60px;
+}
+
+
+
+/**
+ * Social icons
+ */
+
+.social-icons {
+	position: absolute;
+	top: 35px;
+	right: -15px;
+	width: 400px;
+	height: 50px;
+}
+
+@media only screen and (max-width : 991px) {
+	.social-icons {
+		position: inherit;
+		width: 100%;
+		height: inherit;
+		text-align: center;
+	}
+}
+
+.social-icons .text {
+	display: inline-block;
+	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 17px;
+	line-height: 50px;
+	vertical-align: top;
+	margin-right: 8px;
+}
+
+@media only screen and (max-width : 480px) {
+	.social-icons .text {
+		display: block;
+		margin-right: 0px;
+	}
+}
+
+ul.social-links li {
+	display: inline-block;
+    background-image: url("../images/footer/social-icons.png");
+    margin-left: 8px;
+}
+
+@media only screen and (max-width : 480px) {
+	ul.social-links li {
+		margin-left: 4px;
+		margin-right: 4px;
+	}
+}
+
+
+ul.social-links li span {
+	display: none;
+}
+
+ul.social-links li.twitter  		{background-position: 0     top;}
+ul.social-links li.facebook 		{background-position: 100px top;}
+ul.social-links li.forum    		{background-position: 50px  top;}
+
+ul.social-links li.twitter:hover  {background-position: 0     50px;}
+ul.social-links li.facebook:hover {background-position: 100px 50px;}
+ul.social-links li.forum:hover    {background-position: 50px  50px;}
+
+ul.social-links {
+	display: inline-block;
+	list-style-type: none;
+	padding-left: 0;
+}
+
+@media only screen and (max-width : 991px) {
+	ul.social-links {
+		margin-bottom: 45px;
+	}
+}
+
+ul.social-links a {
+	display: block;
+	width: 50px;
+	height: 50px;
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.social-icons .yellow-line {
+	margin-bottom: 50px;
+}
+
+@media only screen and (min-width : 992px) {
+	.social-icons .yellow-line {
+		display: none;
+	}
+}
+
+
+/**
+ * Newsletter signup
+ */
+
+.newsletter-signup {
+	margin: 30px 0;
+	padding: 25px 0;
+	border-top: 5px #f6b332 solid;
+	border-bottom: 5px #f6b332 solid;
+	border-radius: 2.5px; 
+	-webkit-border-radius: 2.5px; 
+	-moz-border-radius: 2.5px;
+	text-align: center;
+}
+
+@media only screen and (max-width : 991px) {
+	.newsletter-signup {
+		border-top: inherit;
+		border-bottom: inherit;
+		padding: 0;
+		margin: 0 0 50px 0;
+	}
+}
+
+.newsletter-signup h2.block-title {
+	display: inline-block;
+    font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 400;
+	font-size: 24px;
+	line-height: 24px;
+	margin: 0 25px 0 0;
+	vertical-align: middle;
+}
+
+@media only screen and (max-width : 991px) {
+	.newsletter-signup h2.block-title {
+		display: block;
+		font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+		text-align: center;
+		margin-bottom: 40px;
+		margin-right: 0;
+	}
+}
+
+.newsletter-signup form,
+.newsletter-signup .form-item {
+	display: inline-block;
+	max-width: inherit !important; /* Overrides webform.css defaults */
+}
+
+@media only screen and (max-width : 991px) {
+	.newsletter-signup form {
+		display: inherit;
+	}	
+}
+
+.newsletter-signup .form-actions {
+	display: inline-block;
+}
+
+@media only screen and (max-width : 991px) {
+	.newsletter-signup .form-actions {
+		display: block;
+	}	
+}
+
+.newsletter-signup .form-item {
+	margin: 0 15px 0 0;
+}
+
+.newsletter-signup label {
+	display: none;
+}
+
+.newsletter-signup input {
+	display: inline-block;
+	border: 2px #f6b332 solid;
+	background-color: inherit;
+	color: #fff;
+	border-radius: 10px; 
+	-webkit-border-radius: 10px; 
+	-moz-border-radius: 10px;
+	height: 43px;
+	padding: 10px;
+}
+
+.newsletter-signup .form-control {
+	box-shadow: inherit;
+	font-size: 14px;
+	line-height: 14px;
+}
+
+@media only screen and (min-width : 1200px) {
+	.newsletter-signup .form-control {
+		width: 188px;
+	}
+}
+
+@media only screen and (max-width : 1199px) {
+	.newsletter-signup .form-control {
+		width: 122px;
+	}
+}
+
+@media only screen and (max-width : 991px) {
+	.newsletter-signup .form-control {
+		width: 194px;
+	}
+	.newsletter-signup .form-item.webform-component--first-name,
+	.newsletter-signup .form-item.webform-component--email-address {
+		margin: 0;
+	}
+	.newsletter-signup .form-item.webform-component--last-name {
+		margin: 0 29px 25px 29px;
+	}
+}
+
+@media only screen and (max-width : 749px) {
+	.newsletter-signup .form-control {
+		display: block;
+		width: 370px;
+		margin: 0 auto;
+	}
+	.newsletter-signup .form-item.webform-component--first-name,
+	.newsletter-signup .form-item.webform-component--last-name {
+		display: block;
+		margin: 0 0 10px 0;
+	}
+	.newsletter-signup .form-item.webform-component--email-address {
+		display: block;
+		margin: 0 0 25px 0;
+	}
+}
+
+.newsletter-signup input:focus {
+	border: 2px #fff solid;	
+}
+
+.newsletter-signup input::-webkit-input-placeholder 	{color: #fff;}  /* Chrome / Opera / Safari */
+.newsletter-signup input::-moz-placeholder 			{color: #fff;}  /* Firefox 19+ */
+.newsletter-signup input:-moz-placeholder 			{color: #fff;}  /* Firefox 18- */
+.newsletter-signup input:-ms-input-placeholder 		{color: #fff;}  /* IE 10+ */
+
+.newsletter-signup .btn {
+	line-height: 40px;
+}
+
+@media only screen and (max-width : 991px) {
+	.newsletter-signup .btn {
+		display: inherit;
+		width: 220px;
+		margin: 0 auto;
+	}
+}
+
+
+
+

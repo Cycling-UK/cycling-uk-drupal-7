@@ -1,0 +1,13 @@
+diff --git a/plugins/FeedsCommerceProductProcessor.inc b/plugins/FeedsCommerceProductProcessor.inc
+index 94af58c..f4bcbb5 100644
+--- a/plugins/FeedsCommerceProductProcessor.inc
++++ b/plugins/FeedsCommerceProductProcessor.inc
+@@ -206,7 +206,7 @@ class FeedsCommerceProductProcessor extends FeedsProcessor {
+   /**
+    * Validate the commerce_product entity.
+    */
+-  protected function entityValidate($product) {
++  protected function entityValidate($product, FeedsSource $source = NULL) {
+     if (empty($product->sku)) {
+       throw new FeedsValidationException(t('Required product SKU is missing.'));
+     }

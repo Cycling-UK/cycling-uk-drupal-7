@@ -1,0 +1,35 @@
+.node-grand-draw {
+	.field-name-field-products {
+		form {
+			padding: 0 4% !important;
+			text-align: center;
+			> div {
+				width: 100%;
+				max-width: 750px;
+				margin: 50px auto 70px auto;
+				padding: 50px 7% 50px 7%;
+				border: 1px solid $light-grey;
+				border-radius: 10px;
+			}
+		}
+		legend { padding: 0; }
+		label { text-align: left; }
+		.field-group-fieldset .form-wrapper span.fieldset-legend {
+			margin: 0 auto 20px auto;
+			display: block;
+			font-size: 18px;
+			max-width: 500px;
+		}
+		.container-inline {
+			text-align: left;
+		}
+	}
+
+	.field-name-field-products {
+		margin-bottom: 70px;
+	}
+
+	.pca-postcode-wrapper {
+		text-align: left;
+	}
+}

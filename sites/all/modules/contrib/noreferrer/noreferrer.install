@@ -1,0 +1,34 @@
+<?php
+
+/**
+ * @file
+ * Uninstall and update hooks for No Referrer module.
+ */
+
+/**
+ * Implements hook_uninstall().
+ */
+function noreferrer_uninstall() {
+  variable_del('noreferrer_link');
+  variable_del('noreferrer_noopener');
+  variable_del('noreferrer_noreferrer');
+  variable_del('noreferrer_publish');
+  variable_del('noreferrer_subscribe_url');
+  variable_del('noreferrer_allowed_domains');
+}
+
+/**
+ * The rel="noopener" and rel="noreferrer" link types can now be toggled.
+ */
+function noreferrer_update_7001() {
+  variable_set('noreferrer_noreferrer', TRUE);
+  variable_set('noreferrer_noopener', FALSE);
+}
+
+/**
+ * Rename the domain allowlist.
+ */
+function noreferrer_update_7002() {
+  variable_set('noreferrer_allowed_domains', variable_get('noreferrer_whitelisted_domains', ''));
+  variable_del('noreferrer_whitelisted_domains');
+}

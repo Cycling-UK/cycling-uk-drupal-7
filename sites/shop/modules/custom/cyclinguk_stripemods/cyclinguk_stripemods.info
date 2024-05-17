@@ -1,0 +1,6 @@
+name = Cycling UK Stripe PI modifications
+description = "Module to modify Commerce Stripe PI payments for Cycling UK to omit Direct Debit payment line items."
+package = Cycling UK
+core = "7.x"
+version = 7.x-1.x
+dependencies[] = commerce_stripe_pi

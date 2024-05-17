@@ -1,0 +1,35 @@
+/**
+ * File: route.css
+ *
+ * Contains styles for the Route content type and search page.
+ */
+
+/**
+ * Route content type / node.
+ */
+
+/**
+ * Full-width map.
+ */
+.node-route.view-mode-full .top-wrapper {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.node-route.view-mode-full .field-type-geofield canvas {
+    border-radius: 15px 15px 0 0;
+    -webkit-border-radius: 15px 15px 0 0;
+    -moz-border-radius: 15px 15px 0 0;
+}
+
+.node-route.view-mode-full .openlayers-map-container,
+.node-route.view-mode-full .field-name-field-gpx-map {
+    margin-bottom: 0;
+}
+
+@media only screen and (min-width: 768px) {
+}
+
+/**
+ * Route search.
+ */

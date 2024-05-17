@@ -1,0 +1,18 @@
+diff --git a/conditional_fields.module b/conditional_fields.module
+index bbd3661..4342e8c 100644
+--- a/conditional_fields.module
++++ b/conditional_fields.module
+@@ -1403,6 +1403,13 @@ function conditional_fields_dependency_load($id) {
+  * @see conditional_fields_dependency_default_options()
+  */
+ function conditional_fields_dependency_insert($dependee_id, $dependent_id, $options = array()) {
++  if (!is_array($options)) {
++    throw new Exception('Attempting to insert a new Conditional Fields dependency'
++      . ' in the database, but options provided is not an array. Make sure to'
++      . ' use the new Conditional Fields features export format by re-exporting'
++      . ' your Conditional Fields features.');
++  }
++  
+   $options += conditional_fields_dependency_default_options();
+   $dependency = array(
+     'dependee'  => $dependee_id,

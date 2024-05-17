@@ -1,0 +1,58 @@
+<?php
+
+/**
+ * Implements hook_apachesolr_index_document_build().
+ */
+function customsolr_apachesolr_index_document_build(ApacheSolrDocument $document, $entity, $entity_type, $env_id) {
+  
+  //drupal_set_message($entity->nid);
+    
+  if ($entity_type == 'node') {
+      //drupal_set_message(print_r($entity,1));
+      //print_r($document);
+      //die();
+      //$document->setField('geom_field_location', NULL);
+  }
+  
+  
+/*  
+ * DEBUG
+ * 
+ * 
+ * 
+ *  select * from field_data_field_location where field_location_geohash=""
+ *
+22681
+22691
+22686
+22696
+22701 
+ * 
+ * 
+ * 
+ *    [field_location] => Array
+        (
+            [und] => Array
+                (
+                    [0] => Array
+                        (
+                            [geom] => GEOMETRYCOLLECTION EMPTY
+                            [geo_type] => geometrycollection
+                            [lat] => 
+                            [lon] => 
+                            [left] => 
+                            [top] => 
+                            [right] => 
+                            [bottom] => 
+                            [geohash] => 
+                        )
+
+                )
+
+        )
+ */  
+  
+  
+  
+  
+}

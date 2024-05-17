@@ -1,0 +1,38 @@
+<?php
+/**
+ * @file
+ * Code for the 140 Routes feature.
+ */
+
+include_once 'features_140_routes.features.inc';
+
+/**
+ * Implements hook_node_view_alter().
+ *
+ * Customise output of Route content type.
+ */
+/*function features_140_routes_node_view_alter(&$build) {
+  if ($build['#bundle'] == 'route') {
+    // Update start address label if route is circular.
+    $wrapper = entity_metadata_wrapper('node', $build['#node']);
+    $circular_route = $wrapper->field_circular_route->value();
+    if ($circular_route) {
+      $build['field_start_address']['#title'] = t('Start and finish address');
+    }
+  }
+}*/
+
+/**
+ * Implements hook_node_presave().
+ *
+ * Set start=finish when saving a circular route.
+ */
+/*function features_140_routes_node_presave($node) {
+  if ($node->type == 'route') {
+    $wrapper = entity_metadata_wrapper('node', $node);
+    $circular_route = $wrapper->field_circular_route->value();
+    if ($circular_route) {
+      $wrapper->field_finish_address->set($wrapper->field_start_address->value());
+    }
+  }
+}*/

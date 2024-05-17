@@ -1,0 +1,44 @@
+name = Women's Festival of Cycling XL Bootstrap Sub-Theme (CDN)
+description = Women's Festival of Cycling sub-theme with enhanced support for wide displays.
+core = 7.x
+base theme = cyclingukxl
+php = 5.3.0
+
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Regions
+;;;;;;;;;;;;;;;;;;;;;
+
+regions[navigation_left]   = 'Navigation left'
+regions[navigation_middle] = 'Navigation middle'
+regions[navigation_right]  = 'Navigation right'
+regions[navigation_bottom] = 'Navigation bottom'
+regions[header]            = 'Top Bar'
+regions[highlighted]       = 'Highlighted'
+regions[help]              = 'Help'
+regions[content]           = 'Content'
+regions[sidebar_first]     = 'Primary'
+regions[sidebar_second]    = 'Secondary'
+regions[footer]            = 'Footer'
+regions[page_top]          = 'Page top'
+regions[page_bottom]       = 'Page bottom'
+
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Stylesheets
+;;;;;;;;;;;;;;;;;;;;;
+
+stylesheets[all][] = css/wfocxl-menu-desktop.css
+stylesheets[all][] = css/wfocxl-menu-mobile.css
+stylesheets[all][] = css/wfocxl-style.css
+stylesheets[all][] = css/wfocxl-paragraphs.css
+
+
+
+;;;;;;;;;;;;;;;;;;;;;
+;; Scripts
+;;;;;;;;;;;;;;;;;;;;;
+
+;; scripts[] = js/modernizr/modernizr-custom.js
+;; scripts[] = js/custom-form-elements.js
+;; scripts[] = js/centre-image.js

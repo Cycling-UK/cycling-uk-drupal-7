@@ -1,0 +1,15 @@
+name = CARE Test
+description = "Additional test method calls for CARE web services."
+package = CARE
+core = "7.x"
+version = 7.x-1.x
+
+dependencies[] = care
+
+configure = admin/config/services/care
+
+; Information added by Drupal.org packaging script on 2019-11-25
+version = "7.x-1.4+19-dev"
+core = "7.x"
+project = "care"
+datestamp = "1574702895"

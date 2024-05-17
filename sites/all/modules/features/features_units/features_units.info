@@ -1,0 +1,11 @@
+name = Units
+description = Units settings
+core = 7.x
+package = Cycling UK Features
+version = 7.x-1.14
+dependencies[] = entity
+dependencies[] = units
+features[features_api][] = api:2
+features[units_measure][] = length
+features[units_unit][] = kilometers
+features[units_unit][] = miles

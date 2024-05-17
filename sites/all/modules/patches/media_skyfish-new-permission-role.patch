@@ -1,0 +1,39 @@
+From 149e04e107b45f5513da986d996b55d34cb06dfb Mon Sep 17 00:00:00 2001
+From: "michael.nowicki" <michael@abcdef.com>
+Date: Tue, 4 Jul 2017 12:40:35 +0100
+Subject: [PATCH] skyfish new permission role
+
+---
+ .../all/modules/contrib/media_skyfish/includes/MediaSkyfishBrowser.inc | 2 +-
+ docroot/sites/all/modules/contrib/media_skyfish/media_skyfish.module   | 3 +++
+ 2 files changed, 4 insertions(+), 1 deletion(-)
+
+diff --git a/docroot/sites/all/modules/contrib/media_skyfish/includes/MediaSkyfishBrowser.inc b/docroot/sites/all/modules/contrib/media_skyfish/includes/MediaSkyfishBrowser.inc
+index 09fd380d..eaf99807 100644
+--- a/docroot/sites/all/modules/contrib/media_skyfish/includes/MediaSkyfishBrowser.inc
++++ b/docroot/sites/all/modules/contrib/media_skyfish/includes/MediaSkyfishBrowser.inc
+@@ -22,7 +22,7 @@ class MediaSkyfishBrowser extends MediaBrowserPlugin {
+    * Implements MediaBrowserPlugin::view().
+    */
+   public function view() {
+-    if (user_access('configure skyfish')) {
++    if (user_access('configure skyfish') || user_access('view skyfish')) {
+       $build['form'] = drupal_get_form('media_skyfish_add');
+       return $build;
+     }
+diff --git a/docroot/sites/all/modules/contrib/media_skyfish/media_skyfish.module b/docroot/sites/all/modules/contrib/media_skyfish/media_skyfish.module
+index 311c920d..b5bcda4c 100644
+--- a/docroot/sites/all/modules/contrib/media_skyfish/media_skyfish.module
++++ b/docroot/sites/all/modules/contrib/media_skyfish/media_skyfish.module
+@@ -65,5 +65,8 @@ function media_skyfish_permission() {
+     'configure own skyfish' => array(
+       'title' => t('Configure own Media Skyfish settings'),
+     ),
++    'view skyfish' => array(
++      'title' => t('Access Skyfish in MediaBrowser'),
++    ),
+   );
+ }
+-- 
+2.12.2.windows.2
+

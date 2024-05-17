@@ -1,0 +1,63 @@
+<?php
+
+/**
+ * @file
+ * Main module file.
+ */
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ *
+ * Add the "Total to pay now" amount to the Stripe card payment form.
+ *
+ * @noinspection PhpUnused
+ * @noinspection PhpParameterByRefIsNotUsedAsReferenceInspection
+ * @noinspection PhpUnusedParameterInspection
+ */
+function cyclinguk_stripemods_form_commerce_checkout_form_stripe_payment_alter(&$form, &$form_state, $form_id) {
+  /** @var \EntityMetadataWrapper $order_wrapper */
+  $order_wrapper = entity_metadata_wrapper('commerce_order', $form_state['order']);
+  $order_total = $order_wrapper->commerce_order_total->value();
+  $payment_components = $order_total['data']['components'];
+  $transaction_amount = 0;
+  foreach ($payment_components as $component) {
+    // Strip out amounts to be paid by DD.
+    if (strpos($component['name'], 'direct_debit') !== 0) {
+      $transaction_amount += $component['price']['amount'];
+    }
+  }
+  $form['commerce_payment']['payment_details']['total_now'] = [
+    '#title' => t('Total to pay now'),
+    '#type' => 'item',
+    '#markup' => commerce_currency_format($transaction_amount, 'GBP'),
+    '#weight' => -1,
+  ];
+}
+
+/**
+ * Implements hook_commerce_stripe_pi_payment_intent_data_alter().
+ *
+ * Adjust the amount requested from the Stripe card payment to omit Direct Debit
+ * payment line items.
+ *
+ * @noinspection PhpUnused
+ * @noinspection PhpUnusedParameterInspection
+ */
+function cyclinguk_stripemods_commerce_stripe_pi_payment_intent_data_alter(array &$payment_intent_data, EntityMetadataWrapper $order_wrapper, array $payment_method, $cardonfile_id = NULL) {
+  $order_total = $order_wrapper->commerce_order_total->value();
+  $payment_components = $order_total['data']['components'];
+  $transaction_amount = 0;
+  foreach ($payment_components as $component) {
+    // Strip out amounts to be paid by DD.
+    if (strpos($component['name'], 'direct_debit') !== 0) {
+      $transaction_amount += $component['price']['amount'];
+    }
+  }
+  if ($payment_intent_data['amount'] != $transaction_amount) {
+    $payment_intent_data['amount'] = $transaction_amount;
+    watchdog('cyclinguk_stripemods', 'Order total = !order_total, modified to be Card total = !card_total', [
+      '!order_total' => $payment_intent_data['amount'],
+      '!card_total' => $transaction_amount,
+    ]);
+  }
+}

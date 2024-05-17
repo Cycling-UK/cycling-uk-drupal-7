@@ -1,0 +1,103 @@
+/* Typography */
+ul#superfish-1 a.sf-depth-1 {
+	color: #fff;
+}
+
+ul#superfish-1 a.sf-depth-1 {font-size: 18px; line-height: 18px;}
+ul#superfish-1 a.sf-depth-2 {font-size: 15px; line-height: 15px;}
+ul#superfish-1 a.sf-depth-3 {font-size: 15px; line-height: 15px;}
+
+
+
+/* First level padding */
+ul#superfish-1 > li {
+    padding: 0 !important;
+}
+
+ul#superfish-1 a.sf-depth-1,
+ul#superfish-1 a.sf-depth-1 span.nolink {
+    padding: 15px 25px;
+    margin: 0 10px;
+}
+
+/* First level underlines */
+ul#superfish-1 a.sf-depth-1#menu-home:hover,
+ul#superfish-1 li.sfHover a.sf-depth-1#menu-home			{border-bottom: 4px solid #8065a9;}   /* Purple */
+
+ul#superfish-1 a.sf-depth-1#menu-go-cycling:hover,
+ul#superfish-1 li.sfHover a.sf-depth-1#menu-go-cycling		{border-bottom: 4px solid #00aeef;}   /* Blue   */
+
+ul#superfish-1 a.sf-depth-1#menu-campaigning:hover,
+ul#superfish-1 li.sfHover a.sf-depth-1#menu-campaigning 	{border-bottom: 4px solid #cdce00;}   /* Green  */
+
+ul#superfish-1 a.sf-depth-1#menu-charity:hover,
+ul#superfish-1 li.sfHover a.sf-depth-1#menu-charity 		{border-bottom: 4px solid #e6007e;}   /* Pink   */
+
+ul#superfish-1 a.sf-depth-1#menu-about:hover,
+ul#superfish-1 li.sfHover a.sf-depth-1#menu-about 			{border-bottom: 4px solid #fbb040;}   /* Yellow */
+
+/* Second level menu */
+ul#superfish-1 > li > ul {
+	height: 40px;
+	top: 42px;
+	-webkit-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+	box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+}
+
+ul#superfish-1 > li > ul > li {
+    padding: 10px 0 !important;
+    position: relative;
+    top: 12px;
+}
+
+ul#superfish-1 a.sf-depth-2:hover .inner-wrapper,
+ul#superfish-1 a.sf-depth-2:focus .inner-wrapper,
+ul#superfish-1 a.sf-depth-3:hover .inner-wrapper,
+ul#superfish-1 a.sf-depth-3:focus .inner-wrapper {
+    padding-bottom: 2px;
+    border-bottom: 1px solid #000;
+}
+
+/* Third level menu */
+ul#superfish-1 > li > ul > li > ul {
+	border-radius: 			0 0 10px 10px;
+	-webkit-border-radius: 	0 0 10px 10px;
+	-moz-border-radius: 	0 0 10px 10px;
+	-webkit-box-shadow: 	0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow:    	0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+	box-shadow:    		    0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+}
+
+ul#superfish-1 a.sf-depth-3 {
+    padding: 15px 20px;
+}
+
+/* Second and third level background tints */
+ul#superfish-1 a.sf-depth-1#menu-home + ul,
+ul#superfish-1 a.sf-depth-1#menu-home + ul ul 			{background-color: #bfb1d4;}   /* Purple */
+
+ul#superfish-1 a.sf-depth-1#menu-go-cycling + ul,
+ul#superfish-1 a.sf-depth-1#menu-go-cycling + ul ul 	{background-color: #7fd6f7;}   /* Blue   */
+
+ul#superfish-1 a.sf-depth-1#menu-campaigning + ul,
+ul#superfish-1 a.sf-depth-1#menu-campaigning + ul ul 	{background-color: #e6e67f;}   /* Green  */
+
+ul#superfish-1 a.sf-depth-1#menu-charity + ul,
+ul#superfish-1 a.sf-depth-1#menu-charity + ul ul		{background-color: #f27fbe;}   /* Pink   */
+
+ul#superfish-1 a.sf-depth-1#menu-about + ul,
+ul#superfish-1 a.sf-depth-1#menu-about + ul ul 			{background-color: #fdd79f;}   /* Yellow */
+
+
+
+@media only screen and (min-width : 1200px) {
+	ul#superfish-1 a.sf-depth-1 {font-size: 22px; line-height: 22px;}
+	ul#superfish-1 a.sf-depth-2 {font-size: 18px; line-height: 18px;}
+	ul#superfish-1 a.sf-depth-3 {font-size: 18px; line-height: 18px;}
+
+	ul#superfish-1 > li > ul {
+		height: 42px;
+		top: 45px;
+	}
+}

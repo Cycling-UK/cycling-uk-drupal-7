@@ -1,0 +1,62 @@
+<?php
+
+/**
+ * @file
+ * Tests for no referrer module.
+ */
+
+/**
+ * Tests basic no referrer functionality.
+ */
+class NoReferrerTestCase extends DrupalWebTestCase {
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function getInfo() {
+    return array(
+      'name' => 'No Referrer tests',
+      'description' => 'Tests No Referrer module.',
+      'group' => 'No Referrer',
+    );
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function setUp() {
+    parent::setUp('noreferrer', 'noreferrer_test');
+  }
+
+  /**
+   * Functional tests for rel="noreferrer" attribute.
+   */
+  public function testNoReferrer() {
+    $admin_user = $this->drupalCreateUser(array(
+      'administer site configuration',
+      'administer menu',
+    ));
+    $this->drupalLogin($admin_user);
+    $edit = array('noreferrer_allowed_domains' => 'drupal.org example.org');
+    $this->drupalPost('admin/config/content/noreferrer', $edit, t('Save configuration'));
+    $edit = array('link_title' => 'test');
+    $paths = array(
+      'https://example.com/',
+      'https://drupal.org/',
+      'https://DRUPAL.ORG/',
+      'https://api.drupal.org/',
+    );
+    foreach ($paths as $path) {
+      $edit['link_path'] = $path;
+      $this->drupalPost('admin/structure/menu/manage/main-menu/add', $edit, t('Save'));
+    }
+    $this->assertRaw('<a href="https://example.com/" title="" rel="noreferrer">test</a>');
+    $this->assertRaw('<a href="https://drupal.org/" title="">test</a>');
+    $this->assertRaw('<a href="https://DRUPAL.ORG/" title="">test</a>');
+    $this->assertRaw('<a href="https://api.drupal.org/" title="">test</a>');
+    $this->assertRaw('<a href="https://drupal.org/" target="_blank" rel="noopener">test</a>');
+    $this->assertRaw('<a href="https://example.com/" target="_new_tab" rel="noopener noreferrer">test</a>');
+    $this->assertRaw('<a href="https://example.org/" target="0" rel="nofollow noopener">test</a>');
+  }
+
+}

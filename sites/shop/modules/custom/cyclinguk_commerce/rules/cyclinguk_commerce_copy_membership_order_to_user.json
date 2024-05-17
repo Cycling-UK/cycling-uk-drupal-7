@@ -1,0 +1,12 @@
+{ "cyclinguk_commerce_copy_membership_order_to_user" : {
+    "LABEL" : "Copy membership number from order to user",
+    "PLUGIN" : "reaction rule",
+    "OWNER" : "rules",
+    "TAGS" : [ "Commerce Checkout", "Cycling UK" ],
+    "REQUIRES" : [ "cyclinguk_commerce", "commerce_checkout_complete_registration" ],
+    "ON" : { "commerce_checkout_complete_registration" : [] },
+    "DO" : [
+      { "cyclinguk_commerce_copy_membership_number" : { "order" : [ "commerce_order" ], "user" : [ "user" ] } }
+    ]
+  }
+}

@@ -1,0 +1,5 @@
+name = Cycling UK User
+description = Cycling UK User Account Page Alterations
+core = 7.x
+package = Cycling UK
+version = 7.x-1.0

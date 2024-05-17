@@ -1,0 +1,26 @@
+name = Cycling UK Commerce
+description = "Module to integrate Cycling UK's CARE with Drupal Commerce."
+package = Cycling UK
+core = "7.x"
+version = 7.x-1.x
+dependencies[] = care
+dependencies[] = care_fields
+dependencies[] = commerce_cart
+dependencies[] = commerce_giftaid
+
+files[] = includes/CyclingUkCommerceAffiliateMembership.inc
+files[] = includes/CyclingUkCommerceAffiliateMembershipSelf.inc
+files[] = includes/CyclingUkCommerceCommerceDonate.inc
+files[] = includes/CyclingUkCommerceFamilyMembership.inc
+files[] = includes/CyclingUkCommerceFamilyMembershipSelf.inc
+files[] = includes/CyclingUkCommerceGroupMembership.inc
+files[] = includes/CyclingUkCommerceLineItem.inc
+files[] = includes/CyclingUkCommerceMembership.inc
+files[] = includes/CyclingUkCommerceMembershipRenewal.inc
+files[] = includes/CyclingUkCommerceMembershipSelf.inc
+files[] = includes/CyclingUkCommerceProduct.inc
+files[] = includes/CyclingUkCommerceTrivets.inc
+files[] = includes/CyclingUkCommerceLEJOGCertificate.inc
+files[] = includes/CyclingUkCommerceCapeWrath.inc
+files[] = includes/CyclingUkCommerceGrandDraw.inc
+files[] = includes/CyclingUkCommerceShipping.inc

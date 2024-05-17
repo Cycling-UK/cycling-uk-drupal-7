@@ -1,0 +1,2 @@
+Note: this module has been hacked to make the page an "Edit" one, and
+is no longer the original module from Drupal.org.

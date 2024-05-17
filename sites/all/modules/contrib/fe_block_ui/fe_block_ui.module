@@ -1,0 +1,107 @@
+<?php
+
+function fe_block_ui_form_features_settings_form_alter(&$form, &$form_state){
+  // add a fieldset to Features Settings page for related settings
+  $form['fe_block'] = array(
+    '#type' => 'fieldset',
+    '#weight' => -1,
+    '#title' => t('FE Block UI options')
+  );
+   $form['fe_block']['fe_block_ui_enable'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Show Features related infomation on Block UI and Block Config pages.'),
+    '#default_value' => variable_get('fe_block_ui_enable', '1')
+  ); 
+   $form['fe_block']['fe_block_ui_notices'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Show Notice if aspect not set to a feature'),
+    '#default_value' => variable_get('fe_block_ui_notices', '0')
+  );
+}
+
+
+function fe_block_ui_form_block_admin_display_form_alter(&$form, &$form_state, $form_id){
+	if (user_access('administer features') && variable_get('fe_block_ui_enable', '1')==1){
+		$blocks = $form['blocks'];
+		$fe_blocks = fe_block_ui_list_components();
+		if(!empty($fe_blocks)){
+		$form['#attached']['css'][] = drupal_get_path('module', 'fe_block_ui') . '/fe_block_ui.css';
+			foreach($blocks as $feature_name=>$block){
+				$blocks[$feature_name]['info']['#markup'] .=  _fe_block_ui_build_text($block, $feature_name, $fe_blocks);
+			}
+			$form['blocks'] = $blocks;
+		}
+	}
+}
+
+
+function fe_block_ui_form_block_admin_configure_alter(&$form, &$form_state, $form_id) {
+	if (user_access('administer features') && variable_get('fe_block_ui_enable', '1')==1){
+		$fe_blocks = fe_block_ui_list_components();
+		$feature_name = $form['module']['#value'] . '_' .  $form['delta']['#value'];
+		$output = false;
+		if(!empty($fe_blocks)){
+			$output = _fe_block_ui_build_text($form, $feature_name, $fe_blocks);
+		}
+		if ($output){
+			$form['#attached']['css'][] = drupal_get_path('module', 'fe_block_ui') . '/fe_block_ui.css';
+			$form['fe-block-ui'] = array(
+				'#weight' => -10,
+				'#type' => 'markup',
+				'#markup' => $output,
+			);
+		}
+	}
+}
+
+
+function _fe_block_ui_build_text($block, $feature_name, $fe_blocks){
+	$output = false;
+	$custom_block = $block['module']['#value']=='block' ? TRUE : FALSE;
+	$bid_box = $custom_block ? fe_block_get_machine_name($block['delta']['#value']) : FALSE;
+	$machine = $custom_block ? $bid_box : $block['delta']['#value'];
+	$module_delta = $block['module']['#value'] . '-' .  $machine;
+	$notice_state = variable_get('fe_block_ui_notices', '0')==1 ? TRUE : FALSE;
+	if ($custom_block){
+	  
+		$output .= '<dl class="fe-block-ui-oveview boxes" title="'.t('FE Block Boxes').'">';
+		if ($machine){
+			$output .= '<dt>[<code title="' . t('Block-Machine Name') . '">' . t('block-@machine', array('@machine' => $machine)) . '</code>]</dt>';
+			if (isset($fe_blocks['boxes'][$machine])) {
+				$moduleName = $fe_blocks['boxes'][$machine][0];
+				$output .= '<dd> ' . l(t('@feature', array('@feature' => $moduleName)), 'admin/structure/features/' . $moduleName) . '</dd>';
+			} else {
+				$output .= $notice_state ? '<dd class="notice">' . t('Box not Featurized') . '</dd>': '';
+			}	
+		} else {
+			$output .= $notice_state ? '<dt>' . t('Box missing <q>Machine name</q>') . '</dt>' : '';
+		}
+		$output .= '</dl>';
+	}
+
+	$output .= '<dl class="fe-block-ui-oveview settings" title="' . t('FE Block Settings') . '"><dt>[<code title="' . t('Module-Delta') . '">' . $feature_name  . '</code>]<dt>';
+	if (isset($fe_blocks['settings'][$module_delta])) {
+		$moduleName = $fe_blocks['settings'][$module_delta][0];
+		$output .= '<dd> ' . l($moduleName, 'admin/structure/features/' . $moduleName) . '</dd>';
+	} else {
+		$output .= $notice_state ? '<dd class="notice">' . t('Settings not Featurized') . '</dd>' : '';
+	}
+	$output .= '</dl>';
+return $output;
+}		
+
+
+function fe_block_ui_list_components(){
+	$fe_block = array();
+	$settings = features_get_component_map('fe_block_settings');
+	unset($settings['block-features_extra_test_block']); // the feature default test
+	if ($settings){
+		$fe_block['settings'] = $settings;
+	}
+	$boxes = features_get_component_map('fe_block_boxes');
+	unset($boxes['features_extra_test_block']); // the feature default test
+	if ($boxes){
+		$fe_block['boxes'] = $boxes;
+	}
+return $fe_block;
+}

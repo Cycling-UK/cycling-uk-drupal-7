@@ -1,0 +1,37 @@
+<?php
+/**
+ * @file
+ * Main module file
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function cyclinguk_mailing_options_menu() {
+  /**$items['user/%user/mailing_options'] = [
+    'title' => 'Mailing Options',
+    'page callback' => 'cyclinguk_mailing_options_user',
+    'file' => 'includes/mailing_options.inc',
+    'page arguments' => [
+      1,
+    ],
+    'access callback' => [
+      'user_is_logged_in',
+    ],
+    'type' => MENU_LOCAL_TASK,
+  ];*/
+  $items['admin/config/services/care/fields'] = [
+    'title' => 'CARE field settings',
+    'description' => 'Configuration of CARE fields.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => [
+      'care_fields_admin_settings_form',
+    ],
+    'file' => 'includes/settings_form.inc',
+    'access arguments' => [
+      'administer care fields integration',
+    ],
+    'type' => MENU_NORMAL_ITEM,
+  ];
+  return $items;
+}

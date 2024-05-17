@@ -1,0 +1,7 @@
+name = Cycling UK Registration
+description = "Custom registration code for Cycling UK website."
+package = Cycling UK
+core = "7.x"
+version = 7.x-1.x
+dependencies[] = care_user
+dependencies[] = user

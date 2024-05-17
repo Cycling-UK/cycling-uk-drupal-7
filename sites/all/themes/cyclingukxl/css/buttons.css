@@ -1,0 +1,105 @@
+/* Remove default shading and gradients from buttons */
+.btn,
+.btn-default,
+.btn-primary {
+  box-shadow: inherit;
+  text-shadow: inherit;
+  background-image: inherit;
+  filter: inherit;
+  border-color: #dbdbdb;
+  border-color: #ccc;
+}
+
+
+
+/* Set default button styling */
+.btn,
+.btn-default,
+.btn-primary,
+.node-paragraphs .field-name-field-link a,
+.paragraphs-item-text-left-and-image-right .field-name-field-links .field-item a,
+.paragraphs-item-text-right-and-image-left .field-name-field-links .field-item a {
+	background-color: #fff;
+	border-color: #fbb040;
+	color: #000;
+	display: inline-block;
+	min-width: 140px;
+	font-size: 15px;
+	line-height: 34px;
+	text-transform: uppercase;
+	text-decoration: none !important;
+	padding: 0 18px;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+}
+
+.btn-white {
+	border-color: #fff;
+}
+
+.btn:hover,
+.btn:focus,
+.btn-default:hover,
+.btn-default:focus,
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-white:hover,
+.btn-white:focus,
+.node-paragraphs .field-name-field-link a:hover,
+.node-paragraphs .field-name-field-link a:focus,
+.paragraphs-item-text-left-and-image-right .field-name-field-links .field-item a:hover,
+.paragraphs-item-text-left-and-image-right .field-name-field-links .field-item a:focus,
+.paragraphs-item-text-right-and-image-left .field-name-field-links .field-item a:hover,
+.paragraphs-item-text-right-and-image-left .field-name-field-links .field-item a:focus {
+	background-color: #fbb040;
+	border-color: #fbb040;
+	color: #fff;
+  box-shadow: inherit;
+}
+
+.btn:active,
+.btn-default:active,
+.btn-default:active:hover,
+.btn-default:active:focus,
+.btn-primary:active,
+.btn-white:active,
+.node-paragraphs .field-name-field-link a:active,
+.paragraphs-item-text-left-and-image-right .field-name-field-links .field-item a:active,
+.paragraphs-item-text-right-and-image-left .field-name-field-links .field-item a:active {
+	background-color: #fdaf17;
+	border-color: #fdaf17;
+	color: #fff;
+  box-shadow: inherit;
+}
+
+
+
+/*
+ * Purple buttons
+ * .btn-purple
+ */
+
+.btn-purple,
+.views-submit-button .btn-default {
+    background-color: #7a68ae;
+    border-color: #7a68ae;
+    color: #fff;
+}
+
+.btn-purple:hover,
+.btn-purple:focus,
+.views-submit-button .btn-default:hover,
+.views-submit-button .btn-default:focus {
+    background-color: #fcb040;
+    border-color: #fcb040;
+    color: #fff;
+}
+
+.btn-purple:active,
+.views-submit-button .btn-default:active {
+    background-color: #fdaf17;
+    border-color: #fdaf17;
+    color: #fff;
+}
+

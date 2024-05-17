@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Content type - background image feature.
+ */
+
+include_once 'features_content_type_background_image.features.inc';

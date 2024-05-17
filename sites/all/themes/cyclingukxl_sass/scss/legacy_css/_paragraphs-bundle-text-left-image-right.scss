@@ -1,0 +1,277 @@
+/*
+ * This CSS file covers the following similar paragraph bundles:
+ *  - Text left with image right
+ *  - Text right with image left
+ */
+
+
+/* Adjust text colour depending on background colour */
+.paragraph_background_colour_blue   > .paragraphs-item-text-left-and-image-right .field-name-field-subtitle,
+.paragraph_background_colour_blue   > .paragraphs-item-text-left-and-image-right .field-name-field-text,
+.paragraph_background_colour_pink   > .paragraphs-item-text-left-and-image-right .field-name-field-subtitle,
+.paragraph_background_colour_pink   > .paragraphs-item-text-left-and-image-right .field-name-field-text,
+.paragraph_background_colour_purple > .paragraphs-item-text-left-and-image-right .field-name-field-subtitle,
+.paragraph_background_colour_purple > .paragraphs-item-text-left-and-image-right .field-name-field-text,
+.paragraph_background_colour_grey   > .paragraphs-item-text-left-and-image-right .field-name-field-subtitle,
+.paragraph_background_colour_grey   > .paragraphs-item-text-left-and-image-right .field-name-field-text,
+.paragraph_background_colour_blue   > .paragraphs-item-text-right-and-image-left .field-name-field-subtitle,
+.paragraph_background_colour_blue   > .paragraphs-item-text-right-and-image-left .field-name-field-text,
+.paragraph_background_colour_pink   > .paragraphs-item-text-right-and-image-left .field-name-field-subtitle,
+.paragraph_background_colour_pink   > .paragraphs-item-text-right-and-image-left .field-name-field-text,
+.paragraph_background_colour_purple > .paragraphs-item-text-right-and-image-left .field-name-field-subtitle,
+.paragraph_background_colour_purple > .paragraphs-item-text-right-and-image-left .field-name-field-text,
+.paragraph_background_colour_grey   > .paragraphs-item-text-right-and-image-left .field-name-field-subtitle,
+.paragraph_background_colour_grey   > .paragraphs-item-text-right-and-image-left .field-name-field-text {
+  color: $white;
+}
+
+.paragraph_background_colour_yellow > .paragraphs-item-text-left-and-image-right .field-name-field-subtitle,
+.paragraph_background_colour_yellow > .paragraphs-item-text-left-and-image-right .field-name-field-text,
+.paragraph_background_colour_yellow > .paragraphs-item-text-right-and-image-left .field-name-field-subtitle,
+.paragraph_background_colour_yellow > .paragraphs-item-text-right-and-image-left .field-name-field-text,
+.paragraph_background_colour_white > .paragraphs-item-text-left-and-image-right .field-name-field-subtitle,
+.paragraph_background_colour_white > .paragraphs-item-text-left-and-image-right .field-name-field-text,
+.paragraph_background_colour_white > .paragraphs-item-text-right-and-image-left .field-name-field-subtitle,
+.paragraph_background_colour_white > .paragraphs-item-text-right-and-image-left .field-name-field-text {
+  color: $black;
+}
+
+
+.paragraphs-item-text-left-and-image-right,
+.paragraphs-item-text-right-and-image-left {
+  margin-bottom: 60px;
+  padding: 30px;
+}
+
+.remove_bottom_margin_yes .paragraphs-item-text-left-and-image-right,
+.remove_bottom_margin_yes .paragraphs-item-text-right-and-image-left {
+  margin-bottom: 0;
+}
+
+.paragraphs-item-text-left-and-image-right .field-name-field-subtitle,
+.paragraphs-item-text-right-and-image-left .field-name-field-subtitle {
+  font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 36px;
+  margin-bottom: 20px;
+}
+
+.paragraphs-item-text-left-and-image-right .field-name-field-text,
+.paragraphs-item-text-right-and-image-left .field-name-field-text {
+  margin-bottom: 30px;
+}
+
+.paragraphs-item-text-left-and-image-right .field-name-field-links .field-item,
+.paragraphs-item-text-right-and-image-left .field-name-field-links .field-item {
+  display: inline-block;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+
+.paragraphs-item-text-left-and-image-right .field-name-field-links .field-item:last-of-type,
+.paragraphs-item-text-right-and-image-left .field-name-field-links .field-item:last-of-type {
+  margin-bottom: 0;
+}
+
+.paragraphs-item-text-left-and-image-right .field-name-field-links .field-item a,
+.paragraphs-item-text-left-and-image-right .field-name-field-links .field-item a:hover,
+.paragraphs-item-text-left-and-image-right .field-name-field-links .field-item a:focus,
+.paragraphs-item-text-right-and-image-left .field-name-field-links .field-item a,
+.paragraphs-item-text-right-and-image-left .field-name-field-links .field-item a:hover,
+.paragraphs-item-text-right-and-image-left .field-name-field-links .field-item a:focus {
+  outline: none;
+  border: 1px solid $yellow;
+  text-align: center;
+  -webkit-box-shadow: 0px 3px 0px 0px rgba(0,0,0,.1);
+  -moz-box-shadow: 0px 3px 0px 0px rgba(0,0,0,.1);
+  box-shadow: 0px 3px 0px 0px rgba(0,0,0,.1);
+}
+
+/* Need a different button colour scheme if the background is yellow */
+.paragraph_background_colour_yellow > .paragraphs-item-text-left-and-image-right .field-name-field-links .field-item a:hover,
+.paragraph_background_colour_yellow > .paragraphs-item-text-left-and-image-right .field-name-field-links .field-item a:focus,
+.paragraph_background_colour_yellow > .paragraphs-item-text-right-and-image-left .field-name-field-links .field-item a:hover,
+.paragraph_background_colour_yellow > .paragraphs-item-text-right-and-image-left .field-name-field-links .field-item a:focus {
+  outline: none;
+  border: 1px solid #8065a9;
+  background-color: #8065a9;
+  color: $white;
+  text-align: center;
+  -webkit-box-shadow: 0px 3px 0px 0px rgba(0,0,0,.1);
+  -moz-box-shadow: 0px 3px 0px 0px rgba(0,0,0,.1);
+  box-shadow: 0px 3px 0px 0px rgba(0,0,0,.1);
+}
+
+
+
+/* Hyperlinks */
+
+.paragraphs-item-text-left-and-image-right .field-name-field-text a,
+.paragraphs-item-text-right-and-image-left .field-name-field-text a {
+  color: inherit;
+  text-decoration: underline;
+  outline: none;
+}
+
+.paragraph_background_colour_blue   > .paragraphs-item-text-left-and-image-right .field-name-field-text a:hover,
+.paragraph_background_colour_blue   > .paragraphs-item-text-left-and-image-right .field-name-field-text a:focus,
+.paragraph_background_colour_pink   > .paragraphs-item-text-left-and-image-right .field-name-field-text a:hover,
+.paragraph_background_colour_pink   > .paragraphs-item-text-left-and-image-right .field-name-field-text a:focus,
+.paragraph_background_colour_purple > .paragraphs-item-text-left-and-image-right .field-name-field-text a:hover,
+.paragraph_background_colour_purple > .paragraphs-item-text-left-and-image-right .field-name-field-text a:focus,
+.paragraph_background_colour_grey   > .paragraphs-item-text-left-and-image-right .field-name-field-text a:hover,
+.paragraph_background_colour_grey   > .paragraphs-item-text-left-and-image-right .field-name-field-text a:focus,
+.paragraph_background_colour_blue   > .paragraphs-item-text-right-and-image-left .field-name-field-text a:hover,
+.paragraph_background_colour_blue   > .paragraphs-item-text-right-and-image-left .field-name-field-text a:focus,
+.paragraph_background_colour_pink   > .paragraphs-item-text-right-and-image-left .field-name-field-text a:hover,
+.paragraph_background_colour_pink   > .paragraphs-item-text-right-and-image-left .field-name-field-text a:focus,
+.paragraph_background_colour_purple > .paragraphs-item-text-right-and-image-left .field-name-field-text a:hover,
+.paragraph_background_colour_purple > .paragraphs-item-text-right-and-image-left .field-name-field-text a:focus,
+.paragraph_background_colour_grey   > .paragraphs-item-text-right-and-image-left .field-name-field-text a:hover,
+.paragraph_background_colour_grey   > .paragraphs-item-text-right-and-image-left .field-name-field-text a:focus,
+.paragraph_background_colour_white  > .paragraphs-item-text-right-and-image-left .field-name-field-text a:hover,
+.paragraph_background_colour_white  > .paragraphs-item-text-right-and-image-left .field-name-field-text a:focus {
+  color: $yellow;
+}
+
+.paragraph_background_colour_green  > .paragraphs-item-text-left-and-image-right .field-name-field-text a:hover,
+.paragraph_background_colour_green  > .paragraphs-item-text-left-and-image-right .field-name-field-text a:focus,
+.paragraph_background_colour_green  > .paragraphs-item-text-right-and-image-left .field-name-field-text a:hover,
+.paragraph_background_colour_green  > .paragraphs-item-text-right-and-image-left .field-name-field-text a:focus,
+.paragraph_background_colour_yellow > .paragraphs-item-text-left-and-image-right .field-name-field-text a:hover,
+.paragraph_background_colour_yellow > .paragraphs-item-text-left-and-image-right .field-name-field-text a:focus,
+.paragraph_background_colour_yellow > .paragraphs-item-text-right-and-image-left .field-name-field-text a:hover,
+.paragraph_background_colour_yellow > .paragraphs-item-text-right-and-image-left .field-name-field-text a:focus {
+  color: $white;
+}
+
+
+
+/* Lists */
+
+.paragraphs-item-text-left-and-image-right .field-name-field-text ul,
+.paragraphs-item-text-left-and-image-right .field-name-field-text ol,
+.paragraphs-item-text-right-and-image-left .field-name-field-text ul,
+.paragraphs-item-text-right-and-image-left .field-name-field-text ol {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: left !important;
+}
+
+.paragraphs-item-text-left-and-image-right .field-name-field-text li,
+.paragraphs-item-text-right-and-image-left .field-name-field-text li {
+  display: inline-flex;
+  margin-bottom: 10px;
+}
+
+.paragraphs-item-text-left-and-image-right .field-name-field-text li:last-of-type,
+.paragraphs-item-text-right-and-image-left .field-name-field-text li:last-of-type {
+  margin-bottom: 0;
+}
+
+.paragraphs-item-text-left-and-image-right .field-name-field-text li:before,
+.paragraphs-item-text-right-and-image-left .field-name-field-text li:before {
+	font-family: 'Font Awesome 5 Pro';
+	font-weight: 900; /* Solid format */
+  font-size: 32px;
+  line-height: 32px;
+	display: inline-flex;
+	margin-right: 12px;
+}
+
+
+
+/* Set bullet point style */
+
+/* .bullet_point_bullets .field-name-field-text li:before {
+  content: "\f111";
+  font-size: 10px;
+  line-height: 20px;
+}
+  
+.bullet_point_checks .field-name-field-text li:before {
+  content: "\f00c";
+  font-size: 32px;
+  line-height: 32px;
+}
+  
+.bullet_point_stars .field-name-field-text li:before {
+  content: "\f069";
+  font-size: 20px;
+  line-height: 25px;
+} */
+
+
+
+/* Set bullet point colour */
+
+.paragraph_background_colour_blue   > .paragraphs-item-text-left-and-image-right .field-name-field-text li:before,
+.paragraph_background_colour_pink   > .paragraphs-item-text-left-and-image-right .field-name-field-text li:before,
+.paragraph_background_colour_purple > .paragraphs-item-text-left-and-image-right .field-name-field-text li:before,
+.paragraph_background_colour_grey   > .paragraphs-item-text-left-and-image-right .field-name-field-text li:before,
+.paragraph_background_colour_blue   > .paragraphs-item-text-right-and-image-left .field-name-field-text li:before,
+.paragraph_background_colour_pink   > .paragraphs-item-text-right-and-image-left .field-name-field-text li:before,
+.paragraph_background_colour_purple > .paragraphs-item-text-right-and-image-left .field-name-field-text li:before,
+.paragraph_background_colour_grey   > .paragraphs-item-text-right-and-image-left .field-name-field-text li:before,
+.paragraph_background_colour_white  > .paragraphs-item-text-right-and-image-left .field-name-field-text li:before {
+  color: $yellow;
+}
+
+.paragraph_background_colour_green  > .paragraphs-item-text-left-and-image-right .field-name-field-text li:before,
+.paragraph_background_colour_yellow > .paragraphs-item-text-left-and-image-right .field-name-field-text li:before,
+.paragraph_background_colour_green  > .paragraphs-item-text-right-and-image-left .field-name-field-text li:before,
+.paragraph_background_colour_yellow > .paragraphs-item-text-right-and-image-left .field-name-field-text li:before {
+  color: $white;
+}
+
+
+
+/* Image corners */
+
+.remove_image_corners_no .paragraphs-item-text-left-and-image-right .right-col img,
+.remove_image_corners_no .paragraphs-item-text-right-and-image-left .left-col img {
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+}
+
+
+
+/* Mobile */
+
+@media only screen and (max-width : 767px) {
+  .paragraphs-item-text-left-and-image-right,
+  .paragraphs-item-text-left-and-image-right .right-col,
+  .paragraphs-item-text-right-and-image-left,
+  .paragraphs-item-text-right-and-image-left .left-col {
+    padding: 0;
+  }
+  .paragraphs-item-text-left-and-image-right .left-col,
+  .paragraphs-item-text-right-and-image-left .right-col {
+    padding: 30px 30px 60px 30px;
+  }
+  .remove_image_corners_no  .paragraphs-item-text-left-and-image-right .right-col img,
+  .remove_image_corners_yes .paragraphs-item-text-left-and-image-right .right-col img,
+  .remove_image_corners_no  .paragraphs-item-text-right-and-image-left .left-col img,
+  .remove_image_corners_yes .paragraphs-item-text-right-and-image-left .left-col img {
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+  }
+  .paragraphs-item-text-left-and-image-right .field-name-field-subtitle,
+  .paragraphs-item-text-left-and-image-right .field-name-field-text,
+  .paragraphs-item-text-left-and-image-right .field-name-field-links,
+  .paragraphs-item-text-right-and-image-left .field-name-field-subtitle,
+  .paragraphs-item-text-right-and-image-left .field-name-field-text,
+  .paragraphs-item-text-right-and-image-left .field-name-field-links {
+    text-align: center;
+  }
+  .paragraphs-item-text-left-and-image-right .field-name-field-links .field-item,
+  .paragraphs-item-text-right-and-image-left .field-name-field-links .field-item {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}

@@ -1,0 +1,71 @@
+/* Theming for Partner pages */
+
+/* Additional similar theming is defined in biographies.css */
+
+.node-type-partner .field-name-field-link {
+  text-align: center;
+  margin: 0 auto 30px auto;
+}
+
+.node-type-partner .group-image-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 280px;
+  height: 280px;
+  margin: 30px auto;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+}
+
+.node-type-partner .page-content > img {
+  width: initial;
+}
+
+.node-type-partner .nhs             .group-image-wrapper {border: 5px solid #fbb040;}
+.node-type-partner .education       .group-image-wrapper {border: 5px solid #009fda;}
+.node-type-partner .public_sector   .group-image-wrapper {border: 5px solid #e6007e;}
+.node-type-partner .private_sector  .group-image-wrapper {border: 5px solid #cdce00;}
+.node-type-partner .not_for_profit  .group-image-wrapper {border: 5px solid #8064a9;}
+
+
+
+/* Views */
+
+#edit-field-partner-type-value > div:nth-child(1) label {border-color: #333333;}
+#edit-field-partner-type-value > div:nth-child(2) label {border-color: #fbb040;}
+#edit-field-partner-type-value > div:nth-child(3) label {border-color: #009fda;}
+#edit-field-partner-type-value > div:nth-child(4) label {border-color: #e6007e;}
+#edit-field-partner-type-value > div:nth-child(5) label {border-color: #cdce00;}
+#edit-field-partner-type-value > div:nth-child(6) label {border-color: #8064a9;}
+
+.view-partner-grid .partner_image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 240px;
+  max-height: 240px;
+  width: 190px;
+  height: 190px;
+  padding: 20px;
+  margin: 0 auto 30px;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border: 5px solid;
+}
+
+.view-partner-grid .partner_image.nhs             {border-color: #fbb040;}
+.view-partner-grid .partner_image.education       {border-color: #009fda;}
+.view-partner-grid .partner_image.public_sector   {border-color: #e6007e;}
+.view-partner-grid .partner_image.private_sector  {border-color: #cdce00;}
+.view-partner-grid .partner_image.not_for_profit  {border-color: #8064a9;}
+
+
+
+/* Colorbox */
+
+#cboxContent .node-partner img {
+  margin: 0 auto 5px auto;
+}

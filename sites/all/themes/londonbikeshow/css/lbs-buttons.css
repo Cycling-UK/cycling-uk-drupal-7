@@ -1,0 +1,67 @@
+/* Set default button styling */
+.btn,
+.btn-default,
+.btn-primary {
+	background-color: #fff;
+	border-color: #ab853c;
+	color: #000;
+}
+
+.btn-white {
+	border-color: #fff;
+}
+
+.btn:hover,
+.btn:focus,
+.btn-default:hover,
+.btn-default:focus,
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-white:hover,
+.btn-white:focus {
+	background-color: #ab853c;
+	border-color: #ab853c;
+	color: #fff;
+}
+
+.btn:active,
+.btn-default:active,
+.btn-default:active:hover,
+.btn-default:active:focus,
+.btn-primary:active,
+.btn-white:active {
+	background-color: #8e6f30;
+	border-color: #8e6f30;
+	color: #fff;
+}
+
+
+
+/*
+ * Purple buttons
+ * .btn-purple
+ */
+
+.btn-purple,
+.views-submit-button .btn-default {
+    background-color: #ab853c;
+    border-color: #ab853c;
+    color: #fff;
+}
+
+.btn-purple:hover,
+.btn-purple:focus,
+.views-submit-button .btn-default:hover,
+.views-submit-button .btn-default:focus {
+    background-color: #fcb040;
+    border-color: #fcb040;
+    color: #fff;
+}
+
+.btn-purple:active,
+.views-submit-button .btn-default:active {
+    background-color: #8e6f30;
+    border-color: #8e6f30;
+    color: #fff;
+}
+

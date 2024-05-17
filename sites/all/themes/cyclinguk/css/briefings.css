@@ -1,0 +1,55 @@
+/**
+ * Briefings
+ */
+
+
+
+.node-type-briefings .field-name-post-date {
+	float: left;
+	margin-top: 6px;
+}
+
+.node-type-briefings .top-left-wrapper .field-label {
+	margin-bottom: 10px;
+}
+
+.node-type-briefings .field-name-field-attachments .field-label {
+	text-align: left;
+}
+
+.node-type-briefings .field-name-field-teaser {
+	font-size: 22px;
+	line-height: 28px;
+	margin-top: 50px;
+}
+
+.node-type-briefings .field-name-field-teaser .field-item {
+	text-indent: -10px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.node-type-briefings .field-name-field-teaser .field-item::before {
+	content: open-quote;
+	color: #fbb040;
+	position: relative;
+}
+
+.node-type-briefings .field-name-field-teaser .field-item::after {
+	content: close-quote;
+	color: #fbb040;
+}
+
+.node-type-briefings .field-name-field-teaser::after {
+	display: block;
+	content: "";
+	width: 100%;
+	height: 5px;
+	background-color: #e0e0e0;
+	border-radius: 2.5px;
+	-webkit-border-radius: 2.5px;
+	-moz-border-radius: 2.5px;
+	position: relative;
+	top: 30px;
+	margin-bottom: 60px;
+}

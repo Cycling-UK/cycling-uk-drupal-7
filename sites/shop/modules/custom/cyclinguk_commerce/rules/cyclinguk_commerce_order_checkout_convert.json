@@ -1,0 +1,55 @@
+{ "cyclinguk_commerce_checkout_order_convert" : {
+    "LABEL" : "Assign an anon order to a pre-existing user by membership number",
+    "PLUGIN" : "reaction rule",
+    "WEIGHT" : "-5",
+    "OWNER" : "rules",
+    "TAGS" : [ "Commerce Checkout", "Cycling UK" ],
+    "REQUIRES" : [ "rules", "commerce", "commerce_checkout" ],
+    "ON" : { "commerce_checkout_complete" : [] },
+    "IF" : [
+      { "data_is" : { "data" : [ "commerce-order:uid" ], "value" : "0" } },
+      { "data_is" : { "data" : [ "commerce-order:type" ], "value" : "commerce_order" } },
+      { "entity_has_field" : {
+          "entity" : [ "commerce-order:commerce-customer-billing" ],
+          "field" : "field_membership_number"
+        }
+      },
+      { "entity_exists" : {
+          "type" : "user",
+          "property" : "field_membership_number",
+          "value" : [ "commerce-order:commerce-customer-billing:field-membership-number" ]
+        }
+      }
+    ],
+    "DO" : [
+      { "entity_query" : {
+          "USING" : {
+            "type" : "user",
+            "property" : "field_membership_number",
+            "value" : [ "commerce-order:commerce-customer-billing:field-membership-number" ],
+            "limit" : "1"
+          },
+          "PROVIDE" : { "entity_fetched" : { "account_fetched" : "Fetched account" } }
+        }
+      },
+      { "LOOP" : {
+          "USING" : { "list" : [ "account-fetched" ] },
+          "ITEM" : { "account" : "Account" },
+          "DO" : [
+            { "data_set" : { "data" : [ "commerce-order:uid" ], "value" : [ "account:uid" ] } },
+            { "data_set" : {
+                "data" : [ "commerce-order:commerce-customer-billing:uid" ],
+                "value" : [ "account:uid" ]
+              }
+            },
+            { "data_set" : {
+                "data" : [ "commerce-order:commerce-customer-shipping:uid" ],
+                "value" : [ "account:uid" ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * Code for the Home page videos feature.
+ */
+
+include_once 'feature_home_page_videos.features.inc';

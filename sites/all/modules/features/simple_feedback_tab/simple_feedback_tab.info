@@ -1,0 +1,14 @@
+name = Simple feedback tab
+description = Configuration to support the Simple Feedback tab.
+core = 7.x
+package = Cycling UK Features
+version = 7.x-1.01
+dependencies[] = ctools
+dependencies[] = features
+dependencies[] = feedback_simple
+dependencies[] = strongarm
+features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:2
+features[user_permission][] = administer feedback simple
+features[variable][] = feedback_simple
+project path = sites/all/modules/features

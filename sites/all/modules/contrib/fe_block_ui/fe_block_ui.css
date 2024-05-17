@@ -1,0 +1,29 @@
+dl.fe-block-ui-oveview {
+  margin-left : 5%;
+  padding-top : 5px;
+  margin : 0 0 0 0;
+  float : right;
+  outline : 1px dashed #ccc;
+}
+
+dl.fe-block-ui-oveview dt {
+	font-weight:700;
+}
+
+dl.fe-block-ui-oveview dt,
+dl.fe-block-ui-oveview dd {
+	margin : 0 0 0 1em;
+	padding : 0 0 0 0;
+	display : inline;
+	float : left;
+  font-size : 10px;
+}
+
+.fe-block-ui-oveview .notice {
+  background : Khaki;
+  color : black;
+}
+
+.fe-block-ui-oveview code {
+  font-size : 10px;
+}

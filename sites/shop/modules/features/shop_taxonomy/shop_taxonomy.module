@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the Shop  Taxonomy feature.
+ */
+
+include_once 'shop_taxonomy.features.inc';

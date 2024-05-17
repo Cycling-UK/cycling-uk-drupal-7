@@ -1,0 +1,163 @@
+/* Replace default hamburger menu with Font Awesome icon */
+.menu-theme-cyclinguk div.sf-accordion-toggle.sf-style-simple-centre-aligned a:before {
+	content: "\F0C9";
+	font-family: 'Font Awesome 5 Pro';
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 24px;
+  }
+  
+  .menu-theme-cyclinguk div.sf-accordion-toggle.sf-style-simple-centre-aligned a.sf-expanded:before {
+	content: "\F00d";
+  }
+  
+  .menu-theme-cyclinguk div.sf-accordion-toggle.sf-style-simple-centre-aligned a {
+	background: inherit;
+	-webkit-border-radius: inherit;
+	-moz-border-radius: inherit;
+	border-radius: inherit;
+	color: $black;
+	text-shadow: inherit;
+	padding: 2px;
+	border: 2px solid $yellow;
+	float: right;
+	width: 32px;
+	height: 32px;
+	position: relative;
+	right: 30px;
+	top: 35px;
+	text-align: center;
+  }
+  
+  /* Move the dropdown menu to a better position */
+  .sf-accordion-toggle {
+	margin-bottom: 70px;
+  }
+  
+  /* Remove first Home menu item */
+  .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-accordion>li:first-child {
+	display: none;
+  }
+  
+  .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-accordion {
+	padding: 0 15px;
+	margin-bottom: 15px;
+	background-color: $white;
+  }
+  
+  .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-accordion .inner-wrapper {
+	margin: 0;
+  }
+  
+  .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-accordion li {
+	border: inherit;
+  }
+  
+  .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-accordion>li {
+	border-bottom: 1px solid $black;
+  }
+  
+  .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-accordion>li:last-child {
+	border: inherit;
+  }
+  
+  .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-accordion a,
+  .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-accordion ul .sf-clone-parent a {
+	font-family: "karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 22px;
+	color: $black;
+	text-shadow: inherit;
+	padding: 8px 5px 8px 5px;
+	outline: none;
+  }
+  
+  .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-accordion .sf-clone-parent a.sf-depth-1:hover .inner-wrapper,
+  .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-accordion .sf-clone-parent a.sf-depth-1:focus .inner-wrapper,
+  .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-accordion a.sf-depth-2:hover .inner-wrapper,
+  .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-accordion a.sf-depth-2:focus .inner-wrapper,
+  .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-accordion a.sf-depth-3:hover .inner-wrapper,
+  .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-accordion a.sf-depth-3:focus .inner-wrapper {
+	padding-bottom: 2px;
+	border-bottom: 1px solid $black;
+  }
+  
+  .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-accordion a.sf-depth-1 {
+	font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 20px;
+	color: $black;
+	text-shadow: inherit;
+	padding: 15px;
+  }
+  
+  /*
+  .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-accordion li.sf-clone-parent {
+	  display: none;
+  }
+  */
+  .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-accordion li ul {
+	margin: 0;
+  }
+  
+  /* Mobile dropdown arrows */
+  .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-accordion>li>a:after,
+  .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-accordion li.sf-depth-2.menuparent>a:after {
+	font-family: 'Font Awesome 5 Pro';
+	font-weight: 200;
+	font-size: 28px;
+	display: inline-block;
+	content: "\F105";
+	float: right;
+	margin-right: 10px;
+  }
+  
+  .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-accordion>li.sf-expanded>a::after,
+  .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-accordion li.sf-depth-2.menuparent.sf-expanded>a:after {
+	content: "\F107";
+  }
+  
+  /* Background tints */
+  .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-accordion li.sf-depth-1.sf-expanded a.menu-colour-purple,
+  .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-accordion li.sf-depth-1.sf-expanded a.menu-colour-purple+ul,
+  .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-accordion li.sf-depth-1.sf-expanded a.menu-colour-purple+ul a,
+  .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-accordion li.sf-depth-1.sf-expanded a.menu-colour-purple+ul ul {
+	background-color: #bfb1d4;
+  }
+  
+  .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-accordion li.sf-depth-1.sf-expanded a.menu-colour-pink,
+  .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-accordion li.sf-depth-1.sf-expanded a.menu-colour-pink+ul,
+  .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-accordion li.sf-depth-1.sf-expanded a.menu-colour-pink+ul a,
+  .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-accordion li.sf-depth-1.sf-expanded a.menu-colour-pink+ul ul {
+	background-color: #f27fbe;
+  }
+  
+  .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-accordion li.sf-depth-1.sf-expanded a.menu-colour-blue,
+  .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-accordion li.sf-depth-1.sf-expanded a.menu-colour-blue+ul,
+  .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-accordion li.sf-depth-1.sf-expanded a.menu-colour-blue+ul a,
+  .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-accordion li.sf-depth-1.sf-expanded a.menu-colour-blue+ul ul {
+	background-color: #7fd6f7;
+  }
+  
+  .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-accordion li.sf-depth-1.sf-expanded a.menu-colour-green,
+  .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-accordion li.sf-depth-1.sf-expanded a.menu-colour-green+ul,
+  .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-accordion li.sf-depth-1.sf-expanded a.menu-colour-green+ul a,
+  .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-accordion li.sf-depth-1.sf-expanded a.menu-colour-green+ul ul {
+	background-color: #e6e67f;
+  }
+  
+  .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-accordion li.sf-depth-1.sf-expanded a.menu-colour-yellow,
+  .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-accordion li.sf-depth-1.sf-expanded a.menu-colour-yellow+ul,
+  .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-accordion li.sf-depth-1.sf-expanded a.menu-colour-yellow+ul a,
+  .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-accordion li.sf-depth-1.sf-expanded a.menu-colour-yellow+ul ul {
+	background-color: #fdd79f;
+  }
+  
+  .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-accordion li.sf-depth-1.sf-expanded a.menu-colour-grey,
+  .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-accordion li.sf-depth-1.sf-expanded a.menu-colour-grey+ul,
+  .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-accordion li.sf-depth-1.sf-expanded a.menu-colour-grey+ul a,
+  .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-accordion li.sf-depth-1.sf-expanded a.menu-colour-grey+ul ul {
+	background-color: #d8d8d8;
+  }

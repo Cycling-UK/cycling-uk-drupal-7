@@ -1,0 +1,129 @@
+/**
+ * Global mapping styles.
+ */
+
+.view-route-search .views-exposed-form .views-exposed-widget {
+    float: inherit;
+    display: flex;
+    justify-content: center;
+}
+
+/* General styles */
+.view-route-search .views-exposed-form .views-exposed-widgets {
+    text-align: center;
+}
+    .view-route-search .views-exposed-form .views-exposed-widgets button {
+        margin-top: 0;
+    }
+
+/* Add enough space for select box glyph */
+.view-route-search .views-exposed-form .form-item.form-type-select select {
+    margin-right: 24px;
+}
+
+/* Proximity search fields */
+.view-route-search .views-exposed-form .form-type-geofield-proximity .form-item {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+    .view-route-search .views-exposed-form .form-type-geofield-proximity .form-item.form-type-textfield:first-child {
+        display: flex;
+        flex: 0;
+        -webkit-flex: 0;
+        -ms-flex: 0;
+        width: 70px;
+        min-width: 70px;
+        max-width: 70px;
+    }
+
+    .view-route-search .views-exposed-form .form-type-geofield-proximity .form-item.form-type-select:nth-child(2) {
+        display: flex;
+        flex: 0;
+        -webkit-flex: 0;
+        -ms-flex: 0;
+        width: 150px;
+        min-width: 150px;
+        max-width: 150px;
+        padding: 0;
+    }
+
+    .view-route-search .views-exposed-form .form-type-geofield-proximity span:nth-child(3) {
+        padding-top: 11px;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .view-route-search .views-exposed-form .form-type-geofield-proximity .form-item.form-type-textfield:nth-child(4) {
+        display: flex;
+        flex: 1;
+        -webkit-flex: 1;
+        -ms-flex: 1;
+    }
+
+/* Secondary options */
+.view-route-search .views-exposed-form .views-exposed-widget.views-widget-filter-secondary {
+    margin-top: 10px;
+    padding: 0 auto;
+}
+    .view-route-search .views-exposed-form #edit-secondary-wrapper a.panel-title {
+        font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+        display: inline-block;
+        font-size: 15px;
+        line-height: 15px;
+        font-weight: 400;
+        text-transform: uppercase;
+        text-decoration: none;
+        outline: none;
+        padding: 3px 0;
+        border-bottom: 1px solid #000;
+    }
+    .view-route-search .views-exposed-form #edit-secondary-wrapper a.panel-title::after {
+        display: inline-block;
+        font-family: 'FontAwesome';
+        color: #f6b331;
+        margin-left: 5px;
+        font-size: 18px;
+        line-height: 18px;
+        content: "\F107";
+    }
+    .view-route-search .views-exposed-form #edit-secondary-wrapper legend.panel-heading {
+        float: inherit;
+        text-align: center;
+    }
+
+/* Button styles */
+.view-route-search .views-exposed-form .views-submit-button, .view-route-search .views-exposed-form .views-reset-button {
+    display: inline-block;
+    float: inherit;
+    padding: 0;
+    margin: 30px 5px;
+}
+
+/* Map pin popup styles */
+.view-route-search .ol-popup .ol-popup-description > .views-field > .field-content,
+.view-route-search .ol-popup .ol-popup-description > .views-field > .views-label {
+    display: inline-block;
+}
+.view-route-search .ol-popup .ol-popup-description > .views-field > .views-label {
+    font-weight: bold;
+}
+.view-route-search .ol-popup .ol-popup-description > .views-field-title > .views-label,
+.view-route-search .ol-popup .ol-popup-description > .views-field-field-start-address {
+    display: none;
+}
+.view-route-search .ol-popup .ol-popup-description > .views-field-title > .field-content a {
+    text-indent: 0;
+    margin-left: -10px;
+}
+
+@media only screen and (min-width: 720px)  {
+    /* Put secondary options on same line in tablet and above */
+    .view-route-search .views-exposed-form .bef-secondary-options > .form-item {
+        display: inline-block;
+        margin-right: 10px;
+    }
+    .view-route-search .views-exposed-form .bef-secondary-options > .form-item:last-child {
+        margin-right: 0;
+    }
+}
+

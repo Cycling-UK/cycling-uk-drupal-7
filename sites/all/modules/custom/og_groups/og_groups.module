@@ -1,0 +1,145 @@
+<?php
+
+/**
+ * @file
+ * Code for the OG groups feature.
+ */
+
+include_once 'og_groups.features.inc';
+
+
+/**
+ * Implements hook_field_formatter_info().
+ */
+function og_groups_field_formatter_info() {
+
+  $formatters = array();
+  if (module_exists('taxonomy')) {
+    $formatters['taxonomy_hash_separator'] = array(
+      'label'       => t('Hash Separated'),
+      'description' => t('Display the referenced term with a separator.'),
+      'field types' => array('taxonomy_term_reference'),
+    );
+  }
+
+  return $formatters;
+}
+
+/**
+ * Implements hook_field_formatter_view().
+ */
+function og_groups_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+  global $language;
+  $element = array();
+  
+  if ($display['type'] === 'taxonomy_hash_separator') {
+
+    $terms = array();
+    foreach ($items as $delta => $item) {
+      if ($item['tid'] == 'autocreate') {
+        // We don't necessarily have a link when this is
+        // an autocreated term, usually in preview.
+        // So just send the term as check plained markup.
+        $item_display = check_plain($item['name']);
+      } else {
+        $term = taxonomy_term_load($item['tid']);
+        if (!is_object($term)) {
+          // This term is missing in the database.
+          continue;
+        }
+        $item_display = check_plain($term->name);
+      }
+      $terms[] = $item_display;
+    }
+
+    if (!empty($terms)) {
+      $output = implode(' #', $terms);
+      $element[0] = array('#markup' => '#' . $output);
+    }
+  }
+
+  return $element;
+}
+
+
+/**
+ * Implements hook_form_alter().
+ */
+function og_groups_form_alter(&$form, &$form_state, $form_id) {    
+    switch ($form_id) {
+        case 'migrate_ui_migrate_group':
+            if (array_key_exists('group_post', $form['dashboard']['migrations']['#options'])) {
+                $form['#prefix'] = '* <i><b>only works when execute: drush mi [[taskName]] --user=1</b></i>';
+                $form['dashboard']['migrations']['#options']['group_post']['machinename'] .= ' *';
+                $form['dashboard']['migrations']['#options']['group_child_page']['machinename'] .= ' *';
+                $form['dashboard']['migrations']['#options']['event']['machinename'] .= ' *';
+                $form['dashboard']['migrations']['#options']['ride']['machinename'] .= ' *';            
+            }
+            break;
+
+        case 'user_login':
+            $form['#validate'][] = 'og_groups_check_user_against_group';
+          break;
+
+        case 'user_login_block':
+            $form['#validate'][] = 'og_groups_check_user_against_group';  
+          break;
+    }    
+}
+
+/*
+ * check if user is associated with group through care number, 
+ * if so, make sure he is group administrator and owner
+ * @see og_groups_form_alter
+ */
+function og_groups_check_user_against_group($form, &$form_state) {
+  $uid = $form_state['uid'];
+  $user = user_load($uid);
+  $membershipNo = $user->field_membership_number[LANGUAGE_NONE][0]['number'];
+  
+  $query = db_select('field_data_field_group_owner_member_no', 'gomo');
+  $query->fields('gomo', array('entity_id'));
+  $query->condition('gomo.field_group_owner_member_no_value', $membershipNo, '=');
+  $query->condition('gomo.bundle', 'group', '=');
+  $results = $query->execute()->fetchAll();
+ 
+  foreach ($results as $result){
+    $og_permits = og_get_user_roles('node', $result->entity_id, $user->uid);
+    
+    if (!array_key_exists('56', $og_permits)) { //if user is not group administrator for that group
+      og_group('node', $result->entity_id, array('entity_type' => 'user', 'entity' => $user));
+      og_role_grant('node',$result->entity_id, $user->uid, 56);
+      $group = node_load($result->entity_id);
+      $group->uid = $user->uid;
+      node_save($group);
+      drupal_set_message(t('You have been promoted to <i>"group administrator"</i> for group <b>@groupname</b>', array('@groupname' => $group->title)));         
+    } 
+  }
+  
+}
+
+/**
+ * Implements hook_node_view
+ * 
+ * if redirect is enabled on group page, automatically redirect user to group external url.
+ */
+function og_groups_node_view($node, $view_mode, $langcode) {
+  if ($node->type == 'group' && $view_mode == 'full') {                   //if viewing group in full mode
+    if (isset($node->field_redirect_website[LANGUAGE_NONE][0]['value']))  //if redirect flag exists
+      if ($node->field_redirect_website[LANGUAGE_NONE][0]['value'] == 1)  //if redirect flag is set to true
+        if (isset($node->field_group_website[LANGUAGE_NONE][0]['url'])) {   //if redirect url is provided
+          global $user;
+          if (array_key_exists('196', $user->roles)) { //Staff member
+            return;
+          }
+          $og_permits = og_get_user_roles('node', $node->nid, $user->uid);
+          if (array_key_exists('56', $og_permits)) { //if user is group administrator for that group
+            return;
+          }
+
+          //everybody else get redirected
+          drupal_goto($node->field_group_website[LANGUAGE_NONE][0]['url']);
+        }
+
+  }
+}

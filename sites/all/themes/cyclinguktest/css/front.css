@@ -1,0 +1,252 @@
+/*
+ * Front page styling
+ */
+
+
+
+/*
+ * Mapping icons
+ * Where will your next cycling adventure take you?
+ */
+
+#mapping-icons {
+	background-image: url('/sites/all/themes/cyclinguk/images/hero/mapping-tools.jpg');
+	background-position: center top;
+	background-size: cover;
+/*	background-color: #f0f0f0;
+	border-radius: 20px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+*/
+	text-align: center;
+	position: relative;
+	padding: 30px;
+	color: #fff;
+	margin: 0 -15px 0 -15px !important;
+	z-index: 0;
+}
+
+body.front .main-container .region-content section:nth-last-child(2) {
+    margin-bottom: 0;
+}
+
+#mapping-icons .background-tint {
+	background-color: rgba(0,0,0,0.1);
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: -1;
+}
+
+
+#mapping-icons h2 {
+	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 400;
+	font-size: 30px;
+	line-height: 36px;
+	margin-top: 0;
+}
+
+#mapping-icons h3 {
+	font-size: 16px;
+	line-height: 22px;
+	margin-top: 0;
+	margin-bottom: 30px;
+}
+
+#mapping-icons .icon {
+	margin-bottom: 30px;
+}
+
+#mapping-icons i {
+	font-size: 72px;
+	line-height: 138px;
+}
+
+#mapping-icons .btn-standard {
+	height: 140px;
+	margin-bottom: 10px;
+}
+
+#mapping-icons .icon-label {
+	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 16px;
+	height: 32px;
+}
+
+@media only screen and (max-width : 449px) {
+	#mapping-icons {
+		padding: 10px;
+	}
+	#mapping-icons .btn-standard {
+		height: 94px;
+		min-width: 94px;
+	}
+	#mapping-icons i {
+		font-size: 44px;
+		line-height: 92px;
+	}
+}
+
+
+
+/*
+ * Event search
+ */
+
+#event-search {
+	background-image: url('/sites/all/themes/cyclinguk/images/search/front-event-search.jpg');
+	background-position: center top;
+	background-size: cover;
+	height: 500px;
+/*
+	border-radius: 20px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+*/
+	text-align: center;
+	position: relative;
+	margin-left: -15px;
+	margin-right: -15px;
+}
+
+#event-search .background-tint {
+	background-color: rgba(0,0,0,0.7);
+/*
+	border-radius: 0 0 20px 20px;
+	-webkit-border-radius: 0 0 20px 20px;
+	-moz-border-radius: 0 0 20px 20px;
+*/
+	height: 185px;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+}
+
+#event-search h2 {
+	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	color: #fff;
+	font-weight: 400;
+	font-size: 30px;
+	line-height: 36px;
+	margin-top: 0;
+}
+
+#event-search .search-form > section {
+	margin: 0;
+}
+
+#event-search .search-form-container {
+	width: 100%;
+	position: absolute;
+	bottom: 20px;
+	text-align: center;
+	padding: 0 20px;
+}
+
+#event-search .form-type-geofield-proximity {
+	margin: 0;
+}
+
+#event-search #edit-secondary-wrapper {
+	display: none;
+}
+
+#event-search #edit-geo-wrapper.views-exposed-widget {
+    float: inherit;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+#event-search #edit-geo {
+    display: flex;
+}
+
+#event-search .form-item-geo-distance {
+    display: flex;
+    flex: 0;
+    -webkit-flex: 0;
+    -ms-flex: 0;
+    width: 70px;
+    min-width: 70px;
+    max-width: 70px;
+}
+
+#event-search .form-item-geo-unit {
+    display: flex;
+    flex: 0;
+    -webkit-flex: 0;
+    -ms-flex: 0;
+    width: 150px;
+    min-width: 150px;
+    max-width: 150px;
+    padding: 0;
+    margin: 0;
+}
+
+#event-search .geofield-proximity-origin-from {
+	color: #fff;
+    padding-top: 11px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+#event-search .form-item-geo-origin {
+    display: flex;
+    flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    margin: 0;
+}
+
+#event-search .views-exposed-widget {
+	display: inline-block;
+    float: inherit;
+    padding: 0;
+    margin: 0 5px;
+
+}
+
+#event-search .views-exposed-widget .btn {
+	margin: 20px 0 0 0;
+}
+
+
+
+
+
+
+@media only screen and (max-width : 499px) {
+	#event-search .background-tint {
+		height: 100%;
+/*
+		border-radius: 20px;
+		-webkit-border-radius: 20px;
+		-moz-border-radius: 20px;
+*/
+	}
+	#event-search #edit-geo {
+		display: inherit;
+		text-align: center;
+	}
+	#event-search .form-item-geo-distance,
+	#event-search .form-item-geo-unit,
+	#event-search .geofield-proximity-origin-from,
+	#event-search .form-item-geo-origin {
+		display: block;
+		width: inherit;
+		min-width: inherit;
+		max-width: inherit;
+		float: inherit;
+		padding: 0;
+		margin: 0 0 10px 0;
+	}
+}
+
+
+

@@ -1,0 +1,12 @@
+name = Webform access granular
+description = Allow administrators to apply granular access to webforms
+core = 7.x
+package = Webform
+dependencies[] = webform (4.x)
+dependencies[] = autocomplete_deluxe
+
+; Information added by Drupal.org packaging script on 2019-11-25
+version = "7.x-1.20"
+core = "7.x"
+project = "webform_access_granular"
+datestamp = "1574701271"

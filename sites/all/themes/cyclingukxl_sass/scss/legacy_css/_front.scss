@@ -1,0 +1,848 @@
+/* Suppress display of content which is promoted to front */
+body.front #block-system-main {
+	display: none;
+}
+
+.view-front-page-featured-content.top-article {
+	margin: 0 -15px 60px -15px;
+}
+
+.view-front-page-featured-content.top-article a,
+.view-front-page-featured-content.other-articles a {
+	text-decoration: none;
+}
+
+.view-front-page-featured-content.top-article img {
+	width: 100%;
+	height: 100%;
+}
+
+.view-front-page-featured-content.top-article .featured-content-title {
+	display: block;
+	width: 100%;
+	background-size: cover;
+	/*background: $blue no-repeat center center;*/
+	color: $white;
+	text-align: center;
+	padding: 20px;
+	font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 400;
+	font-size: 60px;
+	line-height: 60px;
+	text-shadow: 0px 3px 0px rgba(0, 0, 0, 0.1);
+}
+
+.front .view-front-page-featured-content.top-article .featured-content-title {
+	background: $blue no-repeat center center;
+}
+
+@media only screen and (max-width: 767px) {
+	.view-front-page-featured-content.top-article .featured-content-title {
+		font-size: 36px;
+		line-height: 36px;
+	}
+}
+
+.webp .front .view-front-page-featured-content.top-article .featured-content-title {
+	background-image: url("/sites/all/themes/cyclingukxl/images/hero/winged-wheel-tint-sm.webp");
+}
+.no-webp .front .view-front-page-featured-content.top-article .featured-content-title {
+	background-image: url("/sites/all/themes/cyclingukxl/images/hero/winged-wheel-tint-sm.png");
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+	.webp .front .view-front-page-featured-content.top-article .featured-content-title {
+		background-image: url("/sites/all/themes/cyclingukxl/images/hero/winged-wheel-tint-md.webp");
+	}
+	.no-webp .front .view-front-page-featured-content.top-article .featured-content-title {
+		background-image: url("/sites/all/themes/cyclingukxl/images/hero/winged-wheel-tint-md.png");
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.webp .front .view-front-page-featured-content.top-article .featured-content-title {
+		background-image: url("/sites/all/themes/cyclingukxl/images/hero/winged-wheel-tint-lg.webp");
+	}
+	.no-webp .front .view-front-page-featured-content.top-article .featured-content-title {
+		background-image: url("/sites/all/themes/cyclingukxl/images/hero/winged-wheel-tint-lg.png");
+	}
+}
+
+.view-front-page-featured-content.other-articles img {
+	width: 100%;
+	height: 100%;
+	border-radius: $border-radius-general 10px 0 0;
+	-webkit-border-radius: $border-radius-general 10px 0 0;
+	-moz-border-radius: $border-radius-general 10px 0 0;
+}
+
+.view-front-page-featured-content.other-articles .featured-content-title {
+	display: flex;
+	width: 100%;
+	height: 120px;
+	align-items: center;
+	text-align: center;
+	padding: 20px;
+	color: $black;
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 22px;
+	border-radius: 0 0 10px 10px;
+	-webkit-border-radius: 0 0 10px 10px;
+	-moz-border-radius: 0 0 10px 10px;
+}
+
+.view-front-page-featured-content.other-articles .inner-container {
+	margin: auto;
+}
+
+.view-front-page-featured-content.other-articles a .featured-content-title {
+	background-color: #f0f0f0;
+}
+
+.view-front-page-featured-content.other-articles a:hover .featured-content-title {
+	background-color: #e0e0e0;
+}
+
+.view-front-page-featured-content.other-articles {
+	margin-bottom: 30px;
+}
+
+@media only screen and (min-width: 1200px) {
+	.view-front-page-featured-content.other-articles {
+		margin-bottom: 60px;
+	}
+}
+
+/* Mobile display of top items */
+@media only screen and (max-width: 767px) {
+	.view-front-page-featured-content.other-articles .views-bootstrap-grid-plugin-style .row > div {
+		margin-bottom: 15px;
+	}
+	.view-front-page-featured-content.other-articles .view-content .views-bootstrap-grid-plugin-style {
+		margin-bottom: -30px;
+	}
+	.view-front-page-featured-content.other-articles .view-content .views-bootstrap-grid-plugin-style a {
+		display: flex;
+	}
+	.view-front-page-featured-content.other-articles .views-bootstrap-grid-plugin-style .featured-content-image {
+		display: inline-flex;
+	}
+	.view-front-page-featured-content.other-articles
+		.views-bootstrap-grid-plugin-style
+		.featured-content-image
+		picture {
+		display: inline-flex;
+		width: 120px;
+		height: 100%;
+	}
+	.view-front-page-featured-content.other-articles .views-bootstrap-grid-plugin-style .featured-content-image img {
+		border-radius: $border-radius-general 0 0 10px;
+		-webkit-border-radius: $border-radius-general 0 0 10px;
+		-moz-border-radius: $border-radius-general 0 0 10px;
+	}
+	.view-front-page-featured-content.other-articles .views-bootstrap-grid-plugin-style .featured-content-title {
+		display: inline-flex;
+		font-size: 14px;
+		line-height: 16px;
+		padding: 10px;
+		height: 74px;
+		width: 100%;
+		border-radius: 0 10px 10px 0;
+		-webkit-border-radius: 0 10px 10px 0;
+		-moz-border-radius: 0 10px 10px 0;
+	}
+}
+
+@media only screen and (max-width: 419px) {
+	.view-front-page-featured-content.other-articles .views-bootstrap-grid-plugin-style .featured-content-title {
+		height: 135px;
+	}
+}
+
+/*
+ * Mapping icons
+ * Where will your next cycling adventure take you?
+ *
+ * Plus video player icons
+ */
+
+body.front .main-container .region-content section:nth-last-child(2) {
+	margin-bottom: 0;
+}
+
+#mapping-icons {
+	background-position: bottom center;
+	background-size: cover;
+	text-align: center;
+	position: relative;
+	padding: 10px;
+	color: $white;
+	margin: 0 -15px 60px -15px !important;
+	z-index: 0;
+}
+
+.webp #mapping-icons {
+	background-image: url("/sites/all/themes/cyclingukxl/images/hero/Max_Darkins_Scotland_003_edit_sm.webp");
+}
+.no-webp #mapping-icons {
+	background-image: url("/sites/all/themes/cyclingukxl/images/hero/Max_Darkins_Scotland_003_edit_sm.jpg");
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+	.webp #mapping-icons {
+		background-image: url("/sites/all/themes/cyclingukxl/images/hero/Max_Darkins_Scotland_003_edit_md.webp");
+	}
+	.no-webp #mapping-icons {
+		background-image: url("/sites/all/themes/cyclingukxl/images/hero/Max_Darkins_Scotland_003_edit_md.jpg");
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.webp #mapping-icons {
+		background-image: url("/sites/all/themes/cyclingukxl/images/hero/Max_Darkins_Scotland_003_edit_lg.webp");
+	}
+	.no-webp #mapping-icons {
+		background-image: url("/sites/all/themes/cyclingukxl/images/hero/Max_Darkins_Scotland_003_edit_lg.jpg");
+	}
+}
+
+#mapping-icons .background-tint {
+	background-color: rgba(0, 0, 0, 0.1);
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	z-index: -1;
+}
+
+#mapping-icons h2 {
+	font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 400;
+	font-size: 30px;
+	color: $white;
+	line-height: 36px;
+	margin-top: 0;
+}
+
+#mapping-icons h3 {
+	font-size: 16px;
+	line-height: 22px;
+	color: $white;
+	margin-top: 0;
+	margin-bottom: 30px;
+}
+
+#main-video .icon,
+#mapping-icons .icon {
+	margin-bottom: 30px;
+}
+
+#main-video i,
+#mapping-icons i {
+	font-size: 44px;
+	line-height: 92px;
+}
+
+#main-video .btn-standard,
+#mapping-icons .btn-standard {
+	height: 94px;
+	min-width: 94px;
+	margin-bottom: 10px;
+}
+
+#main-video .icon-label,
+#mapping-icons .icon-label {
+	font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 16px;
+	height: 32px;
+}
+
+@media only screen and (min-width: 450px) {
+	#mapping-icons {
+		padding: 30px;
+	}
+	#main-video i,
+	#mapping-icons i {
+		font-size: 72px;
+		line-height: 138px;
+	}
+	#main-video .btn-standard,
+	#mapping-icons .btn-standard {
+		height: 140px;
+		min-width: 140px;
+	}
+}
+
+/*
+ * Main video player
+ */
+
+/* 2021 Strapline! */
+
+.main-video-block h2.block-title {
+	color: $black;
+	font-size: 60px;
+	line-height: 60px;
+	margin-top: 0;
+	margin-bottom: 30px;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+@media only screen and (max-width: 767px) {
+	.main-video-block h2.block-title {
+		font-size: 36px;
+		line-height: 36px;
+		margin-top: 60px;
+	}
+}
+
+.main-video-block {
+	text-align: center;
+	margin: 0 -15px -440px -15px !important;
+	position: relative;
+}
+
+.main-video-block .video-player {
+	margin: 0 auto 30px auto;
+	max-width: 1400px;
+}
+
+.main-video-block #youtube-field-player:before {
+	content: "";
+	display: block;
+	max-width: 100%;
+	background-color: #eee;
+	background-repeat: no-repeat;
+	background-size: 100%;
+	padding-top: 55.375%;
+}
+
+.webp .main-video-block #youtube-field-player:before {
+	background-image: url("/sites/all/themes/cyclingukxl/images/hero/main-video-thumbnail-sm.webp");
+}
+.no-webp .main-video-block #youtube-field-player:before {
+	background-image: url("/sites/all/themes/cyclingukxl/images/hero/main-video-thumbnail-sm.jpg");
+}
+
+@media only screen and (min-width: 768px) {
+	.webp .main-video-block #youtube-field-player:before {
+		background-image: url("/sites/all/themes/cyclingukxl/images/hero/main-video-thumbnail-lg.webp");
+	}
+	.no-webp .main-video-block #youtube-field-player:before {
+		background-image: url("/sites/all/themes/cyclingukxl/images/hero/main-video-thumbnail-lg.jpg");
+	}
+}
+
+.main-video-block #youtube-field-player img {
+	display: none;
+}
+
+.main-video-block .background-tint {
+	background-color: $blue;
+	background-image: url("/sites/all/themes/cyclingukxl/images/system/winged-wheel-tint-alt.png");
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+	top: -500px;
+	height: 500px;
+	z-index: 0;
+}
+
+.background-colour-blue .background-tint {
+	background-color: $blue;
+}
+.background-colour-pink .background-tint {
+	background-color: $pink;
+}
+
+.webp .main-video-block .background-tint {
+	background-image: url("/sites/all/themes/cyclingukxl/images/hero/winged-wheel-tint-sm.webp");
+}
+.no-webp .main-video-block .background-tint {
+	background-image: url("/sites/all/themes/cyclingukxl/images/hero/winged-wheel-tint-sm.png");
+}
+.webp .tint-winged-wheel .background-tint {
+	background-image: url("/sites/all/themes/cyclingukxl/images/hero/winged-wheel-tint-sm.webp");
+}
+.no-webp .tint-winged-wheel .background-tint {
+	background-image: url("/sites/all/themes/cyclingukxl/images/hero/winged-wheel-tint-sm.png");
+}
+.webp .tint-womens-festival .background-tint {
+	background-image: url("/sites/all/themes/cyclingukxl/images/hero/womens-festival-sm.webp");
+}
+.no-webp .tint-womens-festival .background-tint {
+	background-image: url("/sites/all/themes/cyclingukxl/images/hero/womens-festival-tint-sm.png");
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+	.main-video-block {
+		margin: 0 -15px -300px -15px !important;
+	}
+	.main-video-block .background-tint {
+		top: -360px;
+		height: 360px;
+	}
+	.webp .main-video-block .background-tint {
+		background-image: url("/sites/all/themes/cyclingukxl/images/hero/winged-wheel-tint-md.webp");
+	}
+	.no-webp .main-video-block .background-tint {
+		background-image: url("/sites/all/themes/cyclingukxl/images/hero/winged-wheel-tint-md.png");
+	}
+	.webp .tint-winged-wheel .background-tint {
+		background-image: url("/sites/all/themes/cyclingukxl/images/hero/winged-wheel-tint-md.webp");
+	}
+	.no-webp .tint-winged-wheel .background-tint {
+		background-image: url("/sites/all/themes/cyclingukxl/images/hero/winged-wheel-tint-md.png");
+	}
+	.webp .tint-womens-festival .background-tint {
+		background-image: url("/sites/all/themes/cyclingukxl/images/hero/womens-festival-tint-md.webp");
+	}
+	.no-webp .tint-womens-festival .background-tint {
+		background-image: url("/sites/all/themes/cyclingukxl/images/hero/womens-festival-tint-md.png");
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.main-video-block {
+		margin: 0 -15px -300px -15px !important;
+	}
+	.main-video-block .background-tint {
+		top: -360px;
+		height: 360px;
+	}
+	.webp .main-video-block .background-tint {
+		background-image: url("/sites/all/themes/cyclingukxl/images/hero/winged-wheel-tint-lg.webp");
+	}
+	.no-webp .main-video-block .background-tint {
+		background-image: url("/sites/all/themes/cyclingukxl/images/hero/winged-wheel-tint-lg.png");
+	}
+	.webp .tint-winged-wheel .background-tint {
+		background-image: url("/sites/all/themes/cyclingukxl/images/hero/winged-wheel-tint-lg.webp");
+	}
+	.no-webp .tint-winged-wheel .background-tint {
+		background-image: url("/sites/all/themes/cyclingukxl/images/hero/winged-wheel-tint-lg.png");
+	}
+	.webp .tint-womens-festival .background-tint {
+		background-image: url("/sites/all/themes/cyclingukxl/images/hero/womens-festival-tint-lg.webp");
+	}
+	.no-webp .tint-womens-festival .background-tint {
+		background-image: url("/sites/all/themes/cyclingukxl/images/hero/womens-festival-tint-lg.png");
+	}
+}
+
+.main-video-block .inner-wrapper {
+	color: $white;
+	position: relative;
+	bottom: 0;
+	z-index: 1;
+}
+
+/*
+ * Support cycling
+ * Join today / renew membership CTA
+ */
+
+.support_cycling {
+	margin: 0 -15px 0 -15px;
+	padding: 50px 20px;
+	background-position: center center;
+	background-size: cover;
+}
+
+@media only screen and (max-width: 767px) {
+	.support_cycling:before {
+		display: block;
+		content: "";
+		width: 100%;
+		height: 400px;
+		background-position: top center;
+		background-size: cover;
+		border-radius: $border-radius-general 10px 0 0;
+		-webkit-border-radius: $border-radius-general 10px 0 0;
+		-moz-border-radius: $border-radius-general 10px 0 0;
+	}
+	.webp .support_cycling:before {
+		background-image: url("/sites/all/themes/cyclingukxl/images/hero/JulieSkelton_Gilkerson_Family_Guildford_2017_16_edit_sm.webp");
+	}
+	.no-webp .support_cycling:before {
+		background-image: url("/sites/all/themes/cyclingukxl/images/hero/JulieSkelton_Gilkerson_Family_Guildford_2017_16_edit_sm.jpg");
+	}
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+	.webp .support_cycling {
+		background-image: url("/sites/all/themes/cyclingukxl/images/hero/JulieSkelton_Gilkerson_Family_Guildford_2017_16_edit_md.webp");
+	}
+	.no-webp .support_cycling {
+		background-image: url("/sites/all/themes/cyclingukxl/images/hero/JulieSkelton_Gilkerson_Family_Guildford_2017_16_edit_md.jpg");
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.webp .support_cycling {
+		background-image: url("/sites/all/themes/cyclingukxl/images/hero/JulieSkelton_Gilkerson_Family_Guildford_2017_16_edit_lg.webp");
+	}
+	.no-webp .support_cycling {
+		background-image: url("/sites/all/themes/cyclingukxl/images/hero/JulieSkelton_Gilkerson_Family_Guildford_2017_16_edit_lg.jpg");
+	}
+}
+
+.support_cycling h2.block-title {
+	display: none;
+}
+
+.support_cycling .panel {
+	background-color: $purple;
+	color: $white;
+	padding: 20px;
+	border-radius: 0 0 10px 10px;
+	-webkit-border-radius: 0 0 10px 10px;
+	-moz-border-radius: 0 0 10px 10px;
+	margin-bottom: 0;
+	text-align: center;
+}
+
+.support_cycling h2 {
+	font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 400;
+	font-size: 30px;
+	line-height: 36px;
+	margin: 0 auto 14px auto;
+	color: $white;
+}
+
+hr {
+	border: none;
+	width: 120px;
+	height: 5px;
+	border-radius: 2.5px;
+	-webkit-border-radius: 2.5px;
+	-moz-border-radius: 2.5px;
+	background-color: $yellow;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.support-cycling-reasons {
+	font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 400;
+	font-size: 20px;
+	line-height: 20px;
+	margin-top: 20px;
+	margin-bottom: 15px;
+}
+
+.support-cycling-reasons p {
+	margin-bottom: 20px;
+}
+
+.support-cycling-reasons ul {
+	padding-left: 25px;
+	text-align: left;
+}
+
+.support-cycling-reasons li {
+	margin-bottom: 10px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid $white;
+}
+
+.support-cycling-reasons li:last-child {
+	border-bottom: none;
+}
+
+.support-cycling-reasons ul li:before {
+	display: inline-block;
+	font-family: "Font Awesome 5 Pro";
+	font-weight: 200;
+	content: "\f00c";
+	width: 20px;
+	margin: 0 5px 0 -25px;
+	color: $yellow;
+}
+
+.support_cycling .btn {
+	min-width: 130px;
+	margin: 5px;
+}
+
+@media only screen and (min-width: 768px) {
+	.support_cycling:before {
+		content: inherit;
+		background-image: inherit;
+	}
+	.support_cycling .panel {
+		border-radius: $border-radius-general;
+		-webkit-border-radius: $border-radius-general;
+		-moz-border-radius: $border-radius-general;
+		text-align: inherit;
+		-webkit-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+		-moz-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+		box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+	}
+	hr {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.support_cycling .btn {
+		margin: 5px 10px 5px 0;
+	}
+}
+
+/*
+ * Event search
+ */
+
+#event-search {
+	background-position: center top;
+	background-size: cover;
+	height: 500px;
+	text-align: center;
+	position: relative;
+	margin: 0 -15px 60px -15px;
+}
+
+.webp #event-search {
+	background-image: url("/sites/all/themes/cyclingukxl/images/hero/front-event-search-sm.webp");
+}
+.no-webp #event-search {
+	background-image: url("/sites/all/themes/cyclingukxl/images/hero/front-event-search-sm.jpg");
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
+	.webp #event-search {
+		background-image: url("/sites/all/themes/cyclingukxl/images/hero/front-event-search-md.webp");
+	}
+	.no-webp #event-search {
+		background-image: url("/sites/all/themes/cyclingukxl/images/hero/front-event-search-md.jpg");
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.webp #event-search {
+		background-image: url("/sites/all/themes/cyclingukxl/images/hero/front-event-search-lg.webp");
+	}
+	.no-webp #event-search {
+		background-image: url("/sites/all/themes/cyclingukxl/images/hero/front-event-search-lg.jpg");
+	}
+}
+
+#event-search .background-tint {
+	background-color: rgba(0, 0, 0, 0.7);
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+}
+
+#event-search h2 {
+	font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: $white;
+	font-weight: 400;
+	font-size: 30px;
+	line-height: 36px;
+	margin-top: 0;
+	margin-bottom: 10px;
+}
+
+#event-search .search-form > section {
+	margin: 0;
+}
+
+#event-search .search-form-container {
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	text-align: center;
+	padding: 20px;
+}
+
+#event-search .form-type-geofield-proximity {
+	margin: 0;
+}
+
+#event-search #edit-secondary-wrapper {
+	display: none;
+}
+
+#event-search #edit-geo-wrapper.views-exposed-widget {
+	float: inherit;
+	display: flex;
+	justify-content: center;
+	margin: 0;
+}
+
+#event-search #edit-geo {
+	display: inherit;
+	text-align: center;
+}
+
+#event-search .form-item-geo-distance {
+	display: block;
+	margin: 0 0 10px 0;
+}
+
+#event-search .form-item-geo-unit {
+	display: block;
+	width: 100%;
+	padding: 0;
+	margin: 0 0 10px 0;
+}
+
+#event-search .geofield-proximity-origin-from {
+	display: block;
+	width: 100%;
+	color: $white;
+	padding: 0;
+	margin: 0 0 10px;
+}
+
+#event-search .form-item-geo-origin {
+	display: block;
+	margin: 0 0 10px 0;
+}
+
+#event-search .views-exposed-widget {
+	display: inline-block;
+	float: inherit;
+	padding: 0;
+	margin: 0 5px;
+}
+
+#event-search .views-exposed-widget .btn {
+	margin: 5px 0 0 0;
+}
+
+@media only screen and (min-width: 500px) {
+	#event-search .background-tint {
+		height: 185px;
+	}
+	#event-search #edit-geo {
+		display: flex;
+	}
+	#event-search .form-item-geo-distance {
+		display: flex;
+		flex: 0;
+		-webkit-flex: 0;
+		-ms-flex: 0;
+		width: 70px;
+		min-width: 70px;
+		max-width: 70px;
+		padding: 0;
+		margin: 0 10px 10px 0;
+	}
+	#event-search .form-item-geo-unit {
+		display: flex;
+		flex: 0;
+		-webkit-flex: 0;
+		-ms-flex: 0;
+		width: 150px;
+		min-width: 150px;
+		max-width: 150px;
+		padding: 0;
+		margin: 0 10px 10px 0;
+	}
+	#event-search .geofield-proximity-origin-from {
+		display: flex;
+		width: inherit;
+		padding: 0;
+		padding-top: 11px;
+		margin-right: 10px;
+	}
+	#event-search .form-item-geo-origin {
+		display: flex;
+		flex: 1;
+		-webkit-flex: 1;
+		-ms-flex: 1;
+		padding: 0;
+		margin: 0 0 10px 0;
+	}
+}
+
+@media (min-width: 1600px) {
+	body.front .container {
+		max-width: 1800px;
+		width: 100%;
+	}
+}
+@media only screen and (min-width: 1600px) {
+	body.front .carousel-triplet {
+		max-width: 1800px;
+		width: 100% !important;
+	}
+}
+
+body.front .carousel-triplet {
+	left: 0px !important;
+}
+
+@media only screen and (max-width: 767px) {
+	.view-front-page-featured-content.other-articles .views-bootstrap-grid-plugin-style .featured-content-image picture,
+	.view-front-page-news-carousel .views-bootstrap-grid-plugin-style .image picture {
+		display: inline-flex;
+		width: 180px !important;
+		height: 120px !important;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.view-front-page-news-carousel .views-bootstrap-grid-plugin-style span.image {
+		display: inline-flex;
+		width: 180px !important;
+	}
+}
+@media only screen and (max-width: 479px) {
+	.view-front-page-news-carousel .views-bootstrap-grid-plugin-style span.image {
+		display: inline-flex;
+		width: 120px !important;
+	}
+}
+@media only screen and (max-width: 479px) {
+	.view-front-page-featured-content.other-articles .views-bootstrap-grid-plugin-style .featured-content-image picture,
+	.view-front-page-news-carousel .views-bootstrap-grid-plugin-style .image picture {
+		width: 120px !important;
+		height: 120px !important;
+	}
+}
+@media only screen and (max-width: 767px) {
+	.view-front-page-featured-content.other-articles .views-bootstrap-grid-plugin-style .featured-content-title,
+	.view-front-page-news-carousel .views-bootstrap-grid-plugin-style .title {
+		height: 120px !important;
+	}
+}
+
+/* from previous front inject rule */
+
+/* Reset of Mobile display of latest news and events */
+/*
+@media only screen and (max-width: 767px) {
+	.view-front-page-featured-events-carousel .views-bootstrap-grid-plugin-style span.terms,
+	.view-front-page-featured-events-carousel .views-bootstrap-grid-plugin-style span.yellow-line {
+		display: none;
+	}
+
+	.view-front-page-featured-events-carousel .views-bootstrap-grid-plugin-style span.image {
+		display: block;
+	}
+	.view-front-page-featured-events-carousel.carousel-triplet.event .image {
+		top: 0;
+	}
+}
+
+@media only screen and (max-width: 479px) {
+	.view-front-page-featured-events-carousel .views-bootstrap-grid-plugin-style span.image {
+		height: 115px;
+	}
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+	.view-front-page-featured-events-carousel .views-bootstrap-grid-plugin-style span.image {
+		height: 85px;
+	}
+}
+*/

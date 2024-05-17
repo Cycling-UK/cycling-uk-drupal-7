@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * Code for the Internal adverts 2022 feature.
+ */
+
+include_once 'internal_adverts_2022.features.inc';

@@ -1,0 +1,12 @@
+name = 'No Referrer test module'
+type = module
+description = 'Support module for No Referrer tests.'
+package = Testing
+core = 7.x
+hidden = TRUE
+
+; Information added by Drupal.org packaging script on 2022-11-17
+version = "7.x-1.11"
+core = "7.x"
+project = "noreferrer"
+datestamp = "1668671468"

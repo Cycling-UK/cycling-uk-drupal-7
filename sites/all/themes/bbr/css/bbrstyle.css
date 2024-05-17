@@ -1,0 +1,147 @@
+/**
+ * Big Bike Revival subtheme
+ */
+
+header#navbar a.logo img {
+	width: 145px;
+	height: auto;
+}
+
+@media only screen and (max-width : 767px) {
+	header#navbar a.logo img {
+		width: 120px;
+		height: auto;
+	}
+}
+
+.full-width-menu-container {
+	height: 206px;
+}
+
+
+
+/*
+ * Big Bike Revival registration infographic
+ */
+
+#bbr-register-events-steps {
+	padding: 30px;
+	border-radius: 15px;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	background-color: #f0f0f0;
+}
+
+#bbr-register-events-steps .inner-wrapper {
+	width: 500px;
+	margin: 0 auto;
+}
+
+#bbr-register-events-steps .step {
+	margin-bottom: 10px;
+}
+
+#bbr-register-events-steps .step-1 .icon-wrapper,
+#bbr-register-events-steps .step-2 .icon-wrapper,
+#bbr-register-events-steps .step-3 .icon-wrapper {
+	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 400;
+	font-size: 24px;
+	line-height: 28px;
+	text-align: center;
+	padding: 14px;
+	width: 60px;
+}
+
+#bbr-register-events-steps a.btn {
+	width: 360px;
+}
+
+#bbr-register-events-steps .step-4 i,
+#bbr-register-events-steps .step-5 i {
+	text-align: center;
+	font-size: 28px;
+	line-height: 28px;
+	padding: 14px;
+	width: 60px;
+}
+
+/* Nudge wide group icon to centre of icon circle */
+#bbr-register-events-steps .step-4 i:before {
+	position: relative;
+	left: -2px;
+}
+
+#bbr-register-events-steps .icon-wrapper,
+#bbr-register-events-steps i {
+	border: 1px solid #000;
+	border-radius: 30px;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;	
+}
+
+#bbr-register-events-steps .icon {
+	display: inline-flex;
+	vertical-align: middle;
+	width: 60px;
+	margin-right: 20px;
+}
+
+#bbr-register-events-steps .text {
+	display: inline-flex;
+	vertical-align: middle;
+	width: 400px;
+}
+
+#bbr-register-events-steps .divider {
+	content: "";
+	display: block;
+	height: 5px;
+	width: 140px;
+	border-radius: 2.5px;
+	-webkit-border-radius: 2.5px;
+	-moz-border-radius: 2.5px;	
+	background-color: #fbb040;
+	margin: 30px auto;
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+	#bbr-register-events-steps .inner-wrapper {
+		width: 480px;
+	}
+	#bbr-register-events-steps .text {
+		width: 390px;
+	}
+}
+
+@media screen and (min-width: 680px) and (max-width: 767px) {
+	#bbr-register-events-steps .text {
+		width: 370px;
+	}
+}
+
+@media screen and (max-width: 679px) {
+	#bbr-register-events-steps .inner-wrapper {
+		width: inherit;
+	}
+	#bbr-register-events-steps .step {
+		margin-bottom: 30px;
+	}
+	#bbr-register-events-steps .icon {
+		display: block;
+		vertical-align: inherit;
+		margin: 0 auto 10px;
+	}
+	#bbr-register-events-steps .text {
+		display: block;
+		width: 100%;
+		text-align: center;
+	}
+	#bbr-register-events-steps a.btn {
+		width: inherit;
+		white-space: inherit;
+		line-height: 18px;
+		padding: 10px 20px;
+	}
+}
+

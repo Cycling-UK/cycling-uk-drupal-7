@@ -1,0 +1,518 @@
+/**
+ * Bike Week subtheme
+ */
+
+
+
+/*
+ * Layout
+ */
+
+.full-width-menu-container {
+	height: 215px;
+}
+
+/*
+@media only screen and (max-width : 767px) {
+	.full-width-menu-container {
+		height: 166px;
+	}
+}
+*/
+
+
+
+/*
+ * Typography
+ */
+
+body {
+	color: #3b3b3a;
+}
+
+.page-layout-post .field-name-title h1,
+.page-layout-post .field-name-field-teaser,
+.page-layout-post h2,
+.page-layout-post .field-label {
+	font-family: 'itc-american-typewriter',Georgia,serif;
+	font-weight: 500;
+}
+
+.page-layout-post h2,
+.page-layout-post .field-label {
+	color: #bc1521;
+}
+
+.page-layout-post .field-name-title::before {
+    background-color: #bc1521;
+}
+
+.node-type-landing-page .field-name-field-teaser {
+    color: #3b3b3a;
+}
+
+.node-type-landing-page .field-name-title h1 {
+	display: initial;
+	font-family: 'itc-american-typewriter',Georgia,serif;
+	font-weight: 500;
+    font-size: 60px;
+    line-height: 70px;
+    text-shadow: inherit;
+	/* background-color: #bc1521; */
+    background-color: inherit;
+    padding: 0px 20px 5px 20px;
+     -webkit-box-decoration-break: clone;
+	 box-decoration-break: clone;
+}
+
+@media only screen and (min-width : 992px) and (max-width : 1199px) {.node-type-landing-page .field-name-title h1 {font-size: 50px; line-height: 60px;}}
+@media only screen and (min-width : 768px) and (max-width :  991px) {.node-type-landing-page .field-name-title h1 {font-size: 40px; line-height: 50px;}}
+@media only screen 						   and (max-width :  767px) {.node-type-landing-page .field-name-title h1 {font-size: 30px; line-height: 40px;}}
+
+@-moz-document url-prefix() {
+    .node-type-landing-page .field-name-title h1 {padding: 10px 20px 5px 20px;}
+}
+
+.node-type-landing-page .field-name-field-teaser::after {
+    background-color: #bc1521;
+}
+
+.node-type-landing-page h2,
+.node-type-landing-page .view.listing-page h2.title,
+.node-type-landing-page .field-type-viewreference h2,
+.node-type-landing-page .field-name-field-links .field-label, 
+.node-type-landing-page .field-name-field-attachments .field-label {
+	font-family: 'itc-american-typewriter',Georgia,serif;
+	font-weight: 500;
+    text-shadow: inherit;
+}
+
+
+
+/*
+ * Main menu
+ */
+
+/* Hide parent items - why are these showing?! */
+header#page-header p.lead,
+header#navbar .navbar-header a.navbar-brand,
+header#navbar nav > ul.navbar-nav {
+	display: none;
+}
+
+/* Hide adverts */
+.field-name-advert-1,
+.field-name-advert-2,
+.field-name-advert-3,
+.field-name-advert-4,
+.field-name-advert-5 {
+	display: none;
+}
+
+
+
+/*
+ * Search
+ */
+
+.search-block {
+	top: 26px;
+}
+
+.search-block .form-control {
+    border: 1px solid #bc1521;
+}
+
+
+
+/*
+ * Coloured text and lines
+ * These are OVERRIDES to the parent Cycling UK theme so what was originally declared as one colour is now a different colour for Bike Week
+ */
+
+span.yellow-text 	{color: #009ee1;}				/* Yellow is now BLUE   for Bike Week */
+span.blue-text 		{color: #bc1512;}				/* Blue   is now RED   for Bike Week */
+span.purple-text 	{color: #009ee1;}				/* Purple is now BLUE  for Bike Week */
+
+span.yellow-line 	{background-color: #bc1512;}	/* Yellow is now RED  for Bike Week */
+span.purple-line 	{background-color: #009ee1;}	/* Yellow is now BLUE for Bike Week */
+
+
+
+/*
+ * Carousels
+ */
+
+.carousel-triplet .view-header {
+    font-family: 'itc-american-typewriter',Georgia,serif;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 36px;
+}
+
+
+
+/*
+ * Child pages
+ */
+
+.view.child-list .title {
+    font-family: 'itc-american-typewriter',Georgia,serif;
+    font-weight: 500;
+}
+
+.view.child-list .btn-transparent {
+    border-color: #006633;
+}
+
+.view.child-list a:hover .btn,
+.view.child-list a:active .btn {
+    background-color: #006633;
+}
+
+
+
+
+/*
+ * Share
+ */
+
+
+.shariff li a {
+    background-color: #bc1512 !important;
+}
+
+.shariff li a:hover {
+    background-color: #009ee1 !important;
+}
+
+
+/*
+ * Footer
+ */
+ 
+.footer {
+    background-color: #3b3b3a;
+}
+
+span.yellow-text {
+    color: #fff; 	/* Yup, it's white! */
+    font-weight: 600;
+}
+
+#scroll_top {
+    font-family: 'itc-american-typewriter',Georgia,serif;
+    font-weight: 500;
+}
+
+.scroll-button {
+    background-image: url("../images/footer/bw-back-to-top.png");
+    width: 105px;
+}
+
+ul.footer-links a:hover {
+    color: #bc1512;
+    text-decoration: underline;
+}
+
+
+
+/*
+ * Promo boxes
+ *
+ * BASIC:	.promobox
+ * COLOUR:	.promobox-purple
+ * FONT:	.promobox-font-cocon .promobox-font-karla <-- DECLARE ITC-AMERICAN-TYPEWRITER FOR BIKE WEEK!!
+ * LIST:	.promobox-list
+ *
+ */
+
+.promobox {
+	color: #fff;
+}
+
+.promobox-purple .bottom-container {
+	background-color: #3b3b3a;
+}
+
+.promobox-font-cocon,
+.promobox-title {
+    font-family: 'itc-american-typewriter',Georgia,serif;
+}
+
+.promobox-list ul li {
+    background: url("../images/system/bw-red-tick.png") no-repeat scroll 0 4px;
+}
+
+
+
+/*
+ * Landing pages
+ */
+
+.join-quote {
+    background-color: #bc1512;
+}
+
+
+
+/*
+ * Social media join buttons on Promote page
+ */
+
+.promote-social-text,
+.promote-social-icons {
+    font-family: 'itc-american-typewriter',Georgia,serif;
+    font-size: 22px;
+    line-height: 28px;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+.promote-social-text strong {
+	color: #bc1512;
+}
+
+.promote-social-icons > div {
+	display: inline-block;
+	width: 200px;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	color: #fff;
+	margin: 10px;
+	padding: 20px 10px
+}
+
+.promote-block-twitter   {background-color: #55acee;}
+.promote-block-facebook  {background-color: #3b5999;}
+.promote-block-instagram {background-color: #e4405f;}
+.promote-block-strava    {background-color: #fc4c02;}
+
+.promote-block-icon {
+	font-size: 36px;
+	margin-bottom: 10px;
+}
+
+
+
+/* Tables
+ *
+ * These rules apply to properly structured tables WITH thead and tbody structures, i.e. are probably created by the CMS or by the web development team.
+ */
+
+.main-container table thead tr th,
+.main-container table thead tr td {
+	border-top: 1px solid #bc1512;
+	border-left: 1px solid #bc1512;
+}
+
+.main-container table thead th.active a {
+	color: #bc1512;
+}
+
+.main-container table thead {
+	border: 1px solid #bc1512;
+	background-color: #bc1512;
+    font-family: 'itc-american-typewriter',Georgia,serif;
+    font-weight: 500;
+}
+
+.table-striped > tbody > tr:nth-of-type(2n+1):hover {
+    background-color: rgba(188,21,18,0.1);
+}
+
+.main-container table tbody a {
+	color: #000;
+}
+
+
+
+/*
+ * Join today banner
+ */
+
+.join-today-banner {
+	 background-color: #bc1512;
+}
+
+.join-today-banner .text {
+    font-family: 'itc-american-typewriter',Georgia,serif;
+    font-weight: 500;
+	font-size: 24px;
+	line-height: 29px;
+	text-shadow: inherit;
+}
+
+.join-today-banner .btn.renew {
+	background-color: #fff;
+	border-color: #fff;
+	color: #000;
+    -webkit-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+}
+
+.join-today-banner .btn.join:hover,
+.join-today-banner .btn.renew:hover {
+	background-color: #006633;
+	border-color: #006633;
+	color: #fff;
+}
+
+.join-today-banner .narrow a {
+    font-family: 'itc-american-typewriter',Georgia,serif;
+    font-weight: 500;
+	text-shadow: inherit;
+}
+
+
+
+/*
+ * Views
+ */
+ 
+ /* Hide the mysterious repeating views filter from above the search results */
+.view-display-id-bw_events_block > .view-filters {
+	display: none;
+}	
+
+
+
+/*
+ * Bike Week registration infographic
+ */
+
+#bikeweek-register-events-steps {
+	padding: 30px;
+	border-radius: 15px;
+	-webkit-border-radius: 15px;
+	-moz-border-radius: 15px;
+	background-color: #f0f0f0;
+}
+
+#bikeweek-register-events-steps .inner-wrapper {
+	width: 500px;
+	margin: 0 auto;
+	padding: 40px 20px;
+}
+
+#bikeweek-register-events-steps .step {
+	margin-bottom: 10px;
+}
+
+#bikeweek-register-events-steps .step-1 .icon-wrapper,
+#bikeweek-register-events-steps .step-2 .icon-wrapper,
+#bikeweek-register-events-steps .step-3 .icon-wrapper {
+    font-family: 'itc-american-typewriter',Georgia,serif;
+	font-weight: 500;
+	font-size: 24px;
+	line-height: 24px;
+	text-align: center;
+	padding: 17px 14px;
+	width: 60px;
+}
+
+#bikeweek-register-events-steps a.btn {
+	width: 360px;
+}
+
+#bikeweek-register-events-steps .step-4 i,
+#bikeweek-register-events-steps .step-5 i,
+#bikeweek-register-events-steps .step-6 i {
+	text-align: center;
+	font-size: 28px;
+	line-height: 28px;
+	padding: 14px;
+	width: 60px;
+}
+
+#bikeweek-register-events-steps .icon-wrapper,
+#bikeweek-register-events-steps i {
+	border: 1px solid #000;
+	border-radius: 30px;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;	
+}
+
+#bikeweek-register-events-steps .icon {
+	display: inline-flex;
+	vertical-align: middle;
+	width: 60px;
+	height: 60px;
+	margin-right: 20px;
+}
+
+#bikeweek-register-events-steps .text {
+	display: inline-flex;
+	vertical-align: middle;
+	width: 360px;
+}
+
+#bikeweek-register-events-steps .divider {
+	content: "";
+	display: block;
+	height: 5px;
+	width: 140px;
+	border-radius: 2.5px;
+	-webkit-border-radius: 2.5px;
+	-moz-border-radius: 2.5px;	
+	background-color: #006633;
+	margin: 30px auto;
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+	#bikeweek-register-events-steps .inner-wrapper {
+		width: 480px;
+	}
+	#bikeweek-register-events-steps .text {
+		width: 350px;
+	}
+}
+
+@media screen and (min-width: 680px) and (max-width: 767px) {
+	#bikeweek-register-events-steps .text {
+		width: 370px;
+	}
+}
+
+@media screen and (max-width: 679px) {
+	#bikeweek-register-events-steps .inner-wrapper {
+		width: inherit;
+	}
+	#bikeweek-register-events-steps .step {
+		margin-bottom: 30px;
+	}
+	#bikeweek-register-events-steps .icon {
+		display: block;
+		vertical-align: inherit;
+		margin: 0 auto 10px;
+	}
+	#bikeweek-register-events-steps .text {
+		display: block;
+		width: 100%;
+		text-align: center;
+	}
+	#bikeweek-register-events-steps a.btn {
+		width: inherit;
+		white-space: inherit;
+		line-height: 18px;
+		padding: 10px 20px;
+	}
+}
+
+
+
+/*
+ * Car vs Bike Omnicalculator
+ */
+
+@media screen and (max-width: 767px) {
+  #omni-mobile {display: inherit;}
+  #omni-desktop {display: none;}
+}
+
+@media screen and (min-width: 768px) {
+  #omni-mobile {display: none;}
+  #omni-desktop {display: inherit;}
+}

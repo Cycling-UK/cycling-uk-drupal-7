@@ -1,0 +1,79 @@
+.hero-advert .title {
+	font-family: 'itc-american-typewriter',Georgia,serif;
+	font-weight: 500;
+	color: #bc1512;
+}
+
+.hero-carousel .title {
+	font-family: 'itc-american-typewriter',Georgia,serif;
+	font-weight: 500;
+}
+
+.hero-advert .subtitle {
+	font-family: 'itc-american-typewriter',Georgia,serif;
+	font-weight: 500;
+}
+
+
+
+/*
+ * Carousel dropdown element
+ */
+
+.select-wrapper .text,
+.field-name-field-markup .text,
+.select-wrapper .divider,
+.select-wrapper input {
+    background-color: rgba(188,21,33,0.88);
+}
+
+.select-wrapper .divider .bar {
+    background-color: #fff;
+}
+
+.select-wrapper input:hover,
+.select-wrapper input:focus {
+    background-color: rgba(59,59,58,0.88);	
+}
+
+.select-wrapper input:active {
+    background-color: rgba(59,59,58,1);
+}
+
+
+
+/*
+ * Easydropdown overrides on Metro theme
+ */
+
+.main-container .hero-carousel .dropdown .selected,
+.main-container .hero-carousel .dropdown li,
+.field-name-field-markup .dropdown .selected,
+.field-name-field-markup .dropdown li {
+	background-color: rgba(188,21,33,0.88);
+}
+
+.main-container .hero-carousel .dropdown:hover,
+.main-container .hero-carousel .dropdown.focus.open,
+.field-name-field-markup .dropdown:hover,
+.field-name-field-markup .dropdown.focus.open {
+	background-color: rgba(188,21,33,1);	
+}
+
+.hero-carousel form.jump-menu .dropdown div,
+.field-name-field-markup form.jump-menu .dropdown div {
+    background-color: #595958;
+}
+
+.hero-carousel form.jump-menu .dropdown li.focus,
+.field-name-field-markup form.jump-menu .dropdown li.focus {
+    color: rgba(255,255,255,1);
+	background-color: rgba(59,59,58,1);	
+}
+
+.main-container .hero-carousel .dropdown .carat,
+.field-name-field-markup .dropdown .carat {
+    background: url('../images/system/bw-drop-down-arrows.png') no-repeat;
+}
+
+

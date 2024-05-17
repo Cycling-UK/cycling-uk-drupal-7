@@ -1,0 +1,104 @@
+/*
+ * Styling for new style calls to actions that appear at the bottom of posts and paragraphs
+ */
+
+.cta {
+	display: flex;
+	max-width: 1170px;
+	margin: 30px auto 90px auto;
+	border-radius: $border-radius-general;
+	-webkit-border-radius: $border-radius-general;
+	-moz-border-radius: $border-radius-general;
+	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+	min-height: 200px;
+}
+
+.cta .inner-wrapper-text {
+	background-color: $white;
+	display: flex;
+	flex-shrink: 0;
+	flex-flow: column;
+	justify-content: center;
+	padding: 30px;
+	width: 410px;
+	border-radius: $border-radius-general;
+	-webkit-border-radius: $border-radius-general;
+	-moz-border-radius: $border-radius-general;
+}
+
+.cta .inner-wrapper-image {
+	display: flex;
+	flex-shrink: 1;
+	width: 100%;
+}
+
+.cta-title {
+	display: block;
+	font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-weight: 400;
+	font-size: 22px;
+	line-height: 27px;
+	margin-bottom: 10px;
+}
+
+.cta-text {
+	display: block;
+	margin-bottom: 10px;
+}
+
+.cta-link {
+	display: block;
+}
+
+.cta-link a {
+	color: #007faf;
+}
+
+.cta-image {
+  background-position: center center !important;
+  background-size: cover;
+  width: 100%;
+	border-radius: 0 10px 10px 0;
+	-webkit-border-radius: 0 10px 10px 0;
+	-moz-border-radius: 0 10px 10px 0;
+}
+
+
+
+@media only screen and (max-width: 991px) {
+	.cta {
+		flex-direction: column-reverse;
+	}
+	.cta .inner-wrapper-text {
+		width: 100%;
+		flex-shrink: inherit;
+		align-items: center;
+		text-align: center;
+	}
+	.cta .inner-wrapper-image {
+		flex-shrink: inherit;
+		height: 220px;
+	}
+	.cta-image {
+		border-radius: $border-radius-general 10px 0 0;
+		-webkit-border-radius: $border-radius-general 10px 0 0;
+		-moz-border-radius: $border-radius-general 10px 0 0;
+	}
+}
+
+
+
+@media only screen and (max-width: 767px) {
+	.new-cta-block {            /* This is set as a class on the block admin screen */
+		background-color: #eee;
+		margin: 75px -15px 0 -15px;
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+	.cta {
+		margin: 90px auto 90px auto;
+		max-width: 390px;
+	}
+}

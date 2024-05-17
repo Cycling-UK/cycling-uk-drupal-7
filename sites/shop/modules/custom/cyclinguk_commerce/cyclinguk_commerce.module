@@ -1,0 +1,1063 @@
+<?php
+
+/**
+ * @file
+ * Module file.
+ */
+
+/**
+ * Implements hook_permission().
+ */
+function cyclinguk_commerce_permission() {
+  return [
+    'administer cyclinguk_commerce module' => [
+      'title' => t('Administer cyclinguk_commerce module'),
+      'description' => t('Configure how this site connects to CARE.'),
+      'restrict access' => TRUE,
+    ],
+    'run cyclinguk_commerce CARE processing' => [
+      'title' => t('Run CARE processing on orders'),
+      'description' => t('Run or re-run CARE processing on orders from their Edit pages.'),
+      'restrict access' => TRUE,
+    ],
+  ];
+}
+
+/**
+ * Implements hook_menu().
+ */
+function cyclinguk_commerce_menu() {
+  $items = [];
+  $items['membership/renew'] = [
+    'title' => 'Renew Membership',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => ['cyclinguk_commerce_renew_blank_form'],
+    'file' => 'cyclinguk_commerce_renew_blank.inc',
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  ];
+  $items['membership/renew/%'] = [
+    'title' => 'Renew Membership',
+    'page callback' => 'cyclinguk_commerce_renew_membership',
+    'page arguments' => [2],
+    'file' => 'cyclinguk_commerce_renew.inc',
+    'access callback' => TRUE,
+    'type' => MENU_CALLBACK,
+  ];
+  $items['admin/commerce/config/cyclinguk'] = [
+    'title' => 'Cycling UK CARE integration',
+    'description' => 'Configure CARE integration for Commerce.',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => ['cyclinguk_commerce_settings_form'],
+    'file' => 'cyclinguk_commerce_settings_form.inc',
+    'access arguments' => ['administer cyclinguk_commerce module'],
+    'type' => MENU_NORMAL_ITEM,
+  ];
+  $items['admin/people/renewals-due/%'] = [
+    'title' => 'Renewal Due',
+    'page callback' => 'cyclinguk_commerce_renewals',
+    'page arguments' => [3],
+    'file' => 'cyclinguk_commerce_renewals.inc',
+    'access arguments' => ['administer cyclinguk_commerce module'],
+    'type' => MENU_NORMAL_ITEM,
+  ];
+  if (module_exists('commerce_order_ui')) {
+    $items['admin/commerce/orders/%commerce_order/edit/care_process'] = [
+      'title' => 'Run CARE processing',
+      'description' => 'Directly invokes the CARE processing rule action on the order.',
+      'page callback' => 'drupal_get_form',
+      'page arguments' => ['cyclinguk_commerce_care_process_form', 3],
+      'access arguments' => ['run cyclinguk_commerce CARE processing'],
+      'type' => MENU_LOCAL_ACTION,
+      'file' => 'includes/cyclinguk_commerce_care_process.inc',
+    ];
+  }
+
+  return $items;
+}
+
+/**
+ * Implements hook_form_alter().
+ *
+ * @param $form
+ * @param $form_state
+ * @param $form_id
+ *
+ * @throws \EntityMetadataWrapperException
+ */
+function cyclinguk_commerce_form_alter(&$form, &$form_state, $form_id) {
+  // drupal_set_message($form_id);
+  //if ($form_id == "commerce_cart_add_to_cart_form_61"  || $form_id == "commerce_cart_add_to_cart_form_391216") {
+  //  $form['submit']['#value'] = t('Donate');
+  //}
+
+  if ($form_id == 'commerce_line_item_page_line_item_edit_form' || substr($form_id, 0, 31) == 'commerce_cart_add_to_cart_form_') {
+    if (isset($form['line_item_fields']['field_gift'])) {
+      $show_for_gift = [
+        'visible' => [
+          ':input[name="line_item_fields[field_gift][und]"]' => [
+            'checked' => TRUE,
+          ],
+        ],
+      ];
+      $form['line_item_fields']['field_gift_occasion']['#states'] = $show_for_gift;
+      $form['line_item_fields']['field_gift_message']['#states'] = $show_for_gift;
+      $form['line_item_fields']['field_gift_start_date']['#states'] = $show_for_gift;
+      $form['line_item_fields']['field_send_starter_pack']['#states'] = $show_for_gift;
+    }
+    if (isset($form['line_item_fields']['field_promotional_code'])) {
+      $form['line_item_fields']['field_promotional_code']['#element_validate'] = ['cyclinguk_commerce_validate_promotional_code_field'];
+    }
+    if (isset($form['line_item_fields']['field_refering_members_number'])) {
+      $show_for_mgm = [
+        'visible' => [
+          [
+            [':input[name="line_item_fields[field_promotional_code][und][0][value]"]' => ['value' => 'MGM19BKW']],
+            'or',
+            [':input[name="line_item_fields[field_promotional_code][und][0][value]"]' => ['value' => 'mgm19bkw']],
+          ],
+        ],
+      ];
+      $form['line_item_fields']['field_refering_members_number']['#states'] = $show_for_mgm;
+    }
+    if (isset($form['product_id']) && isset($form['line_item_fields']['field_promotional_code'])) {
+      //sanitise values and add amounts
+      $intProducts = 1;
+      foreach ($form['product_id']['#options'] as $key => $value) {
+        $product = commerce_product_load($key);
+        $form['product_id']['#options'][$key] = '<div class="membership-type-desc">'.check_plain($value).'</div><div class="membership-type-amount"> - £' . number_format(check_plain($product->commerce_price['und']['0']['amount'])/100,2).'</div><div class="information"><a href="#" data-toggle="tooltip" data-placement="right"  title="'.check_plain($product->field_membership_terms['und']['0']['safe_value']).'"><i class="fas fa-info-circle"></i></a></div>';
+        $intProducts++;
+      }
+      // Change element to #type radios.
+      $form['product_id']['#type'] = "radios";
+      //add tooltip and title
+      if ($intProducts > 1) {
+        $form['product_id']['#title'] = '<div class="title">'.t('Change Membership type') .'</div>';
+      }
+    }
+    if (isset($form['line_item_fields']['#bundle'])) {
+      switch ($form['line_item_fields']['#bundle']) {
+        case 'membership':
+          cyclinguk_commerce_adjust_membership_payment_options($form, $form_state);
+          $form['#validate'][] = 'cyclinguk_commerce_validate_age';
+          $form['#validate'][] = 'cyclinguk_commerce_validate_start_date';
+          $form['submit']['#value'] = t('Join Now');
+          break;
+
+        case 'membership_self':
+          cyclinguk_commerce_adjust_membership_payment_options($form, $form_state);
+          $form['#validate'][] = 'cyclinguk_commerce_validate_age';
+          $form['#validate'][] = 'cyclinguk_commerce_validate_no_existing_membership';
+          $form['submit']['#value'] = t('Join Now');
+          break;
+
+        case 'affiliate_membership':
+          $form['#validate'][] = 'cyclinguk_commerce_validate_start_date';
+          $form['submit']['#value'] = t('Join Now');
+          break;
+
+        case 'affiliate_membership_self':
+          // Check affiliate number is valid.
+          $form['#validate'][] = 'cyclinguk_commerce_validate_affiliate_code';
+          $form['submit']['#value'] = t('Join Now');
+          break;
+
+        case 'commerce_donate':
+          // Remove Annual DD payment option.
+          _cyclinguk_commerce_remove_annual_dd_payment_option($form['line_item_fields']['field_payment_option']);
+          $form['submit']['#value'] = t('Donate');
+          break;
+
+        case 'membership_renewal':
+          // Only allow card payment for commuted membership.
+          $language = $form['line_item_fields']['field_membership']['#language'];
+          $current_membership_code = $form['line_item_fields']['field_membership'][$language][0]['membership_type']['#value'];
+          if ($current_membership_code == 'C') {
+            $form['line_item_fields']['field_payment_option'][$language]['#value'] = 'CCA';
+            $form['line_item_fields']['field_payment_option']['#access'] = FALSE;
+          }
+          // Check for existing future membership changes...
+          $data = ['ContactNumber' => $form['line_item_fields']['field_membership_number'][$language][0]['number']['#default_value']];
+          $result_xml = care_call_method('GetNextPaymentData', $data);
+          foreach ($result_xml->DataRow as $index => $row) {
+            // Convert using care_taxonomy_membership_code.
+            $terms = taxonomy_get_tree(106);
+            foreach ($terms as $term) {
+              if (($term->description == (string) $row->MembershipType) && ($current_membership_code != $term->name)) {
+                $current_membership_code = $term->name;
+                $form['line_item_fields']['field_membership'][$language][0]['membership']['membership_type_ro']['#markup'] .= ' - renewing as ' . $term->description;
+                $form['line_item_fields']['field_membership'][$language][0]['membership_type']['#value'] = $current_membership_code;
+                break;
+              }
+            }
+          }
+          // Get current membership product for current membership code.
+          $query = new EntityFieldQuery();
+          $query->entityCondition('entity_type', 'commerce_product')
+            ->entityCondition('bundle', 'membership')
+            ->fieldCondition('field_membership_code', 'value', $current_membership_code);
+          $result = $query->execute();
+          $current_membership_product_id = isset($result['commerce_product']) ? key($result['commerce_product']) : 0;
+          if ($current_membership_product_id) {
+            // Modify form options.
+            $options = &$form['line_item_fields']['field_new_membership_type'][$language]['#options'];
+            unset($options['_none']);
+            foreach ($options as $product_id => $option) {
+              $option = trim($option);
+              if ($product_id == $current_membership_product_id) {
+                if (strpos($option, 'Supporter Membership') === 0) {
+                  $options[$product_id] = 'Remain a Supporter - £2 a month';
+                }
+                else {
+                  $options[$product_id] = 'Keep ' . $option;
+                }
+              }
+              elseif (strpos($option, 'Senior membership') === 0) {
+                // Remove ability to change to Senior membership.
+                unset($options[$product_id]);
+              }
+              else {
+                if (strpos($option, 'Supporter Membership') === 0) {
+                  $options[$product_id] = 'Become a Supporter - £2 a month <a href="#" data-toggle="tooltip" data-placement="right" title="" data-original-title="Supporters give a monthly donation of £2 and receive Cycle magazine."><i class="fas fa-info-circle"></i></a>';
+                }
+                else {
+                  $options[$product_id] = 'Change to ' . $option;;
+                }
+              }
+            }
+          }
+          // Modify payment options if Supporter is selected.
+          $form['line_item_fields']['field_payment_option']['#after_build'][] = 'cyclinguk_commerce_payment_options_after_build';
+          /* $form['line_item_fields']['field_payment_option']['#states'] = [
+            'disabled' => array(
+              ':input[name="line_item_fields[field_new_membership_type][und]"]' => array('value' => 409131),
+            ),
+          ];
+          fonant_dpm($form['line_item_fields']['field_payment_option']);
+          */
+          // Apply the new membership options.
+          if ($current_membership_product_id && array_key_exists($current_membership_product_id, $options)) {
+            // Move current option to the top of the array.
+            $options = [$current_membership_product_id => $options[$current_membership_product_id]] + $options;
+            // Set current as default if not yet set.
+            if (!isset($form['line_item_fields']['field_new_membership_type'][$language]['#default_value'])) {
+              $form['line_item_fields']['field_new_membership_type'][$language]['#default_value'] = $current_membership_product_id;
+            }
+          }
+          else {
+            // Hide change membership options field.
+            $form['line_item_fields']['field_new_membership_type'][$language]['#type'] = 'value';
+            $form['line_item_fields']['field_new_membership_type'][$language]['#value'] = 0;
+            $form['line_item_fields']['field_new_membership_type'][$language]['#required'] = FALSE;
+          }
+          // Add custom submit function to handle pre-saved line item.
+          $form['submit']['#value'] = t('Renew');
+          $form['#submit'][] = 'cyclinguk_commerce_add_renewal_submit';
+          break;
+        case 'course':
+          if ($form['line_item_fields']['#entity']->commerce_unit_price['und'][0]['amount'] != '0') {
+            $form['line_item_fields']['field_booking_code']['#disabled'] = TRUE;
+            $form['line_item_fields']['field_booking_code']['#type'] = 'hidden';
+            $form['#validate'][] = 'cyclinguk_commerce_validate_course_booking_member';
+          }
+          else {
+            $form['line_item_fields']['field_membership_number']['#disabled'] = TRUE;
+            $form['line_item_fields']['field_membership_number']['#type'] = 'hidden';
+            $form['#validate'][] = 'cyclinguk_commerce_validate_course_booking';
+          }
+          break;
+      }
+    }
+  }
+  elseif (strpos($form_id, 'views_form_commerce_cart_form_') === 0) {
+    global $user;
+    $product_types = [
+      'membership',
+    ];
+    $cart = commerce_cart_order_load($user->uid);
+    foreach (entity_metadata_wrapper('commerce_order', $cart)->commerce_line_items as $delta => $line_item_wrapper) {
+      // Check product type against list of types to have Quantity disabled.
+      if (isset($line_item_wrapper->commerce_product) && in_array($line_item_wrapper->commerce_product->value()->type, $product_types)) {
+        foreach ($form['edit_quantity'] as $index => $line_item) {
+          // Compare the current cart line item ID to the form line item ID.
+          if (is_numeric($index) && $line_item_wrapper->raw() == $form['edit_quantity'][$index]['#line_item_id']) {
+            $form['edit_quantity'][$index]['#attributes']['readonly'] = 'readonly';
+            $form['edit_quantity'][$index]['#attributes']['disabled'] = TRUE;
+          }
+        }
+      }
+    }
+  }
+  elseif ($form_id == 'commerce_checkout_form_checkout_step_2') {
+    // Remove Annual DD payment option.
+    _cyclinguk_commerce_remove_annual_dd_payment_option($form['checkout_donate']['checkout_donate']['field_payment_option']);
+
+    $form['checkout_donate']['checkout_donate']['field_payment_option']['#states'] = [
+      'visible' => [
+        ':input[name="checkout_donate[commerce_donate_amount][und][select]"]' => [
+          '!value' => FALSE,
+        ],
+      ],
+    ];
+    // Validate promotional code.
+    array_unshift($form['buttons']['continue']['#validate'], 'cyclinguk_commerce_validate_promotional_code');
+    // Change title.
+    $form['login_pane']['name']['#title'] = 'Username or e-mail address';
+
+  }
+  elseif ($form_id == 'commerce_checkout_form_checkout_step_3') {
+    $order = entity_metadata_wrapper('commerce_order', $form_state['order']);
+    $line_items = $order->commerce_line_items;
+    $gift_aid_total = 0;
+    $gift_aid_monthly_total = 0;
+    $gift_aid_annual_total = 0;
+    foreach ($line_items as $line_item) {
+      $product = isset($line_item->commerce_product);
+      $gift_aid = ($product and isset($line_item->commerce_product->commerce_product_giftaid));
+      if ($gift_aid && $line_item->commerce_product->commerce_product_giftaid->value()) {
+        $line_total = $line_item->commerce_total->amount->value();
+        if (isset($line_item->field_payment_option)) {
+          switch ($line_item->field_payment_option->value()) {
+            case 'DDA':
+              $gift_aid_annual_total += $line_total;
+              break;
+
+            case 'DDM':
+              $gift_aid_monthly_total += $line_total;
+              break;
+
+            default:
+              $gift_aid_total += $line_total;
+          }
+        }
+        else {
+          $gift_aid_total += $line_total;
+        }
+      }
+    }
+    $totals_strings = [];
+    // ToDo: this should be the last line item?
+    /** @noinspection PhpUndefinedVariableInspection */
+    $currency_code = $line_item->commerce_total->currency_code->value();
+    if ($gift_aid_total) {
+      $totals_strings[] = commerce_currency_format($gift_aid_total / 4, $currency_code);
+    }
+    if ($gift_aid_annual_total) {
+      $totals_strings[] = commerce_currency_format($gift_aid_annual_total / 4, $currency_code) . ' per year';
+    }
+    if ($gift_aid_monthly_total) {
+      $totals_strings[] = commerce_currency_format($gift_aid_monthly_total / 4, $currency_code) . ' per month';
+    }
+    if (count($totals_strings)) {
+      $billing = $order->commerce_customer_billing;
+      $name_array = $billing->field_care_name->value();
+      $default = NULL;
+      if (isset($form_state['order']->data['commerce_giftaid'])) {
+        $default = $form_state['order']->data['commerce_giftaid'];
+      }
+      else {
+        $defaults = module_invoke_all('commerce_giftaid_user_default', $order->uid);
+        if (!empty($defaults)) {
+          $default = reset($defaults);
+        }
+      }
+
+      if (commerce_giftaid_order_contains_eligible_items($form_state['order'])) {
+        $def = commerce_giftaid_pane_settings_form($form_id);
+        $form['commerce_giftaid_pane']['commerce_giftaid'] = [
+          '#type' => 'radios',
+          '#options' => [
+            1 => variable_get('commerce_giftaid_pane_accept', $def['commerce_giftaid_pane_accept']['#default_value']),
+            0 => variable_get('commerce_giftaid_pane_decline', $def['commerce_giftaid_pane_decline']['#default_value']),
+          ],
+          '#default_value' => $default,
+          '#description' => variable_get('commerce_giftaid_pane_description', $def['commerce_giftaid_pane_description']['#default_value']),
+        ];
+      }
+
+      $form['commerce_giftaid_pane']['image'] = [
+        '#type' => 'item',
+        '#markup' => t('<p><img src="/sites/shop/modules/custom/cyclinguk_commerce/images/gift-aid-logo.png" width="160" height="60" alt="Gift Aid logo"></p>'),
+        '#weight' => -60,
+      ];
+      $form['commerce_giftaid_pane']['gift_aid'] = [
+        '#type' => 'fieldset',
+        '#prefix' => '<h2>Boost your donation by 25p of Gift Aid for every £1 you donate.</h2>',
+        '#suffix' => variable_get('commerce_giftaid_pane_prefix'),
+        '#weight' => -50,
+      ];
+      $form['commerce_giftaid_pane']['gift_aid']['name'] = [
+        '#type' => 'markup',
+        '#markup' => t('<p><strong>Name:</strong> ') . ' ' . $name_array['title'] . ' ' . $name_array['forenames'] . ' ' . $name_array['surname'] . t('</p>'),
+        '#weight' => -50,
+      ];
+      $address_array = $billing->field_care_address->value();
+      $lines = [];
+      if ($address_array['address_line_1']) {
+        $lines[] = check_plain($address_array['address_line_1']);
+      }
+      if ($address_array['address_line_2']) {
+        $lines[] = check_plain($address_array['address_line_2']);
+      }
+      if ($address_array['address_line_3']) {
+        $lines[] = check_plain($address_array['address_line_3']);
+      }
+      if ($address_array['town']) {
+        $lines[] = check_plain($address_array['town']);
+      }
+      if ($address_array['county']) {
+        $lines[] = check_plain($address_array['county']);
+      }
+      if ($address_array['country_code']) {
+        $country_options = [];
+        $country_codes = preg_split('/\r\n|[\r\n]/', variable_get('care_fields_countries', "UK|United Kingdom\nUSA|United States of America"));
+        foreach ($country_codes as $country_code) {
+          if ($country_code) {
+            $data = explode('|', $country_code);
+            $country_options[$data[0]] = $data[1];
+          }
+        }
+        if (array_key_exists($address_array['country_code'], $country_options)) {
+          $country = $country_options[$address_array['country_code']];
+        }
+        else {
+          $country = 'Country code ' . $address_array['country_code'];
+        }
+        $lines[] = check_plain($country);
+      }
+      if ($address_array['postcode']) {
+        $lines[] = check_plain($address_array['postcode']);
+      }
+
+      $form['commerce_giftaid_pane']['gift_aid']['address'] = [
+        '#type' => 'markup',
+        '#markup' => t('<p><strong>Home Address:</strong> ') . ' ' . implode(', ', $lines) . t('</p>'),
+        '#weight' => -40,
+      ];
+
+      $form['commerce_giftaid_pane']['gift_aid']['amount'] = [
+        '#type' => 'markup',
+        '#markup' => t('<p><strong>Gift Aid value from this order:</strong> ') . ' ' . implode(', plus ', $totals_strings) . t('</p>'),
+        '#weight' => -30,
+      ];
+    }
+  }
+  elseif ($form_id == 'commerce_checkout_form_review') {
+    // Validate promotional code.
+    array_unshift($form['buttons']['continue']['#validate'], 'cyclinguk_commerce_validate_promotional_code');
+  }
+}
+
+/**
+ * https://drupal.stackexchange.com/questions/159853/use-drupal-states-to-check-a-radio
+ * https://www.drupal.org/node/2498791
+ */
+function cyclinguk_commerce_payment_options_after_build($element, &$form_state) {
+  $element[LANGUAGE_NONE]['DDA']['#states'] = [
+    'unchecked' => [
+      ':input[name="line_item_fields[field_new_membership_type][und]"]' => ['value' => 409131],
+    ],
+    'invisible' => [
+      ':input[name="line_item_fields[field_new_membership_type][und]"]' => ['value' => 409131],
+    ],
+  ];
+  // Attach JS code to select DDM for "Supporter" options.
+  $element['#attached']['js'][] = [
+    'data' => drupal_get_path('module', 'cyclinguk_commerce') . '/js/membership_payments.js',
+    'type' => 'file',
+  ];
+  $element[LANGUAGE_NONE]['CCA']['#states'] = [
+    'unchecked' => [
+      ':input[name="line_item_fields[field_new_membership_type][und]"]' => ['value' => 409131],
+    ],
+    'invisible' => [
+      ':input[name="line_item_fields[field_new_membership_type][und]"]' => ['value' => 409131],
+    ],
+  ];
+  return $element;
+}
+
+/**
+ * Private function for removing annual DD payment option.
+ *
+ * @param $field
+ */
+function _cyclinguk_commerce_remove_annual_dd_payment_option(&$field) {
+  $lang = $field['#language'];
+  unset($field[$lang]['#options']['_none'], $field[$lang]['#options']['DDA']);
+}
+
+/**
+ * Implements hook_commerce_price_component_type_info_alter().
+ *
+ * @param $component_types
+ */
+function cyclinguk_commerce_commerce_price_component_type_info_alter(&$component_types) {
+  $component_types['direct_debit'] = [
+    'title' => 'Direct Debit',
+    'display_title' => 'Total to be paid by Direct Debit',
+    'weight' => 51,
+  ];
+  $component_types['base_price']['display_title'] = 'Product total to pay now';
+  foreach ($component_types as $key => $value) {
+    if (substr($key, -8) == 'shipping') {
+      $component_types[$key]['display_title'] .= ' to pay now';
+    }
+  }
+}
+
+/**
+ * Implements hook_commerce_price_formatted_components_alter().
+ *
+ * Insert "To be paid by Card now" sub-total.
+ *
+ * @noinspection PhpUnusedParameterInspection*
+ *
+ * @param $components
+ * @param $item
+ * @param $entity
+ *
+ * @noinspection PhpUnusedParameterInspection
+ */
+function cyclinguk_commerce_commerce_price_formatted_components_alter(&$components, $item, $entity) {
+  $pay_now_amount = 0;
+  $has_direct_debit = FALSE;
+  foreach ($components as $key => $component) {
+    if (isset($component['price']['data']['components'])) {
+      foreach ($component['price']['data']['components'] as $comp) {
+        if ($comp['name'] != 'direct_debit') {
+          $pay_now_amount += $comp['price']['amount'];
+        }
+        else {
+          $has_direct_debit = TRUE;
+        }
+      }
+    }
+  }
+  if ($has_direct_debit) {
+    $components['pay_now'] = [
+      'title' => 'Total to pay now',
+      'price' => [
+        'amount' => $pay_now_amount,
+        'currency_code' => 'GBP',
+      ],
+      'weight' => 50,
+    ];
+  }
+}
+
+/**
+ * Implements hook_entity_view_alter().
+ *
+ * Hide line item fields as dependencies require.
+ *
+ * @param $build
+ * @param $type
+ *
+ * @throws \EntityMetadataWrapperException
+ * @noinspection PhpUnusedParameterInspection
+ */
+function cyclinguk_commerce_entity_view_alter(&$build, $type) {
+  if ($build['#entity_type'] == 'commerce_line_item') {
+    /** @var \EntityDrupalWrapper $wrapped */
+    $wrapped = entity_metadata_wrapper('commerce_line_item', $build['#entity']);
+    $has_gift_field = isset($wrapped->field_gift);
+    if ($has_gift_field) {
+      $build['field_gift']['#access'] = FALSE;
+      $is_gift = $wrapped->field_gift->value();
+      if (!$is_gift) {
+        $build['field_gift_message']['#access'] = FALSE;
+        $build['field_gift_occasion']['#access'] = FALSE;
+        $build['field_gift_start_date']['#access'] = FALSE;
+        $build['field_send_starter_pack']['#access'] = FALSE;
+      }
+    }
+    if (isset($wrapped->field_new_membership_type)) {
+      $previous_membership_code = $wrapped->field_membership->membership_type->value();
+      /** @var \EntityStructureWrapper $new_membership_type */
+      $new_membership_type = $wrapped->field_new_membership_type;
+      if (isset($new_membership_type->field_membership_code)) {
+        $new_membership_code = $new_membership_type->field_membership_code->value();
+        if ($previous_membership_code == $new_membership_code) {
+          $build['field_new_membership_type']['#access'] = FALSE;
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Implements hook_commerce_line_item_type_info_alter().
+ *
+ * Add callback function to set improved titles for line items.
+ *
+ * @param $line_item_types
+ */
+function cyclinguk_commerce_commerce_line_item_type_info_alter(&$line_item_types) {
+  $line_item_types_to_alter = [
+    'membership',
+    'membership_self',
+    'family_membership',
+    'family_membership_self',
+    'group_membership',
+    'affiliate_membership',
+    'affiliate_membership_self',
+    'membership_renewal',
+  ];
+  foreach ($line_item_types_to_alter as $line_item_type_to_alter) {
+    if (isset($line_item_types[$line_item_type_to_alter])) {
+      $title_callback = '_cyclinguk_commerce_commerce_product_line_item_title';
+      $line_item_types[$line_item_type_to_alter]['callbacks']['title'] = $title_callback;
+    }
+  }
+}
+
+/**
+ * More useful line item titles, for line item types altered above.
+ *
+ * @param $line_item
+ *
+ * @return string
+ * @throws \EntityMetadataWrapperException
+ * @noinspection PhpUnused
+ */
+function _cyclinguk_commerce_commerce_product_line_item_title($line_item) {
+  $title = '';
+  $line_item_wrapper = entity_metadata_wrapper('commerce_line_item', $line_item);
+  $product = $line_item_wrapper->commerce_product->value();
+  $display_path = $line_item_wrapper->commerce_display_path->value();
+  if ($display_path) {
+    // Line item added from a display node.
+    preg_match('/node\/(\d*)$/', $display_path, $matches);
+    $nid = $matches[1];
+    if ($nid) {
+      $node = node_load($nid);
+      if ($product && strpos($node->type, 'product_membership') === 0) {
+        $title = check_plain($node->title) . ' (' . substr($product->title, 0, strpos($product->title, ' ')) . ')';
+      }
+      else {
+        $title = check_plain($node->title);
+      }
+    }
+  }
+  elseif ($product) {
+    // Line item added some other way.
+    $title = check_plain($product->title);
+  }
+  return $title;
+}
+
+/**
+ * Implements hook_commerce_product_calculate_sell_price_line_item_alter().
+ *
+ * @param $line_item
+ */
+function cyclinguk_commerce_commerce_product_calculate_sell_price_line_item_alter($line_item) {
+  //drupal_set_message('cyclinguk_commerce_commerce_product_calculate_sell_price_line_item_alter');
+}
+
+/**
+ * Implements hook_commerce_cart_line_item_refresh().
+ *
+ * Called when cart/basket line items are displayed.
+ *
+ * @param $line_item
+ * @param $order_wrapper
+ *
+ * @throws \EntityMetadataWrapperException
+ * @noinspection PhpUnusedParameterInspection
+ */
+function cyclinguk_commerce_commerce_cart_line_item_refresh($line_item, $order_wrapper) {
+  $line_item_wrapper = entity_metadata_wrapper('commerce_line_item', $line_item);
+  if (($line_item->type == 'membership_renewal') && $line_item_wrapper->field_membership->value()) {
+    // Check for existing future membership changes.
+    // Otherwise use current membership details.
+    $expiring_membership_code = $line_item_wrapper->field_membership->membership_type->value();
+    /** @var \EntityStructureWrapper $new_membership_type */
+    $new_membership_type = $line_item_wrapper->field_new_membership_type;
+    if (isset($new_membership_type->field_membership_code)) {
+      $new_membership_code = $line_item_wrapper->field_new_membership_type->field_membership_code->value();
+    }
+    else {
+      $new_membership_code = $expiring_membership_code;
+    }
+    if ($expiring_membership_code == $new_membership_code) {
+      // Set renewal price to the membership balance from CARE.
+      $balance = $line_item_wrapper->field_membership->balance->value();
+      $line_item_wrapper->commerce_unit_price->amount = $balance * 100;
+    }
+    else {
+      // Set renewal price to the new membership price.
+      $line_item_wrapper->commerce_unit_price->amount = $line_item_wrapper->field_new_membership_type->commerce_price->amount->value();
+    }
+  }
+  commerce_line_item_rebase_unit_price($line_item_wrapper->value());
+}
+
+/**
+ * Re-base price to make sure amounts are allocated correctly.
+ *
+ * @noinspection PhpUnusedParameterInspection
+ *
+ * @param $price
+ * @param $old_components
+ * @param $line_item
+ *
+ * @throws \EntityMetadataWrapperException
+ */
+function cyclinguk_commerce_commerce_line_item_rebase_unit_price(&$price, $old_components, $line_item) {
+  /** @var \EntityDrupalWrapper $line_item_wrapper */
+  $line_item_wrapper = entity_metadata_wrapper('commerce_line_item', $line_item);
+  if (isset($line_item_wrapper->field_payment_option) && strstr($line_item_wrapper->field_payment_option->value(), 'DD')) {
+    // Amount includes VAT.
+    $amount = $line_item_wrapper->commerce_unit_price->value();
+    $components = $amount['data']['components'];
+    foreach ($components as $index => $component) {
+      if ($component['name'] == 'base_price' && $component['price']['amount'] != 0) {
+        $components[$index]['price']['amount'] = 0;
+      }
+    }
+    $price['data'] = commerce_price_component_add($price, 'direct_debit', $amount, FALSE);
+    /** @noinspection SuspiciousAssignmentsInspection
+     * @noinspection RedundantSuppression
+     */
+    $price['data'] = commerce_price_component_delete($price, 'base_price');
+  }
+}
+
+/**
+ * Implements hook_commerce_cart_product_comparison_properties_alter().
+ *
+ * @param $comparison_properties
+ * @param $line_item
+ */
+function cyclinguk_commerce_commerce_cart_product_comparison_properties_alter(&$comparison_properties, $line_item) {
+  switch ($line_item->type) {
+    case 'membership_renewal':
+      // Just compare membership and then membership number, nothing else.
+      $comparison_properties = [
+        'field_membership',
+        'field_membership->membership_number',
+      ];
+      break;
+
+    case 'membership':
+      break;
+  }
+}
+
+/**
+ * Submit function to add already-saved line item to basket.
+ *
+ * @param $form
+ * @param $form_state
+ */
+function cyclinguk_commerce_add_renewal_submit($form, &$form_state) {
+  // Set monthly DD for Supporter renewals.
+  $options = $form['line_item_fields']['field_new_membership_type'][LANGUAGE_NONE]['#options'];
+  $selected = $form_state['values']['line_item_fields']['field_new_membership_type'][LANGUAGE_NONE][0]['target_id'];
+  if (strstr($options[$selected], 'Supporter')) {
+    $form_state['line_item']->field_payment_option[LANGUAGE_NONE][0]['value'] = 'DDM';
+  }
+  // Only add this for the add-to-cart form we built.
+  if (strpos($form['#form_id'], 'commerce_cart_add_to_cart_form_') === 0) {
+    $form_state['line_item'] = commerce_cart_product_add($form_state['values']['uid'], $form_state['line_item']);
+  }
+}
+
+
+/**
+ * @param $element
+ * @param $form_state
+ * @param $form
+ *
+ * @noinspection PhpUnusedParameterInspection
+ */
+function cyclinguk_commerce_validate_promotional_code_field($element, &$form_state, $form) {
+  $language = $element['#language'];
+  $code = drupal_array_get_nested_value($form_state['values'], $element['#parents']);
+  $promotional_code = trim($code[$language][0]['value']);
+  if ($form['#form_id'] == "commerce_cart_add_to_cart_form_409136") {
+    if ($promotional_code != 'SOREEN20') {
+      form_error($element, t('Invalid Promotional Code'));
+    }
+  } elseif ($promotional_code) {
+    $terms = taxonomy_get_term_by_name($promotional_code, 'care_taxonomy_promotion_code');
+    if (!count($terms)) {
+      form_error($element, t('Invalid Promotional Code'));
+    }
+  }
+}
+
+/**
+ * Check booking code is valid.
+ *
+ * @param $form
+ * @param $form_state
+ */
+function cyclinguk_commerce_validate_course_booking($form, $form_state) {
+  if ($form['line_item_fields']['field_booking_code']['#type'] != 'hidden') {
+    if ($form_state['values']['line_item_fields']['field_booking_code']['und'][0]['value'] == NULL) {
+      form_set_error('booking_code_null', t('Please enter a valid booking code.'));
+    }
+    else {
+      $node = node_load($form_state['context']['entity_id']);
+      $field = field_get_items('node', $node, 'field_booking_code');
+      if (strtolower($form_state['values']['line_item_fields']['field_booking_code']['und'][0]['value']) != strtolower($field[0]['value'])) {
+        form_set_error('booking_code_invalid', t('Sorry the booking code you have entered is not valid for this course.'));
+      }
+    }
+  }
+}
+
+/**
+ * Check membership number added when member rate selected
+ *
+ * @param $form
+ * @param $form_state
+ *
+ * @throws \EntityMetadataWrapperException
+ * @noinspection PhpUnusedParameterInspection
+ */
+function cyclinguk_commerce_validate_course_booking_member($form, $form_state) {
+  $product = commerce_product_load($form_state['values']['product_id']);
+  $wrapped_product = entity_metadata_wrapper('commerce_product', $product);
+  //print_r($form_state['values']);
+  if ($form_state['values']['line_item_fields']['field_membership_number']['und'][0]['number'] == NULL && ($wrapped_product->field_member_rate->value() == 'M')) {
+    form_set_error('membership_number_null', t('Please enter a valid membership number to get your 10% members discount or select the full price option.'));
+  }
+}
+
+
+/**
+ * Check membership start date not in the past.
+ *
+ * @param $form
+ * @param $form_state
+ *
+ * @noinspection PhpUnusedParameterInspection
+ */
+function cyclinguk_commerce_validate_start_date($form, $form_state) {
+  if (strtotime($form_state['values']['line_item_fields']['field_gift_start_date']['und'][0]['value']) < strtotime('today midnight')) {
+    form_set_error('membership_start_date_error', t('Membership start date must not be in the past'));
+  }
+}
+
+/**
+ * Compare the person's age from Date of Birth with product requirements.
+ *
+ * @param $form
+ * @param $form_state
+ *
+ * @noinspection PhpUnusedParameterInspection
+ */
+function cyclinguk_commerce_validate_age($form, $form_state) {
+  if (isset($form_state['values']['product_id'])) {
+    // From add to basket form.
+    $product = commerce_product_load($form_state['values']['product_id']);
+  }
+  else {
+    // From editing line item.
+    $product = commerce_product_load($form_state['values']['line_item_fields']['commerce_product'][LANGUAGE_NONE][0]['product_id']);
+  }
+  $date_of_birth = $form_state['values']['line_item_fields']['field_care_dob'][LANGUAGE_NONE][0];
+  if ($date_of_birth['year'] && $date_of_birth['month'] && $date_of_birth['day']) {
+    try {
+      $dob = new DateTime($date_of_birth['year'] . '-' . $date_of_birth['month'] . '-' . $date_of_birth['day']);
+      $start = new DateTime();
+      $interval = $dob->diff($start);
+      $age = $interval->y;
+      $wrapped_product = entity_metadata_wrapper('commerce_product', $product);
+      if ($age < $wrapped_product->field_minimum_age->value()) {
+        form_set_error('line_item_fields][field_care_dob', t('Date of birth means you are !age, too young for !product.', [
+          '!age' => $age,
+          '!product' => $product->title,
+        ]));
+      }
+      elseif ($age > $wrapped_product->field_maximum_age->value()) {
+        form_set_error('field_care_dob', t('Date of birth means you are !age, too old for !product.', [
+          '!age' => $age,
+          '!product' => $product->title,
+        ]));
+      }
+    } catch (Exception $e) {
+      watchdog('cyclinguk_commerce', 'Validate Age Exception: !error', ['!error' => $e->getMessage()], WATCHDOG_ERROR);
+    }
+  }
+}
+
+/**
+ * Validate that the person does not have any existing memberships.
+ *
+ * @param $form
+ * @param $form_state
+ *
+ * @noinspection PhpUnusedParameterInspection
+ * @noinspection PhpParameterByRefIsNotUsedAsReferenceInspection
+ * @throws \EntityMetadataWrapperException
+ */
+function cyclinguk_commerce_validate_no_existing_membership($form, &$form_state) {
+  // Skip if we're validating the form from product change AJAX call.
+  if (isset($form_state['input']['_triggering_element_name']) && $form_state['input']['_triggering_element_name'] == 'product_id') {
+    return;
+  }
+  // Skip if we're not logged in.
+  if (!isset($form_state['values']['uid'])) {
+    return;
+  }
+  $order_owner = user_load($form_state['values']['uid'], TRUE);
+  $care_user = new CareUser($order_owner);
+  $memberships_field = $care_user->getMembershipsField();
+  if ($memberships_field && $care_user->getMembershipNumber()) {
+    $care_user->fetchMembershipDetails();
+    foreach ($memberships_field as $membership) {
+      $renewal_date = DateTime::createFromFormat('Y-m-d', $membership->renewal_date->value());
+      if ($renewal_date) {
+        $token_values = [
+          '@type' => $membership->membership_type->value(),
+          '@date' => format_date($renewal_date->getTimestamp(), variable_get('care_user_message_date_format', 'short')),
+          '!link' => l(t('renew your membership'), 'membership/renew/' . $care_user->getMembershipNumber()),
+        ];
+        form_set_error('', t('You already have membership of type @type due for renewal on @date. You can quickly !link.', $token_values));
+      }
+    }
+  }
+}
+
+/**
+ * Validate the entered affiliate club code.
+ *
+ * @param $form
+ * @param $form_state
+ *
+ * @noinspection PhpParameterByRefIsNotUsedAsReferenceInspection
+ */
+function cyclinguk_commerce_validate_affiliate_code($form, &$form_state) {
+  $lang = $form['line_item_fields']['field_affiliate_club_code']['#language'];
+  $affiliate_number = $form_state['values']['line_item_fields']['field_affiliate_club_code'][$lang][0]['value'];
+  /* @noinspection SpellCheckingInspection */
+  $affiliate_club_codes = [
+    'O',
+    'OL',
+    'O2',
+    'G',
+    'BUG',
+    'BUGL',
+  ];
+  if ($affiliate_number && (int) $affiliate_number) {
+    $data = [
+      'ContactNumber' => $affiliate_number,
+    ];
+    $type = [
+      'pSelectDataType' => 'xcdtContactMembershipDetails',
+    ];
+    $result_xml = care_call_method('SelectContactData', $data, $type);
+    $membership_type = (string) $result_xml->DataRow->PaymentPlanMembershipType;
+    $renewal_date = date_create_from_format('d/m/Y', (string) $result_xml->DataRow->RenewalDate);
+    $payment_method = $result_xml->DataRow->PaymentMethod;
+    $lapsed = ($renewal_date < date_create() && $payment_method != 'DD');
+    $cancelled = (string) $result_xml->DataRow->CancelledOn;
+    if (isset($result_xml->ErrorMessage)) {
+      if (strstr($result_xml->ErrorMessage, 'The Data specified by Parameter ContactNumber could not be found')) {
+        form_set_error('field_affiliate_club_code', t('The club code %code is not valid, please check that you have typed it correctly.', [
+          '%code' => $affiliate_number,
+        ]));
+      }
+      else {
+        form_set_error('field_affiliate_club_code', t('Error checking club code: Please contact Cycling UK.'));
+      }
+    }
+    elseif ($lapsed) {
+      form_set_error('field_affiliate_club_code', t('Sorry, that club’s affiliate membership has lapsed.'));
+    }
+    elseif ($cancelled || !in_array($membership_type, $affiliate_club_codes)) {
+      form_set_error('field_affiliate_club_code', t('The club code %code is not valid, please check that you have typed it correctly.', [
+        '%code' => $affiliate_number,
+      ]));
+    }
+  }
+  else {
+    form_set_error('field_affiliate_club_code', t('Error checking club code: Please contact Cycling UK.'));
+  }
+}
+
+/**
+ * Validate any promotional code entered.
+ *
+ * @param $form
+ * @param $form_state
+ */
+function cyclinguk_commerce_validate_promotional_code($form, &$form_state) {
+  if (isset($form['commerce_fieldgroup_pane__group_other']['field_promotional_code'])) {
+    $parents = $form['commerce_fieldgroup_pane__group_other']['field_promotional_code']['und'][0]['#parents'];
+    $promotional_code = trim(drupal_array_get_nested_value($form_state['values'], $parents)['value']);
+    if ($promotional_code) {
+      $terms = taxonomy_get_term_by_name($promotional_code, 'care_taxonomy_promotion_code');
+      if (!count($terms)) {
+        form_set_error('commerce_fieldgroup_pane__group_other][field_promotional_code', t('Invalid Promotional Code'));
+      }
+    }
+  }
+}
+
+/**
+ * Adjust payment options based on product chosen. Called by AJAX and Submit.
+ *
+ * @param $form
+ * @param $form_state
+ *
+ * @throws \EntityMetadataWrapperException
+ * @noinspection PhpParameterByRefIsNotUsedAsReferenceInspection
+ */
+function cyclinguk_commerce_adjust_membership_payment_options(&$form, &$form_state) {
+  if (isset($form_state['values'])) {
+    $product = commerce_product_load($form_state['values']['product_id']);
+    $wrapped_product = entity_metadata_wrapper('commerce_product', $product);
+    if ($wrapped_product->field_payment_frequency->field_code->value() == 'F') {
+      unset(
+        $form['line_item_fields']['field_payment_option'][LANGUAGE_NONE]['#options']['DDA'],
+        $form['line_item_fields']['field_payment_option'][LANGUAGE_NONE]['#options']['DDM']
+      );
+      $form['line_item_fields']['field_payment_option'][LANGUAGE_NONE]['#default_value'] = 'CCA';
+    }
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function cyclinguk_commerce_theme($existing, $type, $theme, $path) {
+  $items['cyclinguk_commerce_renewal_form'] = [
+    'render element' => 'form',
+    'template' => 'membership_renewal_form',
+    'path' => drupal_get_path('module', 'cyclinguk_commerce') . '/templates',
+  ];
+  return $items;
+}
+
+/**
+ * Implements hook_views_api().
+ *
+ * @noinspection PhpUnused
+ */
+function cyclinguk_commerce_views_api() {
+  return [
+    'api' => 3,
+    'path' => drupal_get_path('module', 'cyclinguk_commerce') . '/views',
+  ];
+}
+
+/**
+ * Redirect course links to correct page.
+ *
+ * @param $view
+ *
+ * @noinspection PhpParameterByRefIsNotUsedAsReferenceInspection
+ */
+function cyclinguk_commerce_views_post_execute(&$view) {
+  if ($view->name == 'course_redirect' && !empty($view->result)) {
+    $params = drupal_get_query_parameters();
+    $options = ['query' => ['edit[line_item_fields][field_booking_code][und][0][value]' => $params['booking_code']]];
+    drupal_goto('node/' . $view->result[0]->nid, $options);
+  }
+}

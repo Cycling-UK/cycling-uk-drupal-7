@@ -1,0 +1,51 @@
+<?php
+/**
+ * Add end date to field_my_field.
+ */
+function cyclinguk_user_update_7000() {
+  $prior_field = field_info_field('field_date_ride');
+
+  // Changes to the current field definition.
+  $field = $prior_field;
+  $field['settings']['todate'] = 'optional';
+  $field['columns']['value2'] = $field['columns']['value'];
+  $field['columns']['value2']['views'] = FALSE;
+  $field['indexes'] = array(
+    'value' => array('value'),
+    'value2' => array('value2'),
+  );
+
+  // Get new storage details definition.
+  $details = (array) module_invoke($field['storage']['module'], 'field_storage_details', $field);
+  drupal_alter('field_storage_details', $details, $field);
+  $field['storage']['details'] = $details;
+
+  // Update the field_config table.
+  $data = $field;
+  unset($data['columns'], $data['field_name'], $data['type'], $data['locked'], $data['module'], $data['cardinality'], $data['active'], $data['deleted'], $data['bundles'], $data['data']);
+  $field['data'] = $data;
+  $primary_key = array('id');
+  drupal_write_record('field_config', $field, $primary_key);
+
+  // Update the tables schema.
+  $old_schema = _field_sql_storage_schema($prior_field);
+  $new_schema = _field_sql_storage_schema($field);
+  $schema_changes = drupal_array_diff_assoc_recursive($new_schema, $old_schema);
+  if (!empty($schema_changes)) {
+    foreach ($schema_changes as $table => $data) {
+      foreach ($data['fields'] as $id => $spec) {
+        if (!db_field_exists($table, $id)) {
+          db_add_field($table, $id, $spec);
+        }
+      }
+      foreach ($data['indexes'] as $id => $spec) {
+        if (!db_index_exists($table, $id)) {
+          db_add_index($table, $id, $spec);
+        }
+      }
+    }
+  }
+
+  // Clear caches.
+  field_cache_clear();
+}

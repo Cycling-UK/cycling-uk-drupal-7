@@ -1,0 +1,57 @@
+/* Top gold menu */
+
+ul.top-menu {
+	font-size: 32px;
+	line-height: 32px;
+}
+
+ul#superfish-8.top-menu li {
+	display: inline-block;
+	float: none;
+	margin: 0 5px 0 5px;
+}
+
+ul.top-menu a {
+	color: #fbb040;
+}
+
+ul.top-menu a:hover,
+ul.top-menu a:active {
+	color: #000;
+}
+
+@media only screen and (max-width : 370px) {
+	ul.top-menu {
+		font-size: 24px;
+		line-height: 24px;
+	}
+	ul#superfish-8.top-menu li {
+		margin: 0 8px 0 8px;
+	}
+}
+
+@media only screen and (min-width : 768px) {
+	/* Hide search icon on wide screens as search bar is available */
+	ul#superfish-8.top-menu li:last-child {
+		display: none;
+	}
+	ul#superfish-8.top-menu li {
+		margin: 0 0 0 15px;
+	}
+}
+
+@media only screen and (min-width : 1200px) {
+	ul#superfish-8.top-menu li {
+		margin-left: 20px;
+	}
+	ul#superfish-8.top-menu {
+		font-size: 34px;
+		line-height: 34px;
+	}
+}
+
+@media only screen and (min-width : 1600px) {
+	ul#superfish-8.top-menu li {
+		margin-left: 20px;
+	}
+}

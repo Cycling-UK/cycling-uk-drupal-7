@@ -1,0 +1,25 @@
+.paragraphs-item-videos {
+  margin: 0 auto 30px auto !important;
+}
+
+.paragraphs-item-videos .field-name-field-title {
+  text-align: center;
+  font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 36px;
+  margin-bottom: 30px;
+}
+
+.paragraphs-item-videos .carousel-triplet,
+.paragraphs-item-videos .carousel-triplet .view-content {
+  margin-bottom: 0;
+}
+
+.paragraphs-item-videos ul.pager {
+  display: none;
+}
+
+.not-front .entity-paragraphs-item.paragraphs-item-videos .background-tint {
+    padding-top: 0;
+}

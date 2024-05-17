@@ -1,0 +1,64 @@
+/* Terms and conditions paragraphs bundle */
+
+.paragraphs-terms-conditions {
+  margin-bottom: 60px;
+  padding: 30px;
+}
+
+.paragraphs-terms-conditions .field-name-field-terms-and-conditions {
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.paragraphs-terms-conditions h4.tc-title {
+  font: 24px "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  line-height: 24px;
+  margin: 0 0 20px;
+  text-align: center;
+  color: $black;
+}
+
+.paragraphs-terms-conditions .field-name-field-terms-and-conditions .field-items {
+  font-size: 13px;
+  line-height: 17px;
+  text-transform: uppercase;
+}
+
+.paragraphs-terms-conditions.remove_bottom_margin_yes {
+  margin-bottom: 0;
+}
+
+.paragraphs-terms-conditions .field-name-field-terms-and-conditions ol {
+  display: block;
+  list-style-type: decimal;
+  padding-left: 12px;
+  margin: 20px 0;
+}
+
+.paragraphs-terms-conditions .field-name-field-terms-and-conditions ul {
+  display: block;
+  list-style-type: square;
+  padding-left: 20px;
+  margin: 20px 0;
+}
+
+.field-name-field-terms-and-conditions ul li {
+  padding-left: 0;
+  text-indent: 0;
+  list-style-type: square;
+}
+
+.field-name-field-terms-and-conditions ul li:before {
+  display: none;
+}
+
+.paragraphs-terms-conditions .field-name-field-terms-and-conditions li {
+  margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 767px) {
+  .paragraphs-terms-conditions {
+    padding: 20px 10px;
+  }
+}

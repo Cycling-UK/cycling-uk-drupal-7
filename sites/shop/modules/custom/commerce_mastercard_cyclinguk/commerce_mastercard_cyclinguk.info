@@ -1,0 +1,7 @@
+name = Commerce Mastercard CyclingUK customisations
+description = Adds CyclingUK-specific modifications to commerce_mastercard payment module.
+package = Cycling UK
+dependencies[] = care
+dependencies[] = commerce_mastercard
+core = 7.x
+

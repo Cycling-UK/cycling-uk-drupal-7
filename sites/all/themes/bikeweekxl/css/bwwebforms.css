@@ -1,0 +1,13 @@
+/**
+ * Webforms
+ */
+
+
+
+.form-control:focus {
+    border-color: #bc1512;
+}
+
+.form-select {
+	background: url('../images/system/bw-form-select-arrow.png') no-repeat right 20px center #ffffff;
+}

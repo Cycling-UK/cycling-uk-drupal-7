@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * Code for the Issuu publication embed feature.
+ */
+
+include_once 'issuu_publication_embed.features.inc';

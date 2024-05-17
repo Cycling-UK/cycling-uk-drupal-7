@@ -1,0 +1,130 @@
+/* Unset background colour for entire bundle, it needs to be applied elsewhere */
+.node-paragraphs .paragraphs-items .paragraph-dont-set-background.paragraph_background_colour_blue,
+.node-paragraphs .paragraphs-items .paragraph-dont-set-background.paragraph_background_colour_pink,
+.node-paragraphs .paragraphs-items .paragraph-dont-set-background.paragraph_background_colour_purple,
+.node-paragraphs .paragraphs-items .paragraph-dont-set-background.paragraph_background_colour_yellow,
+.node-paragraphs .paragraphs-items .paragraph-dont-set-background.paragraph_background_colour_green,
+.node-paragraphs .paragraphs-items .paragraph-dont-set-background.paragraph_background_colour_grey,
+.node-paragraphs .paragraphs-items .paragraph-dont-set-background.paragraph_background_colour_white {
+  background-color: inherit;
+}
+
+/* Now set it at the correct place */
+.node-paragraphs
+  .paragraphs-items
+  .paragraph_background_colour_blue
+  .paragraphs-item-video-player
+  .main-video-block
+  .background-tint {
+  background-color: #009fda;
+}
+.node-paragraphs
+  .paragraphs-items
+  .paragraph_background_colour_pink
+  .paragraphs-item-video-player
+  .main-video-block
+  .background-tint {
+  background-color: #e6007e;
+}
+.node-paragraphs
+  .paragraphs-items
+  .paragraph_background_colour_purple
+  .paragraphs-item-video-player
+  .main-video-block
+  .background-tint {
+  background-color: #8065a9;
+}
+.node-paragraphs
+  .paragraphs-items
+  .paragraph_background_colour_yellow
+  .paragraphs-item-video-player
+  .main-video-block
+  .background-tint {
+  background-color: #fbb040;
+}
+.node-paragraphs
+  .paragraphs-items
+  .paragraph_background_colour_green
+  .paragraphs-item-video-player
+  .main-video-block
+  .background-tint {
+  background-color: #cdde00;
+}
+.node-paragraphs
+  .paragraphs-items
+  .paragraph_background_colour_grey
+  .paragraphs-item-video-player
+  .main-video-block
+  .background-tint {
+  background-color: #3b3b3a;
+}
+.node-paragraphs
+  .paragraphs-items
+  .paragraph_background_colour_white
+  .paragraphs-item-video-player
+  .main-video-block
+  .background-tint {
+  background-color: #ffffff;
+}
+
+.paragraph-bundle-video-player {
+  margin-bottom: 60px;
+}
+
+.paragraph-bundle-video-player.remove_bottom_margin_no {
+  margin-bottom: 60px !important;
+}
+
+.paragraph-bundle-video-player.remove_bottom_margin_yes {
+  margin-bottom: 0 !important;
+}
+
+.paragraphs-item-video-player .field-name-field-subtitle {
+  text-align: center;
+  font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 36px;
+  margin-bottom: 30px;
+}
+
+/* Need a different button colour scheme if the background is yellow */
+.paragraph_background_colour_yellow > .paragraphs-item-video-player #main-video .mapping-icons-container a.btn:hover,
+.paragraph_background_colour_yellow > .paragraphs-item-video-player #main-video .mapping-icons-container a.btn:focus {
+  border: 1px solid #8065a9;
+  background-color: #8065a9;
+  color: #fff;
+}
+
+.paragraph_background_colour_yellow > .paragraphs-item-video-player .main-video-block .inner-wrapper {
+  color: #000;
+}
+
+/* There is historical code affecting the layout of the video player when presented within a paragraph bundle so this needs to be fixed */
+/* Experiment with commenting out this rule */
+/*
+.not-front .node-paragraphs .background-tint {
+  margin: inherit !important;
+}
+*/
+
+.node-paragraphs .paragraphs-item-video-player #main-video {
+  position: relative;
+  margin-top: 0;
+  margin-bottom: -360px;
+}
+
+.node-paragraphs .paragraphs-item-video-player #main-video .background-tint {
+  position: relative;
+  bottom: 360px;
+  top: inherit;
+}
+
+@media only screen and (max-width: 767px) {
+  .node-paragraphs .paragraphs-item-video-player #main-video {
+    margin-bottom: -500px;
+  }
+  .node-paragraphs .paragraphs-item-video-player #main-video .background-tint {
+    bottom: 500px;
+  }
+}

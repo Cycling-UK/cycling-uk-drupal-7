@@ -1,0 +1,57 @@
+/*
+ * Maintenance page
+ */
+
+body.maintenance-page {
+	background-image: url("/sites/all/themes/cyclinguk/images/system/maintenance-background.jpg");
+	background-position: left top;
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-color: #fff;
+	background-size: cover;
+}
+
+body.maintenance-page .content-panel {
+	min-width: 300px;
+	max-width: 500px;
+	margin-top: 30px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: rgba(255,255,255,0.6);
+	backdrop-filter: blur(8px);
+	padding: 20px;
+	border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-box-shadow: 0px 3px 0px 0px rgba(0,0,0,.1);
+	-moz-box-shadow: 0px 3px 0px 0px rgba(0,0,0,.1);
+	box-shadow: 0px 3px 0px 0px rgba(0,0,0,.1);
+}
+
+body.maintenance-page .text {
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+body.maintenance-page .cocon {
+	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-weight: 400;
+}
+
+body.maintenance-page .logo {
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+body.maintenance-page .link {
+	text-align: center;
+	margin-bottom: 15px;
+}
+
+body.maintenance-page .btn {
+	width: 280px;
+}
+
+body.maintenance-page i {
+	margin-right: 10px;
+}
