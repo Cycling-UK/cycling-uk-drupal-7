@@ -1,6 +1,6 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/cyclingu/drupal7.cyclinguk.net
+    - export DEPLOYPATH=/home/groupsto/test.groupstoolkit.org
     - /bin/cp -r * $DEPLOYPATH
     

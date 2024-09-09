@@ -8,5 +8,5 @@
  */
 
 if (getenv('IS_DDEV_PROJECT') == 'true') {
-  $options['l'] = "https://groups.ddev.site";
+  $options['l'] = "https://cycling-uk-drupal-7.ddev.site";
 }

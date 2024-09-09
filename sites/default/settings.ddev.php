@@ -15,7 +15,7 @@ $driver = "mysql";
 // so use the host-side bind port on docker IP
 if (empty(getenv('DDEV_PHP_VERSION') && getenv('IS_DDEV_PROJECT') == 'true')) {
   $host = "127.0.0.1";
-  $port = 55004;
+  $port = 59050;
 }
 
 $databases['default']['default']['database'] = "db";
@@ -25,7 +25,7 @@ $databases['default']['default']['host'] = $host;
 $databases['default']['default']['driver'] = $driver;
 $databases['default']['default']['port'] = $port;
 
-$drupal_hash_salt = '4ed379d418bb86290a01117e9ceb0debffc4d1b7087db6c04882fbc4e50132f4';
+$drupal_hash_salt = 'deb134abf7e10153c111b862ad58491cdb65fc0a5534ea956617d43035810cda';
 
 // Enable verbose logging for errors.
 // https://www.drupal.org/docs/7/creating-custom-modules/show-all-errors-while-developing
