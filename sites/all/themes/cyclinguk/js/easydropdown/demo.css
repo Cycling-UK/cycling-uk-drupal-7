@@ -245,7 +245,7 @@ select,
 	margin-right: 8px;
 }
 
-pre.prettyprint{background:#141414;color:#f8f8f8;}
+pre.prettyprint{background:#141414;color:#ebeef0;}
 pre.prettyprint span.str,pre.prettyprint span.atv{color:#8f9d6a;}
 pre.prettyprint span.kwd,pre.prettyprint span.pun{color:#cda869;}
 pre.prettyprint span.com{color:#5f5a60;font-style:italic;}
@@ -325,7 +325,7 @@ pre.prettyprint{
 	cursor: pointer;
 	margin-bottom: 30px;
 	font-weight: 200;
-	background: #f8f8f8;
+	background: #ebeef0;
 	
 	-webkit-user-select: none;
 	-moz-user-select: none;
@@ -364,7 +364,7 @@ pre.prettyprint{
 	top: 50%;
 	margin-top: -4px;
 	border: 8px solid transparent;
-	border-top: 8px solid #000;
+	border-top: 8px solid #101920;
 	z-index: 2;
 	
 	-webkit-transform-origin: 50% 20%;
@@ -377,7 +377,7 @@ pre.prettyprint{
 .metro .carat:after{
 	margin-top: -10px;
 	right: -8px;
-	border-top-color: #f8f8f8;
+	border-top-color: #ebeef0;
 }
 
 .metro:hover .carat:after{
@@ -385,7 +385,7 @@ pre.prettyprint{
 }
 
 .metro.focus .carat{
-	border-top-color: #f8f8f8;
+	border-top-color: #ebeef0;
 }
 
 .metro.focus .carat:after{
@@ -431,7 +431,7 @@ pre.prettyprint{
 	display: block;
 	font-size: 18px;
 	line-height: 1;
-	color: #000;
+	color: #101920;
 	padding: 9px 12px;
 	overflow: hidden;
 	white-space: nowrap;
@@ -446,7 +446,7 @@ pre.prettyprint{
 	width: 60px;
 	
 	border-radius: 0 2px 2px 0;
-	box-shadow: inset -55px 0 25px -20px #f8f8f8;
+	box-shadow: inset -55px 0 25px -20px #ebeef0;
 }
 
 .metro:hover .selected::after{
@@ -462,7 +462,7 @@ pre.prettyprint{
 	right: 0;
 	top: 100%;
 	margin-top: -1px;
-	background: #f8f8f8;
+	background: #ebeef0;
 	overflow: hidden;
 	opacity: 0;
 }
@@ -488,7 +488,7 @@ pre.prettyprint{
 	bottom: 0;
 	height: 50px;
 	
-	box-shadow: inset 0 -50px 30px -35px #f8f8f8;
+	box-shadow: inset 0 -50px 30px -35px #ebeef0;
 }
 
 .metro.scrollable:hover div::after{
@@ -574,7 +574,7 @@ pre.prettyprint{
 	
 	border-radius: 5px;
 	
-	color:  #000;
+	color:  #101920;
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	user-select: none;
@@ -613,7 +613,7 @@ pre.prettyprint{
 }
 
 .flat.focus .carat{
-	border-top-color: #f8f8f8;
+	border-top-color: #ebeef0;
 }
 
 .flat.focus .carat:after{

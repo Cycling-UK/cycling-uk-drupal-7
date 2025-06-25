@@ -33,7 +33,7 @@
 .paragraph_background_colour_white > .paragraphs-item-text-left-and-image-right .field-name-field-text,
 .paragraph_background_colour_white > .paragraphs-item-text-right-and-image-left .field-name-field-subtitle,
 .paragraph_background_colour_white > .paragraphs-item-text-right-and-image-left .field-name-field-text {
-  color: #000;
+  color: #101920;
 }
 
 
@@ -50,7 +50,7 @@
 
 .paragraphs-item-text-left-and-image-right .field-name-field-subtitle,
 .paragraphs-item-text-right-and-image-left .field-name-field-subtitle {
-  font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-weight: 400;
   font-size: 36px;
   line-height: 36px;
@@ -81,7 +81,7 @@
 .paragraphs-item-text-right-and-image-left .field-name-field-links .field-item a:hover,
 .paragraphs-item-text-right-and-image-left .field-name-field-links .field-item a:focus {
   outline: none;
-  border: 1px solid #fbb040;
+  border: 1px solid #fc5c1f;
   text-align: center;
   -webkit-box-shadow: 0px 3px 0px 0px rgba(0,0,0,.1);
   -moz-box-shadow: 0px 3px 0px 0px rgba(0,0,0,.1);
@@ -132,7 +132,7 @@
 .paragraph_background_colour_grey   > .paragraphs-item-text-right-and-image-left .field-name-field-text a:focus,
 .paragraph_background_colour_white  > .paragraphs-item-text-right-and-image-left .field-name-field-text a:hover,
 .paragraph_background_colour_white  > .paragraphs-item-text-right-and-image-left .field-name-field-text a:focus {
-  color: #fbb040;
+  color: #fc5c1f;
 }
 
 .paragraph_background_colour_green  > .paragraphs-item-text-left-and-image-right .field-name-field-text a:hover,
@@ -217,7 +217,7 @@
 .paragraph_background_colour_purple > .paragraphs-item-text-right-and-image-left .field-name-field-text li:before,
 .paragraph_background_colour_grey   > .paragraphs-item-text-right-and-image-left .field-name-field-text li:before,
 .paragraph_background_colour_white  > .paragraphs-item-text-right-and-image-left .field-name-field-text li:before {
-  color: #fbb040;
+  color: #fc5c1f;
 }
 
 .paragraph_background_colour_green  > .paragraphs-item-text-left-and-image-right .field-name-field-text li:before,

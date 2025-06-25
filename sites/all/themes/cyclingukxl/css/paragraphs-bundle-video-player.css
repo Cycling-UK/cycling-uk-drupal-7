@@ -16,7 +16,7 @@
   .paragraphs-item-video-player
   .main-video-block
   .background-tint {
-  background-color: #009fda;
+  background-color: #007fae;
 }
 .node-paragraphs
   .paragraphs-items
@@ -40,7 +40,7 @@
   .paragraphs-item-video-player
   .main-video-block
   .background-tint {
-  background-color: #fbb040;
+  background-color: #fc5c1f;
 }
 .node-paragraphs
   .paragraphs-items
@@ -81,7 +81,7 @@
 
 .paragraphs-item-video-player .field-name-field-subtitle {
   text-align: center;
-  font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-weight: 400;
   font-size: 36px;
   line-height: 36px;
@@ -97,7 +97,7 @@
 }
 
 .paragraph_background_colour_yellow > .paragraphs-item-video-player .main-video-block .inner-wrapper {
-  color: #000;
+  color: #101920;
 }
 
 /* There is historical code affecting the layout of the video player when presented within a paragraph bundle so this needs to be fixed */

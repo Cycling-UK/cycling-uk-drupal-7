@@ -30,10 +30,10 @@
 .view.listing-page .view-content a,
 .view.listing-page a.sticky-No {
 	display: block;
-	color: #000;
+	color: #101920;
 	text-decoration: none;
-	background-color: #f0f0f0;
-	border: 1px solid #f0f0f0;
+	background-color: #ebeef0;
+	border: 1px solid #ebeef0;
 	border-radius: 10px;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
@@ -56,8 +56,8 @@
 .view.listing-page a.sticky-No:hover,
 .view.listing-page a.sticky-No:focus,
 .view.listing-page a.sticky-No:active {
-	background-color: #e0e0e0;
-	border: 1px solid #e0e0e0;
+	background-color: #ebeef0;
+	border: 1px solid #ebeef0;
 }
 
 
@@ -69,9 +69,9 @@
 
 .view.listing-page a.sticky-Yes {
 	display: block;
-	color: #000;
+	color: #101920;
 	text-decoration: none;
-	border: 1px solid #fbb040;
+	border: 1px solid #fc5c1f;
 	background-color: inherit;
 	border-radius: 10px;
 	-webkit-border-radius: 10px;
@@ -93,7 +93,7 @@
 .view.listing-page a.sticky-Yes:hover span.yellow-line,
 .view.listing-page a.sticky-Yes:focus span.yellow-line,
 .view.listing-page a.sticky-Yes:active span.yellow-line {
-	background-color: #000;
+	background-color: #101920;
 }
 
 .view.listing-page a.sticky-Yes .btn {
@@ -106,13 +106,13 @@
 .view.listing-page a.sticky-Yes:hover .btn,
 .view.listing-page a.sticky-Yes:focus .btn {
 	background-color: #fff;
-	color: #000;
+	color: #101920;
 	border: 1px solid #f6b331;
 }
 
 .view.listing-page a.sticky-Yes:active .btn {
 	background-color: #fff;
-	color: #000;
+	color: #101920;
 	border: 1px solid #fdaf17;
 }
 
@@ -311,7 +311,7 @@ body.page-publications-cycle .view.listing-page .date {
 }
 
 .promoted-article-wrapper .right-container a.btn {
-	color: #000;
+	color: #101920;
     padding: 0 !important;
     margin-bottom: 0 !important;
 }
@@ -359,7 +359,7 @@ body.page-publications-cycle .view.listing-page .date {
 }
 
 #search-filters .views-widget-sort-by .form-control  {
-	border: 1px solid #000;
+	border: 1px solid #101920;
 	height: 44px;
 	padding: 10px 20px;
 	margin-bottom: 20px;
@@ -387,13 +387,13 @@ body.page-publications-cycle .view.listing-page .date {
 	font-weight: 400;
 	margin-bottom: 12px;
 	padding-bottom: 12px;
-	border-bottom: 1px solid #000;
+	border-bottom: 1px solid #101920;
 	width: 100%;
 }
 
 #search-filters .btn {
 	margin: inherit;
-	border: 1px solid #fbb040;
+	border: 1px solid #fc5c1f;
 }
 
 #search-filters .views-submit-button .btn {
@@ -401,7 +401,7 @@ body.page-publications-cycle .view.listing-page .date {
 }
 
 #search-filters .views-submit-button .btn:hover {
-	border: 1px solid #fbb040;
+	border: 1px solid #fc5c1f;
 }
 
 #search-filters .views-submit-button,
@@ -462,14 +462,14 @@ body.page-publications-cycle .view.listing-page .date {
 }
 
 #search-filters fieldset .panel-heading a.panel-title {
- 	font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+ 	font-family: "Plus Jakarta Sans", sans-serif;
 	font-size: 18px;
 	line-height: 18px;
 	font-weight: 400;
 	text-decoration: none;
     padding: 0 0 10px 0;
 	margin: 0 0 10px 0;
-	border-bottom: 1px solid #000;
+	border-bottom: 1px solid #101920;
 	outline: none;
 }
 
@@ -514,7 +514,7 @@ body.page-publications-cycle .view.listing-page .date {
 
 .author-wrapper {
 	display: block;
-    background-color: #f0f0f0;
+    background-color: #ebeef0;
     border-radius: 10px 10px 0 0;
     height: 50px;
     margin-bottom: -50px;
@@ -538,7 +538,7 @@ body.page-publications-cycle .view.listing-page .date {
 .view.listing-page a.sticky-No:hover .author-wrapper,
 .view.listing-page a.sticky-No:focus .author-wrapper,
 .view.listing-page a.sticky-No:active .author-wrapper {
-	background-color: #e0e0e0;
+	background-color: #ebeef0;
 }
 
 .author-picture {

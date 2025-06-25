@@ -33,7 +33,7 @@
 }
 
 .node-type-challenge .node-cycle-challenge h2 {
-    color: #000;
+    color: #101920;
 }
 
 .node-type-challenge .page-content > img {
@@ -48,10 +48,10 @@
 }
 
 .node-type-challenge .community_champion img {
-    border: 5px solid #fbb040;
+    border: 5px solid #fc5c1f;
 }
 .node-type-challenge .industry_mogul img {
-    border: 5px solid #009fda;
+    border: 5px solid #007fae;
 }
 .node-type-challenge .cycle_influencer img {
     border: 5px solid #e6007e;
@@ -87,7 +87,7 @@
 
 .node-type-challenge .group-social-links a:hover,
 .node-type-challenge .group-social-links a:active {
-    color: #fbb040;
+    color: #fc5c1f;
     outline: none;
 }
 
@@ -110,7 +110,7 @@
 }
 
 .view-challenge-grid .views-exposed-form {
-    background-color: #f0f0f0;
+    background-color: #ebeef0;
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -142,7 +142,7 @@
 
 /* view all */
 #edit-challenge-level > div:nth-child(1) label {
-    border-color: #fbb040;
+    border-color: #fc5c1f;
 }
 
 /* beginner */
@@ -156,7 +156,7 @@
 .view-challenge-grid .challenge_image.Regular img,
 .view-challenge-grid .challenge_image.level_two img,
 #edit-challenge-level > div:nth-child(3) label {
-    border-color: #009fda;
+    border-color: #007fae;
 }
 
 /* experienced */
@@ -203,7 +203,7 @@
     font-size: 14px;
     line-height: 14px;
     margin-bottom: 5px;
-    color: #000;
+    color: #101920;
     font-weight: bold;
 }
 
@@ -222,7 +222,7 @@
     font-size: 18px;
     line-height: 18px;
     margin-bottom: 5px;
-    color: #009fda;
+    color: #007fae;
 }
 
 .view-challenge-grid .challenge-pop-text {
@@ -283,7 +283,7 @@
     max-width: 180px;
     width: 100%;
     height: auto;
-    border: 3px solid #fbb040;
+    border: 3px solid #fc5c1f;
     border-radius: 10px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
@@ -291,10 +291,10 @@
 }
 
 #cboxContent .community_champion img {
-    border-color: #fbb040;
+    border-color: #fc5c1f;
 }
 #cboxContent .industry_mogul img {
-    border-color: #009fda;
+    border-color: #007fae;
 }
 #cboxContent .cycle_influencer img {
     border-color: #e6007e;
@@ -310,7 +310,7 @@
     letter-spacing: 1px;
     text-align: center;
     margin: 10px 0 5px;
-    color: #000000;
+    color: #101920;
     font-weight: bold;
 }
 
@@ -328,7 +328,7 @@
     line-height: 18px;
     text-align: center;
     margin: 10px 0 14px;
-    color: #009fda;
+    color: #007fae;
 }
 
 #cboxContent .node-cycle-challenge .group-social-links .field {
@@ -345,13 +345,13 @@
 
 #cboxContent .node-cycle-challenge .group-social-links a:hover,
 #cboxContent .node-cycle-challenge .group-social-links a:active {
-    color: #fbb040;
+    color: #fc5c1f;
     outline: none;
 }
 
 #cboxContent .node-cycle-challenge .field-name-view-full-node a,
 #cboxContent .node-cycle-challenge .field-name-view-full-node a:visited {
-    font-family: "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: "Plus Jakarta Sans", sans-serif;
     display: inline-block;
     min-width: 140px;
     font-size: 14px;
@@ -363,14 +363,14 @@
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     background-color: #fff;
-    color: #000;
-    border: 1px solid #fbb040;
+    color: #101920;
+    border: 1px solid #fc5c1f;
 }
 
 #cboxContent .node-cycle-challenge .field-name-view-full-node a:hover {
-    background-color: #fbb040;
+    background-color: #fc5c1f;
     color: #fff;
-    border: 1px solid #fbb040;
+    border: 1px solid #fc5c1f;
 }
 
 @media only screen and (max-width: 767px) {

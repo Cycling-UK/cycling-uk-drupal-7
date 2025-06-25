@@ -66,7 +66,7 @@
     padding: 0 auto;
 }
     .view-route-search .views-exposed-form #edit-secondary-wrapper a.panel-title {
-        font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+        font-family: "Plus Jakarta Sans", sans-serif;
         display: inline-block;
         font-size: 15px;
         line-height: 15px;
@@ -75,7 +75,7 @@
         text-decoration: none;
         outline: none;
         padding: 3px 0;
-        border-bottom: 1px solid #000;
+        border-bottom: 1px solid #101920;
     }
     .view-route-search .views-exposed-form #edit-secondary-wrapper a.panel-title::after {
         display: inline-block;

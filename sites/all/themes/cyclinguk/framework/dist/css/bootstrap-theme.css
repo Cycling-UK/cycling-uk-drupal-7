@@ -75,12 +75,12 @@ fieldset[disabled] .btn-danger {
 }
 .btn-default:hover,
 .btn-default:focus {
-  background-color: #e0e0e0;
+  background-color: #ebeef0;
   background-position: 0 -15px;
 }
 .btn-default:active,
 .btn-default.active {
-  background-color: #e0e0e0;
+  background-color: #ebeef0;
   border-color: #dbdbdb;
 }
 .btn-default.disabled,
@@ -101,7 +101,7 @@ fieldset[disabled] .btn-default:active,
 .btn-default.disabled.active,
 .btn-default[disabled].active,
 fieldset[disabled] .btn-default.active {
-  background-color: #e0e0e0;
+  background-color: #ebeef0;
   background-image: none;
 }
 .btn-primary {

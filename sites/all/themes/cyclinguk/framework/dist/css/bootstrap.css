@@ -69,7 +69,7 @@ h1 {
 }
 mark {
   background: #ff0;
-  color: #000;
+  color: #101920;
 }
 small {
   font-size: 80%;
@@ -249,7 +249,7 @@ th {
     border-top-color: #000 !important;
   }
   .label {
-    border: 1px solid #000;
+    border: 1px solid #101920;
   }
   .table {
     border-collapse: collapse !important;
@@ -4569,7 +4569,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-default {
-  background-color: #f8f8f8;
+  background-color: #ebeef0;
   border-color: #e7e7e7;
 }
 .navbar-default .navbar-brand {
@@ -5919,14 +5919,14 @@ button.list-group-item-danger.active:focus {
   font-size: 21px;
   font-weight: bold;
   line-height: 1;
-  color: #000;
+  color: #101920;
   text-shadow: 0 1px 0 #fff;
   filter: alpha(opacity=20);
   opacity: 0.2;
 }
 .close:hover,
 .close:focus {
-  color: #000;
+  color: #101920;
   text-decoration: none;
   cursor: pointer;
   filter: alpha(opacity=50);
@@ -6000,7 +6000,7 @@ button.close {
   bottom: 0;
   left: 0;
   z-index: 1040;
-  background-color: #000;
+  background-color: #101920;
 }
 .modal-backdrop.fade {
   filter: alpha(opacity=0);
@@ -6113,63 +6113,63 @@ button.close {
   left: 50%;
   margin-left: -5px;
   border-width: 5px 5px 0;
-  border-top-color: #000;
+  border-top-color: #101920;
 }
 .tooltip.top-left .tooltip-arrow {
   right: 5px;
   bottom: 0;
   margin-bottom: -5px;
   border-width: 5px 5px 0;
-  border-top-color: #000;
+  border-top-color: #101920;
 }
 .tooltip.top-right .tooltip-arrow {
   bottom: 0;
   left: 5px;
   margin-bottom: -5px;
   border-width: 5px 5px 0;
-  border-top-color: #000;
+  border-top-color: #101920;
 }
 .tooltip.right .tooltip-arrow {
   top: 50%;
   left: 0;
   margin-top: -5px;
   border-width: 5px 5px 5px 0;
-  border-right-color: #000;
+  border-right-color: #101920;
 }
 .tooltip.left .tooltip-arrow {
   top: 50%;
   right: 0;
   margin-top: -5px;
   border-width: 5px 0 5px 5px;
-  border-left-color: #000;
+  border-left-color: #101920;
 }
 .tooltip.bottom .tooltip-arrow {
   top: 0;
   left: 50%;
   margin-left: -5px;
   border-width: 0 5px 5px;
-  border-bottom-color: #000;
+  border-bottom-color: #101920;
 }
 .tooltip.bottom-left .tooltip-arrow {
   top: 0;
   right: 5px;
   margin-top: -5px;
   border-width: 0 5px 5px;
-  border-bottom-color: #000;
+  border-bottom-color: #101920;
 }
 .tooltip.bottom-right .tooltip-arrow {
   top: 0;
   left: 5px;
   margin-top: -5px;
   border-width: 0 5px 5px;
-  border-bottom-color: #000;
+  border-bottom-color: #101920;
 }
 .tooltip-inner {
   max-width: 200px;
   padding: 3px 8px;
   color: #fff;
   text-align: center;
-  background-color: #000;
+  background-color: #101920;
   border-radius: 4px;
 }
 .tooltip-arrow {
@@ -6410,7 +6410,7 @@ button.close {
   background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
   background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.0001)));
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#00000000', GradientType=1);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80000000', endColorstr='#10192000', GradientType=1);
   background-repeat: repeat-x;
 }
 .carousel-control.right {
@@ -6420,7 +6420,7 @@ button.close {
   background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
   background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.0001)), to(rgba(0, 0, 0, 0.5)));
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#80000000', GradientType=1);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#10192000', endColorstr='#80000000', GradientType=1);
   background-repeat: repeat-x;
 }
 .carousel-control:hover,

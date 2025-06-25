@@ -1,7 +1,7 @@
 footer.footer {
 	font-size: 14px;
 	line-height: 22px;
-	background-color: #009fda;
+	background-color: #007fae;
 	color: #fff;
 	padding-top: 30px;
 	padding-bottom: 200px;
@@ -29,7 +29,7 @@ footer.footer p {
 #scroll_top {
 	background-image: none;
 	background-color: #fff !important;
-	color: #009fda;
+	color: #007fae;
 	border: inherit;
 	padding: 0;
 	width: 60px;

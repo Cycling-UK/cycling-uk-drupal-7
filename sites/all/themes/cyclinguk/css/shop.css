@@ -54,9 +54,19 @@ form#commerce-checkout-form-review button#edit-back,				/* Review order - go bac
 input#postcodeanywhere-lookup-button,								/* Postcode Anywhere button */
 input#postcodeanywhere-reset-button,								/* Postcode Anywhere button */
 button#edit-cyclinguk-commerce-directdebit-fieldset-validate {		/* Validate direct debit payment */
-	border: 1px #fbb040 solid;
-	background-color: #fff;
-    color: #000;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 400;
+	background-color: #fc5c1f;
+	border: 4px solid #fc5c1f;
+	color: #ffffff;
+	display: inline-block;
+	min-width: 140px;
+  font-size: 20px;
+	line-height: 1;
+  font-weight: 700;
+	text-decoration: none !important;
+	padding: 8px 32px;
+	border-radius: 10px;
 }
 
 .node-type-product-display .btn:hover,
@@ -91,10 +101,10 @@ input#postcodeanywhere-reset-button:hover,
 input#postcodeanywhere-reset-button:focus,
 button#edit-cyclinguk-commerce-directdebit-fieldset-validate:hover,
 button#edit-cyclinguk-commerce-directdebit-fieldset-validate:focus {
-	border: 1px #fbb040 solid !important;
-	background-color: #fbb040 !important;
-    color: #fff !important;
-    text-decoration: none;
+	background-color: #101920;
+	border: 4px solid #101920;
+	color: #fff;
+  box-shadow: inherit;
 }
 
 .node-type-product-display .btn:active,
@@ -113,9 +123,10 @@ form#commerce-checkout-form-review button#edit-back:active,
 input#postcodeanywhere-lookup-button:active,
 input#postcodeanywhere-reset-button:active,
 button#edit-cyclinguk-commerce-directdebit-fieldset-validate:active {
-	border: 1px #fdaf17 solid !important;
-	background-color: #fdaf17 !important;
-    color: #fff !important;
+	background-color: #101920;
+	border: 4px solid #101920;
+	color: #fff;
+  box-shadow: inherit;
 }
 
 
@@ -132,9 +143,19 @@ form#commerce-checkout-form-review button#edit-continue,			/* Review order - con
 form#commerce-tnspay-redirect-form button#edit-submit,				/* TNSPay - continue */
 button#edit-commerce-checkout-complete-registration-submit,			/* TNSPay - continue */
 form.commerce-add-to-cart button {
-	border: 1px #fbb040 solid;
-	background-color: #fbb040;
-    color: #fff;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 400;
+	background-color: #fc5c1f;
+	border: 4px solid #fc5c1f;
+	color: #ffffff;
+	display: inline-block;
+	min-width: 140px;
+  font-size: 20px;
+	line-height: 1;
+  font-weight: 700;
+	text-decoration: none !important;
+	padding: 8px 32px;
+	border-radius: 10px;
 }
 
 .view-commerce-cart-form button#edit-checkout:hover,
@@ -157,9 +178,10 @@ button#edit-commerce-checkout-complete-registration-submit:hover,
 button#edit-commerce-checkout-complete-registration-submit:focus,
 form.commerce-add-to-cart button:hover,
 form.commerce-add-to-cart button:focus {
-	border: 1px #fdaf17 solid !important;
-	background-color: #fdaf17 !important;
-    color: #fff !important;
+	background-color: #101920;
+	border: 4px solid #101920;
+	color: #fff;
+  box-shadow: inherit;
 }
 
 .view-commerce-cart-form button#edit-checkout:active,
@@ -172,9 +194,10 @@ form#commerce-checkout-form-review button#edit-continue:active,
 form#commerce-tnspay-redirect-form button#edit-submit:active,
 button#edit-commerce-checkout-complete-registration-submit:active,
 form.commerce-add-to-cart button:active {
-	border: 1px #fdaf17 solid !important;
-	background-color: #fdaf17 !important;
-    color: #fff !important;
+	background-color: #101920;
+	border: 4px solid #101920;
+	color: #fff;
+  box-shadow: inherit;
 }
 
 
@@ -332,7 +355,7 @@ form.commerce-add-to-cart .panel-body {
 
 
 .view-commerce-cart-form a {
-	color: #000;
+	color: #101920;
 }
 
 .view-commerce-cart-form .form-control {
@@ -351,7 +374,7 @@ form.commerce-add-to-cart .panel-body {
 }
 
 .panel-default > .panel-heading {
-	color: #000;
+	color: #101920;
 	background-color: inherit;
 	border: none;
 	padding-left: 0;
@@ -359,14 +382,13 @@ form.commerce-add-to-cart .panel-body {
 }
 
 .panel-title {
-	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
-	font-weight: 400;
-	font-size: 24px;
-	line-height: 24px;
+  color: #365269;
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 1;
 }
 
 legend {
-    font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
 	font-size: 19px;
 	line-height: 24px;
 	font-weight: 600;
@@ -470,7 +492,7 @@ input#edit-line-item-fields-field-care-address-und-0-postcode-lookup {
 	margin-top: 10px;
 	margin-bottom: 20px;
 	padding: 10px;
-	border: 1px solid #cdcdcd;
+	border: 1px solid #c3cbd2;
 	border-radius: 10px;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
@@ -494,7 +516,7 @@ input#edit-line-item-fields-field-care-address-und-0-postcode-lookup {
 }
 
 .page-checkout-checkout-step-3  h4 {
-	border-bottom: 1px solid #000;
+	border-bottom: 1px solid #101920;
 	margin-top: 40px;
 	margin-bottom: 12px;
 	padding-bottom: 6px;
@@ -547,8 +569,8 @@ input#edit-line-item-fields-field-care-address-und-0-postcode-lookup {
 /* Gift aid help text to standard formating - too long for uppercase */
 .commerce_giftaid_pane .help-block {
 	text-transform: none;
-	color: #000;
-	font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	color: #101920;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-weight: 400;
 	font-size: 16px;
 	line-height: 22px;
@@ -564,7 +586,7 @@ fieldset#edit-commerce-checkout-complete-registration,
 fieldset#user-login-form {
 	background-color: #fff;
 	padding: 20px;
-	border: 1px solid #fbb040;
+	border: 1px solid #fc5c1f;
 	border-radius: 10px;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
@@ -574,7 +596,7 @@ fieldset#user-login-form {
 }
 
 fieldset#user-login-form a {
-	color: #000;
+	color: #101920;
 	text-decoration: none;
 }
 
@@ -615,7 +637,7 @@ body.page-checkout .checkout-help {
 
 body.page-layout-product h1,
 body.page-layout-certificate h1 {
-	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-weight: 400;
 	font-size: 38px;
 	line-height: 38px;
@@ -672,7 +694,7 @@ body.page-layout-certificate .field-name-body {
 
 /*
 body.page-layout-product .field-name-body a {
-	color: #fbb040;
+	color: #fc5c1f;
 	text-decoration: none;
 }
 */
@@ -790,7 +812,7 @@ body.page-layout-certificate .panel {
 }
 
 body.page-layout-certificate .panel-title {
-	font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-weight: 600;
 	font-size: 16px;
 	line-height: 22px;

@@ -14,7 +14,7 @@
 .paragraphs-item-join-icons .field-name-field-billboard-icon > .field-items > .field-item {
   width: 230px;
   margin: 0 15px 30px 15px;
-  border: 1px solid #fbb040;
+  border: 1px solid #fc5c1f;
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -26,8 +26,8 @@
 }
 
 .paragraphs-item-join-icons .billboard-icon-title {
-  font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
-  color: #000;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  color: #101920;
   font-weight: 600;
   font-size: 22px;
   line-height: 24px;
@@ -43,7 +43,7 @@
   border-radius: 2.5px;
   -webkit-border-radius: 2.5px;
   -moz-border-radius: 2.5px;
-  background-color: #fbb040;
+  background-color: #fc5c1f;
   margin: 10px auto;
 }
 

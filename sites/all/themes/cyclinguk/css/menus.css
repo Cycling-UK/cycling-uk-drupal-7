@@ -275,7 +275,7 @@ a#menu-home span.inner-wrapper {
 .sf-menu.sf-style-simple-centre-aligned span.nolink:hover,
 .sf-menu.sf-style-simple-centre-aligned li:hover > span.nolink,
 .sf-menu.sf-style-simple-centre-aligned li.sfHover > span.nolink {
-    color: #000;
+    color: #101920;
     outline: none;
 }
 
@@ -350,10 +350,10 @@ a#menu-home span.inner-wrapper {
 ul#superfish-1.sf-menu.sf-style-simple-centre-aligned a,
 ul#superfish-1.sf-menu.sf-style-simple-centre-aligned a:visited,
 ul#superfish-1.sf-menu.sf-style-simple-centre-aligned span.nolink {
-    color: #000;
+    color: #101920;
     font-size: 15px;
     line-height: 15px;
-    font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Plus Jakarta Sans", sans-serif;
     text-shadow: inherit;
 }
 
@@ -378,7 +378,7 @@ ul#superfish-1.sf-menu.sf-style-simple-centre-aligned.sf-navbar a + ul {
 .sf-menu.sf-style-simple-centre-aligned li.sf-depth-3 a:hover .inner-wrapper,
 .sf-menu.sf-style-simple-centre-aligned li.sf-depth-3 a:focus .inner-wrapper {
 	padding-bottom: 2px;
-	border-bottom: 1px solid #000;
+	border-bottom: 1px solid #101920;
 }
 
 
@@ -399,7 +399,7 @@ ul#superfish-1.sf-menu.sf-style-simple-centre-aligned.sf-navbar a + ul {
 
 
 ul#superfish-1 {
-	border-bottom: 1px solid #e0e0e0;
+	border-bottom: 1px solid #ebeef0;
 	height: 40px;
 	margin-bottom: 20px;
 }
@@ -449,7 +449,7 @@ ul#superfish-1 li.sf-depth-1 a#menu-charity:hover,
 ul#superfish-1 li.sf-depth-1.sfHover a#menu-charity 		{border-bottom: 4px solid #e6007e;}   /* Pink   */
 
 ul#superfish-1 li.sf-depth-1 a#menu-about:hover,
-ul#superfish-1 li.sf-depth-1.sfHover a#menu-about 			{border-bottom: 4px solid #fbb040;}   /* Yellow */
+ul#superfish-1 li.sf-depth-1.sfHover a#menu-about 			{border-bottom: 4px solid #fc5c1f;}   /* Yellow */
 
 
 
@@ -545,10 +545,10 @@ ul#superfish-1-accordion.sf-menu.sf-style-simple-centre-aligned .sf-depth-1 li.s
 ul#superfish-1-accordion.sf-menu.sf-style-simple-centre-aligned .sf-depth-2 a,
 ul#superfish-1-accordion.sf-menu.sf-style-simple-centre-aligned .sf-depth-2 a:visited,
 ul#superfish-1-accordion.sf-menu.sf-style-simple-centre-aligned .sf-depth-2 span.nolink {
-    color: #000;
+    color: #101920;
     font-size: 22px;
     line-height: 28px;
-    font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Plus Jakarta Sans", sans-serif;
     text-shadow: inherit;
 	text-shadow: inherit;
 	padding: 15px 10px 15px 0;
@@ -647,7 +647,7 @@ ul#superfish-1-accordion > li:first-child {
  */
 
 ul#superfish-1-accordion > li {
-	border-bottom: 1px solid #000;
+	border-bottom: 1px solid #101920;
 }
 
 ul#superfish-1-accordion > li:last-child {
@@ -661,11 +661,11 @@ ul#superfish-1-accordion .sf-depth-1 ul {
 ul#superfish-1-accordion .sf-depth-1 a,
 ul#superfish-1-accordion .sf-depth-1 a:visited,
 ul#superfish-1-accordion .sf-depth-1 span.nolink {
-	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-weight: 400;
 	font-size: 20px;
 	line-height: 20px;
-	color: #000;
+	color: #101920;
 	outline: none;
 	padding: 15px 20px;
 	text-shadow: inherit;
@@ -766,8 +766,8 @@ section.block-menu-block h2.block-title,
 .field-name-og-node-content-links:before,
 .field-name-group-details h2.block-title,
 .field-name-group-administration:before {
-	font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
-	color: #000;
+	font-family: "Plus Jakarta Sans", sans-serif;
+	color: #101920;
 	font-size: 18px;
 	line-height: 18px;
 	font-weight: 400;

@@ -15,13 +15,6 @@ body.front #block-system-main {
 
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
 
-/**
- * Import Karla font
- * Currently loaded via html.tpl
- * @import url('https://fonts.googleapis.com/css?family=Karla:400,400i,700,700i');
- */
-
-
 
 html {
 	text-rendering: optimizeLegibility !important;
@@ -29,11 +22,11 @@ html {
 }
 
 body {
-    color: #000;
-    font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 22px;
+  color: #101920;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.5;
 }
 
 #block-system-main {
@@ -59,11 +52,13 @@ body {
  * Typography
  */
 
+h1, h2, h3, h4 {
+  font-weight: 700;
+}
+
 h1.page-header {
-	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
-	font-weight: 400;
-	font-size: 38px;
-	line-height: 38px;
+	font-family: "Plus Jakarta Sans", sans-serif;
+	font-weight: 700;
 	margin-top: 30px;
 	margin-bottom: 30px;
 	border-bottom: inherit;
@@ -76,11 +71,11 @@ h1.page-header {
  */
 
 span.yellow-text {
-	color: #fbb040;
+	color: #fc5c1f;
 }
 
 span.blue-text {
-	color: #009fda;
+	color: #007fae;
 }
 
 span.yellow-line {
@@ -89,7 +84,7 @@ span.yellow-line {
 	border-radius: 2.5px;
 	-webkit-border-radius: 2.5px;
 	-moz-border-radius: 2.5px;
-	background-color: #fbb040;
+	background-color: #fc5c1f;
 	margin-bottom: 20px;
 }
 
@@ -179,7 +174,7 @@ span.line-width-240 {
 .field-name-field-data-protection-statement ul li:before {
     content: "•";
     margin-right: 10px;
-    color: #fbb040;
+    color: #fc5c1f;
 }
 
 
@@ -187,7 +182,7 @@ span.line-width-240 {
 /* Alternative font styling for purple panels with unordered lists */
 
 .panel-bullets-design-2 ul li {
-	font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-size: 16px !important;
     line-height: 18px !important;
     font-weight: 400;
@@ -214,7 +209,7 @@ span.line-width-240 {
 
 blockquote {
     border-left: inherit;
-	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-weight: 400;
     font-size: 26px;
     line-height: 32px;
@@ -251,14 +246,14 @@ blockquote p:first-child {
 
 blockquote p:first-child::before {
 	content: open-quote;
-	color: #fbb040;
+	color: #fc5c1f;
 	position: relative;
 	left: -10px;
 }
 
 blockquote p:first-child::after {
 	content: close-quote;
-	color: #fbb040;
+	color: #fc5c1f;
 }
 
 
@@ -276,7 +271,7 @@ blockquote p:first-child::after {
 
 .join-today-banner .text {
 	display: inline-block;
-	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-weight: 400;
 	font-size: 27px;
 	line-height: 29px;
@@ -294,7 +289,7 @@ blockquote p:first-child::after {
 }
 
 .join-today-banner .narrow a {
-	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-weight: 400;
 	font-size: 24px;
 	line-height: 24px;
@@ -412,53 +407,6 @@ body.front .main-container .region-content section#block-views-advert-hero-block
 
 
 
-/*
- * Tag cloud
- */
-
-.field-name-tag-cloud {
-	margin-bottom: 40px;
-}
-
-.main-container h2.block-title {
-	margin: 0 0 10px 0;
-	border-bottom: 1px solid #000;
-	font-size: 18px;
-	line-height: 18px;
-	font-weight: 400;
-	padding-bottom: 10px;
-}
-
-ul.tag-cloud a::before {
-	content: "#";
-}
-
-ul.tag-cloud a {
-	font-size: 12px;
-	color: #000;
-	text-decoration: none;
-}
-
-ul.tag-cloud a:hover,
-ul.tag-cloud a:focus,
-ul.tag-cloud a:active {
-	color: #fbb040;
-}
-
-.field-name-tag-cloud a.more {
-	margin: 10px 0;
-	display: block;
-	color: #fbb040;
-	text-decoration: none;
-}
-
-.field-name-tag-cloud a.more:hover,
-.field-name-tag-cloud a.more:focus,
-.field-name-tag-cloud a.more:active {
-	text-decoration: underline;
-}
-
-
 
 /*
  * Back button
@@ -472,7 +420,7 @@ a.back-button {
 	margin-bottom: 15px;
 	width: 100px;
 	text-decoration: none;
-	color: #fbb040;
+	color: #fc5c1f;
 }
 
 .bottom-middle-row a.back-button {
@@ -486,9 +434,7 @@ span.back-button-icon {
 	height: 40px;
 	margin-right: 10px;
 	border-radius: 20px;
-	-webkit-border-radius: 20px;
-	-moz-border-radius: 20px;
-	background-color: #fbb040;
+	background-color: #fc5c1f;
 	color: #fff;
 	font-size: 32px;
 	line-height: 40px;
@@ -551,7 +497,7 @@ a.back-button:hover span.back-button-icon {
 	border-radius: 25px;
 	-webkit-border-radius: 25px;
 	-moz-border-radius: 25px;
-	background-color: #fbb040 !important;
+	background-color: #fc5c1f !important;
 }
 
 .shariff li a:hover {
@@ -668,13 +614,13 @@ a.back-button:hover span.back-button-icon {
 
 .promobox-font-cocon,
 .promobox-title {
-	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-size: 27px;
 	line-height: 31px;
 }
 
 .promobox-font-karla {
-    font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Plus Jakarta Sans", sans-serif;
     font-size: 16px;
     font-weight: 400;
 	line-height: 18px;
@@ -776,7 +722,7 @@ a.back-button:hover span.back-button-icon {
 }
 
 .main-container table tbody {
-	border: 1px solid #cdcdcd;
+	border: 1px solid #c3cbd2;
 }
 
 .main-container table tbody tr th,
@@ -784,9 +730,9 @@ a.back-button:hover span.back-button-icon {
 .main-container table tbody tr td,
 .main-container table tfoot tr td {
 	padding: 8px;
-	border-top: 1px solid #cdcdcd;
+	border-top: 1px solid #c3cbd2;
 	border-bottom: inherit;
-	border-left: 1px solid #cdcdcd;
+	border-left: 1px solid #c3cbd2;
 	border-right: inherit;
 	text-align: left;
 }
@@ -796,9 +742,9 @@ a.back-button:hover span.back-button-icon {
 .main-container table tbody tr td,
 .main-container table tfoot tr td {
 	padding: 8px;
-	border-top: 1px solid #cdcdcd;
+	border-top: 1px solid #c3cbd2;
 	border-bottom: inherit;
-	border-left: 1px solid #cdcdcd;
+	border-left: 1px solid #c3cbd2;
 	border-right: inherit;
 	text-align: left;
 }
@@ -818,9 +764,9 @@ a.back-button:hover span.back-button-icon {
 .main-container table thead tr td {
 	font-size: 18px;
 	padding: 16px 8px;
-	border-top: 1px solid #009fda;
+	border-top: 1px solid #365269;
 	border-bottom: inherit;
-	border-left: 1px solid #009fda;
+	border-left: 1px solid #365269;
 	border-right: inherit;
 
 }
@@ -831,7 +777,7 @@ a.back-button:hover span.back-button-icon {
 }
 
 .main-container table thead th.active a {
-	color: #009fda;
+	color: #365269;
 	text-decoration: none;
 }
 
@@ -846,14 +792,14 @@ a.back-button:hover span.back-button-icon {
 }
 
 .main-container table > tbody > tr:nth-of-type(2n+1) {
-    background-color: #f5f5f5;
+    background-color: #ebeef0;
 }
 
 .main-container table thead {
-	border: 1px solid #009fda;
-	background-color: #009fda;
+	border: 1px solid #365269;
+	background-color: #365269;
 	color: #fff;
-	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-weight: 400;
 }
 
@@ -861,8 +807,8 @@ a.back-button:hover span.back-button-icon {
 .field-name-field-care-telephones table thead {
 	border: 0px;
 	background-color: #fff;
-	color: #000;
-	font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	color: #101920;
+	font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 .main-container table thead th {
@@ -870,7 +816,7 @@ a.back-button:hover span.back-button-icon {
 }
 
 .main-container table tfoot {
-	border: 1px solid #cdcdcd;
+	border: 1px solid #c3cbd2;
 	background-color: #dfe0e1;
 	font-weight: 400;
 }
@@ -963,8 +909,8 @@ ul.pager > li.pager-ellipsis,
 	margin: 0 5px;
 	text-transform: capitalize;
 	padding: 8px 16px !important;
-    background-color: #f0f0f0 !important;
-    border-color: #f0f0f0 !important;
+    background-color: #ebeef0 !important;
+    border-color: #ebeef0 !important;
     color: #000 !important;
     text-decoration: none !important;
     height: 40px;
@@ -975,8 +921,8 @@ ul.pager > li.pager-current,
 	margin: 0 5px;
 	padding: 8px 16px !important;
     background-color: #fff;
-    border: 1px solid #fbb040;
-    color: #000;
+    border: 1px solid #fc5c1f;
+    color: #101920;
 	-webkit-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
 	-moz-box-shadow:    0px 3px 0px 0px rgba(0, 0, 0, 0.1);
 	box-shadow:         0px 3px 0px 0px rgba(0, 0, 0, 0.1);
@@ -999,8 +945,8 @@ ul.pager > li > a:hover,
 ul.pager > li > span:hover,
 ul.pager > li > a:focus,
 ul.pager > li > span:focus {
-    background-color: #fbb040 !important;
-    border-color: #fbb040 !important;
+    background-color: #fc5c1f !important;
+    border-color: #fc5c1f !important;
     color: #fff !important;
     text-decoration: none !important;
 }
@@ -1042,7 +988,7 @@ li.pager-last > a::after {
  */
 
 #block-feedback-form h2 {
-    font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Plus Jakarta Sans", sans-serif;
 	margin: 0;
 }
 
@@ -1142,7 +1088,7 @@ li.pager-last > a::after {
 #block-feedback-form .feedback-body ul.links a:hover,
 #block-feedback-form .feedback-body ul.links a:active {
 	text-transform: uppercase;
-	color: #fbb040;
+	color: #fc5c1f;
 }
 
 #block-feedback-form .resizable-textarea textarea {
@@ -1186,7 +1132,7 @@ li.pager-last > a::after {
 .node-state.node-unpublished:before {
 	display: block;
 	content: "Unpublished content";
-	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-size: 18px;
 	line-height: 18px;
 	width: 100%;
@@ -1274,7 +1220,7 @@ a.feedback_simple {
 }
 
 #membership-matrix .inner-wrapper.middle {
-	color: #000;
+	color: #101920;
 	padding: 20px;
 }
 
@@ -1282,13 +1228,13 @@ a.feedback_simple {
 	border-radius: 0 0 10px 10px;
 	-webkit-border-radius: 0 0 10px 10px;
 	-moz-border-radius: 0 0 10px 10px;
-	color: #000;
+	color: #101920;
 	padding: 20px;
 	text-align: center;
 }
 
 #membership-matrix .membership-type {
-	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-weight: 400;
 	font-size: 36px;
 	line-height: 36px;
@@ -1329,7 +1275,7 @@ a.feedback_simple {
 
 
 #membership-matrix .benefit-list {
-	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-weight: 400;
 	font-size: 18px;
 	line-height: 18px;
@@ -1352,7 +1298,7 @@ a.feedback_simple {
 #membership-matrix .benefit-list i {
   display: inline-flex;
 	font-size: 24px;
-	color: #fbb040;
+	color: #fc5c1f;
 	margin-right: 10px;
 }
 
@@ -1375,7 +1321,7 @@ a.feedback_simple {
 }
 
 #membership-matrix .price-amount {
-	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-weight: 400;
 	font-size: 36px;
 	line-height: 36px;
@@ -1403,7 +1349,7 @@ a.feedback_simple {
  */
 
 #membership-options {
-	background-color: #f0f0f0;
+	background-color: #ebeef0;
 	padding: 15px;
 	border-radius: 10px;
 	-webkit-border-radius: 10px;
@@ -1436,7 +1382,7 @@ a.feedback_simple {
 }
 
 #membership-options .wrapper {
-	background-color: #e0e0e0;
+	background-color: #ebeef0;
 	border-radius: 0 0 7px 7px;
 	-webkit-border-radius: 0 0 7px 7px;
 	-moz-border-radius: 0 0 7px 7px;
@@ -1444,7 +1390,7 @@ a.feedback_simple {
 
 #membership-options .wrapper .title,
 #membership-options .other-options .title {
-	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-weight: 400;
 	font-size: 22px;
 	line-height: 22px;
@@ -1547,7 +1493,7 @@ a.feedback_simple {
 
 #membership-price-box .type,
 #membership-price-box .price-amount {
-	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-weight: 400;
 	font-size: 28px;
 	line-height: 28px;
@@ -1663,7 +1609,7 @@ a.feedback_simple {
 
 #general-enquiries .subheader,
 #markup-submenu .subheader {
-	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-weight: 400;
 	font-size: 24px;
 	line-height: 28px;
@@ -1701,7 +1647,7 @@ a.feedback_simple {
 	border-radius: 10px 10px 0 0;
 	-webkit-border-radius: 10px 10px 0 0;
 	-moz-border-radius: 10px 10px 0 0;
-	background-color: #e0e0e0;
+	background-color: #ebeef0;
 	padding: 10px 20px 10px 20px;
 	text-align: center;
 	height: 81px;
@@ -1713,7 +1659,7 @@ a.feedback_simple {
 	border-radius: 0 0 10px 10px;
 	-webkit-border-radius: 0 0 10px 10px;
 	-moz-border-radius: 0 0 10px 10px;
-	background-color: #f0f0f0;
+	background-color: #ebeef0;
 	padding: 20px 20px 10px 20px;
 	text-align: center;
 	height: 257px;
@@ -1721,19 +1667,19 @@ a.feedback_simple {
 
 #contact-matrix .bottom-wrapper a,
 #contact-matrix .bottom-wrapper a:visited {
-	color: #000;
+	color: #101920;
 	text-decoration: none;
 }
 
 #contact-matrix .bottom-wrapper a:hover,
 #contact-matrix .bottom-wrapper a:active {
-	color: #fbb040;
+	color: #fc5c1f;
 	text-decoration: underline;
 }
 
 
 #contact-matrix .department {
-	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-weight: 400;
 	font-size: 24px;
 	line-height: 28px;
@@ -1773,7 +1719,7 @@ a.feedback_simple {
 #contact-matrix .description:after {
 	display: block;
 	content: "";
-	border-bottom: 5px solid #e0e0e0;
+	border-bottom: 5px solid #ebeef0;
 	border-radius: 2.5px;
 	-webkit-border-radius: 2.5px;
 	-moz-border-radius: 2.5px;
@@ -1832,7 +1778,7 @@ a.feedback_simple {
 }
 
 #member-panel .member-title {
-	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-weight: 400;
 	font-size: 24px;
 	line-height: 24px;
@@ -1840,7 +1786,7 @@ a.feedback_simple {
 }
 
 #member-panel .member-role {
-	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-weight: 400;
 	font-size: 18px;
 	line-height: 18px;
@@ -1850,7 +1796,7 @@ a.feedback_simple {
 #member-panel .divider:after {
 	display: block;
 	content: "";
-	background-color: #fbb040;
+	background-color: #fc5c1f;
 	border-radius: 2.5px;
 	-webkit-border-radius: 2.5px;
 	-moz-border-radius: 2.5px;
@@ -1877,7 +1823,7 @@ a.feedback_simple {
 }
 
 .view.child-list.view-trustees .teaser {
-	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-weight: 400;
 	font-size: 22px;
 	line-height: 22px;
@@ -1892,7 +1838,7 @@ a.feedback_simple {
 }
 
 .view.child-list.view-trustees .divider {
-	background-color: #fbb040;
+	background-color: #fc5c1f;
 	border-radius: 2.5px;
 	-webkit-border-radius: 2.5px;
 	-moz-border-radius: 2.5px;
@@ -1903,7 +1849,7 @@ a.feedback_simple {
 
 .view.child-list.view-trustees .bottom-wrapper {
 /* 	text-align: center; */
-	background-color: #f0f0f0;
+	background-color: #ebeef0;
 	padding: 15px;
 	border-radius: 0 0 10px 10px;
 	-webkit-border-radius: 0 0 10px 10px;
@@ -1929,13 +1875,13 @@ a.feedback_simple {
 
 #dutch-reach-cta a,
 #dutch-reach-cta a:visited {
-	color: #fbb040;
+	color: #fc5c1f;
 }
 
 #dutch-reach-cta a:hover,
 #dutch-reach-cta a:active,
 #dutch-reach-cta a:focus {
-	color: #009fda;
+	color: #007fae;
 }
 
 #dutch-reach-cta i {
@@ -1951,7 +1897,7 @@ a.feedback_simple {
 }
 
 #dutch-reach-cta .action {
-	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-weight: 400;
 	font-size: 22px;
 	line-height: 22px;
@@ -1993,28 +1939,6 @@ abbr[data-original-title]:after {
 	margin-left: 2px;
 }
 
-/* covid alert */
-.covid-19-title {
-	font-family: "ff-cocon-web-pro";
-	font-weight: 400;
-	font-size: 24px;
-	line-height: 28px;
-	margin-bottom: 10px;
-}
-.covid-19.alert-danger a.btn,
-.covid-19.alert-info a.btn {
-	color: #000 !important;
-}
-.covid-19.alert-danger a.btn:hover,
-.covid-19.alert-info a.btn:hover {
-	color: #fff !important;
-}
-.covid-19 {
-	margin-top: 30px;
-	margin-bottom: 30px;
-}
-
-/* covid end */
 
 
 
@@ -2026,4 +1950,23 @@ abbr[data-original-title]:after {
 .group-header-inner-wrapper img {
 	width: 100%;
 	height: auto;
+}
+
+
+
+
+/* Brand 2025 */
+
+/* Rider lists */
+.view-riders .std-button {
+  margin: 30px 0;
+}
+
+fieldset .panel-heading a.panel-title,
+fieldset .panel-heading a.panel-title:hover {
+  margin: 7px 0;
+  font-weight: 700;
+  color: #365269;
+  background-color: inherit;
+  text-decoration: none;
 }

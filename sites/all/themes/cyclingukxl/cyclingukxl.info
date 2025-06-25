@@ -30,7 +30,7 @@ regions[page_bottom]       = 'Page bottom'
 
 ;; stylesheets[all][] = fontawesome/css/all.css
 stylesheets[all][] = css/accordions.css
-stylesheets[all][] = css/reset.css
+;; stylesheets[all][] = css/reset.css
 stylesheets[all][] = css/bootstrap-xlgrid.css
 stylesheets[all][] = webfonts/stylesheet.css
 stylesheets[all][] = css/alerts.css

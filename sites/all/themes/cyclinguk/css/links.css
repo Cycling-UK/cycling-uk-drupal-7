@@ -1,58 +1,18 @@
 /**
- * Place your custom styles here.
- */
-
-
-/**
  * Links
  */
 
 a {
-    color: #009fda;
-    text-decoration: underline;
+  color: #101920;
+  font-weight: 700;
+  text-decoration: underline;
 }
 
 a:hover {
-    color: #fbb040;
-    text-decoration: underline;
+  color: #ffffff;
+  background-color: #101920;
+  text-decoration: underline;
 }
-
-/* Custom hover text / tooltips */
-/* Do not use yet * /
-/* a[title]:hover:after {
-	content: attr(title);
-	padding: 6px 10px;
-	background-color: #FED534;
-	color: #000;
-	font-size: 16px;
-	line-height: 16px;
-	position: absolute;
-	left: 0;
-	top: 100%;
-	z-index: 20;
-	white-space: nowrap;
-	-moz-border-radius:		14px;
-	-webkit-border-radius: 	14px;
-	border-radius: 			14px;
-	-webkit-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
-	-moz-box-shadow:    0px 3px 0px 0px rgba(0, 0, 0, 0.1);
-	box-shadow:         0px 3px 0px 0px rgba(0, 0, 0, 0.1);
-} */
-
-
-/**
- * Buttons
- *
- * Possible CSS combinations:
- * .btn .btn-standard    .btn-shadow
- *      .btn-transparent
- *      .btn-white
- *      .btn-yellow
- *      .btn-purple
- *      .btn-green
- *
- * Comments are themed in comments.css
- */
 
 
 
@@ -67,18 +27,19 @@ a:hover {
 .feed-icon a:before,
 a.group.subscribe,
 a.group.unsubsribe {
-    font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 400;
+	background-color: #fc5c1f;
+	border: 4px solid #fc5c1f;
+	color: #ffffff;
 	display: inline-block;
 	min-width: 140px;
-	font-size: 15px;
-	line-height: 34px;
-	font-weight: 400;
-    text-transform: uppercase;
-    text-decoration: none !important;
-    padding: 0 18px;
+  font-size: 20px;
+	line-height: 1;
+  font-weight: 700;
+	text-decoration: none !important;
+	padding: 8px 32px;
 	border-radius: 10px;
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
 }
 
 .btn a,
@@ -95,8 +56,10 @@ a.group.unsubsribe {
 .feed-icon a:focus:before,
 a.group.subscribe,
 a.group.unsubsribe {
-    text-decoration: none;
-    outline: none;
+	background-color: #101920;
+	border: 4px solid #101920;
+	color: #fff;
+  box-shadow: inherit;
 }
 
 .btn:hover,
@@ -105,17 +68,19 @@ a.group.unsubsribe {
 .more-link a:focus,
 .feed-icon a:hover:before,
 .feed-icon a:focus:before {
-	background-color: #fbb040;
-    color: #fff;
-    box-shadow: inherit;
+	background-color: #101920;
+	border: 4px solid #101920;
+	color: #fff;
+  box-shadow: inherit;
 }
 
 .btn:active,
 .more-link a:active,
 .feed-icon a:active:before {
-	background-color: #fdaf17;
-    color: #fff;
-    box-shadow: inherit;
+	background-color: #101920;
+	border: 4px solid #101920;
+	color: #fff;
+  box-shadow: inherit;
 }
 
 .btn:focus,
@@ -128,8 +93,8 @@ a.group.unsubsribe {
 .more-link a:active,
 .feed-icon a:focus:before,
 .feed-icon a:active:before {
-    outline: inherit;
-    outline-offset: inherit;
+  outline: inherit;
+  outline-offset: inherit;
 }
 
 
@@ -141,11 +106,11 @@ a.group.unsubsribe {
 .btn-transparent {
     background-color: inherit;
     border-color: #f6b331;
-    color: #000;
+    color: #101920;
 }
 
 .btn-transparent a {
-    color: #000;
+    color: #101920;
 }
 
 .btn-transparent:hover,
@@ -162,7 +127,7 @@ a.group.unsubsribe {
 .btn-transparent:hover a,
 .btn-transparent:focus a,
 .btn-transparent:active a {
-    color: #000;
+    color: #101920;
 }
 
 .btn-margin {
@@ -183,13 +148,10 @@ a.group.unsubsribe {
 	display: block;
 	width: 140px;
 	margin: -30px auto 60px;
-    background-color: #fff;
-    border: 1px solid #f6b331;
-    color: #000;
-    text-align: center;
-	-webkit-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
-	-moz-box-shadow:    0px 3px 0px 0px rgba(0, 0, 0, 0.1);
-	box-shadow:         0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border: 1px solid #f6b331;
+  color: #101920;
+  text-align: center;
 }
 
 .btn-standard,
@@ -198,14 +160,24 @@ a.group.unsubsribe {
 /* .view-accordion .ui-widget-content a, */
 .feed-icon a:before,
 button#edit-reset {
-    background-color: #fff;
-    border-color: #f6b331;
-    color: #000;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 400;
+	background-color: #c3cbd2;
+	border: 4px solid #c3cbd2;
+	color: #101920;
+	display: inline-block;
+	min-width: 140px;
+  font-size: 20px;
+	line-height: 1;
+  font-weight: 700;
+	text-decoration: none !important;
+	padding: 8px 32px;
+	border-radius: 10px;
 }
 
 .btn-standard a,
 .btn-primary a {
-    color: #000;
+    color: #101920;
 }
 
 .btn-standard:hover,
@@ -220,9 +192,10 @@ button#edit-reset {
 .feed-icon a:focus:before,
 button#edit-reset:hover,
 button#edit-reset:focus {
+	background-color: #101920;
+	border: 4px solid #101920;
 	color: #fff;
-    background-color: #f6b331;
-    border-color: #f6b331;
+  box-shadow: inherit;
 }
 
 .btn-standard:active,
@@ -231,9 +204,10 @@ button#edit-reset:focus {
 /* .view-accordion .ui-widget-content a:active, */
 .feed-icon a:active:before,
 button#edit-reset:active {
+	background-color: #101920;
+	border: 4px solid #101920;
 	color: #fff;
-    background-color: #fdaf17;
-    border-color: #fdaf17;
+  box-shadow: inherit;
 }
 
 .btn-standard:hover a,
@@ -242,7 +216,7 @@ button#edit-reset:active {
 .btn-primary:hover a,
 .btn-primary:focus a,
 .btn-primary:active a {
-    color: #000;
+    color: #101920;
 }
 
 .btn-primary:active:hover,
@@ -274,11 +248,11 @@ a.group.subscribe,
 a.group.unsubsribe {
     background-color: #fff;
     border-color: #fff;
-    color: #000;
+    color: #101920;
 }
 
 .btn-white a {
-    color: #000;
+    color: #101920;
 }
 
 .btn-white:hover,
@@ -307,31 +281,6 @@ a.group.unsubsribe:active {
 
 
 /*
- * Yellow buttons
- * .btn-yellow
- */
-
-.btn-yellow {
-}
-
-.btn-yellow a {
-}
-
-.btn-yellow:hover,
-.btn-yellow:focus {
-}
-
-.btn-yellow:active {
-}
-
-.btn-yellow:hover a,
-.btn-yellow:focus a,
-.btn-yellow:active a {
-}
-
-
-
-/*
  * Purple buttons
  * .btn-purple
  */
@@ -342,14 +291,19 @@ button#edit-submit-events,
 button#edit-submit-groups,
 body.node-type-course-calendar .main-container .region-content a.btn.btn-purple,
 body.node-type-course-details .main-container .region-content a.btn.btn-purple{
-    background-color: #7a68ae;
-    border-color: #7a68ae;
-    color: #fff;
+	background-color: #fc5c1f;
+	border: 4px solid #fc5c1f;
+	color: #ffffff;
+	display: inline-block;
+	min-width: 140px;
+  font-size: 20px;
+	line-height: 1;
+  font-weight: 700;
+	text-decoration: none !important;
+	padding: 8px 32px;
+	border-radius: 10px;
 }
 
-body.node-type-course-details .main-container .region-content a.btn.btn-purple{
-    margin-top:15px;
-}
 
 
 .btn-purple a,
@@ -357,7 +311,7 @@ button#edit-submit-events a,
 button#edit-submit-groups a,
 body.node-type-course-calendar .main-container .region-content a.btn.btn-purple,
 body.node-type-course-details .main-container .region-content a.btn.btn-purple {
-    color: #fff;
+  color: #fff;
 }
 
 .btn-purple:hover,
@@ -368,16 +322,20 @@ button#edit-submit-events:hover,
 button#edit-submit-events:focus,
 button#edit-submit-groups:hover,
 button#edit-submit-groups:focus {
-    background-color: #fcb040;
-    border-color: #fcb040;
+	background-color: #101920;
+	border: 4px solid #101920;
+	color: #fff;
+  box-shadow: inherit;
 }
 
 .btn-purple:active,
 button.form-submit:active,
 button#edit-submit-events:active,
 button#edit-submit-groups:active {
-    background-color: #fdaf17;
-    border-color: #fdaf17;
+	background-color: #101920;
+	border: 4px solid #101920;
+	color: #fff;
+  box-shadow: inherit;
 }
 
 .btn-purple:hover a,
@@ -389,9 +347,12 @@ button#edit-submit-events:active a,
 button#edit-submit-groups:hover a,
 button#edit-submit-groups:focus a,
 button#edit-submit-groups:active a {
-    color: #fff;
-    font-weight: 400;
+	background-color: #101920;
+	border: 4px solid #101920;
+	color: #fff;
+  box-shadow: inherit;
 }
+
 
 /*
  * Sign up to our newsletter button
@@ -400,7 +361,7 @@ button#edit-submit-groups:active a {
 .newsletter-signup button.form-submit {
 	background-color: #fff;
 	border-color: #f6b331;
-	color: #000;
+	color: #101920;
 }
 
 .newsletter-signup button.form-submit:hover,
@@ -452,30 +413,6 @@ button#edit-submit-groups:active a {
 }
 
 
-
-
-
-
-
-
-.btn-standard,
-.btn-standard:hover,
-.btn-standard:focus,
-.btn-standard:active,
-.btn-primary,
-.btn-primary:hover,
-.btn-primary:focus,
-.btn-primary:active,
-.btn-shadow,
-.btn-shadow:hover,
-.btn-shadow:focus,
-.btn-shadow:active,
-a.group.subscribe,
-a.group.unsubsribe {
-	-webkit-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
-	-moz-box-shadow:    0px 3px 0px 0px rgba(0, 0, 0, 0.1);
-	box-shadow:         0px 3px 0px 0px rgba(0, 0, 0, 0.1);
-}
 
 .btn-default:active:hover,
 .btn-default.active:hover,

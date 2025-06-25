@@ -37,7 +37,7 @@
 
 .hero-advert .title,
 .hero-advert .subtitle {
-	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-weight: 400;
 	font-size: 18px;
 	line-height: 20px;
@@ -45,7 +45,7 @@
 }
 
 .hero-advert .title {
-	color: #fbb040;
+	color: #fc5c1f;
 }
 
 .hero-advert .subtitle {

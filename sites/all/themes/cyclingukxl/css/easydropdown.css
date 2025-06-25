@@ -42,7 +42,7 @@
 }
 
 .markup .dropdown:hover {
-	background: #fbb040;
+	background: #fc5c1f;
 }
 
 .markup .dropdown:after {
@@ -66,7 +66,7 @@
 	top: 50%;
 	margin-top: -4px;
 	border: 8px solid transparent;
-	border-top: 8px solid #000;
+	border-top: 8px solid #101920;
 	z-index: 2;
 	-webkit-transform-origin: 50% 20%;
 	-moz-transform-origin: 50% 20%;
@@ -81,11 +81,11 @@
 }
 
 .markup .dropdown:hover .carat:after {
-	border-top-color: #fbb040;
+	border-top-color: #fc5c1f;
 }
 
 .markup .dropdown.focus .carat {
-	border-top-color: #000;
+	border-top-color: #101920;
 }
 
 .markup .dropdown.focus .selected {
@@ -140,7 +140,7 @@
 	display: block;
 	font-size: 18px;
 	line-height: 1;
-	color: #000;
+	color: #101920;
 	padding: 15px 15px;
 	overflow: hidden;
 	white-space: nowrap;
@@ -158,9 +158,9 @@
 	background: #fff;
 	overflow: hidden;
 	opacity: 0;
-	border-left: 1px solid #fbb040;
-	border-bottom: 1px solid #fbb040;
-	border-right: 1px solid #fbb040;
+	border-left: 1px solid #fc5c1f;
+	border-bottom: 1px solid #fc5c1f;
+	border-right: 1px solid #fc5c1f;
 	border-radius: 0 0 10px 10px;
 	-webkit-border-radius: 0 0 10px 10px;
 	-moz-border-radius: 0 0 10px 10px;
@@ -226,14 +226,14 @@
 
 /* .focus class is also added on hover */
 .markup .dropdown li.focus {
-	background: #fbb040;
+	background: #fc5c1f;
 	position: relative;
 	z-index: 3;
 	color: #fff;
 }
 
 .markup .dropdown li.active {
-	background: #fbb040;
+	background: #fc5c1f;
 	color: #fff;
 }
 
@@ -242,7 +242,7 @@
 /* Cycling UK theming */
 .markup .select-wrapper {
 	background-color: #fff;
-	border: 1px solid #fbb040;
+	border: 1px solid #fc5c1f;
 	border-radius: 10px;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
@@ -261,7 +261,7 @@
 .markup .select-wrapper .divider {
 	display: inline-flex !important;
 	width: 1px;
-	background-color: #fbb040;
+	background-color: #fc5c1f;
 	margin: 10px 0;
 }
 
@@ -279,7 +279,7 @@
     margin: 0;
     text-decoration: none;
     background: #fff;
-    color: #000;
+    color: #101920;
     text-align: center;
     -webkit-appearance: none;
     -moz-appearance: none;
@@ -290,7 +290,7 @@
 
 .markup .select-wrapper input:hover,
 .markup .select-wrapper input:focus {
-	background: #fbb040;
+	background: #fc5c1f;
 }
 
 

@@ -41,7 +41,7 @@ body.node-type-product-donation article form:before {
 	text-align: center;
 	margin: 0 auto;
 	max-width: 700px;
-	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-weight: 400;
 	font-size: 28px;
 	line-height: 32px;
@@ -89,7 +89,7 @@ body.page-checkout #edit-checkout-donate-commerce-donate-amount-und-select {
 body.node-type-product-donation #edit-line-item-fields-commerce-donate-amount-und-select > div,
 body.node-type-product-donation #edit-line-item-fields-field-payment-option-und > div,
 body.node-type-product-donation input#edit-line-item-fields-commerce-donate-amount-und-other {
-	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-weight: 400;
 	border-radius: 40px;
 	-webkit-border-radius: 40px;
@@ -235,7 +235,7 @@ body.page-checkout .form-item-checkout-donate-field-payment-option-und.form-grou
 
 
 #edit-checkout-donate .panel-title {
-	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-weight: 400;
 	font-size: 22px;
 	line-height: 26px;
@@ -309,7 +309,7 @@ fieldset .group-payment-option,
 
 #edit-checkout-donate-commerce-donate-amount > div > div > div > label,
 #edit-checkout-donate-field-payment-option > div > label {
-	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-weight: 400;
 	font-size: 22px;
 	line-height: 24px;
@@ -326,7 +326,7 @@ fieldset .group-payment-option,
 .node-type-product-donation h1,
 #donate-text h2,
 #donate-text h3 {
-	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-weight: 400;
 	text-align: center;
 }
@@ -349,7 +349,7 @@ fieldset .group-payment-option,
 #donate-text h3 {
 	font-size: 32px;
 	line-height: 32px;
-	color: #009fda;
+	color: #007fae;
 	padding-bottom: 10px;
 }
 
@@ -397,7 +397,7 @@ fieldset .group-payment-option,
 }
 
 #donate-text .reason .image-title .inner-wrapper {
-	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-weight: 400;
 	font-size: 22px;
 	line-height: 24px;

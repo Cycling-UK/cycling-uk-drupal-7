@@ -18,11 +18,18 @@
 .carousel-triplet {
 	position: relative;
 	margin-bottom: 60px;
-	left: -15px;
+	left: -30px;
 }
 
+@media only screen and (max-width: 767px) {
+  .carousel-triplet {
+    left: -15px;
+  }
+}
+
+
 .carousel-triplet .view-header {
-	font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-weight: 400;
 	font-size: 30px;
 	line-height: 30px;
@@ -32,17 +39,13 @@
 
 .carousel-triplet .view-content {
 	margin-bottom: 30px;
+  position: relative;
+  left: 15px;
 }
 
 .carousel-triplet .view-footer {
 	text-align: center;
 	margin-bottom: 60px;
-}
-
-.carousel-triplet .view-footer .btn {
-	-webkit-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
-	-moz-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
-	box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
 }
 
 .carousel-triplet .owl-item {
@@ -59,8 +62,6 @@
 	width: 100%; /* Note Imagecache presets should be increased for better quality */
 	height: 100%;
 	border-radius: 10px 10px 0 0;
-	-webkit-border-radius: 10px 10px 0 0;
-	-moz-border-radius: 10px 10px 0 0;
 }
 
 .carousel-triplet .title {
@@ -74,7 +75,8 @@
 
 .carousel-triplet .view-content a {
 	display: block;
-	color: #000;
+	color: #365269;
+  font-weight: 600;
 	text-decoration: none;
 	padding: 0;
 	border-radius: 10px;
@@ -84,24 +86,24 @@
 
 .carousel-triplet a.sticky-No,
 .home-page-video .title {
-	background-color: #f0f0f0;
+	background-color: #ebeef0;
 }
 
 .carousel-triplet a.sticky-No:hover {
-	background-color: #e0e0e0;
+	background-color: #c3cbd2;
 }
 
 .carousel-triplet.listing-page .inner-wrapper,
 .home-page-video .title {
 	display: block;
-	background-color: #f0f0f0;
+	background-color: #ebeef0;
 	border-radius: 0 0 10px 10px;
 	-webkit-border-radius: 0 0 10px 10px;
 	-moz-border-radius: 0 0 10px 10px;
 }
 
 .carousel-triplet.listing-page .inner-wrapper:hover {
-	background-color: #e0e0e0;
+	background-color: #ebeef0;
 }
 
 .sticky {
@@ -109,9 +111,9 @@
 }
 
 .carousel-triplet a.sticky-Yes .title {
-	border-right: 1px solid #fbb040;
-	border-bottom: 1px solid #fbb040;
-	border-left: 1px solid #fbb040;
+	border-right: 1px solid #fc5c1f;
+	border-bottom: 1px solid #fc5c1f;
+	border-left: 1px solid #fc5c1f;
 	border-radius: 0 0 10px 10px;
 	-webkit-border-radius: 0 0 10px 10px;
 	-moz-border-radius: 0 0 10px 10px;
@@ -141,16 +143,16 @@
 }
 
 .carousel-triplet .owl-theme .owl-controls .owl-buttons .owl-prev {
-	color: #e0e0e0;
+	color: #ebeef0;
 }
 .carousel-triplet .owl-theme .owl-controls .owl-buttons .owl-prev:hover {
-	color: #000;
+	color: #101920;
 }
 .carousel-triplet .owl-theme .owl-controls .owl-buttons .owl-next {
-	color: #000;
+	color: #101920;
 }
 .carousel-triplet .owl-theme .owl-controls .owl-buttons .owl-next:hover {
-	color: #fbb040;
+	color: #fc5c1f;
 }
 
 /*
@@ -210,7 +212,7 @@
 	border-radius: 2.5px;
 	-webkit-border-radius: 2.5px;
 	-moz-border-radius: 2.5px;
-	background-color: #fbb040;
+	background-color: #fc5c1f;
 	text-align: center;
 }
 
@@ -279,12 +281,12 @@
 }
 
 @media only screen and (max-width: 479px) {
-	.carousel-triplet {
+	/* .carousel-triplet {
 		width: 290px !important;
 		margin-left: auto;
 		margin-right: auto;
 		left: 0px;
-	}
+	} */
 	.carousel-triplet .owl-item {
 		width: 290px !important;
 		margin: 0px;
@@ -302,12 +304,12 @@
 }
 
 @media only screen and (min-width: 480px) and (max-width: 767px) {
-	.carousel-triplet {
+	/* .carousel-triplet {
 		width: 420px !important;
 		margin-left: auto;
 		margin-right: auto;
 		left: 0px;
-	}
+	} */
 	.carousel-triplet .owl-item {
 		width: 390px !important;
 	}
@@ -317,9 +319,9 @@
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
-	.carousel-triplet {
+	/* .carousel-triplet {
 		width: 750px !important;
-	}
+	} */
 	.carousel-triplet .owl-item {
 		width: 345px !important;
 	}
@@ -329,9 +331,9 @@
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
-	.carousel-triplet {
+	/* .carousel-triplet {
 		width: 970px !important;
-	}
+	} */
 	.carousel-triplet .owl-item {
 		width: 293px !important;
 	}
@@ -341,9 +343,9 @@
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1599px) {
-	.carousel-triplet {
+	/* .carousel-triplet {
 		width: 1170px !important;
-	}
+	} */
 	.carousel-triplet .owl-item {
 		width: 360px !important;
 	}
@@ -353,9 +355,10 @@
 }
 
 @media only screen and (min-width: 1600px) {
-	.carousel-triplet {
+	
+  /* .carousel-triplet {
 		width: 1530px !important;
-	}
+	} */
 	.carousel-triplet .owl-item {
 		width: 353px !important;
 	}

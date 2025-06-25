@@ -10,7 +10,7 @@ body.node-type-ecycle-iframe h1.page-header {
 }
 
 h1.cycling-made-easy {
-  font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial,
+  ffont-family: "Plus Jakarta Sans", sans-serif;
   sans-serif;
   font-weight: 400;
   font-size: 38px;
@@ -34,7 +34,7 @@ h1.cycling-made-easy {
 }
 
 .ecycles-button a {
-  border: 1px solid #fbb040;
+  border: 1px solid #fc5c1f;
   background-color: #fff;
   display: flex;
   flex-direction: column;
@@ -55,7 +55,7 @@ h1.cycling-made-easy {
 }
 
 .ecycles-button a:hover {
-  background-color: #fbb040;
+  background-color: #fc5c1f;
   color: #fff;
 }
 
@@ -73,7 +73,7 @@ h1.cycling-made-easy {
   display: flex;
   align-items: center;
   height: 60px;
-  font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial,
+  ffont-family: "Plus Jakarta Sans", sans-serif;
   sans-serif;
   font-weight: 400;
   font-size: 22px;

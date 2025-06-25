@@ -69,13 +69,13 @@
 
 #membership-alternative-links a:hover,
 #membership-alternative-links a:active {
-	color: #fbb040;
+	color: #fc5c1f;
 	text-decoration: none;
 }
 
 #membership-alternative-links a:hover .icon i,
 #membership-alternative-links a:active .icon i {
-	border: 1px solid #fbb040;
+	border: 1px solid #fc5c1f;
 }
 
 
@@ -90,7 +90,7 @@ body.page-layout-shop-membership .top-wrapper {
 }
 
 body.page-layout-shop-membership h1 {
-	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-weight: 400;
 	font-size: 44px;
 	line-height: 44px;
@@ -127,7 +127,7 @@ body.page-layout-shop-membership .commerce-product-field-field-terms .field-labe
 }
 
 body.page-layout-shop-membership .field-name-field-membership-type .membership-type {
-	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-weight: 400;
 	font-size: 20px;
 	line-height: 20px;
@@ -177,7 +177,7 @@ body.page-layout-shop-membership legend.panel-heading {
 }
 
 body.page-layout-shop-membership .panel-title {
-	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-weight: 400;
 	font-size: 20px;
 	line-height: 20px;
@@ -203,7 +203,7 @@ body.page-layout-shop-membership .form-select {
 
 body.page-layout-shop-membership .form-control:focus,
 body.page-layout-shop-membership .form-select:focus {
-	border: 1px solid #fbb040;
+	border: 1px solid #fc5c1f;
 }
 
 
@@ -403,8 +403,8 @@ body.page-layout-shop-membership #edit-line-item-fields-field-gift-start-date le
 }
 
 body.page-layout-shop-membership #edit-line-item-fields-field-gift-start-date .panel-title {
-	font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
-	color: #000;
+	font-family: "Plus Jakarta Sans", sans-serif;
+	color: #101920;
 	font-size: 18px;
 	line-height: 18px;
 	font-weight: 600;

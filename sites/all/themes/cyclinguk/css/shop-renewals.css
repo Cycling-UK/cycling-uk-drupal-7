@@ -1,7 +1,7 @@
 .renew-message {
   max-width: 800px;
   margin: 30px auto;
-  background-color: #009fda;
+  background-color: #007fae;
   color: #fff;
   padding: 20px;
 /*   text-align: center; */
@@ -22,7 +22,7 @@
 
 .renew-contact h3 {
   margin-top: 0;
-  font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-weight: 400;
   font-size: 22px;
   line-height: 22px;

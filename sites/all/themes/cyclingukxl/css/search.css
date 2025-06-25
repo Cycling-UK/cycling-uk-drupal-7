@@ -11,14 +11,14 @@
 }
 
 .search-block .form-control {
-    border: 1px solid #fbb040;
+    border: 1px solid #fc5c1f;
 	border-radius: 18px;
 	-webkit-border-radius: 18px;
 	-moz-border-radius: 18px;
 	box-shadow: inherit;
 	transition: inherit;
     height: 34px;
-    color: #000;
+    color: #101920;
     font-size: 15px;
     line-height: 15px;
     font-weight: 300;
@@ -30,13 +30,13 @@
 }
 
 .search-block .form-control:focus {
-    border: 1px solid #000;
+    border: 1px solid #101920;
 }
 
-.search-block .form-control::-webkit-input-placeholder 	{color: #000; opacity: 1;}  /* Chrome / Opera / Safari */
-.search-block .form-control::-moz-placeholder			{color: #000; opacity: 1;}  /* Firefox 19+ */
-.search-block .form-control:-moz-placeholder			{color: #000; opacity: 1;}  /* Firefox 18- */
-.search-block .form-control:-ms-input-placeholder		{color: #000; opacity: 1;}  /* IE 10+ */
+.search-block .form-control::-webkit-input-placeholder 	{color: #101920; opacity: 1;}  /* Chrome / Opera / Safari */
+.search-block .form-control::-moz-placeholder			{color: #101920; opacity: 1;}  /* Firefox 19+ */
+.search-block .form-control:-moz-placeholder			{color: #101920; opacity: 1;}  /* Firefox 18- */
+.search-block .form-control:-ms-input-placeholder		{color: #101920; opacity: 1;}  /* IE 10+ */
 
 .search-block form > div {
 	position: relative;

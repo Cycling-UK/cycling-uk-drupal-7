@@ -41,7 +41,7 @@ body {
 
 a,
 a.link {
-	color: #009fda;
+	color: #007fae;
 	text-decoration: underline;
 }
 
@@ -194,12 +194,12 @@ body {
 }
 
 .amp-footer {
-  background: #009fda;
+  background: #007fae;
 }
 
 a,
 .link {
-  color: #009fda;
+  color: #007fae;
 }
 
 a:hover,
@@ -342,7 +342,7 @@ span.yellow-text {
 }
 
 span.blue-text {
-	color: #009fda;
+	color: #007fae;
 }
 
 span.yellow-line {

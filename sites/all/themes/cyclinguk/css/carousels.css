@@ -128,7 +128,7 @@
 
 .carousel-default .owl-next:hover,
 .carousel-video .owl-theme .owl-next:hover {
-	color: #fbb040;
+	color: #fc5c1f;
 }
 
 
@@ -139,7 +139,7 @@
  */
 
 .carousel-triplet .view-header {
-	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-weight: 400;
 	margin: 0 auto 30px;
 	font-size: 30px;
@@ -230,9 +230,9 @@
 
 .carousel-triplet .view-content a.sticky-Yes {
 	display: block;
-	color: #000;
+	color: #101920;
 	text-decoration: none;
-	border: 1px solid #fbb040;
+	border: 1px solid #fc5c1f;
 	background-color: inherit;
 	border-radius: 10px;
 	-webkit-border-radius: 10px;
@@ -254,7 +254,7 @@
 .carousel-triplet .view-content a.sticky-Yes:hover span.yellow-line,
 .carousel-triplet .view-content a.sticky-Yes:focus span.yellow-line,
 .carousel-triplet .view-content a.sticky-Yes:active span.yellow-line {
-	background-color: #000;
+	background-color: #101920;
 }
 
 .carousel-triplet .view-content a.sticky-Yes .btn {
@@ -267,13 +267,13 @@
 .carousel-triplet .view-content a.sticky-Yes:hover .btn,
 .carousel-triplet .view-content a.sticky-Yes:focus .btn {
 	background-color: #fff;
-	color: #000;
+	color: #101920;
 	border: 1px solid #f6b331;
 }
 
 .carousel-triplet .view-content a.sticky-Yes:active .btn {
 	background-color: #fff;
-	color: #000;
+	color: #101920;
 	border: 1px solid #fdaf17;
 }
 
@@ -284,9 +284,9 @@
 
 .carousel-triplet .view-content a.sticky-No {
 	display: block;
-	color: #000;
+	color: #101920;
 	text-decoration: none;
-	background-color: #f0f0f0;
+	background-color: #ebeef0;
 	border-radius: 10px;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
@@ -296,7 +296,7 @@
 .carousel-triplet .view-content a.sticky-No:hover,
 .carousel-triplet .view-content a.sticky-No:focus,
 .carousel-triplet .view-content a.sticky-No:active {
-	background-color: #e0e0e0;
+	background-color: #ebeef0;
 }
 
 
@@ -401,7 +401,7 @@
 	border-radius: inherit;
 	-webkit-border-radius: inherit;
 	-moz-border-radius: inherit;
-	color: #000;
+	color: #101920;
 	font-size: 36px;
 	line-height: 36px;
 	opacity: 0.1;
@@ -421,7 +421,7 @@
 
 .carousel-triplet .owl-controls .owl-buttons .owl-next:hover,
 .carousel-video .owl-theme .owl-controls .owl-buttons .owl-next:hover {
-	color: #fbb040;
+	color: #fc5c1f;
 }
 
 .carousel-triplet .owl-theme .owl-controls,
@@ -475,7 +475,7 @@
  */
 
 .carousel-video .owl-theme .owl-item {
-	background-color: #f0f0f0;
+	background-color: #ebeef0;
 	border-radius: 10px;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
@@ -489,12 +489,12 @@
 
 .carousel-video .owl-theme .owl-page span {
 	background-color: inherit;
-	border: 1px solid #000;
+	border: 1px solid #101920;
 }
 
 .carousel-video .owl-theme .owl-page.active span,
 .carousel-video .owl-theme .owl-controls.clickable .owl-page:hover span {
-    background-color: #000;
+    background-color: #101920;
 }
 
 
@@ -563,19 +563,19 @@
 }
 
 .related-content .owl-buttons div {
-	color: #000;
+	color: #101920;
 }
 
 .related-content .owl-buttons .owl-next {
-    color: #000;
+    color: #101920;
 }
 
 .related-content .owl-controls .owl-buttons .owl-prev:hover {
-	color: #000;
+	color: #101920;
 }
 
 .related-content .owl-controls .owl-buttons .owl-next:hover {
-	color: #fbb040;
+	color: #fc5c1f;
 }
 
 
@@ -601,7 +601,7 @@
 }
 
 .carousel-triplet.news.home-page-video .outer-wrapper {
-	background-color: #f0f0f0;
+	background-color: #ebeef0;
 	border-radius: 10px;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;

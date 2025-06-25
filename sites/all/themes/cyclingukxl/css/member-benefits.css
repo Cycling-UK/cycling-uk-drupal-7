@@ -15,7 +15,7 @@
   width: 100%;
   color: #fff;
   text-align: center;
-  font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-weight: 400;
   font-size: 60px;
   line-height: 60px;
@@ -24,7 +24,7 @@
 }
 
 .node-member-benefit .paragraph_background_colour_white .field-name-title {
-	color: #000;
+	color: #101920;
 	text-shadow: none;
 }
 
@@ -32,7 +32,7 @@
   text-align: center;
   font-size: 20px;
   line-height: 24px;
-  color: #009fda;
+  color: #007fae;
   max-width: 800px;
   margin: 0 auto 60px auto;
 }
@@ -43,7 +43,7 @@
 }
 
 .node-member-benefit .paragraph_background_colour_blue .group-title-wrapper {
-  background-color: #009fda;
+  background-color: #007fae;
 }
 
 .node-member-benefit .paragraph_background_colour_pink .group-title-wrapper {
@@ -55,7 +55,7 @@
 }
 
 .node-member-benefit .paragraph_background_colour_yellow .group-title-wrapper {
-  background-color: #fbb040;
+  background-color: #fc5c1f;
 }
 
 .node-member-benefit .paragraph_background_colour_green .group-title-wrapper {
@@ -103,7 +103,7 @@
 
 .paragraphs-item-member-benefit .field-name-field-public-only-content .field-label,
 .paragraphs-item-member-benefit .field-name-field-member-only-content .field-label {
-  color: #000;
+  color: #101920;
   margin: 0 0 30px 0;
   font-size: 36px;
   line-height: 36px;
@@ -120,7 +120,7 @@
 }
 
 .view-member-benefits .views-exposed-form {
-  background-color: #f0f0f0;
+  background-color: #ebeef0;
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -134,7 +134,7 @@
 }
 
 .view-member-benefits .views-exposed-widget > label {
-	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-weight: 400;
 	font-size: 18px;
 	line-height: 18px;
@@ -154,8 +154,8 @@
 }
 
 .view-member-benefits .views-widget .form-radios > div:nth-child(1) label {border-color: #333333;}
-.view-member-benefits .views-widget .form-radios > div:nth-child(2) label {border-color: #fbb040;}
-.view-member-benefits .views-widget .form-radios > div:nth-child(3) label {border-color: #009fda;}
+.view-member-benefits .views-widget .form-radios > div:nth-child(2) label {border-color: #fc5c1f;}
+.view-member-benefits .views-widget .form-radios > div:nth-child(3) label {border-color: #007fae;}
 .view-member-benefits .views-widget .form-radios > div:nth-child(4) label {border-color: #e6007e;}
 .view-member-benefits .views-widget .form-radios > div:nth-child(5) label {border-color: #cdce00;}
 
@@ -163,7 +163,7 @@
 .view-member-benefits .member_benefit_container:visited {
   display: block;
   position: relative;
-  background-color: #f0f0f0;
+  background-color: #ebeef0;
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -175,13 +175,13 @@
 
 .page-user .view-member-benefits .member_benefit_container,
 .page-user .view-member-benefits .member_benefit_container:visited {
-  background-color: #e0e0e0;
+  background-color: #ebeef0;
 }
 
 .view-member-benefits .member_benefit_container:focus,
 .view-member-benefits .member_benefit_container:hover,
 .view-member-benefits .member_benefit_container:active {
-  background-color: #e0e0e0;
+  background-color: #ebeef0;
   text-decoration: none;
 }
 
@@ -200,8 +200,8 @@
   -moz-border-radius: 10px 10px 0 0;
 }
 
-.view-member-benefits .member_benefit_container.insurance .member_benefit_category {background-color: #fbb040;}
-.view-member-benefits .member_benefit_container.discounts .member_benefit_category {background-color: #009fda;}
+.view-member-benefits .member_benefit_container.insurance .member_benefit_category {background-color: #fc5c1f;}
+.view-member-benefits .member_benefit_container.discounts .member_benefit_category {background-color: #007fae;}
 .view-member-benefits .member_benefit_container.travel    .member_benefit_category {background-color: #e6007e;}
 .view-member-benefits .member_benefit_container.exclusive .member_benefit_category {background-color: #cdce00;}
 
@@ -224,12 +224,12 @@
   align-items: center;
   justify-content: center;
   height: 80px;
-  font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-weight: 600;
   font-size: 18px;
   line-height: 18px;
   padding: 0 20px;
-  color: #000;
+  color: #101920;
   text-decoration: none;
 }
 

@@ -21,19 +21,17 @@ body.front #block-system-main {
 	display: block;
 	width: 100%;
 	background-size: cover;
-	/*background: #009fda no-repeat center center;*/
 	color: #fff;
 	text-align: center;
-	padding: 20px;
-	font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-weight: 400;
+	padding: 30px 15px;
+	font-family: "Plus Jakarta Sans", sans-serif;
+	font-weight: 700;
 	font-size: 60px;
 	line-height: 60px;
-	text-shadow: 0px 3px 0px rgba(0, 0, 0, 0.1);
 }
 
 .front .view-front-page-featured-content.top-article .featured-content-title {
-	background: #009fda no-repeat center center;
+	background: #365269 no-repeat center center;
 }
 
 @media only screen and (max-width: 767px) {
@@ -43,37 +41,11 @@ body.front #block-system-main {
 	}
 }
 
-.webp .front .view-front-page-featured-content.top-article .featured-content-title {
-	background-image: url("/sites/all/themes/cyclingukxl/images/hero/winged-wheel-tint-sm.webp");
-}
-.no-webp .front .view-front-page-featured-content.top-article .featured-content-title {
-	background-image: url("/sites/all/themes/cyclingukxl/images/hero/winged-wheel-tint-sm.png");
-}
-
-@media only screen and (min-width: 768px) and (max-width: 1199px) {
-	.webp .front .view-front-page-featured-content.top-article .featured-content-title {
-		background-image: url("/sites/all/themes/cyclingukxl/images/hero/winged-wheel-tint-md.webp");
-	}
-	.no-webp .front .view-front-page-featured-content.top-article .featured-content-title {
-		background-image: url("/sites/all/themes/cyclingukxl/images/hero/winged-wheel-tint-md.png");
-	}
-}
-
-@media only screen and (min-width: 1200px) {
-	.webp .front .view-front-page-featured-content.top-article .featured-content-title {
-		background-image: url("/sites/all/themes/cyclingukxl/images/hero/winged-wheel-tint-lg.webp");
-	}
-	.no-webp .front .view-front-page-featured-content.top-article .featured-content-title {
-		background-image: url("/sites/all/themes/cyclingukxl/images/hero/winged-wheel-tint-lg.png");
-	}
-}
 
 .view-front-page-featured-content.other-articles img {
 	width: 100%;
 	height: 100%;
 	border-radius: 10px 10px 0 0;
-	-webkit-border-radius: 10px 10px 0 0;
-	-moz-border-radius: 10px 10px 0 0;
 }
 
 .view-front-page-featured-content.other-articles .featured-content-title {
@@ -83,13 +55,11 @@ body.front #block-system-main {
 	align-items: center;
 	text-align: center;
 	padding: 20px;
-	color: #000;
-	font-weight: 700;
+	color: #365269;
+	font-weight: 600;
 	font-size: 20px;
 	line-height: 22px;
 	border-radius: 0 0 10px 10px;
-	-webkit-border-radius: 0 0 10px 10px;
-	-moz-border-radius: 0 0 10px 10px;
 }
 
 .view-front-page-featured-content.other-articles .inner-container {
@@ -97,11 +67,11 @@ body.front #block-system-main {
 }
 
 .view-front-page-featured-content.other-articles a .featured-content-title {
-	background-color: #f0f0f0;
+	background-color: #ebeef0;
 }
 
 .view-front-page-featured-content.other-articles a:hover .featured-content-title {
-	background-color: #e0e0e0;
+	background-color: #c3cbd2;
 }
 
 .view-front-page-featured-content.other-articles {
@@ -143,14 +113,10 @@ body.front #block-system-main {
 	}
 	.view-front-page-featured-content.other-articles .views-bootstrap-grid-plugin-style .featured-content-title {
 		display: inline-flex;
-		font-size: 14px;
-		line-height: 16px;
 		padding: 10px;
 		height: 74px;
 		width: 100%;
 		border-radius: 0 10px 10px 0;
-		-webkit-border-radius: 0 10px 10px 0;
-		-moz-border-radius: 0 10px 10px 0;
 	}
 }
 
@@ -218,7 +184,7 @@ body.front .main-container .region-content section:nth-last-child(2) {
 }
 
 #mapping-icons h2 {
-	font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-weight: 400;
 	font-size: 30px;
 	color: #fff;
@@ -254,7 +220,7 @@ body.front .main-container .region-content section:nth-last-child(2) {
 
 #main-video .icon-label,
 #mapping-icons .icon-label {
-	font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-weight: 400;
 	font-size: 16px;
 	line-height: 16px;
@@ -284,7 +250,7 @@ body.front .main-container .region-content section:nth-last-child(2) {
 /* 2021 Strapline! */
 
 .main-video-block h2.block-title {
-	color: #000;
+	color: #101920;
 	font-size: 60px;
 	line-height: 60px;
 	margin-top: 0;
@@ -342,7 +308,7 @@ body.front .main-container .region-content section:nth-last-child(2) {
 }
 
 .main-video-block .background-tint {
-	background-color: #009fda;
+	background-color: #007fae;
 	background-image: url("/sites/all/themes/cyclingukxl/images/system/winged-wheel-tint-alt.png");
 	background-position: center center;
 	background-repeat: no-repeat;
@@ -354,7 +320,7 @@ body.front .main-container .region-content section:nth-last-child(2) {
 }
 
 .background-colour-blue .background-tint {
-	background-color: #009fda;
+	background-color: #007fae;
 }
 .background-colour-pink .background-tint {
 	background-color: #e6007e;
@@ -508,7 +474,7 @@ body.front .main-container .region-content section:nth-last-child(2) {
 }
 
 .support_cycling h2 {
-	font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-weight: 400;
 	font-size: 30px;
 	line-height: 36px;
@@ -523,14 +489,12 @@ hr {
 	border-radius: 2.5px;
 	-webkit-border-radius: 2.5px;
 	-moz-border-radius: 2.5px;
-	background-color: #fbb040;
+	background-color: #fc5c1f;
 	margin-left: auto;
 	margin-right: auto;
 }
 
 .support-cycling-reasons {
-	font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-weight: 400;
 	font-size: 20px;
 	line-height: 20px;
 	margin-top: 20px;
@@ -563,7 +527,7 @@ hr {
 	content: "\f00c";
 	width: 20px;
 	margin: 0 5px 0 -25px;
-	color: #fbb040;
+	color: #fc5c1f;
 }
 
 .support_cycling .btn {
@@ -578,12 +542,7 @@ hr {
 	}
 	.support_cycling .panel {
 		border-radius: 10px;
-		-webkit-border-radius: 10px;
-		-moz-border-radius: 10px;
 		text-align: inherit;
-		-webkit-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
-		-moz-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
-		box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
 	}
 	hr {
 		margin-left: 0;
@@ -641,7 +600,7 @@ hr {
 }
 
 #event-search h2 {
-	font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	color: #fff;
 	font-weight: 400;
 	font-size: 30px;
@@ -764,6 +723,7 @@ hr {
 	}
 }
 
+/*
 @media (min-width: 1600px) {
 	body.front .container {
 		max-width: 1800px;
@@ -780,6 +740,7 @@ hr {
 body.front .carousel-triplet {
 	left: 0px !important;
 }
+*/
 
 @media only screen and (max-width: 767px) {
 	.view-front-page-featured-content.other-articles .views-bootstrap-grid-plugin-style .featured-content-image picture,
@@ -816,33 +777,3 @@ body.front .carousel-triplet {
 	}
 }
 
-/* from previous front inject rule */
-
-/* Reset of Mobile display of latest news and events */
-/*
-@media only screen and (max-width: 767px) {
-	.view-front-page-featured-events-carousel .views-bootstrap-grid-plugin-style span.terms,
-	.view-front-page-featured-events-carousel .views-bootstrap-grid-plugin-style span.yellow-line {
-		display: none;
-	}
-
-	.view-front-page-featured-events-carousel .views-bootstrap-grid-plugin-style span.image {
-		display: block;
-	}
-	.view-front-page-featured-events-carousel.carousel-triplet.event .image {
-		top: 0;
-	}
-}
-
-@media only screen and (max-width: 479px) {
-	.view-front-page-featured-events-carousel .views-bootstrap-grid-plugin-style span.image {
-		height: 115px;
-	}
-}
-
-@media only screen and (min-width: 480px) and (max-width: 767px) {
-	.view-front-page-featured-events-carousel .views-bootstrap-grid-plugin-style span.image {
-		height: 85px;
-	}
-}
-*/

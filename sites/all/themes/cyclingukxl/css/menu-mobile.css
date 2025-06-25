@@ -16,10 +16,10 @@
 	-webkit-border-radius: inherit;
 	-moz-border-radius: inherit;
 	border-radius: inherit;
-	color: #000;
+	color: #101920;
 	text-shadow: inherit;
 	padding: 2px;
-	border: 2px solid #fbb040;
+	border: 2px solid #fc5c1f;
 	float: right;
 	width: 32px;
 	height: 32px;
@@ -54,7 +54,7 @@
   }
   
   .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-accordion>li {
-	border-bottom: 1px solid #000;
+	border-bottom: 1px solid #101920;
   }
   
   .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-accordion>li:last-child {
@@ -63,11 +63,11 @@
   
   .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-accordion a,
   .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-accordion ul .sf-clone-parent a {
-	font-family: "karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-weight: 400;
 	font-size: 16px;
 	line-height: 22px;
-	color: #000;
+	color: #101920;
 	text-shadow: inherit;
 	padding: 8px 5px 8px 5px;
 	outline: none;
@@ -80,15 +80,15 @@
   .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-accordion a.sf-depth-3:hover .inner-wrapper,
   .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-accordion a.sf-depth-3:focus .inner-wrapper {
 	padding-bottom: 2px;
-	border-bottom: 1px solid #000;
+	border-bottom: 1px solid #101920;
   }
   
   .menu-theme-cyclinguk .sf-menu.sf-style-simple-centre-aligned.sf-accordion a.sf-depth-1 {
-	font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-weight: 400;
 	font-size: 20px;
 	line-height: 20px;
-	color: #000;
+	color: #101920;
 	text-shadow: inherit;
 	padding: 15px;
   }

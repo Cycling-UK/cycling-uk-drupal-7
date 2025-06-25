@@ -7,7 +7,7 @@
 #jplannertext h2,
 h2.jplannermap,
 p.elevationchart {
-	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-weight: 400;
 	font-size: 24px;
 	line-height: 24px;
@@ -54,7 +54,7 @@ body.page-journey-planner h1.page-header {
 #jplannerforms .header {
 	display: table-cell;
 	vertical-align: middle;
-	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-weight: 400;
 	font-size: 18px;
 	line-height: 48px;
@@ -121,7 +121,7 @@ body.page-journey-planner h1.page-header {
 	list-style: none;
 	text-align: left;
 	background-color: #fff;
-	border: 1px solid #fbb040;
+	border: 1px solid #fc5c1f;
 	border-radius: 10px;
 	background-clip: padding-box;
 	-webkit-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
@@ -134,14 +134,14 @@ body.page-journey-planner h1.page-header {
 }
 
 #jplannerforms .typeahead__list a {
-	color: #000;
+	color: #101920;
 	font-size: 14px;
 	line-height: 16px;
 	text-decoration: none;
 }
 
 #jplannerforms .typeahead__list a:hover {
-	color: #fbb040;
+	color: #fc5c1f;
 }
 
 #jplannerforms .typeahead-name {
@@ -314,12 +314,12 @@ ul#jplannertype li {
 }
 
 #jplannertext th {
-	border-bottom: 1px solid #009fda;
-	background-color: #009fda;
+	border-bottom: 1px solid #007fae;
+	background-color: #007fae;
 }
 
 #jplannertext tr {
-	border-bottom: 1px solid #cdcdcd;
+	border-bottom: 1px solid #c3cbd2;
 }
 
 #jplannertext td.turn {
@@ -383,7 +383,7 @@ ul#jplannertype li {
 }
 
 #jloader .description {
-	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-weight: 400;
 	font-size: 16px;
 	line-height: 16px;

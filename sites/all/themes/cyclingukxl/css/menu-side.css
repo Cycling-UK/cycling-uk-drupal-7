@@ -2,20 +2,14 @@
 /* Sidebar / tertiary navigation */
 
 .field-name-og-node-content-links {
-	background-color: #bfb1d4;
+	background-color: #ebeef0;
 	padding: 25px 15px 15px 15px;
 	margin-bottom: 20px;
-	border-radius: 			18px;
-	-webkit-border-radius: 	18px;
-	-moz-border-radius: 	18px;
-	-webkit-box-shadow: 	0px 3px 0px 0px rgba(0, 0, 0, 0.1);
-	-moz-box-shadow:    	0px 3px 0px 0px rgba(0, 0, 0, 0.1);
-	box-shadow:    		    0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+	border-radius: 10px;
 }
 
 .field-name-og-node-content-links:before {
-	font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
-	color: #000;
+	color: #101920;
 	font-size: 18px;
 	line-height: 18px;
 	font-weight: 400;
@@ -25,11 +19,10 @@
 }
 
 .field-name-og-node-content-links h2.block-title {
-  font-family: "karla","Helvetica Neue",Helvetica,Arial,sans-serif;
 	font-size: 18px;
-	font-weight: 600;
+	font-weight: 700;
 	line-height: 18px;
-	color: #000;
+	color: #101920;
 	border-bottom: none;
 	padding: 0 0 20px 0;
 	margin: 0;
@@ -41,18 +34,5 @@
 
 .field-name-og-node-content-links a {
 	display: inline-block;
-	padding: 0 0 20px 0;
-	color: #000 !important;
-	text-decoration: none;
-	font-size: 15px;
-	line-height: 21px;
-	margin-left: 10px;
 	outline: none;
-}
-
-.field-name-og-node-content-links a:hover,
-.field-name-og-node-content-links a:focus {
-	color: #000 !important;
-	text-decoration: underline;
-	border-bottom: none;
 }

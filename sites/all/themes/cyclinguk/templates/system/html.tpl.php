@@ -58,11 +58,13 @@
 <head>
 
 	<!-- Google Tag Manager -->
+  <!--
 	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 	})(window,document,'script','dataLayer','GTM-WVZPGF');</script>
+  -->
 	<!-- End Google Tag Manager -->
 	
   <link rel="profile" href="<?php print $grddl_profile; ?>" />
@@ -81,7 +83,7 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/android-chrome-192x192.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/manifest.json">
-  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#fbb040">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#fc5c1f">
   <meta name="msapplication-TileColor" content="#2d89ef">
   <meta name="msapplication-TileImage" content="/mstile-144x144.png">
   <meta name="theme-color" content="#ffffff">
@@ -101,34 +103,25 @@
   <!-- Load Easy Drop Down JS for improved UI -->
   <script src="/sites/all/themes/cyclinguk/js/easydropdown/jquery.easydropdown.min.js" type="text/javascript"></script>
 
-  <!-- Load Cocon font family from Adobe TypeKit -->
-  <script src="https://use.typekit.net/lmn7yno.js"></script>
-  <script>try{Typekit.load({ async: true });}catch(e){}</script>
+  
+  <!-- Import Plus Jakarta Sans font from Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
 
-  <!-- Import Karla font from Google
-  <link rel="preload" href="https://fonts.googleapis.com/css?family=Karla:400,400i,700,700i" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla:400,400i,700,700i"></noscript>-->
-  <link href="https://fonts.googleapis.com/css?family=Karla:400,400i,700,700i" rel="stylesheet">
 
-  <!-- Import Font Awesome 5
-  <link rel="preload" href="https://pro.fontawesome.com/releases/v5.12.0/css/all.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.12.0/css/all.css"></noscript>-->
+  <!-- Import Font Awesome 5 -->
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.12.0/css/all.css" integrity="sha384-ekOryaXPbeCpWQNxMwSWVvQ0+1VrStoPJq54shlYhR8HzQgig1v5fas6YgOqLoKz" crossorigin="anonymous">
 
-  <!-- Test Landbot Livechat script -->
-  <!--<script SameSite="none Secure" src="https://static.landbot.io/landbot-widget/landbot-widget-1.0.0.js" async></script>
-  <script>
-    var myLandbot = new LandbotLivechat({
-      index: 'https://landbot.io/u/H-346080-10HFK0FIASPC4LYL/index.html',
-    });
-  </script> -->
 
 </head>
 <body<?php print $body_attributes; ?> onLoad="javascript:Custom.init();">
 
 	<!-- Google Tag Manager (noscript) -->
+  <!--
 	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WVZPGF"
 	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  -->
 	<!-- End Google Tag Manager (noscript) -->
 
   <div id="skip-link">

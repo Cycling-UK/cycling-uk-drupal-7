@@ -63,7 +63,7 @@
 }
 
 .page-layout-post .top-middle-row {
-	background-color: #f0f0f0;
+	background-color: #ebeef0;
 	border-radius: 0 0 15px 15px;
 	-webkit-border-radius: 0 0 15px 15px;
 	-moz-border-radius: 0 0 15px 15px;
@@ -263,7 +263,7 @@
 }
 
 .page-layout-post .field-name-title h1 {
-	font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-weight: 400;
 	font-size: 56px;
 	line-height: 56px;
@@ -285,7 +285,7 @@
 }
 
 .page-layout-post .field-name-field-teaser {
-	font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-weight: 400;
 	font-size: 26px;
 	line-height: 32px;
@@ -354,16 +354,16 @@
 
 .page-layout-post h2,
 .page-layout-post .field-label {
-	color: #fbb040;
-	font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	color: #365269;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-size: 24px;
 	line-height: 28px;
-	font-weight: 400;
+	font-weight: 700;
 	margin-top: 30px;
 }
 
 .page-layout-post h3 {
-	font-family: "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-weight: 600;
 	font-size: 18px;
 	line-height: 22px;
@@ -377,7 +377,7 @@
 
 .field-name-field-gpx-map .field-label,
 .field-name-field-location .field-label {
-	font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-weight: 400;
 	font-size: 26px;
 	line-height: 32px;
@@ -402,7 +402,7 @@
 	content: "";
 	width: 100%;
 	height: 5px;
-	background-color: #fbb040;
+	background-color: #fc5c1f;
 	border-radius: 2.5px;
 	-webkit-border-radius: 2.5px;
 	-moz-border-radius: 2.5px;
@@ -422,7 +422,7 @@
 	content: "";
 	width: 100%;
 	height: 5px;
-	background-color: #e0e0e0;
+	background-color: #ebeef0;
 	border-radius: 2.5px;
 	-webkit-border-radius: 2.5px;
 	-moz-border-radius: 2.5px;
@@ -457,7 +457,7 @@
 
 .field-name-field-attachments img,
 .field-name-field-attachments a {
-	color: #000;
+	color: #101920;
 	display: block;
 	overflow-wrap: break-word;
 	word-wrap: break-word;
@@ -481,7 +481,7 @@
 }
 
 .field-name-field-gpx-files a {
-	color: #000;
+	color: #101920;
 }
 
 .field-name-field-gpx-files img {
@@ -542,7 +542,7 @@
 }
 
 .field-name-field-tags a {
-	color: #000000;
+	color: #101920;
 	text-decoration: none;
 	background-color: #eaeaea;
 	padding: 5px 10px;
@@ -560,8 +560,8 @@
 .field-name-field-tags a:hover,
 .field-name-field-tags a:focus,
 .field-name-field-tags a:active {
-	background-color: #e0e0e0;
-	color: #000;
+	background-color: #ebeef0;
+	color: #101920;
 	text-decoration: none;
 }
 
@@ -582,7 +582,7 @@
 
 .view.listing-page .top-wrapper .inner-wrapper h1,
 .post-banner .inner-wrapper {
-	font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-weight: 400;
 	color: #fff;
 	font-size: 40px;
@@ -701,7 +701,7 @@
  */
 
 body.landing-announcement .field-name-title h2 {
-	color: #000;
+	color: #101920;
 }
 
 body.landing-announcement .field-name-body {
@@ -729,7 +729,7 @@ body.landing-announcement .view-announcement .view-content > div:after {
 	border-radius: 2.5px;
 	-webkit-border-radius: 2.5px;
 	-moz-border-radius: 2.5px;
-	background-color: #fbb040;
+	background-color: #fc5c1f;
 	margin: 60px auto 30px;
 }
 
@@ -748,14 +748,14 @@ body.landing-announcement .field-name-field-body-bottom {
 }
 
 body.landing-announcement .field-name-field-body-bottom a {
-	color: #fbb040;
+	color: #fc5c1f;
 	text-decoration: none;
 }
 
 body.landing-announcement .field-name-field-body-bottom a:hover,
 body.landing-announcement .field-name-field-body-bottom a:focus,
 body.landing-announcement .field-name-field-body-bottom a:active {
-	color: #fbb040;
+	color: #fc5c1f;
 	text-decoration: underline;
 }
 
@@ -803,7 +803,7 @@ body.landing-announcement .field-name-field-body-bottom a:active {
 
 .tinted-background .accordion .btn-transparent:hover,
 .tinted-background .accordion .btn-transparent:focus {
-	background-color: #fbb040;
+	background-color: #fc5c1f;
 }
 
 .tinted-background .accordion .btn-transparent:active {
@@ -984,7 +984,7 @@ body.landing-announcement .field-name-field-body-bottom a:active {
 .page-layout-post .field-name-field-gpx-files ul li:before {
 	content: "•";
 	margin-right: 20px;
-	color: #fbb040;
+	color: #fc5c1f;
 }
 
 

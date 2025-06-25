@@ -120,7 +120,6 @@
 </header>
 -->
 
-
 <header class="header container-fluid">
   <div class="inner-wrapper container">
 	<div class="row">
@@ -141,9 +140,9 @@
       <div class="container-right col-xs-12 col-sm-5 col-md-5 col-lg-4"><?php print render($page['navigation_right']); ?></div>
     </div>
   </div>
-  <div class="container-bottom"><?php print render($page['navigation_bottom']); ?></div>
 </header>
 
+<div class="header-container-bottom"><?php print render($page['navigation_bottom']); ?></div>
 
 
 <div class="main-container <?php print $container_class; ?>">

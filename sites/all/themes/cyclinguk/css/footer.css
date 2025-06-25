@@ -1,11 +1,11 @@
 footer.footer {
-	font-size: 14px;
-	line-height: 22px;
-	background-color: #009fda;
+	font-size: 16px;
+	line-height: 1.2;
+	background-color: #365269;
 	color: #fff;
-	padding-top: 30px;
+	padding-top: 90px;
 	padding-bottom: 200px;
-	margin-top: -1px;
+	margin-top: 90px;
 	border-top: none;
 }
 
@@ -19,17 +19,18 @@ footer.footer p {
 
 /* Scroll to top button */
 #block-scroll-button-scroll-button {
-	height: inherit;
+  display: none;
+  /* height: inherit;
 	width: inherit;
 	position: relative;
 	top: -60px;
-	margin-bottom: -50px;
+	margin-bottom: -50px; */
 }
 
 #scroll_top {
 	background-image: none;
-	background-color: #fff !important;
-	color: #009fda;
+	background-color: #365269 !important;
+	color: #66f08f;
 	border: inherit;
 	padding: 0;
 	width: 60px;
@@ -43,8 +44,8 @@ footer.footer p {
 
 #scroll_top:hover,
 #scroll_top:active {
-	background-color: #fbb040 !important;
-	color: #fff;
+	background-color: #365269 !important;
+	color: #66f08f;
 }
 
 #scroll_top:after {
@@ -74,7 +75,7 @@ footer.footer p {
 }
 
 .social-icons .text {
-	font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-size: 18px;
 	line-height: 50px;
 }
@@ -92,7 +93,7 @@ ul.social-links a {
 	display: block;
 	width: 50px;
 	height: 50px;
-	background-color: #fbb040;
+	background-color: #fc5c1f;
 	color: #fff;
 	border-radius: 25px;
 	-webkit-border-radius: 25px;
@@ -103,7 +104,7 @@ ul.social-links a {
 ul.social-links a:hover,
 ul.social-links a:active {
 	background-color: #fff;
-	color: #fbb040;
+	color: #fc5c1f;
 }
 
 ul.social-links i {
@@ -127,18 +128,18 @@ ul.social-links i {
 }
 
 /* Newsletter sign-up */
-.newsletter-signup {
+footer.footer .newsletter-signup {
 	margin-top: 30px;
 	margin-bottom: 30px;
 	padding-top: 30px;
 	padding-bottom: 30px;
-	border-top: 5px solid #fbb040;
-	border-bottom: 5px solid #fbb040;
+	border-top: 5px solid #fc5c1f;
+	border-bottom: 5px solid #fc5c1f;
 	text-align: center;
 }
 
-.newsletter-signup label,
-.newsletter-signup .webform-progressbar {
+footer.footer .newsletter-signup label,
+footer.footer .newsletter-signup .webform-progressbar {
 	display: none;
 }
 
@@ -192,7 +193,7 @@ footer.footer .newsletter-signup input:-ms-input-placeholder {
 footer.footer .newsletter-signup button.form-submit {
 	background-color: #fff;
 	border-color: #f6b331;
-	color: #000;
+	color: #101920;
 	height: 45px;
 }
 
@@ -216,7 +217,7 @@ footer.footer .newsletter-signup button.form-submit:active {
 	footer.footer .newsletter-signup h2 {
 		white-space: nowrap;
 		line-height: 45px;
-		margin: 0 10px 0 0;
+		margin: 0 15px 0 0;
 	}
 	footer.footer .newsletter-signup,
 	footer.footer .newsletter-signup form div {
@@ -245,14 +246,67 @@ footer.footer .newsletter-signup button.form-submit:active {
 	}
 }
 
+
+/* Cycling UK logo */
+.cuk-logo img {
+  width: 183px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+/* Social media icons */
+.cuk-social-media-icons {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  line-height: 1;
+}
+
+@media only screen and (max-width: 991px) {
+  .cuk-social-media-icons {
+    justify-content: center;
+  }
+}
+
+.cuk-social-media-icons a {
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.cuk-social-media-icons a:hover,
+.cuk-social-media-icons a:focus {
+  border: 1px solid #66f08f;
+  color: #66f08f;
+  text-decoration: none;
+}
+
+.cuk-social-media-icons span {
+  display: none;
+}
+
+
 /* Patron, President, Chief Executive footer text */
 .footer-text .yellow-text {
-	color: #fbb040;
+	color: #66f08f;
+  font-weight: 700;
+  display: inline-block;
+  margin-bottom: 5px;
 }
 
 /* Trading name text */
 .footer p.small-print {
 	max-width: 950px;
+  font-weight: 700;
+  line-height: 1.5;
 }
 
 /* Hide footer webform progress bar */
@@ -261,6 +315,11 @@ footer .webform-progressbar {
 }
 
 /* Footer links */
+ul.footer-links {
+  margin-top: 20px;
+  padding: 0;
+}
+
 ul.footer-links li {
 	display: inline-block;
 	margin-left: 10px;
@@ -269,12 +328,14 @@ ul.footer-links li {
 
 ul.footer-links a {
 	color: #fff;
+  background-color: inherit;
+  font-weight: 700;
 	text-decoration: underline;
 }
 
 ul.footer-links a:hover,
 ul.footer-links a:active {
-	color: #fbb040;
+	color: #66f08f;
 }
 
 /* Logos at end of website footer */
@@ -311,11 +372,4 @@ ul.footer-links a:active {
 		margin-left: 0;
 		margin-right: 20px;
 	}
-}
-
-
-/* Footer menu */
-
-ul.footer-links {
-	padding-inline-start: 0;
 }

@@ -25,8 +25,8 @@ ul.pager > li.pager-ellipsis,
   margin: 0 5px;
   text-transform: capitalize;
   padding: 8px 16px !important;
-  background-color: #f0f0f0 !important;
-  border-color: #f0f0f0 !important;
+  background-color: #ebeef0 !important;
+  border-color: #ebeef0 !important;
   color: #000 !important;
   text-decoration: none !important;
   height: 40px;
@@ -37,8 +37,8 @@ ul.pager > li.pager-current,
   margin: 0 5px;
   padding: 8px 16px !important;
   background-color: #fff;
-  border: 1px solid #fbb040;
-  color: #000;
+  border: 1px solid #fc5c1f;
+  color: #101920;
   -webkit-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
   -moz-box-shadow:    0px 3px 0px 0px rgba(0, 0, 0, 0.1);
   box-shadow:         0px 3px 0px 0px rgba(0, 0, 0, 0.1);
@@ -61,8 +61,8 @@ ul.pager > li > a:hover,
 ul.pager > li > span:hover,
 ul.pager > li > a:focus,
 ul.pager > li > span:focus {
-  background-color: #fbb040 !important;
-  border-color: #fbb040 !important;
+  background-color: #fc5c1f !important;
+  border-color: #fc5c1f !important;
   color: #fff !important;
   text-decoration: none !important;
 }

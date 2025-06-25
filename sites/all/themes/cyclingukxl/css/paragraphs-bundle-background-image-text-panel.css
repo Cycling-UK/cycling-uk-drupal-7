@@ -3,7 +3,7 @@
 .paragraphs-item-background-image-with-text-panel .paragraph_background_colour_pink   .field-name-field-subtitle,
 .paragraphs-item-background-image-with-text-panel .paragraph_background_colour_purple .field-name-field-subtitle,
 .paragraphs-item-background-image-with-text-panel .paragraph_background_colour_grey   .field-name-field-subtitle {
-  color: #fbb040;
+  color: #fc5c1f;
 }
 
 .paragraphs-item-background-image-with-text-panel .paragraph_background_colour_blue   .field-name-field-text,
@@ -18,7 +18,7 @@
 .paragraphs-item-background-image-with-text-panel .paragraph_background_colour_yellow .field-name-field-text,
 .paragraphs-item-background-image-with-text-panel .paragraph_background_colour_white  .field-name-field-subtitle,
 .paragraphs-item-background-image-with-text-panel .paragraph_background_colour_white  .field-name-field-text {
-  color: #000;
+  color: #101920;
 }
 
 
@@ -58,7 +58,7 @@
 
 
 .paragraphs-item-background-image-with-text-panel .field-name-field-subtitle {
-  font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-weight: 400;
   font-size: 36px;
   line-height: 36px;
@@ -87,7 +87,7 @@
 .paragraphs-item-background-image-with-text-panel .field-name-field-links .field-item a:hover,
 .paragraphs-item-background-image-with-text-panel .field-name-field-links .field-item a:focus {
   outline: none;
-  border: 1px solid #fbb040;
+  border: 1px solid #fc5c1f;
   text-align: center;
   -webkit-box-shadow: 0px 3px 0px 0px rgba(0,0,0,.1);
   -moz-box-shadow: 0px 3px 0px 0px rgba(0,0,0,.1);
@@ -127,7 +127,7 @@
 .paragraphs-item-background-image-with-text-panel .paragraph_background_colour_grey    .field-name-field-text a:focus,
 .paragraphs-item-background-image-with-text-panel .paragraph_background_colour_white   .field-name-field-text a:hover,
 .paragraphs-item-background-image-with-text-panel .paragraph_background_colour_white   .field-name-field-text a:focus {
-  color: #fbb040;
+  color: #fc5c1f;
 }
 
 .paragraphs-item-background-image-with-text-panel .paragraph_background_colour_green   .field-name-field-text a:hover,
@@ -146,7 +146,7 @@
 .paragraphs-item-background-image-with-text-panel .paragraph_background_colour_purple  .field-name-field-text li:before,
 .paragraphs-item-background-image-with-text-panel .paragraph_background_colour_grey    .field-name-field-text li:before,
 .paragraphs-item-background-image-with-text-panel .paragraph_background_colour_white   .field-name-field-text li:before {
-  color: #fbb040;
+  color: #fc5c1f;
 }
 
 .paragraphs-item-background-image-with-text-panel .paragraph_background_colour_green   .field-name-field-text li:before,

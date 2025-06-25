@@ -23,7 +23,7 @@ body.node-type-ride .main-container .region-content a { /* Defined per explicit 
 }
 
 body.node-type-course-details .main-container .region-content .icon a {
-	color: #000000;
+	color: #101920;
 	text-decoration: none;
 }
 
@@ -35,7 +35,7 @@ body.node-type-course-details .main-container .region-content a:hover,
 body.node-type-course-calendar .main-container .region-content a:hover,
 body.node-type-venue .main-container .region-content a:hover,
 body.node-type-ride .main-container .region-content a:hover {
-	color: #fbb040;
+	color: #fc5c1f;
 	text-decoration: underline;
 }
 
@@ -132,7 +132,7 @@ body.page-layout-group .group-header-inner-wrapper .field-name-field-welcome-mes
 body.page-layout-group.node-type-affiliated-centre .group-header-inner-wrapper .field-name-title:before {
 	display: block;
 	content: "Affiliated centre";
-	font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-size: 14px;
 	line-height: 14px;
 	text-transform: uppercase;
@@ -149,7 +149,7 @@ body.page-layout-group.node-type-affiliated-centre .group-header-inner-wrapper .
 body.page-layout-group.node-type-venue .group-header-inner-wrapper .field-name-title:before {
 	display: block;
 	content: "Venue";
-	font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-size: 14px;
 	line-height: 14px;
 	text-transform: uppercase;
@@ -164,7 +164,7 @@ body.page-layout-group.node-type-venue .group-header-inner-wrapper .field-name-t
 }
 
 body.page-layout-group .field-name-title {
-	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-weight: 400;
 	color: #fff;
 	width: 100%;
@@ -183,7 +183,7 @@ body.page-layout-group .field-name-title h1 {
 }
 
 body.page-layout-group.node-type-course-calendar .field-name-title h1 {
-	color: #000;
+	color: #101920;
 	text-shadow: inherit;
 }
 
@@ -254,7 +254,7 @@ body.page-layout-group .field-name-field-postcode {
 
 
 body.page-layout-group .field-name-welcome-message-mobile .field-name-field-group-welcome {
-	color: #000;
+	color: #101920;
 	text-align: left;
 	font-size: 20px;
 	line-height: 24px;
@@ -284,7 +284,7 @@ body.page-layout-group .field-name-group-group {
 
 body.page-layout-group .field-name-group-group span,
 body.page-layout-group .field-name-group-group a {
-    font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Plus Jakarta Sans", sans-serif;
 	color: #fff !important;
 	font-size: 15px;
 	line-height: 34px;
@@ -420,13 +420,13 @@ body.page-layout-group .field-name-field-about-the-group h4,
 body.page-layout-group .field-name-field-group-ride-info h2,
 body.page-layout-group .field-name-field-group-ride-info h3,
 body.page-layout-group .field-name-field-group-ride-info h4 {
-    font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Plus Jakarta Sans", sans-serif;
 	font-size: 19px;
 	line-height: 24px;
 	font-weight: 600;
 	padding-bottom: 10px;
 	margin: 0 0 25px 0;
-	border-bottom: 1px solid #000;
+	border-bottom: 1px solid #101920;
 }
 
 body.page-layout-group .field-name-field-about-the-group h2,
@@ -468,7 +468,7 @@ body.page-layout-group .field-name-field-group-files:before {
 	font-weight: 600;
 	margin: 60px 0 25px 0;
 	padding-bottom: 10px;
-	border-bottom: 1px solid #000;
+	border-bottom: 1px solid #101920;
 }
 
 body.node-type-group .field-name-body:before					{content: 'About our rides';} /* CHECK ALL THESE FIELD NAME OVERRIDES */
@@ -706,7 +706,7 @@ body.page-layout-group .field-name-field-gpx-files:after {
 	border-radius: 2.5px;
 	-webkit-border-radius: 2.5px;
 	-moz-border-radius: 2.5px;
-	background-color: #fbb040;
+	background-color: #fc5c1f;
 	margin: 0 auto 20px;
 }
 
@@ -723,7 +723,7 @@ body.page-layout-group .field-name-field-gpx-files:after {
 }
 
 .field-name-field-rides-and-activities > .field-items > .field-item {
-	background-color: #f0f0f0;
+	background-color: #ebeef0;
 	border-radius: 10px;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
@@ -778,7 +778,7 @@ body.page-layout-group .field-name-field-gpx-files:after {
 	height: 80px;
 	margin: 0 auto;
 	text-align: center;
-	background-color: #e0e0e0;
+	background-color: #ebeef0;
 	border-radius: 40px;
 	-webkit-border-radius: 40px;
 	-moz-border-radius: 40px;
@@ -875,13 +875,13 @@ body.page-layout-group .field-name-field-partner-logo .field-item {
 .field-name-ride-start-time > .field-items:before {
 	display: block;
 	content: "Start time";
-    font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Plus Jakarta Sans", sans-serif;
     font-size: 19px;
     line-height: 24px;
     font-weight: 600;
     padding-bottom: 10px;
     margin: 0 0 25px 0;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #101920;
 }
 
 
@@ -910,13 +910,13 @@ body.page-layout-group .field-name-field-group-files .field-item {
 body.node-type-course-details .field-name-dynamic1 .title,
 body.node-type-course-calendar .field-name-dynamic1 .title,
 body.node-type-venue .field-name-dynamic1 .title {
-	font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-size: 19px;
 	line-height: 24px;
 	font-weight: 600;
 	padding-bottom: 10px;
 	margin: 0 0 25px 0;
-	border-bottom: 1px solid #000;
+	border-bottom: 1px solid #101920;
 }
 
 .view-course-schedule .views-row,
@@ -932,7 +932,7 @@ body.node-type-venue .field-name-dynamic1 .title {
 	margin: 0 auto;
 	height: 5px;
 	/* background-color: #8065a9; */
-	background-color: #e0e0e0;
+	background-color: #ebeef0;
 	border-radius: 2.5px;
 	-webkit-border-radius: 2.5px;
 	-moz-border-radius: 2.5px;
@@ -1033,7 +1033,7 @@ body.node-type-course-calendar .field-name-dynamic1 .views-field-field-course-ve
 
 
 body.node-type-course-calendar .field-name-dynamic1 .views-field-view-node a {
-	color: #000;
+	color: #101920;
 	text-decoration: none;
 }
 
@@ -1078,7 +1078,7 @@ body.node-type-course-calendar .field-name-dynamic1 .views-field-view-node a:act
  */
 
 body.node-type-course-details .central-row .central-wrapper {
-	border: 1px solid #fbb040;
+	border: 1px solid #fc5c1f;
 	padding: 20px;
 	border-radius: 18px;
 	-webkit-border-radius: 18px;
@@ -1115,7 +1115,7 @@ body.node-type-course-details .field-name-field-video {
     content: "";
     width: 100%;
     height: 5px;
-    background-color: #fbb040;
+    background-color: #fc5c1f;
     border-radius: 2.5px;
     -webkit-border-radius: 2.5px;
     -moz-border-radius: 2.5px;

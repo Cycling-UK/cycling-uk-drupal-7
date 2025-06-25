@@ -75,7 +75,7 @@ span.yellow-text {
 }
 
 span.blue-text {
-	color: #009fda;
+	color: #007fae;
 }
 
 span.yellow-line {
@@ -823,9 +823,9 @@ a.back-button:hover span.back-button-icon {
 .main-container table thead tr td {
 	font-size: 18px;
 	padding: 16px 8px;
-	border-top: 1px solid #009fda;
+	border-top: 1px solid #007fae;
 	border-bottom: inherit;
-	border-left: 1px solid #009fda;
+	border-left: 1px solid #007fae;
 	border-right: inherit;
 
 }
@@ -836,7 +836,7 @@ a.back-button:hover span.back-button-icon {
 }
 
 .main-container table thead th.active a {
-	color: #009fda;
+	color: #007fae;
 	text-decoration: none;
 }
 
@@ -855,8 +855,8 @@ a.back-button:hover span.back-button-icon {
 }
 
 .main-container table thead {
-	border: 1px solid #009fda;
-	background-color: #009fda;
+	border: 1px solid #007fae;
+	background-color: #007fae;
 	color: #fff;
 	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
 	font-weight: 400;
@@ -2057,7 +2057,7 @@ a.feedback_simple {
 #dutch-reach-cta a:hover,
 #dutch-reach-cta a:active,
 #dutch-reach-cta a:focus {
-	color: #009fda;
+	color: #007fae;
 }
 
 #dutch-reach-cta i {

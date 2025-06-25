@@ -31,13 +31,13 @@
 
 .node-type-briefings .field-name-field-teaser .field-item::before {
 	content: open-quote;
-	color: #fbb040;
+	color: #fc5c1f;
 	position: relative;
 }
 
 .node-type-briefings .field-name-field-teaser .field-item::after {
 	content: close-quote;
-	color: #fbb040;
+	color: #fc5c1f;
 }
 
 .node-type-briefings .field-name-field-teaser::after {
@@ -45,7 +45,7 @@
 	content: "";
 	width: 100%;
 	height: 5px;
-	background-color: #e0e0e0;
+	background-color: #ebeef0;
 	border-radius: 2.5px;
 	-webkit-border-radius: 2.5px;
 	-moz-border-radius: 2.5px;

@@ -36,7 +36,7 @@
 	
 	border-radius: 5px;
 	
-	color:  #000;
+	color:  #101920;
 	-webkit-user-select: none;
 	-moz-user-select: none;
 	user-select: none;
@@ -75,7 +75,7 @@
 }
 
 .dropdown.focus .carat{
-	border-top-color: #f8f8f8;
+	border-top-color: #ebeef0;
 }
 
 .dropdown.focus .carat:after{

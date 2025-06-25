@@ -67,8 +67,8 @@
 }
 
 .hero-advert .title {
-	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
-	color: #fbb040;
+	font-family: "Plus Jakarta Sans", sans-serif;
+	color: #fc5c1f;
 	font-weight: 400;
 	font-size: 36px;
 	line-height: 42px;
@@ -76,7 +76,7 @@
 }
 
 .hero-carousel .title {
-	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-weight: 400;
 	font-size: 66px;
 	line-height: 66px;
@@ -85,7 +85,7 @@
 }
 
 .hero-advert .subtitle {
-	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-weight: 400;
 	font-size: 36px;
 	line-height: 42px;
@@ -193,7 +193,7 @@
 }
 
 .select-wrapper .divider .bar {
-    background-color: #fbb040;
+    background-color: #fc5c1f;
     display: inline-block;
     height: 30px;
     width: 1px;

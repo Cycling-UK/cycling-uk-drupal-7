@@ -4,22 +4,21 @@ html {
 }
 
 body {
-  color: #000;
-  font-family: "karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #101920;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-weight: 400;
-  font-size: 16px;
-  line-height: 22px;
+  font-size: 18px;
+  line-height: 1.5;
 }
 
 strong {
-  font-family: "karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-weight: 700;
 }
 
 .small-print {
-  font-size: 13px;
-  line-height: 17px;
-  text-transform: uppercase;
+  font-size: 16px;
+  line-height: 16px;
 }
 
 /*
@@ -31,8 +30,7 @@ p {
 }
 
 h1.page-header {
-  font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial,
-    sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-weight: 400;
   font-size: 38px;
   line-height: 38px;
@@ -43,9 +41,8 @@ h1.page-header {
 
 h2,
 .field .field-label {
-  color: #fbb040;
-  font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial,
-    sans-serif;
+  color: #fc5c1f;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-weight: 400;
   font-size: 24px;
   line-height: 28px;
@@ -54,7 +51,7 @@ h2,
 }
 
 h3 {
-  font-family: "karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-weight: 700;
   font-size: 18px;
   line-height: 22px;
@@ -80,58 +77,6 @@ h3 {
   margin-bottom: 10px;
 }
 
-/*
- * Unordered lists
- */
-
-.field-name-body ul,
-.field-name-field-additional-content ul,
-.field-name-field-terms-and-conditions ul,
-.field-name-field-data-protection-statement ul,
-.field-name-field-gpx-files ul {
-  list-style: none;
-  padding: 0;
-  margin: 20px 0 20px 0;
-}
-
-.field-name-og-node-content-links ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.field-name-body ul li,
-.field-name-field-headline-message ul li,
-.field-name-field-policy-key-facts ul li,
-.field-name-field-cycling-uk-view ul li,
-.field-name-field-additional-content ul li,
-.field-name-field-terms-and-conditions ul li,
-.field-name-field-data-protection-statement ul li,
-.field-name-field-gpx-files ul li,
-.field-name-og-node-content-links ul li {
-  padding-left: 44px;
-  text-indent: -26px;
-  margin-bottom: 6px;
-}
-
-.field-name-body ul li:before,
-.field-name-field-headline-message ul li:before,
-.field-name-field-policy-key-facts ul li:before,
-.field-name-field-cycling-uk-view ul li:before,
-.field-name-field-additional-content ul li:before,
-.field-name-field-terms-and-conditions ul li:before,
-.field-name-field-data-protection-statement ul li:before,
-.field-name-field-gpx-files ul li:before {
-  content: "•";
-  margin-right: 20px;
-  color: #fbb040;
-}
-
-.field-name-og-node-content-links ul li:before {
-  content: "•";
-  margin-right: 20px;
-  color: #000;
-}
 
 /*
  * Block quotes
@@ -139,8 +84,6 @@ h3 {
 
 blockquote {
   border-left: inherit;
-  font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial,
-    sans-serif;
   font-weight: 400;
   font-size: 22px;
   line-height: 26px;
@@ -164,8 +107,6 @@ blockquote:before {
   height: 5px;
   background-color: #fff;
   border-radius: 2.5px;
-  -webkit-border-radius: 2.5px;
-  -moz-border-radius: 2.5px;
   position: relative;
   left: -30px;
   top: -20px;
@@ -181,7 +122,7 @@ blockquote p:first-child:after {
   font-weight: 600;
   font-size: 16px;
   line-height: 16px;
-  color: #fbb040;
+  color: #fc5c1f;
   position: relative;
 }
 
@@ -261,7 +202,7 @@ blockquote p:first-child:after {
 }
 
 .field-name-field-tags a {
-  color: #000;
+  color: #101920;
   text-decoration: none;
   background-color: #eaeaea;
   padding: 5px 10px;
@@ -279,8 +220,8 @@ blockquote p:first-child:after {
 .field-name-field-tags a:hover,
 .field-name-field-tags a:focus,
 .field-name-field-tags a:active {
-  background-color: #e0e0e0;
-  color: #000;
+  background-color: #ebeef0;
+  color: #101920;
   text-decoration: none;
 }
 
@@ -324,58 +265,7 @@ blockquote p:first-child:after {
   content: "\f39e";
 }
 
-/**
- * Google DFP advertising
- */
 
-.field-name-advert-1,
-.field-name-advert-2,
-.field-name-advert-3,
-.field-name-advert-4,
-.field-name-advert-5,
-.field-name-advert-6 {
-  display: table; /* Uncertain why but this statement helps align the adverts centrally in the right-hand column */
-  width: 300px;
-  margin: 0 auto;
-}
-
-.block-dfp {
-  width: 300px;
-  margin-bottom: 20px;
-}
-
-.block-dfp .slug {
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 12px;
-  line-height: 12px;
-  letter-spacing: 2px;
-  color: #c0c0c0;
-  margin-bottom: 15px;
-}
-
-@media only screen and (max-width: 389px) {
-  .field-name-advert-1,
-  .field-name-advert-2,
-  .field-name-advert-3,
-  .field-name-advert-4,
-  .field-name-advert-5,
-  .field-name-advert-6 {
-    width: 300px;
-    margin: 0 auto;
-  }
-}
-
-@media only screen and (min-width: 390px) {
-  .block-dfp {
-    width: 330px;
-    border: 1px solid #c0c0c0;
-    border-radius: 18px;
-    -webkit-border-radius: 18px;
-    -moz-border-radius: 18px;
-    padding: 15px;
-  }
-}
 
 /*
  * Page management block
@@ -392,16 +282,11 @@ blockquote p:first-child:after {
   color: #fff;
   font-size: 12px;
   line-height: 14px;
-  border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -webkit-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
-  box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
 }
 
 #block-views-page-management-block h2 {
-  font-family: "karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-weight: 700;
   font-size: 12px;
   line-height: 12px;
@@ -417,7 +302,7 @@ blockquote p:first-child:after {
 }
 
 #block-views-page-management-block .btn {
-  font-family: "karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-weight: 700;
   font-size: 12px;
   line-height: 24px;
@@ -439,7 +324,7 @@ blockquote p:first-child:after {
 }
 
 #block-views-page-management-block .btn a {
-  color: #000;
+  color: #101920;
   text-decoration: none;
 }
 
@@ -460,7 +345,7 @@ blockquote p:first-child:after {
 }
 
 .main-container table tbody {
-  border: 1px solid #cdcdcd;
+  border: 1px solid #c3cbd2;
 }
 
 .main-container table tbody tr th,
@@ -468,9 +353,9 @@ blockquote p:first-child:after {
 .main-container table tbody tr td,
 .main-container table tfoot tr td {
   padding: 8px;
-  border-top: 1px solid #cdcdcd;
+  border-top: 1px solid #c3cbd2;
   border-bottom: inherit;
-  border-left: 1px solid #cdcdcd;
+  border-left: 1px solid #c3cbd2;
   border-right: inherit;
   text-align: left;
 }
@@ -480,9 +365,9 @@ blockquote p:first-child:after {
 .main-container table tbody tr td,
 .main-container table tfoot tr td {
   padding: 8px;
-  border-top: 1px solid #cdcdcd;
+  border-top: 1px solid #c3cbd2;
   border-bottom: inherit;
-  border-left: 1px solid #cdcdcd;
+  border-left: 1px solid #c3cbd2;
   border-right: inherit;
   text-align: left;
 }
@@ -502,9 +387,9 @@ blockquote p:first-child:after {
 .main-container table thead tr td {
   font-size: 18px;
   padding: 16px 8px;
-  border-top: 1px solid #009fda;
+  border-top: 1px solid #007fae;
   border-bottom: inherit;
-  border-left: 1px solid #009fda;
+  border-left: 1px solid #007fae;
   border-right: inherit;
 }
 
@@ -514,7 +399,7 @@ blockquote p:first-child:after {
 }
 
 .main-container table thead th.active a {
-  color: #009fda;
+  color: #007fae;
   text-decoration: none;
 }
 
@@ -532,11 +417,10 @@ blockquote p:first-child:after {
 }
 
 .main-container table thead {
-  border: 1px solid #009fda;
-  background-color: #009fda;
+  border: 1px solid #007fae;
+  background-color: #007fae;
   color: #fff;
-  font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial,
-    sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-weight: 400;
 }
 
@@ -544,8 +428,8 @@ blockquote p:first-child:after {
 .field-name-field-care-telephones table thead {
   border: 0px;
   background-color: #fff;
-  color: #000;
-  font-family: "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #101920;
+  font-family: "Plus Jakarta Sans", sans-serif;
 }
 
 .main-container table thead th {
@@ -553,7 +437,7 @@ blockquote p:first-child:after {
 }
 
 .main-container table tfoot {
-  border: 1px solid #cdcdcd;
+  border: 1px solid #c3cbd2;
   background-color: #dfe0e1;
   font-weight: 400;
 }
@@ -653,8 +537,7 @@ body.node-type-product-donation article form:before {
   text-align: center;
   margin: 0 auto;
   max-width: 700px;
-  font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial,
-    sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-weight: 400;
   font-size: 28px;
   line-height: 32px;
@@ -682,9 +565,7 @@ body.node-type-product-donation form button {
   font-weight: 600;
   height: 50px;
   letter-spacing: 1px;
-  border-radius: 30px;
-  -webkit-border-radius: 30px;
-  -moz-border-radius: 30px;
+  border-radius: 10px;
 }
 
 body.node-type-product-donation
@@ -715,16 +596,9 @@ body.node-type-product-donation
   > div,
 body.node-type-product-donation
   input#edit-line-item-fields-commerce-donate-amount-und-other {
-  font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial,
-    sans-serif;
   font-weight: 400;
   border-radius: 40px;
-  -webkit-border-radius: 40px;
-  -moz-border-radius: 40px;
   border: 2px solid rgba(128, 100, 169, 1);
-  -webkit-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
-  box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
   background-color: #fff;
   align-content: center;
 }
@@ -736,12 +610,7 @@ body.page-checkout #edit-checkout-donate-field-payment-option-und > div,
 body.page-checkout input#edit-checkout-donate-commerce-donate-amount-und-other {
   font-weight: 400;
   border-radius: 40px;
-  -webkit-border-radius: 40px;
-  -moz-border-radius: 40px;
   border: 2px solid rgba(128, 100, 169, 1);
-  -webkit-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
-  -moz-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
-  box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
   background-color: #fff;
   align-content: center;
 }
@@ -894,8 +763,6 @@ body.page-checkout
 }
 
 #edit-checkout-donate .panel-title {
-  font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial,
-    sans-serif;
   font-weight: 400;
   font-size: 22px;
   line-height: 26px;
@@ -967,8 +834,6 @@ fieldset .group-payment-option,
 
 #edit-checkout-donate-commerce-donate-amount > div > div > div > label,
 #edit-checkout-donate-field-payment-option > div > label {
-  font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial,
-    sans-serif;
   font-weight: 400;
   font-size: 22px;
   line-height: 24px;
@@ -981,8 +846,6 @@ fieldset .group-payment-option,
 
 #donate-text h2,
 #donate-text h3 {
-  font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial,
-    sans-serif;
   font-weight: 400;
   text-align: center;
 }
@@ -998,7 +861,7 @@ fieldset .group-payment-option,
 #donate-text h3 {
   font-size: 32px;
   line-height: 32px;
-  color: #009fda;
+  color: #007fae;
   padding-bottom: 10px;
 }
 
@@ -1046,8 +909,6 @@ fieldset .group-payment-option,
 }
 
 #donate-text .reason .image-title .inner-wrapper {
-  font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial,
-    sans-serif;
   font-weight: 400;
   font-size: 22px;
   line-height: 24px;
@@ -1150,14 +1011,12 @@ fieldset .group-payment-option,
 
 .promobox-font-cocon,
 .promobox-title {
-  font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial,
-    sans-serif;
   font-size: 27px;
   line-height: 31px;
 }
 
 .promobox-font-karla {
-  font-family: "Karla", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 18px;
@@ -1261,8 +1120,6 @@ fieldset .group-payment-option,
 }
 
 .post-banner .inner-wrapper {
-  font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial,
-    sans-serif;
   font-weight: 400;
   color: #fff;
   font-size: 40px;
@@ -1406,7 +1263,7 @@ abbr[data-original-title]:after {
 }
 
 #membership-matrix .inner-wrapper.middle {
-  color: #000;
+  color: #101920;
   padding: 20px;
 }
 
@@ -1414,14 +1271,12 @@ abbr[data-original-title]:after {
   border-radius: 0 0 10px 10px;
   -webkit-border-radius: 0 0 10px 10px;
   -moz-border-radius: 0 0 10px 10px;
-  color: #000;
+  color: #101920;
   padding: 20px;
   text-align: center;
 }
 
 #membership-matrix .membership-type {
-  font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial,
-    sans-serif;
   font-weight: 400;
   font-size: 36px;
   line-height: 36px;
@@ -1460,8 +1315,6 @@ abbr[data-original-title]:after {
 }
 
 #membership-matrix .benefit-list {
-  font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial,
-    sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 18px;
@@ -1484,7 +1337,7 @@ abbr[data-original-title]:after {
 #membership-matrix .benefit-list i {
   display: inline-flex;
   font-size: 24px;
-  color: #fbb040;
+  color: #fc5c1f;
   margin-right: 10px;
 }
 
@@ -1507,8 +1360,6 @@ abbr[data-original-title]:after {
 }
 
 #membership-matrix .price-amount {
-  font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial,
-    sans-serif;
   font-weight: 400;
   font-size: 36px;
   line-height: 36px;
@@ -1534,7 +1385,7 @@ abbr[data-original-title]:after {
  */
 
 #membership-options {
-  background-color: #f0f0f0;
+  background-color: #ebeef0;
   padding: 15px;
   border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -1566,7 +1417,7 @@ abbr[data-original-title]:after {
 }
 
 #membership-options .wrapper {
-  background-color: #e0e0e0;
+  background-color: #ebeef0;
   border-radius: 0 0 7px 7px;
   -webkit-border-radius: 0 0 7px 7px;
   -moz-border-radius: 0 0 7px 7px;
@@ -1574,8 +1425,6 @@ abbr[data-original-title]:after {
 
 #membership-options .wrapper .title,
 #membership-options .other-options .title {
-  font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial,
-    sans-serif;
   font-weight: 400;
   font-size: 22px;
   line-height: 22px;
@@ -1684,8 +1533,6 @@ abbr[data-original-title]:after {
 
 #membership-price-box .type,
 #membership-price-box .price-amount {
-  font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial,
-    sans-serif;
   font-weight: 400;
   font-size: 28px;
   line-height: 28px;
@@ -1795,8 +1642,6 @@ abbr[data-original-title]:after {
 
 #general-enquiries .subheader,
 #markup-submenu .subheader {
-  font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial,
-    sans-serif;
   font-weight: 400;
   font-size: 24px;
   line-height: 28px;
@@ -1831,7 +1676,7 @@ abbr[data-original-title]:after {
   border-radius: 10px 10px 0 0;
   -webkit-border-radius: 10px 10px 0 0;
   -moz-border-radius: 10px 10px 0 0;
-  background-color: #e0e0e0;
+  background-color: #ebeef0;
   padding: 10px 20px 10px 20px;
   text-align: center;
   height: 81px;
@@ -1843,7 +1688,7 @@ abbr[data-original-title]:after {
   border-radius: 0 0 10px 10px;
   -webkit-border-radius: 0 0 10px 10px;
   -moz-border-radius: 0 0 10px 10px;
-  background-color: #f0f0f0;
+  background-color: #ebeef0;
   padding: 20px 20px 10px 20px;
   text-align: center;
   height: 257px;
@@ -1851,19 +1696,17 @@ abbr[data-original-title]:after {
 
 #contact-matrix .bottom-wrapper a,
 #contact-matrix .bottom-wrapper a:visited {
-  color: #000;
+  color: #101920;
   text-decoration: none;
 }
 
 #contact-matrix .bottom-wrapper a:hover,
 #contact-matrix .bottom-wrapper a:active {
-  color: #fbb040;
+  color: #fc5c1f;
   text-decoration: underline;
 }
 
 #contact-matrix .department {
-  font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial,
-    sans-serif;
   font-weight: 400;
   font-size: 24px;
   line-height: 28px;
@@ -1901,10 +1744,8 @@ abbr[data-original-title]:after {
 #contact-matrix .description:after {
   display: block;
   content: "";
-  border-bottom: 5px solid #e0e0e0;
+  border-bottom: 5px solid #ebeef0;
   border-radius: 2.5px;
-  -webkit-border-radius: 2.5px;
-  -moz-border-radius: 2.5px;
   width: 140px;
   margin: 0 auto 20px;
   padding-bottom: 20px;
@@ -1958,8 +1799,6 @@ abbr[data-original-title]:after {
 }
 
 #member-panel .member-title {
-  font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial,
-    sans-serif;
   font-weight: 400;
   font-size: 24px;
   line-height: 24px;
@@ -1967,8 +1806,6 @@ abbr[data-original-title]:after {
 }
 
 #member-panel .member-role {
-  font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial,
-    sans-serif;
   font-weight: 400;
   font-size: 18px;
   line-height: 18px;
@@ -1978,10 +1815,8 @@ abbr[data-original-title]:after {
 #member-panel .divider:after {
   display: block;
   content: "";
-  background-color: #fbb040;
+  background-color: #fc5c1f;
   border-radius: 2.5px;
-  -webkit-border-radius: 2.5px;
-  -moz-border-radius: 2.5px;
   width: 140px;
   height: 5px;
   margin-bottom: 10px;
@@ -2001,8 +1836,6 @@ abbr[data-original-title]:after {
 }
 
 .view.child-list.view-trustees .teaser {
-  font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial,
-    sans-serif;
   font-weight: 400;
   font-size: 22px;
   line-height: 22px;
@@ -2017,22 +1850,17 @@ abbr[data-original-title]:after {
 }
 
 .view.child-list.view-trustees .divider {
-  background-color: #fbb040;
+  background-color: #fc5c1f;
   border-radius: 2.5px;
-  -webkit-border-radius: 2.5px;
-  -moz-border-radius: 2.5px;
   width: 140px;
   height: 5px;
   margin: 0 auto 10px auto;
 }
 
 .view.child-list.view-trustees .bottom-wrapper {
-  /* 	text-align: center; */
-  background-color: #f0f0f0;
+  background-color: #ebeef0;
   padding: 15px;
   border-radius: 0 0 10px 10px;
-  -webkit-border-radius: 0 0 10px 10px;
-  -moz-border-radius: 0 0 10px 10px;
   margin-bottom: 30px;
 }
 
@@ -2064,13 +1892,13 @@ abbr[data-original-title]:after {
 
 #dutch-reach-cta a,
 #dutch-reach-cta a:visited {
-  color: #fbb040;
+  color: #fc5c1f;
 }
 
 #dutch-reach-cta a:hover,
 #dutch-reach-cta a:active,
 #dutch-reach-cta a:focus {
-  color: #009fda;
+  color: #007fae;
 }
 
 #dutch-reach-cta i {
@@ -2086,8 +1914,6 @@ abbr[data-original-title]:after {
 }
 
 #dutch-reach-cta .action {
-  font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial,
-    sans-serif;
   font-weight: 400;
   font-size: 22px;
   line-height: 22px;
@@ -2193,7 +2019,7 @@ abbr[data-original-title]:after {
   border-radius: 15px;
   -webkit-border-radius: 15px;
   -moz-border-radius: 15px;
-  background-color: #f0f0f0;
+  background-color: #ebeef0;
 }
 
 #event-registation-infographic .inner-wrapper {
@@ -2236,8 +2062,8 @@ abbr[data-original-title]:after {
 
 #event-registation-infographic .icon-wrapper,
 #event-registation-infographic i {
-  border: 1px solid #009fda;
-  background-color: #009fda;
+  border: 1px solid #007fae;
+  background-color: #007fae;
   border-radius: 30px;
   -webkit-border-radius: 30px;
   -moz-border-radius: 30px;
@@ -2265,7 +2091,7 @@ abbr[data-original-title]:after {
   border-radius: 2.5px;
   -webkit-border-radius: 2.5px;
   -moz-border-radius: 2.5px;
-  background-color: #fbb040;
+  background-color: #fc5c1f;
   margin: 30px auto;
 }
 
@@ -2360,11 +2186,6 @@ abbr[data-original-title]:after {
   display: flex;
   flex-direction: column;
   background-color: #fff;
-  box-shadow: 0px 0px 10px 0px #cecece;
-  -webkit-box-shadow: 0px 0px 10px 0px #cecece;
-  -moz-box-shadow: 0px 0px 10px 0px #cecece;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
   border-radius: 10px;
   padding-bottom: 6%;
 }
@@ -2375,10 +2196,6 @@ abbr[data-original-title]:after {
 }
 
 .job-cards li .single-job-card .hero-image img {
-  -webkit-border-top-left-radius: 10px;
-  -webkit-border-top-right-radius: 10px;
-  -moz-border-radius-topleft: 10px;
-  -moz-border-radius-topright: 10px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   max-width: 100%;
@@ -2389,8 +2206,6 @@ abbr[data-original-title]:after {
 
 .single-job-card .card-title {
   margin: 1% 0 3% 0;
-  font-family: "ff-cocon-web-pro", "Karla", "Helvetica Neue", Helvetica, Arial,
-    sans-serif;
   font-size: 18px;
   line-height: 28px;
 }
@@ -2428,3 +2243,46 @@ abbr[data-original-title]:after {
   }
 }
 /* Jobs page cards end */
+
+
+
+/* Brand 2025 tweaks */
+
+/* Format listing of group listing */
+.view-display-id-groups_ol_blocklist .view-content {
+  text-align: center;
+}
+
+.view-display-id-groups_ol_blocklist .views-row {
+  margin: 6px 0;
+}
+
+@media screen and (min-width: 992px) {
+  .view-display-id-groups_ol_blocklist .view-content {
+    columns: 2;
+  }
+}
+
+.field-name-og-node-content-links {
+  max-width: 400px;
+  margin: 60px auto 30px;
+}
+
+
+/* Redirect to main site message */
+.view-drupal-10-link {
+  max-width: 850px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.view-drupal-10-link .view-content a {
+  margin: 30px 0;
+}
+
+.view-drupal-10-link .view-footer {
+  font-weight: 700;
+}
+
+

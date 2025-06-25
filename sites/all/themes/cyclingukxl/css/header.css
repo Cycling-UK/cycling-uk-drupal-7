@@ -8,7 +8,8 @@ header > .inner-wrapper {
 }
 
 header .container-bottom {
-	margin-bottom: 20px;
+  background-color: #ffffff !important;
+  padding: 20px 0;
 }
 
 header .inner-wrapper .container-left,

@@ -32,7 +32,6 @@ body.page-layout-user {
 
 
 #auth_box {
-    font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
 	text-align: center;
 	width: 360px;
 	margin-bottom: 90px;
@@ -76,54 +75,48 @@ body.page-layout-user {
 }
 
 #auth_box #middle_part {
-	background-color: #e0e0e0;
+	background-color: #ebeef0;
 	border-radius: 10px 10px 0 0;
-	-webkit-border-radius: 10px 10px 0 0;
-	-moz-border-radius: 10px 10px 0 0;
-	-webkit-box-shadow: inherit;
-	-moz-box-shadow: inherit;
-	box-shadow: inherit;
 	padding: 30px 30px 10px 30px;
+  box-shadow: none;
 }
 
 #auth_box #middle_part h1,
 #auth_box #middle_part h2 {
-	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
-	font-weight: 400;
-    margin: 0 0 30px 0;
-    padding: 0;
-    font-size: 26px;
-    line-height: 30px;
+  font-weight: 700;
+  margin: 0 0 30px 0;
+  padding: 0;
+  font-size: 26px;
+  line-height: 30px;
 }
 
-#auth_box #middle_part #block-system-main {
-    margin-bottom: 30px;
+#auth_box #block-system-main > form > div > a {
+  display: block;
+  margin-bottom: 20px;
+}
+
+#auth_box #block-system-main {
+  margin-bottom: 0;
 }
 
 #auth_box #bottom_part {
-	background-color: #f0f0f0;
+	background-color: #ebeef0;
 	border-radius: 0 0 10px 10px;
-	-webkit-border-radius: 0 0 10px 10px;
-	-moz-border-radius: 0 0 10px 10px;
-	-webkit-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
-	-moz-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
-	box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
 	padding: 20px 30px;
 }
 
 #auth_box #bottom_part a {
-	color: #333;
-	font-size: 13px;
-	line-height: 13px;
-	text-decoration: none;
-	text-transform: uppercase;
-	letter-spacing: 1px;
+  color: #101920;
+	font-size: 16px;
+  font-weight: 700;
+	line-height: 1;
 	outline: none;
 }
 
 #auth_box #bottom_part a:hover,
 #auth_box #bottom_part a:focus {
-	color: #333;
+	color: #ffffff;
+  background-color: #101920;
 	text-decoration: underline;
 }
 
@@ -137,28 +130,25 @@ body.page-layout-user {
 }
 
 #auth_box label {
-    margin-bottom: 4px;
+  color: #365269;
+  margin-bottom: 7px;
 }
 
 #auth_box input[type="text"],
 #auth_box input[type="password"] {
-    width: 100%;
-    border: 1px #000 solid;
-    border-radius: 22px;
-	-webkit-border-radius: 22px;
-	-moz-border-radius: 22px;
-    padding: 10px 20px;
-    font-size: 16px;
-    line-height: 16px;
-    color: #000;
-    height: 44px;
-    margin: 0 auto;
-
+  font-family: "Plus Jakarta Sans", sans-serif;
+  width: 100%;
+  border: 1px #c3cbd2 solid;
+  border-radius: 10px;
+  padding: 10px 20px;
+  line-height: 1;
+  height: 44px;
+  margin: 0 auto;
 }
 
 #auth_box input[type="text"]:focus,
 #auth_box input[type="password"]:focus {
-    border: 1px #fbb040 solid;
+    border: 1px #fc5c1f solid;
 }
 
 .form-item-persistent-login {
@@ -224,7 +214,6 @@ body.page-user ul.nav-tabs li:first-of-type {
 }
 
 
-
 /*
  * Centre align user nav menu
  */
@@ -234,45 +223,36 @@ body.page-user h1.page-header {
 }
 
 
-
 /*
  * Style user nav menu
  */
 
 body.page-user ul.nav-tabs {
 	border-bottom: inherit;
-	text-align: center;
-	margin-left: 120px;
-	margin-right: 120px;
-	margin-bottom: 0;
-}
-
-body.page-user ul.nav-tabs li {
-	display: inline-block;
-	float: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0;
 }
 
 body.page-user ul.nav-tabs li a {
-	border-left: 1px solid #f0f0f0;
-	border-top: 1px solid #f0f0f0;
-	border-right: 1px solid #f0f0f0;
+	border-left: 1px solid #ebeef0;
+	border-top: 1px solid #ebeef0;
+	border-right: 1px solid #ebeef0;
 	border-radius: 5px 5px 0 0;
-	-webkit-border-radius: 5px 5px 0 0;
-	-moz-border-radius: 5px 5px 0 0;
 }
 
 body.page-user ul.nav-tabs li.active a {
-	background-color: #f0f0f0;
+	background-color: #ebeef0;
 }
 
 body.page-user ul.nav-tabs li.active a:hover {
-	border-left: 1px solid #f0f0f0;
-	border-top: 1px solid #f0f0f0;
-	border-right: 1px solid #f0f0f0;
+	border-left: 1px solid #ebeef0;
+	border-top: 1px solid #ebeef0;
+	border-right: 1px solid #ebeef0;
 	border-radius: 5px 5px 0 0;
-	-webkit-border-radius: 5px 5px 0 0;
-	-moz-border-radius: 5px 5px 0 0;
-	background-color: #f0f0f0;
+	background-color: #ebeef0;
 }
 
 
@@ -282,31 +262,12 @@ body.page-user ul.nav-tabs li.active a:hover {
  */
 
 body.page-user.logged-in .region-content {
-	background-color: #f0f0f0;
-	border-radius: 15px;
-	-webkit-border-radius: 15px;
-	-moz-border-radius: 15px;
+	background-color: #ebeef0;
+	border-radius: 10px;
 	padding: 30px;
-	margin-left: 120px;
-	margin-right: 120px;
-	margin-bottom: 60px;
+  max-width: 1200px;
+  margin: 0 auto 60px;
 }
-
-@media only screen and (max-width: 767px) {
-	body.page-user.logged-in .region-content {
-			padding: 30px 15px 30px 15px;
-	}
-}
-
-
-@media only screen and (max-width: 991px) {
-	body.page-user ul.nav-tabs,
-	body.page-user.logged-in .region-content {
-		margin-left: 0;
-		margin-right: 0;
-	}
-}
-
 
 body.page-user-password.logged-in .region-content {
 	background-color: inherit;
@@ -322,27 +283,34 @@ body.page-user-password.logged-in .region-content {
  * User profile - VIEW
  */
 
-body.page-user .user-profile .col-sm-12 > div {
+/*
+ body.page-user .user-profile .col-sm-12 > div {
 	margin-top: 30px;
 }
+*/
 
 body.page-user .user-profile .col-sm-12 > div .field-label {
 	display: inline-block;
 }
 
+/*
 body.page-user .user-profile .col-sm-12 > div .field-items {
 	position: relative;
 	left: 25px;
 }
+*/
 
 body.page-user .user-profile .col-sm-12 > div:before,
 body.page-user form#user-profile-form .ui-accordion-content > div:before {
-    font-family: 'FontAwesome';
-    font-size: 14px;
-    font-weight: 400;
+  display: none;
+  /*
+  font-family: 'FontAwesome';
+  font-size: 14px;
+  font-weight: 400;
 	display: inline-block;
 	margin-right: 10px;
 	width: 15px;
+  */
 }
 
 body.page-user form#user-profile-form .ui-accordion-content > div:before {
@@ -375,13 +343,16 @@ form#user-profile-form #edit-field-care-telephones.field-name-field-care-telepho
 }
 
 form#user-profile-form #edit-field-care-telephones table thead label:before {
-    font-family: 'FontAwesome';
-    font-size: 14px;
-    font-weight: 400;
-	display: inline-block;
-	margin-right: 10px;
-	width: 15px;
-	content: "\F095";
+  display: none;
+  /*
+  font-family: 'FontAwesome';
+  font-size: 14px;
+  font-weight: 400;
+  display: inline-block;
+  margin-right: 10px;
+  width: 15px;
+  content: "\F095";
+  */
 }
 
 body.page-user.page-user-register .help-block {
@@ -452,7 +423,7 @@ body.page-user #change-pwd-page-form .form-item-pass-pass2 {
 
 body.page-user #change-pwd-page-form .form-item-current-pass label,
 body.page-user #change-pwd-page-form .form-item-pass:before {
-	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-size: 20px;
 	line-height: 20px;
 	font-weight: 200;
@@ -482,7 +453,7 @@ body.page-user #change-pwd-page-form .form-item-pass > label {
 }
 
 body.page-user .form-type-password-confirm .progress {
-    background-color: #e0e0e0;
+    background-color: #ebeef0;
 	border-radius: 2.5px;
 	-webkit-border-radius: 2.5px;
 	-moz-border-radius: 2.5px;
@@ -504,7 +475,7 @@ body.page-user .form-type-password-confirm .progress-bar {
 }
 
 body.page-user .form-type-password-confirm .password-help {
-    border-left: 1px solid #e0e0e0;
+    border-left: 1px solid #ebeef0;
     padding-left: 20px;
 }
 
@@ -528,10 +499,9 @@ form#user-profile-form .ui-accordion .ui-accordion-header {
 form#user-profile-form .form-item-field-profile-picture-und-0 > label,
 form#user-profile-form .form-item-field-type-of-cycling-und > label,
 form#user-profile-form .form-wrapper legend {
-	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
 	font-size: 18px;
-	line-height: 18px;
-	font-weight: 200;
+	line-height: 1;
+	font-weight: 700;
 }
 
 form#user-profile-form  .ui-accordion-content {
@@ -545,10 +515,8 @@ form#user-profile-form  .ui-accordion-content {
 }
 
 form#user-profile-form .group-accordian > div > div {
-	background-color: #f8f8f8;
+	background-color: #ebeef0;
 	border-radius: 10px;
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
 	padding: 8px 30px 20px 30px;
 	margin-bottom: 40px;
 }
@@ -564,10 +532,12 @@ form#user-profile-form .group-accordian > div > div {
 
 
 form#user-profile-form .form-wrapper legend {
-	position: relative;
+  /*
+  position: relative;
 	top: -2px;
 	right: -25px;
-	color: #000;
+  */
+	color: #101920;
 	width: 250px;
 }
 
@@ -583,11 +553,13 @@ form#user-profile-form .form-item-field-profile-picture-und-0 {
 
 /* Type of cycling */
 
+/*
 form#user-profile-form .field-name-field-type-of-cycling > div > label {
 	position: relative;
 	left: 30px;
 	top: -3px;
 }
+*/
 
 form#user-profile-form .field-name-field-type-of-cycling span.checkbox {
 	display: none;
@@ -760,7 +732,7 @@ form#user-profile-form #edit-field-care-telephones table {
 
 form#user-profile-form #edit-field-care-telephones table thead {
 	background-color: inherit;
-	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-size: 18px;
 	line-height: 18px;
 	font-weight: 200;
@@ -866,10 +838,8 @@ form#user-profile-form #edit-field-care-dob .form-item-field-care-dob-und-0-year
  */
 
 form#user-profile-form .panel {
-	background-color: #f8f8f8;
+	background-color: #ebeef0;
 	border-radius: 10px;
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
 	padding: 30px;
 }
 
@@ -886,11 +856,16 @@ form#user-profile-form .panel-heading {
 	padding-top: 0;
 }
 
-form#user-profile-form .panel-title {
-	font-size: 18px;
-	line-height: 18px;
+
+
+form#user-profile-form a.panel-title,
+form#user-profile-form a.panel-title:hover {
+  font-size: 20px;
+	line-height: 1;
 	text-decoration: none;
-	font-weight: 200;
+	font-weight: 700;
+  color: #365269;
+  background-color: inherit;
 }
 
 form#user-profile-form .ui-accordion-content > .panel.form-wrapper > legend {
@@ -999,7 +974,7 @@ form#user-profile-form #edit-og-user-node-und-body .form-item-og-user-node-und-0
 
 #cyclinguk-commerce-gift-aid-declaration-form h2,
 #cyclinguk-commerce-gift-aid-declaration-form h4 {
-	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-weight: 200;
 	margin-bottom: 10px;
 }
@@ -1009,7 +984,7 @@ form#user-profile-form #edit-og-user-node-und-body .form-item-og-user-node-und-0
 }
 
 #cyclinguk-commerce-gift-aid-declaration-form #edit-gift-aid {
-	background-color: #f8f8f8;
+	background-color: #ebeef0;
 	border-radius: 10px 10px 0 0;
 	-webkit-border-radius: 10px 10px 0 0;
 	-moz-border-radius: 10px 10px 0 0;
@@ -1018,7 +993,7 @@ form#user-profile-form #edit-og-user-node-und-body .form-item-og-user-node-und-0
 }
 
 #cyclinguk-commerce-gift-aid-declaration-form #edit-commerce-giftaid {
-	background-color: #f8f8f8;
+	background-color: #ebeef0;
 	border-radius: 0 0 10px 10px;
 	-webkit-border-radius: 0 0 10px 10px;
 	-moz-border-radius: 0 0 10px 10px;
@@ -1043,8 +1018,7 @@ form#user-profile-form #edit-og-user-node-und-body .form-item-og-user-node-und-0
  */
 
 body.page-user .view-admin-views-node h1 {
-	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
-	font-weight: 200;
+	font-weight: 700;
 }
 
 body.page-user .view-admin-views-node .views-exposed-widgets label {
@@ -1066,55 +1040,71 @@ body.page-user .view-admin-views-node .form-item-items-per-page select {
  */
 
 form#user-profile-form .group-profile a.button {
- 	font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
-    display: inline-block;
-    min-width: 140px;
-    font-size: 15px;
-    line-height: 34px;
-    font-weight: 400;
-    text-transform: uppercase;
-    text-decoration: none !important;
-    padding: 0 18px;
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    text-align: center;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 400;
+	background-color: #fc5c1f;
+	border: 4px solid #fc5c1f;
+	color: #ffffff;
+	display: inline-block;
+	min-width: 140px;
+  font-size: 20px;
+	line-height: 1;
+  font-weight: 700;
+	text-decoration: none !important;
+	padding: 8px 32px;
+	border-radius: 10px;
 }
 
 form#user-profile-form .group-profile button.form-submit,
 form#user-profile-form .group-profile a.button,
 form#user-profile-form #edit-field-care-telephones button.form-submit {
-	border: 1px #fbb040 solid;
-	background-color: #fff;
-	color: #000;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 400;
+	background-color: #fc5c1f;
+	border: 4px solid #fc5c1f;
+	color: #ffffff;
+	display: inline-block;
+	min-width: 140px;
+  font-size: 20px;
+	line-height: 1;
+  font-weight: 700;
+	text-decoration: none !important;
+	padding: 8px 32px;
+	border-radius: 10px;
 }
 
 form#user-profile-form .group-profile button.form-submit:hover,
 form#user-profile-form .group-profile a.button:hover,
 form#user-profile-form #edit-field-care-telephones button.form-submit:hover {
-	border: 1px #fbb040 solid !important;
-	background-color: #fbb040 !important;
-	color: #fff !important;
+	background-color: #101920;
+	border: 4px solid #101920;
+	color: #fff;
+  box-shadow: inherit;
 }
 
 form#user-profile-form .group-profile button.form-submit:active,
 form#user-profile-form .group-profile a.button:active,
 form#user-profile-form #edit-field-care-telephones button.form-submit:active {
-	border: 1px #fdaf17 solid !important;
-	background-color: #fdaf17 !important;
-	color: #fff !important;
+	background-color: #101920;
+	border: 4px solid #101920;
+	color: #fff;
+  box-shadow: inherit;
 }
 
 body.page-user.page-user-register button.form-submit:hover,
 form#user-profile-form .btn-success:hover {
-	border-color: #fbb040 !important;
-	background-color: #fbb040 !important;
+	background-color: #101920;
+	border: 4px solid #101920;
+	color: #fff;
+  box-shadow: inherit;
 }
 
 body.page-user.page-user-register button.form-submit:active,
 form#user-profile-form .btn-success:active {
-	border-color: #fdaf17 !important;
-	background-color: #fdaf17 !important;
+	background-color: #101920;
+	border: 4px solid #101920;
+	color: #fff;
+  box-shadow: inherit;
 }
 
 body.hide-user-menu-tabs .navtab-wrapper {

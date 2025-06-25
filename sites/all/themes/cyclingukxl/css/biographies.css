@@ -26,7 +26,7 @@
 
 .node-type-biography h1,
 .node-type-partner h1 {
-    font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Plus Jakarta Sans", sans-serif;
 	font-weight: 400;
 	font-size: 48px;
 	line-height: 48px;
@@ -37,7 +37,7 @@
 
 .node-type-biography .node-biography h2,
 .node-type-partner .node-biography h2 {
-  color: #000;
+  color: #101920;
 }
 
 .node-type-biography .page-content > img {
@@ -58,14 +58,14 @@
 }
 
 
-.node-type-biography .community_champion img {border: 5px solid #fbb040;}
-.node-type-biography .industry_mogul     img {border: 5px solid #009fda;}
+.node-type-biography .community_champion img {border: 5px solid #fc5c1f;}
+.node-type-biography .industry_mogul     img {border: 5px solid #007fae;}
 .node-type-biography .cycle_influencer   img {border: 5px solid #e6007e;}
 .node-type-biography .sporting_hero      img {border: 5px solid #cdce00;}
 
 .node-type-biography .field-name-field-headline,
 .node-type-partner .field-name-field-headline {
-  font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
 	font-weight: 400;
 	font-size: 24px;
 	line-height: 28px;
@@ -93,7 +93,7 @@
 
 .node-type-biography .group-social-links a:hover,
 .node-type-biography .group-social-links a:active {
-  color: #fbb040;
+  color: #fc5c1f;
   outline: none;
 }
 
@@ -142,7 +142,7 @@
 
 .view-biography-grid .views-exposed-form,
 .view-partner-grid .views-exposed-form {
-  background-color: #f0f0f0;
+  background-color: #ebeef0;
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -158,7 +158,7 @@
 
 .view-biography-grid .views-exposed-widget > label,
 .view-partner-grid .views-exposed-widget > label {
-  font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
 	font-weight: 400;
 	font-size: 18px;
 	line-height: 18px;
@@ -180,8 +180,8 @@
 }
 
 #edit-field-biography-category-value > div:nth-child(1) label {border-color: #333333;}
-#edit-field-biography-category-value > div:nth-child(2) label {border-color: #fbb040;}
-#edit-field-biography-category-value > div:nth-child(3) label {border-color: #009fda;}
+#edit-field-biography-category-value > div:nth-child(2) label {border-color: #fc5c1f;}
+#edit-field-biography-category-value > div:nth-child(3) label {border-color: #007fae;}
 #edit-field-biography-category-value > div:nth-child(4) label {border-color: #e6007e;}
 #edit-field-biography-category-value > div:nth-child(5) label {border-color: #cdce00;}
 
@@ -210,8 +210,8 @@
   margin-bottom: 10px;
 }
 
-.view-biography-grid .biography_image.community_champion img {border-color: #fbb040;}
-.view-biography-grid .biography_image.industry_mogul img     {border-color: #009fda;}
+.view-biography-grid .biography_image.community_champion img {border-color: #fc5c1f;}
+.view-biography-grid .biography_image.industry_mogul img     {border-color: #007fae;}
 .view-biography-grid .biography_image.cycle_influencer img   {border-color: #e6007e;}
 .view-biography-grid .biography_image.sporting_hero img      {border-color: #cdce00;}
 
@@ -230,7 +230,7 @@
   align-items: center;
   justify-content: center;
   height: 40px;
-	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-weight: 400;
 	font-size: 18px;
 	line-height: 18px;
@@ -293,8 +293,8 @@
   margin: 0 auto 5px auto;
 }
 
-#cboxContent .community_champion img {border-color: #fbb040;}
-#cboxContent .industry_mogul     img {border-color: #009fda;}
+#cboxContent .community_champion img {border-color: #fc5c1f;}
+#cboxContent .industry_mogul     img {border-color: #007fae;}
 #cboxContent .cycle_influencer   img {border-color: #e6007e;}
 #cboxContent .sporting_hero      img {border-color: #cdce00;}
 
@@ -310,7 +310,7 @@
 
 #cboxContent .node-biography h2,
 #cboxContent .node-partner h2 {
-  font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
 	font-weight: 400;
 	font-size: 28px;
 	line-height: 28px;
@@ -322,7 +322,7 @@
 
 #cboxContent .node-biography .field-name-field-headline,
 #cboxContent .node-partner .field-name-field-headline {
-  font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
 	font-weight: 400;
 	font-size: 18px;
 	line-height: 20px;
@@ -350,7 +350,7 @@
 
 #cboxContent .node-biography .group-social-links a:hover,
 #cboxContent .node-biography .group-social-links a:active {
-  color: #fbb040;
+  color: #fc5c1f;
   outline: none;
 }
 
@@ -363,7 +363,7 @@
 
 #cboxContent .node-biography .field-name-view-full-node a,
 #cboxContent .node-biography .field-name-view-full-node a:visited {
-  font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   display: inline-block;
   min-width: 140px;
   font-size: 14px;
@@ -376,12 +376,12 @@
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   background-color: #fff;
-  color: #000;
-  border: 1px solid #fbb040;
+  color: #101920;
+  border: 1px solid #fc5c1f;
 }
 
 #cboxContent .node-biography .field-name-view-full-node a:hover {
-  background-color: #fbb040;
+  background-color: #fc5c1f;
   color: #fff;
-  border: 1px solid #fbb040;
+  border: 1px solid #fc5c1f;
 }

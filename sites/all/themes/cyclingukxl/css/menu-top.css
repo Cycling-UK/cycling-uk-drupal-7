@@ -12,12 +12,12 @@ ul#superfish-8.top-menu li {
 }
 
 ul.top-menu a {
-	color: #fbb040;
+	color: #fc5c1f;
 }
 
 ul.top-menu a:hover,
 ul.top-menu a:active {
-	color: #000;
+	color: #101920;
 }
 
 @media only screen and (max-width : 370px) {

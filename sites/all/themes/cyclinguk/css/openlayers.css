@@ -42,7 +42,7 @@
     text-transform: uppercase;
     text-decoration: none;
 	outline: none;
-	color: #000;
+	color: #101920;
 	text-indent: -10px;
 	padding-left: 10px;
 }
@@ -80,7 +80,7 @@
 
 .ol-control button:focus,
 .ol-control button:hover {
-	background-color: #fbb040;
+	background-color: #fc5c1f;
 }
 
 .ol-scale-line {
@@ -103,7 +103,7 @@
 /* Popup closer */
 
 .openlayers-map .ol-popup a {
-	color: #000;
+	color: #101920;
 	outline: none;
 }
 
@@ -142,7 +142,7 @@
 	background: #7a68ae;
 	padding: 4px;
 	margin: 0;
-	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-weight: 400;
 	font-size: 14px;
 	line-height: 14px;
@@ -168,7 +168,7 @@
 }
 
 .openlayers-map .layerswitcher li:hover {
-	background-color: #fbb040;
+	background-color: #fc5c1f;
 }
 
 .openlayers-map .layerswitcher li label {

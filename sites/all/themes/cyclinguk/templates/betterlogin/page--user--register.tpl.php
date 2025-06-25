@@ -29,7 +29,7 @@
   <div id="top_part">
     <div id="the_logo">
       <a href="<?php print url('<front>'); ?>">
-        <img src="<?php print $logo; ?>" alt="<?php print $site_name; ?>">
+        <img src="/sites/all/themes/cyclinguk/logo.png" alt="<?php print $site_name; ?>">
       </a>
     </div>
   </div>

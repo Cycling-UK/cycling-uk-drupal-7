@@ -23,8 +23,8 @@
   width: initial;
 }
 
-.node-type-partner .nhs             .group-image-wrapper {border: 5px solid #fbb040;}
-.node-type-partner .education       .group-image-wrapper {border: 5px solid #009fda;}
+.node-type-partner .nhs             .group-image-wrapper {border: 5px solid #fc5c1f;}
+.node-type-partner .education       .group-image-wrapper {border: 5px solid #007fae;}
 .node-type-partner .public_sector   .group-image-wrapper {border: 5px solid #e6007e;}
 .node-type-partner .private_sector  .group-image-wrapper {border: 5px solid #cdce00;}
 .node-type-partner .not_for_profit  .group-image-wrapper {border: 5px solid #8064a9;}
@@ -34,8 +34,8 @@
 /* Views */
 
 #edit-field-partner-type-value > div:nth-child(1) label {border-color: #333333;}
-#edit-field-partner-type-value > div:nth-child(2) label {border-color: #fbb040;}
-#edit-field-partner-type-value > div:nth-child(3) label {border-color: #009fda;}
+#edit-field-partner-type-value > div:nth-child(2) label {border-color: #fc5c1f;}
+#edit-field-partner-type-value > div:nth-child(3) label {border-color: #007fae;}
 #edit-field-partner-type-value > div:nth-child(4) label {border-color: #e6007e;}
 #edit-field-partner-type-value > div:nth-child(5) label {border-color: #cdce00;}
 #edit-field-partner-type-value > div:nth-child(6) label {border-color: #8064a9;}
@@ -56,8 +56,8 @@
   border: 5px solid;
 }
 
-.view-partner-grid .partner_image.nhs             {border-color: #fbb040;}
-.view-partner-grid .partner_image.education       {border-color: #009fda;}
+.view-partner-grid .partner_image.nhs             {border-color: #fc5c1f;}
+.view-partner-grid .partner_image.education       {border-color: #007fae;}
 .view-partner-grid .partner_image.public_sector   {border-color: #e6007e;}
 .view-partner-grid .partner_image.private_sector  {border-color: #cdce00;}
 .view-partner-grid .partner_image.not_for_profit  {border-color: #8064a9;}

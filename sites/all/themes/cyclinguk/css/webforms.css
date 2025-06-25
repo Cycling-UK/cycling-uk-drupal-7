@@ -44,13 +44,13 @@
 }
 
 .node-type-webform.page-layout-post .field-name-field-teaser {
-    text-align: center;
-    font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
-	font-weight: 400;
-    font-size: 20px;
-    line-height: 24px;
-    margin-bottom: 30px;
-    color: #009fda;
+  text-align: center;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  margin-bottom: 30px;
+  color: #007fae;
 }
 
 .node-type-webform.page-layout-post .field-name-field-teaser::after {
@@ -61,7 +61,7 @@
     border-radius: 2.5px;
     -webkit-border-radius: 2.5px;
     -moz-border-radius: 2.5px;
-    background-color: #fbb040;
+    background-color: #fc5c1f;
     margin: 30px auto 30px;
 }
 
@@ -133,20 +133,14 @@ footer .webform-progressbar {
 /* Fieldset panels */
 .node-type-webform.page-layout-post .webform-component-fieldset {
 	padding: 10px;
-	border: 1px solid #fbb040;
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-	-webkit-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
-	-moz-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
-	box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
+	border: 1px solid #fc5c1f;
+  border-radius: 10px;
 	margin-bottom: 30px;
 }
 
 .node-type-webform.page-layout-post .webform-component-fieldset legend.panel-heading {
 	padding: 15px;
 }
-
 
 
 
@@ -187,8 +181,8 @@ footer .webform-progressbar {
 	font-family: 'Font Awesome 5 Pro';
 	font-weight: 200;
 	color: #da4500;
-    font-size: 16px;
-    line-height: 16px;
+  font-size: 16px;
+  line-height: 16px;
 	content: "\F069";
 	position: absolute;
 	float: right;
@@ -200,27 +194,24 @@ footer .webform-progressbar {
 	color: #da4500;
 }
 
-
-
-
 .form-group {
 	margin-bottom: 30px;
 }
 
 label {
-	margin-bottom: 12px
+  margin-top: 15px;
+	margin-bottom: 7px;
+  color: #365269;
 }
 
 .form-control,
 .form-item-field-ride-type-tid-1 .form-select /* BBR event type select list */ {
-    border: 1px solid #000;
-	border-radius: 22px; 
-	-webkit-border-radius: 22px; 
-	-moz-border-radius: 22px;
+    border: 1px solid #c3cbd2;
+  	border-radius: 10px; 
     box-shadow: inherit;
-    color: #000;
-    font-size: 16px;
-    line-height: 16px;
+    color: #101920;
+    font-size: 18px;
+    line-height: 1;
     height: 44px;
     padding: 10px 20px;
     width: 100%;
@@ -237,7 +228,7 @@ textarea {
 }
 
 .form-control:focus {
-    border-color: #fbb040;
+    border-color: #fc5c1f;
     box-shadow: inherit;
     outline: 0 none;
 }
@@ -250,7 +241,7 @@ textarea {
 .ui-widget input,
 .ui-widget select,
 .ui-widget textarea {
-    font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Plus Jakarta Sans", sans-serif;
     font-size: 16px;
     line-height: 22px;
 }
@@ -258,7 +249,7 @@ textarea {
 input.btn,
 .ui-widget button,
 .ui-widget input.btn {
-    font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Plus Jakarta Sans", sans-serif;
     font-size: 15px;
     line-height: 34px;
     margin-right: 10px;
@@ -284,7 +275,7 @@ input.btn,
 /* Help text */
 .node-type-webform.page-layout-post .control-group .help-inline,
 .node-type-webform.page-layout-post .help-block {
-	color: #000;
+	color: #101920;
     font-size: 13px;
     line-height: 17px;
 	text-transform: uppercase;
@@ -357,9 +348,9 @@ input.btn,
 }
 
 .form-select:focus {
-	color: #000;
+	color: #101920;
 	color: rgba(0,0,0,0);
-	text-shadow: 0 0 0 #000;
+	text-shadow: 0 0 0 #101920;
 	outline: none;
 }
 

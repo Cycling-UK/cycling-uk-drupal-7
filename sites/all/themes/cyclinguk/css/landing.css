@@ -75,7 +75,7 @@ body.node-type-landing-page .top-wrapper:hover > span.image img {
 }
 
 .node-type-landing-page .field-name-title h1 {
-	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-size: 60px;
 	font-weight: 400;
 	line-height: 60px;
@@ -136,7 +136,7 @@ body.node-type-landing-page .top-wrapper:hover > span.image img {
 	font-size: 20px;
 	line-height: 24px;
 	margin-bottom: 30px;
-	color: #009fda;
+	color: #007fae;
 }
 
 .node-type-landing-page .field-name-field-teaser:after {
@@ -147,7 +147,7 @@ body.node-type-landing-page .top-wrapper:hover > span.image img {
 	border-radius: 2.5px;
 	-webkit-border-radius: 2.5px;
 	-moz-border-radius: 2.5px;
-	background-color: #fbb040;
+	background-color: #fc5c1f;
 	margin: 30px auto 30px;
 }
 
@@ -157,7 +157,7 @@ body.node-type-landing-page .top-wrapper:hover > span.image img {
 .node-type-landing-page .field-name-field-links .field-label,
 .node-type-landing-page .field-name-field-attachments .field-label {
 	text-align: center;
-    font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Plus Jakarta Sans", sans-serif;
     font-size: 30px;
     line-height: 30px;
     font-weight: 400;
@@ -200,7 +200,7 @@ body.node-type-landing-page .top-wrapper:hover > span.image img {
 
 .node-type-landing-page .field-name-field-links a {
 	display: block;
-	color: #000;
+	color: #101920;
 	text-decoration: none;
 	padding: 0 15px 0 0;
 	border: 1px solid #7a68ae;
@@ -274,7 +274,7 @@ body.node-type-landing-page .top-wrapper:hover > span.image img {
 	line-height: 64px;
 	text-decoration: none;
 	padding: 0 20px 0 10px;
-	background-color: #009fda;
+	background-color: #007fae;
 	border-radius: 10px;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
@@ -335,10 +335,10 @@ body.node-type-landing-page .top-wrapper:hover > span.image img {
 }
 
 .join-panel {
-	color: #000;
+	color: #101920;
 	text-align: center;
 	text-decoration: none;
-	border: 1px solid #fbb040;
+	border: 1px solid #fc5c1f;
 	border-radius: 10px;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
@@ -360,7 +360,7 @@ body.node-type-landing-page .top-wrapper:hover > span.image img {
 }
 
 .join-quote {
-	background-color: #009fda;
+	background-color: #007fae;
 	color: #fff;
 	border-radius: 10px;
 	-webkit-border-radius: 10px;
@@ -370,7 +370,7 @@ body.node-type-landing-page .top-wrapper:hover > span.image img {
 }
 
 .join-quote h2 {
-	color: #fbb040;
+	color: #fc5c1f;
 	margin-top: 0;
 	margin-bottom: 12px;
 }
@@ -390,11 +390,11 @@ body.node-type-landing-page .top-wrapper:hover > span.image img {
 
 .contact-us .label {
 	display: block;
-    font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Plus Jakarta Sans", sans-serif;
     font-size: 24px;
     font-weight: 400;
     line-height: 24px;
-    color: #000;
+    color: #101920;
     padding: 0;
 	margin-bottom: 10px;
 }
@@ -402,19 +402,6 @@ body.node-type-landing-page .top-wrapper:hover > span.image img {
 .contact-us .btn {
 	display: inline-block;
 	margin: 10px;
-}
-
-.small-print {
-    font-size: 13px;
-    line-height: 17px;
-	text-transform: uppercase;
-	border-radius: 10px;
-	-webkit-border-radius: 10px;
-	-moz-border-radius: 10px;
-}
-
-.small-print p {
-	margin-bottom: 13px;
 }
 
 .contact-us .telephone,
@@ -445,7 +432,7 @@ body.node-type-landing-page .top-wrapper:hover > span.image img {
 }
 
 .buy-panel .item-title {
-	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
     font-size: 22px;
     line-height: 36px;
     font-weight: 400;
@@ -579,7 +566,7 @@ body.node-type-landing-page .top-wrapper:hover > span.image img {
 }
 
 .page-layout-listing #edit-secondary-wrapper a.panel-title {
-    font-family: "Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Plus Jakarta Sans", sans-serif;
 	display: inline-block;
 	font-size: 15px;
 	line-height: 15px;
@@ -588,7 +575,7 @@ body.node-type-landing-page .top-wrapper:hover > span.image img {
     text-decoration: none;
     outline: none;
     padding: 3px 0;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid #101920;
 }
 
 .page-layout-listing #edit-secondary-wrapper a.panel-title:after {
@@ -732,7 +719,7 @@ body.node-type-landing-page .top-wrapper:hover > span.image img {
 }
 
 .view-display-id-block_listing_taxonomy .views-responsive-grid .views-field-title a {
-	color: #000;
+	color: #101920;
 	text-decoration: none;
 	outline: none;
 }
@@ -769,7 +756,7 @@ body.node-type-landing-page .top-wrapper:hover > span.image img {
 
 .node-type-landing-page .field-name-share-buttons:before {
 	content: 'Share this article';
-	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
     font-size: 20px;
     line-height: 50px;
     font-weight: 400;

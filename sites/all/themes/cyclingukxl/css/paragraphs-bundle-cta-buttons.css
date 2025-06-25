@@ -1,6 +1,6 @@
 .paragraphs-item-call-to-action-buttons .field-name-field-subtitle {
   text-align: center;
-  font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-weight: 400;
   font-size: 36px;
   line-height: 36px;
@@ -34,10 +34,10 @@
   justify-content: center;;
   width: 100px;
   height: 100px;
-  border: 1px solid #fbb040;
+  border: 1px solid #fc5c1f;
   text-decoration: none;
   background-color: #fff;
-  color: #000;
+  color: #101920;
   border-radius: 10px;
   -webkit-border-radius:10px;
   -moz-border-radius: 10px;
@@ -48,7 +48,7 @@
 }
 
 .cta-button-link a:hover {
-  background-color: #fbb040;
+  background-color: #fc5c1f;
   color: #fff;
 }
 
@@ -58,7 +58,7 @@
 }
 
 .cta-button-text {
-  font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
 	font-weight: 400;
   font-size: 16px;
   line-height: 16px;

@@ -23,7 +23,7 @@
 .join-choose-membership-item .join-wrapper,
 .join-choose-membership-item a .join-wrapper,
 .join-choose-membership-item a:visited .join-wrapper {
-  background-color: #f0f0f0;
+  background-color: #ebeef0;
   padding: 20px;
   border-radius: 0 0 10px 10px;
   -webkit-border-radius: 0 0 10px 10px;
@@ -34,7 +34,7 @@
 .join-choose-membership-item a:focus .join-wrapper,
 .join-choose-membership-item a:hover .join-wrapper,
 .join-choose-membership-item a:active .join-wrapper {
-  background-color: #e0e0e0;
+  background-color: #ebeef0;
   outline: none;
 }
 
@@ -60,11 +60,11 @@
 .join-choose-membership-item > a {
   display: grid;
   align-items: center;
-  font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
   font-weight: 400;
   font-size: 22px;
   line-height: 24px;
-  color: #000;
+  color: #101920;
   text-decoration: none;
 }
 

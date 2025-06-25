@@ -41,7 +41,7 @@ body {
  */
 
 a {
-    color: #009fda;
+    color: #007fae;
     text-decoration: underline;
     outline: none;
 }
@@ -434,7 +434,7 @@ input[type="color"]:focus,
 }
 
 .box-header {
-    background: #009fda;
+    background: #007fae;
 	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
 	font-size: 16px;
 	line-height: 16px;

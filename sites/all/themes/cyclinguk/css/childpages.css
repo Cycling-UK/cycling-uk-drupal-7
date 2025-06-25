@@ -12,9 +12,9 @@
 .view.child-list .view-content a,
 .node-type-publication .view-related a {
 	display: block;
-	color: #000;
+	color: #101920;
 	text-decoration: none;
-	background-color: #f0f0f0;
+	background-color: #ebeef0;
 	border-radius: 10px;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
@@ -27,7 +27,7 @@
 .view.child-list .view-content a:hover,
 .view.child-list .view-content a:focus,
 .view.child-list .view-content a:active {
-	background-color: #e0e0e0;
+	background-color: #ebeef0;
 }
 
 
@@ -90,13 +90,13 @@
 
 .view.child-list .title {
 	display: block;
-    font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-family: "Plus Jakarta Sans", sans-serif;
 	text-align: center;
 	margin: 60px 0 30px 0;
     font-size: 30px;
     line-height: 30px;
 	font-weight: 400;
-	color: #000;
+	color: #101920;
 }
 
 .view.child-list .inner-wrapper .title {

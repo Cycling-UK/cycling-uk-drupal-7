@@ -14,7 +14,7 @@ a.billboard-main-site-button,
 a.billboard-main-site-button:active {
 	display: block;
 	padding: 0px 20px;
-	background-color: #fbb040;
+	background-color: #fc5c1f;
 	color: #fff;
 	font-size: 15px;
 	line-height: 34px;
@@ -121,7 +121,7 @@ body.node-type-billboard .top-wrapper:hover > span.image img {
 }
 
 .node-type-billboard .field-name-title h1 {
-	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-size: 60px;
 	font-weight: 400;
 	line-height: 60px;
@@ -178,7 +178,7 @@ body.node-type-billboard .top-wrapper:hover > span.image img {
 
 .field-name-field-icons > .field-items > .field-item {
 	display: inline-flex;
-	border: 1px solid #fbb040;
+	border: 1px solid #fc5c1f;
 	padding: 10px;
 	border-radius: 10px;
 	-webkit-border-radius: 10px;
@@ -191,7 +191,7 @@ body.node-type-billboard .top-wrapper:hover > span.image img {
 }
 
 .field-name-field-icons > .field-items .field-name-title {
-	color: #000;
+	color: #101920;
 	font-weight: 600;
 	font-size: 22px;
     line-height: 24px;
@@ -206,7 +206,7 @@ body.node-type-billboard .top-wrapper:hover > span.image img {
 	border-radius: 2.5px; 
 	-webkit-border-radius: 2.5px; 
 	-moz-border-radius: 2.5px;
-	background-color: #fbb040;
+	background-color: #fc5c1f;
 	margin: 10px auto;
 }
 
@@ -273,22 +273,22 @@ body.node-type-billboard .top-wrapper:hover > span.image img {
 }
 
 .node-billboard-text .field-name-field-subtitle {
-	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-size: 24px;
 	font-weight: 400;
 	line-height: 24px;
 	margin: 0 0 10px 0;
 	text-align: center;
-	color: #000;
+	color: #101920;
 }
 
 .node-billboard-text .field-name-field-title {
-	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-size: 48px;
 	font-weight: 400;
 	line-height: 48px;
 	margin: 0 0 30px 0;
-	color: #009fda;
+	color: #007fae;
 }
 
 .node-billboard-text .field-name-body {
@@ -301,7 +301,7 @@ body.node-type-billboard .top-wrapper:hover > span.image img {
 /* 	font-weight: 600; */
 	margin: 0 auto 30px auto;
 	max-width: 560px;
-	color: #009fda;
+	color: #007fae;
 }
 
 .node-billboard-text .field-name-field-body-middle:before {
@@ -312,7 +312,7 @@ body.node-type-billboard .top-wrapper:hover > span.image img {
 	border-radius: 2.5px; 
 	-webkit-border-radius: 2.5px; 
 	-moz-border-radius: 2.5px;
-	background-color: #fbb040;
+	background-color: #fc5c1f;
 	margin: 30px auto;
 }
 
@@ -345,7 +345,7 @@ body.node-type-billboard .top-wrapper:hover > span.image img {
 	height: 287px;
 	background-color: #7a68ae;
 	color: #fff;
-	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-size: 18px;
 	font-weight: 400;
 	line-height: 22px;
@@ -404,13 +404,13 @@ body.node-type-billboard .top-wrapper:hover > span.image img {
 }
 
 .node-type-billboard .bottom-wrapper .field-name-field-body-bottom h2 {
-	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-size: 24px;
 	font-weight: 400;
 	line-height: 24px;
 	margin: 0 0 10px 0;
 	text-align: center;
-	color: #000;
+	color: #101920;
 }
 
 .node-type-billboard .bottom-wrapper .field-name-field-body-bottom .btn {
@@ -428,7 +428,7 @@ body.node-type-billboard .top-wrapper:hover > span.image img {
 }
 
 .field-name-field-terms-and-conditions .field-label {
-	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
 	font-size: 24px;
 	font-weight: 400;
 	line-height: 24px;
@@ -461,7 +461,7 @@ body.node-type-billboard .group-header-inner-wrapper {
 }
 
 body.node-type-billboard .top-wrapper .group-header-inner-wrapper {
-	background-color: #009fda;
+	background-color: #007fae;
 	color: #fff;
 	padding: 20px;
 }
@@ -481,24 +481,24 @@ body.node-type-billboard .field-name-field-markup {
 body.node-type-billboard .select-wrapper .text,
 body.node-type-billboard .field-name-field-markup .text {
 	background-color: #fff;
-	color: #000;
-	border-top: 1px solid #fbb040;
-	border-bottom: 1px solid #fbb040;
-	border-left: 1px solid #fbb040;
+	color: #101920;
+	border-top: 1px solid #fc5c1f;
+	border-bottom: 1px solid #fc5c1f;
+	border-left: 1px solid #fc5c1f;
 }
 
 body.node-type-billboard .select-wrapper .divider {
 	background-color: #fff;
-	border-top: 1px solid #fbb040;
-	border-bottom: 1px solid #fbb040;
+	border-top: 1px solid #fc5c1f;
+	border-bottom: 1px solid #fc5c1f;
 }
 
 body.node-type-billboard .select-wrapper input {
 	background-color: #fff;
-	color: #000;
-	border-top: 1px solid #fbb040;
-	border-right: 1px solid #fbb040;
-	border-bottom: 1px solid #fbb040;
+	color: #101920;
+	border-top: 1px solid #fc5c1f;
+	border-right: 1px solid #fc5c1f;
+	border-bottom: 1px solid #fc5c1f;
 }
 
 body.node-type-billboard .select-wrapper input:hover,
@@ -517,7 +517,7 @@ body.node-type-billboard .main-container .hero-carousel .dropdown li,
 body.node-type-billboard .field-name-field-markup .dropdown .selected,
 body.node-type-billboard .field-name-field-markup .dropdown li {
 	background-color: #fff;
-	color: #000;
+	color: #101920;
 }
 
 body.node-type-billboard .main-container .hero-carousel .dropdown:hover,
@@ -525,7 +525,7 @@ body.node-type-billboard .main-container .hero-carousel .dropdown.focus.open,
 body.node-type-billboard .field-name-field-markup .dropdown:hover,
 body.node-type-billboard .field-name-field-markup .dropdown.focus.open {
 	background-color: inherit;	
-	color: #000;
+	color: #101920;
 }
 
 body.node-type-billboard .hero-carousel form.jump-menu .dropdown div,
@@ -564,17 +564,17 @@ body.node-type-billboard .field-name-field-markup .dropdown li {
 
 body.node-type-billboard .hero-carousel form.jump-menu .dropdown,
 body.node-type-billboard .field-name-field-markup form.jump-menu .dropdown {
-	border-top: 1px solid #fbb040;
-	border-bottom: 1px solid #fbb040;
+	border-top: 1px solid #fc5c1f;
+	border-bottom: 1px solid #fc5c1f;
 }
 
 @media only screen and (max-width : 619px) {
 	body.node-type-billboard .main-container .hero-carousel .dropdown .selected,
 	body.node-type-billboard .field-name-field-markup .dropdown .selected {
 		height: 46px;
-		border-top: 1px solid #fbb040;
-		border-bottom: 1px solid #fbb040;
-		border-left: 1px solid #fbb040;
+		border-top: 1px solid #fc5c1f;
+		border-bottom: 1px solid #fc5c1f;
+		border-left: 1px solid #fc5c1f;
 	}
 	body.node-type-billboard .hero-carousel form.jump-menu .dropdown,
 	body.node-type-billboard .field-name-field-markup form.jump-menu .dropdown {
@@ -612,9 +612,9 @@ body.node-type-billboard .field-name-field-markup form.jump-menu .dropdown {
 
 body.node-type-billboard .hero-carousel form.jump-menu .dropdown > div,
 body.node-type-billboard .field-name-field-markup form.jump-menu .dropdown > div {
-	border-right: 1px solid #fbb040;
-	border-bottom: 1px solid #fbb040;
-	border-left: 1px solid #fbb040;
+	border-right: 1px solid #fc5c1f;
+	border-bottom: 1px solid #fc5c1f;
+	border-left: 1px solid #fc5c1f;
 	-webkit-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
 	-moz-box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
 	box-shadow: 0px 3px 0px 0px rgba(0, 0, 0, 0.1);
@@ -627,19 +627,19 @@ body.node-type-billboard .field-name-field-markup form.jump-menu .dropdown ul {
 
 body.node-type-billboard .hero-carousel form.jump-menu .dropdown li,
 body.node-type-billboard .field-name-field-markup form.jump-menu .dropdown li {
-	color: #000;
+	color: #101920;
 }
 
 body.node-type-billboard .hero-carousel form.jump-menu .dropdown li.focus,
 body.node-type-billboard .field-name-field-markup form.jump-menu .dropdown li.focus {
     color: #fff;
-    background-color: #fbb040;
+    background-color: #fc5c1f;
 }
 
 body.node-type-billboard .hero-carousel form.jump-menu .dropdown li.active,
 body.node-type-billboard .field-name-field-markup form.jump-menu .dropdown li.active {
     color: #fff;
-    background-color: #fbb040;
+    background-color: #fc5c1f;
 }
 
 body.node-type-billboard .main-container .hero-carousel .dropdown .carat,
@@ -659,7 +659,7 @@ body.node-type-billboard .field-name-field-markup .dropdown .carat {
 	align-items: center;
 	border: none;
 	background-color: #fff;
-	color: #000;
+	color: #101920;
 	border-radius: 10px;
 	-webkit-border-radius: 10px;
 	-moz-border-radius: 10px;
@@ -678,7 +678,7 @@ body.node-type-billboard .field-name-field-markup .dropdown .carat {
 	display: block;
 	width: 1px;
 	height: 42px;
-	background-color: #fbb040;
+	background-color: #fc5c1f;
 }
 
 .field-name-field-markup .select-wrapper form {
@@ -706,9 +706,9 @@ body.node-type-billboard .field-name-field-markup .dropdown .carat {
 
 .field-name-field-markup .select-wrapper .dropdown ul {
 	padding: 0;
-	border-left: 1px solid #fbb040;
-	border-right: 1px solid #fbb040;
-	border-bottom: 1px solid #fbb040;
+	border-left: 1px solid #fc5c1f;
+	border-right: 1px solid #fc5c1f;
+	border-bottom: 1px solid #fc5c1f;
 	border-radius: 0 0 10px 10px;
 	-webkit-border-radius: 0 0 10px 10px;
 	-moz-border-radius: 0 0 10px 10px;
@@ -716,11 +716,11 @@ body.node-type-billboard .field-name-field-markup .dropdown .carat {
 
 .field-name-field-markup .select-wrapper .dropdown li 					{background: #ffffff;}
 .field-name-field-markup .select-wrapper .dropdown li.active 		{background: #7a68ae;}
-.field-name-field-markup .select-wrapper .dropdown li.focus 		{background: #fbb040;}
-.field-name-field-markup .select-wrapper .dropdown.focus:after 	{background: #fbb040;}
+.field-name-field-markup .select-wrapper .dropdown li.focus 		{background: #fc5c1f;}
+.field-name-field-markup .select-wrapper .dropdown.focus:after 	{background: #fc5c1f;}
 
 .field-name-field-markup .select-wrapper .dropdown.focus .carat::after {
-	border-top-color: #fbb040;
+	border-top-color: #fc5c1f;
 }
 
 .field-name-field-markup .select-wrapper input {
@@ -737,7 +737,7 @@ body.node-type-billboard .field-name-field-markup .dropdown .carat {
 .field-name-field-markup .select-wrapper input:hover,
 .field-name-field-markup .select-wrapper input:focus,
 .field-name-field-markup .select-wrapper input:active {
-	background-color: #fbb040;
+	background-color: #fc5c1f;
 }
 
 

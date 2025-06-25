@@ -45,7 +45,7 @@ table tr.error {
 
 .alert-text {
 	color: #fff;
-	font-family: "ff-cocon-web-pro","Karla","Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-family: "Plus Jakarta Sans", sans-serif;
     font-size: 24px;
     line-height: 28px;
     font-weight: 400;
@@ -85,7 +85,7 @@ table tr.error {
 
 .alert-info {
 	color: #fff;
-	background-color: #009fda;
+	background-color: #007fae;
 }
 
 .alert-info hr {
