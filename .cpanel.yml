@@ -1,6 +1,6 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/groupsto/test.groupstoolkit.org
+    - export DEPLOYPATH=/home/groupsto/groups.cyclinguk.org
     - /bin/cp -r * $DEPLOYPATH
     
