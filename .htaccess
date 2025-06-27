@@ -12,6 +12,11 @@
   </IfModule>
 </FilesMatch>
 
+# 27 June 2025 (AM) - prevent access to xmlrpc.php
+<Files "xmlrpc.php">
+    Require all denied
+</Files>
+
 # Don't show directory listings for URLs which map to a directory.
 Options -Indexes
 
